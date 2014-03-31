@@ -12,6 +12,8 @@ How-to
 
 Use the Domain Specific Language (DSL) for xplatform (in .xplatform files), to generate the source files etc. required for a certain platform.
 
+TODO create videos how to set it up.
+
 
 Features on supported platforms
 -------------------------------
