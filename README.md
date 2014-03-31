@@ -22,6 +22,7 @@ Features on supported platforms
 
 Roadmap: front end
 ------------------
+* BSON
 * Android
 * Blackberry 10
 * iOS
@@ -29,6 +30,7 @@ Roadmap: front end
 
 Roadmap: back end
 -----------------
+* BSON
 * Spring
 * JEE
 
