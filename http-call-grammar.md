@@ -3,7 +3,7 @@ Grammar Examples
 
 Restful GET/HEAD example
 ------------------------
-
+`
 StockPrice: GET from /meh/blah?p1={name1}&p2={name2}
 
 with headers from
@@ -75,11 +75,11 @@ or
 '''
 [ { "attr" : string } ]
 '''
-
+`
 
 Restful POST/PUT example
 --------------------
-
+`
 AddPerson : PUT on /blaat/bleh/meh?p={sex}&q={sells}
 with headers from request
 
@@ -96,10 +96,10 @@ client expects
 server expects
 
 ''' ... '''
-
+`
 Restful DELETE example
 ----------------------
-
+`
 DeleteFile : DELETE from /booyakasha/goonigoogoo/hm?p={hmf}&a={smells}
 
 with headers from response // or 'in' response, 'in' reply
@@ -109,3 +109,4 @@ with headers from response // or 'in' response, 'in' reply
 and request
 
 ''' ... '''
+`
