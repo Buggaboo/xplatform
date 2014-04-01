@@ -27,12 +27,15 @@ Roadmap: front end
 * Blackberry 10
 * iOS
 * Windows
+* GreenSQL style database schema generation / iOS core data
 
 Roadmap: back end
 -----------------
+* node.js
 * BSON
 * Spring
 * JEE
+* Database schema generation for PosgreSQL (bjson/bson)?
 
 Dependencies
 ------------
