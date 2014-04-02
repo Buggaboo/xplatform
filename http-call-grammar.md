@@ -12,18 +12,18 @@ Restful GET/HEAD example
         "srp-ECDH-Qa" = {client_secret},
         "session-id" = {session_id}
         "oauth-token" = {oauth_token}
-        "content-type" = "application/json" // comment: listens to 'bson' and translates
+        "content-type" = "application/json" // comment: also listens to 'bson' and generates a bson parser accordingly
     }
     '''
     and response // these headers will be injected in the back end call
     '''
     {
         "server-version" = "1.2.3",
-        "srp-ECDH-Qa" = {server_secret},
+        "srp-ECDH-Qb" = {server_secret},
         "session-id" = {session}
         "server-id" = {server_id}
         "oauth-token" = {oauth_token}
-        "content-type" = "application/json" // comment: listens to 'bson' and translates
+        "content-type" = "application/json"
     }
     '''
     client expects // keyword client is optional in the case of GET and HEAD
