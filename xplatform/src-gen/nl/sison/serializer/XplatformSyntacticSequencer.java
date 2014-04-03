@@ -151,7 +151,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'string' | 'boolean' | 'number'
+	 *     'number' | 'boolean' | 'string'
 	 */
 	protected void emit_JsonMetaType_BooleanKeyword_0_or_NumberKeyword_1_or_StringKeyword_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -167,7 +167,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     JSON_LITERAL_NULL | JSON_LITERAL_NUMBER | JSON_LITERAL_BOOLEAN | STRING
+	 *     STRING | JSON_LITERAL_NULL | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NUMBER
 	 */
 	protected void emit_JsonType_JSON_LITERAL_BOOLEANTerminalRuleCall_0_or_JSON_LITERAL_NULLTerminalRuleCall_3_or_JSON_LITERAL_NUMBERTerminalRuleCall_2_or_STRINGTerminalRuleCall_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

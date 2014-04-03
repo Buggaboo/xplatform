@@ -3,7 +3,7 @@ grammar nl.sison.Xplatform with org.eclipse.xtext.common.Terminals
 generate xplatform "http://www.sison.nl/Xplatform"
 
 Xplatform:
-	'call' name=ID method=RESTFUL_METHODS 'from' (ANY_OTHER?('{' uriPathParams+=ID '}')*ANY_OTHER?)+
+	'call' name=ID method=RESTFUL_METHODS 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=XplatformHeader
 		('and' 'response' responseHeaders=XplatformHeader)?
 	)?
@@ -83,3 +83,171 @@ JsonMetaArray:
 JsonMetaKeyValuePair:
 	metaKey=STRING ':' metaValue=JsonMetaType 
 ;
+
+URI_PARAM:
+	'{' name=ID '}'
+;
+
+URI:
+	(
+		protocol=URI_PROTOCOL
+		hostname=URI_HOSTNAME
+		(portNumber=URI_PORT_NUMBER)?
+	)?
+	(URI_PATH) (uriParams+=URI_PARAM (URI_PATH)?)*
+	(URI_QUERY)? (uriParams+=URI_PARAM (URI_QUERY)?)*
+;
+
+terminal URI_PROTOCOL:
+//    ('a'..'z')+ '://' // Protocol
+	'http://' | 'https://'
+;
+
+terminal URI_HOSTNAME:
+	    (
+        (
+            ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+
+        ) |
+        (
+            ('a'..'z'|'A'..'Z')
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )*
+            (
+                '.'
+                ('a'..'z'|'A'..'Z')
+                (
+                    'a'..'z'|'A'..'Z'|
+                    '0'..'9'|
+                    '$'|
+                    '-'|
+                    '_'|
+                    (
+                        '\\'
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                    ) |
+                    (
+                        '%'
+                        ('0'..'9')
+                        ('0'..'9')
+                    )
+                )*
+            )*
+        )
+    )
+;
+
+terminal URI_PORT_NUMBER:
+    (':' ('0'..'9')+)?
+;
+
+terminal URI_PATH:
+	    (
+        (
+            ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+
+        ) |
+        (
+            ('a'..'z'|'A'..'Z')
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )*
+            (
+                '.'
+                ('a'..'z'|'A'..'Z')
+                (
+                    'a'..'z'|'A'..'Z'|
+                    '0'..'9'|
+                    '$'|
+                    '-'|
+                    '_'|
+                    (
+                        '\\'
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                    ) |
+                    (
+                        '%'
+                        ('0'..'9')
+                        ('0'..'9')
+                    )
+                )*
+            )*
+        )
+    )
+;
+
+terminal URI_QUERY:
+    ('?'
+        (
+            'a'..'z'|'A'..'Z'|
+            '0'..'9'|
+            '$'|
+            '-'|
+            '_'|
+            '='|
+            '&'|
+            ';'|
+            (
+                '\\'
+                ('0'..'9'|'a'..'f'|'A'..'F')
+                ('0'..'9'|'a'..'f'|'A'..'F')
+            ) |
+            (
+                '%'
+                ('0'..'9')
+                ('0'..'9')
+            )
+        )+
+ 
+        ('+'
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                '='|
+                '&'|
+                ';'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )+
+        )*
+    )?; // Query
