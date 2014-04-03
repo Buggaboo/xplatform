@@ -4,7 +4,7 @@ Grammar Examples
 Restful GET/HEAD example
 ------------------------
 
-    StockPrice: GET from /meh/blah?p1={name1}&p2={name2}
+    call StockPrice: GET from /meh/blah?p1={name1}&p2={name2}
     with headers from request // these headers will be injected in the front end call
     '''
     {
@@ -12,7 +12,7 @@ Restful GET/HEAD example
         "srp-ECDH-Qa" = {client_secret},
         "session-id" = {session_id}
         "oauth-token" = {oauth_token}
-        "content-type" = "application/json" // comment: also listens to 'bson' and generates a bson parser accordingly
+        "content-type" = "application/ubjson" // comment: also listens to 'bson' or 'ubjson' and generates a parser accordingly
     }
     '''
     and response // these headers will be injected in the back end call
@@ -61,7 +61,7 @@ Restful GET/HEAD example
 Restful POST/PUT example
 --------------------
 
-    AddPerson : PUT on /blaat/bleh/meh?p={sex}&q={sells}
+    call AddPerson : PUT on /blaat/bleh/meh?p={sex}&q={sells}
     with headers from request
     ''' ... '''
     and response
@@ -74,7 +74,7 @@ Restful POST/PUT example
 Restful DELETE example
 ----------------------
 
-    DeleteFile : DELETE from /booyakasha/goonigoogoo/hm?p={hmf}&a={smells}
+    call DeleteFile : DELETE from /booyakasha/goonigoogoo/hm?p={hmf}&a={smells}
     with headers from response // or 'in' response, 'in' reply
     ''' ... '''
     and request
