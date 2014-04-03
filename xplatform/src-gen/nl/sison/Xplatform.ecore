@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="xplatform" nsURI="http://www.sison.nl/Xplatform" nsPrefix="xplatform">
+  <eClassifiers xsi:type="ecore:EClass" name="Xplatform">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriPathParams" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestHeaders" eType="#//XplatformHeader"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responseHeaders" eType="#//XplatformHeader"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jsonToClient" eType="#//XplatformJson"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jsonToServer" eType="#//XplatformJson"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XplatformJson">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//JsonType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaType" eType="#//JsonMetaType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XplatformHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="headerKeyValues" upperBound="-1"
+        eType="#//XplatformHeaderKeyValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XplatformHeaderKeyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonMetaType" eSuperTypes="#//JsonType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonArray" eSuperTypes="#//JsonType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" upperBound="-1" eType="#//JsonType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonKeyValuePair">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//JsonType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonObject" eSuperTypes="#//JsonType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePair" upperBound="-1"
+        eType="#//JsonKeyValuePair" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaKeyValuePair" upperBound="-1"
+        eType="#//JsonMetaKeyValuePair" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonMetaArray" eSuperTypes="#//JsonMetaType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaType" eType="#//JsonMetaType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonMetaKeyValuePair">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaValue" eType="#//JsonMetaType"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
