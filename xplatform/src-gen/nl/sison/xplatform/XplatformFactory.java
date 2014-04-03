@@ -50,13 +50,13 @@ public interface XplatformFactory extends EFactory
   XplatformHeader createXplatformHeader();
 
   /**
-   * Returns a new object of class '<em>Header Key Value</em>'.
+   * Returns a new object of class '<em>Header Key Value Pair</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Header Key Value</em>'.
+   * @return a new object of class '<em>Header Key Value Pair</em>'.
    * @generated
    */
-  XplatformHeaderKeyValue createXplatformHeaderKeyValue();
+  XplatformHeaderKeyValuePair createXplatformHeaderKeyValuePair();
 
   /**
    * Returns a new object of class '<em>Json Meta Type</em>'.

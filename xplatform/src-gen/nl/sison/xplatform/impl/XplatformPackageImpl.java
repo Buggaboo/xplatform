@@ -12,7 +12,7 @@ import nl.sison.xplatform.JsonType;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformFactory;
 import nl.sison.xplatform.XplatformHeader;
-import nl.sison.xplatform.XplatformHeaderKeyValue;
+import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
 
@@ -57,7 +57,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xplatformHeaderKeyValueEClass = null;
+  private EClass xplatformHeaderKeyValuePairEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -186,7 +186,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXplatform_CallName()
+  public EAttribute getXplatform_Name()
   {
     return (EAttribute)xplatformEClass.getEStructuralFeatures().get(0);
   }
@@ -306,9 +306,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXplatformHeaderKeyValue()
+  public EClass getXplatformHeaderKeyValuePair()
   {
-    return xplatformHeaderKeyValueEClass;
+    return xplatformHeaderKeyValuePairEClass;
   }
 
   /**
@@ -316,19 +316,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXplatformHeaderKeyValue_Key()
+  public EAttribute getXplatformHeaderKeyValuePair_Key()
   {
-    return (EAttribute)xplatformHeaderKeyValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getXplatformHeaderKeyValue_Value()
-  {
-    return (EAttribute)xplatformHeaderKeyValueEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)xplatformHeaderKeyValuePairEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -512,7 +502,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
 
     // Create classes and their features
     xplatformEClass = createEClass(XPLATFORM);
-    createEAttribute(xplatformEClass, XPLATFORM__CALL_NAME);
+    createEAttribute(xplatformEClass, XPLATFORM__NAME);
     createEAttribute(xplatformEClass, XPLATFORM__METHOD);
     createEAttribute(xplatformEClass, XPLATFORM__URI_PATH_PARAMS);
     createEReference(xplatformEClass, XPLATFORM__REQUEST_HEADERS);
@@ -527,9 +517,8 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     xplatformHeaderEClass = createEClass(XPLATFORM_HEADER);
     createEReference(xplatformHeaderEClass, XPLATFORM_HEADER__HEADER_KEY_VALUES);
 
-    xplatformHeaderKeyValueEClass = createEClass(XPLATFORM_HEADER_KEY_VALUE);
-    createEAttribute(xplatformHeaderKeyValueEClass, XPLATFORM_HEADER_KEY_VALUE__KEY);
-    createEAttribute(xplatformHeaderKeyValueEClass, XPLATFORM_HEADER_KEY_VALUE__VALUE);
+    xplatformHeaderKeyValuePairEClass = createEClass(XPLATFORM_HEADER_KEY_VALUE_PAIR);
+    createEAttribute(xplatformHeaderKeyValuePairEClass, XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY);
 
     jsonMetaTypeEClass = createEClass(JSON_META_TYPE);
 
@@ -590,7 +579,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
 
     // Initialize classes and features; add operations and parameters
     initEClass(xplatformEClass, Xplatform.class, "Xplatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getXplatform_CallName(), ecorePackage.getEString(), "callName", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXplatform_Name(), ecorePackage.getEString(), "name", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXplatform_Method(), ecorePackage.getEString(), "method", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXplatform_UriPathParams(), ecorePackage.getEString(), "uriPathParams", null, 0, -1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_RequestHeaders(), this.getXplatformHeader(), null, "requestHeaders", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -603,11 +592,10 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     initEReference(getXplatformJson_MetaType(), this.getJsonMetaType(), null, "metaType", null, 0, 1, XplatformJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xplatformHeaderEClass, XplatformHeader.class, "XplatformHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXplatformHeader_HeaderKeyValues(), this.getXplatformHeaderKeyValue(), null, "headerKeyValues", null, 0, -1, XplatformHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXplatformHeader_HeaderKeyValues(), this.getXplatformHeaderKeyValuePair(), null, "headerKeyValues", null, 0, -1, XplatformHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(xplatformHeaderKeyValueEClass, XplatformHeaderKeyValue.class, "XplatformHeaderKeyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getXplatformHeaderKeyValue_Key(), ecorePackage.getEString(), "key", null, 0, 1, XplatformHeaderKeyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getXplatformHeaderKeyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, XplatformHeaderKeyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(xplatformHeaderKeyValuePairEClass, XplatformHeaderKeyValuePair.class, "XplatformHeaderKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXplatformHeaderKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, XplatformHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonMetaTypeEClass, JsonMetaType.class, "JsonMetaType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

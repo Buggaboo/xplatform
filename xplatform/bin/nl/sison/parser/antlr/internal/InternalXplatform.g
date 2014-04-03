@@ -83,9 +83,9 @@ ruleXplatform returns [EObject current=null]
     }
 (
 (
-		lv_callName_1_0=RULE_STRING
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_callName_1_0, grammarAccess.getXplatformAccess().getCallNameSTRINGTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getXplatformAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -93,9 +93,9 @@ ruleXplatform returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"callName",
-        		lv_callName_1_0, 
-        		"STRING");
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
 	    }
 
 )
@@ -121,9 +121,9 @@ ruleXplatform returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getXplatformAccess().getFromKeyword_3());
     }
-((this_STRING_4=RULE_STRING
+((this_ANY_OTHER_4=RULE_ANY_OTHER
     { 
-    newLeafNode(this_STRING_4, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_0()); 
+    newLeafNode(this_ANY_OTHER_4, grammarAccess.getXplatformAccess().getANY_OTHERTerminalRuleCall_4_0()); 
     }
 )?(	otherlv_5='{' 
     {
@@ -131,9 +131,9 @@ ruleXplatform returns [EObject current=null]
     }
 (
 (
-		lv_uriPathParams_6_0=RULE_STRING
+		lv_uriPathParams_6_0=RULE_ID
 		{
-			newLeafNode(lv_uriPathParams_6_0, grammarAccess.getXplatformAccess().getUriPathParamsSTRINGTerminalRuleCall_4_1_1_0()); 
+			newLeafNode(lv_uriPathParams_6_0, grammarAccess.getXplatformAccess().getUriPathParamsIDTerminalRuleCall_4_1_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -143,7 +143,7 @@ ruleXplatform returns [EObject current=null]
        			$current, 
        			"uriPathParams",
         		lv_uriPathParams_6_0, 
-        		"STRING");
+        		"ID");
 	    }
 
 )
@@ -151,9 +151,9 @@ ruleXplatform returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getXplatformAccess().getRightCurlyBracketKeyword_4_1_2());
     }
-)*(this_STRING_8=RULE_STRING
+)*(this_ANY_OTHER_8=RULE_ANY_OTHER
     { 
-    newLeafNode(this_STRING_8, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_2()); 
+    newLeafNode(this_ANY_OTHER_8, grammarAccess.getXplatformAccess().getANY_OTHERTerminalRuleCall_4_2()); 
     }
 )?)+(	otherlv_9='with' 
     {
@@ -365,9 +365,9 @@ ruleXplatformHeader returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesXplatformHeaderKeyValueParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesXplatformHeaderKeyValuePairParserRuleCall_2_0()); 
 	    }
-		lv_headerKeyValues_2_0=ruleXplatformHeaderKeyValue		{
+		lv_headerKeyValues_2_0=ruleXplatformHeaderKeyValuePair		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformHeaderRule());
 	        }
@@ -375,21 +375,21 @@ ruleXplatformHeader returns [EObject current=null]
        			$current, 
        			"headerKeyValues",
         		lv_headerKeyValues_2_0, 
-        		"XplatformHeaderKeyValue");
+        		"XplatformHeaderKeyValuePair");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?(	otherlv_3=',' 
+)(	otherlv_3=',' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getXplatformHeaderAccess().getCommaKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesXplatformHeaderKeyValueParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesXplatformHeaderKeyValuePairParserRuleCall_3_1_0()); 
 	    }
-		lv_headerKeyValues_4_0=ruleXplatformHeaderKeyValue		{
+		lv_headerKeyValues_4_0=ruleXplatformHeaderKeyValuePair		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformHeaderRule());
 	        }
@@ -397,7 +397,7 @@ ruleXplatformHeader returns [EObject current=null]
        			$current, 
        			"headerKeyValues",
         		lv_headerKeyValues_4_0, 
-        		"XplatformHeaderKeyValue");
+        		"XplatformHeaderKeyValuePair");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -421,80 +421,52 @@ ruleXplatformHeader returns [EObject current=null]
 
 
 
-// Entry rule entryRuleXplatformHeaderKeyValue
-entryRuleXplatformHeaderKeyValue returns [EObject current=null] 
+// Entry rule entryRuleXplatformHeaderKeyValuePair
+entryRuleXplatformHeaderKeyValuePair returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getXplatformHeaderKeyValueRule()); }
-	 iv_ruleXplatformHeaderKeyValue=ruleXplatformHeaderKeyValue 
-	 { $current=$iv_ruleXplatformHeaderKeyValue.current; } 
+	{ newCompositeNode(grammarAccess.getXplatformHeaderKeyValuePairRule()); }
+	 iv_ruleXplatformHeaderKeyValuePair=ruleXplatformHeaderKeyValuePair 
+	 { $current=$iv_ruleXplatformHeaderKeyValuePair.current; } 
 	 EOF 
 ;
 
-// Rule XplatformHeaderKeyValue
-ruleXplatformHeaderKeyValue returns [EObject current=null] 
+// Rule XplatformHeaderKeyValuePair
+ruleXplatformHeaderKeyValuePair returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
-		lv_key_0_0=RULE_LITERAL_STRING
+		lv_key_0_0=RULE_STRING
 		{
-			newLeafNode(lv_key_0_0, grammarAccess.getXplatformHeaderKeyValueAccess().getKeyLITERAL_STRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_key_0_0, grammarAccess.getXplatformHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXplatformHeaderKeyValueRule());
+	            $current = createModelElement(grammarAccess.getXplatformHeaderKeyValuePairRule());
 	        }
        		setWithLastConsumed(
        			$current, 
        			"key",
         		lv_key_0_0, 
-        		"LITERAL_STRING");
+        		"STRING");
 	    }
 
 )
 )	otherlv_1='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getXplatformHeaderKeyValueAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getXplatformHeaderKeyValuePairAccess().getEqualsSignKeyword_1());
     }
-((
-(
-		lv_value_2_0=RULE_LITERAL_STRING
-		{
-			newLeafNode(lv_value_2_0, grammarAccess.getXplatformHeaderKeyValueAccess().getValueLITERAL_STRINGTerminalRuleCall_2_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXplatformHeaderKeyValueRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"value",
-        		lv_value_2_0, 
-        		"LITERAL_STRING");
-	    }
+(this_STRING_2=RULE_STRING
+    { 
+    newLeafNode(this_STRING_2, grammarAccess.getXplatformHeaderKeyValuePairAccess().getSTRINGTerminalRuleCall_2_0()); 
+    }
 
-)
-)
-    |(
-(
-		lv_value_3_0=RULE_XPLATFORM_HEADER_PARAMETER
-		{
-			newLeafNode(lv_value_3_0, grammarAccess.getXplatformHeaderKeyValueAccess().getValueXPLATFORM_HEADER_PARAMETERTerminalRuleCall_2_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXplatformHeaderKeyValueRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"value",
-        		lv_value_3_0, 
-        		"XPLATFORM_HEADER_PARAMETER");
-	    }
-
-)
-)))
+    |this_XPLATFORM_HEADER_PARAMETER_3=RULE_XPLATFORM_HEADER_PARAMETER
+    { 
+    newLeafNode(this_XPLATFORM_HEADER_PARAMETER_3, grammarAccess.getXplatformHeaderKeyValuePairAccess().getXPLATFORM_HEADER_PARAMETERTerminalRuleCall_2_1()); 
+    }
+))
 ;
 
 
@@ -565,9 +537,9 @@ ruleJsonType returns [EObject current=null]
     newLeafNode(this_JSON_LITERAL_BOOLEAN_0, grammarAccess.getJsonTypeAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_0()); 
     }
 
-    |this_LITERAL_STRING_1=RULE_LITERAL_STRING
+    |this_STRING_1=RULE_STRING
     { 
-    newLeafNode(this_LITERAL_STRING_1, grammarAccess.getJsonTypeAccess().getLITERAL_STRINGTerminalRuleCall_1()); 
+    newLeafNode(this_STRING_1, grammarAccess.getJsonTypeAccess().getSTRINGTerminalRuleCall_1()); 
     }
 
     |this_JSON_LITERAL_NUMBER_2=RULE_JSON_LITERAL_NUMBER
@@ -705,9 +677,9 @@ ruleJsonKeyValuePair returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_key_0_0=RULE_LITERAL_STRING
+		lv_key_0_0=RULE_STRING
 		{
-			newLeafNode(lv_key_0_0, grammarAccess.getJsonKeyValuePairAccess().getKeyLITERAL_STRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_key_0_0, grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -717,7 +689,7 @@ ruleJsonKeyValuePair returns [EObject current=null]
        			$current, 
        			"key",
         		lv_key_0_0, 
-        		"LITERAL_STRING");
+        		"STRING");
 	    }
 
 )
@@ -805,7 +777,7 @@ ruleJsonObject returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_3=',' 
+))(	otherlv_3=',' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0());
     }
@@ -924,9 +896,9 @@ ruleJsonMetaKeyValuePair returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_metaKey_0_0=RULE_LITERAL_STRING
+		lv_metaKey_0_0=RULE_STRING
 		{
-			newLeafNode(lv_metaKey_0_0, grammarAccess.getJsonMetaKeyValuePairAccess().getMetaKeyLITERAL_STRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_metaKey_0_0, grammarAccess.getJsonMetaKeyValuePairAccess().getMetaKeySTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -936,7 +908,7 @@ ruleJsonMetaKeyValuePair returns [EObject current=null]
        			$current, 
        			"metaKey",
         		lv_metaKey_0_0, 
-        		"LITERAL_STRING");
+        		"STRING");
 	    }
 
 )
@@ -969,7 +941,7 @@ ruleJsonMetaKeyValuePair returns [EObject current=null]
 
 
 
-RULE_XPLATFORM_HEADER_PARAMETER : '{' RULE_STRING '}';
+RULE_XPLATFORM_HEADER_PARAMETER : '{' RULE_ID '}';
 
 RULE_RESTFUL_METHODS : ('PUT'|'POST'|'GET'|'DELETE');
 
@@ -978,12 +950,6 @@ RULE_JSON_LITERAL_NULL : 'null';
 RULE_JSON_LITERAL_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
 
 RULE_JSON_LITERAL_BOOLEAN : ('true'|'false');
-
-RULE_LITERAL_STRING : (RULE_SINGLE_QUOTED_STRING|RULE_DOUBLE_QUOTED_STRING);
-
-RULE_SINGLE_QUOTED_STRING : '\'' RULE_STRING '\'';
-
-RULE_DOUBLE_QUOTED_STRING : '"' RULE_STRING '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

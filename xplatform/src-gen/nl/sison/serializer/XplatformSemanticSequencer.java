@@ -10,7 +10,7 @@ import nl.sison.xplatform.JsonMetaKeyValuePair;
 import nl.sison.xplatform.JsonObject;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformHeader;
-import nl.sison.xplatform.XplatformHeaderKeyValue;
+import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
 import org.eclipse.emf.ecore.EObject;
@@ -79,9 +79,9 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
-			case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE:
-				if(context == grammarAccess.getXplatformHeaderKeyValueRule()) {
-					sequence_XplatformHeaderKeyValue(context, (XplatformHeaderKeyValue) semanticObject); 
+			case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR:
+				if(context == grammarAccess.getXplatformHeaderKeyValuePairRule()) {
+					sequence_XplatformHeaderKeyValuePair(context, (XplatformHeaderKeyValuePair) semanticObject); 
 					return; 
 				}
 				else break;
@@ -106,7 +106,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (key=LITERAL_STRING value=JsonType)
+	 *     (key=STRING value=JsonType)
 	 */
 	protected void sequence_JsonKeyValuePair(EObject context, JsonKeyValuePair semanticObject) {
 		if(errorAcceptor != null) {
@@ -117,7 +117,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getKeyLITERAL_STRINGTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
 		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getValueJsonTypeParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -141,7 +141,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (metaKey=LITERAL_STRING metaValue=JsonMetaType)
+	 *     (metaKey=STRING metaValue=JsonMetaType)
 	 */
 	protected void sequence_JsonMetaKeyValuePair(EObject context, JsonMetaKeyValuePair semanticObject) {
 		if(errorAcceptor != null) {
@@ -152,7 +152,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonMetaKeyValuePairAccess().getMetaKeyLITERAL_STRINGTerminalRuleCall_0_0(), semanticObject.getMetaKey());
+		feeder.accept(grammarAccess.getJsonMetaKeyValuePairAccess().getMetaKeySTRINGTerminalRuleCall_0_0(), semanticObject.getMetaKey());
 		feeder.accept(grammarAccess.getJsonMetaKeyValuePairAccess().getMetaValueJsonMetaTypeParserRuleCall_2_0(), semanticObject.getMetaValue());
 		feeder.finish();
 	}
@@ -161,7 +161,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         (keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair)? 
+	 *         (keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair) 
 	 *         (keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair)*
 	 *     )
 	 */
@@ -172,16 +172,23 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (key=LITERAL_STRING (value=LITERAL_STRING | value=XPLATFORM_HEADER_PARAMETER))
+	 *     key=STRING
 	 */
-	protected void sequence_XplatformHeaderKeyValue(EObject context, XplatformHeaderKeyValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_XplatformHeaderKeyValuePair(EObject context, XplatformHeaderKeyValuePair semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXplatformHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (headerKeyValues+=XplatformHeaderKeyValue? headerKeyValues+=XplatformHeaderKeyValue*)
+	 *     (headerKeyValues+=XplatformHeaderKeyValuePair headerKeyValues+=XplatformHeaderKeyValuePair*)
 	 */
 	protected void sequence_XplatformHeader(EObject context, XplatformHeader semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -200,9 +207,9 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         callName=STRING 
+	 *         name=ID 
 	 *         method=RESTFUL_METHODS 
-	 *         uriPathParams+=STRING* 
+	 *         uriPathParams+=ID* 
 	 *         (requestHeaders=XplatformHeader responseHeaders=XplatformHeader?)? 
 	 *         (jsonToClient=XplatformJson jsonToServer=XplatformJson?)?
 	 *     )

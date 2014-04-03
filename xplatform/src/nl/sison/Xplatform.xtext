@@ -3,7 +3,7 @@ grammar nl.sison.Xplatform with org.eclipse.xtext.common.Terminals
 generate xplatform "http://www.sison.nl/Xplatform"
 
 Xplatform:
-	'call' callName=STRING method=RESTFUL_METHODS 'from' ((STRING)?('{' uriPathParams+=STRING '}')*(STRING)?)+
+	'call' name=ID method=RESTFUL_METHODS 'from' (ANY_OTHER?('{' uriPathParams+=ID '}')*ANY_OTHER?)+
 	('with' 'headers' 'from' 'request' requestHeaders=XplatformHeader
 		('and' 'response' responseHeaders=XplatformHeader)?
 	)?
@@ -22,16 +22,17 @@ XplatformJson:
 // TODO refactor
 XplatformHeader:
 	"'''" 
-	'{' (headerKeyValues+=XplatformHeaderKeyValue)? (',' headerKeyValues+=XplatformHeaderKeyValue (',')?)* '}'
+	'{' (headerKeyValues+=XplatformHeaderKeyValuePair)
+		(',' headerKeyValues+=XplatformHeaderKeyValuePair (',')? )* '}'
 	"'''"
 ;
 
-XplatformHeaderKeyValue:
-	(key=LITERAL_STRING) '=' (value=LITERAL_STRING | value=XPLATFORM_HEADER_PARAMETER)	
+XplatformHeaderKeyValuePair:
+	(key=STRING) '=' (STRING | XPLATFORM_HEADER_PARAMETER)	
 ;
 
 terminal XPLATFORM_HEADER_PARAMETER:
-	'{' STRING '}'
+	'{' ID '}'
 ;
 
 terminal RESTFUL_METHODS:
@@ -47,24 +48,12 @@ terminal JSON_LITERAL_BOOLEAN:
 	'true' | 'false'
 ;
 
-terminal LITERAL_STRING:
-	SINGLE_QUOTED_STRING | DOUBLE_QUOTED_STRING
-;
-
-terminal SINGLE_QUOTED_STRING:
-	 "'"STRING"'"
-;
-
-terminal DOUBLE_QUOTED_STRING:
-	'"'STRING'"'
-;
-
 JsonMetaType:
 	'boolean' | 'number' | 'string' | JsonMetaArray
 ;
 
 JsonType:
-	JSON_LITERAL_BOOLEAN | LITERAL_STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL | JsonArray | JsonMetaType | JsonObject 
+	JSON_LITERAL_BOOLEAN | STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL | JsonArray | JsonMetaType | JsonObject 
 ;
 
 JsonArray:
@@ -72,7 +61,7 @@ JsonArray:
 ;
 
 JsonKeyValuePair:
-	key=LITERAL_STRING ':' value=JsonType
+	key=STRING ':' value=JsonType
 ;
 
 /**
@@ -80,7 +69,7 @@ JsonKeyValuePair:
  */
 JsonObject:
 	'{' 
-		(keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair)?
+		(keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair)
 			(
 				',' (keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair) (',')?
 			)* 
@@ -92,5 +81,5 @@ JsonMetaArray:
 ;
 
 JsonMetaKeyValuePair:
-	metaKey=LITERAL_STRING ':' metaValue=JsonMetaType 
+	metaKey=STRING ':' metaValue=JsonMetaType 
 ;

@@ -5,7 +5,7 @@ package nl.sison.xplatform.impl;
 import java.util.Collection;
 
 import nl.sison.xplatform.XplatformHeader;
-import nl.sison.xplatform.XplatformHeaderKeyValue;
+import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformPackage;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -43,7 +43,7 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected EList<XplatformHeaderKeyValue> headerKeyValues;
+  protected EList<XplatformHeaderKeyValuePair> headerKeyValues;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XplatformHeaderKeyValue> getHeaderKeyValues()
+  public EList<XplatformHeaderKeyValuePair> getHeaderKeyValues()
   {
     if (headerKeyValues == null)
     {
-      headerKeyValues = new EObjectContainmentEList<XplatformHeaderKeyValue>(XplatformHeaderKeyValue.class, this, XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES);
+      headerKeyValues = new EObjectContainmentEList<XplatformHeaderKeyValuePair>(XplatformHeaderKeyValuePair.class, this, XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES);
     }
     return headerKeyValues;
   }
@@ -125,7 +125,7 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
     {
       case XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES:
         getHeaderKeyValues().clear();
-        getHeaderKeyValues().addAll((Collection<? extends XplatformHeaderKeyValue>)newValue);
+        getHeaderKeyValues().addAll((Collection<? extends XplatformHeaderKeyValuePair>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

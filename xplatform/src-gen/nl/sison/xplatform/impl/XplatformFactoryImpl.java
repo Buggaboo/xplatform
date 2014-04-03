@@ -67,7 +67,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.XPLATFORM: return createXplatform();
       case XplatformPackage.XPLATFORM_JSON: return createXplatformJson();
       case XplatformPackage.XPLATFORM_HEADER: return createXplatformHeader();
-      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE: return createXplatformHeaderKeyValue();
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR: return createXplatformHeaderKeyValuePair();
       case XplatformPackage.JSON_META_TYPE: return createJsonMetaType();
       case XplatformPackage.JSON_TYPE: return createJsonType();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
@@ -118,10 +118,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public XplatformHeaderKeyValue createXplatformHeaderKeyValue()
+  public XplatformHeaderKeyValuePair createXplatformHeaderKeyValuePair()
   {
-    XplatformHeaderKeyValueImpl xplatformHeaderKeyValue = new XplatformHeaderKeyValueImpl();
-    return xplatformHeaderKeyValue;
+    XplatformHeaderKeyValuePairImpl xplatformHeaderKeyValuePair = new XplatformHeaderKeyValuePairImpl();
+    return xplatformHeaderKeyValuePair;
   }
 
   /**

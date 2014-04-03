@@ -38,7 +38,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getXplatformJsonAccess().getAlternatives(), "rule__XplatformJson__Alternatives");
-					put(grammarAccess.getXplatformHeaderKeyValueAccess().getAlternatives_2(), "rule__XplatformHeaderKeyValue__Alternatives_2");
+					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getAlternatives_2(), "rule__XplatformHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getJsonMetaTypeAccess().getAlternatives(), "rule__JsonMetaType__Alternatives");
 					put(grammarAccess.getJsonTypeAccess().getAlternatives(), "rule__JsonType__Alternatives");
 					put(grammarAccess.getJsonObjectAccess().getAlternatives_1(), "rule__JsonObject__Alternatives_1");
@@ -54,7 +54,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXplatformJsonAccess().getGroup_1(), "rule__XplatformJson__Group_1__0");
 					put(grammarAccess.getXplatformHeaderAccess().getGroup(), "rule__XplatformHeader__Group__0");
 					put(grammarAccess.getXplatformHeaderAccess().getGroup_3(), "rule__XplatformHeader__Group_3__0");
-					put(grammarAccess.getXplatformHeaderKeyValueAccess().getGroup(), "rule__XplatformHeaderKeyValue__Group__0");
+					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getGroup(), "rule__XplatformHeaderKeyValuePair__Group__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup(), "rule__JsonArray__Group__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup_2(), "rule__JsonArray__Group_2__0");
 					put(grammarAccess.getJsonKeyValuePairAccess().getGroup(), "rule__JsonKeyValuePair__Group__0");
@@ -62,7 +62,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");
 					put(grammarAccess.getJsonMetaArrayAccess().getGroup(), "rule__JsonMetaArray__Group__0");
 					put(grammarAccess.getJsonMetaKeyValuePairAccess().getGroup(), "rule__JsonMetaKeyValuePair__Group__0");
-					put(grammarAccess.getXplatformAccess().getCallNameAssignment_1(), "rule__Xplatform__CallNameAssignment_1");
+					put(grammarAccess.getXplatformAccess().getNameAssignment_1(), "rule__Xplatform__NameAssignment_1");
 					put(grammarAccess.getXplatformAccess().getMethodAssignment_2(), "rule__Xplatform__MethodAssignment_2");
 					put(grammarAccess.getXplatformAccess().getUriPathParamsAssignment_4_1_1(), "rule__Xplatform__UriPathParamsAssignment_4_1_1");
 					put(grammarAccess.getXplatformAccess().getRequestHeadersAssignment_5_4(), "rule__Xplatform__RequestHeadersAssignment_5_4");
@@ -73,9 +73,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXplatformJsonAccess().getMetaTypeAssignment_1_0(), "rule__XplatformJson__MetaTypeAssignment_1_0");
 					put(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesAssignment_2(), "rule__XplatformHeader__HeaderKeyValuesAssignment_2");
 					put(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesAssignment_3_1(), "rule__XplatformHeader__HeaderKeyValuesAssignment_3_1");
-					put(grammarAccess.getXplatformHeaderKeyValueAccess().getKeyAssignment_0(), "rule__XplatformHeaderKeyValue__KeyAssignment_0");
-					put(grammarAccess.getXplatformHeaderKeyValueAccess().getValueAssignment_2_0(), "rule__XplatformHeaderKeyValue__ValueAssignment_2_0");
-					put(grammarAccess.getXplatformHeaderKeyValueAccess().getValueAssignment_2_1(), "rule__XplatformHeaderKeyValue__ValueAssignment_2_1");
+					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getKeyAssignment_0(), "rule__XplatformHeaderKeyValuePair__KeyAssignment_0");
 					put(grammarAccess.getJsonArrayAccess().getTypeAssignment_1(), "rule__JsonArray__TypeAssignment_1");
 					put(grammarAccess.getJsonArrayAccess().getTypeAssignment_2_1(), "rule__JsonArray__TypeAssignment_2_1");
 					put(grammarAccess.getJsonKeyValuePairAccess().getKeyAssignment_0(), "rule__JsonKeyValuePair__KeyAssignment_0");

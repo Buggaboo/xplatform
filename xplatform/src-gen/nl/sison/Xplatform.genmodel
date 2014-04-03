@@ -8,7 +8,7 @@
   <genPackages prefix="Xplatform" basePackage="nl.sison" disposableProviderFactory="true"
       ecorePackage="Xplatform.ecore#/">
     <genClasses ecoreClass="Xplatform.ecore#//Xplatform">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/callName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/method"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/uriPathParams"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/requestHeaders"/>
@@ -23,9 +23,8 @@
     <genClasses ecoreClass="Xplatform.ecore#//XplatformHeader">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformHeader/headerKeyValues"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//XplatformHeaderKeyValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValue/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValue/value"/>
+    <genClasses ecoreClass="Xplatform.ecore#//XplatformHeaderKeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValuePair/key"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonMetaType"/>
     <genClasses ecoreClass="Xplatform.ecore#//JsonType"/>

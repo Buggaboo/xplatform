@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.xplatform.Xplatform#getCallName <em>Call Name</em>}</li>
+ *   <li>{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getMethod <em>Method</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getUriPathParams <em>Uri Path Params</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getRequestHeaders <em>Request Headers</em>}</li>
@@ -31,30 +31,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Xplatform extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Call Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Call Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Call Name</em>' attribute.
-   * @see #setCallName(String)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_CallName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Name()
    * @model
    * @generated
    */
-  String getCallName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getCallName <em>Call Name</em>}' attribute.
+   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Call Name</em>' attribute.
-   * @see #getCallName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setCallName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Method</b></em>' attribute.

@@ -26,7 +26,7 @@ public interface XplatformHeader extends EObject
 {
   /**
    * Returns the value of the '<em><b>Header Key Values</b></em>' containment reference list.
-   * The list contents are of type {@link nl.sison.xplatform.XplatformHeaderKeyValue}.
+   * The list contents are of type {@link nl.sison.xplatform.XplatformHeaderKeyValuePair}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Header Key Values</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface XplatformHeader extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<XplatformHeaderKeyValue> getHeaderKeyValues();
+  EList<XplatformHeaderKeyValuePair> getHeaderKeyValues();
 
 } // XplatformHeader

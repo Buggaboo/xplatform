@@ -93,10 +93,10 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE:
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR:
       {
-        XplatformHeaderKeyValue xplatformHeaderKeyValue = (XplatformHeaderKeyValue)theEObject;
-        T result = caseXplatformHeaderKeyValue(xplatformHeaderKeyValue);
+        XplatformHeaderKeyValuePair xplatformHeaderKeyValuePair = (XplatformHeaderKeyValuePair)theEObject;
+        T result = caseXplatformHeaderKeyValuePair(xplatformHeaderKeyValuePair);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -207,17 +207,17 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Header Key Value</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Header Key Value Pair</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Header Key Value</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Header Key Value Pair</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXplatformHeaderKeyValue(XplatformHeaderKeyValue object)
+  public T caseXplatformHeaderKeyValuePair(XplatformHeaderKeyValuePair object)
   {
     return null;
   }

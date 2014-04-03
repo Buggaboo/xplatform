@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getCallName <em>Call Name</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getUriPathParams <em>Uri Path Params</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getRequestHeaders <em>Request Headers</em>}</li>
@@ -44,24 +44,24 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplatform
 {
   /**
-   * The default value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCallName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String CALL_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCallName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String callName = CALL_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMethod() <em>Method</em>}' attribute.
@@ -159,9 +159,9 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCallName()
+  public String getName()
   {
-    return callName;
+    return name;
   }
 
   /**
@@ -169,12 +169,12 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCallName(String newCallName)
+  public void setName(String newName)
   {
-    String oldCallName = callName;
-    callName = newCallName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM__CALL_NAME, oldCallName, callName));
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM__NAME, oldName, name));
   }
 
   /**
@@ -438,8 +438,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM__CALL_NAME:
-        return getCallName();
+      case XplatformPackage.XPLATFORM__NAME:
+        return getName();
       case XplatformPackage.XPLATFORM__METHOD:
         return getMethod();
       case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
@@ -467,8 +467,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM__CALL_NAME:
-        setCallName((String)newValue);
+      case XplatformPackage.XPLATFORM__NAME:
+        setName((String)newValue);
         return;
       case XplatformPackage.XPLATFORM__METHOD:
         setMethod((String)newValue);
@@ -503,8 +503,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM__CALL_NAME:
-        setCallName(CALL_NAME_EDEFAULT);
+      case XplatformPackage.XPLATFORM__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case XplatformPackage.XPLATFORM__METHOD:
         setMethod(METHOD_EDEFAULT);
@@ -538,8 +538,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM__CALL_NAME:
-        return CALL_NAME_EDEFAULT == null ? callName != null : !CALL_NAME_EDEFAULT.equals(callName);
+      case XplatformPackage.XPLATFORM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XplatformPackage.XPLATFORM__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
       case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
@@ -567,8 +567,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (callName: ");
-    result.append(callName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", method: ");
     result.append(method);
     result.append(", uriPathParams: ");

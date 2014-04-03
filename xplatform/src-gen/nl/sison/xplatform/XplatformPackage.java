@@ -67,13 +67,13 @@ public interface XplatformPackage extends EPackage
   int XPLATFORM = 0;
 
   /**
-   * The feature id for the '<em><b>Call Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM__CALL_NAME = 0;
+  int XPLATFORM__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' attribute.
@@ -204,14 +204,14 @@ public interface XplatformPackage extends EPackage
   int XPLATFORM_HEADER_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.XplatformHeaderKeyValueImpl <em>Header Key Value</em>}' class.
+   * The meta object id for the '{@link nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl <em>Header Key Value Pair</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.XplatformHeaderKeyValueImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeaderKeyValue()
+   * @see nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeaderKeyValuePair()
    * @generated
    */
-  int XPLATFORM_HEADER_KEY_VALUE = 3;
+  int XPLATFORM_HEADER_KEY_VALUE_PAIR = 3;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -220,25 +220,16 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_HEADER_KEY_VALUE__KEY = 0;
+  int XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The number of structural features of the '<em>Header Key Value Pair</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM_HEADER_KEY_VALUE__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Header Key Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XPLATFORM_HEADER_KEY_VALUE_FEATURE_COUNT = 2;
+  int XPLATFORM_HEADER_KEY_VALUE_PAIR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonTypeImpl <em>Json Type</em>}' class.
@@ -457,15 +448,15 @@ public interface XplatformPackage extends EPackage
   EClass getXplatform();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.Xplatform#getCallName <em>Call Name</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Call Name</em>'.
-   * @see nl.sison.xplatform.Xplatform#getCallName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.xplatform.Xplatform#getName()
    * @see #getXplatform()
    * @generated
    */
-  EAttribute getXplatform_CallName();
+  EAttribute getXplatform_Name();
 
   /**
    * Returns the meta object for the attribute '{@link nl.sison.xplatform.Xplatform#getMethod <em>Method</em>}'.
@@ -587,36 +578,25 @@ public interface XplatformPackage extends EPackage
   EReference getXplatformHeader_HeaderKeyValues();
 
   /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.XplatformHeaderKeyValue <em>Header Key Value</em>}'.
+   * Returns the meta object for class '{@link nl.sison.xplatform.XplatformHeaderKeyValuePair <em>Header Key Value Pair</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Header Key Value</em>'.
-   * @see nl.sison.xplatform.XplatformHeaderKeyValue
+   * @return the meta object for class '<em>Header Key Value Pair</em>'.
+   * @see nl.sison.xplatform.XplatformHeaderKeyValuePair
    * @generated
    */
-  EClass getXplatformHeaderKeyValue();
+  EClass getXplatformHeaderKeyValuePair();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.XplatformHeaderKeyValue#getKey <em>Key</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.XplatformHeaderKeyValuePair#getKey <em>Key</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Key</em>'.
-   * @see nl.sison.xplatform.XplatformHeaderKeyValue#getKey()
-   * @see #getXplatformHeaderKeyValue()
+   * @see nl.sison.xplatform.XplatformHeaderKeyValuePair#getKey()
+   * @see #getXplatformHeaderKeyValuePair()
    * @generated
    */
-  EAttribute getXplatformHeaderKeyValue_Key();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.XplatformHeaderKeyValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see nl.sison.xplatform.XplatformHeaderKeyValue#getValue()
-   * @see #getXplatformHeaderKeyValue()
-   * @generated
-   */
-  EAttribute getXplatformHeaderKeyValue_Value();
+  EAttribute getXplatformHeaderKeyValuePair_Key();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.JsonMetaType <em>Json Meta Type</em>}'.
@@ -810,12 +790,12 @@ public interface XplatformPackage extends EPackage
     EClass XPLATFORM = eINSTANCE.getXplatform();
 
     /**
-     * The meta object literal for the '<em><b>Call Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XPLATFORM__CALL_NAME = eINSTANCE.getXplatform_CallName();
+    EAttribute XPLATFORM__NAME = eINSTANCE.getXplatform_Name();
 
     /**
      * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
@@ -910,14 +890,14 @@ public interface XplatformPackage extends EPackage
     EReference XPLATFORM_HEADER__HEADER_KEY_VALUES = eINSTANCE.getXplatformHeader_HeaderKeyValues();
 
     /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.XplatformHeaderKeyValueImpl <em>Header Key Value</em>}' class.
+     * The meta object literal for the '{@link nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl <em>Header Key Value Pair</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.XplatformHeaderKeyValueImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeaderKeyValue()
+     * @see nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl
+     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeaderKeyValuePair()
      * @generated
      */
-    EClass XPLATFORM_HEADER_KEY_VALUE = eINSTANCE.getXplatformHeaderKeyValue();
+    EClass XPLATFORM_HEADER_KEY_VALUE_PAIR = eINSTANCE.getXplatformHeaderKeyValuePair();
 
     /**
      * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -925,15 +905,7 @@ public interface XplatformPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute XPLATFORM_HEADER_KEY_VALUE__KEY = eINSTANCE.getXplatformHeaderKeyValue_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute XPLATFORM_HEADER_KEY_VALUE__VALUE = eINSTANCE.getXplatformHeaderKeyValue_Value();
+    EAttribute XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY = eINSTANCE.getXplatformHeaderKeyValuePair_Key();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonMetaTypeImpl <em>Json Meta Type</em>}' class.

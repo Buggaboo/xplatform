@@ -90,9 +90,9 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createXplatformHeaderAdapter();
       }
       @Override
-      public Adapter caseXplatformHeaderKeyValue(XplatformHeaderKeyValue object)
+      public Adapter caseXplatformHeaderKeyValuePair(XplatformHeaderKeyValuePair object)
       {
-        return createXplatformHeaderKeyValueAdapter();
+        return createXplatformHeaderKeyValuePairAdapter();
       }
       @Override
       public Adapter caseJsonMetaType(JsonMetaType object)
@@ -197,16 +197,16 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformHeaderKeyValue <em>Header Key Value</em>}'.
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformHeaderKeyValuePair <em>Header Key Value Pair</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see nl.sison.xplatform.XplatformHeaderKeyValue
+   * @see nl.sison.xplatform.XplatformHeaderKeyValuePair
    * @generated
    */
-  public Adapter createXplatformHeaderKeyValueAdapter()
+  public Adapter createXplatformHeaderKeyValuePairAdapter()
   {
     return null;
   }
