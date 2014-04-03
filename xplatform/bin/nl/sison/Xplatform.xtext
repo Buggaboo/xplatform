@@ -48,7 +48,15 @@ terminal JSON_LITERAL_BOOLEAN:
 ;
 
 terminal LITERAL_STRING:
-	'"'STRING'"' | '\''STRING'\''
+	SINGLE_QUOTED_STRING | DOUBLE_QUOTED_STRING
+;
+
+terminal SINGLE_QUOTED_STRING:
+	 "'"STRING"'"
+;
+
+terminal DOUBLE_QUOTED_STRING:
+	'"'STRING'"'
 ;
 
 JsonMetaType:
@@ -56,7 +64,7 @@ JsonMetaType:
 ;
 
 JsonType:
-	JSON_LITERAL_BOOLEAN | LITERAL_STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL | JsonObject | JsonArray | JsonMetaType 
+	JSON_LITERAL_BOOLEAN | LITERAL_STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL | JsonArray | JsonMetaType | JsonObject 
 ;
 
 JsonArray:

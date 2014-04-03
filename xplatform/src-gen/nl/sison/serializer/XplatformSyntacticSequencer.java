@@ -23,7 +23,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_JsonObject_CommaKeyword_2_2_q;
 	protected AbstractElementAlias match_JsonType_JSON_LITERAL_BOOLEANTerminalRuleCall_0_or_JSON_LITERAL_NULLTerminalRuleCall_3_or_JSON_LITERAL_NUMBERTerminalRuleCall_2_or_LITERAL_STRINGTerminalRuleCall_1;
 	protected AbstractElementAlias match_XplatformHeader_CommaKeyword_3_2_q;
-	protected AbstractElementAlias match_Xplatform___STRINGTerminalRuleCall_3_0_or_STRINGTerminalRuleCall_3_2__a;
+	protected AbstractElementAlias match_Xplatform___STRINGTerminalRuleCall_4_0_or_STRINGTerminalRuleCall_4_2__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -33,7 +33,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_JsonObject_CommaKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_2());
 		match_JsonType_JSON_LITERAL_BOOLEANTerminalRuleCall_0_or_JSON_LITERAL_NULLTerminalRuleCall_3_or_JSON_LITERAL_NUMBERTerminalRuleCall_2_or_LITERAL_STRINGTerminalRuleCall_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getJsonTypeAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_0()), new TokenAlias(false, false, grammarAccess.getJsonTypeAccess().getJSON_LITERAL_NULLTerminalRuleCall_3()), new TokenAlias(false, false, grammarAccess.getJsonTypeAccess().getJSON_LITERAL_NUMBERTerminalRuleCall_2()), new TokenAlias(false, false, grammarAccess.getJsonTypeAccess().getLITERAL_STRINGTerminalRuleCall_1()));
 		match_XplatformHeader_CommaKeyword_3_2_q = new TokenAlias(false, true, grammarAccess.getXplatformHeaderAccess().getCommaKeyword_3_2());
-		match_Xplatform___STRINGTerminalRuleCall_3_0_or_STRINGTerminalRuleCall_3_2__a = new AlternativeAlias(true, true, new TokenAlias(false, false, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_3_2()));
+		match_Xplatform___STRINGTerminalRuleCall_4_0_or_STRINGTerminalRuleCall_4_2__a = new AlternativeAlias(true, true, new TokenAlias(false, false, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_0()), new TokenAlias(false, false, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_2()));
 	}
 	
 	@Override
@@ -83,13 +83,13 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal LITERAL_STRING:
-	 * 	'"'STRING'"' | '\''STRING'\''
+	 * 	SINGLE_QUOTED_STRING | DOUBLE_QUOTED_STRING
 	 * ;
 	 */
 	protected String getLITERAL_STRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "\"\"\"\"";
+		return "\'\"\"\'";
 	}
 	
 	/**
@@ -120,8 +120,8 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_JsonType_JSON_LITERAL_BOOLEANTerminalRuleCall_0_or_JSON_LITERAL_NULLTerminalRuleCall_3_or_JSON_LITERAL_NUMBERTerminalRuleCall_2_or_LITERAL_STRINGTerminalRuleCall_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XplatformHeader_CommaKeyword_3_2_q.equals(syntax))
 				emit_XplatformHeader_CommaKeyword_3_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Xplatform___STRINGTerminalRuleCall_3_0_or_STRINGTerminalRuleCall_3_2__a.equals(syntax))
-				emit_Xplatform___STRINGTerminalRuleCall_3_0_or_STRINGTerminalRuleCall_3_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Xplatform___STRINGTerminalRuleCall_4_0_or_STRINGTerminalRuleCall_4_2__a.equals(syntax))
+				emit_Xplatform___STRINGTerminalRuleCall_4_0_or_STRINGTerminalRuleCall_4_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -136,7 +136,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'number' | 'boolean' | 'string'
+	 *     'number' | 'string' | 'boolean'
 	 */
 	protected void emit_JsonMetaType_BooleanKeyword_0_or_NumberKeyword_1_or_StringKeyword_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -152,7 +152,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     JSON_LITERAL_NULL | LITERAL_STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_BOOLEAN
+	 *     LITERAL_STRING | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL
 	 */
 	protected void emit_JsonType_JSON_LITERAL_BOOLEANTerminalRuleCall_0_or_JSON_LITERAL_NULLTerminalRuleCall_3_or_JSON_LITERAL_NUMBERTerminalRuleCall_2_or_LITERAL_STRINGTerminalRuleCall_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -170,7 +170,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     (STRING | STRING)*
 	 */
-	protected void emit_Xplatform___STRINGTerminalRuleCall_3_0_or_STRINGTerminalRuleCall_3_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Xplatform___STRINGTerminalRuleCall_4_0_or_STRINGTerminalRuleCall_4_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -77,11 +77,15 @@ ruleXplatform returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='call' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getXplatformAccess().getCallKeyword_0());
+    }
 (
-		lv_callName_0_0=RULE_STRING
+(
+		lv_callName_1_0=RULE_STRING
 		{
-			newLeafNode(lv_callName_0_0, grammarAccess.getXplatformAccess().getCallNameSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_callName_1_0, grammarAccess.getXplatformAccess().getCallNameSTRINGTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -90,16 +94,16 @@ ruleXplatform returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"callName",
-        		lv_callName_0_0, 
+        		lv_callName_1_0, 
         		"STRING");
 	    }
 
 )
 )(
 (
-		lv_method_1_0=RULE_RESTFUL_METHODS
+		lv_method_2_0=RULE_RESTFUL_METHODS
 		{
-			newLeafNode(lv_method_1_0, grammarAccess.getXplatformAccess().getMethodRESTFUL_METHODSTerminalRuleCall_1_0()); 
+			newLeafNode(lv_method_2_0, grammarAccess.getXplatformAccess().getMethodRESTFUL_METHODSTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -108,28 +112,28 @@ ruleXplatform returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"method",
-        		lv_method_1_0, 
+        		lv_method_2_0, 
         		"RESTFUL_METHODS");
 	    }
 
 )
-)	otherlv_2='from' 
+)	otherlv_3='from' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getXplatformAccess().getFromKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getXplatformAccess().getFromKeyword_3());
     }
-((this_STRING_3=RULE_STRING
+((this_STRING_4=RULE_STRING
     { 
-    newLeafNode(this_STRING_3, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_3_0()); 
+    newLeafNode(this_STRING_4, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_0()); 
     }
-)?(	otherlv_4='{' 
+)?(	otherlv_5='{' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getXplatformAccess().getLeftCurlyBracketKeyword_3_1_0());
+    	newLeafNode(otherlv_5, grammarAccess.getXplatformAccess().getLeftCurlyBracketKeyword_4_1_0());
     }
 (
 (
-		lv_uriPathParams_5_0=RULE_STRING
+		lv_uriPathParams_6_0=RULE_STRING
 		{
-			newLeafNode(lv_uriPathParams_5_0, grammarAccess.getXplatformAccess().getUriPathParamsSTRINGTerminalRuleCall_3_1_1_0()); 
+			newLeafNode(lv_uriPathParams_6_0, grammarAccess.getXplatformAccess().getUriPathParamsSTRINGTerminalRuleCall_4_1_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -138,126 +142,126 @@ ruleXplatform returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"uriPathParams",
-        		lv_uriPathParams_5_0, 
+        		lv_uriPathParams_6_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_6='}' 
+)	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getXplatformAccess().getRightCurlyBracketKeyword_3_1_2());
+    	newLeafNode(otherlv_7, grammarAccess.getXplatformAccess().getRightCurlyBracketKeyword_4_1_2());
     }
-)*(this_STRING_7=RULE_STRING
+)*(this_STRING_8=RULE_STRING
     { 
-    newLeafNode(this_STRING_7, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_3_2()); 
+    newLeafNode(this_STRING_8, grammarAccess.getXplatformAccess().getSTRINGTerminalRuleCall_4_2()); 
     }
-)?)+(	otherlv_8='with' 
+)?)+(	otherlv_9='with' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getXplatformAccess().getWithKeyword_4_0());
+    	newLeafNode(otherlv_9, grammarAccess.getXplatformAccess().getWithKeyword_5_0());
     }
-	otherlv_9='headers' 
+	otherlv_10='headers' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getXplatformAccess().getHeadersKeyword_4_1());
+    	newLeafNode(otherlv_10, grammarAccess.getXplatformAccess().getHeadersKeyword_5_1());
     }
-	otherlv_10='from' 
+	otherlv_11='from' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getXplatformAccess().getFromKeyword_4_2());
+    	newLeafNode(otherlv_11, grammarAccess.getXplatformAccess().getFromKeyword_5_2());
     }
-	otherlv_11='request' 
+	otherlv_12='request' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getXplatformAccess().getRequestKeyword_4_3());
+    	newLeafNode(otherlv_12, grammarAccess.getXplatformAccess().getRequestKeyword_5_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getRequestHeadersXplatformHeaderParserRuleCall_4_4_0()); 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getRequestHeadersXplatformHeaderParserRuleCall_5_4_0()); 
 	    }
-		lv_requestHeaders_12_0=ruleXplatformHeader		{
+		lv_requestHeaders_13_0=ruleXplatformHeader		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
 	        }
        		set(
        			$current, 
        			"requestHeaders",
-        		lv_requestHeaders_12_0, 
+        		lv_requestHeaders_13_0, 
         		"XplatformHeader");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_13='and' 
+)(	otherlv_14='and' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getXplatformAccess().getAndKeyword_4_5_0());
+    	newLeafNode(otherlv_14, grammarAccess.getXplatformAccess().getAndKeyword_5_5_0());
     }
-	otherlv_14='response' 
+	otherlv_15='response' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getXplatformAccess().getResponseKeyword_4_5_1());
+    	newLeafNode(otherlv_15, grammarAccess.getXplatformAccess().getResponseKeyword_5_5_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getResponseHeadersXplatformHeaderParserRuleCall_4_5_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getResponseHeadersXplatformHeaderParserRuleCall_5_5_2_0()); 
 	    }
-		lv_responseHeaders_15_0=ruleXplatformHeader		{
+		lv_responseHeaders_16_0=ruleXplatformHeader		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
 	        }
        		set(
        			$current, 
        			"responseHeaders",
-        		lv_responseHeaders_15_0, 
+        		lv_responseHeaders_16_0, 
         		"XplatformHeader");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?)?(	otherlv_16='client' 
+))?)?(	otherlv_17='client' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getXplatformAccess().getClientKeyword_5_0());
+    	newLeafNode(otherlv_17, grammarAccess.getXplatformAccess().getClientKeyword_6_0());
     }
-	otherlv_17='expects' 
+	otherlv_18='expects' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getXplatformAccess().getExpectsKeyword_5_1());
+    	newLeafNode(otherlv_18, grammarAccess.getXplatformAccess().getExpectsKeyword_6_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToClientXplatformJsonParserRuleCall_5_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToClientXplatformJsonParserRuleCall_6_2_0()); 
 	    }
-		lv_jsonToClient_18_0=ruleXplatformJson		{
+		lv_jsonToClient_19_0=ruleXplatformJson		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
 	        }
        		set(
        			$current, 
        			"jsonToClient",
-        		lv_jsonToClient_18_0, 
+        		lv_jsonToClient_19_0, 
         		"XplatformJson");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_19='server' 
+)(	otherlv_20='server' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getXplatformAccess().getServerKeyword_5_3_0());
+    	newLeafNode(otherlv_20, grammarAccess.getXplatformAccess().getServerKeyword_6_3_0());
     }
-	otherlv_20='expects' 
+	otherlv_21='expects' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getXplatformAccess().getExpectsKeyword_5_3_1());
+    	newLeafNode(otherlv_21, grammarAccess.getXplatformAccess().getExpectsKeyword_6_3_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToServerXplatformJsonParserRuleCall_5_3_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToServerXplatformJsonParserRuleCall_6_3_2_0()); 
 	    }
-		lv_jsonToServer_21_0=ruleXplatformJson		{
+		lv_jsonToServer_22_0=ruleXplatformJson		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
 	        }
        		set(
        			$current, 
        			"jsonToServer",
-        		lv_jsonToServer_21_0, 
+        		lv_jsonToServer_22_0, 
         		"XplatformJson");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -578,31 +582,31 @@ ruleJsonType returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonObjectParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonArrayParserRuleCall_4()); 
     }
-    this_JsonObject_4=ruleJsonObject
+    this_JsonArray_4=ruleJsonArray
     { 
-        $current = $this_JsonObject_4.current; 
+        $current = $this_JsonArray_4.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonArrayParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonMetaTypeParserRuleCall_5()); 
     }
-    this_JsonArray_5=ruleJsonArray
+    this_JsonMetaType_5=ruleJsonMetaType
     { 
-        $current = $this_JsonArray_5.current; 
+        $current = $this_JsonMetaType_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonMetaTypeParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getJsonTypeAccess().getJsonObjectParserRuleCall_6()); 
     }
-    this_JsonMetaType_6=ruleJsonMetaType
+    this_JsonObject_6=ruleJsonObject
     { 
-        $current = $this_JsonMetaType_6.current; 
+        $current = $this_JsonObject_6.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -975,7 +979,11 @@ RULE_JSON_LITERAL_NUMBER : ('0'..'9')* ('.' ('0'..'9')+)?;
 
 RULE_JSON_LITERAL_BOOLEAN : ('true'|'false');
 
-RULE_LITERAL_STRING : ('"' RULE_STRING '"'|'\'' RULE_STRING '\'');
+RULE_LITERAL_STRING : (RULE_SINGLE_QUOTED_STRING|RULE_DOUBLE_QUOTED_STRING);
+
+RULE_SINGLE_QUOTED_STRING : '\'' RULE_STRING '\'';
+
+RULE_DOUBLE_QUOTED_STRING : '"' RULE_STRING '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
