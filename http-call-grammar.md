@@ -6,6 +6,7 @@ Restful GET/HEAD example
 
     call StockPrice: GET from /meh/blah?p1={name1}&p2={name2}
     with headers from request // these headers will be injected in the front end call
+    StockPriceRequestJson
     '''
     {
         "client-version" = "2.3.4",
@@ -15,7 +16,7 @@ Restful GET/HEAD example
         "content-type" = "application/ubjson" // comment: also listens to 'bson' or 'ubjson' and generates a parser accordingly
     }
     '''
-    and response // these headers will be injected in the back end call
+    and response StockPriceResponse // these headers will be injected in the back end call
     '''
     {
         "server-version" = "1.2.3",
@@ -37,6 +38,15 @@ Restful GET/HEAD example
         "numberList" : [ number ],
         "stringList" : [ string ],
         "booleanList" : [ boolean ]
+        "nestedJsonObject" :
+            Nested
+            '''
+            {
+                "meh" : [boolean],
+                "bla" : [string],
+                "hmf" : [number],
+            }
+            '''
     }
     '''
     or
