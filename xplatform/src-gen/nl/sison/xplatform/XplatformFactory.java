@@ -122,31 +122,13 @@ public interface XplatformFactory extends EFactory
   JsonArray createJsonArray();
 
   /**
-   * Returns a new object of class '<em>Json Key Value Pair</em>'.
+   * Returns a new object of class '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Key Value Pair</em>'.
+   * @return a new object of class '<em>Json Object</em>'.
    * @generated
    */
-  JsonKeyValuePair createJsonKeyValuePair();
-
-  /**
-   * Returns a new object of class '<em>Json Meta Key Value Pair</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Meta Key Value Pair</em>'.
-   * @generated
-   */
-  JsonMetaKeyValuePair createJsonMetaKeyValuePair();
-
-  /**
-   * Returns a new object of class '<em>Unnested Key Pairs</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unnested Key Pairs</em>'.
-   * @generated
-   */
-  UnnestedKeyPairs createUnnestedKeyPairs();
+  JsonObject createJsonObject();
 
   /**
    * Returns the package supported by this factory.

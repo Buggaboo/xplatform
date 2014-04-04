@@ -4,9 +4,8 @@ package nl.sison.xplatform.impl;
 
 import java.util.Collection;
 
-import nl.sison.xplatform.JsonKeyValuePair;
-import nl.sison.xplatform.JsonMetaKeyValuePair;
 import nl.sison.xplatform.JsonObject;
+import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,6 +15,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -26,34 +28,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getKeyValuePair <em>Key Value Pair</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getMetaKeyValuePair <em>Meta Key Value Pair</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getKeys <em>Keys</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
+public class JsonObjectImpl extends MinimalEObjectImpl.Container implements JsonObject
 {
   /**
-   * The cached value of the '{@link #getKeyValuePair() <em>Key Value Pair</em>}' containment reference list.
+   * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKeyValuePair()
+   * @see #getKeys()
    * @generated
    * @ordered
    */
-  protected EList<JsonKeyValuePair> keyValuePair;
+  protected EList<String> keys;
 
   /**
-   * The cached value of the '{@link #getMetaKeyValuePair() <em>Meta Key Value Pair</em>}' containment reference list.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetaKeyValuePair()
+   * @see #getValues()
    * @generated
    * @ordered
    */
-  protected EList<JsonMetaKeyValuePair> metaKeyValuePair;
+  protected EList<XplatformJson> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,13 +83,13 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonKeyValuePair> getKeyValuePair()
+  public EList<String> getKeys()
   {
-    if (keyValuePair == null)
+    if (keys == null)
     {
-      keyValuePair = new EObjectContainmentEList<JsonKeyValuePair>(JsonKeyValuePair.class, this, XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR);
+      keys = new EDataTypeEList<String>(String.class, this, XplatformPackage.JSON_OBJECT__KEYS);
     }
-    return keyValuePair;
+    return keys;
   }
 
   /**
@@ -95,13 +97,13 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonMetaKeyValuePair> getMetaKeyValuePair()
+  public EList<XplatformJson> getValues()
   {
-    if (metaKeyValuePair == null)
+    if (values == null)
     {
-      metaKeyValuePair = new EObjectContainmentEList<JsonMetaKeyValuePair>(JsonMetaKeyValuePair.class, this, XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR);
+      values = new EObjectContainmentEList<XplatformJson>(XplatformJson.class, this, XplatformPackage.JSON_OBJECT__VALUES);
     }
-    return metaKeyValuePair;
+    return values;
   }
 
   /**
@@ -114,10 +116,8 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
-        return ((InternalEList<?>)getKeyValuePair()).basicRemove(otherEnd, msgs);
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return ((InternalEList<?>)getMetaKeyValuePair()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.JSON_OBJECT__VALUES:
+        return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -132,10 +132,10 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
-        return getKeyValuePair();
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return getMetaKeyValuePair();
+      case XplatformPackage.JSON_OBJECT__KEYS:
+        return getKeys();
+      case XplatformPackage.JSON_OBJECT__VALUES:
+        return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,13 +151,13 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
-        getKeyValuePair().clear();
-        getKeyValuePair().addAll((Collection<? extends JsonKeyValuePair>)newValue);
+      case XplatformPackage.JSON_OBJECT__KEYS:
+        getKeys().clear();
+        getKeys().addAll((Collection<? extends String>)newValue);
         return;
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        getMetaKeyValuePair().clear();
-        getMetaKeyValuePair().addAll((Collection<? extends JsonMetaKeyValuePair>)newValue);
+      case XplatformPackage.JSON_OBJECT__VALUES:
+        getValues().clear();
+        getValues().addAll((Collection<? extends XplatformJson>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +173,11 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
-        getKeyValuePair().clear();
+      case XplatformPackage.JSON_OBJECT__KEYS:
+        getKeys().clear();
         return;
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        getMetaKeyValuePair().clear();
+      case XplatformPackage.JSON_OBJECT__VALUES:
+        getValues().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,12 +193,29 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
-        return keyValuePair != null && !keyValuePair.isEmpty();
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return metaKeyValuePair != null && !metaKeyValuePair.isEmpty();
+      case XplatformPackage.JSON_OBJECT__KEYS:
+        return keys != null && !keys.isEmpty();
+      case XplatformPackage.JSON_OBJECT__VALUES:
+        return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (keys: ");
+    result.append(keys);
+    result.append(')');
+    return result.toString();
   }
 
 } //JsonObjectImpl

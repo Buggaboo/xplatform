@@ -149,11 +149,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:15:7: ( 'from' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:15:9: 'from'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:15:7: ( ':' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:15:9: ':'
             {
-            match("from"); 
-
+            match(':'); 
 
             }
 
@@ -170,10 +169,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:16:7: ( 'with' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:16:9: 'with'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:16:7: ( 'from' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:16:9: 'from'
             {
-            match("with"); 
+            match("from"); 
 
 
             }
@@ -191,10 +190,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:17:7: ( 'headers' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:17:9: 'headers'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:17:7: ( 'with' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:17:9: 'with'
             {
-            match("headers"); 
+            match("with"); 
 
 
             }
@@ -212,10 +211,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:18:7: ( 'request' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:18:9: 'request'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:18:7: ( 'headers' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:18:9: 'headers'
             {
-            match("request"); 
+            match("headers"); 
 
 
             }
@@ -233,10 +232,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:19:7: ( 'and' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:19:9: 'and'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:19:7: ( 'request' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:19:9: 'request'
             {
-            match("and"); 
+            match("request"); 
 
 
             }
@@ -254,10 +253,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:20:7: ( 'response' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:20:9: 'response'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:20:7: ( 'and' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:20:9: 'and'
             {
-            match("response"); 
+            match("and"); 
 
 
             }
@@ -275,10 +274,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:21:7: ( 'client' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:21:9: 'client'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:21:7: ( 'response' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:21:9: 'response'
             {
-            match("client"); 
+            match("response"); 
 
 
             }
@@ -296,10 +295,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:22:7: ( 'expects' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:22:9: 'expects'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:22:7: ( 'client' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:22:9: 'client'
             {
-            match("expects"); 
+            match("client"); 
 
 
             }
@@ -317,10 +316,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:23:7: ( 'server' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:23:9: 'server'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:23:7: ( 'expects' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:23:9: 'expects'
             {
-            match("server"); 
+            match("expects"); 
 
 
             }
@@ -338,10 +337,11 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:24:7: ( '{' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:24:9: '{'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:24:7: ( 'server' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:24:9: 'server'
             {
-            match('{'); 
+            match("server"); 
+
 
             }
 
@@ -358,10 +358,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:25:7: ( '}' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:25:9: '}'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:25:7: ( '{' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:25:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -378,11 +378,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:26:7: ( '\\'\\'\\'' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:26:9: '\\'\\'\\''
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:26:7: ( '}' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:26:9: '}'
             {
-            match("'''"); 
-
+            match('}'); 
 
             }
 
@@ -399,10 +398,11 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:27:7: ( ',' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:27:9: ','
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:27:7: ( '\\'\\'\\'' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:27:9: '\\'\\'\\''
             {
-            match(','); 
+            match("'''"); 
+
 
             }
 
@@ -419,10 +419,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:28:7: ( '=' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:28:9: '='
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:28:7: ( ',' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:28:9: ','
             {
-            match('='); 
+            match(','); 
 
             }
 
@@ -439,10 +439,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:29:7: ( '[' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:29:9: '['
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:29:7: ( '=' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:29:9: '='
             {
-            match('['); 
+            match('='); 
 
             }
 
@@ -459,10 +459,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:30:7: ( ']' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:30:9: ']'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:30:7: ( '[' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:30:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -479,10 +479,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:31:7: ( '.' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:31:9: '.'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:31:7: ( ']' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:31:9: ']'
             {
-            match('.'); 
+            match(']'); 
 
             }
 
@@ -499,10 +499,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:32:7: ( ':' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:32:9: ':'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:32:7: ( '.' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:32:9: '.'
             {
-            match(':'); 
+            match('.'); 
 
             }
 
@@ -519,8 +519,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_XPLATFORM_HEADER_PARAMETER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3429:33: ( '{' RULE_ID '}' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3429:35: '{' RULE_ID '}'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3638:33: ( '{' RULE_ID '}' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3638:35: '{' RULE_ID '}'
             {
             match('{'); 
             mRULE_ID(); 
@@ -541,10 +541,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_RESTFUL_METHODS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 'P':
@@ -584,7 +584,7 @@ public class InternalXplatformLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:25: 'PUT'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:25: 'PUT'
                     {
                     match("PUT"); 
 
@@ -592,7 +592,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:31: 'POST'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:31: 'POST'
                     {
                     match("POST"); 
 
@@ -600,7 +600,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:38: 'GET'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:38: 'GET'
                     {
                     match("GET"); 
 
@@ -608,7 +608,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3431:44: 'DELETE'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3640:44: 'DELETE'
                     {
                     match("DELETE"); 
 
@@ -634,8 +634,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3433:24: ( 'null' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3433:26: 'null'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3642:24: ( 'null' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3642:26: 'null'
             {
             match("null"); 
 
@@ -655,10 +655,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3435:27: ( ( 'true' | 'false' ) )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3435:29: ( 'true' | 'false' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3644:27: ( ( 'true' | 'false' ) )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3644:29: ( 'true' | 'false' )
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3435:29: ( 'true' | 'false' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3644:29: ( 'true' | 'false' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -676,7 +676,7 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3435:30: 'true'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3644:30: 'true'
                     {
                     match("true"); 
 
@@ -684,7 +684,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3435:37: 'false'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3644:37: 'false'
                     {
                     match("false"); 
 
@@ -710,10 +710,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3437:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3437:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3646:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3646:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3437:11: ( '^' )?
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3646:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -722,7 +722,7 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3437:11: '^'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3646:11: '^'
                     {
                     match('^'); 
 
@@ -740,7 +740,7 @@ public class InternalXplatformLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3437:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3646:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -789,10 +789,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3439:10: ( ( '0' .. '9' )+ )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3439:12: ( '0' .. '9' )+
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3648:10: ( ( '0' .. '9' )+ )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3648:12: ( '0' .. '9' )+
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3439:12: ( '0' .. '9' )+
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3648:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -806,7 +806,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3439:13: '0' .. '9'
+            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3648:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -838,10 +838,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -859,10 +859,10 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -878,7 +878,7 @@ public class InternalXplatformLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -894,7 +894,7 @@ public class InternalXplatformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -919,10 +919,10 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -938,7 +938,7 @@ public class InternalXplatformLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -954,7 +954,7 @@ public class InternalXplatformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3441:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3650:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -997,12 +997,12 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3443:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3443:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3652:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3652:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3443:24: ( options {greedy=false; } : . )*
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3652:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1027,7 +1027,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3443:52: .
+            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3652:52: .
             	    {
             	    matchAny(); 
 
@@ -1057,12 +1057,12 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1075,7 +1075,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1095,7 +1095,7 @@ public class InternalXplatformLexer extends Lexer {
                 }
             } while (true);
 
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:40: ( ( '\\r' )? '\\n' )?
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1104,9 +1104,9 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:41: ( '\\r' )? '\\n'
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:41: ( '\\r' )? '\\n'
                     {
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:41: ( '\\r' )?
+                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1115,7 +1115,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3445:41: '\\r'
+                            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3654:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1147,10 +1147,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3447:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3447:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3656:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3656:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3447:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3656:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1204,8 +1204,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3449:16: ( . )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3449:18: .
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3658:16: ( . )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:3658:18: .
             {
             matchAny(); 
 
@@ -1463,68 +1463,70 @@ public class InternalXplatformLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\12\40\1\55\1\uffff\1\36\6\uffff\4\40\1\36\2\uffff\2\36"+
-        "\2\uffff\1\40\1\uffff\14\40\3\uffff\1\61\7\uffff\5\40\4\uffff\15"+
-        "\40\1\143\1\40\1\uffff\1\145\1\40\1\145\4\40\1\153\2\40\1\156\1"+
-        "\40\1\160\1\40\1\162\3\40\1\uffff\1\40\1\uffff\1\145\1\40\1\170"+
-        "\2\40\1\uffff\2\40\1\uffff\1\40\1\uffff\1\170\1\uffff\5\40\1\uffff"+
-        "\1\40\1\u0084\1\u0085\1\u0086\1\u0087\4\40\1\145\1\u008c\4\uffff"+
-        "\1\u008d\1\u008e\1\40\1\u0090\3\uffff\1\u0091\2\uffff";
+        "\1\uffff\4\40\1\uffff\6\40\1\56\1\uffff\1\36\5\uffff\4\40\1\36\2"+
+        "\uffff\2\36\2\uffff\1\40\1\uffff\5\40\1\uffff\7\40\3\uffff\1\62"+
+        "\6\uffff\5\40\4\uffff\15\40\1\143\1\40\1\uffff\1\145\1\40\1\145"+
+        "\4\40\1\153\2\40\1\156\1\40\1\160\1\40\1\162\3\40\1\uffff\1\40\1"+
+        "\uffff\1\145\1\40\1\170\2\40\1\uffff\2\40\1\uffff\1\40\1\uffff\1"+
+        "\170\1\uffff\5\40\1\uffff\1\40\1\u0084\1\u0085\1\u0086\1\u0087\4"+
+        "\40\1\145\1\u008c\4\uffff\1\u008d\1\u008e\1\40\1\u0090\3\uffff\1"+
+        "\u0091\2\uffff";
     static final String DFA14_eofS =
         "\u0092\uffff";
     static final String DFA14_minS =
-        "\1\0\1\157\1\165\1\145\2\141\1\151\2\145\1\156\1\170\1\101\1\uffff"+
-        "\1\0\6\uffff\1\117\2\105\1\162\1\101\2\uffff\1\0\1\52\2\uffff\1"+
-        "\157\1\uffff\1\154\2\162\1\154\1\151\1\157\1\154\1\164\1\141\1\161"+
-        "\1\144\1\160\3\uffff\1\47\7\uffff\1\124\1\123\1\124\1\114\1\165"+
-        "\4\uffff\1\154\1\142\1\154\1\151\1\166\1\154\1\145\1\155\1\163\1"+
-        "\150\1\144\1\165\1\160\1\60\1\145\1\uffff\1\60\1\124\1\60\1\105"+
-        "\3\145\1\60\1\156\1\145\1\60\1\156\1\60\1\145\1\60\2\145\1\157\1"+
-        "\uffff\1\143\1\uffff\1\60\1\124\1\60\1\141\1\162\1\uffff\1\147\1"+
-        "\162\1\uffff\1\164\1\uffff\1\60\1\uffff\1\162\1\163\1\156\1\164"+
-        "\1\105\1\uffff\1\156\4\60\1\163\1\164\2\163\2\60\4\uffff\2\60\1"+
-        "\145\1\60\3\uffff\1\60\2\uffff";
+        "\1\0\1\157\1\165\1\145\1\141\1\uffff\1\141\1\151\2\145\1\156\1\170"+
+        "\1\101\1\uffff\1\0\5\uffff\1\117\2\105\1\162\1\101\2\uffff\1\0\1"+
+        "\52\2\uffff\1\157\1\uffff\1\154\2\162\1\154\1\151\1\uffff\1\157"+
+        "\1\154\1\164\1\141\1\161\1\144\1\160\3\uffff\1\47\6\uffff\1\124"+
+        "\1\123\1\124\1\114\1\165\4\uffff\1\154\1\142\1\154\1\151\1\166\1"+
+        "\154\1\145\1\155\1\163\1\150\1\144\1\165\1\160\1\60\1\145\1\uffff"+
+        "\1\60\1\124\1\60\1\105\3\145\1\60\1\156\1\145\1\60\1\156\1\60\1"+
+        "\145\1\60\2\145\1\157\1\uffff\1\143\1\uffff\1\60\1\124\1\60\1\141"+
+        "\1\162\1\uffff\1\147\1\162\1\uffff\1\164\1\uffff\1\60\1\uffff\1"+
+        "\162\1\163\1\156\1\164\1\105\1\uffff\1\156\4\60\1\163\1\164\2\163"+
+        "\2\60\4\uffff\2\60\1\145\1\60\3\uffff\1\60\2\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\157\1\165\1\164\1\154\1\162\1\151\2\145\1\156\1\170\1"+
-        "\172\1\uffff\1\uffff\6\uffff\1\125\2\105\1\162\1\172\2\uffff\1\uffff"+
-        "\1\57\2\uffff\1\157\1\uffff\1\155\2\162\1\154\1\151\1\157\1\154"+
-        "\1\164\1\141\1\163\1\144\1\160\3\uffff\1\47\7\uffff\1\124\1\123"+
-        "\1\124\1\114\1\165\4\uffff\1\154\1\142\1\154\1\151\1\166\1\154\1"+
-        "\145\1\155\1\163\1\150\1\144\1\165\1\160\1\172\1\145\1\uffff\1\172"+
-        "\1\124\1\172\1\105\3\145\1\172\1\156\1\145\1\172\1\156\1\172\1\145"+
-        "\1\172\2\145\1\157\1\uffff\1\143\1\uffff\1\172\1\124\1\172\1\141"+
-        "\1\162\1\uffff\1\147\1\162\1\uffff\1\164\1\uffff\1\172\1\uffff\1"+
-        "\162\1\163\1\156\1\164\1\105\1\uffff\1\156\4\172\1\163\1\164\2\163"+
-        "\2\172\4\uffff\2\172\1\145\1\172\3\uffff\1\172\2\uffff";
+        "\1\uffff\1\157\1\165\1\164\1\154\1\uffff\1\162\1\151\2\145\1\156"+
+        "\1\170\1\172\1\uffff\1\uffff\5\uffff\1\125\2\105\1\162\1\172\2\uffff"+
+        "\1\uffff\1\57\2\uffff\1\157\1\uffff\1\155\2\162\1\154\1\151\1\uffff"+
+        "\1\157\1\154\1\164\1\141\1\163\1\144\1\160\3\uffff\1\47\6\uffff"+
+        "\1\124\1\123\1\124\1\114\1\165\4\uffff\1\154\1\142\1\154\1\151\1"+
+        "\166\1\154\1\145\1\155\1\163\1\150\1\144\1\165\1\160\1\172\1\145"+
+        "\1\uffff\1\172\1\124\1\172\1\105\3\145\1\172\1\156\1\145\1\172\1"+
+        "\156\1\172\1\145\1\172\2\145\1\157\1\uffff\1\143\1\uffff\1\172\1"+
+        "\124\1\172\1\141\1\162\1\uffff\1\147\1\162\1\uffff\1\164\1\uffff"+
+        "\1\172\1\uffff\1\162\1\163\1\156\1\164\1\105\1\uffff\1\156\4\172"+
+        "\1\163\1\164\2\163\2\172\4\uffff\2\172\1\145\1\172\3\uffff\1\172"+
+        "\2\uffff";
     static final String DFA14_acceptS =
-        "\14\uffff\1\17\1\uffff\1\21\1\22\1\23\1\24\1\25\1\26\5\uffff\1\33"+
-        "\1\34\2\uffff\1\40\1\41\1\uffff\1\33\14\uffff\1\16\1\27\1\17\1\uffff"+
-        "\1\35\1\21\1\22\1\23\1\24\1\25\1\26\5\uffff\1\34\1\36\1\37\1\40"+
-        "\17\uffff\1\20\22\uffff\1\11\1\uffff\1\30\5\uffff\1\31\2\uffff\1"+
-        "\4\1\uffff\1\5\1\uffff\1\6\5\uffff\1\32\13\uffff\1\2\1\3\1\15\1"+
-        "\13\4\uffff\1\1\1\7\1\10\1\uffff\1\14\1\12";
+        "\5\uffff\1\5\7\uffff\1\20\1\uffff\1\22\1\23\1\24\1\25\1\26\5\uffff"+
+        "\1\33\1\34\2\uffff\1\40\1\41\1\uffff\1\33\5\uffff\1\5\7\uffff\1"+
+        "\17\1\27\1\20\1\uffff\1\35\1\22\1\23\1\24\1\25\1\26\5\uffff\1\34"+
+        "\1\36\1\37\1\40\17\uffff\1\21\22\uffff\1\12\1\uffff\1\30\5\uffff"+
+        "\1\31\2\uffff\1\4\1\uffff\1\6\1\uffff\1\7\5\uffff\1\32\13\uffff"+
+        "\1\2\1\3\1\16\1\14\4\uffff\1\1\1\10\1\11\1\uffff\1\15\1\13";
     static final String DFA14_specialS =
-        "\1\2\14\uffff\1\0\15\uffff\1\1\166\uffff}>";
+        "\1\2\15\uffff\1\0\14\uffff\1\1\166\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\33\4\36\1\15\4\36\1"+
-            "\16\1\36\1\22\1\34\12\32\1\23\2\36\1\17\3\36\3\31\1\26\2\31"+
-            "\1\25\10\31\1\24\12\31\1\20\1\36\1\21\1\30\1\31\1\36\1\11\1"+
-            "\1\1\4\1\31\1\12\1\5\1\31\1\7\5\31\1\2\3\31\1\10\1\3\1\27\2"+
-            "\31\1\6\3\31\1\13\1\36\1\14\uff82\36",
+            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\33\4\36\1\16\4\36\1"+
+            "\17\1\36\1\23\1\34\12\32\1\5\2\36\1\20\3\36\3\31\1\26\2\31\1"+
+            "\25\10\31\1\24\12\31\1\21\1\36\1\22\1\30\1\31\1\36\1\12\1\1"+
+            "\1\4\1\31\1\13\1\6\1\31\1\10\5\31\1\2\3\31\1\11\1\3\1\27\2\31"+
+            "\1\7\3\31\1\14\1\36\1\15\uff82\36",
             "\1\37",
             "\1\41",
             "\1\43\16\uffff\1\42",
             "\1\44\12\uffff\1\45",
-            "\1\47\20\uffff\1\46",
-            "\1\50",
+            "",
+            "\1\50\20\uffff\1\47",
             "\1\51",
             "\1\52",
             "\1\53",
             "\1\54",
-            "\32\56\3\uffff\2\56\1\uffff\32\56",
+            "\1\55",
+            "\32\57\3\uffff\2\57\1\uffff\32\57",
             "",
-            "\47\61\1\60\uffd8\61",
-            "",
+            "\47\62\1\61\uffd8\62",
             "",
             "",
             "",
@@ -1537,7 +1539,7 @@ public class InternalXplatformLexer extends Lexer {
             "\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
             "",
-            "\0\61",
+            "\0\62",
             "\1\76\4\uffff\1\77",
             "",
             "",
@@ -1548,6 +1550,7 @@ public class InternalXplatformLexer extends Lexer {
             "\1\105",
             "\1\106",
             "\1\107",
+            "",
             "\1\110",
             "\1\111",
             "\1\112",
@@ -1559,7 +1562,6 @@ public class InternalXplatformLexer extends Lexer {
             "",
             "",
             "\1\120",
-            "",
             "",
             "",
             "",
@@ -1695,12 +1697,12 @@ public class InternalXplatformLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_13 = input.LA(1);
+                        int LA14_14 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_13=='\'') ) {s = 48;}
+                        if ( (LA14_14=='\'') ) {s = 49;}
 
-                        else if ( ((LA14_13>='\u0000' && LA14_13<='&')||(LA14_13>='(' && LA14_13<='\uFFFF')) ) {s = 49;}
+                        else if ( ((LA14_14>='\u0000' && LA14_14<='&')||(LA14_14>='(' && LA14_14<='\uFFFF')) ) {s = 50;}
 
                         else s = 30;
 
@@ -1710,7 +1712,7 @@ public class InternalXplatformLexer extends Lexer {
                         int LA14_27 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_27>='\u0000' && LA14_27<='\uFFFF')) ) {s = 49;}
+                        if ( ((LA14_27>='\u0000' && LA14_27<='\uFFFF')) ) {s = 50;}
 
                         else s = 30;
 
@@ -1728,35 +1730,35 @@ public class InternalXplatformLexer extends Lexer {
 
                         else if ( (LA14_0=='c') ) {s = 4;}
 
-                        else if ( (LA14_0=='f') ) {s = 5;}
+                        else if ( (LA14_0==':') ) {s = 5;}
 
-                        else if ( (LA14_0=='w') ) {s = 6;}
+                        else if ( (LA14_0=='f') ) {s = 6;}
 
-                        else if ( (LA14_0=='h') ) {s = 7;}
+                        else if ( (LA14_0=='w') ) {s = 7;}
 
-                        else if ( (LA14_0=='r') ) {s = 8;}
+                        else if ( (LA14_0=='h') ) {s = 8;}
 
-                        else if ( (LA14_0=='a') ) {s = 9;}
+                        else if ( (LA14_0=='r') ) {s = 9;}
 
-                        else if ( (LA14_0=='e') ) {s = 10;}
+                        else if ( (LA14_0=='a') ) {s = 10;}
 
-                        else if ( (LA14_0=='{') ) {s = 11;}
+                        else if ( (LA14_0=='e') ) {s = 11;}
 
-                        else if ( (LA14_0=='}') ) {s = 12;}
+                        else if ( (LA14_0=='{') ) {s = 12;}
 
-                        else if ( (LA14_0=='\'') ) {s = 13;}
+                        else if ( (LA14_0=='}') ) {s = 13;}
 
-                        else if ( (LA14_0==',') ) {s = 14;}
+                        else if ( (LA14_0=='\'') ) {s = 14;}
 
-                        else if ( (LA14_0=='=') ) {s = 15;}
+                        else if ( (LA14_0==',') ) {s = 15;}
 
-                        else if ( (LA14_0=='[') ) {s = 16;}
+                        else if ( (LA14_0=='=') ) {s = 16;}
 
-                        else if ( (LA14_0==']') ) {s = 17;}
+                        else if ( (LA14_0=='[') ) {s = 17;}
 
-                        else if ( (LA14_0=='.') ) {s = 18;}
+                        else if ( (LA14_0==']') ) {s = 18;}
 
-                        else if ( (LA14_0==':') ) {s = 19;}
+                        else if ( (LA14_0=='.') ) {s = 19;}
 
                         else if ( (LA14_0=='P') ) {s = 20;}
 

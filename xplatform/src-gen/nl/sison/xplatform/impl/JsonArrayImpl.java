@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getElement <em>Element</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getComposite <em>Composite</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getComposites <em>Composites</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,24 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonArray
 {
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected EList<JsonScalarType> element;
+  protected EList<JsonScalarType> elements;
 
   /**
-   * The cached value of the '{@link #getComposite() <em>Composite</em>}' containment reference list.
+   * The cached value of the '{@link #getComposites() <em>Composites</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComposite()
+   * @see #getComposites()
    * @generated
    * @ordered
    */
-  protected EList<JsonCompositeType> composite;
+  protected EList<JsonCompositeType> composites;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,13 +83,13 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonScalarType> getElement()
+  public EList<JsonScalarType> getElements()
   {
-    if (element == null)
+    if (elements == null)
     {
-      element = new EObjectContainmentEList<JsonScalarType>(JsonScalarType.class, this, XplatformPackage.JSON_ARRAY__ELEMENT);
+      elements = new EObjectContainmentEList<JsonScalarType>(JsonScalarType.class, this, XplatformPackage.JSON_ARRAY__ELEMENTS);
     }
-    return element;
+    return elements;
   }
 
   /**
@@ -97,13 +97,13 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonCompositeType> getComposite()
+  public EList<JsonCompositeType> getComposites()
   {
-    if (composite == null)
+    if (composites == null)
     {
-      composite = new EObjectContainmentEList<JsonCompositeType>(JsonCompositeType.class, this, XplatformPackage.JSON_ARRAY__COMPOSITE);
+      composites = new EObjectContainmentEList<JsonCompositeType>(JsonCompositeType.class, this, XplatformPackage.JSON_ARRAY__COMPOSITES);
     }
-    return composite;
+    return composites;
   }
 
   /**
@@ -116,10 +116,10 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__ELEMENT:
-        return ((InternalEList<?>)getElement()).basicRemove(otherEnd, msgs);
-      case XplatformPackage.JSON_ARRAY__COMPOSITE:
-        return ((InternalEList<?>)getComposite()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.JSON_ARRAY__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.JSON_ARRAY__COMPOSITES:
+        return ((InternalEList<?>)getComposites()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,10 +134,10 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__ELEMENT:
-        return getElement();
-      case XplatformPackage.JSON_ARRAY__COMPOSITE:
-        return getComposite();
+      case XplatformPackage.JSON_ARRAY__ELEMENTS:
+        return getElements();
+      case XplatformPackage.JSON_ARRAY__COMPOSITES:
+        return getComposites();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,13 +153,13 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__ELEMENT:
-        getElement().clear();
-        getElement().addAll((Collection<? extends JsonScalarType>)newValue);
+      case XplatformPackage.JSON_ARRAY__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends JsonScalarType>)newValue);
         return;
-      case XplatformPackage.JSON_ARRAY__COMPOSITE:
-        getComposite().clear();
-        getComposite().addAll((Collection<? extends JsonCompositeType>)newValue);
+      case XplatformPackage.JSON_ARRAY__COMPOSITES:
+        getComposites().clear();
+        getComposites().addAll((Collection<? extends JsonCompositeType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +175,11 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__ELEMENT:
-        getElement().clear();
+      case XplatformPackage.JSON_ARRAY__ELEMENTS:
+        getElements().clear();
         return;
-      case XplatformPackage.JSON_ARRAY__COMPOSITE:
-        getComposite().clear();
+      case XplatformPackage.JSON_ARRAY__COMPOSITES:
+        getComposites().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,10 +195,10 @@ public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonA
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__ELEMENT:
-        return element != null && !element.isEmpty();
-      case XplatformPackage.JSON_ARRAY__COMPOSITE:
-        return composite != null && !composite.isEmpty();
+      case XplatformPackage.JSON_ARRAY__ELEMENTS:
+        return elements != null && !elements.isEmpty();
+      case XplatformPackage.JSON_ARRAY__COMPOSITES:
+        return composites != null && !composites.isEmpty();
     }
     return super.eIsSet(featureID);
   }

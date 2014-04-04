@@ -75,9 +75,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.JSON_TYPE: return createJsonType();
       case XplatformPackage.JSON_SCALAR_TYPE: return createJsonScalarType();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
-      case XplatformPackage.JSON_KEY_VALUE_PAIR: return createJsonKeyValuePair();
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR: return createJsonMetaKeyValuePair();
-      case XplatformPackage.UNNESTED_KEY_PAIRS: return createUnnestedKeyPairs();
+      case XplatformPackage.JSON_OBJECT: return createJsonObject();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -209,32 +207,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonKeyValuePair createJsonKeyValuePair()
+  public JsonObject createJsonObject()
   {
-    JsonKeyValuePairImpl jsonKeyValuePair = new JsonKeyValuePairImpl();
-    return jsonKeyValuePair;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public JsonMetaKeyValuePair createJsonMetaKeyValuePair()
-  {
-    JsonMetaKeyValuePairImpl jsonMetaKeyValuePair = new JsonMetaKeyValuePairImpl();
-    return jsonMetaKeyValuePair;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnnestedKeyPairs createUnnestedKeyPairs()
-  {
-    UnnestedKeyPairsImpl unnestedKeyPairs = new UnnestedKeyPairsImpl();
-    return unnestedKeyPairs;
+    JsonObjectImpl jsonObject = new JsonObjectImpl();
+    return jsonObject;
   }
 
   /**

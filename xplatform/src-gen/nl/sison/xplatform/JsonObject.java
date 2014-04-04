@@ -4,6 +4,8 @@ package nl.sison.xplatform;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Json Object</b></em>'.
@@ -12,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.xplatform.JsonObject#getKeyValuePair <em>Key Value Pair</em>}</li>
- *   <li>{@link nl.sison.xplatform.JsonObject#getMetaKeyValuePair <em>Meta Key Value Pair</em>}</li>
+ *   <li>{@link nl.sison.xplatform.JsonObject#getKeys <em>Keys</em>}</li>
+ *   <li>{@link nl.sison.xplatform.JsonObject#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,38 +23,38 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface JsonObject extends JsonType
+public interface JsonObject extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Key Value Pair</b></em>' containment reference list.
-   * The list contents are of type {@link nl.sison.xplatform.JsonKeyValuePair}.
+   * Returns the value of the '<em><b>Keys</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Key Value Pair</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Keys</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Key Value Pair</em>' containment reference list.
-   * @see nl.sison.xplatform.XplatformPackage#getJsonObject_KeyValuePair()
-   * @model containment="true"
+   * @return the value of the '<em>Keys</em>' attribute list.
+   * @see nl.sison.xplatform.XplatformPackage#getJsonObject_Keys()
+   * @model unique="false"
    * @generated
    */
-  EList<JsonKeyValuePair> getKeyValuePair();
+  EList<String> getKeys();
 
   /**
-   * Returns the value of the '<em><b>Meta Key Value Pair</b></em>' containment reference list.
-   * The list contents are of type {@link nl.sison.xplatform.JsonMetaKeyValuePair}.
+   * Returns the value of the '<em><b>Values</b></em>' containment reference list.
+   * The list contents are of type {@link nl.sison.xplatform.XplatformJson}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Meta Key Value Pair</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Meta Key Value Pair</em>' containment reference list.
-   * @see nl.sison.xplatform.XplatformPackage#getJsonObject_MetaKeyValuePair()
+   * @return the value of the '<em>Values</em>' containment reference list.
+   * @see nl.sison.xplatform.XplatformPackage#getJsonObject_Values()
    * @model containment="true"
    * @generated
    */
-  EList<JsonMetaKeyValuePair> getMetaKeyValuePair();
+  EList<XplatformJson> getValues();
 
 } // JsonObject

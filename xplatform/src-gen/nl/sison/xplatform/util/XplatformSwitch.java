@@ -149,24 +149,10 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.JSON_KEY_VALUE_PAIR:
+      case XplatformPackage.JSON_OBJECT:
       {
-        JsonKeyValuePair jsonKeyValuePair = (JsonKeyValuePair)theEObject;
-        T result = caseJsonKeyValuePair(jsonKeyValuePair);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR:
-      {
-        JsonMetaKeyValuePair jsonMetaKeyValuePair = (JsonMetaKeyValuePair)theEObject;
-        T result = caseJsonMetaKeyValuePair(jsonMetaKeyValuePair);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.UNNESTED_KEY_PAIRS:
-      {
-        UnnestedKeyPairs unnestedKeyPairs = (UnnestedKeyPairs)theEObject;
-        T result = caseUnnestedKeyPairs(unnestedKeyPairs);
+        JsonObject jsonObject = (JsonObject)theEObject;
+        T result = caseJsonObject(jsonObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -351,49 +337,17 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Key Value Pair</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Key Value Pair</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Json Object</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseJsonKeyValuePair(JsonKeyValuePair object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Meta Key Value Pair</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Meta Key Value Pair</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonMetaKeyValuePair(JsonMetaKeyValuePair object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnnestedKeyPairs(UnnestedKeyPairs object)
+  public T caseJsonObject(JsonObject object)
   {
     return null;
   }

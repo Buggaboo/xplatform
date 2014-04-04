@@ -130,19 +130,9 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createJsonArrayAdapter();
       }
       @Override
-      public Adapter caseJsonKeyValuePair(JsonKeyValuePair object)
+      public Adapter caseJsonObject(JsonObject object)
       {
-        return createJsonKeyValuePairAdapter();
-      }
-      @Override
-      public Adapter caseJsonMetaKeyValuePair(JsonMetaKeyValuePair object)
-      {
-        return createJsonMetaKeyValuePairAdapter();
-      }
-      @Override
-      public Adapter caseUnnestedKeyPairs(UnnestedKeyPairs object)
-      {
-        return createUnnestedKeyPairsAdapter();
+        return createJsonObjectAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -332,46 +322,16 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonKeyValuePair <em>Json Key Value Pair</em>}'.
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonObject <em>Json Object</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see nl.sison.xplatform.JsonKeyValuePair
+   * @see nl.sison.xplatform.JsonObject
    * @generated
    */
-  public Adapter createJsonKeyValuePairAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonMetaKeyValuePair <em>Json Meta Key Value Pair</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.xplatform.JsonMetaKeyValuePair
-   * @generated
-   */
-  public Adapter createJsonMetaKeyValuePairAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.UnnestedKeyPairs <em>Unnested Key Pairs</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.xplatform.UnnestedKeyPairs
-   * @generated
-   */
-  public Adapter createUnnestedKeyPairsAdapter()
+  public Adapter createJsonObjectAdapter()
   {
     return null;
   }

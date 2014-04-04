@@ -260,13 +260,22 @@ public interface XplatformPackage extends EPackage
   int XPLATFORM_JSON__META_TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Composite</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPLATFORM_JSON__COMPOSITE = 2;
+
+  /**
    * The number of structural features of the '<em>Json</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON_FEATURE_COUNT = 2;
+  int XPLATFORM_JSON_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonMetaArrayImpl <em>Json Meta Array</em>}' class.
@@ -464,22 +473,22 @@ public interface XplatformPackage extends EPackage
   int JSON_ARRAY = 10;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_ARRAY__ELEMENT = 0;
+  int JSON_ARRAY__ELEMENTS = 0;
 
   /**
-   * The feature id for the '<em><b>Composite</b></em>' containment reference list.
+   * The feature id for the '<em><b>Composites</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_ARRAY__COMPOSITE = 1;
+  int JSON_ARRAY__COMPOSITES = 1;
 
   /**
    * The number of structural features of the '<em>Json Array</em>' class.
@@ -491,106 +500,41 @@ public interface XplatformPackage extends EPackage
   int JSON_ARRAY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonKeyValuePairImpl <em>Json Key Value Pair</em>}' class.
+   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonObjectImpl <em>Json Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.JsonKeyValuePairImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonKeyValuePair()
+   * @see nl.sison.xplatform.impl.JsonObjectImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 11;
+  int JSON_OBJECT = 11;
 
   /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * The feature id for the '<em><b>Keys</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_KEY_VALUE_PAIR__KEY = 0;
+  int JSON_OBJECT__KEYS = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_KEY_VALUE_PAIR__VALUE = 1;
+  int JSON_OBJECT__VALUES = 1;
 
   /**
-   * The number of structural features of the '<em>Json Key Value Pair</em>' class.
+   * The number of structural features of the '<em>Json Object</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_KEY_VALUE_PAIR_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl <em>Json Meta Key Value Pair</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonMetaKeyValuePair()
-   * @generated
-   */
-  int JSON_META_KEY_VALUE_PAIR = 12;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_META_KEY_VALUE_PAIR__KEY = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_META_KEY_VALUE_PAIR__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Json Meta Key Value Pair</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_META_KEY_VALUE_PAIR_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.UnnestedKeyPairsImpl <em>Unnested Key Pairs</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.UnnestedKeyPairsImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getUnnestedKeyPairs()
-   * @generated
-   */
-  int UNNESTED_KEY_PAIRS = 13;
-
-  /**
-   * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR = 0;
-
-  /**
-   * The number of structural features of the '<em>Unnested Key Pairs</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNNESTED_KEY_PAIRS_FEATURE_COUNT = 1;
+  int JSON_OBJECT_FEATURE_COUNT = 2;
 
 
   /**
@@ -787,6 +731,17 @@ public interface XplatformPackage extends EPackage
   EReference getXplatformJson_MetaType();
 
   /**
+   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformJson#getComposite <em>Composite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Composite</em>'.
+   * @see nl.sison.xplatform.XplatformJson#getComposite()
+   * @see #getXplatformJson()
+   * @generated
+   */
+  EReference getXplatformJson_Composite();
+
+  /**
    * Returns the meta object for class '{@link nl.sison.xplatform.JsonMetaArray <em>Json Meta Array</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -957,111 +912,58 @@ public interface XplatformPackage extends EPackage
   EClass getJsonArray();
 
   /**
-   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.JsonArray#getElement <em>Element</em>}'.
+   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.JsonArray#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Element</em>'.
-   * @see nl.sison.xplatform.JsonArray#getElement()
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see nl.sison.xplatform.JsonArray#getElements()
    * @see #getJsonArray()
    * @generated
    */
-  EReference getJsonArray_Element();
+  EReference getJsonArray_Elements();
 
   /**
-   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.JsonArray#getComposite <em>Composite</em>}'.
+   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.JsonArray#getComposites <em>Composites</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Composite</em>'.
-   * @see nl.sison.xplatform.JsonArray#getComposite()
+   * @return the meta object for the containment reference list '<em>Composites</em>'.
+   * @see nl.sison.xplatform.JsonArray#getComposites()
    * @see #getJsonArray()
    * @generated
    */
-  EReference getJsonArray_Composite();
+  EReference getJsonArray_Composites();
 
   /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.JsonKeyValuePair <em>Json Key Value Pair</em>}'.
+   * Returns the meta object for class '{@link nl.sison.xplatform.JsonObject <em>Json Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Json Key Value Pair</em>'.
-   * @see nl.sison.xplatform.JsonKeyValuePair
+   * @return the meta object for class '<em>Json Object</em>'.
+   * @see nl.sison.xplatform.JsonObject
    * @generated
    */
-  EClass getJsonKeyValuePair();
+  EClass getJsonObject();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.JsonKeyValuePair#getKey <em>Key</em>}'.
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.JsonObject#getKeys <em>Keys</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see nl.sison.xplatform.JsonKeyValuePair#getKey()
-   * @see #getJsonKeyValuePair()
+   * @return the meta object for the attribute list '<em>Keys</em>'.
+   * @see nl.sison.xplatform.JsonObject#getKeys()
+   * @see #getJsonObject()
    * @generated
    */
-  EAttribute getJsonKeyValuePair_Key();
+  EAttribute getJsonObject_Keys();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.JsonKeyValuePair#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.JsonObject#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see nl.sison.xplatform.JsonKeyValuePair#getValue()
-   * @see #getJsonKeyValuePair()
+   * @return the meta object for the containment reference list '<em>Values</em>'.
+   * @see nl.sison.xplatform.JsonObject#getValues()
+   * @see #getJsonObject()
    * @generated
    */
-  EReference getJsonKeyValuePair_Value();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.JsonMetaKeyValuePair <em>Json Meta Key Value Pair</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Json Meta Key Value Pair</em>'.
-   * @see nl.sison.xplatform.JsonMetaKeyValuePair
-   * @generated
-   */
-  EClass getJsonMetaKeyValuePair();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see nl.sison.xplatform.JsonMetaKeyValuePair#getKey()
-   * @see #getJsonMetaKeyValuePair()
-   * @generated
-   */
-  EAttribute getJsonMetaKeyValuePair_Key();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see nl.sison.xplatform.JsonMetaKeyValuePair#getValue()
-   * @see #getJsonMetaKeyValuePair()
-   * @generated
-   */
-  EReference getJsonMetaKeyValuePair_Value();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.UnnestedKeyPairs <em>Unnested Key Pairs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unnested Key Pairs</em>'.
-   * @see nl.sison.xplatform.UnnestedKeyPairs
-   * @generated
-   */
-  EClass getUnnestedKeyPairs();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.UnnestedKeyPairs#getKeyValuePair <em>Key Value Pair</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Key Value Pair</em>'.
-   * @see nl.sison.xplatform.UnnestedKeyPairs#getKeyValuePair()
-   * @see #getUnnestedKeyPairs()
-   * @generated
-   */
-  EReference getUnnestedKeyPairs_KeyValuePair();
+  EReference getJsonObject_Values();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1241,6 +1143,14 @@ public interface XplatformPackage extends EPackage
     EReference XPLATFORM_JSON__META_TYPE = eINSTANCE.getXplatformJson_MetaType();
 
     /**
+     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XPLATFORM_JSON__COMPOSITE = eINSTANCE.getXplatformJson_Composite();
+
+    /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonMetaArrayImpl <em>Json Meta Array</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1381,90 +1291,46 @@ public interface XplatformPackage extends EPackage
     EClass JSON_ARRAY = eINSTANCE.getJsonArray();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JSON_ARRAY__ELEMENT = eINSTANCE.getJsonArray_Element();
+    EReference JSON_ARRAY__ELEMENTS = eINSTANCE.getJsonArray_Elements();
 
     /**
-     * The meta object literal for the '<em><b>Composite</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Composites</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JSON_ARRAY__COMPOSITE = eINSTANCE.getJsonArray_Composite();
+    EReference JSON_ARRAY__COMPOSITES = eINSTANCE.getJsonArray_Composites();
 
     /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonKeyValuePairImpl <em>Json Key Value Pair</em>}' class.
+     * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonObjectImpl <em>Json Object</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.JsonKeyValuePairImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonKeyValuePair()
+     * @see nl.sison.xplatform.impl.JsonObjectImpl
+     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonObject()
      * @generated
      */
-    EClass JSON_KEY_VALUE_PAIR = eINSTANCE.getJsonKeyValuePair();
+    EClass JSON_OBJECT = eINSTANCE.getJsonObject();
 
     /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute JSON_KEY_VALUE_PAIR__KEY = eINSTANCE.getJsonKeyValuePair_Key();
+    EAttribute JSON_OBJECT__KEYS = eINSTANCE.getJsonObject_Keys();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JSON_KEY_VALUE_PAIR__VALUE = eINSTANCE.getJsonKeyValuePair_Value();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl <em>Json Meta Key Value Pair</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonMetaKeyValuePair()
-     * @generated
-     */
-    EClass JSON_META_KEY_VALUE_PAIR = eINSTANCE.getJsonMetaKeyValuePair();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JSON_META_KEY_VALUE_PAIR__KEY = eINSTANCE.getJsonMetaKeyValuePair_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference JSON_META_KEY_VALUE_PAIR__VALUE = eINSTANCE.getJsonMetaKeyValuePair_Value();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.UnnestedKeyPairsImpl <em>Unnested Key Pairs</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.UnnestedKeyPairsImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getUnnestedKeyPairs()
-     * @generated
-     */
-    EClass UNNESTED_KEY_PAIRS = eINSTANCE.getUnnestedKeyPairs();
-
-    /**
-     * The meta object literal for the '<em><b>Key Value Pair</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR = eINSTANCE.getUnnestedKeyPairs_KeyValuePair();
+    EReference JSON_OBJECT__VALUES = eINSTANCE.getJsonObject_Values();
 
   }
 
