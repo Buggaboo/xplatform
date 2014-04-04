@@ -47,7 +47,7 @@ XplatformCallDefinition:
 ;
 
 URI:
-	(ANY_OTHER)+ ('{' uriParameter+=ID '}' (ANY_OTHER)*)?
+	(ANY_OTHER)+ ('{' uriParameters+=ID '}' (ANY_OTHER)*)?
 ;
 
 XplatformHeader:
