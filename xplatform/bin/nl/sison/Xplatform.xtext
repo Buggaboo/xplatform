@@ -3,7 +3,7 @@ grammar nl.sison.Xplatform with org.eclipse.xtext.common.Terminals
 generate xplatform "http://www.sison.nl/Xplatform"
 
 Xplatform:
-	'call' name=ID method=RESTFUL_METHODS 'from' uri=URI
+	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=XplatformHeader
 		('and' 'response' responseHeaders=XplatformHeader)?
 	)?
@@ -14,14 +14,13 @@ Xplatform:
 ;
 
 URI:
-	(ANY_OTHER)+ ('{' uriParameter+=ID '}'(ANY_OTHER)*)?
+	(ANY_OTHER)+ ('{' uriParameter+=ID '}' (ANY_OTHER)*)?
 ;
 
-// TODO refactor
 XplatformHeader:
 	"'''" 
 	'{' (headerKeyValues+=XplatformHeaderKeyValuePair)
-		(',' headerKeyValues+=XplatformHeaderKeyValuePair (',')? )* '}'
+		(',' headerKeyValues+=XplatformHeaderKeyValuePair )* (',')? '}'
 	"'''"
 ;
 
@@ -34,12 +33,12 @@ terminal XPLATFORM_HEADER_PARAMETER:
 ;
 
 terminal RESTFUL_METHODS:
-	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well
+	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well, a body-less response
 ;
 
 XplatformJson:
 	"'''" 
-	type=JsonType | metaType=JsonMetaType //| composite=JsonObject
+	type=JsonType | metaType=JsonMetaType | composite=JsonObject
 	"'''"
 ;
 
@@ -74,66 +73,15 @@ JsonScalarType:
 ;
 
 JsonArray:
-	('[' (element+=JsonScalarType) (',' element+=JsonScalarType (',')? )* ']') |
-	('[' (composite+=JsonCompositeType) (',' composite+=JsonCompositeType (',')? )* ']')
-;
-
-JsonKeyValuePair:
-	key=STRING ':' value=JsonType
-;
-
-JsonMetaKeyValuePair:
-	key=STRING ':' value=JsonMetaType 
-;
-
-UnnestedKeyPairs:
-		(keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) //| nestedKeyValuePair+=JsonNestedObject)
-			(
-				',' (keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) // | nestedKeyValuePair+=JsonNestedObject)
-				(',')?
-			)* 
-;
-/*
-JsonObjectKernel:
-	'{'
-		keyPairs=UnnestedKeyPairs 
-	'}'
-;
-
-JsonObjectLeftNestedKeyValuePair:
-	(keys+=STRING ':' (right+=JsonObjectRightNested | all+=JsonObjectAllNested))+
-	(',' unnestedKeyPairs+=UnnestedKeyPairs)+ ','?
-;
-
-JsonObjectRightNestedKeyValuePair:
-	(unnestedKeyPairs=UnnestedKeyPairs ',') 
-	(',' keys+=STRING ':' (right+=JsonObjectLeftNested | all+=JsonObjectAllNested))+ ','?
-;
-
-JsonObjectAllNestedKeyValuePair:
-	(keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')
-	(',' keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')* 
-;
-
-JsonObjectLeftNested:
-	'{'
-		keyPairs=JsonObjectLeftNestedKeyValuePair
-	'}'
-;
-
-JsonObjectRightNested:
-	'{'
-		keyPairs=JsonObjectRightNestedKeyValuePair
-	'}'
-;
-
-JsonObjectAllNested:
-	'{'
-		keyPairs=JsonObjectAllNestedKeyValuePair
-	'}'
+	('[' (elements+=JsonScalarType) (',' elements+=JsonScalarType )* (',')? ']') |
+	('[' (composites+=JsonCompositeType) (',' composites+=JsonCompositeType )* (',')? ']')
 ;
 
 JsonObject:
-	left=JsonObjectLeftNested | right=JsonObjectRightNested | kernel=JsonObjectKernel | all=JsonObjectAllNested
+	'{'
+		(keys+=STRING ':' values+=XplatformJson)
+		(','
+			keys+=STRING ':' values+=XplatformJson
+		)* (',')?
+	'}'
 ;
-*/
