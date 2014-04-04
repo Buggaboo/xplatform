@@ -403,61 +403,49 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	public class XplatformJsonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XplatformJson");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
-		private final Keyword cApostropheApostropheApostropheKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cTypeAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cTypeJsonTypeParserRuleCall_0_2_0 = (RuleCall)cTypeAssignment_0_2.eContents().get(0);
-		private final Assignment cMetaTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cMetaTypeJsonMetaTypeParserRuleCall_1_0 = (RuleCall)cMetaTypeAssignment_1.eContents().get(0);
+		private final RuleCall cJsonTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cJsonMetaTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Assignment cCompositeAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cCompositeJsonObjectParserRuleCall_2_0_0 = (RuleCall)cCompositeAssignment_2_0.eContents().get(0);
+		private final Assignment cNameAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0_0 = (RuleCall)cNameAssignment_2_0.eContents().get(0);
 		private final Keyword cApostropheApostropheApostropheKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cCompositeAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cCompositeJsonObjectParserRuleCall_2_2_0 = (RuleCall)cCompositeAssignment_2_2.eContents().get(0);
+		private final Keyword cApostropheApostropheApostropheKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//XplatformJson:
-		//	name=ID? "\'\'\'" type=JsonType | metaType=JsonMetaType | composite=JsonObject "\'\'\'";
+		//	JsonType | JsonMetaType | name=ID "\'\'\'" composite=JsonObject "\'\'\'";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID? "\'\'\'" type=JsonType | metaType=JsonMetaType | composite=JsonObject "\'\'\'"
+		//JsonType | JsonMetaType | name=ID "\'\'\'" composite=JsonObject "\'\'\'"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//name=ID? "\'\'\'" type=JsonType
-		public Group getGroup_0() { return cGroup_0; }
-
-		//name=ID?
-		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
-
-		//"\'\'\'"
-		public Keyword getApostropheApostropheApostropheKeyword_0_1() { return cApostropheApostropheApostropheKeyword_0_1; }
-
-		//type=JsonType
-		public Assignment getTypeAssignment_0_2() { return cTypeAssignment_0_2; }
-
 		//JsonType
-		public RuleCall getTypeJsonTypeParserRuleCall_0_2_0() { return cTypeJsonTypeParserRuleCall_0_2_0; }
-
-		//metaType=JsonMetaType
-		public Assignment getMetaTypeAssignment_1() { return cMetaTypeAssignment_1; }
+		public RuleCall getJsonTypeParserRuleCall_0() { return cJsonTypeParserRuleCall_0; }
 
 		//JsonMetaType
-		public RuleCall getMetaTypeJsonMetaTypeParserRuleCall_1_0() { return cMetaTypeJsonMetaTypeParserRuleCall_1_0; }
+		public RuleCall getJsonMetaTypeParserRuleCall_1() { return cJsonMetaTypeParserRuleCall_1; }
 
-		//composite=JsonObject "\'\'\'"
+		//name=ID "\'\'\'" composite=JsonObject "\'\'\'"
 		public Group getGroup_2() { return cGroup_2; }
 
-		//composite=JsonObject
-		public Assignment getCompositeAssignment_2_0() { return cCompositeAssignment_2_0; }
+		//name=ID
+		public Assignment getNameAssignment_2_0() { return cNameAssignment_2_0; }
 
-		//JsonObject
-		public RuleCall getCompositeJsonObjectParserRuleCall_2_0_0() { return cCompositeJsonObjectParserRuleCall_2_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0_0() { return cNameIDTerminalRuleCall_2_0_0; }
 
 		//"\'\'\'"
 		public Keyword getApostropheApostropheApostropheKeyword_2_1() { return cApostropheApostropheApostropheKeyword_2_1; }
+
+		//composite=JsonObject
+		public Assignment getCompositeAssignment_2_2() { return cCompositeAssignment_2_2; }
+
+		//JsonObject
+		public RuleCall getCompositeJsonObjectParserRuleCall_2_2_0() { return cCompositeJsonObjectParserRuleCall_2_2_0; }
+
+		//"\'\'\'"
+		public Keyword getApostropheApostropheApostropheKeyword_2_3() { return cApostropheApostropheApostropheKeyword_2_3; }
 	}
 
 	public class JsonMetaScalarTypeElements extends AbstractParserRuleElementFinder {
@@ -854,19 +842,19 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValuesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_3_0 = (RuleCall)cValuesAssignment_3.eContents().get(0);
+		private final RuleCall cValuesIDTerminalRuleCall_3_0 = (RuleCall)cValuesAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cValuesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cValuesAssignment_4_1.eContents().get(0);
+		private final RuleCall cValuesIDTerminalRuleCall_4_1_0 = (RuleCall)cValuesAssignment_4_1.eContents().get(0);
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//EnumInstance:
-		//	"enum" name=ID "{" values+=STRING ("," values+=STRING)* ","? "}";
+		//	"enum" name=ID "{" values+=ID ("," values+=ID)* ","? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"enum" name=ID "{" values+=STRING ("," values+=STRING)* ","? "}"
+		//"enum" name=ID "{" values+=ID ("," values+=ID)* ","? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
@@ -881,23 +869,23 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//values+=STRING
+		//values+=ID
 		public Assignment getValuesAssignment_3() { return cValuesAssignment_3; }
 
-		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_3_0() { return cValuesSTRINGTerminalRuleCall_3_0; }
+		//ID
+		public RuleCall getValuesIDTerminalRuleCall_3_0() { return cValuesIDTerminalRuleCall_3_0; }
 
-		//("," values+=STRING)*
+		//("," values+=ID)*
 		public Group getGroup_4() { return cGroup_4; }
 
 		//","
 		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 
-		//values+=STRING
+		//values+=ID
 		public Assignment getValuesAssignment_4_1() { return cValuesAssignment_4_1; }
 
-		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_4_1_0() { return cValuesSTRINGTerminalRuleCall_4_1_0; }
+		//ID
+		public RuleCall getValuesIDTerminalRuleCall_4_1_0() { return cValuesIDTerminalRuleCall_4_1_0; }
 
 		//","?
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
@@ -1210,7 +1198,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//XplatformJson:
-	//	name=ID? "\'\'\'" type=JsonType | metaType=JsonMetaType | composite=JsonObject "\'\'\'";
+	//	JsonType | JsonMetaType | name=ID "\'\'\'" composite=JsonObject "\'\'\'";
 	public XplatformJsonElements getXplatformJsonAccess() {
 		return (pXplatformJson != null) ? pXplatformJson : (pXplatformJson = new XplatformJsonElements());
 	}
@@ -1327,7 +1315,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EnumInstance:
-	//	"enum" name=ID "{" values+=STRING ("," values+=STRING)* ","? "}";
+	//	"enum" name=ID "{" values+=ID ("," values+=ID)* ","? "}";
 	public EnumInstanceElements getEnumInstanceAccess() {
 		return (pEnumInstance != null) ? pEnumInstance : (pEnumInstance = new EnumInstanceElements());
 	}

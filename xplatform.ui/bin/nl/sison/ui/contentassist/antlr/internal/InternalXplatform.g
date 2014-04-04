@@ -674,15 +674,15 @@ rule__XplatformJson__Alternatives
     }
 :
 (
-{ before(grammarAccess.getXplatformJsonAccess().getGroup_0()); }
-(rule__XplatformJson__Group_0__0)
-{ after(grammarAccess.getXplatformJsonAccess().getGroup_0()); }
+{ before(grammarAccess.getXplatformJsonAccess().getJsonTypeParserRuleCall_0()); }
+	ruleJsonType
+{ after(grammarAccess.getXplatformJsonAccess().getJsonTypeParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getXplatformJsonAccess().getMetaTypeAssignment_1()); }
-(rule__XplatformJson__MetaTypeAssignment_1)
-{ after(grammarAccess.getXplatformJsonAccess().getMetaTypeAssignment_1()); }
+{ before(grammarAccess.getXplatformJsonAccess().getJsonMetaTypeParserRuleCall_1()); }
+	ruleJsonMetaType
+{ after(grammarAccess.getXplatformJsonAccess().getJsonMetaTypeParserRuleCall_1()); }
 )
 
     |(
@@ -2548,100 +2548,6 @@ finally {
 
 
 
-rule__XplatformJson__Group_0__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__XplatformJson__Group_0__0__Impl
-	rule__XplatformJson__Group_0__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__XplatformJson__Group_0__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getXplatformJsonAccess().getNameAssignment_0_0()); }
-(rule__XplatformJson__NameAssignment_0_0)?
-{ after(grammarAccess.getXplatformJsonAccess().getNameAssignment_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__XplatformJson__Group_0__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__XplatformJson__Group_0__1__Impl
-	rule__XplatformJson__Group_0__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__XplatformJson__Group_0__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_0_1()); }
-
-	'\'\'\'' 
-
-{ after(grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_0_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__XplatformJson__Group_0__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__XplatformJson__Group_0__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__XplatformJson__Group_0__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getXplatformJsonAccess().getTypeAssignment_0_2()); }
-(rule__XplatformJson__TypeAssignment_0_2)
-{ after(grammarAccess.getXplatformJsonAccess().getTypeAssignment_0_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
 rule__XplatformJson__Group_2__0
     @init {
 		int stackSize = keepStackSize();
@@ -2660,9 +2566,9 @@ rule__XplatformJson__Group_2__0__Impl
     }
 :
 (
-{ before(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_0()); }
-(rule__XplatformJson__CompositeAssignment_2_0)
-{ after(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_0()); }
+{ before(grammarAccess.getXplatformJsonAccess().getNameAssignment_2_0()); }
+(rule__XplatformJson__NameAssignment_2_0)
+{ after(grammarAccess.getXplatformJsonAccess().getNameAssignment_2_0()); }
 )
 
 ;
@@ -2677,6 +2583,7 @@ rule__XplatformJson__Group_2__1
     }
 :
 	rule__XplatformJson__Group_2__1__Impl
+	rule__XplatformJson__Group_2__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2699,6 +2606,69 @@ rule__XplatformJson__Group_2__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__XplatformJson__Group_2__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__XplatformJson__Group_2__2__Impl
+	rule__XplatformJson__Group_2__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__XplatformJson__Group_2__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_2()); }
+(rule__XplatformJson__CompositeAssignment_2_2)
+{ after(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__XplatformJson__Group_2__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__XplatformJson__Group_2__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__XplatformJson__Group_2__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_2_3()); }
+
+	'\'\'\'' 
+
+{ after(grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_2_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -4993,14 +4963,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__XplatformJson__NameAssignment_0_0
+rule__XplatformJson__NameAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_0_0_0()); }
-	RULE_ID{ after(grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_0_0_0()); }
+{ before(grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_2_0_0()); }
+	RULE_ID{ after(grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_2_0_0()); }
 )
 
 ;
@@ -5008,44 +4978,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__XplatformJson__TypeAssignment_0_2
+rule__XplatformJson__CompositeAssignment_2_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getXplatformJsonAccess().getTypeJsonTypeParserRuleCall_0_2_0()); }
-	ruleJsonType{ after(grammarAccess.getXplatformJsonAccess().getTypeJsonTypeParserRuleCall_0_2_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__XplatformJson__MetaTypeAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getXplatformJsonAccess().getMetaTypeJsonMetaTypeParserRuleCall_1_0()); }
-	ruleJsonMetaType{ after(grammarAccess.getXplatformJsonAccess().getMetaTypeJsonMetaTypeParserRuleCall_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__XplatformJson__CompositeAssignment_2_0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_0_0()); }
-	ruleJsonObject{ after(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_0_0()); }
+{ before(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_2_0()); }
+	ruleJsonObject{ after(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_2_0()); }
 )
 
 ;
@@ -5374,8 +5314,8 @@ rule__EnumInstance__ValuesAssignment_3
     }
 :
 (
-{ before(grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_3_0()); }
-	RULE_STRING{ after(grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_3_0()); }
+{ before(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); }
+	RULE_ID{ after(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); }
 )
 
 ;
@@ -5389,8 +5329,8 @@ rule__EnumInstance__ValuesAssignment_4_1
     }
 :
 (
-{ before(grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); }
-	RULE_STRING{ after(grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); }
+{ before(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); }
+	RULE_ID{ after(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); }
 )
 
 ;

@@ -60,7 +60,6 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXplatformHeaderAccess().getGroup(), "rule__XplatformHeader__Group__0");
 					put(grammarAccess.getXplatformHeaderAccess().getGroup_4(), "rule__XplatformHeader__Group_4__0");
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getGroup(), "rule__XplatformHeaderKeyValuePair__Group__0");
-					put(grammarAccess.getXplatformJsonAccess().getGroup_0(), "rule__XplatformJson__Group_0__0");
 					put(grammarAccess.getXplatformJsonAccess().getGroup_2(), "rule__XplatformJson__Group_2__0");
 					put(grammarAccess.getJsonMetaArrayAccess().getGroup(), "rule__JsonMetaArray__Group__0");
 					put(grammarAccess.getJsonScalarTypeAccess().getGroup_2(), "rule__JsonScalarType__Group_2__0");
@@ -98,10 +97,8 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getKeyAssignment_0(), "rule__XplatformHeaderKeyValuePair__KeyAssignment_0");
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getValueAssignment_2_0(), "rule__XplatformHeaderKeyValuePair__ValueAssignment_2_0");
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getValueAssignment_2_1(), "rule__XplatformHeaderKeyValuePair__ValueAssignment_2_1");
-					put(grammarAccess.getXplatformJsonAccess().getNameAssignment_0_0(), "rule__XplatformJson__NameAssignment_0_0");
-					put(grammarAccess.getXplatformJsonAccess().getTypeAssignment_0_2(), "rule__XplatformJson__TypeAssignment_0_2");
-					put(grammarAccess.getXplatformJsonAccess().getMetaTypeAssignment_1(), "rule__XplatformJson__MetaTypeAssignment_1");
-					put(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_0(), "rule__XplatformJson__CompositeAssignment_2_0");
+					put(grammarAccess.getXplatformJsonAccess().getNameAssignment_2_0(), "rule__XplatformJson__NameAssignment_2_0");
+					put(grammarAccess.getXplatformJsonAccess().getCompositeAssignment_2_2(), "rule__XplatformJson__CompositeAssignment_2_2");
 					put(grammarAccess.getJsonMetaArrayAccess().getMetaTypeAssignment_1(), "rule__JsonMetaArray__MetaTypeAssignment_1");
 					put(grammarAccess.getJsonMetaTypeAccess().getScalarAssignment_0(), "rule__JsonMetaType__ScalarAssignment_0");
 					put(grammarAccess.getJsonMetaTypeAccess().getCompositeAssignment_1(), "rule__JsonMetaType__CompositeAssignment_1");

@@ -659,11 +659,31 @@ ruleXplatformJson returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
 (
-		lv_name_0_0=RULE_ID
+    { 
+        newCompositeNode(grammarAccess.getXplatformJsonAccess().getJsonTypeParserRuleCall_0()); 
+    }
+    this_JsonType_0=ruleJsonType
+    { 
+        $current = $this_JsonType_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getXplatformJsonAccess().getJsonMetaTypeParserRuleCall_1()); 
+    }
+    this_JsonMetaType_1=ruleJsonMetaType
+    { 
+        $current = $this_JsonMetaType_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |((
+(
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -672,57 +692,19 @@ ruleXplatformJson returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 
 )
-)?	otherlv_1='\'\'\'' 
+)	otherlv_3='\'\'\'' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_0_1());
+    	newLeafNode(otherlv_3, grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_2_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformJsonAccess().getTypeJsonTypeParserRuleCall_0_2_0()); 
-	    }
-		lv_type_2_0=ruleJsonType		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformJsonRule());
-	        }
-       		set(
-       			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"JsonType");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getXplatformJsonAccess().getMetaTypeJsonMetaTypeParserRuleCall_1_0()); 
-	    }
-		lv_metaType_3_0=ruleJsonMetaType		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformJsonRule());
-	        }
-       		set(
-       			$current, 
-       			"metaType",
-        		lv_metaType_3_0, 
-        		"JsonMetaType");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_0_0()); 
+	        newCompositeNode(grammarAccess.getXplatformJsonAccess().getCompositeJsonObjectParserRuleCall_2_2_0()); 
 	    }
 		lv_composite_4_0=ruleJsonObject		{
 	        if ($current==null) {
@@ -739,7 +721,7 @@ ruleXplatformJson returns [EObject current=null]
 )
 )	otherlv_5='\'\'\'' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_2_1());
+    	newLeafNode(otherlv_5, grammarAccess.getXplatformJsonAccess().getApostropheApostropheApostropheKeyword_2_3());
     }
 ))
 ;
@@ -1438,9 +1420,9 @@ ruleEnumInstance returns [EObject current=null]
     }
 (
 (
-		lv_values_3_0=RULE_STRING
+		lv_values_3_0=RULE_ID
 		{
-			newLeafNode(lv_values_3_0, grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_values_3_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1450,7 +1432,7 @@ ruleEnumInstance returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_3_0, 
-        		"STRING");
+        		"ID");
 	    }
 
 )
@@ -1460,9 +1442,9 @@ ruleEnumInstance returns [EObject current=null]
     }
 (
 (
-		lv_values_5_0=RULE_STRING
+		lv_values_5_0=RULE_ID
 		{
-			newLeafNode(lv_values_5_0, grammarAccess.getEnumInstanceAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); 
+			newLeafNode(lv_values_5_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1472,7 +1454,7 @@ ruleEnumInstance returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_5_0, 
-        		"STRING");
+        		"ID");
 	    }
 
 )

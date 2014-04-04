@@ -80,10 +80,12 @@ terminal RESTFUL_METHODS:
 ;
 
 XplatformJson:
-	(name=ID)?
-	"'''" 
-	type=JsonType | metaType=JsonMetaType | composite=JsonObject
-	"'''" 
+	JsonType | JsonMetaType | 
+	((name=ID)
+		"'''" 
+		composite=JsonObject
+		"'''"
+	) 
 ;
 
 terminal JSON_LITERAL_NULL: 'null';

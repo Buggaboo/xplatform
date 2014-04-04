@@ -38,8 +38,6 @@
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformJson">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformJson/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/metaType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/composite"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonMetaArray">
@@ -47,14 +45,12 @@
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonMetaType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonMetaType/scalar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaType/composite"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonCompositeType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonCompositeType/composite"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonType/scalar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonType/composite"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonScalarType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonScalarType/bool"/>

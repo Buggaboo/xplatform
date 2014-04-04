@@ -343,31 +343,13 @@ public interface XplatformPackage extends EPackage
   int XPLATFORM_JSON__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XPLATFORM_JSON__TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Meta Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XPLATFORM_JSON__META_TYPE = 2;
-
-  /**
    * The feature id for the '<em><b>Composite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON__COMPOSITE = 3;
+  int XPLATFORM_JSON__COMPOSITE = 1;
 
   /**
    * The number of structural features of the '<em>Json</em>' class.
@@ -376,7 +358,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON_FEATURE_COUNT = 4;
+  int XPLATFORM_JSON_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonMetaArrayImpl <em>Json Meta Array</em>}' class.
@@ -417,13 +399,13 @@ public interface XplatformPackage extends EPackage
   int JSON_META_TYPE = 8;
 
   /**
-   * The feature id for the '<em><b>Scalar</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_META_TYPE__SCALAR = 0;
+  int JSON_META_TYPE__NAME = XPLATFORM_JSON__NAME;
 
   /**
    * The feature id for the '<em><b>Composite</b></em>' containment reference.
@@ -432,7 +414,16 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_META_TYPE__COMPOSITE = 1;
+  int JSON_META_TYPE__COMPOSITE = XPLATFORM_JSON__COMPOSITE;
+
+  /**
+   * The feature id for the '<em><b>Scalar</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_META_TYPE__SCALAR = XPLATFORM_JSON_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Json Meta Type</em>' class.
@@ -441,7 +432,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_META_TYPE_FEATURE_COUNT = 2;
+  int JSON_META_TYPE_FEATURE_COUNT = XPLATFORM_JSON_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonCompositeTypeImpl <em>Json Composite Type</em>}' class.
@@ -482,13 +473,13 @@ public interface XplatformPackage extends EPackage
   int JSON_TYPE = 10;
 
   /**
-   * The feature id for the '<em><b>Scalar</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_TYPE__SCALAR = 0;
+  int JSON_TYPE__NAME = XPLATFORM_JSON__NAME;
 
   /**
    * The feature id for the '<em><b>Composite</b></em>' containment reference.
@@ -497,7 +488,16 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_TYPE__COMPOSITE = 1;
+  int JSON_TYPE__COMPOSITE = XPLATFORM_JSON__COMPOSITE;
+
+  /**
+   * The feature id for the '<em><b>Scalar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_TYPE__SCALAR = XPLATFORM_JSON_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Json Type</em>' class.
@@ -506,7 +506,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_TYPE_FEATURE_COUNT = 2;
+  int JSON_TYPE_FEATURE_COUNT = XPLATFORM_JSON_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonScalarTypeImpl <em>Json Scalar Type</em>}' class.
@@ -1065,28 +1065,6 @@ public interface XplatformPackage extends EPackage
   EAttribute getXplatformJson_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformJson#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see nl.sison.xplatform.XplatformJson#getType()
-   * @see #getXplatformJson()
-   * @generated
-   */
-  EReference getXplatformJson_Type();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformJson#getMetaType <em>Meta Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Meta Type</em>'.
-   * @see nl.sison.xplatform.XplatformJson#getMetaType()
-   * @see #getXplatformJson()
-   * @generated
-   */
-  EReference getXplatformJson_MetaType();
-
-  /**
    * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformJson#getComposite <em>Composite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1140,17 +1118,6 @@ public interface XplatformPackage extends EPackage
   EAttribute getJsonMetaType_Scalar();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.JsonMetaType#getComposite <em>Composite</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Composite</em>'.
-   * @see nl.sison.xplatform.JsonMetaType#getComposite()
-   * @see #getJsonMetaType()
-   * @generated
-   */
-  EReference getJsonMetaType_Composite();
-
-  /**
    * Returns the meta object for class '{@link nl.sison.xplatform.JsonCompositeType <em>Json Composite Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1191,17 +1158,6 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EReference getJsonType_Scalar();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.JsonType#getComposite <em>Composite</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Composite</em>'.
-   * @see nl.sison.xplatform.JsonType#getComposite()
-   * @see #getJsonType()
-   * @generated
-   */
-  EReference getJsonType_Composite();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.JsonScalarType <em>Json Scalar Type</em>}'.
@@ -1686,22 +1642,6 @@ public interface XplatformPackage extends EPackage
     EAttribute XPLATFORM_JSON__NAME = eINSTANCE.getXplatformJson_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XPLATFORM_JSON__TYPE = eINSTANCE.getXplatformJson_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Meta Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XPLATFORM_JSON__META_TYPE = eINSTANCE.getXplatformJson_MetaType();
-
-    /**
      * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1746,14 +1686,6 @@ public interface XplatformPackage extends EPackage
     EAttribute JSON_META_TYPE__SCALAR = eINSTANCE.getJsonMetaType_Scalar();
 
     /**
-     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference JSON_META_TYPE__COMPOSITE = eINSTANCE.getJsonMetaType_Composite();
-
-    /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonCompositeTypeImpl <em>Json Composite Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1788,14 +1720,6 @@ public interface XplatformPackage extends EPackage
      * @generated
      */
     EReference JSON_TYPE__SCALAR = eINSTANCE.getJsonType_Scalar();
-
-    /**
-     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference JSON_TYPE__COMPOSITE = eINSTANCE.getJsonType_Composite();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonScalarTypeImpl <em>Json Scalar Type</em>}' class.

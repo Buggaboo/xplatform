@@ -132,6 +132,7 @@ public class XplatformSwitch<T> extends Switch<T>
       {
         JsonMetaType jsonMetaType = (JsonMetaType)theEObject;
         T result = caseJsonMetaType(jsonMetaType);
+        if (result == null) result = caseXplatformJson(jsonMetaType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -146,6 +147,7 @@ public class XplatformSwitch<T> extends Switch<T>
       {
         JsonType jsonType = (JsonType)theEObject;
         T result = caseJsonType(jsonType);
+        if (result == null) result = caseXplatformJson(jsonType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

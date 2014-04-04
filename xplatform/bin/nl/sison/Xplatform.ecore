@@ -43,30 +43,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XplatformJson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//JsonType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metaType" eType="#//JsonMetaType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonMetaArray">
     <eStructuralFeatures xsi:type="ecore:EReference" name="metaType" eType="#//JsonMetaType"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonMetaType">
+  <eClassifiers xsi:type="ecore:EClass" name="JsonMetaType" eSuperTypes="#//XplatformJson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scalar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonMetaArray"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonCompositeType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonArray"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonType">
+  <eClassifiers xsi:type="ecore:EClass" name="JsonType" eSuperTypes="#//XplatformJson">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scalar" eType="#//JsonScalarType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonCompositeType"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonScalarType">
