@@ -65,16 +65,19 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
     switch (eClass.getClassifierID())
     {
       case XplatformPackage.XPLATFORM: return createXplatform();
-      case XplatformPackage.XPLATFORM_JSON: return createXplatformJson();
+      case XplatformPackage.URI: return createURI();
       case XplatformPackage.XPLATFORM_HEADER: return createXplatformHeader();
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR: return createXplatformHeaderKeyValuePair();
+      case XplatformPackage.XPLATFORM_JSON: return createXplatformJson();
+      case XplatformPackage.JSON_META_ARRAY: return createJsonMetaArray();
       case XplatformPackage.JSON_META_TYPE: return createJsonMetaType();
+      case XplatformPackage.JSON_COMPOSITE_TYPE: return createJsonCompositeType();
       case XplatformPackage.JSON_TYPE: return createJsonType();
+      case XplatformPackage.JSON_SCALAR_TYPE: return createJsonScalarType();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
       case XplatformPackage.JSON_KEY_VALUE_PAIR: return createJsonKeyValuePair();
-      case XplatformPackage.JSON_OBJECT: return createJsonObject();
-      case XplatformPackage.JSON_META_ARRAY: return createJsonMetaArray();
       case XplatformPackage.JSON_META_KEY_VALUE_PAIR: return createJsonMetaKeyValuePair();
+      case XplatformPackage.UNNESTED_KEY_PAIRS: return createUnnestedKeyPairs();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,10 +99,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public XplatformJson createXplatformJson()
+  public URI createURI()
   {
-    XplatformJsonImpl xplatformJson = new XplatformJsonImpl();
-    return xplatformJson;
+    URIImpl uri = new URIImpl();
+    return uri;
   }
 
   /**
@@ -129,6 +132,28 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public XplatformJson createXplatformJson()
+  {
+    XplatformJsonImpl xplatformJson = new XplatformJsonImpl();
+    return xplatformJson;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonMetaArray createJsonMetaArray()
+  {
+    JsonMetaArrayImpl jsonMetaArray = new JsonMetaArrayImpl();
+    return jsonMetaArray;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public JsonMetaType createJsonMetaType()
   {
     JsonMetaTypeImpl jsonMetaType = new JsonMetaTypeImpl();
@@ -140,10 +165,32 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public JsonCompositeType createJsonCompositeType()
+  {
+    JsonCompositeTypeImpl jsonCompositeType = new JsonCompositeTypeImpl();
+    return jsonCompositeType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public JsonType createJsonType()
   {
     JsonTypeImpl jsonType = new JsonTypeImpl();
     return jsonType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonScalarType createJsonScalarType()
+  {
+    JsonScalarTypeImpl jsonScalarType = new JsonScalarTypeImpl();
+    return jsonScalarType;
   }
 
   /**
@@ -173,32 +220,21 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonObject createJsonObject()
-  {
-    JsonObjectImpl jsonObject = new JsonObjectImpl();
-    return jsonObject;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public JsonMetaArray createJsonMetaArray()
-  {
-    JsonMetaArrayImpl jsonMetaArray = new JsonMetaArrayImpl();
-    return jsonMetaArray;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public JsonMetaKeyValuePair createJsonMetaKeyValuePair()
   {
     JsonMetaKeyValuePairImpl jsonMetaKeyValuePair = new JsonMetaKeyValuePairImpl();
     return jsonMetaKeyValuePair;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnnestedKeyPairs createUnnestedKeyPairs()
+  {
+    UnnestedKeyPairsImpl unnestedKeyPairs = new UnnestedKeyPairsImpl();
+    return unnestedKeyPairs;
   }
 
   /**

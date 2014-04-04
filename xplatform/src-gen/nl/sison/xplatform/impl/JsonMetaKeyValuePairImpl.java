@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl#getMetaKey <em>Meta Key</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl#getMetaValue <em>Meta Value</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonMetaKeyValuePairImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,34 +32,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container implements JsonMetaKeyValuePair
 {
   /**
-   * The default value of the '{@link #getMetaKey() <em>Meta Key</em>}' attribute.
+   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetaKey()
+   * @see #getKey()
    * @generated
    * @ordered
    */
-  protected static final String META_KEY_EDEFAULT = null;
+  protected static final String KEY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMetaKey() <em>Meta Key</em>}' attribute.
+   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetaKey()
+   * @see #getKey()
    * @generated
    * @ordered
    */
-  protected String metaKey = META_KEY_EDEFAULT;
+  protected String key = KEY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMetaValue() <em>Meta Value</em>}' containment reference.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetaValue()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected JsonMetaType metaValue;
+  protected JsonMetaType value;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,9 +87,9 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMetaKey()
+  public String getKey()
   {
-    return metaKey;
+    return key;
   }
 
   /**
@@ -97,12 +97,12 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMetaKey(String newMetaKey)
+  public void setKey(String newKey)
   {
-    String oldMetaKey = metaKey;
-    metaKey = newMetaKey;
+    String oldKey = key;
+    key = newKey;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_KEY, oldMetaKey, metaKey));
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__KEY, oldKey, key));
   }
 
   /**
@@ -110,9 +110,9 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonMetaType getMetaValue()
+  public JsonMetaType getValue()
   {
-    return metaValue;
+    return value;
   }
 
   /**
@@ -120,13 +120,13 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMetaValue(JsonMetaType newMetaValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(JsonMetaType newValue, NotificationChain msgs)
   {
-    JsonMetaType oldMetaValue = metaValue;
-    metaValue = newMetaValue;
+    JsonMetaType oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE, oldMetaValue, newMetaValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -137,20 +137,20 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMetaValue(JsonMetaType newMetaValue)
+  public void setValue(JsonMetaType newValue)
   {
-    if (newMetaValue != metaValue)
+    if (newValue != value)
     {
       NotificationChain msgs = null;
-      if (metaValue != null)
-        msgs = ((InternalEObject)metaValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE, null, msgs);
-      if (newMetaValue != null)
-        msgs = ((InternalEObject)newMetaValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE, null, msgs);
-      msgs = basicSetMetaValue(newMetaValue, msgs);
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE, newMetaValue, newMetaValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE, newValue, newValue));
   }
 
   /**
@@ -163,8 +163,8 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE:
-        return basicSetMetaValue(null, msgs);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -179,10 +179,10 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_KEY:
-        return getMetaKey();
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE:
-        return getMetaValue();
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__KEY:
+        return getKey();
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,11 +197,11 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_KEY:
-        setMetaKey((String)newValue);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__KEY:
+        setKey((String)newValue);
         return;
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE:
-        setMetaValue((JsonMetaType)newValue);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE:
+        setValue((JsonMetaType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,11 +217,11 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_KEY:
-        setMetaKey(META_KEY_EDEFAULT);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__KEY:
+        setKey(KEY_EDEFAULT);
         return;
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE:
-        setMetaValue((JsonMetaType)null);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE:
+        setValue((JsonMetaType)null);
         return;
     }
     super.eUnset(featureID);
@@ -237,10 +237,10 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_KEY:
-        return META_KEY_EDEFAULT == null ? metaKey != null : !META_KEY_EDEFAULT.equals(metaKey);
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__META_VALUE:
-        return metaValue != null;
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__KEY:
+        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+      case XplatformPackage.JSON_META_KEY_VALUE_PAIR__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -256,8 +256,8 @@ public class JsonMetaKeyValuePairImpl extends MinimalEObjectImpl.Container imple
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (metaKey: ");
-    result.append(metaKey);
+    result.append(" (key: ");
+    result.append(key);
     result.append(')');
     return result.toString();
   }

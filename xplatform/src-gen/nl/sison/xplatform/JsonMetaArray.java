@@ -2,6 +2,7 @@
  */
 package nl.sison.xplatform;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ package nl.sison.xplatform;
  * @model
  * @generated
  */
-public interface JsonMetaArray extends JsonMetaType
+public interface JsonMetaArray extends EObject
 {
   /**
    * Returns the value of the '<em><b>Meta Type</b></em>' containment reference.

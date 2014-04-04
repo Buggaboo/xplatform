@@ -80,9 +80,9 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createXplatformAdapter();
       }
       @Override
-      public Adapter caseXplatformJson(XplatformJson object)
+      public Adapter caseURI(URI object)
       {
-        return createXplatformJsonAdapter();
+        return createURIAdapter();
       }
       @Override
       public Adapter caseXplatformHeader(XplatformHeader object)
@@ -95,14 +95,34 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createXplatformHeaderKeyValuePairAdapter();
       }
       @Override
+      public Adapter caseXplatformJson(XplatformJson object)
+      {
+        return createXplatformJsonAdapter();
+      }
+      @Override
+      public Adapter caseJsonMetaArray(JsonMetaArray object)
+      {
+        return createJsonMetaArrayAdapter();
+      }
+      @Override
       public Adapter caseJsonMetaType(JsonMetaType object)
       {
         return createJsonMetaTypeAdapter();
       }
       @Override
+      public Adapter caseJsonCompositeType(JsonCompositeType object)
+      {
+        return createJsonCompositeTypeAdapter();
+      }
+      @Override
       public Adapter caseJsonType(JsonType object)
       {
         return createJsonTypeAdapter();
+      }
+      @Override
+      public Adapter caseJsonScalarType(JsonScalarType object)
+      {
+        return createJsonScalarTypeAdapter();
       }
       @Override
       public Adapter caseJsonArray(JsonArray object)
@@ -115,19 +135,14 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createJsonKeyValuePairAdapter();
       }
       @Override
-      public Adapter caseJsonObject(JsonObject object)
-      {
-        return createJsonObjectAdapter();
-      }
-      @Override
-      public Adapter caseJsonMetaArray(JsonMetaArray object)
-      {
-        return createJsonMetaArrayAdapter();
-      }
-      @Override
       public Adapter caseJsonMetaKeyValuePair(JsonMetaKeyValuePair object)
       {
         return createJsonMetaKeyValuePairAdapter();
+      }
+      @Override
+      public Adapter caseUnnestedKeyPairs(UnnestedKeyPairs object)
+      {
+        return createUnnestedKeyPairsAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -167,16 +182,16 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformJson <em>Json</em>}'.
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.URI <em>URI</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see nl.sison.xplatform.XplatformJson
+   * @see nl.sison.xplatform.URI
    * @generated
    */
-  public Adapter createXplatformJsonAdapter()
+  public Adapter createURIAdapter()
   {
     return null;
   }
@@ -212,6 +227,36 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformJson <em>Json</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.XplatformJson
+   * @generated
+   */
+  public Adapter createXplatformJsonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonMetaArray <em>Json Meta Array</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.JsonMetaArray
+   * @generated
+   */
+  public Adapter createJsonMetaArrayAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonMetaType <em>Json Meta Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -227,6 +272,21 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonCompositeType <em>Json Composite Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.JsonCompositeType
+   * @generated
+   */
+  public Adapter createJsonCompositeTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonType <em>Json Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -237,6 +297,21 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonScalarType <em>Json Scalar Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.JsonScalarType
+   * @generated
+   */
+  public Adapter createJsonScalarTypeAdapter()
   {
     return null;
   }
@@ -272,36 +347,6 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonObject <em>Json Object</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.xplatform.JsonObject
-   * @generated
-   */
-  public Adapter createJsonObjectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonMetaArray <em>Json Meta Array</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.xplatform.JsonMetaArray
-   * @generated
-   */
-  public Adapter createJsonMetaArrayAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonMetaKeyValuePair <em>Json Meta Key Value Pair</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -312,6 +357,21 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonMetaKeyValuePairAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.UnnestedKeyPairs <em>Unnested Key Pairs</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.UnnestedKeyPairs
+   * @generated
+   */
+  public Adapter createUnnestedKeyPairsAdapter()
   {
     return null;
   }

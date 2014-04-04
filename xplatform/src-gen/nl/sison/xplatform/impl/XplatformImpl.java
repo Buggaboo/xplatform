@@ -2,8 +2,7 @@
  */
 package nl.sison.xplatform.impl;
 
-import java.util.Collection;
-
+import nl.sison.xplatform.URI;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformJson;
@@ -12,15 +11,11 @@ import nl.sison.xplatform.XplatformPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +26,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getUriPathParams <em>Uri Path Params</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getUri <em>Uri</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getRequestHeaders <em>Request Headers</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getResponseHeaders <em>Response Headers</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getJsonToClient <em>Json To Client</em>}</li>
@@ -84,14 +79,14 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   protected String method = METHOD_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUriPathParams() <em>Uri Path Params</em>}' attribute list.
+   * The cached value of the '{@link #getUri() <em>Uri</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUriPathParams()
+   * @see #getUri()
    * @generated
    * @ordered
    */
-  protected EList<String> uriPathParams;
+  protected URI uri;
 
   /**
    * The cached value of the '{@link #getRequestHeaders() <em>Request Headers</em>}' containment reference.
@@ -205,13 +200,47 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getUriPathParams()
+  public URI getUri()
   {
-    if (uriPathParams == null)
+    return uri;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetUri(URI newUri, NotificationChain msgs)
+  {
+    URI oldUri = uri;
+    uri = newUri;
+    if (eNotificationRequired())
     {
-      uriPathParams = new EDataTypeEList<String>(String.class, this, XplatformPackage.XPLATFORM__URI_PATH_PARAMS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM__URI, oldUri, newUri);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return uriPathParams;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUri(URI newUri)
+  {
+    if (newUri != uri)
+    {
+      NotificationChain msgs = null;
+      if (uri != null)
+        msgs = ((InternalEObject)uri).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM__URI, null, msgs);
+      if (newUri != null)
+        msgs = ((InternalEObject)newUri).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM__URI, null, msgs);
+      msgs = basicSetUri(newUri, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM__URI, newUri, newUri));
   }
 
   /**
@@ -416,6 +445,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__URI:
+        return basicSetUri(null, msgs);
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
         return basicSetRequestHeaders(null, msgs);
       case XplatformPackage.XPLATFORM__RESPONSE_HEADERS:
@@ -442,8 +473,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
         return getName();
       case XplatformPackage.XPLATFORM__METHOD:
         return getMethod();
-      case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
-        return getUriPathParams();
+      case XplatformPackage.XPLATFORM__URI:
+        return getUri();
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
         return getRequestHeaders();
       case XplatformPackage.XPLATFORM__RESPONSE_HEADERS:
@@ -461,7 +492,6 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -473,9 +503,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
       case XplatformPackage.XPLATFORM__METHOD:
         setMethod((String)newValue);
         return;
-      case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
-        getUriPathParams().clear();
-        getUriPathParams().addAll((Collection<? extends String>)newValue);
+      case XplatformPackage.XPLATFORM__URI:
+        setUri((URI)newValue);
         return;
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
         setRequestHeaders((XplatformHeader)newValue);
@@ -509,8 +538,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
       case XplatformPackage.XPLATFORM__METHOD:
         setMethod(METHOD_EDEFAULT);
         return;
-      case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
-        getUriPathParams().clear();
+      case XplatformPackage.XPLATFORM__URI:
+        setUri((URI)null);
         return;
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
         setRequestHeaders((XplatformHeader)null);
@@ -542,8 +571,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XplatformPackage.XPLATFORM__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
-      case XplatformPackage.XPLATFORM__URI_PATH_PARAMS:
-        return uriPathParams != null && !uriPathParams.isEmpty();
+      case XplatformPackage.XPLATFORM__URI:
+        return uri != null;
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
         return requestHeaders != null;
       case XplatformPackage.XPLATFORM__RESPONSE_HEADERS:
@@ -571,8 +600,6 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
     result.append(name);
     result.append(", method: ");
     result.append(method);
-    result.append(", uriPathParams: ");
-    result.append(uriPathParams);
     result.append(')');
     return result.toString();
   }

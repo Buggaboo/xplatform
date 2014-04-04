@@ -5,7 +5,8 @@ package nl.sison.xplatform.impl;
 import java.util.Collection;
 
 import nl.sison.xplatform.JsonArray;
-import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.JsonCompositeType;
+import nl.sison.xplatform.JsonScalarType;
 import nl.sison.xplatform.XplatformPackage;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -25,23 +28,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getType <em>Type</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.JsonArrayImpl#getComposite <em>Composite</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
+public class JsonArrayImpl extends MinimalEObjectImpl.Container implements JsonArray
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference list.
+   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getElement()
    * @generated
    * @ordered
    */
-  protected EList<JsonType> type;
+  protected EList<JsonScalarType> element;
+
+  /**
+   * The cached value of the '{@link #getComposite() <em>Composite</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComposite()
+   * @generated
+   * @ordered
+   */
+  protected EList<JsonCompositeType> composite;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +83,27 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonType> getType()
+  public EList<JsonScalarType> getElement()
   {
-    if (type == null)
+    if (element == null)
     {
-      type = new EObjectContainmentEList<JsonType>(JsonType.class, this, XplatformPackage.JSON_ARRAY__TYPE);
+      element = new EObjectContainmentEList<JsonScalarType>(JsonScalarType.class, this, XplatformPackage.JSON_ARRAY__ELEMENT);
     }
-    return type;
+    return element;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<JsonCompositeType> getComposite()
+  {
+    if (composite == null)
+    {
+      composite = new EObjectContainmentEList<JsonCompositeType>(JsonCompositeType.class, this, XplatformPackage.JSON_ARRAY__COMPOSITE);
+    }
+    return composite;
   }
 
   /**
@@ -88,8 +116,10 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__TYPE:
-        return ((InternalEList<?>)getType()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.JSON_ARRAY__ELEMENT:
+        return ((InternalEList<?>)getElement()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.JSON_ARRAY__COMPOSITE:
+        return ((InternalEList<?>)getComposite()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +134,10 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__TYPE:
-        return getType();
+      case XplatformPackage.JSON_ARRAY__ELEMENT:
+        return getElement();
+      case XplatformPackage.JSON_ARRAY__COMPOSITE:
+        return getComposite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +153,13 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__TYPE:
-        getType().clear();
-        getType().addAll((Collection<? extends JsonType>)newValue);
+      case XplatformPackage.JSON_ARRAY__ELEMENT:
+        getElement().clear();
+        getElement().addAll((Collection<? extends JsonScalarType>)newValue);
+        return;
+      case XplatformPackage.JSON_ARRAY__COMPOSITE:
+        getComposite().clear();
+        getComposite().addAll((Collection<? extends JsonCompositeType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +175,11 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__TYPE:
-        getType().clear();
+      case XplatformPackage.JSON_ARRAY__ELEMENT:
+        getElement().clear();
+        return;
+      case XplatformPackage.JSON_ARRAY__COMPOSITE:
+        getComposite().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +195,10 @@ public class JsonArrayImpl extends JsonTypeImpl implements JsonArray
   {
     switch (featureID)
     {
-      case XplatformPackage.JSON_ARRAY__TYPE:
-        return type != null && !type.isEmpty();
+      case XplatformPackage.JSON_ARRAY__ELEMENT:
+        return element != null && !element.isEmpty();
+      case XplatformPackage.JSON_ARRAY__COMPOSITE:
+        return composite != null && !composite.isEmpty();
     }
     return super.eIsSet(featureID);
   }

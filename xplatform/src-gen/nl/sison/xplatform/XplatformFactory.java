@@ -32,13 +32,13 @@ public interface XplatformFactory extends EFactory
   Xplatform createXplatform();
 
   /**
-   * Returns a new object of class '<em>Json</em>'.
+   * Returns a new object of class '<em>URI</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json</em>'.
+   * @return a new object of class '<em>URI</em>'.
    * @generated
    */
-  XplatformJson createXplatformJson();
+  URI createURI();
 
   /**
    * Returns a new object of class '<em>Header</em>'.
@@ -59,6 +59,24 @@ public interface XplatformFactory extends EFactory
   XplatformHeaderKeyValuePair createXplatformHeaderKeyValuePair();
 
   /**
+   * Returns a new object of class '<em>Json</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json</em>'.
+   * @generated
+   */
+  XplatformJson createXplatformJson();
+
+  /**
+   * Returns a new object of class '<em>Json Meta Array</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Meta Array</em>'.
+   * @generated
+   */
+  JsonMetaArray createJsonMetaArray();
+
+  /**
    * Returns a new object of class '<em>Json Meta Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -68,6 +86,15 @@ public interface XplatformFactory extends EFactory
   JsonMetaType createJsonMetaType();
 
   /**
+   * Returns a new object of class '<em>Json Composite Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Composite Type</em>'.
+   * @generated
+   */
+  JsonCompositeType createJsonCompositeType();
+
+  /**
    * Returns a new object of class '<em>Json Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +102,15 @@ public interface XplatformFactory extends EFactory
    * @generated
    */
   JsonType createJsonType();
+
+  /**
+   * Returns a new object of class '<em>Json Scalar Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Scalar Type</em>'.
+   * @generated
+   */
+  JsonScalarType createJsonScalarType();
 
   /**
    * Returns a new object of class '<em>Json Array</em>'.
@@ -95,24 +131,6 @@ public interface XplatformFactory extends EFactory
   JsonKeyValuePair createJsonKeyValuePair();
 
   /**
-   * Returns a new object of class '<em>Json Object</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Object</em>'.
-   * @generated
-   */
-  JsonObject createJsonObject();
-
-  /**
-   * Returns a new object of class '<em>Json Meta Array</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Meta Array</em>'.
-   * @generated
-   */
-  JsonMetaArray createJsonMetaArray();
-
-  /**
    * Returns a new object of class '<em>Json Meta Key Value Pair</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +138,15 @@ public interface XplatformFactory extends EFactory
    * @generated
    */
   JsonMetaKeyValuePair createJsonMetaKeyValuePair();
+
+  /**
+   * Returns a new object of class '<em>Unnested Key Pairs</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unnested Key Pairs</em>'.
+   * @generated
+   */
+  UnnestedKeyPairs createUnnestedKeyPairs();
 
   /**
    * Returns the package supported by this factory.

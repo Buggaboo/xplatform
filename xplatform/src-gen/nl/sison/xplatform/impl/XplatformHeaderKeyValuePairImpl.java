@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +47,26 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
    * @ordered
    */
   protected String key = KEY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +117,29 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +147,8 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
     {
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY:
         return getKey();
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,6 +165,9 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
     {
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY:
         setKey((String)newValue);
+        return;
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +186,9 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY:
         setKey(KEY_EDEFAULT);
         return;
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +205,8 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
     {
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY:
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+      case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -170,6 +224,8 @@ public class XplatformHeaderKeyValuePairImpl extends MinimalEObjectImpl.Containe
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (key: ");
     result.append(key);
+    result.append(", value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

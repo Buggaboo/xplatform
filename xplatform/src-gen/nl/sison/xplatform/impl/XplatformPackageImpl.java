@@ -3,12 +3,14 @@
 package nl.sison.xplatform.impl;
 
 import nl.sison.xplatform.JsonArray;
+import nl.sison.xplatform.JsonCompositeType;
 import nl.sison.xplatform.JsonKeyValuePair;
 import nl.sison.xplatform.JsonMetaArray;
 import nl.sison.xplatform.JsonMetaKeyValuePair;
 import nl.sison.xplatform.JsonMetaType;
-import nl.sison.xplatform.JsonObject;
+import nl.sison.xplatform.JsonScalarType;
 import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.UnnestedKeyPairs;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformFactory;
 import nl.sison.xplatform.XplatformHeader;
@@ -43,7 +45,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xplatformJsonEClass = null;
+  private EClass uriEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,6 +66,20 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass xplatformJsonEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jsonMetaArrayEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass jsonMetaTypeEClass = null;
 
   /**
@@ -71,7 +87,21 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass jsonCompositeTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass jsonTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jsonScalarTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -92,21 +122,14 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass jsonObjectEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass jsonMetaArrayEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass jsonMetaKeyValuePairEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unnestedKeyPairsEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -206,9 +229,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXplatform_UriPathParams()
+  public EReference getXplatform_Uri()
   {
-    return (EAttribute)xplatformEClass.getEStructuralFeatures().get(2);
+    return (EReference)xplatformEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -256,9 +279,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXplatformJson()
+  public EClass getURI()
   {
-    return xplatformJsonEClass;
+    return uriEClass;
   }
 
   /**
@@ -266,19 +289,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatformJson_Type()
+  public EAttribute getURI_UriParameter()
   {
-    return (EReference)xplatformJsonEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXplatformJson_MetaType()
-  {
-    return (EReference)xplatformJsonEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)uriEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -326,9 +339,109 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getXplatformHeaderKeyValuePair_Value()
+  {
+    return (EAttribute)xplatformHeaderKeyValuePairEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXplatformJson()
+  {
+    return xplatformJsonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXplatformJson_Type()
+  {
+    return (EReference)xplatformJsonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXplatformJson_MetaType()
+  {
+    return (EReference)xplatformJsonEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJsonMetaArray()
+  {
+    return jsonMetaArrayEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonMetaArray_MetaType()
+  {
+    return (EReference)jsonMetaArrayEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getJsonMetaType()
   {
     return jsonMetaTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonMetaType_Scalar()
+  {
+    return (EAttribute)jsonMetaTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonMetaType_Composite()
+  {
+    return (EReference)jsonMetaTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJsonCompositeType()
+  {
+    return jsonCompositeTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonCompositeType_Composite()
+  {
+    return (EReference)jsonCompositeTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -346,6 +459,76 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getJsonType_Scalar()
+  {
+    return (EReference)jsonTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonType_Composite()
+  {
+    return (EReference)jsonTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJsonScalarType()
+  {
+    return jsonScalarTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonScalarType_Bool()
+  {
+    return (EAttribute)jsonScalarTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonScalarType_String()
+  {
+    return (EAttribute)jsonScalarTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonScalarType_Number()
+  {
+    return (EAttribute)jsonScalarTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonScalarType_Null()
+  {
+    return (EAttribute)jsonScalarTypeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getJsonArray()
   {
     return jsonArrayEClass;
@@ -356,9 +539,19 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJsonArray_Type()
+  public EReference getJsonArray_Element()
   {
     return (EReference)jsonArrayEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonArray_Composite()
+  {
+    return (EReference)jsonArrayEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -396,56 +589,6 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getJsonObject()
-  {
-    return jsonObjectEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getJsonObject_KeyValuePair()
-  {
-    return (EReference)jsonObjectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getJsonObject_MetaKeyValuePair()
-  {
-    return (EReference)jsonObjectEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getJsonMetaArray()
-  {
-    return jsonMetaArrayEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getJsonMetaArray_MetaType()
-  {
-    return (EReference)jsonMetaArrayEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getJsonMetaKeyValuePair()
   {
     return jsonMetaKeyValuePairEClass;
@@ -456,7 +599,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJsonMetaKeyValuePair_MetaKey()
+  public EAttribute getJsonMetaKeyValuePair_Key()
   {
     return (EAttribute)jsonMetaKeyValuePairEClass.getEStructuralFeatures().get(0);
   }
@@ -466,9 +609,29 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJsonMetaKeyValuePair_MetaValue()
+  public EReference getJsonMetaKeyValuePair_Value()
   {
     return (EReference)jsonMetaKeyValuePairEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnnestedKeyPairs()
+  {
+    return unnestedKeyPairsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnnestedKeyPairs_KeyValuePair()
+  {
+    return (EReference)unnestedKeyPairsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -504,43 +667,60 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     xplatformEClass = createEClass(XPLATFORM);
     createEAttribute(xplatformEClass, XPLATFORM__NAME);
     createEAttribute(xplatformEClass, XPLATFORM__METHOD);
-    createEAttribute(xplatformEClass, XPLATFORM__URI_PATH_PARAMS);
+    createEReference(xplatformEClass, XPLATFORM__URI);
     createEReference(xplatformEClass, XPLATFORM__REQUEST_HEADERS);
     createEReference(xplatformEClass, XPLATFORM__RESPONSE_HEADERS);
     createEReference(xplatformEClass, XPLATFORM__JSON_TO_CLIENT);
     createEReference(xplatformEClass, XPLATFORM__JSON_TO_SERVER);
 
-    xplatformJsonEClass = createEClass(XPLATFORM_JSON);
-    createEReference(xplatformJsonEClass, XPLATFORM_JSON__TYPE);
-    createEReference(xplatformJsonEClass, XPLATFORM_JSON__META_TYPE);
+    uriEClass = createEClass(URI);
+    createEAttribute(uriEClass, URI__URI_PARAMETER);
 
     xplatformHeaderEClass = createEClass(XPLATFORM_HEADER);
     createEReference(xplatformHeaderEClass, XPLATFORM_HEADER__HEADER_KEY_VALUES);
 
     xplatformHeaderKeyValuePairEClass = createEClass(XPLATFORM_HEADER_KEY_VALUE_PAIR);
     createEAttribute(xplatformHeaderKeyValuePairEClass, XPLATFORM_HEADER_KEY_VALUE_PAIR__KEY);
+    createEAttribute(xplatformHeaderKeyValuePairEClass, XPLATFORM_HEADER_KEY_VALUE_PAIR__VALUE);
+
+    xplatformJsonEClass = createEClass(XPLATFORM_JSON);
+    createEReference(xplatformJsonEClass, XPLATFORM_JSON__TYPE);
+    createEReference(xplatformJsonEClass, XPLATFORM_JSON__META_TYPE);
+
+    jsonMetaArrayEClass = createEClass(JSON_META_ARRAY);
+    createEReference(jsonMetaArrayEClass, JSON_META_ARRAY__META_TYPE);
 
     jsonMetaTypeEClass = createEClass(JSON_META_TYPE);
+    createEAttribute(jsonMetaTypeEClass, JSON_META_TYPE__SCALAR);
+    createEReference(jsonMetaTypeEClass, JSON_META_TYPE__COMPOSITE);
+
+    jsonCompositeTypeEClass = createEClass(JSON_COMPOSITE_TYPE);
+    createEReference(jsonCompositeTypeEClass, JSON_COMPOSITE_TYPE__COMPOSITE);
 
     jsonTypeEClass = createEClass(JSON_TYPE);
+    createEReference(jsonTypeEClass, JSON_TYPE__SCALAR);
+    createEReference(jsonTypeEClass, JSON_TYPE__COMPOSITE);
+
+    jsonScalarTypeEClass = createEClass(JSON_SCALAR_TYPE);
+    createEAttribute(jsonScalarTypeEClass, JSON_SCALAR_TYPE__BOOL);
+    createEAttribute(jsonScalarTypeEClass, JSON_SCALAR_TYPE__STRING);
+    createEAttribute(jsonScalarTypeEClass, JSON_SCALAR_TYPE__NUMBER);
+    createEAttribute(jsonScalarTypeEClass, JSON_SCALAR_TYPE__NULL);
 
     jsonArrayEClass = createEClass(JSON_ARRAY);
-    createEReference(jsonArrayEClass, JSON_ARRAY__TYPE);
+    createEReference(jsonArrayEClass, JSON_ARRAY__ELEMENT);
+    createEReference(jsonArrayEClass, JSON_ARRAY__COMPOSITE);
 
     jsonKeyValuePairEClass = createEClass(JSON_KEY_VALUE_PAIR);
     createEAttribute(jsonKeyValuePairEClass, JSON_KEY_VALUE_PAIR__KEY);
     createEReference(jsonKeyValuePairEClass, JSON_KEY_VALUE_PAIR__VALUE);
 
-    jsonObjectEClass = createEClass(JSON_OBJECT);
-    createEReference(jsonObjectEClass, JSON_OBJECT__KEY_VALUE_PAIR);
-    createEReference(jsonObjectEClass, JSON_OBJECT__META_KEY_VALUE_PAIR);
-
-    jsonMetaArrayEClass = createEClass(JSON_META_ARRAY);
-    createEReference(jsonMetaArrayEClass, JSON_META_ARRAY__META_TYPE);
-
     jsonMetaKeyValuePairEClass = createEClass(JSON_META_KEY_VALUE_PAIR);
-    createEAttribute(jsonMetaKeyValuePairEClass, JSON_META_KEY_VALUE_PAIR__META_KEY);
-    createEReference(jsonMetaKeyValuePairEClass, JSON_META_KEY_VALUE_PAIR__META_VALUE);
+    createEAttribute(jsonMetaKeyValuePairEClass, JSON_META_KEY_VALUE_PAIR__KEY);
+    createEReference(jsonMetaKeyValuePairEClass, JSON_META_KEY_VALUE_PAIR__VALUE);
+
+    unnestedKeyPairsEClass = createEClass(UNNESTED_KEY_PAIRS);
+    createEReference(unnestedKeyPairsEClass, UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR);
   }
 
   /**
@@ -572,52 +752,65 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    jsonMetaTypeEClass.getESuperTypes().add(this.getJsonType());
-    jsonArrayEClass.getESuperTypes().add(this.getJsonType());
-    jsonObjectEClass.getESuperTypes().add(this.getJsonType());
-    jsonMetaArrayEClass.getESuperTypes().add(this.getJsonMetaType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(xplatformEClass, Xplatform.class, "Xplatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getXplatform_Name(), ecorePackage.getEString(), "name", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXplatform_Method(), ecorePackage.getEString(), "method", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getXplatform_UriPathParams(), ecorePackage.getEString(), "uriPathParams", null, 0, -1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXplatform_Uri(), this.getURI(), null, "uri", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_RequestHeaders(), this.getXplatformHeader(), null, "requestHeaders", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_ResponseHeaders(), this.getXplatformHeader(), null, "responseHeaders", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_JsonToClient(), this.getXplatformJson(), null, "jsonToClient", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_JsonToServer(), this.getXplatformJson(), null, "jsonToServer", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(xplatformJsonEClass, XplatformJson.class, "XplatformJson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXplatformJson_Type(), this.getJsonType(), null, "type", null, 0, 1, XplatformJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXplatformJson_MetaType(), this.getJsonMetaType(), null, "metaType", null, 0, 1, XplatformJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(uriEClass, nl.sison.xplatform.URI.class, "URI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getURI_UriParameter(), ecorePackage.getEString(), "uriParameter", null, 0, -1, nl.sison.xplatform.URI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xplatformHeaderEClass, XplatformHeader.class, "XplatformHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXplatformHeader_HeaderKeyValues(), this.getXplatformHeaderKeyValuePair(), null, "headerKeyValues", null, 0, -1, XplatformHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xplatformHeaderKeyValuePairEClass, XplatformHeaderKeyValuePair.class, "XplatformHeaderKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getXplatformHeaderKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, XplatformHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXplatformHeaderKeyValuePair_Value(), ecorePackage.getEString(), "value", null, 0, 1, XplatformHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xplatformJsonEClass, XplatformJson.class, "XplatformJson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXplatformJson_Type(), this.getJsonType(), null, "type", null, 0, 1, XplatformJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXplatformJson_MetaType(), this.getJsonMetaType(), null, "metaType", null, 0, 1, XplatformJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonMetaArrayEClass, JsonMetaArray.class, "JsonMetaArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJsonMetaArray_MetaType(), this.getJsonMetaType(), null, "metaType", null, 0, 1, JsonMetaArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonMetaTypeEClass, JsonMetaType.class, "JsonMetaType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJsonMetaType_Scalar(), ecorePackage.getEString(), "scalar", null, 0, 1, JsonMetaType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonMetaType_Composite(), this.getJsonMetaArray(), null, "composite", null, 0, 1, JsonMetaType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonCompositeTypeEClass, JsonCompositeType.class, "JsonCompositeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJsonCompositeType_Composite(), this.getJsonArray(), null, "composite", null, 0, 1, JsonCompositeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonTypeEClass, JsonType.class, "JsonType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJsonType_Scalar(), this.getJsonScalarType(), null, "scalar", null, 0, 1, JsonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonType_Composite(), this.getJsonCompositeType(), null, "composite", null, 0, 1, JsonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonScalarTypeEClass, JsonScalarType.class, "JsonScalarType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJsonScalarType_Bool(), ecorePackage.getEString(), "bool", null, 0, 1, JsonScalarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonScalarType_String(), ecorePackage.getEString(), "string", null, 0, 1, JsonScalarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonScalarType_Number(), ecorePackage.getEInt(), "number", null, 0, 1, JsonScalarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonScalarType_Null(), ecorePackage.getEString(), "null", null, 0, 1, JsonScalarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonArrayEClass, JsonArray.class, "JsonArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJsonArray_Type(), this.getJsonType(), null, "type", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonArray_Element(), this.getJsonScalarType(), null, "element", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonArray_Composite(), this.getJsonCompositeType(), null, "composite", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonKeyValuePairEClass, JsonKeyValuePair.class, "JsonKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getJsonKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, JsonKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJsonKeyValuePair_Value(), this.getJsonType(), null, "value", null, 0, 1, JsonKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(jsonObjectEClass, JsonObject.class, "JsonObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJsonObject_KeyValuePair(), this.getJsonKeyValuePair(), null, "keyValuePair", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getJsonObject_MetaKeyValuePair(), this.getJsonMetaKeyValuePair(), null, "metaKeyValuePair", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(jsonMetaArrayEClass, JsonMetaArray.class, "JsonMetaArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJsonMetaArray_MetaType(), this.getJsonMetaType(), null, "metaType", null, 0, 1, JsonMetaArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(jsonMetaKeyValuePairEClass, JsonMetaKeyValuePair.class, "JsonMetaKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getJsonMetaKeyValuePair_MetaKey(), ecorePackage.getEString(), "metaKey", null, 0, 1, JsonMetaKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getJsonMetaKeyValuePair_MetaValue(), this.getJsonMetaType(), null, "metaValue", null, 0, 1, JsonMetaKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonMetaKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, JsonMetaKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonMetaKeyValuePair_Value(), this.getJsonMetaType(), null, "value", null, 0, 1, JsonMetaKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unnestedKeyPairsEClass, UnnestedKeyPairs.class, "UnnestedKeyPairs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnnestedKeyPairs_KeyValuePair(), ecorePackage.getEObject(), null, "keyValuePair", null, 0, -1, UnnestedKeyPairs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

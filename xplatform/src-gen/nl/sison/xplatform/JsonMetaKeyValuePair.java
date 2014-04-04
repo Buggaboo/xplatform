@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.xplatform.JsonMetaKeyValuePair#getMetaKey <em>Meta Key</em>}</li>
- *   <li>{@link nl.sison.xplatform.JsonMetaKeyValuePair#getMetaValue <em>Meta Value</em>}</li>
+ *   <li>{@link nl.sison.xplatform.JsonMetaKeyValuePair#getKey <em>Key</em>}</li>
+ *   <li>{@link nl.sison.xplatform.JsonMetaKeyValuePair#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +24,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface JsonMetaKeyValuePair extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Meta Key</b></em>' attribute.
+   * Returns the value of the '<em><b>Key</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Meta Key</em>' attribute isn't clear,
+   * If the meaning of the '<em>Key</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Meta Key</em>' attribute.
-   * @see #setMetaKey(String)
-   * @see nl.sison.xplatform.XplatformPackage#getJsonMetaKeyValuePair_MetaKey()
+   * @return the value of the '<em>Key</em>' attribute.
+   * @see #setKey(String)
+   * @see nl.sison.xplatform.XplatformPackage#getJsonMetaKeyValuePair_Key()
    * @model
    * @generated
    */
-  String getMetaKey();
+  String getKey();
 
   /**
-   * Sets the value of the '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getMetaKey <em>Meta Key</em>}' attribute.
+   * Sets the value of the '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getKey <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Meta Key</em>' attribute.
-   * @see #getMetaKey()
+   * @param value the new value of the '<em>Key</em>' attribute.
+   * @see #getKey()
    * @generated
    */
-  void setMetaKey(String value);
+  void setKey(String value);
 
   /**
-   * Returns the value of the '<em><b>Meta Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Meta Value</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Meta Value</em>' containment reference.
-   * @see #setMetaValue(JsonMetaType)
-   * @see nl.sison.xplatform.XplatformPackage#getJsonMetaKeyValuePair_MetaValue()
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(JsonMetaType)
+   * @see nl.sison.xplatform.XplatformPackage#getJsonMetaKeyValuePair_Value()
    * @model containment="true"
    * @generated
    */
-  JsonMetaType getMetaValue();
+  JsonMetaType getValue();
 
   /**
-   * Sets the value of the '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getMetaValue <em>Meta Value</em>}' containment reference.
+   * Sets the value of the '{@link nl.sison.xplatform.JsonMetaKeyValuePair#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Meta Value</em>' containment reference.
-   * @see #getMetaValue()
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
    * @generated
    */
-  void setMetaValue(JsonMetaType value);
+  void setValue(JsonMetaType value);
 
 } // JsonMetaKeyValuePair

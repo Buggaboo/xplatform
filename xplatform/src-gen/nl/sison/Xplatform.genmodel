@@ -10,41 +10,60 @@
     <genClasses ecoreClass="Xplatform.ecore#//Xplatform">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/method"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/uriPathParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/uri"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/requestHeaders"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/responseHeaders"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/jsonToClient"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/jsonToServer"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//XplatformJson">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/metaType"/>
+    <genClasses ecoreClass="Xplatform.ecore#//URI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//URI/uriParameter"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformHeader">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformHeader/headerKeyValues"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformHeaderKeyValuePair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValuePair/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValuePair/value"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//JsonMetaType"/>
-    <genClasses ecoreClass="Xplatform.ecore#//JsonType"/>
+    <genClasses ecoreClass="Xplatform.ecore#//XplatformJson">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/metaType"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonMetaArray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaArray/metaType"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonMetaType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonMetaType/scalar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaType/composite"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonCompositeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonCompositeType/composite"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonType/scalar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonType/composite"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonScalarType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonScalarType/bool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonScalarType/string"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonScalarType/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonScalarType/null"/>
+    </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonArray">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonArray/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonArray/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonArray/composite"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonKeyValuePair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonKeyValuePair/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonKeyValuePair/value"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//JsonObject">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/keyValuePair"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/metaKeyValuePair"/>
-    </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//JsonMetaArray">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaArray/metaType"/>
-    </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//JsonMetaKeyValuePair">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonMetaKeyValuePair/metaKey"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaKeyValuePair/metaValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonMetaKeyValuePair/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonMetaKeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//UnnestedKeyPairs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//UnnestedKeyPairs/keyValuePair"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

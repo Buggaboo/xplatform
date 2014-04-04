@@ -79,10 +79,10 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.XPLATFORM_JSON:
+      case XplatformPackage.URI:
       {
-        XplatformJson xplatformJson = (XplatformJson)theEObject;
-        T result = caseXplatformJson(xplatformJson);
+        URI uri = (URI)theEObject;
+        T result = caseURI(uri);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -100,11 +100,31 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.XPLATFORM_JSON:
+      {
+        XplatformJson xplatformJson = (XplatformJson)theEObject;
+        T result = caseXplatformJson(xplatformJson);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.JSON_META_ARRAY:
+      {
+        JsonMetaArray jsonMetaArray = (JsonMetaArray)theEObject;
+        T result = caseJsonMetaArray(jsonMetaArray);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.JSON_META_TYPE:
       {
         JsonMetaType jsonMetaType = (JsonMetaType)theEObject;
         T result = caseJsonMetaType(jsonMetaType);
-        if (result == null) result = caseJsonType(jsonMetaType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.JSON_COMPOSITE_TYPE:
+      {
+        JsonCompositeType jsonCompositeType = (JsonCompositeType)theEObject;
+        T result = caseJsonCompositeType(jsonCompositeType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,11 +135,17 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.JSON_SCALAR_TYPE:
+      {
+        JsonScalarType jsonScalarType = (JsonScalarType)theEObject;
+        T result = caseJsonScalarType(jsonScalarType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.JSON_ARRAY:
       {
         JsonArray jsonArray = (JsonArray)theEObject;
         T result = caseJsonArray(jsonArray);
-        if (result == null) result = caseJsonType(jsonArray);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -130,27 +156,17 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.JSON_OBJECT:
-      {
-        JsonObject jsonObject = (JsonObject)theEObject;
-        T result = caseJsonObject(jsonObject);
-        if (result == null) result = caseJsonType(jsonObject);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_META_ARRAY:
-      {
-        JsonMetaArray jsonMetaArray = (JsonMetaArray)theEObject;
-        T result = caseJsonMetaArray(jsonMetaArray);
-        if (result == null) result = caseJsonMetaType(jsonMetaArray);
-        if (result == null) result = caseJsonType(jsonMetaArray);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case XplatformPackage.JSON_META_KEY_VALUE_PAIR:
       {
         JsonMetaKeyValuePair jsonMetaKeyValuePair = (JsonMetaKeyValuePair)theEObject;
         T result = caseJsonMetaKeyValuePair(jsonMetaKeyValuePair);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.UNNESTED_KEY_PAIRS:
+      {
+        UnnestedKeyPairs unnestedKeyPairs = (UnnestedKeyPairs)theEObject;
+        T result = caseUnnestedKeyPairs(unnestedKeyPairs);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -175,17 +191,17 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>URI</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json</em>'.
+   * @return the result of interpreting the object as an instance of '<em>URI</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXplatformJson(XplatformJson object)
+  public T caseURI(URI object)
   {
     return null;
   }
@@ -223,6 +239,38 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Json</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXplatformJson(XplatformJson object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonMetaArray(JsonMetaArray object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Json Meta Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -239,6 +287,22 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Composite Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Composite Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonCompositeType(JsonCompositeType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Json Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -250,6 +314,22 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonType(JsonType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Scalar Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Scalar Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonScalarType(JsonScalarType object)
   {
     return null;
   }
@@ -287,38 +367,6 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Object</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Object</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonObject(JsonObject object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonMetaArray(JsonMetaArray object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Json Meta Key Value Pair</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -330,6 +378,22 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonMetaKeyValuePair(JsonMetaKeyValuePair object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnnestedKeyPairs(UnnestedKeyPairs object)
   {
     return null;
   }

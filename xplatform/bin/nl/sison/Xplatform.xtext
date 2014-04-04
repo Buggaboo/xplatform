@@ -13,10 +13,8 @@ Xplatform:
 	)?
 ;
 
-XplatformJson:
-	"'''" 
-	type=JsonType | metaType=JsonMetaType
-	"'''"
+URI:
+	(ANY_OTHER)+ ('{' uriParameter+=ID '}'(ANY_OTHER)*)?
 ;
 
 // TODO refactor
@@ -28,7 +26,7 @@ XplatformHeader:
 ;
 
 XplatformHeaderKeyValuePair:
-	(key=STRING) '=' (STRING | XPLATFORM_HEADER_PARAMETER)	
+	(key=STRING) '=' (value=STRING | value=XPLATFORM_HEADER_PARAMETER)	
 ;
 
 terminal XPLATFORM_HEADER_PARAMETER:
@@ -39,215 +37,103 @@ terminal RESTFUL_METHODS:
 	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well
 ;
 
+XplatformJson:
+	"'''" 
+	type=JsonType | metaType=JsonMetaType //| composite=JsonObject
+	"'''"
+;
+
 terminal JSON_LITERAL_NULL: 'null';
 
-terminal JSON_LITERAL_NUMBER:
-	('0'..'9')* ('.' ('0'..'9')+)?; // TODO exponent notation
-	
 terminal JSON_LITERAL_BOOLEAN:
 	'true' | 'false'
 ;
 
-JsonMetaType:
-	'boolean' | 'number' | 'string' | JsonMetaArray
-;
-
-JsonType:
-	JSON_LITERAL_BOOLEAN | STRING | JSON_LITERAL_NUMBER | JSON_LITERAL_NULL | JsonArray | JsonMetaType | JsonObject 
-;
-
-JsonArray:
-	'[' (type+=JsonType)? (',' type+=JsonType (',')? )* ']'
-;
-
-JsonKeyValuePair:
-	key=STRING ':' value=JsonType
-;
-
-/**
- * A JsonObject could be an empty object
- */
-JsonObject:
-	'{' 
-		(keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair)
-			(
-				',' (keyValuePair+=JsonKeyValuePair | metaKeyValuePair+=JsonMetaKeyValuePair) (',')?
-			)* 
-	'}'
+JsonMetaScalarType:
+	'boolean' | 'number' | 'string'
 ;
 
 JsonMetaArray:
 	'[' (metaType=JsonMetaType) ']'
 ;
 
+JsonMetaType:
+	scalar=JsonMetaScalarType | composite=JsonMetaArray
+;
+
+JsonCompositeType:
+	composite=JsonArray
+;
+
+JsonType:
+	scalar=JsonScalarType | composite=JsonCompositeType
+;
+
+JsonScalarType:
+	bool=JSON_LITERAL_BOOLEAN | string=STRING | number=INT ('.' INT)? | null=JSON_LITERAL_NULL 
+;
+
+JsonArray:
+	('[' (element+=JsonScalarType) (',' element+=JsonScalarType (',')? )* ']') |
+	('[' (composite+=JsonCompositeType) (',' composite+=JsonCompositeType (',')? )* ']')
+;
+
+JsonKeyValuePair:
+	key=STRING ':' value=JsonType
+;
+
 JsonMetaKeyValuePair:
-	metaKey=STRING ':' metaValue=JsonMetaType 
+	key=STRING ':' value=JsonMetaType 
 ;
 
-URI_PARAM:
-	'{' name=ID '}'
+UnnestedKeyPairs:
+		(keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) //| nestedKeyValuePair+=JsonNestedObject)
+			(
+				',' (keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) // | nestedKeyValuePair+=JsonNestedObject)
+				(',')?
+			)* 
+;
+/*
+JsonObjectKernel:
+	'{'
+		keyPairs=UnnestedKeyPairs 
+	'}'
 ;
 
-URI:
-	(
-		protocol=URI_PROTOCOL
-		hostname=URI_HOSTNAME
-		(portNumber=URI_PORT_NUMBER)?
-	)?
-	(URI_PATH) (uriParams+=URI_PARAM (URI_PATH)?)*
-	(URI_QUERY)? (uriParams+=URI_PARAM (URI_QUERY)?)*
+JsonObjectLeftNestedKeyValuePair:
+	(keys+=STRING ':' (right+=JsonObjectRightNested | all+=JsonObjectAllNested))+
+	(',' unnestedKeyPairs+=UnnestedKeyPairs)+ ','?
 ;
 
-terminal URI_PROTOCOL:
-//    ('a'..'z')+ '://' // Protocol
-	'http://' | 'https://'
+JsonObjectRightNestedKeyValuePair:
+	(unnestedKeyPairs=UnnestedKeyPairs ',') 
+	(',' keys+=STRING ':' (right+=JsonObjectLeftNested | all+=JsonObjectAllNested))+ ','?
 ;
 
-terminal URI_HOSTNAME:
-	    (
-        (
-            ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+
-        ) |
-        (
-            ('a'..'z'|'A'..'Z')
-            (
-                'a'..'z'|'A'..'Z'|
-                '0'..'9'|
-                '$'|
-                '-'|
-                '_'|
-                (
-                    '\\'
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                ) |
-                (
-                    '%'
-                    ('0'..'9')
-                    ('0'..'9')
-                )
-            )*
-            (
-                '.'
-                ('a'..'z'|'A'..'Z')
-                (
-                    'a'..'z'|'A'..'Z'|
-                    '0'..'9'|
-                    '$'|
-                    '-'|
-                    '_'|
-                    (
-                        '\\'
-                        ('0'..'9'|'a'..'f'|'A'..'F')
-                        ('0'..'9'|'a'..'f'|'A'..'F')
-                    ) |
-                    (
-                        '%'
-                        ('0'..'9')
-                        ('0'..'9')
-                    )
-                )*
-            )*
-        )
-    )
+JsonObjectAllNestedKeyValuePair:
+	(keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')
+	(',' keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')* 
 ;
 
-terminal URI_PORT_NUMBER:
-    (':' ('0'..'9')+)?
+JsonObjectLeftNested:
+	'{'
+		keyPairs=JsonObjectLeftNestedKeyValuePair
+	'}'
 ;
 
-terminal URI_PATH:
-	    (
-        (
-            ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+
-        ) |
-        (
-            ('a'..'z'|'A'..'Z')
-            (
-                'a'..'z'|'A'..'Z'|
-                '0'..'9'|
-                '$'|
-                '-'|
-                '_'|
-                (
-                    '\\'
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                ) |
-                (
-                    '%'
-                    ('0'..'9')
-                    ('0'..'9')
-                )
-            )*
-            (
-                '.'
-                ('a'..'z'|'A'..'Z')
-                (
-                    'a'..'z'|'A'..'Z'|
-                    '0'..'9'|
-                    '$'|
-                    '-'|
-                    '_'|
-                    (
-                        '\\'
-                        ('0'..'9'|'a'..'f'|'A'..'F')
-                        ('0'..'9'|'a'..'f'|'A'..'F')
-                    ) |
-                    (
-                        '%'
-                        ('0'..'9')
-                        ('0'..'9')
-                    )
-                )*
-            )*
-        )
-    )
+JsonObjectRightNested:
+	'{'
+		keyPairs=JsonObjectRightNestedKeyValuePair
+	'}'
 ;
 
-terminal URI_QUERY:
-    ('?'
-        (
-            'a'..'z'|'A'..'Z'|
-            '0'..'9'|
-            '$'|
-            '-'|
-            '_'|
-            '='|
-            '&'|
-            ';'|
-            (
-                '\\'
-                ('0'..'9'|'a'..'f'|'A'..'F')
-                ('0'..'9'|'a'..'f'|'A'..'F')
-            ) |
-            (
-                '%'
-                ('0'..'9')
-                ('0'..'9')
-            )
-        )+
- 
-        ('+'
-            (
-                'a'..'z'|'A'..'Z'|
-                '0'..'9'|
-                '$'|
-                '-'|
-                '_'|
-                '='|
-                '&'|
-                ';'|
-                (
-                    '\\'
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                    ('0'..'9'|'a'..'f'|'A'..'F')
-                ) |
-                (
-                    '%'
-                    ('0'..'9')
-                    ('0'..'9')
-                )
-            )+
-        )*
-    )?; // Query
+JsonObjectAllNested:
+	'{'
+		keyPairs=JsonObjectAllNestedKeyValuePair
+	'}'
+;
+
+JsonObject:
+	left=JsonObjectLeftNested | right=JsonObjectRightNested | kernel=JsonObjectKernel | all=JsonObjectAllNested
+;
+*/

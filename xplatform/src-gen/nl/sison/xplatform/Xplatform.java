@@ -2,8 +2,6 @@
  */
 package nl.sison.xplatform;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getMethod <em>Method</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getUriPathParams <em>Uri Path Params</em>}</li>
+ *   <li>{@link nl.sison.xplatform.Xplatform#getUri <em>Uri</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getRequestHeaders <em>Request Headers</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getResponseHeaders <em>Response Headers</em>}</li>
  *   <li>{@link nl.sison.xplatform.Xplatform#getJsonToClient <em>Json To Client</em>}</li>
@@ -83,20 +81,30 @@ public interface Xplatform extends EObject
   void setMethod(String value);
 
   /**
-   * Returns the value of the '<em><b>Uri Path Params</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Uri</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Uri Path Params</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Uri</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Uri Path Params</em>' attribute list.
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_UriPathParams()
-   * @model unique="false"
+   * @return the value of the '<em>Uri</em>' containment reference.
+   * @see #setUri(URI)
+   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Uri()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getUriPathParams();
+  URI getUri();
+
+  /**
+   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getUri <em>Uri</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Uri</em>' containment reference.
+   * @see #getUri()
+   * @generated
+   */
+  void setUri(URI value);
 
   /**
    * Returns the value of the '<em><b>Request Headers</b></em>' containment reference.
