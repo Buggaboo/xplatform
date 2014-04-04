@@ -132,6 +132,17 @@ JsonObject:
 	'}'
 ;
 
+/*
+ // Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
+JSONDataSource: root = JsonObject;
+JsonObject: '{' keyValuePair+=JsonTerminalObject (',' keyValuePair+=TerminalObject)* (',')? '}';
+JsonArray: '['items+=ObjectValue (',' items+=ObjectValue)* (',')? ']';
+EmptyJsonObject: isEmpty?= '{}';
+EmptyJsonArray: isEmpty?= '[]';
+JsonObjectValue: value=STRING | JsonObject | JsonArray | EmptyJsonObject | EmptyJsonArray ;
+JsonKeyValuePair: key=STRING ':' (value = JsonObjectValue) ;
+*/
+
 /**
  * 
  * Xplatform resource generator
