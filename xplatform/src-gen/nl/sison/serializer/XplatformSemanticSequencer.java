@@ -3,21 +3,22 @@ package nl.sison.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import nl.sison.services.XplatformGrammarAccess;
+import nl.sison.xplatform.EnumInstance;
 import nl.sison.xplatform.JsonArray;
-import nl.sison.xplatform.JsonCompositeType;
 import nl.sison.xplatform.JsonKeyValuePair;
-import nl.sison.xplatform.JsonMetaArray;
-import nl.sison.xplatform.JsonMetaKeyValuePair;
-import nl.sison.xplatform.JsonMetaType;
-import nl.sison.xplatform.JsonScalarType;
-import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.JsonObject;
+import nl.sison.xplatform.JsonObjectValue;
+import nl.sison.xplatform.MapInstance;
+import nl.sison.xplatform.Platform;
+import nl.sison.xplatform.StringList;
 import nl.sison.xplatform.URI;
-import nl.sison.xplatform.UnnestedKeyPairs;
 import nl.sison.xplatform.Xplatform;
+import nl.sison.xplatform.XplatformCallDefinition;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
+import nl.sison.xplatform.XplatformResourceDefinition;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -38,15 +39,17 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == XplatformPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case XplatformPackage.JSON_ARRAY:
-				if(context == grammarAccess.getJsonArrayRule()) {
-					sequence_JsonArray(context, (JsonArray) semanticObject); 
+			case XplatformPackage.ENUM_INSTANCE:
+				if(context == grammarAccess.getEnumInstanceRule() ||
+				   context == grammarAccess.getXplatformResourceDefinitionRule()) {
+					sequence_EnumInstance(context, (EnumInstance) semanticObject); 
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_COMPOSITE_TYPE:
-				if(context == grammarAccess.getJsonCompositeTypeRule()) {
-					sequence_JsonCompositeType(context, (JsonCompositeType) semanticObject); 
+			case XplatformPackage.JSON_ARRAY:
+				if(context == grammarAccess.getJsonArrayRule() ||
+				   context == grammarAccess.getJsonObjectValueRule()) {
+					sequence_JsonArray(context, (JsonArray) semanticObject); 
 					return; 
 				}
 				else break;
@@ -56,33 +59,35 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_META_ARRAY:
-				if(context == grammarAccess.getJsonMetaArrayRule()) {
-					sequence_JsonMetaArray(context, (JsonMetaArray) semanticObject); 
+			case XplatformPackage.JSON_OBJECT:
+				if(context == grammarAccess.getJsonObjectRule() ||
+				   context == grammarAccess.getJsonObjectValueRule()) {
+					sequence_JsonObject(context, (JsonObject) semanticObject); 
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_META_KEY_VALUE_PAIR:
-				if(context == grammarAccess.getJsonMetaKeyValuePairRule()) {
-					sequence_JsonMetaKeyValuePair(context, (JsonMetaKeyValuePair) semanticObject); 
+			case XplatformPackage.JSON_OBJECT_VALUE:
+				if(context == grammarAccess.getJsonObjectValueRule()) {
+					sequence_JsonObjectValue(context, (JsonObjectValue) semanticObject); 
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_META_TYPE:
-				if(context == grammarAccess.getJsonMetaTypeRule()) {
-					sequence_JsonMetaType(context, (JsonMetaType) semanticObject); 
+			case XplatformPackage.MAP_INSTANCE:
+				if(context == grammarAccess.getMapInstanceRule()) {
+					sequence_MapInstance(context, (MapInstance) semanticObject); 
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_SCALAR_TYPE:
-				if(context == grammarAccess.getJsonScalarTypeRule()) {
-					sequence_JsonScalarType(context, (JsonScalarType) semanticObject); 
+			case XplatformPackage.PLATFORM:
+				if(context == grammarAccess.getPlatformRule()) {
+					sequence_Platform(context, (Platform) semanticObject); 
 					return; 
 				}
 				else break;
-			case XplatformPackage.JSON_TYPE:
-				if(context == grammarAccess.getJsonTypeRule()) {
-					sequence_JsonType(context, (JsonType) semanticObject); 
+			case XplatformPackage.STRING_LIST:
+				if(context == grammarAccess.getNestedTypeRule() ||
+				   context == grammarAccess.getStringListRule()) {
+					sequence_StringList(context, (StringList) semanticObject); 
 					return; 
 				}
 				else break;
@@ -92,15 +97,15 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
-			case XplatformPackage.UNNESTED_KEY_PAIRS:
-				if(context == grammarAccess.getUnnestedKeyPairsRule()) {
-					sequence_UnnestedKeyPairs(context, (UnnestedKeyPairs) semanticObject); 
-					return; 
-				}
-				else break;
 			case XplatformPackage.XPLATFORM:
 				if(context == grammarAccess.getXplatformRule()) {
 					sequence_Xplatform(context, (Xplatform) semanticObject); 
+					return; 
+				}
+				else break;
+			case XplatformPackage.XPLATFORM_CALL_DEFINITION:
+				if(context == grammarAccess.getXplatformCallDefinitionRule()) {
+					sequence_XplatformCallDefinition(context, (XplatformCallDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -122,13 +127,28 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION:
+				if(context == grammarAccess.getXplatformResourceDefinitionRule()) {
+					sequence_XplatformResourceDefinition(context, (XplatformResourceDefinition) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
 	 * Constraint:
-	 *     ((element+=JsonScalarType element+=JsonScalarType*) | (composite+=JsonCompositeType composite+=JsonCompositeType*))
+	 *     (name=ID values+=ID values+=ID*)
+	 */
+	protected void sequence_EnumInstance(EObject context, EnumInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (items+=JsonObjectValue items+=JsonObjectValue*)
 	 */
 	protected void sequence_JsonArray(EObject context, JsonArray semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -137,23 +157,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     composite=JsonArray
-	 */
-	protected void sequence_JsonCompositeType(EObject context, JsonCompositeType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.JSON_COMPOSITE_TYPE__COMPOSITE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.JSON_COMPOSITE_TYPE__COMPOSITE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonCompositeTypeAccess().getCompositeJsonArrayParserRuleCall_0(), semanticObject.getComposite());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (key=STRING value=JsonType)
+	 *     (key=STRING value=JsonObjectValue)
 	 */
 	protected void sequence_JsonKeyValuePair(EObject context, JsonKeyValuePair semanticObject) {
 		if(errorAcceptor != null) {
@@ -165,76 +169,59 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getValueJsonTypeParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getJsonKeyValuePairAccess().getValueJsonObjectValueParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     metaType=JsonMetaType
+	 *     value=STRING?
 	 */
-	protected void sequence_JsonMetaArray(EObject context, JsonMetaArray semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.JSON_META_ARRAY__META_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.JSON_META_ARRAY__META_TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonMetaArrayAccess().getMetaTypeJsonMetaTypeParserRuleCall_1_0(), semanticObject.getMetaType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (key=STRING value=JsonMetaType)
-	 */
-	protected void sequence_JsonMetaKeyValuePair(EObject context, JsonMetaKeyValuePair semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.JSON_META_KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.JSON_META_KEY_VALUE_PAIR__KEY));
-			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.JSON_META_KEY_VALUE_PAIR__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.JSON_META_KEY_VALUE_PAIR__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonMetaKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getJsonMetaKeyValuePairAccess().getValueJsonMetaTypeParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (scalar=JsonMetaScalarType | composite=JsonMetaArray)
-	 */
-	protected void sequence_JsonMetaType(EObject context, JsonMetaType semanticObject) {
+	protected void sequence_JsonObjectValue(EObject context, JsonObjectValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (bool=JSON_LITERAL_BOOLEAN | string=STRING | number=INT | null=JSON_LITERAL_NULL)
+	 *     (keyValuePair+=JsonKeyValuePair keyValuePair+=JsonKeyValuePair*)
 	 */
-	protected void sequence_JsonScalarType(EObject context, JsonScalarType semanticObject) {
+	protected void sequence_JsonObject(EObject context, JsonObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (scalar=JsonScalarType | composite=JsonCompositeType)
+	 *     (name=ID keys+=ID values+=NestedType (keys+=ID values+=NestedType)*)
 	 */
-	protected void sequence_JsonType(EObject context, JsonType semanticObject) {
+	protected void sequence_MapInstance(EObject context, MapInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     uriParameter+=ID*
+	 *     (platforms+=ID generateWhere+=STRING)+
+	 */
+	protected void sequence_Platform(EObject context, Platform semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=STRING values+=STRING*)
+	 */
+	protected void sequence_StringList(EObject context, StringList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     parameters+=ID*
 	 */
 	protected void sequence_URI(EObject context, URI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -243,9 +230,15 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     ((keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) (keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair)*)
+	 *     (
+	 *         name=ID 
+	 *         method=RESTFUL_METHODS 
+	 *         uri=URI 
+	 *         (requestHeaders=XplatformHeader responseHeaders=XplatformHeader?)? 
+	 *         (jsonToClient=XplatformJson jsonToServer=XplatformJson?)?
+	 *     )
 	 */
-	protected void sequence_UnnestedKeyPairs(EObject context, UnnestedKeyPairs semanticObject) {
+	protected void sequence_XplatformCallDefinition(EObject context, XplatformCallDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -261,7 +254,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (headerKeyValues+=XplatformHeaderKeyValuePair headerKeyValues+=XplatformHeaderKeyValuePair*)
+	 *     (name=ID? headerKeyValues+=XplatformHeaderKeyValuePair headerKeyValues+=XplatformHeaderKeyValuePair*)
 	 */
 	protected void sequence_XplatformHeader(EObject context, XplatformHeader semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -270,22 +263,35 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (type=JsonType | metaType=JsonMetaType)
+	 *     (name=ID value=JsonObjectValue)
 	 */
 	protected void sequence_XplatformJson(EObject context, XplatformJson semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.XPLATFORM_JSON__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.XPLATFORM_JSON__NAME));
+			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.XPLATFORM_JSON__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.XPLATFORM_JSON__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXplatformJsonAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getXplatformJsonAccess().getValueJsonObjectValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     resources+=MapInstance
+	 */
+	protected void sequence_XplatformResourceDefinition(EObject context, XplatformResourceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         method=RESTFUL_METHODS 
-	 *         uri=URI 
-	 *         (requestHeaders=XplatformHeader responseHeaders=XplatformHeader?)? 
-	 *         (jsonToClient=XplatformJson jsonToServer=XplatformJson?)?
-	 *     )
+	 *     (platform=Platform (resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition)+)
 	 */
 	protected void sequence_Xplatform(EObject context, Xplatform semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

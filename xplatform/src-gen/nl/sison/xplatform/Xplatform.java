@@ -2,6 +2,8 @@
  */
 package nl.sison.xplatform;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,13 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getMethod <em>Method</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getUri <em>Uri</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getRequestHeaders <em>Request Headers</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getResponseHeaders <em>Response Headers</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getJsonToClient <em>Json To Client</em>}</li>
- *   <li>{@link nl.sison.xplatform.Xplatform#getJsonToServer <em>Json To Server</em>}</li>
+ *   <li>{@link nl.sison.xplatform.Xplatform#getPlatform <em>Platform</em>}</li>
+ *   <li>{@link nl.sison.xplatform.Xplatform#getResources <em>Resources</em>}</li>
+ *   <li>{@link nl.sison.xplatform.Xplatform#getCalls <em>Calls</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,185 +27,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface Xplatform extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Platform</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Platform</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Method</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Method</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Method</em>' attribute.
-   * @see #setMethod(String)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Method()
-   * @model
-   * @generated
-   */
-  String getMethod();
-
-  /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getMethod <em>Method</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method</em>' attribute.
-   * @see #getMethod()
-   * @generated
-   */
-  void setMethod(String value);
-
-  /**
-   * Returns the value of the '<em><b>Uri</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Uri</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Uri</em>' containment reference.
-   * @see #setUri(URI)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Uri()
+   * @return the value of the '<em>Platform</em>' containment reference.
+   * @see #setPlatform(Platform)
+   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Platform()
    * @model containment="true"
    * @generated
    */
-  URI getUri();
+  Platform getPlatform();
 
   /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getUri <em>Uri</em>}' containment reference.
+   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getPlatform <em>Platform</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Uri</em>' containment reference.
-   * @see #getUri()
+   * @param value the new value of the '<em>Platform</em>' containment reference.
+   * @see #getPlatform()
    * @generated
    */
-  void setUri(URI value);
+  void setPlatform(Platform value);
 
   /**
-   * Returns the value of the '<em><b>Request Headers</b></em>' containment reference.
+   * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
+   * The list contents are of type {@link nl.sison.xplatform.XplatformResourceDefinition}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Request Headers</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Resources</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Request Headers</em>' containment reference.
-   * @see #setRequestHeaders(XplatformHeader)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_RequestHeaders()
+   * @return the value of the '<em>Resources</em>' containment reference list.
+   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Resources()
    * @model containment="true"
    * @generated
    */
-  XplatformHeader getRequestHeaders();
+  EList<XplatformResourceDefinition> getResources();
 
   /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getRequestHeaders <em>Request Headers</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Request Headers</em>' containment reference.
-   * @see #getRequestHeaders()
-   * @generated
-   */
-  void setRequestHeaders(XplatformHeader value);
-
-  /**
-   * Returns the value of the '<em><b>Response Headers</b></em>' containment reference.
+   * Returns the value of the '<em><b>Calls</b></em>' containment reference list.
+   * The list contents are of type {@link nl.sison.xplatform.XplatformCallDefinition}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Response Headers</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Calls</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Response Headers</em>' containment reference.
-   * @see #setResponseHeaders(XplatformHeader)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_ResponseHeaders()
+   * @return the value of the '<em>Calls</em>' containment reference list.
+   * @see nl.sison.xplatform.XplatformPackage#getXplatform_Calls()
    * @model containment="true"
    * @generated
    */
-  XplatformHeader getResponseHeaders();
-
-  /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getResponseHeaders <em>Response Headers</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Response Headers</em>' containment reference.
-   * @see #getResponseHeaders()
-   * @generated
-   */
-  void setResponseHeaders(XplatformHeader value);
-
-  /**
-   * Returns the value of the '<em><b>Json To Client</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Json To Client</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Json To Client</em>' containment reference.
-   * @see #setJsonToClient(XplatformJson)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_JsonToClient()
-   * @model containment="true"
-   * @generated
-   */
-  XplatformJson getJsonToClient();
-
-  /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getJsonToClient <em>Json To Client</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Json To Client</em>' containment reference.
-   * @see #getJsonToClient()
-   * @generated
-   */
-  void setJsonToClient(XplatformJson value);
-
-  /**
-   * Returns the value of the '<em><b>Json To Server</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Json To Server</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Json To Server</em>' containment reference.
-   * @see #setJsonToServer(XplatformJson)
-   * @see nl.sison.xplatform.XplatformPackage#getXplatform_JsonToServer()
-   * @model containment="true"
-   * @generated
-   */
-  XplatformJson getJsonToServer();
-
-  /**
-   * Sets the value of the '{@link nl.sison.xplatform.Xplatform#getJsonToServer <em>Json To Server</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Json To Server</em>' containment reference.
-   * @see #getJsonToServer()
-   * @generated
-   */
-  void setJsonToServer(XplatformJson value);
+  EList<XplatformCallDefinition> getCalls();
 
 } // Xplatform

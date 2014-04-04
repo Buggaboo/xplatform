@@ -58,12 +58,12 @@ public interface JsonKeyValuePair extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(JsonType)
+   * @see #setValue(JsonObjectValue)
    * @see nl.sison.xplatform.XplatformPackage#getJsonKeyValuePair_Value()
    * @model containment="true"
    * @generated
    */
-  JsonType getValue();
+  JsonObjectValue getValue();
 
   /**
    * Sets the value of the '{@link nl.sison.xplatform.JsonKeyValuePair#getValue <em>Value</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface JsonKeyValuePair extends EObject
    * @see #getValue()
    * @generated
    */
-  void setValue(JsonType value);
+  void setValue(JsonObjectValue value);
 
 } // JsonKeyValuePair

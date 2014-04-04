@@ -2,8 +2,7 @@
  */
 package nl.sison.xplatform.impl;
 
-import nl.sison.xplatform.JsonMetaType;
-import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.JsonObjectValue;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
 
@@ -23,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getType <em>Type</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getMetaType <em>Meta Type</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getName <em>Name</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,24 +32,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements XplatformJson
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected JsonType type;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMetaType() <em>Meta Type</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMetaType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected JsonMetaType metaType;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected JsonObjectValue value;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,9 +87,9 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonType getType()
+  public String getName()
   {
-    return type;
+    return name;
   }
 
   /**
@@ -88,13 +97,36 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(JsonType newType, NotificationChain msgs)
+  public void setName(String newName)
   {
-    JsonType oldType = type;
-    type = newType;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonObjectValue getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(JsonObjectValue newValue, NotificationChain msgs)
+  {
+    JsonObjectValue oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -105,68 +137,20 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(JsonType newType)
+  public void setValue(JsonObjectValue newValue)
   {
-    if (newType != type)
+    if (newValue != value)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public JsonMetaType getMetaType()
-  {
-    return metaType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMetaType(JsonMetaType newMetaType, NotificationChain msgs)
-  {
-    JsonMetaType oldMetaType = metaType;
-    metaType = newMetaType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__META_TYPE, oldMetaType, newMetaType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMetaType(JsonMetaType newMetaType)
-  {
-    if (newMetaType != metaType)
-    {
-      NotificationChain msgs = null;
-      if (metaType != null)
-        msgs = ((InternalEObject)metaType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__META_TYPE, null, msgs);
-      if (newMetaType != null)
-        msgs = ((InternalEObject)newMetaType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XplatformPackage.XPLATFORM_JSON__META_TYPE, null, msgs);
-      msgs = basicSetMetaType(newMetaType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__META_TYPE, newMetaType, newMetaType));
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__VALUE, newValue, newValue));
   }
 
   /**
@@ -179,10 +163,8 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM_JSON__TYPE:
-        return basicSetType(null, msgs);
-      case XplatformPackage.XPLATFORM_JSON__META_TYPE:
-        return basicSetMetaType(null, msgs);
+      case XplatformPackage.XPLATFORM_JSON__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +179,10 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM_JSON__TYPE:
-        return getType();
-      case XplatformPackage.XPLATFORM_JSON__META_TYPE:
-        return getMetaType();
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        return getName();
+      case XplatformPackage.XPLATFORM_JSON__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,11 +197,11 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM_JSON__TYPE:
-        setType((JsonType)newValue);
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        setName((String)newValue);
         return;
-      case XplatformPackage.XPLATFORM_JSON__META_TYPE:
-        setMetaType((JsonMetaType)newValue);
+      case XplatformPackage.XPLATFORM_JSON__VALUE:
+        setValue((JsonObjectValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +217,11 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM_JSON__TYPE:
-        setType((JsonType)null);
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case XplatformPackage.XPLATFORM_JSON__META_TYPE:
-        setMetaType((JsonMetaType)null);
+      case XplatformPackage.XPLATFORM_JSON__VALUE:
+        setValue((JsonObjectValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,12 +237,29 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
-      case XplatformPackage.XPLATFORM_JSON__TYPE:
-        return type != null;
-      case XplatformPackage.XPLATFORM_JSON__META_TYPE:
-        return metaType != null;
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case XplatformPackage.XPLATFORM_JSON__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //XplatformJsonImpl

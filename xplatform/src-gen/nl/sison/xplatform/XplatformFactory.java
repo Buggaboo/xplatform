@@ -32,6 +32,24 @@ public interface XplatformFactory extends EFactory
   Xplatform createXplatform();
 
   /**
+   * Returns a new object of class '<em>Platform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Platform</em>'.
+   * @generated
+   */
+  Platform createPlatform();
+
+  /**
+   * Returns a new object of class '<em>Call Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Call Definition</em>'.
+   * @generated
+   */
+  XplatformCallDefinition createXplatformCallDefinition();
+
+  /**
    * Returns a new object of class '<em>URI</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -68,58 +86,22 @@ public interface XplatformFactory extends EFactory
   XplatformJson createXplatformJson();
 
   /**
-   * Returns a new object of class '<em>Json Meta Array</em>'.
+   * Returns a new object of class '<em>Json Object Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Meta Array</em>'.
+   * @return a new object of class '<em>Json Object Value</em>'.
    * @generated
    */
-  JsonMetaArray createJsonMetaArray();
+  JsonObjectValue createJsonObjectValue();
 
   /**
-   * Returns a new object of class '<em>Json Meta Type</em>'.
+   * Returns a new object of class '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Meta Type</em>'.
+   * @return a new object of class '<em>Json Object</em>'.
    * @generated
    */
-  JsonMetaType createJsonMetaType();
-
-  /**
-   * Returns a new object of class '<em>Json Composite Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Composite Type</em>'.
-   * @generated
-   */
-  JsonCompositeType createJsonCompositeType();
-
-  /**
-   * Returns a new object of class '<em>Json Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Type</em>'.
-   * @generated
-   */
-  JsonType createJsonType();
-
-  /**
-   * Returns a new object of class '<em>Json Scalar Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Scalar Type</em>'.
-   * @generated
-   */
-  JsonScalarType createJsonScalarType();
-
-  /**
-   * Returns a new object of class '<em>Json Array</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Array</em>'.
-   * @generated
-   */
-  JsonArray createJsonArray();
+  JsonObject createJsonObject();
 
   /**
    * Returns a new object of class '<em>Json Key Value Pair</em>'.
@@ -131,22 +113,58 @@ public interface XplatformFactory extends EFactory
   JsonKeyValuePair createJsonKeyValuePair();
 
   /**
-   * Returns a new object of class '<em>Json Meta Key Value Pair</em>'.
+   * Returns a new object of class '<em>Json Array</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Meta Key Value Pair</em>'.
+   * @return a new object of class '<em>Json Array</em>'.
    * @generated
    */
-  JsonMetaKeyValuePair createJsonMetaKeyValuePair();
+  JsonArray createJsonArray();
 
   /**
-   * Returns a new object of class '<em>Unnested Key Pairs</em>'.
+   * Returns a new object of class '<em>Resource Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unnested Key Pairs</em>'.
+   * @return a new object of class '<em>Resource Definition</em>'.
    * @generated
    */
-  UnnestedKeyPairs createUnnestedKeyPairs();
+  XplatformResourceDefinition createXplatformResourceDefinition();
+
+  /**
+   * Returns a new object of class '<em>Enum Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Instance</em>'.
+   * @generated
+   */
+  EnumInstance createEnumInstance();
+
+  /**
+   * Returns a new object of class '<em>Map Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map Instance</em>'.
+   * @generated
+   */
+  MapInstance createMapInstance();
+
+  /**
+   * Returns a new object of class '<em>String List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String List</em>'.
+   * @generated
+   */
+  StringList createStringList();
+
+  /**
+   * Returns a new object of class '<em>Nested Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Nested Type</em>'.
+   * @generated
+   */
+  NestedType createNestedType();
 
   /**
    * Returns the package supported by this factory.

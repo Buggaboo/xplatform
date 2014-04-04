@@ -5,7 +5,6 @@ package nl.sison.xplatform.impl;
 import java.util.Collection;
 
 import nl.sison.xplatform.JsonKeyValuePair;
-import nl.sison.xplatform.JsonMetaKeyValuePair;
 import nl.sison.xplatform.JsonObject;
 import nl.sison.xplatform.XplatformPackage;
 
@@ -27,13 +26,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getKeyValuePair <em>Key Value Pair</em>}</li>
- *   <li>{@link nl.sison.xplatform.impl.JsonObjectImpl#getMetaKeyValuePair <em>Meta Key Value Pair</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
+public class JsonObjectImpl extends JsonObjectValueImpl implements JsonObject
 {
   /**
    * The cached value of the '{@link #getKeyValuePair() <em>Key Value Pair</em>}' containment reference list.
@@ -44,16 +42,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
    * @ordered
    */
   protected EList<JsonKeyValuePair> keyValuePair;
-
-  /**
-   * The cached value of the '{@link #getMetaKeyValuePair() <em>Meta Key Value Pair</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMetaKeyValuePair()
-   * @generated
-   * @ordered
-   */
-  protected EList<JsonMetaKeyValuePair> metaKeyValuePair;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,20 +83,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JsonMetaKeyValuePair> getMetaKeyValuePair()
-  {
-    if (metaKeyValuePair == null)
-    {
-      metaKeyValuePair = new EObjectContainmentEList<JsonMetaKeyValuePair>(JsonMetaKeyValuePair.class, this, XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR);
-    }
-    return metaKeyValuePair;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -116,8 +90,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
     {
       case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
         return ((InternalEList<?>)getKeyValuePair()).basicRemove(otherEnd, msgs);
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return ((InternalEList<?>)getMetaKeyValuePair()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +106,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
     {
       case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
         return getKeyValuePair();
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return getMetaKeyValuePair();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,10 +125,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
         getKeyValuePair().clear();
         getKeyValuePair().addAll((Collection<? extends JsonKeyValuePair>)newValue);
         return;
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        getMetaKeyValuePair().clear();
-        getMetaKeyValuePair().addAll((Collection<? extends JsonMetaKeyValuePair>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -176,9 +142,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
       case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
         getKeyValuePair().clear();
         return;
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        getMetaKeyValuePair().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -195,8 +158,6 @@ public class JsonObjectImpl extends JsonTypeImpl implements JsonObject
     {
       case XplatformPackage.JSON_OBJECT__KEY_VALUE_PAIR:
         return keyValuePair != null && !keyValuePair.isEmpty();
-      case XplatformPackage.JSON_OBJECT__META_KEY_VALUE_PAIR:
-        return metaKeyValuePair != null && !metaKeyValuePair.isEmpty();
     }
     return super.eIsSet(featureID);
   }

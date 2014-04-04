@@ -79,6 +79,20 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.PLATFORM:
+      {
+        Platform platform = (Platform)theEObject;
+        T result = casePlatform(platform);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.XPLATFORM_CALL_DEFINITION:
+      {
+        XplatformCallDefinition xplatformCallDefinition = (XplatformCallDefinition)theEObject;
+        T result = caseXplatformCallDefinition(xplatformCallDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.URI:
       {
         URI uri = (URI)theEObject;
@@ -107,45 +121,18 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.JSON_META_ARRAY:
+      case XplatformPackage.JSON_OBJECT_VALUE:
       {
-        JsonMetaArray jsonMetaArray = (JsonMetaArray)theEObject;
-        T result = caseJsonMetaArray(jsonMetaArray);
+        JsonObjectValue jsonObjectValue = (JsonObjectValue)theEObject;
+        T result = caseJsonObjectValue(jsonObjectValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.JSON_META_TYPE:
+      case XplatformPackage.JSON_OBJECT:
       {
-        JsonMetaType jsonMetaType = (JsonMetaType)theEObject;
-        T result = caseJsonMetaType(jsonMetaType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_COMPOSITE_TYPE:
-      {
-        JsonCompositeType jsonCompositeType = (JsonCompositeType)theEObject;
-        T result = caseJsonCompositeType(jsonCompositeType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_TYPE:
-      {
-        JsonType jsonType = (JsonType)theEObject;
-        T result = caseJsonType(jsonType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_SCALAR_TYPE:
-      {
-        JsonScalarType jsonScalarType = (JsonScalarType)theEObject;
-        T result = caseJsonScalarType(jsonScalarType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.JSON_ARRAY:
-      {
-        JsonArray jsonArray = (JsonArray)theEObject;
-        T result = caseJsonArray(jsonArray);
+        JsonObject jsonObject = (JsonObject)theEObject;
+        T result = caseJsonObject(jsonObject);
+        if (result == null) result = caseJsonObjectValue(jsonObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,17 +143,48 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.JSON_META_KEY_VALUE_PAIR:
+      case XplatformPackage.JSON_ARRAY:
       {
-        JsonMetaKeyValuePair jsonMetaKeyValuePair = (JsonMetaKeyValuePair)theEObject;
-        T result = caseJsonMetaKeyValuePair(jsonMetaKeyValuePair);
+        JsonArray jsonArray = (JsonArray)theEObject;
+        T result = caseJsonArray(jsonArray);
+        if (result == null) result = caseJsonObjectValue(jsonArray);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.UNNESTED_KEY_PAIRS:
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION:
       {
-        UnnestedKeyPairs unnestedKeyPairs = (UnnestedKeyPairs)theEObject;
-        T result = caseUnnestedKeyPairs(unnestedKeyPairs);
+        XplatformResourceDefinition xplatformResourceDefinition = (XplatformResourceDefinition)theEObject;
+        T result = caseXplatformResourceDefinition(xplatformResourceDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.ENUM_INSTANCE:
+      {
+        EnumInstance enumInstance = (EnumInstance)theEObject;
+        T result = caseEnumInstance(enumInstance);
+        if (result == null) result = caseXplatformResourceDefinition(enumInstance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.MAP_INSTANCE:
+      {
+        MapInstance mapInstance = (MapInstance)theEObject;
+        T result = caseMapInstance(mapInstance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.STRING_LIST:
+      {
+        StringList stringList = (StringList)theEObject;
+        T result = caseStringList(stringList);
+        if (result == null) result = caseNestedType(stringList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XplatformPackage.NESTED_TYPE:
+      {
+        NestedType nestedType = (NestedType)theEObject;
+        T result = caseNestedType(nestedType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,6 +204,38 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXplatform(Xplatform object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Platform</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Platform</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePlatform(Platform object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Call Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Call Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXplatformCallDefinition(XplatformCallDefinition object)
   {
     return null;
   }
@@ -255,97 +305,33 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Json Object Value</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Meta Array</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Json Object Value</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseJsonMetaArray(JsonMetaArray object)
+  public T caseJsonObjectValue(JsonObjectValue object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Meta Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Meta Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Json Object</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseJsonMetaType(JsonMetaType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Composite Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Composite Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonCompositeType(JsonCompositeType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonType(JsonType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Scalar Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Scalar Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonScalarType(JsonScalarType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Array</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Array</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonArray(JsonArray object)
+  public T caseJsonObject(JsonObject object)
   {
     return null;
   }
@@ -367,33 +353,97 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Meta Key Value Pair</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Json Array</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Meta Key Value Pair</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Json Array</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseJsonMetaKeyValuePair(JsonMetaKeyValuePair object)
+  public T caseJsonArray(JsonArray object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Resource Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unnested Key Pairs</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Resource Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUnnestedKeyPairs(UnnestedKeyPairs object)
+  public T caseXplatformResourceDefinition(XplatformResourceDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Instance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Instance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumInstance(EnumInstance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Instance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Instance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapInstance(MapInstance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringList(StringList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Nested Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Nested Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNestedType(NestedType object)
   {
     return null;
   }

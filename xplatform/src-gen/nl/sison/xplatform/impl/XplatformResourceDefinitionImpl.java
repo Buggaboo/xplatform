@@ -4,15 +4,15 @@ package nl.sison.xplatform.impl;
 
 import java.util.Collection;
 
-import nl.sison.xplatform.UnnestedKeyPairs;
+import nl.sison.xplatform.MapInstance;
 import nl.sison.xplatform.XplatformPackage;
+import nl.sison.xplatform.XplatformResourceDefinition;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -22,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Unnested Key Pairs</b></em>'.
+ * An implementation of the model object '<em><b>Resource Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.UnnestedKeyPairsImpl#getKeyValuePair <em>Key Value Pair</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformResourceDefinitionImpl#getResources <em>Resources</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implements UnnestedKeyPairs
+public class XplatformResourceDefinitionImpl extends MinimalEObjectImpl.Container implements XplatformResourceDefinition
 {
   /**
-   * The cached value of the '{@link #getKeyValuePair() <em>Key Value Pair</em>}' containment reference list.
+   * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKeyValuePair()
+   * @see #getResources()
    * @generated
    * @ordered
    */
-  protected EList<EObject> keyValuePair;
+  protected EList<MapInstance> resources;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UnnestedKeyPairsImpl()
+  protected XplatformResourceDefinitionImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return XplatformPackage.Literals.UNNESTED_KEY_PAIRS;
+    return XplatformPackage.Literals.XPLATFORM_RESOURCE_DEFINITION;
   }
 
   /**
@@ -71,13 +71,13 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getKeyValuePair()
+  public EList<MapInstance> getResources()
   {
-    if (keyValuePair == null)
+    if (resources == null)
     {
-      keyValuePair = new EObjectContainmentEList<EObject>(EObject.class, this, XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR);
+      resources = new EObjectContainmentEList<MapInstance>(MapInstance.class, this, XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES);
     }
-    return keyValuePair;
+    return resources;
   }
 
   /**
@@ -90,8 +90,8 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR:
-        return ((InternalEList<?>)getKeyValuePair()).basicRemove(otherEnd, msgs);
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES:
+        return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR:
-        return getKeyValuePair();
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES:
+        return getResources();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR:
-        getKeyValuePair().clear();
-        getKeyValuePair().addAll((Collection<? extends EObject>)newValue);
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES:
+        getResources().clear();
+        getResources().addAll((Collection<? extends MapInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR:
-        getKeyValuePair().clear();
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES:
+        getResources().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class UnnestedKeyPairsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XplatformPackage.UNNESTED_KEY_PAIRS__KEY_VALUE_PAIR:
-        return keyValuePair != null && !keyValuePair.isEmpty();
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION__RESOURCES:
+        return resources != null && !resources.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //UnnestedKeyPairsImpl
+} //XplatformResourceDefinitionImpl

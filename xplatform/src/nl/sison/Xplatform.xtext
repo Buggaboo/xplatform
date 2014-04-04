@@ -1,9 +1,50 @@
 grammar nl.sison.Xplatform with org.eclipse.xtext.common.Terminals
 
+/*
+ * 
+ * This grammar describes how enum and maps should be defined to generate them
+ * 
+ * Handy links:
+ * * http://pettergraff.blogspot.nl/2009/12/deploying-code-generator-with.html
+ * * http://charandeepmatta.com/2012/09/01/how-to-generate-eclipse-plugin-for-your-dsl-written-in-xtext/ - sharing your plugin
+ * * http://www.techjava.de/topics/2010/06/extending-xtext-build-participants/ - using "Nature" to distinguish DSLs
+ * * http://stackoverflow.com/questions/10917386/linking-xtext-with-stringtemplate-code-generator - run the generator from Main.java
+ * * http://wiki.eclipse.org/Xtext/FAQ#How_do_I_load_my_model_in_a_standalone_Java_application.C2.A0.3F - run xtend generation as standalone, e.g. from main method
+ * * http://davehofmann.de/blog/?p=101 // - standalone way of setting up the generator
+ * * http://koehnlein.blogspot.de/2012/11/xtext-tip-how-do-i-get-guice-injector.html - Guice and standalone dependency injection
+ * * http://christiandietrich.wordpress.com/2011/10/15/xtext-calling-the-generator-from-a-context-menu/ - Running "Generate code" from the context menu
+ * 
+ * IDEA name for the project, plate smasher (boilerplate smasher)
+ * IDEA feed vector graphics, generate assets l, m, h, xh, xxh, xxxh, pixel dimensions
+ * 
+ * -JS (06-Mar-2014)
+ * 
+ */
+
 generate xplatform "http://www.sison.nl/Xplatform"
 
+/**
+ * 
+ * Xplatform http call generator parser
+ * 
+ */
 Xplatform:
-	'call' name=ID method=RESTFUL_METHODS 'from' uri=URI
+	platform=Platform
+	(	
+		resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition	
+	)+
+;
+
+Platform:
+	'platform'
+	'{'
+		(platforms+=ID '->' generateWhere+=STRING)+
+	'}'
+;
+
+
+XplatformCallDefinition:
+	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=XplatformHeader
 		('and' 'response' responseHeaders=XplatformHeader)?
 	)?
@@ -17,11 +58,11 @@ URI:
 	(ANY_OTHER)+ ('{' parameters+=ID '}'(ANY_OTHER)*)*
 ;
 
-// TODO refactor
 XplatformHeader:
+	(name=ID)?
 	"'''" 
 	'{' (headerKeyValues+=XplatformHeaderKeyValuePair)
-		(',' headerKeyValues+=XplatformHeaderKeyValuePair (',')? )* '}'
+		(',' headerKeyValues+=XplatformHeaderKeyValuePair )* (',')? '}'
 	"'''"
 ;
 
@@ -34,13 +75,48 @@ terminal XPLATFORM_HEADER_PARAMETER:
 ;
 
 terminal RESTFUL_METHODS:
-	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well
+	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well, a body-less response
 ;
 
 XplatformJson:
-	"'''" 
-	type=JsonType | metaType=JsonMetaType //| composite=JsonObject
-	"'''"
+	((name=ID)
+		"'''" 
+		value=JsonObjectValue
+		"'''"
+	) 
+;
+
+/**
+ *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
+ */
+JsonObjectValue:
+	value=STRING | JsonObject | JsonArray | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_META_SCALAR_TYPE | JSON_NUMBER
+;
+
+JsonObject:
+	'{'
+		keyValuePair+=JsonKeyValuePair (',' keyValuePair+=JsonKeyValuePair)* (',')?
+	'}'
+;
+
+JsonKeyValuePair:
+	key=STRING ':' value=JsonObjectValue
+;
+
+JsonArray:
+	'['items+=JsonObjectValue (',' items+=JsonObjectValue)* (',')? ']'
+;
+
+terminal JSON_META_SCALAR_TYPE:
+	'boolean' | 'number' | 'string'
+;
+
+terminal EMPTY_JSON_OBJECT:
+	'{}'
+;
+
+terminal EMPTY_JSON_ARRAY:
+	'[]'
 ;
 
 terminal JSON_LITERAL_NULL: 'null';
@@ -49,91 +125,39 @@ terminal JSON_LITERAL_BOOLEAN:
 	'true' | 'false'
 ;
 
-JsonMetaScalarType:
-	'boolean' | 'number' | 'string'
+terminal JSON_NUMBER:
+	('0' | '1..9'+ INT) ('.' INT)?
 ;
 
-JsonMetaArray:
-	'[' (metaType=JsonMetaType) ']'
+/**
+ * 
+ * Xplatform resource generator
+ * 
+ */
+ 
+XplatformResourceDefinition:
+	resources += MapInstance | EnumInstance
 ;
 
-JsonMetaType:
-	scalar=JsonMetaScalarType | composite=JsonMetaArray
-;
 
-JsonCompositeType:
-	composite=JsonArray
-;
-
-JsonType:
-	scalar=JsonScalarType | composite=JsonCompositeType
-;
-
-JsonScalarType:
-	bool=JSON_LITERAL_BOOLEAN | string=STRING | number=INT ('.' INT)? | null=JSON_LITERAL_NULL 
-;
-
-JsonArray:
-	('[' (element+=JsonScalarType) (',' element+=JsonScalarType (',')? )* ']') |
-	('[' (composite+=JsonCompositeType) (',' composite+=JsonCompositeType (',')? )* ']')
-;
-
-JsonKeyValuePair:
-	key=STRING ':' value=JsonType
-;
-
-JsonMetaKeyValuePair:
-	key=STRING ':' value=JsonMetaType 
-;
-
-UnnestedKeyPairs:
-		(keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) //| nestedKeyValuePair+=JsonNestedObject)
-			(
-				',' (keyValuePair+=JsonKeyValuePair | keyValuePair+=JsonMetaKeyValuePair) // | nestedKeyValuePair+=JsonNestedObject)
-				(',')?
-			)* 
-;
-/*
-JsonObjectKernel:
+EnumInstance:
+	'enum' name=ID
 	'{'
-		keyPairs=UnnestedKeyPairs 
-	'}'
+		(values += ID) (',' values += ID)* (',')?
+	'}'	
 ;
 
-JsonObjectLeftNestedKeyValuePair:
-	(keys+=STRING ':' (right+=JsonObjectRightNested | all+=JsonObjectAllNested))+
-	(',' unnestedKeyPairs+=UnnestedKeyPairs)+ ','?
-;
-
-JsonObjectRightNestedKeyValuePair:
-	(unnestedKeyPairs=UnnestedKeyPairs ',') 
-	(',' keys+=STRING ':' (right+=JsonObjectLeftNested | all+=JsonObjectAllNested))+ ','?
-;
-
-JsonObjectAllNestedKeyValuePair:
-	(keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')
-	(',' keys+=STRING ':' '{' leftKeyValuePair+=JsonObjectLeftNestedKeyValuePair | rightKeyValuePair+=JsonObjectRightNestedKeyValuePair '}')* 
-;
-
-JsonObjectLeftNested:
+MapInstance:
+	'map' name=ID
 	'{'
-		keyPairs=JsonObjectLeftNestedKeyValuePair
-	'}'
+		(keys+=ID ':' values+=NestedType) (',' keys+=ID ':' values+=NestedType)* (',')?
+	'}' // you must have at least one map
 ;
 
-JsonObjectRightNested:
-	'{'
-		keyPairs=JsonObjectRightNestedKeyValuePair
-	'}'
+StringList:
+	'[' (values += STRING) (',' values += STRING)* (',')? ']'
 ;
 
-JsonObjectAllNested:
-	'{'
-		keyPairs=JsonObjectAllNestedKeyValuePair
-	'}'
+NestedType:
+	STRING | StringList	
 ;
-
-JsonObject:
-	left=JsonObjectLeftNested | right=JsonObjectRightNested | kernel=JsonObjectKernel | all=JsonObjectAllNested
-;
-*/

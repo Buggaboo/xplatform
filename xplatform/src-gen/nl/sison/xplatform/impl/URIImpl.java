@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.URIImpl#getUriParameter <em>Uri Parameter</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.URIImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class URIImpl extends MinimalEObjectImpl.Container implements URI
 {
   /**
-   * The cached value of the '{@link #getUriParameter() <em>Uri Parameter</em>}' attribute list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUriParameter()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<String> uriParameter;
+  protected EList<String> parameters;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,13 +66,13 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getUriParameter()
+  public EList<String> getParameters()
   {
-    if (uriParameter == null)
+    if (parameters == null)
     {
-      uriParameter = new EDataTypeEList<String>(String.class, this, XplatformPackage.URI__URI_PARAMETER);
+      parameters = new EDataTypeEList<String>(String.class, this, XplatformPackage.URI__PARAMETERS);
     }
-    return uriParameter;
+    return parameters;
   }
 
   /**
@@ -85,8 +85,8 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case XplatformPackage.URI__URI_PARAMETER:
-        return getUriParameter();
+      case XplatformPackage.URI__PARAMETERS:
+        return getParameters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -102,9 +102,9 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case XplatformPackage.URI__URI_PARAMETER:
-        getUriParameter().clear();
-        getUriParameter().addAll((Collection<? extends String>)newValue);
+      case XplatformPackage.URI__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -120,8 +120,8 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case XplatformPackage.URI__URI_PARAMETER:
-        getUriParameter().clear();
+      case XplatformPackage.URI__PARAMETERS:
+        getParameters().clear();
         return;
     }
     super.eUnset(featureID);
@@ -137,8 +137,8 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case XplatformPackage.URI__URI_PARAMETER:
-        return uriParameter != null && !uriParameter.isEmpty();
+      case XplatformPackage.URI__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -154,8 +154,8 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (uriParameter: ");
-    result.append(uriParameter);
+    result.append(" (parameters: ");
+    result.append(parameters);
     result.append(')');
     return result.toString();
   }

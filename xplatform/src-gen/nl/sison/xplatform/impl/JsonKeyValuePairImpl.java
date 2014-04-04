@@ -3,7 +3,7 @@
 package nl.sison.xplatform.impl;
 
 import nl.sison.xplatform.JsonKeyValuePair;
-import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.JsonObjectValue;
 import nl.sison.xplatform.XplatformPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -59,7 +59,7 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected JsonType value;
+  protected JsonObjectValue value;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +110,7 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonType getValue()
+  public JsonObjectValue getValue()
   {
     return value;
   }
@@ -120,9 +120,9 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(JsonType newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(JsonObjectValue newValue, NotificationChain msgs)
   {
-    JsonType oldValue = value;
+    JsonObjectValue oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -137,7 +137,7 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(JsonType newValue)
+  public void setValue(JsonObjectValue newValue)
   {
     if (newValue != value)
     {
@@ -201,7 +201,7 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
         setKey((String)newValue);
         return;
       case XplatformPackage.JSON_KEY_VALUE_PAIR__VALUE:
-        setValue((JsonType)newValue);
+        setValue((JsonObjectValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +221,7 @@ public class JsonKeyValuePairImpl extends MinimalEObjectImpl.Container implement
         setKey(KEY_EDEFAULT);
         return;
       case XplatformPackage.JSON_KEY_VALUE_PAIR__VALUE:
-        setValue((JsonType)null);
+        setValue((JsonObjectValue)null);
         return;
     }
     super.eUnset(featureID);

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.xplatform.URI#getUriParameter <em>Uri Parameter</em>}</li>
+ *   <li>{@link nl.sison.xplatform.URI#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface URI extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Uri Parameter</b></em>' attribute list.
+   * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Uri Parameter</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Parameters</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Uri Parameter</em>' attribute list.
-   * @see nl.sison.xplatform.XplatformPackage#getURI_UriParameter()
+   * @return the value of the '<em>Parameters</em>' attribute list.
+   * @see nl.sison.xplatform.XplatformPackage#getURI_Parameters()
    * @model unique="false"
    * @generated
    */
-  EList<String> getUriParameter();
+  EList<String> getParameters();
 
 } // URI
