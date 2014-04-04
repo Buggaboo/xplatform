@@ -8,8 +8,13 @@
   <genPackages prefix="Xplatform" basePackage="nl.sison" disposableProviderFactory="true"
       ecorePackage="Xplatform.ecore#/">
     <genClasses ecoreClass="Xplatform.ecore#//Xplatform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/platform"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/resources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/calls"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//Platform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Platform/platforms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Platform/whereToGenerate"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformCallDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformCallDefinition/name"/>
@@ -21,9 +26,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/jsonToServer"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//URI">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//URI/uriParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//URI/uriParameters"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeader/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformHeader/headerKeyValues"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformHeaderKeyValuePair">
@@ -31,6 +37,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformHeaderKeyValuePair/value"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformJson">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformJson/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/metaType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformJson/composite"/>
@@ -64,31 +71,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/values"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//XplatformResourceDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResourceDefinition/platform"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResourceDefinition/types"/>
-    </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//Platform">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Platform/platforms"/>
-    </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//Type">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Type/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResourceDefinition/resources"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//EnumInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//EnumInstance/enumName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//EnumInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//EnumInstance/values"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//MapInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//MapInstance/mapName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//MapInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//MapInstance/keys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//MapInstance/values"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//StringList">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//StringList/values"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//KeyValuePair">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//KeyValuePair/key"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//KeyValuePair/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//ValueType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//ValueType/string"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//ValueType/stringList"/>
-    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//NestedType"/>
   </genPackages>
 </genmodel:GenModel>

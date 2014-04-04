@@ -2,14 +2,21 @@
  */
 package nl.sison.xplatform.impl;
 
+import java.util.Collection;
+
 import nl.sison.xplatform.EnumInstance;
 import nl.sison.xplatform.XplatformPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,33 +25,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.xplatform.impl.EnumInstanceImpl#getEnumName <em>Enum Name</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.EnumInstanceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.EnumInstanceImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EnumInstanceImpl extends TypeImpl implements EnumInstance
+public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements EnumInstance
 {
   /**
-   * The default value of the '{@link #getEnumName() <em>Enum Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEnumName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ENUM_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEnumName() <em>Enum Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEnumName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String enumName = ENUM_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValues()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,9 +90,9 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEnumName()
+  public String getName()
   {
-    return enumName;
+    return name;
   }
 
   /**
@@ -82,12 +100,26 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEnumName(String newEnumName)
+  public void setName(String newName)
   {
-    String oldEnumName = enumName;
-    enumName = newEnumName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.ENUM_INSTANCE__ENUM_NAME, oldEnumName, enumName));
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.ENUM_INSTANCE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getValues()
+  {
+    if (values == null)
+    {
+      values = new EDataTypeEList<String>(String.class, this, XplatformPackage.ENUM_INSTANCE__VALUES);
+    }
+    return values;
   }
 
   /**
@@ -100,8 +132,10 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
   {
     switch (featureID)
     {
-      case XplatformPackage.ENUM_INSTANCE__ENUM_NAME:
-        return getEnumName();
+      case XplatformPackage.ENUM_INSTANCE__NAME:
+        return getName();
+      case XplatformPackage.ENUM_INSTANCE__VALUES:
+        return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -111,13 +145,18 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case XplatformPackage.ENUM_INSTANCE__ENUM_NAME:
-        setEnumName((String)newValue);
+      case XplatformPackage.ENUM_INSTANCE__NAME:
+        setName((String)newValue);
+        return;
+      case XplatformPackage.ENUM_INSTANCE__VALUES:
+        getValues().clear();
+        getValues().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +172,11 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
   {
     switch (featureID)
     {
-      case XplatformPackage.ENUM_INSTANCE__ENUM_NAME:
-        setEnumName(ENUM_NAME_EDEFAULT);
+      case XplatformPackage.ENUM_INSTANCE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case XplatformPackage.ENUM_INSTANCE__VALUES:
+        getValues().clear();
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +192,10 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
   {
     switch (featureID)
     {
-      case XplatformPackage.ENUM_INSTANCE__ENUM_NAME:
-        return ENUM_NAME_EDEFAULT == null ? enumName != null : !ENUM_NAME_EDEFAULT.equals(enumName);
+      case XplatformPackage.ENUM_INSTANCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case XplatformPackage.ENUM_INSTANCE__VALUES:
+        return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -167,8 +211,10 @@ public class EnumInstanceImpl extends TypeImpl implements EnumInstance
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (enumName: ");
-    result.append(enumName);
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", values: ");
+    result.append(values);
     result.append(')');
     return result.toString();
   }

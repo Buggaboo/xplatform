@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getType <em>Type</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getMetaType <em>Meta Type</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformJsonImpl#getComposite <em>Composite</em>}</li>
@@ -34,6 +35,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements XplatformJson
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -83,6 +104,29 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   protected EClass eStaticClass()
   {
     return XplatformPackage.Literals.XPLATFORM_JSON;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_JSON__NAME, oldName, name));
   }
 
   /**
@@ -259,6 +303,8 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        return getName();
       case XplatformPackage.XPLATFORM_JSON__TYPE:
         return getType();
       case XplatformPackage.XPLATFORM_JSON__META_TYPE:
@@ -279,6 +325,9 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        setName((String)newValue);
+        return;
       case XplatformPackage.XPLATFORM_JSON__TYPE:
         setType((JsonType)newValue);
         return;
@@ -302,6 +351,9 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case XplatformPackage.XPLATFORM_JSON__TYPE:
         setType((JsonType)null);
         return;
@@ -325,6 +377,8 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_JSON__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XplatformPackage.XPLATFORM_JSON__TYPE:
         return type != null;
       case XplatformPackage.XPLATFORM_JSON__META_TYPE:
@@ -333,6 +387,23 @@ public class XplatformJsonImpl extends MinimalEObjectImpl.Container implements X
         return composite != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //XplatformJsonImpl

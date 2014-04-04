@@ -32,6 +32,15 @@ public interface XplatformFactory extends EFactory
   Xplatform createXplatform();
 
   /**
+   * Returns a new object of class '<em>Platform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Platform</em>'.
+   * @generated
+   */
+  Platform createPlatform();
+
+  /**
    * Returns a new object of class '<em>Call Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -149,24 +158,6 @@ public interface XplatformFactory extends EFactory
   XplatformResourceDefinition createXplatformResourceDefinition();
 
   /**
-   * Returns a new object of class '<em>Platform</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Platform</em>'.
-   * @generated
-   */
-  Platform createPlatform();
-
-  /**
-   * Returns a new object of class '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
-   * @generated
-   */
-  Type createType();
-
-  /**
    * Returns a new object of class '<em>Enum Instance</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -194,22 +185,13 @@ public interface XplatformFactory extends EFactory
   StringList createStringList();
 
   /**
-   * Returns a new object of class '<em>Key Value Pair</em>'.
+   * Returns a new object of class '<em>Nested Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Key Value Pair</em>'.
+   * @return a new object of class '<em>Nested Type</em>'.
    * @generated
    */
-  KeyValuePair createKeyValuePair();
-
-  /**
-   * Returns a new object of class '<em>Value Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Value Type</em>'.
-   * @generated
-   */
-  ValueType createValueType();
+  NestedType createNestedType();
 
   /**
    * Returns the package supported by this factory.

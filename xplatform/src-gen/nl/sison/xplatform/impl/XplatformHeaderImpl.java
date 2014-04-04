@@ -8,6 +8,7 @@ import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformPackage;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformHeaderImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformHeaderImpl#getHeaderKeyValues <em>Header Key Values</em>}</li>
  * </ul>
  * </p>
@@ -35,6 +38,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements XplatformHeader
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getHeaderKeyValues() <em>Header Key Values</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -64,6 +87,29 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
   protected EClass eStaticClass()
   {
     return XplatformPackage.Literals.XPLATFORM_HEADER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XplatformPackage.XPLATFORM_HEADER__NAME, oldName, name));
   }
 
   /**
@@ -106,6 +152,8 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_HEADER__NAME:
+        return getName();
       case XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES:
         return getHeaderKeyValues();
     }
@@ -123,6 +171,9 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_HEADER__NAME:
+        setName((String)newValue);
+        return;
       case XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES:
         getHeaderKeyValues().clear();
         getHeaderKeyValues().addAll((Collection<? extends XplatformHeaderKeyValuePair>)newValue);
@@ -141,6 +192,9 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_HEADER__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES:
         getHeaderKeyValues().clear();
         return;
@@ -158,10 +212,29 @@ public class XplatformHeaderImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM_HEADER__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XplatformPackage.XPLATFORM_HEADER__HEADER_KEY_VALUES:
         return headerKeyValues != null && !headerKeyValues.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //XplatformHeaderImpl

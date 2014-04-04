@@ -27,7 +27,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_StringList_CommaKeyword_3_q;
 	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_0_p;
 	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_1_3_a;
-	protected AbstractElementAlias match_XplatformHeader_CommaKeyword_4_q;
+	protected AbstractElementAlias match_XplatformHeader_CommaKeyword_5_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -41,7 +41,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_StringList_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getStringListAccess().getCommaKeyword_3());
 		match_URI_ANY_OTHERTerminalRuleCall_0_p = new TokenAlias(true, false, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0());
 		match_URI_ANY_OTHERTerminalRuleCall_1_3_a = new TokenAlias(true, true, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3());
-		match_XplatformHeader_CommaKeyword_4_q = new TokenAlias(false, true, grammarAccess.getXplatformHeaderAccess().getCommaKeyword_4());
+		match_XplatformHeader_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getXplatformHeaderAccess().getCommaKeyword_5());
 	}
 	
 	@Override
@@ -50,6 +50,8 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getANY_OTHERToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getINTRule())
 			return getINTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -69,6 +71,18 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "";
+	}
+	
+	/**
+	 * terminal STRING	: 
+	 * 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
 	}
 	
 	@Override
@@ -95,8 +109,8 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_URI_ANY_OTHERTerminalRuleCall_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_URI_ANY_OTHERTerminalRuleCall_1_3_a.equals(syntax))
 				emit_URI_ANY_OTHERTerminalRuleCall_1_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_XplatformHeader_CommaKeyword_4_q.equals(syntax))
-				emit_XplatformHeader_CommaKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_XplatformHeader_CommaKeyword_5_q.equals(syntax))
+				emit_XplatformHeader_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -177,7 +191,7 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_XplatformHeader_CommaKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_XplatformHeader_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

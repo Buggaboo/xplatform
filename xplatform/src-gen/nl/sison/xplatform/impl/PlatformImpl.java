@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link nl.sison.xplatform.impl.PlatformImpl#getPlatforms <em>Platforms</em>}</li>
+ *   <li>{@link nl.sison.xplatform.impl.PlatformImpl#getWhereToGenerate <em>Where To Generate</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +40,16 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
    * @ordered
    */
   protected EList<String> platforms;
+
+  /**
+   * The cached value of the '{@link #getWhereToGenerate() <em>Where To Generate</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWhereToGenerate()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> whereToGenerate;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,6 +91,20 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getWhereToGenerate()
+  {
+    if (whereToGenerate == null)
+    {
+      whereToGenerate = new EDataTypeEList<String>(String.class, this, XplatformPackage.PLATFORM__WHERE_TO_GENERATE);
+    }
+    return whereToGenerate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -87,6 +112,8 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
     {
       case XplatformPackage.PLATFORM__PLATFORMS:
         return getPlatforms();
+      case XplatformPackage.PLATFORM__WHERE_TO_GENERATE:
+        return getWhereToGenerate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -106,6 +133,10 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
         getPlatforms().clear();
         getPlatforms().addAll((Collection<? extends String>)newValue);
         return;
+      case XplatformPackage.PLATFORM__WHERE_TO_GENERATE:
+        getWhereToGenerate().clear();
+        getWhereToGenerate().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -123,6 +154,9 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
       case XplatformPackage.PLATFORM__PLATFORMS:
         getPlatforms().clear();
         return;
+      case XplatformPackage.PLATFORM__WHERE_TO_GENERATE:
+        getWhereToGenerate().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -139,6 +173,8 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
     {
       case XplatformPackage.PLATFORM__PLATFORMS:
         return platforms != null && !platforms.isEmpty();
+      case XplatformPackage.PLATFORM__WHERE_TO_GENERATE:
+        return whereToGenerate != null && !whereToGenerate.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -156,6 +192,8 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (platforms: ");
     result.append(platforms);
+    result.append(", whereToGenerate: ");
+    result.append(whereToGenerate);
     result.append(')');
     return result.toString();
   }

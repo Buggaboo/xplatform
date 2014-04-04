@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class StringListImpl extends MinimalEObjectImpl.Container implements StringList
+public class StringListImpl extends NestedTypeImpl implements StringList
 {
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.

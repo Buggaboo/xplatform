@@ -30,10 +30,19 @@ generate xplatform "http://www.sison.nl/Xplatform"
  */
 
 Xplatform:
+	platform=Platform
 	(	
 		resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition	
 	)+
 ;
+
+Platform:
+	'platform'
+	'{'
+		(platforms+=ID '->' whereToGenerate+=STRING)+
+	'}'
+;
+
 
 XplatformCallDefinition:
 	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
@@ -51,6 +60,7 @@ URI:
 ;
 
 XplatformHeader:
+	(name=ID)?
 	"'''" 
 	'{' (headerKeyValues+=XplatformHeaderKeyValuePair)
 		(',' headerKeyValues+=XplatformHeaderKeyValuePair )* (',')? '}'
@@ -70,9 +80,10 @@ terminal RESTFUL_METHODS:
 ;
 
 XplatformJson:
+	(name=ID)?
 	"'''" 
 	type=JsonType | metaType=JsonMetaType | composite=JsonObject
-	"'''"
+	"'''" 
 ;
 
 terminal JSON_LITERAL_NULL: 'null';
@@ -125,34 +136,22 @@ JsonObject:
  * 
  */
  
- XplatformResourceDefinition:
-	platform=Platform
-	(types+=Type)+
-;
-
-Platform:
-	'platform'
-	'{'
-		(platforms += STRING)+
-	'}'
-;
-	
-Type:
-	MapInstance | EnumInstance
+XplatformResourceDefinition:
+	(resources+=MapInstance | resources+=EnumInstance)+
 ;
 
 
 EnumInstance:
-	'enum' enumName=ID
+	'enum' name=ID
 	'{'
 		(values += ID) (',' values += ID)* (',')?
 	'}'	
 ;
 
 MapInstance:
-	'map' mapName=ID
+	'map' name=ID
 	'{'
-		(values += ID) (',' values += ID)* (',')?
+		(keys+=ID ':' values+=NestedType) (',' keys+=ID ':' values+=NestedType)* (',')?
 	'}' // you must have at least one map
 ;
 
@@ -160,10 +159,6 @@ StringList:
 	'[' (values += STRING) (',' values += STRING)* (',')? ']'
 ;
 
-KeyValuePair:
-	key=ID ':' value=ValueType
-;
-
-ValueType:
-	string=STRING | stringList=StringList
+NestedType:
+	STRING | StringList	
 ;

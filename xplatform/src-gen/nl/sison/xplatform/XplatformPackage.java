@@ -67,13 +67,22 @@ public interface XplatformPackage extends EPackage
   int XPLATFORM = 0;
 
   /**
+   * The feature id for the '<em><b>Platform</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPLATFORM__PLATFORM = 0;
+
+  /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM__RESOURCES = 0;
+  int XPLATFORM__RESOURCES = 1;
 
   /**
    * The feature id for the '<em><b>Calls</b></em>' containment reference list.
@@ -82,7 +91,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM__CALLS = 1;
+  int XPLATFORM__CALLS = 2;
 
   /**
    * The number of structural features of the '<em>Xplatform</em>' class.
@@ -91,7 +100,44 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_FEATURE_COUNT = 2;
+  int XPLATFORM_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link nl.sison.xplatform.impl.PlatformImpl <em>Platform</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.xplatform.impl.PlatformImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getPlatform()
+   * @generated
+   */
+  int PLATFORM = 1;
+
+  /**
+   * The feature id for the '<em><b>Platforms</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLATFORM__PLATFORMS = 0;
+
+  /**
+   * The feature id for the '<em><b>Where To Generate</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLATFORM__WHERE_TO_GENERATE = 1;
+
+  /**
+   * The number of structural features of the '<em>Platform</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLATFORM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.XplatformCallDefinitionImpl <em>Call Definition</em>}' class.
@@ -101,7 +147,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformCallDefinition()
    * @generated
    */
-  int XPLATFORM_CALL_DEFINITION = 1;
+  int XPLATFORM_CALL_DEFINITION = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -183,16 +229,16 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getURI()
    * @generated
    */
-  int URI = 2;
+  int URI = 3;
 
   /**
-   * The feature id for the '<em><b>Uri Parameter</b></em>' attribute list.
+   * The feature id for the '<em><b>Uri Parameters</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int URI__URI_PARAMETER = 0;
+  int URI__URI_PARAMETERS = 0;
 
   /**
    * The number of structural features of the '<em>URI</em>' class.
@@ -211,7 +257,16 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeader()
    * @generated
    */
-  int XPLATFORM_HEADER = 3;
+  int XPLATFORM_HEADER = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPLATFORM_HEADER__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Header Key Values</b></em>' containment reference list.
@@ -220,7 +275,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_HEADER__HEADER_KEY_VALUES = 0;
+  int XPLATFORM_HEADER__HEADER_KEY_VALUES = 1;
 
   /**
    * The number of structural features of the '<em>Header</em>' class.
@@ -229,7 +284,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_HEADER_FEATURE_COUNT = 1;
+  int XPLATFORM_HEADER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.XplatformHeaderKeyValuePairImpl <em>Header Key Value Pair</em>}' class.
@@ -239,7 +294,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformHeaderKeyValuePair()
    * @generated
    */
-  int XPLATFORM_HEADER_KEY_VALUE_PAIR = 4;
+  int XPLATFORM_HEADER_KEY_VALUE_PAIR = 5;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -276,7 +331,16 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformJson()
    * @generated
    */
-  int XPLATFORM_JSON = 5;
+  int XPLATFORM_JSON = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPLATFORM_JSON__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -285,7 +349,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON__TYPE = 0;
+  int XPLATFORM_JSON__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Meta Type</b></em>' containment reference.
@@ -294,7 +358,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON__META_TYPE = 1;
+  int XPLATFORM_JSON__META_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Composite</b></em>' containment reference.
@@ -303,7 +367,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON__COMPOSITE = 2;
+  int XPLATFORM_JSON__COMPOSITE = 3;
 
   /**
    * The number of structural features of the '<em>Json</em>' class.
@@ -312,7 +376,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_JSON_FEATURE_COUNT = 3;
+  int XPLATFORM_JSON_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonMetaArrayImpl <em>Json Meta Array</em>}' class.
@@ -322,7 +386,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonMetaArray()
    * @generated
    */
-  int JSON_META_ARRAY = 6;
+  int JSON_META_ARRAY = 7;
 
   /**
    * The feature id for the '<em><b>Meta Type</b></em>' containment reference.
@@ -350,7 +414,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonMetaType()
    * @generated
    */
-  int JSON_META_TYPE = 7;
+  int JSON_META_TYPE = 8;
 
   /**
    * The feature id for the '<em><b>Scalar</b></em>' attribute.
@@ -387,7 +451,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonCompositeType()
    * @generated
    */
-  int JSON_COMPOSITE_TYPE = 8;
+  int JSON_COMPOSITE_TYPE = 9;
 
   /**
    * The feature id for the '<em><b>Composite</b></em>' containment reference.
@@ -415,7 +479,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonType()
    * @generated
    */
-  int JSON_TYPE = 9;
+  int JSON_TYPE = 10;
 
   /**
    * The feature id for the '<em><b>Scalar</b></em>' containment reference.
@@ -452,7 +516,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonScalarType()
    * @generated
    */
-  int JSON_SCALAR_TYPE = 10;
+  int JSON_SCALAR_TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Bool</b></em>' attribute.
@@ -507,7 +571,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 11;
+  int JSON_ARRAY = 12;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -544,7 +608,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_OBJECT = 12;
+  int JSON_OBJECT = 13;
 
   /**
    * The feature id for the '<em><b>Keys</b></em>' attribute list.
@@ -581,25 +645,16 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformResourceDefinition()
    * @generated
    */
-  int XPLATFORM_RESOURCE_DEFINITION = 13;
+  int XPLATFORM_RESOURCE_DEFINITION = 14;
 
   /**
-   * The feature id for the '<em><b>Platform</b></em>' containment reference.
+   * The feature id for the '<em><b>Resources</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XPLATFORM_RESOURCE_DEFINITION__PLATFORM = 0;
-
-  /**
-   * The feature id for the '<em><b>Types</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XPLATFORM_RESOURCE_DEFINITION__TYPES = 1;
+  int XPLATFORM_RESOURCE_DEFINITION__RESOURCES = 0;
 
   /**
    * The number of structural features of the '<em>Resource Definition</em>' class.
@@ -608,63 +663,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XPLATFORM_RESOURCE_DEFINITION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.PlatformImpl <em>Platform</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.PlatformImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getPlatform()
-   * @generated
-   */
-  int PLATFORM = 14;
-
-  /**
-   * The feature id for the '<em><b>Platforms</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLATFORM__PLATFORMS = 0;
-
-  /**
-   * The number of structural features of the '<em>Platform</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLATFORM_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.TypeImpl <em>Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.TypeImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getType()
-   * @generated
-   */
-  int TYPE = 15;
-
-  /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE__VALUES = 0;
-
-  /**
-   * The number of structural features of the '<em>Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_FEATURE_COUNT = 1;
+  int XPLATFORM_RESOURCE_DEFINITION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.EnumInstanceImpl <em>Enum Instance</em>}' class.
@@ -674,7 +673,16 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 16;
+  int ENUM_INSTANCE = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_INSTANCE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -683,16 +691,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE__VALUES = TYPE__VALUES;
-
-  /**
-   * The feature id for the '<em><b>Enum Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENUM_INSTANCE__ENUM_NAME = TYPE_FEATURE_COUNT + 0;
+  int ENUM_INSTANCE__VALUES = 1;
 
   /**
    * The number of structural features of the '<em>Enum Instance</em>' class.
@@ -701,7 +700,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int ENUM_INSTANCE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.MapInstanceImpl <em>Map Instance</em>}' class.
@@ -711,25 +710,34 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 17;
+  int MAP_INSTANCE = 16;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE__VALUES = TYPE__VALUES;
+  int MAP_INSTANCE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Map Name</b></em>' attribute.
+   * The feature id for the '<em><b>Keys</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE__MAP_NAME = TYPE_FEATURE_COUNT + 0;
+  int MAP_INSTANCE__KEYS = 1;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_INSTANCE__VALUES = 2;
 
   /**
    * The number of structural features of the '<em>Map Instance</em>' class.
@@ -738,7 +746,26 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int MAP_INSTANCE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link nl.sison.xplatform.impl.NestedTypeImpl <em>Nested Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.xplatform.impl.NestedTypeImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getNestedType()
+   * @generated
+   */
+  int NESTED_TYPE = 18;
+
+  /**
+   * The number of structural features of the '<em>Nested Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_TYPE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.StringListImpl <em>String List</em>}' class.
@@ -748,7 +775,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 18;
+  int STRING_LIST = 17;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -757,7 +784,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_LIST__VALUES = 0;
+  int STRING_LIST__VALUES = NESTED_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>String List</em>' class.
@@ -766,81 +793,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_LIST_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.KeyValuePairImpl <em>Key Value Pair</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.KeyValuePairImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getKeyValuePair()
-   * @generated
-   */
-  int KEY_VALUE_PAIR = 19;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE_PAIR__KEY = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE_PAIR__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Key Value Pair</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE_PAIR_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.ValueTypeImpl <em>Value Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.ValueTypeImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getValueType()
-   * @generated
-   */
-  int VALUE_TYPE = 20;
-
-  /**
-   * The feature id for the '<em><b>String</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VALUE_TYPE__STRING = 0;
-
-  /**
-   * The feature id for the '<em><b>String List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VALUE_TYPE__STRING_LIST = 1;
-
-  /**
-   * The number of structural features of the '<em>Value Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VALUE_TYPE_FEATURE_COUNT = 2;
+  int STRING_LIST_FEATURE_COUNT = NESTED_TYPE_FEATURE_COUNT + 1;
 
 
   /**
@@ -852,6 +805,17 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EClass getXplatform();
+
+  /**
+   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.Xplatform#getPlatform <em>Platform</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Platform</em>'.
+   * @see nl.sison.xplatform.Xplatform#getPlatform()
+   * @see #getXplatform()
+   * @generated
+   */
+  EReference getXplatform_Platform();
 
   /**
    * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.Xplatform#getResources <em>Resources</em>}'.
@@ -874,6 +838,38 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EReference getXplatform_Calls();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.xplatform.Platform <em>Platform</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Platform</em>'.
+   * @see nl.sison.xplatform.Platform
+   * @generated
+   */
+  EClass getPlatform();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.Platform#getPlatforms <em>Platforms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Platforms</em>'.
+   * @see nl.sison.xplatform.Platform#getPlatforms()
+   * @see #getPlatform()
+   * @generated
+   */
+  EAttribute getPlatform_Platforms();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.Platform#getWhereToGenerate <em>Where To Generate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Where To Generate</em>'.
+   * @see nl.sison.xplatform.Platform#getWhereToGenerate()
+   * @see #getPlatform()
+   * @generated
+   */
+  EAttribute getPlatform_WhereToGenerate();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.XplatformCallDefinition <em>Call Definition</em>}'.
@@ -973,15 +969,15 @@ public interface XplatformPackage extends EPackage
   EClass getURI();
 
   /**
-   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.URI#getUriParameter <em>Uri Parameter</em>}'.
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.URI#getUriParameters <em>Uri Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Uri Parameter</em>'.
-   * @see nl.sison.xplatform.URI#getUriParameter()
+   * @return the meta object for the attribute list '<em>Uri Parameters</em>'.
+   * @see nl.sison.xplatform.URI#getUriParameters()
    * @see #getURI()
    * @generated
    */
-  EAttribute getURI_UriParameter();
+  EAttribute getURI_UriParameters();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.XplatformHeader <em>Header</em>}'.
@@ -992,6 +988,17 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EClass getXplatformHeader();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.XplatformHeader#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.xplatform.XplatformHeader#getName()
+   * @see #getXplatformHeader()
+   * @generated
+   */
+  EAttribute getXplatformHeader_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.XplatformHeader#getHeaderKeyValues <em>Header Key Values</em>}'.
@@ -1045,6 +1052,17 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EClass getXplatformJson();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.XplatformJson#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.xplatform.XplatformJson#getName()
+   * @see #getXplatformJson()
+   * @generated
+   */
+  EAttribute getXplatformJson_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformJson#getType <em>Type</em>}'.
@@ -1314,68 +1332,15 @@ public interface XplatformPackage extends EPackage
   EClass getXplatformResourceDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.XplatformResourceDefinition#getPlatform <em>Platform</em>}'.
+   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.XplatformResourceDefinition#getResources <em>Resources</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Platform</em>'.
-   * @see nl.sison.xplatform.XplatformResourceDefinition#getPlatform()
+   * @return the meta object for the containment reference list '<em>Resources</em>'.
+   * @see nl.sison.xplatform.XplatformResourceDefinition#getResources()
    * @see #getXplatformResourceDefinition()
    * @generated
    */
-  EReference getXplatformResourceDefinition_Platform();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.XplatformResourceDefinition#getTypes <em>Types</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Types</em>'.
-   * @see nl.sison.xplatform.XplatformResourceDefinition#getTypes()
-   * @see #getXplatformResourceDefinition()
-   * @generated
-   */
-  EReference getXplatformResourceDefinition_Types();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.Platform <em>Platform</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Platform</em>'.
-   * @see nl.sison.xplatform.Platform
-   * @generated
-   */
-  EClass getPlatform();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.Platform#getPlatforms <em>Platforms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Platforms</em>'.
-   * @see nl.sison.xplatform.Platform#getPlatforms()
-   * @see #getPlatform()
-   * @generated
-   */
-  EAttribute getPlatform_Platforms();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.Type <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type</em>'.
-   * @see nl.sison.xplatform.Type
-   * @generated
-   */
-  EClass getType();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.Type#getValues <em>Values</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
-   * @see nl.sison.xplatform.Type#getValues()
-   * @see #getType()
-   * @generated
-   */
-  EAttribute getType_Values();
+  EReference getXplatformResourceDefinition_Resources();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.EnumInstance <em>Enum Instance</em>}'.
@@ -1388,15 +1353,26 @@ public interface XplatformPackage extends EPackage
   EClass getEnumInstance();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.EnumInstance#getEnumName <em>Enum Name</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.EnumInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Enum Name</em>'.
-   * @see nl.sison.xplatform.EnumInstance#getEnumName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.xplatform.EnumInstance#getName()
    * @see #getEnumInstance()
    * @generated
    */
-  EAttribute getEnumInstance_EnumName();
+  EAttribute getEnumInstance_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.EnumInstance#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see nl.sison.xplatform.EnumInstance#getValues()
+   * @see #getEnumInstance()
+   * @generated
+   */
+  EAttribute getEnumInstance_Values();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.MapInstance <em>Map Instance</em>}'.
@@ -1409,15 +1385,37 @@ public interface XplatformPackage extends EPackage
   EClass getMapInstance();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.MapInstance#getMapName <em>Map Name</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.xplatform.MapInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Map Name</em>'.
-   * @see nl.sison.xplatform.MapInstance#getMapName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.xplatform.MapInstance#getName()
    * @see #getMapInstance()
    * @generated
    */
-  EAttribute getMapInstance_MapName();
+  EAttribute getMapInstance_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.xplatform.MapInstance#getKeys <em>Keys</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Keys</em>'.
+   * @see nl.sison.xplatform.MapInstance#getKeys()
+   * @see #getMapInstance()
+   * @generated
+   */
+  EAttribute getMapInstance_Keys();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link nl.sison.xplatform.MapInstance#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Values</em>'.
+   * @see nl.sison.xplatform.MapInstance#getValues()
+   * @see #getMapInstance()
+   * @generated
+   */
+  EReference getMapInstance_Values();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.StringList <em>String List</em>}'.
@@ -1441,68 +1439,14 @@ public interface XplatformPackage extends EPackage
   EAttribute getStringList_Values();
 
   /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.KeyValuePair <em>Key Value Pair</em>}'.
+   * Returns the meta object for class '{@link nl.sison.xplatform.NestedType <em>Nested Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Key Value Pair</em>'.
-   * @see nl.sison.xplatform.KeyValuePair
+   * @return the meta object for class '<em>Nested Type</em>'.
+   * @see nl.sison.xplatform.NestedType
    * @generated
    */
-  EClass getKeyValuePair();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.KeyValuePair#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see nl.sison.xplatform.KeyValuePair#getKey()
-   * @see #getKeyValuePair()
-   * @generated
-   */
-  EAttribute getKeyValuePair_Key();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.KeyValuePair#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see nl.sison.xplatform.KeyValuePair#getValue()
-   * @see #getKeyValuePair()
-   * @generated
-   */
-  EReference getKeyValuePair_Value();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.xplatform.ValueType <em>Value Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Value Type</em>'.
-   * @see nl.sison.xplatform.ValueType
-   * @generated
-   */
-  EClass getValueType();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.xplatform.ValueType#getString <em>String</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>String</em>'.
-   * @see nl.sison.xplatform.ValueType#getString()
-   * @see #getValueType()
-   * @generated
-   */
-  EAttribute getValueType_String();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.xplatform.ValueType#getStringList <em>String List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>String List</em>'.
-   * @see nl.sison.xplatform.ValueType#getStringList()
-   * @see #getValueType()
-   * @generated
-   */
-  EReference getValueType_StringList();
+  EClass getNestedType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1538,6 +1482,14 @@ public interface XplatformPackage extends EPackage
     EClass XPLATFORM = eINSTANCE.getXplatform();
 
     /**
+     * The meta object literal for the '<em><b>Platform</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XPLATFORM__PLATFORM = eINSTANCE.getXplatform_Platform();
+
+    /**
      * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1552,6 +1504,32 @@ public interface XplatformPackage extends EPackage
      * @generated
      */
     EReference XPLATFORM__CALLS = eINSTANCE.getXplatform_Calls();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.xplatform.impl.PlatformImpl <em>Platform</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.xplatform.impl.PlatformImpl
+     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getPlatform()
+     * @generated
+     */
+    EClass PLATFORM = eINSTANCE.getPlatform();
+
+    /**
+     * The meta object literal for the '<em><b>Platforms</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PLATFORM__PLATFORMS = eINSTANCE.getPlatform_Platforms();
+
+    /**
+     * The meta object literal for the '<em><b>Where To Generate</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PLATFORM__WHERE_TO_GENERATE = eINSTANCE.getPlatform_WhereToGenerate();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.XplatformCallDefinitionImpl <em>Call Definition</em>}' class.
@@ -1630,12 +1608,12 @@ public interface XplatformPackage extends EPackage
     EClass URI = eINSTANCE.getURI();
 
     /**
-     * The meta object literal for the '<em><b>Uri Parameter</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Uri Parameters</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute URI__URI_PARAMETER = eINSTANCE.getURI_UriParameter();
+    EAttribute URI__URI_PARAMETERS = eINSTANCE.getURI_UriParameters();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.XplatformHeaderImpl <em>Header</em>}' class.
@@ -1646,6 +1624,14 @@ public interface XplatformPackage extends EPackage
      * @generated
      */
     EClass XPLATFORM_HEADER = eINSTANCE.getXplatformHeader();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XPLATFORM_HEADER__NAME = eINSTANCE.getXplatformHeader_Name();
 
     /**
      * The meta object literal for the '<em><b>Header Key Values</b></em>' containment reference list feature.
@@ -1690,6 +1676,14 @@ public interface XplatformPackage extends EPackage
      * @generated
      */
     EClass XPLATFORM_JSON = eINSTANCE.getXplatformJson();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XPLATFORM_JSON__NAME = eINSTANCE.getXplatformJson_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -1908,56 +1902,12 @@ public interface XplatformPackage extends EPackage
     EClass XPLATFORM_RESOURCE_DEFINITION = eINSTANCE.getXplatformResourceDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Platform</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XPLATFORM_RESOURCE_DEFINITION__PLATFORM = eINSTANCE.getXplatformResourceDefinition_Platform();
-
-    /**
-     * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XPLATFORM_RESOURCE_DEFINITION__TYPES = eINSTANCE.getXplatformResourceDefinition_Types();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.PlatformImpl <em>Platform</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.PlatformImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getPlatform()
-     * @generated
-     */
-    EClass PLATFORM = eINSTANCE.getPlatform();
-
-    /**
-     * The meta object literal for the '<em><b>Platforms</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PLATFORM__PLATFORMS = eINSTANCE.getPlatform_Platforms();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.TypeImpl <em>Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.TypeImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getType()
-     * @generated
-     */
-    EClass TYPE = eINSTANCE.getType();
-
-    /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE__VALUES = eINSTANCE.getType_Values();
+    EReference XPLATFORM_RESOURCE_DEFINITION__RESOURCES = eINSTANCE.getXplatformResourceDefinition_Resources();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.EnumInstanceImpl <em>Enum Instance</em>}' class.
@@ -1970,12 +1920,20 @@ public interface XplatformPackage extends EPackage
     EClass ENUM_INSTANCE = eINSTANCE.getEnumInstance();
 
     /**
-     * The meta object literal for the '<em><b>Enum Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENUM_INSTANCE__ENUM_NAME = eINSTANCE.getEnumInstance_EnumName();
+    EAttribute ENUM_INSTANCE__NAME = eINSTANCE.getEnumInstance_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_INSTANCE__VALUES = eINSTANCE.getEnumInstance_Values();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.MapInstanceImpl <em>Map Instance</em>}' class.
@@ -1988,12 +1946,28 @@ public interface XplatformPackage extends EPackage
     EClass MAP_INSTANCE = eINSTANCE.getMapInstance();
 
     /**
-     * The meta object literal for the '<em><b>Map Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MAP_INSTANCE__MAP_NAME = eINSTANCE.getMapInstance_MapName();
+    EAttribute MAP_INSTANCE__NAME = eINSTANCE.getMapInstance_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAP_INSTANCE__KEYS = eINSTANCE.getMapInstance_Keys();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_INSTANCE__VALUES = eINSTANCE.getMapInstance_Values();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.StringListImpl <em>String List</em>}' class.
@@ -2014,56 +1988,14 @@ public interface XplatformPackage extends EPackage
     EAttribute STRING_LIST__VALUES = eINSTANCE.getStringList_Values();
 
     /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.KeyValuePairImpl <em>Key Value Pair</em>}' class.
+     * The meta object literal for the '{@link nl.sison.xplatform.impl.NestedTypeImpl <em>Nested Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.KeyValuePairImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getKeyValuePair()
+     * @see nl.sison.xplatform.impl.NestedTypeImpl
+     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getNestedType()
      * @generated
      */
-    EClass KEY_VALUE_PAIR = eINSTANCE.getKeyValuePair();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute KEY_VALUE_PAIR__KEY = eINSTANCE.getKeyValuePair_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference KEY_VALUE_PAIR__VALUE = eINSTANCE.getKeyValuePair_Value();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.xplatform.impl.ValueTypeImpl <em>Value Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.xplatform.impl.ValueTypeImpl
-     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getValueType()
-     * @generated
-     */
-    EClass VALUE_TYPE = eINSTANCE.getValueType();
-
-    /**
-     * The meta object literal for the '<em><b>String</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VALUE_TYPE__STRING = eINSTANCE.getValueType_String();
-
-    /**
-     * The meta object literal for the '<em><b>String List</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VALUE_TYPE__STRING_LIST = eINSTANCE.getValueType_StringList();
+    EClass NESTED_TYPE = eINSTANCE.getNestedType();
 
   }
 

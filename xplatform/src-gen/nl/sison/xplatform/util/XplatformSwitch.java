@@ -79,6 +79,13 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.PLATFORM:
+      {
+        Platform platform = (Platform)theEObject;
+        T result = casePlatform(platform);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.XPLATFORM_CALL_DEFINITION:
       {
         XplatformCallDefinition xplatformCallDefinition = (XplatformCallDefinition)theEObject;
@@ -170,25 +177,10 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.PLATFORM:
-      {
-        Platform platform = (Platform)theEObject;
-        T result = casePlatform(platform);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.TYPE:
-      {
-        Type type = (Type)theEObject;
-        T result = caseType(type);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case XplatformPackage.ENUM_INSTANCE:
       {
         EnumInstance enumInstance = (EnumInstance)theEObject;
         T result = caseEnumInstance(enumInstance);
-        if (result == null) result = caseType(enumInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -196,7 +188,6 @@ public class XplatformSwitch<T> extends Switch<T>
       {
         MapInstance mapInstance = (MapInstance)theEObject;
         T result = caseMapInstance(mapInstance);
-        if (result == null) result = caseType(mapInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,20 +195,14 @@ public class XplatformSwitch<T> extends Switch<T>
       {
         StringList stringList = (StringList)theEObject;
         T result = caseStringList(stringList);
+        if (result == null) result = caseNestedType(stringList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.KEY_VALUE_PAIR:
+      case XplatformPackage.NESTED_TYPE:
       {
-        KeyValuePair keyValuePair = (KeyValuePair)theEObject;
-        T result = caseKeyValuePair(keyValuePair);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XplatformPackage.VALUE_TYPE:
-      {
-        ValueType valueType = (ValueType)theEObject;
-        T result = caseValueType(valueType);
+        NestedType nestedType = (NestedType)theEObject;
+        T result = caseNestedType(nestedType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -237,6 +222,22 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXplatform(Xplatform object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Platform</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Platform</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePlatform(Platform object)
   {
     return null;
   }
@@ -450,38 +451,6 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Platform</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Platform</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePlatform(Platform object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseType(Type object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Enum Instance</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -530,33 +499,17 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Key Value Pair</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Nested Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Key Value Pair</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Nested Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseKeyValuePair(KeyValuePair object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Value Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Value Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseValueType(ValueType object)
+  public T caseNestedType(NestedType object)
   {
     return null;
   }

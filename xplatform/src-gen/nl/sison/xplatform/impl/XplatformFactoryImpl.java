@@ -65,6 +65,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
     switch (eClass.getClassifierID())
     {
       case XplatformPackage.XPLATFORM: return createXplatform();
+      case XplatformPackage.PLATFORM: return createPlatform();
       case XplatformPackage.XPLATFORM_CALL_DEFINITION: return createXplatformCallDefinition();
       case XplatformPackage.URI: return createURI();
       case XplatformPackage.XPLATFORM_HEADER: return createXplatformHeader();
@@ -78,13 +79,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
       case XplatformPackage.JSON_OBJECT: return createJsonObject();
       case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION: return createXplatformResourceDefinition();
-      case XplatformPackage.PLATFORM: return createPlatform();
-      case XplatformPackage.TYPE: return createType();
       case XplatformPackage.ENUM_INSTANCE: return createEnumInstance();
       case XplatformPackage.MAP_INSTANCE: return createMapInstance();
       case XplatformPackage.STRING_LIST: return createStringList();
-      case XplatformPackage.KEY_VALUE_PAIR: return createKeyValuePair();
-      case XplatformPackage.VALUE_TYPE: return createValueType();
+      case XplatformPackage.NESTED_TYPE: return createNestedType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -99,6 +97,17 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
   {
     XplatformImpl xplatform = new XplatformImpl();
     return xplatform;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Platform createPlatform()
+  {
+    PlatformImpl platform = new PlatformImpl();
+    return platform;
   }
 
   /**
@@ -249,28 +258,6 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Platform createPlatform()
-  {
-    PlatformImpl platform = new PlatformImpl();
-    return platform;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type createType()
-  {
-    TypeImpl type = new TypeImpl();
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EnumInstance createEnumInstance()
   {
     EnumInstanceImpl enumInstance = new EnumInstanceImpl();
@@ -304,21 +291,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public KeyValuePair createKeyValuePair()
+  public NestedType createNestedType()
   {
-    KeyValuePairImpl keyValuePair = new KeyValuePairImpl();
-    return keyValuePair;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ValueType createValueType()
-  {
-    ValueTypeImpl valueType = new ValueTypeImpl();
-    return valueType;
+    NestedTypeImpl nestedType = new NestedTypeImpl();
+    return nestedType;
   }
 
   /**
