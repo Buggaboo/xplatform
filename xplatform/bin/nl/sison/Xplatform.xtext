@@ -30,8 +30,12 @@ generate xplatform "http://www.sison.nl/Xplatform"
  */
 
 Xplatform:
-	resource+=XplatformResource	
-	
+	(	
+		resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition	
+	)+
+;
+
+XplatformCallDefinition:
 	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=XplatformHeader
 		('and' 'response' responseHeaders=XplatformHeader)?
@@ -121,7 +125,7 @@ JsonObject:
  * 
  */
  
- XplatformResource:
+ XplatformResourceDefinition:
 	platform=Platform
 	(types+=Type)+
 ;

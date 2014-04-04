@@ -20,154 +20,174 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class XplatformElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Xplatform");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cResourceAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cResourceXplatformResourceParserRuleCall_0_0 = (RuleCall)cResourceAssignment_0.eContents().get(0);
-		private final Keyword cCallKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMethodAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMethodRESTFUL_METHODSTerminalRuleCall_4_0 = (RuleCall)cMethodAssignment_4.eContents().get(0);
-		private final Keyword cFromKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cUriAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cUriURIParserRuleCall_6_0 = (RuleCall)cUriAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHeadersKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cFromKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Keyword cRequestKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
-		private final Assignment cRequestHeadersAssignment_7_4 = (Assignment)cGroup_7.eContents().get(4);
-		private final RuleCall cRequestHeadersXplatformHeaderParserRuleCall_7_4_0 = (RuleCall)cRequestHeadersAssignment_7_4.eContents().get(0);
-		private final Group cGroup_7_5 = (Group)cGroup_7.eContents().get(5);
-		private final Keyword cAndKeyword_7_5_0 = (Keyword)cGroup_7_5.eContents().get(0);
-		private final Keyword cResponseKeyword_7_5_1 = (Keyword)cGroup_7_5.eContents().get(1);
-		private final Assignment cResponseHeadersAssignment_7_5_2 = (Assignment)cGroup_7_5.eContents().get(2);
-		private final RuleCall cResponseHeadersXplatformHeaderParserRuleCall_7_5_2_0 = (RuleCall)cResponseHeadersAssignment_7_5_2.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cClientKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cExpectsKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cJsonToClientAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cJsonToClientXplatformJsonParserRuleCall_8_2_0 = (RuleCall)cJsonToClientAssignment_8_2.eContents().get(0);
-		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
-		private final Keyword cServerKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
-		private final Keyword cExpectsKeyword_8_3_1 = (Keyword)cGroup_8_3.eContents().get(1);
-		private final Assignment cJsonToServerAssignment_8_3_2 = (Assignment)cGroup_8_3.eContents().get(2);
-		private final RuleCall cJsonToServerXplatformJsonParserRuleCall_8_3_2_0 = (RuleCall)cJsonToServerAssignment_8_3_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cResourcesAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cResourcesXplatformResourceDefinitionParserRuleCall_0_0 = (RuleCall)cResourcesAssignment_0.eContents().get(0);
+		private final Assignment cCallsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCallsXplatformCallDefinitionParserRuleCall_1_0 = (RuleCall)cCallsAssignment_1.eContents().get(0);
 		
 		/// **
 		// * 
-		// * Xplatform call generator parser
+		// * Xplatform http call generator parser
 		// * 
 		// * / Xplatform:
-		//	resource+=XplatformResource "call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from"
-		//	"request" requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)? ("client" "expects"
+		//	(resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition)+;
+		public ParserRule getRule() { return rule; }
+
+		//(resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition)+
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//resources+=XplatformResourceDefinition
+		public Assignment getResourcesAssignment_0() { return cResourcesAssignment_0; }
+
+		//XplatformResourceDefinition
+		public RuleCall getResourcesXplatformResourceDefinitionParserRuleCall_0_0() { return cResourcesXplatformResourceDefinitionParserRuleCall_0_0; }
+
+		//calls+=XplatformCallDefinition
+		public Assignment getCallsAssignment_1() { return cCallsAssignment_1; }
+
+		//XplatformCallDefinition
+		public RuleCall getCallsXplatformCallDefinitionParserRuleCall_1_0() { return cCallsXplatformCallDefinitionParserRuleCall_1_0; }
+	}
+
+	public class XplatformCallDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XplatformCallDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCallKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMethodAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMethodRESTFUL_METHODSTerminalRuleCall_3_0 = (RuleCall)cMethodAssignment_3.eContents().get(0);
+		private final Keyword cFromKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cUriAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cUriURIParserRuleCall_5_0 = (RuleCall)cUriAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cWithKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cHeadersKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cFromKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		private final Keyword cRequestKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
+		private final Assignment cRequestHeadersAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
+		private final RuleCall cRequestHeadersXplatformHeaderParserRuleCall_6_4_0 = (RuleCall)cRequestHeadersAssignment_6_4.eContents().get(0);
+		private final Group cGroup_6_5 = (Group)cGroup_6.eContents().get(5);
+		private final Keyword cAndKeyword_6_5_0 = (Keyword)cGroup_6_5.eContents().get(0);
+		private final Keyword cResponseKeyword_6_5_1 = (Keyword)cGroup_6_5.eContents().get(1);
+		private final Assignment cResponseHeadersAssignment_6_5_2 = (Assignment)cGroup_6_5.eContents().get(2);
+		private final RuleCall cResponseHeadersXplatformHeaderParserRuleCall_6_5_2_0 = (RuleCall)cResponseHeadersAssignment_6_5_2.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cClientKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cExpectsKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cJsonToClientAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cJsonToClientXplatformJsonParserRuleCall_7_2_0 = (RuleCall)cJsonToClientAssignment_7_2.eContents().get(0);
+		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
+		private final Keyword cServerKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
+		private final Keyword cExpectsKeyword_7_3_1 = (Keyword)cGroup_7_3.eContents().get(1);
+		private final Assignment cJsonToServerAssignment_7_3_2 = (Assignment)cGroup_7_3.eContents().get(2);
+		private final RuleCall cJsonToServerXplatformJsonParserRuleCall_7_3_2_0 = (RuleCall)cJsonToServerAssignment_7_3_2.eContents().get(0);
+		
+		//XplatformCallDefinition:
+		//	"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
+		//	requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)? ("client" "expects"
 		//	jsonToClient=XplatformJson ("server" "expects" jsonToServer=XplatformJson)?)?;
 		public ParserRule getRule() { return rule; }
 
-		//resource+=XplatformResource "call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
+		//"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
 		//requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)? ("client" "expects"
 		//jsonToClient=XplatformJson ("server" "expects" jsonToServer=XplatformJson)?)?
 		public Group getGroup() { return cGroup; }
 
-		//resource+=XplatformResource
-		public Assignment getResourceAssignment_0() { return cResourceAssignment_0; }
-
-		//XplatformResource
-		public RuleCall getResourceXplatformResourceParserRuleCall_0_0() { return cResourceXplatformResourceParserRuleCall_0_0; }
-
 		//"call"
-		public Keyword getCallKeyword_1() { return cCallKeyword_1; }
+		public Keyword getCallKeyword_0() { return cCallKeyword_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//":"
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//method=RESTFUL_METHODS
-		public Assignment getMethodAssignment_4() { return cMethodAssignment_4; }
+		public Assignment getMethodAssignment_3() { return cMethodAssignment_3; }
 
 		//RESTFUL_METHODS
-		public RuleCall getMethodRESTFUL_METHODSTerminalRuleCall_4_0() { return cMethodRESTFUL_METHODSTerminalRuleCall_4_0; }
+		public RuleCall getMethodRESTFUL_METHODSTerminalRuleCall_3_0() { return cMethodRESTFUL_METHODSTerminalRuleCall_3_0; }
 
 		//"from"
-		public Keyword getFromKeyword_5() { return cFromKeyword_5; }
+		public Keyword getFromKeyword_4() { return cFromKeyword_4; }
 
 		//uri=URI
-		public Assignment getUriAssignment_6() { return cUriAssignment_6; }
+		public Assignment getUriAssignment_5() { return cUriAssignment_5; }
 
 		//URI
-		public RuleCall getUriURIParserRuleCall_6_0() { return cUriURIParserRuleCall_6_0; }
+		public RuleCall getUriURIParserRuleCall_5_0() { return cUriURIParserRuleCall_5_0; }
 
 		//("with" "headers" "from" "request" requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//"with"
-		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+		public Keyword getWithKeyword_6_0() { return cWithKeyword_6_0; }
 
 		//"headers"
-		public Keyword getHeadersKeyword_7_1() { return cHeadersKeyword_7_1; }
+		public Keyword getHeadersKeyword_6_1() { return cHeadersKeyword_6_1; }
 
 		//"from"
-		public Keyword getFromKeyword_7_2() { return cFromKeyword_7_2; }
+		public Keyword getFromKeyword_6_2() { return cFromKeyword_6_2; }
 
 		//"request"
-		public Keyword getRequestKeyword_7_3() { return cRequestKeyword_7_3; }
+		public Keyword getRequestKeyword_6_3() { return cRequestKeyword_6_3; }
 
 		//requestHeaders=XplatformHeader
-		public Assignment getRequestHeadersAssignment_7_4() { return cRequestHeadersAssignment_7_4; }
+		public Assignment getRequestHeadersAssignment_6_4() { return cRequestHeadersAssignment_6_4; }
 
 		//XplatformHeader
-		public RuleCall getRequestHeadersXplatformHeaderParserRuleCall_7_4_0() { return cRequestHeadersXplatformHeaderParserRuleCall_7_4_0; }
+		public RuleCall getRequestHeadersXplatformHeaderParserRuleCall_6_4_0() { return cRequestHeadersXplatformHeaderParserRuleCall_6_4_0; }
 
 		//("and" "response" responseHeaders=XplatformHeader)?
-		public Group getGroup_7_5() { return cGroup_7_5; }
+		public Group getGroup_6_5() { return cGroup_6_5; }
 
 		//"and"
-		public Keyword getAndKeyword_7_5_0() { return cAndKeyword_7_5_0; }
+		public Keyword getAndKeyword_6_5_0() { return cAndKeyword_6_5_0; }
 
 		//"response"
-		public Keyword getResponseKeyword_7_5_1() { return cResponseKeyword_7_5_1; }
+		public Keyword getResponseKeyword_6_5_1() { return cResponseKeyword_6_5_1; }
 
 		//responseHeaders=XplatformHeader
-		public Assignment getResponseHeadersAssignment_7_5_2() { return cResponseHeadersAssignment_7_5_2; }
+		public Assignment getResponseHeadersAssignment_6_5_2() { return cResponseHeadersAssignment_6_5_2; }
 
 		//XplatformHeader
-		public RuleCall getResponseHeadersXplatformHeaderParserRuleCall_7_5_2_0() { return cResponseHeadersXplatformHeaderParserRuleCall_7_5_2_0; }
+		public RuleCall getResponseHeadersXplatformHeaderParserRuleCall_6_5_2_0() { return cResponseHeadersXplatformHeaderParserRuleCall_6_5_2_0; }
 
 		//("client" "expects" jsonToClient=XplatformJson ("server" "expects" jsonToServer=XplatformJson)?)?
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_7() { return cGroup_7; }
 
 		//"client"
-		public Keyword getClientKeyword_8_0() { return cClientKeyword_8_0; }
+		public Keyword getClientKeyword_7_0() { return cClientKeyword_7_0; }
 
 		//"expects"
-		public Keyword getExpectsKeyword_8_1() { return cExpectsKeyword_8_1; }
+		public Keyword getExpectsKeyword_7_1() { return cExpectsKeyword_7_1; }
 
 		//jsonToClient=XplatformJson
-		public Assignment getJsonToClientAssignment_8_2() { return cJsonToClientAssignment_8_2; }
+		public Assignment getJsonToClientAssignment_7_2() { return cJsonToClientAssignment_7_2; }
 
 		//XplatformJson
-		public RuleCall getJsonToClientXplatformJsonParserRuleCall_8_2_0() { return cJsonToClientXplatformJsonParserRuleCall_8_2_0; }
+		public RuleCall getJsonToClientXplatformJsonParserRuleCall_7_2_0() { return cJsonToClientXplatformJsonParserRuleCall_7_2_0; }
 
 		//("server" "expects" jsonToServer=XplatformJson)?
-		public Group getGroup_8_3() { return cGroup_8_3; }
+		public Group getGroup_7_3() { return cGroup_7_3; }
 
 		//"server"
-		public Keyword getServerKeyword_8_3_0() { return cServerKeyword_8_3_0; }
+		public Keyword getServerKeyword_7_3_0() { return cServerKeyword_7_3_0; }
 
 		//"expects"
-		public Keyword getExpectsKeyword_8_3_1() { return cExpectsKeyword_8_3_1; }
+		public Keyword getExpectsKeyword_7_3_1() { return cExpectsKeyword_7_3_1; }
 
 		//jsonToServer=XplatformJson
-		public Assignment getJsonToServerAssignment_8_3_2() { return cJsonToServerAssignment_8_3_2; }
+		public Assignment getJsonToServerAssignment_7_3_2() { return cJsonToServerAssignment_7_3_2; }
 
 		//XplatformJson
-		public RuleCall getJsonToServerXplatformJsonParserRuleCall_8_3_2_0() { return cJsonToServerXplatformJsonParserRuleCall_8_3_2_0; }
+		public RuleCall getJsonToServerXplatformJsonParserRuleCall_7_3_2_0() { return cJsonToServerXplatformJsonParserRuleCall_7_3_2_0; }
 	}
 
 	public class URIElements extends AbstractParserRuleElementFinder {
@@ -718,8 +738,8 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
-	public class XplatformResourceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XplatformResource");
+	public class XplatformResourceDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XplatformResourceDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPlatformAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cPlatformPlatformParserRuleCall_0_0 = (RuleCall)cPlatformAssignment_0.eContents().get(0);
@@ -730,7 +750,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * Xplatform resource generator
 		// * 
-		// * / XplatformResource:
+		// * / XplatformResourceDefinition:
 		//	platform=Platform types+=Type+;
 		public ParserRule getRule() { return rule; }
 
@@ -1035,6 +1055,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private XplatformElements pXplatform;
+	private XplatformCallDefinitionElements pXplatformCallDefinition;
 	private URIElements pURI;
 	private XplatformHeaderElements pXplatformHeader;
 	private XplatformHeaderKeyValuePairElements pXplatformHeaderKeyValuePair;
@@ -1051,7 +1072,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	private JsonScalarTypeElements pJsonScalarType;
 	private JsonArrayElements pJsonArray;
 	private JsonObjectElements pJsonObject;
-	private XplatformResourceElements pXplatformResource;
+	private XplatformResourceDefinitionElements pXplatformResourceDefinition;
 	private PlatformElements pPlatform;
 	private TypeElements pType;
 	private EnumInstanceElements pEnumInstance;
@@ -1100,18 +1121,28 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	
 	/// **
 	// * 
-	// * Xplatform call generator parser
+	// * Xplatform http call generator parser
 	// * 
 	// * / Xplatform:
-	//	resource+=XplatformResource "call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from"
-	//	"request" requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)? ("client" "expects"
-	//	jsonToClient=XplatformJson ("server" "expects" jsonToServer=XplatformJson)?)?;
+	//	(resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition)+;
 	public XplatformElements getXplatformAccess() {
 		return (pXplatform != null) ? pXplatform : (pXplatform = new XplatformElements());
 	}
 	
 	public ParserRule getXplatformRule() {
 		return getXplatformAccess().getRule();
+	}
+
+	//XplatformCallDefinition:
+	//	"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
+	//	requestHeaders=XplatformHeader ("and" "response" responseHeaders=XplatformHeader)?)? ("client" "expects"
+	//	jsonToClient=XplatformJson ("server" "expects" jsonToServer=XplatformJson)?)?;
+	public XplatformCallDefinitionElements getXplatformCallDefinitionAccess() {
+		return (pXplatformCallDefinition != null) ? pXplatformCallDefinition : (pXplatformCallDefinition = new XplatformCallDefinitionElements());
+	}
+	
+	public ParserRule getXplatformCallDefinitionRule() {
+		return getXplatformCallDefinitionAccess().getRule();
 	}
 
 	//URI:
@@ -1265,14 +1296,14 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * Xplatform resource generator
 	// * 
-	// * / XplatformResource:
+	// * / XplatformResourceDefinition:
 	//	platform=Platform types+=Type+;
-	public XplatformResourceElements getXplatformResourceAccess() {
-		return (pXplatformResource != null) ? pXplatformResource : (pXplatformResource = new XplatformResourceElements());
+	public XplatformResourceDefinitionElements getXplatformResourceDefinitionAccess() {
+		return (pXplatformResourceDefinition != null) ? pXplatformResourceDefinition : (pXplatformResourceDefinition = new XplatformResourceDefinitionElements());
 	}
 	
-	public ParserRule getXplatformResourceRule() {
-		return getXplatformResourceAccess().getRule();
+	public ParserRule getXplatformResourceDefinitionRule() {
+		return getXplatformResourceDefinitionAccess().getRule();
 	}
 
 	//Platform:

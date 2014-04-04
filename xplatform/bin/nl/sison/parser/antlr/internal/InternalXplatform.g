@@ -80,194 +80,234 @@ ruleXplatform returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getResourceXplatformResourceParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getResourcesXplatformResourceDefinitionParserRuleCall_0_0()); 
 	    }
-		lv_resource_0_0=ruleXplatformResource		{
+		lv_resources_0_0=ruleXplatformResourceDefinition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
 	        }
        		add(
        			$current, 
-       			"resource",
-        		lv_resource_0_0, 
-        		"XplatformResource");
+       			"resources",
+        		lv_resources_0_0, 
+        		"XplatformResourceDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_1='call' 
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXplatformAccess().getCallsXplatformCallDefinitionParserRuleCall_1_0()); 
+	    }
+		lv_calls_1_0=ruleXplatformCallDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	        }
+       		add(
+       			$current, 
+       			"calls",
+        		lv_calls_1_0, 
+        		"XplatformCallDefinition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))+
+;
+
+
+
+
+
+// Entry rule entryRuleXplatformCallDefinition
+entryRuleXplatformCallDefinition returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getXplatformCallDefinitionRule()); }
+	 iv_ruleXplatformCallDefinition=ruleXplatformCallDefinition 
+	 { $current=$iv_ruleXplatformCallDefinition.current; } 
+	 EOF 
+;
+
+// Rule XplatformCallDefinition
+ruleXplatformCallDefinition returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='call' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getXplatformAccess().getCallKeyword_1());
+    	newLeafNode(otherlv_0, grammarAccess.getXplatformCallDefinitionAccess().getCallKeyword_0());
     }
 (
 (
-		lv_name_2_0=RULE_ID
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_2_0, grammarAccess.getXplatformAccess().getNameIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getXplatformCallDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXplatformRule());
+	            $current = createModelElement(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_2_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_3=':' 
+)	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getXplatformAccess().getColonKeyword_3());
+    	newLeafNode(otherlv_2, grammarAccess.getXplatformCallDefinitionAccess().getColonKeyword_2());
     }
 (
 (
-		lv_method_4_0=RULE_RESTFUL_METHODS
+		lv_method_3_0=RULE_RESTFUL_METHODS
 		{
-			newLeafNode(lv_method_4_0, grammarAccess.getXplatformAccess().getMethodRESTFUL_METHODSTerminalRuleCall_4_0()); 
+			newLeafNode(lv_method_3_0, grammarAccess.getXplatformCallDefinitionAccess().getMethodRESTFUL_METHODSTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXplatformRule());
+	            $current = createModelElement(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		setWithLastConsumed(
        			$current, 
        			"method",
-        		lv_method_4_0, 
+        		lv_method_3_0, 
         		"RESTFUL_METHODS");
 	    }
 
 )
-)	otherlv_5='from' 
+)	otherlv_4='from' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getXplatformAccess().getFromKeyword_5());
+    	newLeafNode(otherlv_4, grammarAccess.getXplatformCallDefinitionAccess().getFromKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getUriURIParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getXplatformCallDefinitionAccess().getUriURIParserRuleCall_5_0()); 
 	    }
-		lv_uri_6_0=ruleURI		{
+		lv_uri_5_0=ruleURI		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		set(
        			$current, 
        			"uri",
-        		lv_uri_6_0, 
+        		lv_uri_5_0, 
         		"URI");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_7='with' 
+)(	otherlv_6='with' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getXplatformAccess().getWithKeyword_7_0());
+    	newLeafNode(otherlv_6, grammarAccess.getXplatformCallDefinitionAccess().getWithKeyword_6_0());
     }
-	otherlv_8='headers' 
+	otherlv_7='headers' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getXplatformAccess().getHeadersKeyword_7_1());
+    	newLeafNode(otherlv_7, grammarAccess.getXplatformCallDefinitionAccess().getHeadersKeyword_6_1());
     }
-	otherlv_9='from' 
+	otherlv_8='from' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getXplatformAccess().getFromKeyword_7_2());
+    	newLeafNode(otherlv_8, grammarAccess.getXplatformCallDefinitionAccess().getFromKeyword_6_2());
     }
-	otherlv_10='request' 
+	otherlv_9='request' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getXplatformAccess().getRequestKeyword_7_3());
+    	newLeafNode(otherlv_9, grammarAccess.getXplatformCallDefinitionAccess().getRequestKeyword_6_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getRequestHeadersXplatformHeaderParserRuleCall_7_4_0()); 
+	        newCompositeNode(grammarAccess.getXplatformCallDefinitionAccess().getRequestHeadersXplatformHeaderParserRuleCall_6_4_0()); 
 	    }
-		lv_requestHeaders_11_0=ruleXplatformHeader		{
+		lv_requestHeaders_10_0=ruleXplatformHeader		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		set(
        			$current, 
        			"requestHeaders",
-        		lv_requestHeaders_11_0, 
+        		lv_requestHeaders_10_0, 
         		"XplatformHeader");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_12='and' 
+)(	otherlv_11='and' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getXplatformAccess().getAndKeyword_7_5_0());
+    	newLeafNode(otherlv_11, grammarAccess.getXplatformCallDefinitionAccess().getAndKeyword_6_5_0());
     }
-	otherlv_13='response' 
+	otherlv_12='response' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getXplatformAccess().getResponseKeyword_7_5_1());
+    	newLeafNode(otherlv_12, grammarAccess.getXplatformCallDefinitionAccess().getResponseKeyword_6_5_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getResponseHeadersXplatformHeaderParserRuleCall_7_5_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformCallDefinitionAccess().getResponseHeadersXplatformHeaderParserRuleCall_6_5_2_0()); 
 	    }
-		lv_responseHeaders_14_0=ruleXplatformHeader		{
+		lv_responseHeaders_13_0=ruleXplatformHeader		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		set(
        			$current, 
        			"responseHeaders",
-        		lv_responseHeaders_14_0, 
+        		lv_responseHeaders_13_0, 
         		"XplatformHeader");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?)?(	otherlv_15='client' 
+))?)?(	otherlv_14='client' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getXplatformAccess().getClientKeyword_8_0());
+    	newLeafNode(otherlv_14, grammarAccess.getXplatformCallDefinitionAccess().getClientKeyword_7_0());
     }
-	otherlv_16='expects' 
+	otherlv_15='expects' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getXplatformAccess().getExpectsKeyword_8_1());
+    	newLeafNode(otherlv_15, grammarAccess.getXplatformCallDefinitionAccess().getExpectsKeyword_7_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToClientXplatformJsonParserRuleCall_8_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformCallDefinitionAccess().getJsonToClientXplatformJsonParserRuleCall_7_2_0()); 
 	    }
-		lv_jsonToClient_17_0=ruleXplatformJson		{
+		lv_jsonToClient_16_0=ruleXplatformJson		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		set(
        			$current, 
        			"jsonToClient",
-        		lv_jsonToClient_17_0, 
+        		lv_jsonToClient_16_0, 
         		"XplatformJson");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_18='server' 
+)(	otherlv_17='server' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getXplatformAccess().getServerKeyword_8_3_0());
+    	newLeafNode(otherlv_17, grammarAccess.getXplatformCallDefinitionAccess().getServerKeyword_7_3_0());
     }
-	otherlv_19='expects' 
+	otherlv_18='expects' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getXplatformAccess().getExpectsKeyword_8_3_1());
+    	newLeafNode(otherlv_18, grammarAccess.getXplatformCallDefinitionAccess().getExpectsKeyword_7_3_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformAccess().getJsonToServerXplatformJsonParserRuleCall_8_3_2_0()); 
+	        newCompositeNode(grammarAccess.getXplatformCallDefinitionAccess().getJsonToServerXplatformJsonParserRuleCall_7_3_2_0()); 
 	    }
-		lv_jsonToServer_20_0=ruleXplatformJson		{
+		lv_jsonToServer_19_0=ruleXplatformJson		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformCallDefinitionRule());
 	        }
        		set(
        			$current, 
        			"jsonToServer",
-        		lv_jsonToServer_20_0, 
+        		lv_jsonToServer_19_0, 
         		"XplatformJson");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1171,28 +1211,28 @@ ruleJsonObject returns [EObject current=null]
 
 
 
-// Entry rule entryRuleXplatformResource
-entryRuleXplatformResource returns [EObject current=null] 
+// Entry rule entryRuleXplatformResourceDefinition
+entryRuleXplatformResourceDefinition returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getXplatformResourceRule()); }
-	 iv_ruleXplatformResource=ruleXplatformResource 
-	 { $current=$iv_ruleXplatformResource.current; } 
+	{ newCompositeNode(grammarAccess.getXplatformResourceDefinitionRule()); }
+	 iv_ruleXplatformResourceDefinition=ruleXplatformResourceDefinition 
+	 { $current=$iv_ruleXplatformResourceDefinition.current; } 
 	 EOF 
 ;
 
-// Rule XplatformResource
-ruleXplatformResource returns [EObject current=null] 
+// Rule XplatformResourceDefinition
+ruleXplatformResourceDefinition returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformResourceAccess().getPlatformPlatformParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getXplatformResourceDefinitionAccess().getPlatformPlatformParserRuleCall_0_0()); 
 	    }
 		lv_platform_0_0=rulePlatform		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformResourceRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformResourceDefinitionRule());
 	        }
        		set(
        			$current, 
@@ -1206,11 +1246,11 @@ ruleXplatformResource returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXplatformResourceAccess().getTypesTypeParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getXplatformResourceDefinitionAccess().getTypesTypeParserRuleCall_1_0()); 
 	    }
 		lv_types_1_0=ruleType		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXplatformResourceRule());
+	            $current = createModelElementForParent(grammarAccess.getXplatformResourceDefinitionRule());
 	        }
        		add(
        			$current, 

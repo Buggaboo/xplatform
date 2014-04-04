@@ -8,14 +8,17 @@
   <genPackages prefix="Xplatform" basePackage="nl.sison" disposableProviderFactory="true"
       ecorePackage="Xplatform.ecore#/">
     <genClasses ecoreClass="Xplatform.ecore#//Xplatform">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/resource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/method"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/uri"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/requestHeaders"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/responseHeaders"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/jsonToClient"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/jsonToServer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/calls"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//XplatformCallDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformCallDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//XplatformCallDefinition/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/uri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/requestHeaders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/responseHeaders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/jsonToClient"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformCallDefinition/jsonToServer"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//URI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//URI/uriParameter"/>
@@ -60,9 +63,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonObject/keys"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/values"/>
     </genClasses>
-    <genClasses ecoreClass="Xplatform.ecore#//XplatformResource">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResource/platform"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResource/types"/>
+    <genClasses ecoreClass="Xplatform.ecore#//XplatformResourceDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResourceDefinition/platform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResourceDefinition/types"/>
     </genClasses>
     <genClasses ecoreClass="Xplatform.ecore#//Platform">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Platform/platforms"/>

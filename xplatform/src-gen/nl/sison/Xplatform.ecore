@@ -2,8 +2,12 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="xplatform" nsURI="http://www.sison.nl/Xplatform" nsPrefix="xplatform">
   <eClassifiers xsi:type="ecore:EClass" name="Xplatform">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resource" upperBound="-1"
-        eType="#//XplatformResource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//XplatformResourceDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" upperBound="-1"
+        eType="#//XplatformCallDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XplatformCallDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uri" eType="#//URI" containment="true"/>
@@ -73,7 +77,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
         eType="#//XplatformJson" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="XplatformResource">
+  <eClassifiers xsi:type="ecore:EClass" name="XplatformResourceDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="platform" eType="#//Platform"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"

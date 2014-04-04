@@ -79,6 +79,13 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.XPLATFORM_CALL_DEFINITION:
+      {
+        XplatformCallDefinition xplatformCallDefinition = (XplatformCallDefinition)theEObject;
+        T result = caseXplatformCallDefinition(xplatformCallDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.URI:
       {
         URI uri = (URI)theEObject;
@@ -156,10 +163,10 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XplatformPackage.XPLATFORM_RESOURCE:
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION:
       {
-        XplatformResource xplatformResource = (XplatformResource)theEObject;
-        T result = caseXplatformResource(xplatformResource);
+        XplatformResourceDefinition xplatformResourceDefinition = (XplatformResourceDefinition)theEObject;
+        T result = caseXplatformResourceDefinition(xplatformResourceDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -230,6 +237,22 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXplatform(Xplatform object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Call Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Call Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXplatformCallDefinition(XplatformCallDefinition object)
   {
     return null;
   }
@@ -411,17 +434,17 @@ public class XplatformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Resource Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Resource Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXplatformResource(XplatformResource object)
+  public T caseXplatformResourceDefinition(XplatformResourceDefinition object)
   {
     return null;
   }

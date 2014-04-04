@@ -37,6 +37,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getXplatformAccess().getAlternatives(), "rule__Xplatform__Alternatives");
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getAlternatives_2(), "rule__XplatformHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getXplatformJsonAccess().getAlternatives(), "rule__XplatformJson__Alternatives");
 					put(grammarAccess.getJsonMetaScalarTypeAccess().getAlternatives(), "rule__JsonMetaScalarType__Alternatives");
@@ -46,11 +47,11 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonArrayAccess().getAlternatives(), "rule__JsonArray__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getValueTypeAccess().getAlternatives(), "rule__ValueType__Alternatives");
-					put(grammarAccess.getXplatformAccess().getGroup(), "rule__Xplatform__Group__0");
-					put(grammarAccess.getXplatformAccess().getGroup_7(), "rule__Xplatform__Group_7__0");
-					put(grammarAccess.getXplatformAccess().getGroup_7_5(), "rule__Xplatform__Group_7_5__0");
-					put(grammarAccess.getXplatformAccess().getGroup_8(), "rule__Xplatform__Group_8__0");
-					put(grammarAccess.getXplatformAccess().getGroup_8_3(), "rule__Xplatform__Group_8_3__0");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getGroup(), "rule__XplatformCallDefinition__Group__0");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getGroup_6(), "rule__XplatformCallDefinition__Group_6__0");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getGroup_6_5(), "rule__XplatformCallDefinition__Group_6_5__0");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getGroup_7(), "rule__XplatformCallDefinition__Group_7__0");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getGroup_7_3(), "rule__XplatformCallDefinition__Group_7_3__0");
 					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
 					put(grammarAccess.getURIAccess().getGroup_1(), "rule__URI__Group_1__0");
 					put(grammarAccess.getXplatformHeaderAccess().getGroup(), "rule__XplatformHeader__Group__0");
@@ -68,7 +69,7 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_1(), "rule__JsonObject__Group_1__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");
-					put(grammarAccess.getXplatformResourceAccess().getGroup(), "rule__XplatformResource__Group__0");
+					put(grammarAccess.getXplatformResourceDefinitionAccess().getGroup(), "rule__XplatformResourceDefinition__Group__0");
 					put(grammarAccess.getPlatformAccess().getGroup(), "rule__Platform__Group__0");
 					put(grammarAccess.getEnumInstanceAccess().getGroup(), "rule__EnumInstance__Group__0");
 					put(grammarAccess.getEnumInstanceAccess().getGroup_4(), "rule__EnumInstance__Group_4__0");
@@ -77,14 +78,15 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStringListAccess().getGroup(), "rule__StringList__Group__0");
 					put(grammarAccess.getStringListAccess().getGroup_2(), "rule__StringList__Group_2__0");
 					put(grammarAccess.getKeyValuePairAccess().getGroup(), "rule__KeyValuePair__Group__0");
-					put(grammarAccess.getXplatformAccess().getResourceAssignment_0(), "rule__Xplatform__ResourceAssignment_0");
-					put(grammarAccess.getXplatformAccess().getNameAssignment_2(), "rule__Xplatform__NameAssignment_2");
-					put(grammarAccess.getXplatformAccess().getMethodAssignment_4(), "rule__Xplatform__MethodAssignment_4");
-					put(grammarAccess.getXplatformAccess().getUriAssignment_6(), "rule__Xplatform__UriAssignment_6");
-					put(grammarAccess.getXplatformAccess().getRequestHeadersAssignment_7_4(), "rule__Xplatform__RequestHeadersAssignment_7_4");
-					put(grammarAccess.getXplatformAccess().getResponseHeadersAssignment_7_5_2(), "rule__Xplatform__ResponseHeadersAssignment_7_5_2");
-					put(grammarAccess.getXplatformAccess().getJsonToClientAssignment_8_2(), "rule__Xplatform__JsonToClientAssignment_8_2");
-					put(grammarAccess.getXplatformAccess().getJsonToServerAssignment_8_3_2(), "rule__Xplatform__JsonToServerAssignment_8_3_2");
+					put(grammarAccess.getXplatformAccess().getResourcesAssignment_0(), "rule__Xplatform__ResourcesAssignment_0");
+					put(grammarAccess.getXplatformAccess().getCallsAssignment_1(), "rule__Xplatform__CallsAssignment_1");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getNameAssignment_1(), "rule__XplatformCallDefinition__NameAssignment_1");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getMethodAssignment_3(), "rule__XplatformCallDefinition__MethodAssignment_3");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getUriAssignment_5(), "rule__XplatformCallDefinition__UriAssignment_5");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getRequestHeadersAssignment_6_4(), "rule__XplatformCallDefinition__RequestHeadersAssignment_6_4");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getResponseHeadersAssignment_6_5_2(), "rule__XplatformCallDefinition__ResponseHeadersAssignment_6_5_2");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getJsonToClientAssignment_7_2(), "rule__XplatformCallDefinition__JsonToClientAssignment_7_2");
+					put(grammarAccess.getXplatformCallDefinitionAccess().getJsonToServerAssignment_7_3_2(), "rule__XplatformCallDefinition__JsonToServerAssignment_7_3_2");
 					put(grammarAccess.getURIAccess().getUriParameterAssignment_1_1(), "rule__URI__UriParameterAssignment_1_1");
 					put(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesAssignment_2(), "rule__XplatformHeader__HeaderKeyValuesAssignment_2");
 					put(grammarAccess.getXplatformHeaderAccess().getHeaderKeyValuesAssignment_3_1(), "rule__XplatformHeader__HeaderKeyValuesAssignment_3_1");
@@ -112,8 +114,8 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonObjectAccess().getValuesAssignment_1_2(), "rule__JsonObject__ValuesAssignment_1_2");
 					put(grammarAccess.getJsonObjectAccess().getKeysAssignment_2_1(), "rule__JsonObject__KeysAssignment_2_1");
 					put(grammarAccess.getJsonObjectAccess().getValuesAssignment_2_3(), "rule__JsonObject__ValuesAssignment_2_3");
-					put(grammarAccess.getXplatformResourceAccess().getPlatformAssignment_0(), "rule__XplatformResource__PlatformAssignment_0");
-					put(grammarAccess.getXplatformResourceAccess().getTypesAssignment_1(), "rule__XplatformResource__TypesAssignment_1");
+					put(grammarAccess.getXplatformResourceDefinitionAccess().getPlatformAssignment_0(), "rule__XplatformResourceDefinition__PlatformAssignment_0");
+					put(grammarAccess.getXplatformResourceDefinitionAccess().getTypesAssignment_1(), "rule__XplatformResourceDefinition__TypesAssignment_1");
 					put(grammarAccess.getPlatformAccess().getPlatformsAssignment_2(), "rule__Platform__PlatformsAssignment_2");
 					put(grammarAccess.getEnumInstanceAccess().getEnumNameAssignment_1(), "rule__EnumInstance__EnumNameAssignment_1");
 					put(grammarAccess.getEnumInstanceAccess().getValuesAssignment_3(), "rule__EnumInstance__ValuesAssignment_3");

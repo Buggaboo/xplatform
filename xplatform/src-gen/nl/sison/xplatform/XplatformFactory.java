@@ -32,6 +32,15 @@ public interface XplatformFactory extends EFactory
   Xplatform createXplatform();
 
   /**
+   * Returns a new object of class '<em>Call Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Call Definition</em>'.
+   * @generated
+   */
+  XplatformCallDefinition createXplatformCallDefinition();
+
+  /**
    * Returns a new object of class '<em>URI</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,13 +140,13 @@ public interface XplatformFactory extends EFactory
   JsonObject createJsonObject();
 
   /**
-   * Returns a new object of class '<em>Resource</em>'.
+   * Returns a new object of class '<em>Resource Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Resource</em>'.
+   * @return a new object of class '<em>Resource Definition</em>'.
    * @generated
    */
-  XplatformResource createXplatformResource();
+  XplatformResourceDefinition createXplatformResourceDefinition();
 
   /**
    * Returns a new object of class '<em>Platform</em>'.

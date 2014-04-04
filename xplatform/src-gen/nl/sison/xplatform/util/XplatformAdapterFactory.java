@@ -80,6 +80,11 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createXplatformAdapter();
       }
       @Override
+      public Adapter caseXplatformCallDefinition(XplatformCallDefinition object)
+      {
+        return createXplatformCallDefinitionAdapter();
+      }
+      @Override
       public Adapter caseURI(URI object)
       {
         return createURIAdapter();
@@ -135,9 +140,9 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createJsonObjectAdapter();
       }
       @Override
-      public Adapter caseXplatformResource(XplatformResource object)
+      public Adapter caseXplatformResourceDefinition(XplatformResourceDefinition object)
       {
-        return createXplatformResourceAdapter();
+        return createXplatformResourceDefinitionAdapter();
       }
       @Override
       public Adapter casePlatform(Platform object)
@@ -207,6 +212,21 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXplatformAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformCallDefinition <em>Call Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.XplatformCallDefinition
+   * @generated
+   */
+  public Adapter createXplatformCallDefinitionAdapter()
   {
     return null;
   }
@@ -377,16 +397,16 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformResource <em>Resource</em>}'.
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformResourceDefinition <em>Resource Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see nl.sison.xplatform.XplatformResource
+   * @see nl.sison.xplatform.XplatformResourceDefinition
    * @generated
    */
-  public Adapter createXplatformResourceAdapter()
+  public Adapter createXplatformResourceDefinitionAdapter()
   {
     return null;
   }

@@ -65,6 +65,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
     switch (eClass.getClassifierID())
     {
       case XplatformPackage.XPLATFORM: return createXplatform();
+      case XplatformPackage.XPLATFORM_CALL_DEFINITION: return createXplatformCallDefinition();
       case XplatformPackage.URI: return createURI();
       case XplatformPackage.XPLATFORM_HEADER: return createXplatformHeader();
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR: return createXplatformHeaderKeyValuePair();
@@ -76,7 +77,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.JSON_SCALAR_TYPE: return createJsonScalarType();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
       case XplatformPackage.JSON_OBJECT: return createJsonObject();
-      case XplatformPackage.XPLATFORM_RESOURCE: return createXplatformResource();
+      case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION: return createXplatformResourceDefinition();
       case XplatformPackage.PLATFORM: return createPlatform();
       case XplatformPackage.TYPE: return createType();
       case XplatformPackage.ENUM_INSTANCE: return createEnumInstance();
@@ -98,6 +99,17 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
   {
     XplatformImpl xplatform = new XplatformImpl();
     return xplatform;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XplatformCallDefinition createXplatformCallDefinition()
+  {
+    XplatformCallDefinitionImpl xplatformCallDefinition = new XplatformCallDefinitionImpl();
+    return xplatformCallDefinition;
   }
 
   /**
@@ -226,10 +238,10 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public XplatformResource createXplatformResource()
+  public XplatformResourceDefinition createXplatformResourceDefinition()
   {
-    XplatformResourceImpl xplatformResource = new XplatformResourceImpl();
-    return xplatformResource;
+    XplatformResourceDefinitionImpl xplatformResourceDefinition = new XplatformResourceDefinitionImpl();
+    return xplatformResourceDefinition;
   }
 
   /**

@@ -18,11 +18,12 @@ import nl.sison.xplatform.StringList;
 import nl.sison.xplatform.URI;
 import nl.sison.xplatform.ValueType;
 import nl.sison.xplatform.Xplatform;
+import nl.sison.xplatform.XplatformCallDefinition;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
-import nl.sison.xplatform.XplatformResource;
+import nl.sison.xplatform.XplatformResourceDefinition;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -135,6 +136,12 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case XplatformPackage.XPLATFORM_CALL_DEFINITION:
+				if(context == grammarAccess.getXplatformCallDefinitionRule()) {
+					sequence_XplatformCallDefinition(context, (XplatformCallDefinition) semanticObject); 
+					return; 
+				}
+				else break;
 			case XplatformPackage.XPLATFORM_HEADER:
 				if(context == grammarAccess.getXplatformHeaderRule()) {
 					sequence_XplatformHeader(context, (XplatformHeader) semanticObject); 
@@ -153,9 +160,9 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
-			case XplatformPackage.XPLATFORM_RESOURCE:
-				if(context == grammarAccess.getXplatformResourceRule()) {
-					sequence_XplatformResource(context, (XplatformResource) semanticObject); 
+			case XplatformPackage.XPLATFORM_RESOURCE_DEFINITION:
+				if(context == grammarAccess.getXplatformResourceDefinitionRule()) {
+					sequence_XplatformResourceDefinition(context, (XplatformResourceDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -315,6 +322,21 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         method=RESTFUL_METHODS 
+	 *         uri=URI 
+	 *         (requestHeaders=XplatformHeader responseHeaders=XplatformHeader?)? 
+	 *         (jsonToClient=XplatformJson jsonToServer=XplatformJson?)?
+	 *     )
+	 */
+	protected void sequence_XplatformCallDefinition(EObject context, XplatformCallDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (key=STRING (value=STRING | value=XPLATFORM_HEADER_PARAMETER))
 	 */
 	protected void sequence_XplatformHeaderKeyValuePair(EObject context, XplatformHeaderKeyValuePair semanticObject) {
@@ -344,21 +366,14 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (platform=Platform types+=Type+)
 	 */
-	protected void sequence_XplatformResource(EObject context, XplatformResource semanticObject) {
+	protected void sequence_XplatformResourceDefinition(EObject context, XplatformResourceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         resource+=XplatformResource 
-	 *         name=ID 
-	 *         method=RESTFUL_METHODS 
-	 *         uri=URI 
-	 *         (requestHeaders=XplatformHeader responseHeaders=XplatformHeader?)? 
-	 *         (jsonToClient=XplatformJson jsonToServer=XplatformJson?)?
-	 *     )
+	 *     (resources+=XplatformResourceDefinition | calls+=XplatformCallDefinition)+
 	 */
 	protected void sequence_Xplatform(EObject context, Xplatform semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
