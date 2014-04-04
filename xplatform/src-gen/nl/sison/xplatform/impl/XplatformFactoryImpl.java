@@ -76,6 +76,14 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.JSON_SCALAR_TYPE: return createJsonScalarType();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
       case XplatformPackage.JSON_OBJECT: return createJsonObject();
+      case XplatformPackage.XPLATFORM_RESOURCE: return createXplatformResource();
+      case XplatformPackage.PLATFORM: return createPlatform();
+      case XplatformPackage.TYPE: return createType();
+      case XplatformPackage.ENUM_INSTANCE: return createEnumInstance();
+      case XplatformPackage.MAP_INSTANCE: return createMapInstance();
+      case XplatformPackage.STRING_LIST: return createStringList();
+      case XplatformPackage.KEY_VALUE_PAIR: return createKeyValuePair();
+      case XplatformPackage.VALUE_TYPE: return createValueType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -211,6 +219,94 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
   {
     JsonObjectImpl jsonObject = new JsonObjectImpl();
     return jsonObject;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XplatformResource createXplatformResource()
+  {
+    XplatformResourceImpl xplatformResource = new XplatformResourceImpl();
+    return xplatformResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Platform createPlatform()
+  {
+    PlatformImpl platform = new PlatformImpl();
+    return platform;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumInstance createEnumInstance()
+  {
+    EnumInstanceImpl enumInstance = new EnumInstanceImpl();
+    return enumInstance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MapInstance createMapInstance()
+  {
+    MapInstanceImpl mapInstance = new MapInstanceImpl();
+    return mapInstance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringList createStringList()
+  {
+    StringListImpl stringList = new StringListImpl();
+    return stringList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public KeyValuePair createKeyValuePair()
+  {
+    KeyValuePairImpl keyValuePair = new KeyValuePairImpl();
+    return keyValuePair;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueType createValueType()
+  {
+    ValueTypeImpl valueType = new ValueTypeImpl();
+    return valueType;
   }
 
   /**

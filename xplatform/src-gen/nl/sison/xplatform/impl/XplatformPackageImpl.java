@@ -2,6 +2,7 @@
  */
 package nl.sison.xplatform.impl;
 
+import nl.sison.xplatform.EnumInstance;
 import nl.sison.xplatform.JsonArray;
 import nl.sison.xplatform.JsonCompositeType;
 import nl.sison.xplatform.JsonMetaArray;
@@ -9,12 +10,19 @@ import nl.sison.xplatform.JsonMetaType;
 import nl.sison.xplatform.JsonObject;
 import nl.sison.xplatform.JsonScalarType;
 import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.KeyValuePair;
+import nl.sison.xplatform.MapInstance;
+import nl.sison.xplatform.Platform;
+import nl.sison.xplatform.StringList;
+import nl.sison.xplatform.Type;
+import nl.sison.xplatform.ValueType;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformFactory;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
+import nl.sison.xplatform.XplatformResource;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -116,6 +124,62 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
   private EClass jsonObjectEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xplatformResourceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass platformEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumInstanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mapInstanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass keyValuePairEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueTypeEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -193,9 +257,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXplatform_Name()
+  public EReference getXplatform_Resource()
   {
-    return (EAttribute)xplatformEClass.getEStructuralFeatures().get(0);
+    return (EReference)xplatformEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -203,7 +267,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXplatform_Method()
+  public EAttribute getXplatform_Name()
   {
     return (EAttribute)xplatformEClass.getEStructuralFeatures().get(1);
   }
@@ -213,9 +277,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatform_Uri()
+  public EAttribute getXplatform_Method()
   {
-    return (EReference)xplatformEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)xplatformEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -223,7 +287,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatform_RequestHeaders()
+  public EReference getXplatform_Uri()
   {
     return (EReference)xplatformEClass.getEStructuralFeatures().get(3);
   }
@@ -233,7 +297,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatform_ResponseHeaders()
+  public EReference getXplatform_RequestHeaders()
   {
     return (EReference)xplatformEClass.getEStructuralFeatures().get(4);
   }
@@ -243,7 +307,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatform_JsonToClient()
+  public EReference getXplatform_ResponseHeaders()
   {
     return (EReference)xplatformEClass.getEStructuralFeatures().get(5);
   }
@@ -253,9 +317,19 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXplatform_JsonToServer()
+  public EReference getXplatform_JsonToClient()
   {
     return (EReference)xplatformEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXplatform_JsonToServer()
+  {
+    return (EReference)xplatformEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -583,6 +657,196 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXplatformResource()
+  {
+    return xplatformResourceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXplatformResource_Platform()
+  {
+    return (EReference)xplatformResourceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXplatformResource_Types()
+  {
+    return (EReference)xplatformResourceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPlatform()
+  {
+    return platformEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPlatform_Platforms()
+  {
+    return (EAttribute)platformEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getType()
+  {
+    return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getType_Values()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumInstance()
+  {
+    return enumInstanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumInstance_EnumName()
+  {
+    return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMapInstance()
+  {
+    return mapInstanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapInstance_MapName()
+  {
+    return (EAttribute)mapInstanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringList()
+  {
+    return stringListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringList_Values()
+  {
+    return (EAttribute)stringListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getKeyValuePair()
+  {
+    return keyValuePairEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getKeyValuePair_Key()
+  {
+    return (EAttribute)keyValuePairEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getKeyValuePair_Value()
+  {
+    return (EReference)keyValuePairEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValueType()
+  {
+    return valueTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueType_String()
+  {
+    return (EAttribute)valueTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getValueType_StringList()
+  {
+    return (EReference)valueTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XplatformFactory getXplatformFactory()
   {
     return (XplatformFactory)getEFactoryInstance();
@@ -609,6 +873,7 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
 
     // Create classes and their features
     xplatformEClass = createEClass(XPLATFORM);
+    createEReference(xplatformEClass, XPLATFORM__RESOURCE);
     createEAttribute(xplatformEClass, XPLATFORM__NAME);
     createEAttribute(xplatformEClass, XPLATFORM__METHOD);
     createEReference(xplatformEClass, XPLATFORM__URI);
@@ -659,6 +924,33 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     jsonObjectEClass = createEClass(JSON_OBJECT);
     createEAttribute(jsonObjectEClass, JSON_OBJECT__KEYS);
     createEReference(jsonObjectEClass, JSON_OBJECT__VALUES);
+
+    xplatformResourceEClass = createEClass(XPLATFORM_RESOURCE);
+    createEReference(xplatformResourceEClass, XPLATFORM_RESOURCE__PLATFORM);
+    createEReference(xplatformResourceEClass, XPLATFORM_RESOURCE__TYPES);
+
+    platformEClass = createEClass(PLATFORM);
+    createEAttribute(platformEClass, PLATFORM__PLATFORMS);
+
+    typeEClass = createEClass(TYPE);
+    createEAttribute(typeEClass, TYPE__VALUES);
+
+    enumInstanceEClass = createEClass(ENUM_INSTANCE);
+    createEAttribute(enumInstanceEClass, ENUM_INSTANCE__ENUM_NAME);
+
+    mapInstanceEClass = createEClass(MAP_INSTANCE);
+    createEAttribute(mapInstanceEClass, MAP_INSTANCE__MAP_NAME);
+
+    stringListEClass = createEClass(STRING_LIST);
+    createEAttribute(stringListEClass, STRING_LIST__VALUES);
+
+    keyValuePairEClass = createEClass(KEY_VALUE_PAIR);
+    createEAttribute(keyValuePairEClass, KEY_VALUE_PAIR__KEY);
+    createEReference(keyValuePairEClass, KEY_VALUE_PAIR__VALUE);
+
+    valueTypeEClass = createEClass(VALUE_TYPE);
+    createEAttribute(valueTypeEClass, VALUE_TYPE__STRING);
+    createEReference(valueTypeEClass, VALUE_TYPE__STRING_LIST);
   }
 
   /**
@@ -690,9 +982,12 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    enumInstanceEClass.getESuperTypes().add(this.getType());
+    mapInstanceEClass.getESuperTypes().add(this.getType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(xplatformEClass, Xplatform.class, "Xplatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXplatform_Resource(), this.getXplatformResource(), null, "resource", null, 0, -1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXplatform_Name(), ecorePackage.getEString(), "name", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXplatform_Method(), ecorePackage.getEString(), "method", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXplatform_Uri(), this.getURI(), null, "uri", null, 0, 1, Xplatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -743,6 +1038,33 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     initEClass(jsonObjectEClass, JsonObject.class, "JsonObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getJsonObject_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJsonObject_Values(), this.getXplatformJson(), null, "values", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xplatformResourceEClass, XplatformResource.class, "XplatformResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXplatformResource_Platform(), this.getPlatform(), null, "platform", null, 0, 1, XplatformResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXplatformResource_Types(), this.getType(), null, "types", null, 0, -1, XplatformResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPlatform_Platforms(), ecorePackage.getEString(), "platforms", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getType_Values(), ecorePackage.getEString(), "values", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumInstanceEClass, EnumInstance.class, "EnumInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumInstance_EnumName(), ecorePackage.getEString(), "enumName", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mapInstanceEClass, MapInstance.class, "MapInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMapInstance_MapName(), ecorePackage.getEString(), "mapName", null, 0, 1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringListEClass, StringList.class, "StringList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringList_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(keyValuePairEClass, KeyValuePair.class, "KeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, KeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getKeyValuePair_Value(), this.getValueType(), null, "value", null, 0, 1, KeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valueTypeEClass, ValueType.class, "ValueType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValueType_String(), ecorePackage.getEString(), "string", null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getValueType_StringList(), this.getStringList(), null, "stringList", null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

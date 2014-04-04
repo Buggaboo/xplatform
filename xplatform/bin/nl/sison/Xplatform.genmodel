@@ -8,6 +8,7 @@
   <genPackages prefix="Xplatform" basePackage="nl.sison" disposableProviderFactory="true"
       ecorePackage="Xplatform.ecore#/">
     <genClasses ecoreClass="Xplatform.ecore#//Xplatform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/resource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Xplatform/method"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//Xplatform/uri"/>
@@ -58,6 +59,33 @@
     <genClasses ecoreClass="Xplatform.ecore#//JsonObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonObject/keys"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//XplatformResource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResource/platform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//XplatformResource/types"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//Platform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Platform/platforms"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//Type/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//EnumInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//EnumInstance/enumName"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//MapInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//MapInstance/mapName"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//StringList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//StringList/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//KeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//KeyValuePair/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//KeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//ValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//ValueType/string"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//ValueType/stringList"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

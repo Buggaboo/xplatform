@@ -18,10 +18,13 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected XplatformGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_EnumInstance_CommaKeyword_5_q;
 	protected AbstractElementAlias match_JsonArray_CommaKeyword_0_3_q;
 	protected AbstractElementAlias match_JsonArray_CommaKeyword_1_3_q;
 	protected AbstractElementAlias match_JsonObject_CommaKeyword_3_q;
 	protected AbstractElementAlias match_JsonScalarType___FullStopKeyword_2_1_0_INTTerminalRuleCall_2_1_1__q;
+	protected AbstractElementAlias match_MapInstance_CommaKeyword_5_q;
+	protected AbstractElementAlias match_StringList_CommaKeyword_3_q;
 	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_0_p;
 	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_1_3_a;
 	protected AbstractElementAlias match_XplatformHeader_CommaKeyword_4_q;
@@ -29,10 +32,13 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (XplatformGrammarAccess) access;
+		match_EnumInstance_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getEnumInstanceAccess().getCommaKeyword_5());
 		match_JsonArray_CommaKeyword_0_3_q = new TokenAlias(false, true, grammarAccess.getJsonArrayAccess().getCommaKeyword_0_3());
 		match_JsonArray_CommaKeyword_1_3_q = new TokenAlias(false, true, grammarAccess.getJsonArrayAccess().getCommaKeyword_1_3());
 		match_JsonObject_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getJsonObjectAccess().getCommaKeyword_3());
 		match_JsonScalarType___FullStopKeyword_2_1_0_INTTerminalRuleCall_2_1_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getJsonScalarTypeAccess().getFullStopKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getJsonScalarTypeAccess().getINTTerminalRuleCall_2_1_1()));
+		match_MapInstance_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getMapInstanceAccess().getCommaKeyword_5());
+		match_StringList_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getStringListAccess().getCommaKeyword_3());
 		match_URI_ANY_OTHERTerminalRuleCall_0_p = new TokenAlias(true, false, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0());
 		match_URI_ANY_OTHERTerminalRuleCall_1_3_a = new TokenAlias(true, true, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3());
 		match_XplatformHeader_CommaKeyword_4_q = new TokenAlias(false, true, grammarAccess.getXplatformHeaderAccess().getCommaKeyword_4());
@@ -71,7 +77,9 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_JsonArray_CommaKeyword_0_3_q.equals(syntax))
+			if(match_EnumInstance_CommaKeyword_5_q.equals(syntax))
+				emit_EnumInstance_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_JsonArray_CommaKeyword_0_3_q.equals(syntax))
 				emit_JsonArray_CommaKeyword_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_JsonArray_CommaKeyword_1_3_q.equals(syntax))
 				emit_JsonArray_CommaKeyword_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -79,6 +87,10 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_JsonObject_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_JsonScalarType___FullStopKeyword_2_1_0_INTTerminalRuleCall_2_1_1__q.equals(syntax))
 				emit_JsonScalarType___FullStopKeyword_2_1_0_INTTerminalRuleCall_2_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_MapInstance_CommaKeyword_5_q.equals(syntax))
+				emit_MapInstance_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_StringList_CommaKeyword_3_q.equals(syntax))
+				emit_StringList_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_URI_ANY_OTHERTerminalRuleCall_0_p.equals(syntax))
 				emit_URI_ANY_OTHERTerminalRuleCall_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_URI_ANY_OTHERTerminalRuleCall_1_3_a.equals(syntax))
@@ -89,6 +101,14 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     ','?
+	 */
+	protected void emit_EnumInstance_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     ','?
@@ -118,6 +138,22 @@ public class XplatformSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('.' INT)?
 	 */
 	protected void emit_JsonScalarType___FullStopKeyword_2_1_0_INTTerminalRuleCall_2_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ','?
+	 */
+	protected void emit_MapInstance_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ','?
+	 */
+	protected void emit_StringList_CommaKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

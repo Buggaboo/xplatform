@@ -2,20 +2,28 @@
  */
 package nl.sison.xplatform.impl;
 
+import java.util.Collection;
+
 import nl.sison.xplatform.URI;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
+import nl.sison.xplatform.XplatformResource;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getResource <em>Resource</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link nl.sison.xplatform.impl.XplatformImpl#getUri <em>Uri</em>}</li>
@@ -38,6 +47,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplatform
 {
+  /**
+   * The cached value of the '{@link #getResource() <em>Resource</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<XplatformResource> resource;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -147,6 +166,20 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   protected EClass eStaticClass()
   {
     return XplatformPackage.Literals.XPLATFORM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<XplatformResource> getResource()
+  {
+    if (resource == null)
+    {
+      resource = new EObjectContainmentEList<XplatformResource>(XplatformResource.class, this, XplatformPackage.XPLATFORM__RESOURCE);
+    }
+    return resource;
   }
 
   /**
@@ -445,6 +478,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__RESOURCE:
+        return ((InternalEList<?>)getResource()).basicRemove(otherEnd, msgs);
       case XplatformPackage.XPLATFORM__URI:
         return basicSetUri(null, msgs);
       case XplatformPackage.XPLATFORM__REQUEST_HEADERS:
@@ -469,6 +504,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__RESOURCE:
+        return getResource();
       case XplatformPackage.XPLATFORM__NAME:
         return getName();
       case XplatformPackage.XPLATFORM__METHOD:
@@ -492,11 +529,16 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__RESOURCE:
+        getResource().clear();
+        getResource().addAll((Collection<? extends XplatformResource>)newValue);
+        return;
       case XplatformPackage.XPLATFORM__NAME:
         setName((String)newValue);
         return;
@@ -532,6 +574,9 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__RESOURCE:
+        getResource().clear();
+        return;
       case XplatformPackage.XPLATFORM__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -567,6 +612,8 @@ public class XplatformImpl extends MinimalEObjectImpl.Container implements Xplat
   {
     switch (featureID)
     {
+      case XplatformPackage.XPLATFORM__RESOURCE:
+        return resource != null && !resource.isEmpty();
       case XplatformPackage.XPLATFORM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XplatformPackage.XPLATFORM__METHOD:

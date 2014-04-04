@@ -3,6 +3,7 @@ package nl.sison.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import nl.sison.services.XplatformGrammarAccess;
+import nl.sison.xplatform.EnumInstance;
 import nl.sison.xplatform.JsonArray;
 import nl.sison.xplatform.JsonCompositeType;
 import nl.sison.xplatform.JsonMetaArray;
@@ -10,12 +11,18 @@ import nl.sison.xplatform.JsonMetaType;
 import nl.sison.xplatform.JsonObject;
 import nl.sison.xplatform.JsonScalarType;
 import nl.sison.xplatform.JsonType;
+import nl.sison.xplatform.KeyValuePair;
+import nl.sison.xplatform.MapInstance;
+import nl.sison.xplatform.Platform;
+import nl.sison.xplatform.StringList;
 import nl.sison.xplatform.URI;
+import nl.sison.xplatform.ValueType;
 import nl.sison.xplatform.Xplatform;
 import nl.sison.xplatform.XplatformHeader;
 import nl.sison.xplatform.XplatformHeaderKeyValuePair;
 import nl.sison.xplatform.XplatformJson;
 import nl.sison.xplatform.XplatformPackage;
+import nl.sison.xplatform.XplatformResource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -36,6 +43,13 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == XplatformPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case XplatformPackage.ENUM_INSTANCE:
+				if(context == grammarAccess.getEnumInstanceRule() ||
+				   context == grammarAccess.getTypeRule()) {
+					sequence_EnumInstance(context, (EnumInstance) semanticObject); 
+					return; 
+				}
+				else break;
 			case XplatformPackage.JSON_ARRAY:
 				if(context == grammarAccess.getJsonArrayRule()) {
 					sequence_JsonArray(context, (JsonArray) semanticObject); 
@@ -78,9 +92,40 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case XplatformPackage.KEY_VALUE_PAIR:
+				if(context == grammarAccess.getKeyValuePairRule()) {
+					sequence_KeyValuePair(context, (KeyValuePair) semanticObject); 
+					return; 
+				}
+				else break;
+			case XplatformPackage.MAP_INSTANCE:
+				if(context == grammarAccess.getMapInstanceRule() ||
+				   context == grammarAccess.getTypeRule()) {
+					sequence_MapInstance(context, (MapInstance) semanticObject); 
+					return; 
+				}
+				else break;
+			case XplatformPackage.PLATFORM:
+				if(context == grammarAccess.getPlatformRule()) {
+					sequence_Platform(context, (Platform) semanticObject); 
+					return; 
+				}
+				else break;
+			case XplatformPackage.STRING_LIST:
+				if(context == grammarAccess.getStringListRule()) {
+					sequence_StringList(context, (StringList) semanticObject); 
+					return; 
+				}
+				else break;
 			case XplatformPackage.URI:
 				if(context == grammarAccess.getURIRule()) {
 					sequence_URI(context, (URI) semanticObject); 
+					return; 
+				}
+				else break;
+			case XplatformPackage.VALUE_TYPE:
+				if(context == grammarAccess.getValueTypeRule()) {
+					sequence_ValueType(context, (ValueType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -108,9 +153,24 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case XplatformPackage.XPLATFORM_RESOURCE:
+				if(context == grammarAccess.getXplatformResourceRule()) {
+					sequence_XplatformResource(context, (XplatformResource) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (enumName=ID values+=ID values+=ID*)
+	 */
+	protected void sequence_EnumInstance(EObject context, EnumInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -164,7 +224,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (keys+=STRING values+=XplatformJson keys+=STRING values+=XplatformJson)
+	 *     (keys+=STRING values+=XplatformJson (keys+=STRING values+=XplatformJson)*)
 	 */
 	protected void sequence_JsonObject(EObject context, JsonObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -191,9 +251,64 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (key=ID value=ValueType)
+	 */
+	protected void sequence_KeyValuePair(EObject context, KeyValuePair semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.KEY_VALUE_PAIR__KEY));
+			if(transientValues.isValueTransient(semanticObject, XplatformPackage.Literals.KEY_VALUE_PAIR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XplatformPackage.Literals.KEY_VALUE_PAIR__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getKeyValuePairAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getKeyValuePairAccess().getValueValueTypeParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (mapName=ID values+=ID values+=ID*)
+	 */
+	protected void sequence_MapInstance(EObject context, MapInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     platforms+=STRING+
+	 */
+	protected void sequence_Platform(EObject context, Platform semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=STRING values+=STRING*)
+	 */
+	protected void sequence_StringList(EObject context, StringList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     uriParameter+=ID?
 	 */
 	protected void sequence_URI(EObject context, URI semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (string=STRING | stringList=StringList)
+	 */
+	protected void sequence_ValueType(EObject context, ValueType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -227,7 +342,17 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (platform=Platform types+=Type+)
+	 */
+	protected void sequence_XplatformResource(EObject context, XplatformResource semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
+	 *         resource+=XplatformResource 
 	 *         name=ID 
 	 *         method=RESTFUL_METHODS 
 	 *         uri=URI 

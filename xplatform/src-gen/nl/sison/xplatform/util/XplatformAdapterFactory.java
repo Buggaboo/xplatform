@@ -135,6 +135,46 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createJsonObjectAdapter();
       }
       @Override
+      public Adapter caseXplatformResource(XplatformResource object)
+      {
+        return createXplatformResourceAdapter();
+      }
+      @Override
+      public Adapter casePlatform(Platform object)
+      {
+        return createPlatformAdapter();
+      }
+      @Override
+      public Adapter caseType(Type object)
+      {
+        return createTypeAdapter();
+      }
+      @Override
+      public Adapter caseEnumInstance(EnumInstance object)
+      {
+        return createEnumInstanceAdapter();
+      }
+      @Override
+      public Adapter caseMapInstance(MapInstance object)
+      {
+        return createMapInstanceAdapter();
+      }
+      @Override
+      public Adapter caseStringList(StringList object)
+      {
+        return createStringListAdapter();
+      }
+      @Override
+      public Adapter caseKeyValuePair(KeyValuePair object)
+      {
+        return createKeyValuePairAdapter();
+      }
+      @Override
+      public Adapter caseValueType(ValueType object)
+      {
+        return createValueTypeAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -332,6 +372,126 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonObjectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.XplatformResource <em>Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.XplatformResource
+   * @generated
+   */
+  public Adapter createXplatformResourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.Platform <em>Platform</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.Platform
+   * @generated
+   */
+  public Adapter createPlatformAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.Type
+   * @generated
+   */
+  public Adapter createTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.EnumInstance <em>Enum Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.EnumInstance
+   * @generated
+   */
+  public Adapter createEnumInstanceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.MapInstance <em>Map Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.MapInstance
+   * @generated
+   */
+  public Adapter createMapInstanceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.StringList <em>String List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.StringList
+   * @generated
+   */
+  public Adapter createStringListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.KeyValuePair <em>Key Value Pair</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.KeyValuePair
+   * @generated
+   */
+  public Adapter createKeyValuePairAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.ValueType <em>Value Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.ValueType
+   * @generated
+   */
+  public Adapter createValueTypeAdapter()
   {
     return null;
   }

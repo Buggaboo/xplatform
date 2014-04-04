@@ -131,6 +131,78 @@ public interface XplatformFactory extends EFactory
   JsonObject createJsonObject();
 
   /**
+   * Returns a new object of class '<em>Resource</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource</em>'.
+   * @generated
+   */
+  XplatformResource createXplatformResource();
+
+  /**
+   * Returns a new object of class '<em>Platform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Platform</em>'.
+   * @generated
+   */
+  Platform createPlatform();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>Enum Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Instance</em>'.
+   * @generated
+   */
+  EnumInstance createEnumInstance();
+
+  /**
+   * Returns a new object of class '<em>Map Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map Instance</em>'.
+   * @generated
+   */
+  MapInstance createMapInstance();
+
+  /**
+   * Returns a new object of class '<em>String List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String List</em>'.
+   * @generated
+   */
+  StringList createStringList();
+
+  /**
+   * Returns a new object of class '<em>Key Value Pair</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Key Value Pair</em>'.
+   * @generated
+   */
+  KeyValuePair createKeyValuePair();
+
+  /**
+   * Returns a new object of class '<em>Value Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Type</em>'.
+   * @generated
+   */
+  ValueType createValueType();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
