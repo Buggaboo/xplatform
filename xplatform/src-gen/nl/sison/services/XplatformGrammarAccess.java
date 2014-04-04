@@ -167,16 +167,16 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cANY_OTHERTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
 		
 		//URI:
-		//	ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)?;
+		//	ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)*;
 		public ParserRule getRule() { return rule; }
 
-		//ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)?
+		//ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)*
 		public Group getGroup() { return cGroup; }
 
 		//ANY_OTHER+
 		public RuleCall getANY_OTHERTerminalRuleCall_0() { return cANY_OTHERTerminalRuleCall_0; }
 
-		//("{" uriParameter+=ID "}" ANY_OTHER*)?
+		//("{" uriParameter+=ID "}" ANY_OTHER*)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"{"
@@ -875,7 +875,7 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//URI:
-	//	ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)?;
+	//	ANY_OTHER+ ("{" uriParameter+=ID "}" ANY_OTHER*)*;
 	public URIElements getURIAccess() {
 		return (pURI != null) ? pURI : (pURI = new URIElements());
 	}

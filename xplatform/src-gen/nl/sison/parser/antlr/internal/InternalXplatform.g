@@ -306,7 +306,7 @@ ruleURI returns [EObject current=null]
     { 
     newLeafNode(this_ANY_OTHER_4, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); 
     }
-)*)?)
+)*)*)
 ;
 
 

@@ -551,7 +551,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleURI"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:271:1: ruleURI returns [EObject current=null] : ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )? ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:271:1: ruleURI returns [EObject current=null] : ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )* ) ;
     public final EObject ruleURI() throws RecognitionException {
         EObject current = null;
 
@@ -564,11 +564,11 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:274:28: ( ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )? ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:1: ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )? )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:274:28: ( ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )* ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:1: ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )* )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:1: ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )? )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:2: (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:1: ( (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )* )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:2: (this_ANY_OTHER_0= RULE_ANY_OTHER )+ (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )*
             {
             // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:275:2: (this_ANY_OTHER_0= RULE_ANY_OTHER )+
             int cnt5=0;
@@ -603,84 +603,91 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
                 cnt5++;
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:279:3: (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:279:3: (otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )* )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==25) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:279:5: otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )*
-                    {
-                    otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleURI512); 
-
-                        	newLeafNode(otherlv_1, grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0());
-                        
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:283:1: ( (lv_uriParameter_2_0= RULE_ID ) )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:284:1: (lv_uriParameter_2_0= RULE_ID )
-                    {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:284:1: (lv_uriParameter_2_0= RULE_ID )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:285:3: lv_uriParameter_2_0= RULE_ID
-                    {
-                    lv_uriParameter_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleURI529); 
-
-                    			newLeafNode(lv_uriParameter_2_0, grammarAccess.getURIAccess().getUriParameterIDTerminalRuleCall_1_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getURIRule());
-                    	        }
-                           		addWithLastConsumed(
-                           			current, 
-                           			"uriParameter",
-                            		lv_uriParameter_2_0, 
-                            		"ID");
-                    	    
-
-                    }
+                if ( (LA7_0==25) ) {
+                    alt7=1;
+                }
 
 
-                    }
+                switch (alt7) {
+            	case 1 :
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:279:5: otherlv_1= '{' ( (lv_uriParameter_2_0= RULE_ID ) ) otherlv_3= '}' (this_ANY_OTHER_4= RULE_ANY_OTHER )*
+            	    {
+            	    otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleURI512); 
 
-                    otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleURI546); 
+            	        	newLeafNode(otherlv_1, grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0());
+            	        
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:283:1: ( (lv_uriParameter_2_0= RULE_ID ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:284:1: (lv_uriParameter_2_0= RULE_ID )
+            	    {
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:284:1: (lv_uriParameter_2_0= RULE_ID )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:285:3: lv_uriParameter_2_0= RULE_ID
+            	    {
+            	    lv_uriParameter_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleURI529); 
 
-                        	newLeafNode(otherlv_3, grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2());
-                        
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:305:1: (this_ANY_OTHER_4= RULE_ANY_OTHER )*
-                    loop6:
-                    do {
-                        int alt6=2;
-                        int LA6_0 = input.LA(1);
+            	    			newLeafNode(lv_uriParameter_2_0, grammarAccess.getURIAccess().getUriParameterIDTerminalRuleCall_1_1_0()); 
+            	    		
 
-                        if ( (LA6_0==RULE_ANY_OTHER) ) {
-                            alt6=1;
-                        }
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getURIRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"uriParameter",
+            	            		lv_uriParameter_2_0, 
+            	            		"ID");
+            	    	    
 
-
-                        switch (alt6) {
-                    	case 1 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:305:2: this_ANY_OTHER_4= RULE_ANY_OTHER
-                    	    {
-                    	    this_ANY_OTHER_4=(Token)match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_ruleURI558); 
-                    	     
-                    	        newLeafNode(this_ANY_OTHER_4, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); 
-                    	        
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop6;
-                        }
-                    } while (true);
+            	    }
 
 
-                    }
-                    break;
+            	    }
 
-            }
+            	    otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleURI546); 
+
+            	        	newLeafNode(otherlv_3, grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2());
+            	        
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:305:1: (this_ANY_OTHER_4= RULE_ANY_OTHER )*
+            	    loop6:
+            	    do {
+            	        int alt6=2;
+            	        int LA6_0 = input.LA(1);
+
+            	        if ( (LA6_0==RULE_ANY_OTHER) ) {
+            	            alt6=1;
+            	        }
+
+
+            	        switch (alt6) {
+            	    	case 1 :
+            	    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:305:2: this_ANY_OTHER_4= RULE_ANY_OTHER
+            	    	    {
+            	    	    this_ANY_OTHER_4=(Token)match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_ruleURI558); 
+            	    	     
+            	    	        newLeafNode(this_ANY_OTHER_4, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); 
+            	    	        
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop6;
+            	        }
+            	    } while (true);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
 
 
             }
@@ -2901,8 +2908,8 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI498 = new BitSet(new long[]{0x0000000002000042L});
     public static final BitSet FOLLOW_25_in_ruleURI512 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleURI529 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleURI546 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI558 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_26_in_ruleURI546 = new BitSet(new long[]{0x0000000002000042L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI558 = new BitSet(new long[]{0x0000000002000042L});
     public static final BitSet FOLLOW_ruleXplatformHeader_in_entryRuleXplatformHeader597 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXplatformHeader607 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_ruleXplatformHeader644 = new BitSet(new long[]{0x0000000002000000L});

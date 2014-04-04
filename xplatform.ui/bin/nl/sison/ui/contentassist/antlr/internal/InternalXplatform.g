@@ -1419,7 +1419,7 @@ rule__URI__Group__1__Impl
 :
 (
 { before(grammarAccess.getURIAccess().getGroup_1()); }
-(rule__URI__Group_1__0)?
+(rule__URI__Group_1__0)*
 { after(grammarAccess.getURIAccess().getGroup_1()); }
 )
 

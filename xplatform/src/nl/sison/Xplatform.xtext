@@ -14,7 +14,7 @@ Xplatform:
 ;
 
 URI:
-	(ANY_OTHER)+ ('{' uriParameter+=ID '}'(ANY_OTHER)*)?
+	(ANY_OTHER)+ ('{' parameters+=ID '}'(ANY_OTHER)*)*
 ;
 
 // TODO refactor

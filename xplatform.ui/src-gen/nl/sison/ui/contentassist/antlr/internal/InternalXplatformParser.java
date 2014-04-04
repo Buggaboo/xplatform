@@ -1802,11 +1802,11 @@ public class InternalXplatformParser extends AbstractInternalContentAssistParser
             if ( (LA7_0==33) ) {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==33) ) {
-                    alt7=2;
-                }
-                else if ( (LA7_1==RULE_INT||LA7_1==RULE_STRING||(LA7_1>=RULE_JSON_LITERAL_BOOLEAN && LA7_1<=RULE_JSON_LITERAL_NULL)) ) {
+                if ( (LA7_1==RULE_INT||LA7_1==RULE_STRING||(LA7_1>=RULE_JSON_LITERAL_BOOLEAN && LA7_1<=RULE_JSON_LITERAL_NULL)) ) {
                     alt7=1;
+                }
+                else if ( (LA7_1==33) ) {
+                    alt7=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3897,40 +3897,47 @@ public class InternalXplatformParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__URI__Group__1__Impl"
-    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1415:1: rule__URI__Group__1__Impl : ( ( rule__URI__Group_1__0 )? ) ;
+    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1415:1: rule__URI__Group__1__Impl : ( ( rule__URI__Group_1__0 )* ) ;
     public final void rule__URI__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1419:1: ( ( ( rule__URI__Group_1__0 )? ) )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1420:1: ( ( rule__URI__Group_1__0 )? )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1419:1: ( ( ( rule__URI__Group_1__0 )* ) )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1420:1: ( ( rule__URI__Group_1__0 )* )
             {
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1420:1: ( ( rule__URI__Group_1__0 )? )
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1421:1: ( rule__URI__Group_1__0 )?
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1420:1: ( ( rule__URI__Group_1__0 )* )
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1421:1: ( rule__URI__Group_1__0 )*
             {
              before(grammarAccess.getURIAccess().getGroup_1()); 
-            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1422:1: ( rule__URI__Group_1__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1422:1: ( rule__URI__Group_1__0 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==28) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1422:2: rule__URI__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl2874);
-                    rule__URI__Group_1__0();
-
-                    state._fsp--;
+                if ( (LA13_0==28) ) {
+                    alt13=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt13) {
+            	case 1 :
+            	    // ../xplatform.ui/src-gen/nl/sison/ui/contentassist/antlr/internal/InternalXplatform.g:1422:2: rule__URI__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl2874);
+            	    rule__URI__Group_1__0();
 
-            }
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
              after(grammarAccess.getURIAccess().getGroup_1()); 
 
@@ -9203,7 +9210,7 @@ public class InternalXplatformParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__Group__0__Impl2801 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__Group__0__Impl2814 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_rule__URI__Group__1__Impl_in_rule__URI__Group__12847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl2874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl2874 = new BitSet(new long[]{0x0000000010000002L});
     public static final BitSet FOLLOW_rule__URI__Group_1__0__Impl_in_rule__URI__Group_1__02909 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__URI__Group_1__1_in_rule__URI__Group_1__02912 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_rule__URI__Group_1__0__Impl2940 = new BitSet(new long[]{0x0000000000000002L});

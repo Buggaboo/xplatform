@@ -234,7 +234,7 @@ public class XplatformSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     uriParameter+=ID?
+	 *     uriParameter+=ID*
 	 */
 	protected void sequence_URI(EObject context, URI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
