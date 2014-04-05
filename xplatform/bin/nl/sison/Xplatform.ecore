@@ -49,7 +49,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="JsonObjectValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonObject" eSuperTypes="#//JsonObjectValue">
+  <eClassifiers xsi:type="ecore:EClass" name="JsonCompositeValue" eSuperTypes="#//JsonObjectValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonObject" eSuperTypes="#//JsonCompositeValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePair" upperBound="-1"
         eType="#//JsonKeyValuePair" containment="true"/>
   </eClassifiers>
@@ -58,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//JsonObjectValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonArray" eSuperTypes="#//JsonObjectValue">
+  <eClassifiers xsi:type="ecore:EClass" name="JsonArray" eSuperTypes="#//JsonCompositeValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//JsonObjectValue" containment="true"/>
   </eClassifiers>

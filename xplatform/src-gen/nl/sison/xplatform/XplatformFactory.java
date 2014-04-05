@@ -95,6 +95,15 @@ public interface XplatformFactory extends EFactory
   JsonObjectValue createJsonObjectValue();
 
   /**
+   * Returns a new object of class '<em>Json Composite Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Composite Value</em>'.
+   * @generated
+   */
+  JsonCompositeValue createJsonCompositeValue();
+
+  /**
    * Returns a new object of class '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -115,6 +115,11 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
         return createJsonObjectValueAdapter();
       }
       @Override
+      public Adapter caseJsonCompositeValue(JsonCompositeValue object)
+      {
+        return createJsonCompositeValueAdapter();
+      }
+      @Override
       public Adapter caseJsonObject(JsonObject object)
       {
         return createJsonObjectAdapter();
@@ -292,6 +297,21 @@ public class XplatformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonObjectValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.xplatform.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.xplatform.JsonCompositeValue
+   * @generated
+   */
+  public Adapter createJsonCompositeValueAdapter()
   {
     return null;
   }

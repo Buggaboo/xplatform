@@ -21,11 +21,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalXplatformParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_XPLATFORM_HEADER_PARAMETER", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_META_SCALAR_TYPE", "RULE_JSON_NUMBER", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'->'", "'}'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_XPLATFORM_HEADER_PARAMETER", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_NUMBER", "RULE_JSON_META_SCALAR_TYPE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'->'", "'}'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
     };
     public static final int RULE_ID=4;
     public static final int T__40=40;
-    public static final int RULE_JSON_META_SCALAR_TYPE=13;
+    public static final int RULE_JSON_META_SCALAR_TYPE=14;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -52,7 +52,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
-    public static final int RULE_JSON_NUMBER=14;
+    public static final int RULE_JSON_NUMBER=13;
     public static final int T__36=36;
     public static final int T__37=37;
     public static final int RULE_JSON_LITERAL_NULL=12;
@@ -1719,106 +1719,65 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonObjectValue"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:723:1: ruleJsonObjectValue returns [EObject current=null] : ( ( (lv_value_0_0= RULE_STRING ) ) | this_JsonObject_1= ruleJsonObject | this_JsonArray_2= ruleJsonArray | this_EMPTY_JSON_OBJECT_3= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_4= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_5= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_6= RULE_JSON_LITERAL_NULL | this_JSON_META_SCALAR_TYPE_7= RULE_JSON_META_SCALAR_TYPE | this_JSON_NUMBER_8= RULE_JSON_NUMBER ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:723:1: ruleJsonObjectValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | this_JsonCompositeValue_1= ruleJsonCompositeValue ) ;
     public final EObject ruleJsonObjectValue() throws RecognitionException {
         EObject current = null;
 
-        Token lv_value_0_0=null;
-        Token this_EMPTY_JSON_OBJECT_3=null;
-        Token this_EMPTY_JSON_ARRAY_4=null;
-        Token this_JSON_LITERAL_BOOLEAN_5=null;
-        Token this_JSON_LITERAL_NULL_6=null;
-        Token this_JSON_META_SCALAR_TYPE_7=null;
-        Token this_JSON_NUMBER_8=null;
-        EObject this_JsonObject_1 = null;
+        AntlrDatatypeRuleToken lv_value_0_0 = null;
 
-        EObject this_JsonArray_2 = null;
+        EObject this_JsonCompositeValue_1 = null;
 
 
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:726:28: ( ( ( (lv_value_0_0= RULE_STRING ) ) | this_JsonObject_1= ruleJsonObject | this_JsonArray_2= ruleJsonArray | this_EMPTY_JSON_OBJECT_3= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_4= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_5= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_6= RULE_JSON_LITERAL_NULL | this_JSON_META_SCALAR_TYPE_7= RULE_JSON_META_SCALAR_TYPE | this_JSON_NUMBER_8= RULE_JSON_NUMBER ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:1: ( ( (lv_value_0_0= RULE_STRING ) ) | this_JsonObject_1= ruleJsonObject | this_JsonArray_2= ruleJsonArray | this_EMPTY_JSON_OBJECT_3= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_4= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_5= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_6= RULE_JSON_LITERAL_NULL | this_JSON_META_SCALAR_TYPE_7= RULE_JSON_META_SCALAR_TYPE | this_JSON_NUMBER_8= RULE_JSON_NUMBER )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:726:28: ( ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | this_JsonCompositeValue_1= ruleJsonCompositeValue ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | this_JsonCompositeValue_1= ruleJsonCompositeValue )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:1: ( ( (lv_value_0_0= RULE_STRING ) ) | this_JsonObject_1= ruleJsonObject | this_JsonArray_2= ruleJsonArray | this_EMPTY_JSON_OBJECT_3= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_4= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_5= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_6= RULE_JSON_LITERAL_NULL | this_JSON_META_SCALAR_TYPE_7= RULE_JSON_META_SCALAR_TYPE | this_JSON_NUMBER_8= RULE_JSON_NUMBER )
-            int alt14=9;
-            switch ( input.LA(1) ) {
-            case RULE_STRING:
-                {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | this_JsonCompositeValue_1= ruleJsonCompositeValue )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==RULE_STRING||(LA14_0>=RULE_EMPTY_JSON_OBJECT && LA14_0<=RULE_JSON_META_SCALAR_TYPE)) ) {
                 alt14=1;
-                }
-                break;
-            case 20:
-                {
+            }
+            else if ( (LA14_0==20||LA14_0==37) ) {
                 alt14=2;
-                }
-                break;
-            case 37:
-                {
-                alt14=3;
-                }
-                break;
-            case RULE_EMPTY_JSON_OBJECT:
-                {
-                alt14=4;
-                }
-                break;
-            case RULE_EMPTY_JSON_ARRAY:
-                {
-                alt14=5;
-                }
-                break;
-            case RULE_JSON_LITERAL_BOOLEAN:
-                {
-                alt14=6;
-                }
-                break;
-            case RULE_JSON_LITERAL_NULL:
-                {
-                alt14=7;
-                }
-                break;
-            case RULE_JSON_META_SCALAR_TYPE:
-                {
-                alt14=8;
-                }
-                break;
-            case RULE_JSON_NUMBER:
-                {
-                alt14=9;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-
             switch (alt14) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:2: ( (lv_value_0_0= RULE_STRING ) )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:2: ( (lv_value_0_0= RULE_STRING ) )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:728:1: (lv_value_0_0= RULE_STRING )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:727:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:728:1: (lv_value_0_0= ruleJsonLiteralValue )
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:728:1: (lv_value_0_0= RULE_STRING )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:729:3: lv_value_0_0= RULE_STRING
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:728:1: (lv_value_0_0= ruleJsonLiteralValue )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:729:3: lv_value_0_0= ruleJsonLiteralValue
                     {
-                    lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonObjectValue1479); 
+                     
+                    	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1483);
+                    lv_value_0_0=ruleJsonLiteralValue();
 
-                    			newLeafNode(lv_value_0_0, grammarAccess.getJsonObjectValueAccess().getValueSTRINGTerminalRuleCall_0_0()); 
-                    		
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getJsonObjectValueRule());
+                    	            current = createModelElementForParent(grammarAccess.getJsonObjectValueRule());
                     	        }
-                           		setWithLastConsumed(
+                           		set(
                            			current, 
                            			"value",
                             		lv_value_0_0, 
-                            		"STRING");
+                            		"JsonLiteralValue");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -1830,97 +1789,19 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:747:5: this_JsonObject_1= ruleJsonObject
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:747:5: this_JsonCompositeValue_1= ruleJsonCompositeValue
                     {
                      
-                            newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonObjectParserRuleCall_1()); 
+                            newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonCompositeValueParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleJsonObject_in_ruleJsonObjectValue1512);
-                    this_JsonObject_1=ruleJsonObject();
+                    pushFollow(FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1511);
+                    this_JsonCompositeValue_1=ruleJsonCompositeValue();
 
                     state._fsp--;
 
                      
-                            current = this_JsonObject_1; 
+                            current = this_JsonCompositeValue_1; 
                             afterParserOrEnumRuleCall();
-                        
-
-                    }
-                    break;
-                case 3 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:757:5: this_JsonArray_2= ruleJsonArray
-                    {
-                     
-                            newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonArrayParserRuleCall_2()); 
-                        
-                    pushFollow(FOLLOW_ruleJsonArray_in_ruleJsonObjectValue1539);
-                    this_JsonArray_2=ruleJsonArray();
-
-                    state._fsp--;
-
-                     
-                            current = this_JsonArray_2; 
-                            afterParserOrEnumRuleCall();
-                        
-
-                    }
-                    break;
-                case 4 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:766:6: this_EMPTY_JSON_OBJECT_3= RULE_EMPTY_JSON_OBJECT
-                    {
-                    this_EMPTY_JSON_OBJECT_3=(Token)match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonObjectValue1555); 
-                     
-                        newLeafNode(this_EMPTY_JSON_OBJECT_3, grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_3()); 
-                        
-
-                    }
-                    break;
-                case 5 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:771:6: this_EMPTY_JSON_ARRAY_4= RULE_EMPTY_JSON_ARRAY
-                    {
-                    this_EMPTY_JSON_ARRAY_4=(Token)match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonObjectValue1571); 
-                     
-                        newLeafNode(this_EMPTY_JSON_ARRAY_4, grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_4()); 
-                        
-
-                    }
-                    break;
-                case 6 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:776:6: this_JSON_LITERAL_BOOLEAN_5= RULE_JSON_LITERAL_BOOLEAN
-                    {
-                    this_JSON_LITERAL_BOOLEAN_5=(Token)match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonObjectValue1587); 
-                     
-                        newLeafNode(this_JSON_LITERAL_BOOLEAN_5, grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_5()); 
-                        
-
-                    }
-                    break;
-                case 7 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:781:6: this_JSON_LITERAL_NULL_6= RULE_JSON_LITERAL_NULL
-                    {
-                    this_JSON_LITERAL_NULL_6=(Token)match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonObjectValue1603); 
-                     
-                        newLeafNode(this_JSON_LITERAL_NULL_6, grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_6()); 
-                        
-
-                    }
-                    break;
-                case 8 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:786:6: this_JSON_META_SCALAR_TYPE_7= RULE_JSON_META_SCALAR_TYPE
-                    {
-                    this_JSON_META_SCALAR_TYPE_7=(Token)match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonObjectValue1619); 
-                     
-                        newLeafNode(this_JSON_META_SCALAR_TYPE_7, grammarAccess.getJsonObjectValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_7()); 
-                        
-
-                    }
-                    break;
-                case 9 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:791:6: this_JSON_NUMBER_8= RULE_JSON_NUMBER
-                    {
-                    this_JSON_NUMBER_8=(Token)match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_ruleJsonObjectValue1635); 
-                     
-                        newLeafNode(this_JSON_NUMBER_8, grammarAccess.getJsonObjectValueAccess().getJSON_NUMBERTerminalRuleCall_8()); 
                         
 
                     }
@@ -1945,8 +1826,345 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleJsonObjectValue"
 
 
+    // $ANTLR start "entryRuleJsonCompositeValue"
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:763:1: entryRuleJsonCompositeValue returns [EObject current=null] : iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF ;
+    public final EObject entryRuleJsonCompositeValue() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleJsonCompositeValue = null;
+
+
+        try {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:764:2: (iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:765:2: iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF
+            {
+             newCompositeNode(grammarAccess.getJsonCompositeValueRule()); 
+            pushFollow(FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1546);
+            iv_ruleJsonCompositeValue=ruleJsonCompositeValue();
+
+            state._fsp--;
+
+             current =iv_ruleJsonCompositeValue; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonCompositeValue1556); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleJsonCompositeValue"
+
+
+    // $ANTLR start "ruleJsonCompositeValue"
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:772:1: ruleJsonCompositeValue returns [EObject current=null] : (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) ;
+    public final EObject ruleJsonCompositeValue() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_JsonObject_0 = null;
+
+        EObject this_JsonArray_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:775:28: ( (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:776:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
+            {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:776:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==20) ) {
+                alt15=1;
+            }
+            else if ( (LA15_0==37) ) {
+                alt15=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 15, 0, input);
+
+                throw nvae;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:777:5: this_JsonObject_0= ruleJsonObject
+                    {
+                     
+                            newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1603);
+                    this_JsonObject_0=ruleJsonObject();
+
+                    state._fsp--;
+
+                     
+                            current = this_JsonObject_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:787:5: this_JsonArray_1= ruleJsonArray
+                    {
+                     
+                            newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1630);
+                    this_JsonArray_1=ruleJsonArray();
+
+                    state._fsp--;
+
+                     
+                            current = this_JsonArray_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleJsonCompositeValue"
+
+
+    // $ANTLR start "entryRuleJsonLiteralValue"
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:803:1: entryRuleJsonLiteralValue returns [String current=null] : iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF ;
+    public final String entryRuleJsonLiteralValue() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleJsonLiteralValue = null;
+
+
+        try {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:804:2: (iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:805:2: iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF
+            {
+             newCompositeNode(grammarAccess.getJsonLiteralValueRule()); 
+            pushFollow(FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1666);
+            iv_ruleJsonLiteralValue=ruleJsonLiteralValue();
+
+            state._fsp--;
+
+             current =iv_ruleJsonLiteralValue.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonLiteralValue1677); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleJsonLiteralValue"
+
+
+    // $ANTLR start "ruleJsonLiteralValue"
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:812:1: ruleJsonLiteralValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) ;
+    public final AntlrDatatypeRuleToken ruleJsonLiteralValue() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_STRING_0=null;
+        Token this_EMPTY_JSON_OBJECT_1=null;
+        Token this_EMPTY_JSON_ARRAY_2=null;
+        Token this_JSON_LITERAL_BOOLEAN_3=null;
+        Token this_JSON_LITERAL_NULL_4=null;
+        Token this_JSON_NUMBER_5=null;
+        Token this_JSON_META_SCALAR_TYPE_6=null;
+
+         enterRule(); 
+            
+        try {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:815:28: ( (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
+            {
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
+            int alt16=7;
+            switch ( input.LA(1) ) {
+            case RULE_STRING:
+                {
+                alt16=1;
+                }
+                break;
+            case RULE_EMPTY_JSON_OBJECT:
+                {
+                alt16=2;
+                }
+                break;
+            case RULE_EMPTY_JSON_ARRAY:
+                {
+                alt16=3;
+                }
+                break;
+            case RULE_JSON_LITERAL_BOOLEAN:
+                {
+                alt16=4;
+                }
+                break;
+            case RULE_JSON_LITERAL_NULL:
+                {
+                alt16=5;
+                }
+                break;
+            case RULE_JSON_NUMBER:
+                {
+                alt16=6;
+                }
+                break;
+            case RULE_JSON_META_SCALAR_TYPE:
+                {
+                alt16=7;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 16, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt16) {
+                case 1 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:6: this_STRING_0= RULE_STRING
+                    {
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1717); 
+
+                    		current.merge(this_STRING_0);
+                        
+                     
+                        newLeafNode(this_STRING_0, grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:824:10: this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT
+                    {
+                    this_EMPTY_JSON_OBJECT_1=(Token)match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1743); 
+
+                    		current.merge(this_EMPTY_JSON_OBJECT_1);
+                        
+                     
+                        newLeafNode(this_EMPTY_JSON_OBJECT_1, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:832:10: this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY
+                    {
+                    this_EMPTY_JSON_ARRAY_2=(Token)match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1769); 
+
+                    		current.merge(this_EMPTY_JSON_ARRAY_2);
+                        
+                     
+                        newLeafNode(this_EMPTY_JSON_ARRAY_2, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); 
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:840:10: this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN
+                    {
+                    this_JSON_LITERAL_BOOLEAN_3=(Token)match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1795); 
+
+                    		current.merge(this_JSON_LITERAL_BOOLEAN_3);
+                        
+                     
+                        newLeafNode(this_JSON_LITERAL_BOOLEAN_3, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); 
+                        
+
+                    }
+                    break;
+                case 5 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:848:10: this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL
+                    {
+                    this_JSON_LITERAL_NULL_4=(Token)match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1821); 
+
+                    		current.merge(this_JSON_LITERAL_NULL_4);
+                        
+                     
+                        newLeafNode(this_JSON_LITERAL_NULL_4, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); 
+                        
+
+                    }
+                    break;
+                case 6 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:856:10: this_JSON_NUMBER_5= RULE_JSON_NUMBER
+                    {
+                    this_JSON_NUMBER_5=(Token)match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1847); 
+
+                    		current.merge(this_JSON_NUMBER_5);
+                        
+                     
+                        newLeafNode(this_JSON_NUMBER_5, grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); 
+                        
+
+                    }
+                    break;
+                case 7 :
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:864:10: this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE
+                    {
+                    this_JSON_META_SCALAR_TYPE_6=(Token)match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue1873); 
+
+                    		current.merge(this_JSON_META_SCALAR_TYPE_6);
+                        
+                     
+                        newLeafNode(this_JSON_META_SCALAR_TYPE_6, grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleJsonLiteralValue"
+
+
     // $ANTLR start "entryRuleJsonObject"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:803:1: entryRuleJsonObject returns [EObject current=null] : iv_ruleJsonObject= ruleJsonObject EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:879:1: entryRuleJsonObject returns [EObject current=null] : iv_ruleJsonObject= ruleJsonObject EOF ;
     public final EObject entryRuleJsonObject() throws RecognitionException {
         EObject current = null;
 
@@ -1954,17 +2172,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:804:2: (iv_ruleJsonObject= ruleJsonObject EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:805:2: iv_ruleJsonObject= ruleJsonObject EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:880:2: (iv_ruleJsonObject= ruleJsonObject EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:881:2: iv_ruleJsonObject= ruleJsonObject EOF
             {
              newCompositeNode(grammarAccess.getJsonObjectRule()); 
-            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject1670);
+            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject1918);
             iv_ruleJsonObject=ruleJsonObject();
 
             state._fsp--;
 
              current =iv_ruleJsonObject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject1680); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject1928); 
 
             }
 
@@ -1982,7 +2200,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonObject"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:812:1: ruleJsonObject returns [EObject current=null] : (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:888:1: ruleJsonObject returns [EObject current=null] : (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) ;
     public final EObject ruleJsonObject() throws RecognitionException {
         EObject current = null;
 
@@ -1998,26 +2216,26 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:815:28: ( (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:891:28: ( (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:892:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:816:3: otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:892:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:892:3: otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleJsonObject1717); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleJsonObject1965); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:820:1: ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:821:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:896:1: ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:897:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:821:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:822:3: lv_keyValuePair_1_0= ruleJsonKeyValuePair
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:897:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:898:3: lv_keyValuePair_1_0= ruleJsonKeyValuePair
             {
              
             	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1738);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1986);
             lv_keyValuePair_1_0=ruleJsonKeyValuePair();
 
             state._fsp--;
@@ -2039,41 +2257,41 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:838:2: (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )*
-            loop15:
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:914:2: (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )*
+            loop17:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA15_0==35) ) {
-                    int LA15_1 = input.LA(2);
+                if ( (LA17_0==35) ) {
+                    int LA17_1 = input.LA(2);
 
-                    if ( (LA15_1==RULE_STRING) ) {
-                        alt15=1;
+                    if ( (LA17_1==RULE_STRING) ) {
+                        alt17=1;
                     }
 
 
                 }
 
 
-                switch (alt15) {
+                switch (alt17) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:838:4: otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:914:4: otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject1751); 
+            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject1999); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:842:1: ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:843:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:918:1: ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:919:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:843:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:844:3: lv_keyValuePair_3_0= ruleJsonKeyValuePair
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:919:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:920:3: lv_keyValuePair_3_0= ruleJsonKeyValuePair
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1772);
+            	    pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2020);
             	    lv_keyValuePair_3_0=ruleJsonKeyValuePair();
 
             	    state._fsp--;
@@ -2100,22 +2318,22 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop17;
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:860:4: (otherlv_4= ',' )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:936:4: (otherlv_4= ',' )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA16_0==35) ) {
-                alt16=1;
+            if ( (LA18_0==35) ) {
+                alt18=1;
             }
-            switch (alt16) {
+            switch (alt18) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:860:6: otherlv_4= ','
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:936:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject1787); 
+                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject2035); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getJsonObjectAccess().getCommaKeyword_3());
                         
@@ -2125,7 +2343,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleJsonObject1801); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleJsonObject2049); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2150,7 +2368,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonKeyValuePair"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:876:1: entryRuleJsonKeyValuePair returns [EObject current=null] : iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:952:1: entryRuleJsonKeyValuePair returns [EObject current=null] : iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF ;
     public final EObject entryRuleJsonKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -2158,17 +2376,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:877:2: (iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:878:2: iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:953:2: (iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:954:2: iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF
             {
              newCompositeNode(grammarAccess.getJsonKeyValuePairRule()); 
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair1837);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2085);
             iv_ruleJsonKeyValuePair=ruleJsonKeyValuePair();
 
             state._fsp--;
 
              current =iv_ruleJsonKeyValuePair; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair1847); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair2095); 
 
             }
 
@@ -2186,7 +2404,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonKeyValuePair"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:885:1: ruleJsonKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:961:1: ruleJsonKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) ;
     public final EObject ruleJsonKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -2198,19 +2416,19 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:888:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:889:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:964:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:965:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:889:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:889:2: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:965:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:965:2: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:889:2: ( (lv_key_0_0= RULE_STRING ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:890:1: (lv_key_0_0= RULE_STRING )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:965:2: ( (lv_key_0_0= RULE_STRING ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:966:1: (lv_key_0_0= RULE_STRING )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:890:1: (lv_key_0_0= RULE_STRING )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:891:3: lv_key_0_0= RULE_STRING
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:966:1: (lv_key_0_0= RULE_STRING )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:967:3: lv_key_0_0= RULE_STRING
             {
-            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair1889); 
+            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2137); 
 
             			newLeafNode(lv_key_0_0, grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
             		
@@ -2230,20 +2448,20 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleJsonKeyValuePair1906); 
+            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleJsonKeyValuePair2154); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getJsonKeyValuePairAccess().getColonKeyword_1());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:911:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:912:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:987:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:988:1: (lv_value_2_0= ruleJsonObjectValue )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:912:1: (lv_value_2_0= ruleJsonObjectValue )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:913:3: lv_value_2_0= ruleJsonObjectValue
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:988:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:989:3: lv_value_2_0= ruleJsonObjectValue
             {
              
             	        newCompositeNode(grammarAccess.getJsonKeyValuePairAccess().getValueJsonObjectValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair1927);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2175);
             lv_value_2_0=ruleJsonObjectValue();
 
             state._fsp--;
@@ -2286,7 +2504,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonArray"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:937:1: entryRuleJsonArray returns [EObject current=null] : iv_ruleJsonArray= ruleJsonArray EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1013:1: entryRuleJsonArray returns [EObject current=null] : iv_ruleJsonArray= ruleJsonArray EOF ;
     public final EObject entryRuleJsonArray() throws RecognitionException {
         EObject current = null;
 
@@ -2294,17 +2512,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:938:2: (iv_ruleJsonArray= ruleJsonArray EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:939:2: iv_ruleJsonArray= ruleJsonArray EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1014:2: (iv_ruleJsonArray= ruleJsonArray EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1015:2: iv_ruleJsonArray= ruleJsonArray EOF
             {
              newCompositeNode(grammarAccess.getJsonArrayRule()); 
-            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray1963);
+            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray2211);
             iv_ruleJsonArray=ruleJsonArray();
 
             state._fsp--;
 
              current =iv_ruleJsonArray; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray1973); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray2221); 
 
             }
 
@@ -2322,7 +2540,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonArray"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:946:1: ruleJsonArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1022:1: ruleJsonArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
     public final EObject ruleJsonArray() throws RecognitionException {
         EObject current = null;
 
@@ -2338,26 +2556,26 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:949:28: ( (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:950:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1025:28: ( (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1026:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:950:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:950:3: otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1026:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1026:3: otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleJsonArray2010); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleJsonArray2258); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:954:1: ( (lv_items_1_0= ruleJsonObjectValue ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:955:1: (lv_items_1_0= ruleJsonObjectValue )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1030:1: ( (lv_items_1_0= ruleJsonObjectValue ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1031:1: (lv_items_1_0= ruleJsonObjectValue )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:955:1: (lv_items_1_0= ruleJsonObjectValue )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:956:3: lv_items_1_0= ruleJsonObjectValue
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1031:1: (lv_items_1_0= ruleJsonObjectValue )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1032:3: lv_items_1_0= ruleJsonObjectValue
             {
              
             	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2031);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2279);
             lv_items_1_0=ruleJsonObjectValue();
 
             state._fsp--;
@@ -2379,41 +2597,41 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:972:2: (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )*
-            loop17:
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1048:2: (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )*
+            loop19:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA17_0==35) ) {
-                    int LA17_1 = input.LA(2);
+                if ( (LA19_0==35) ) {
+                    int LA19_1 = input.LA(2);
 
-                    if ( (LA17_1==RULE_STRING||(LA17_1>=RULE_EMPTY_JSON_OBJECT && LA17_1<=RULE_JSON_NUMBER)||LA17_1==20||LA17_1==37) ) {
-                        alt17=1;
+                    if ( (LA19_1==RULE_STRING||(LA19_1>=RULE_EMPTY_JSON_OBJECT && LA19_1<=RULE_JSON_META_SCALAR_TYPE)||LA19_1==20||LA19_1==37) ) {
+                        alt19=1;
                     }
 
 
                 }
 
 
-                switch (alt17) {
+                switch (alt19) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:972:4: otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1048:4: otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2044); 
+            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2292); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:976:1: ( (lv_items_3_0= ruleJsonObjectValue ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:977:1: (lv_items_3_0= ruleJsonObjectValue )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1052:1: ( (lv_items_3_0= ruleJsonObjectValue ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1053:1: (lv_items_3_0= ruleJsonObjectValue )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:977:1: (lv_items_3_0= ruleJsonObjectValue )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:978:3: lv_items_3_0= ruleJsonObjectValue
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1053:1: (lv_items_3_0= ruleJsonObjectValue )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1054:3: lv_items_3_0= ruleJsonObjectValue
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2065);
+            	    pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2313);
             	    lv_items_3_0=ruleJsonObjectValue();
 
             	    state._fsp--;
@@ -2440,22 +2658,22 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop19;
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:994:4: (otherlv_4= ',' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1070:4: (otherlv_4= ',' )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA18_0==35) ) {
-                alt18=1;
+            if ( (LA20_0==35) ) {
+                alt20=1;
             }
-            switch (alt18) {
+            switch (alt20) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:994:6: otherlv_4= ','
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1070:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2080); 
+                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2328); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getJsonArrayAccess().getCommaKeyword_3());
                         
@@ -2465,7 +2683,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleJsonArray2094); 
+            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleJsonArray2342); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_4());
                 
@@ -2490,7 +2708,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXplatformResourceDefinition"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1010:1: entryRuleXplatformResourceDefinition returns [EObject current=null] : iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1086:1: entryRuleXplatformResourceDefinition returns [EObject current=null] : iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF ;
     public final EObject entryRuleXplatformResourceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2498,17 +2716,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1011:2: (iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1012:2: iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1087:2: (iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1088:2: iv_ruleXplatformResourceDefinition= ruleXplatformResourceDefinition EOF
             {
              newCompositeNode(grammarAccess.getXplatformResourceDefinitionRule()); 
-            pushFollow(FOLLOW_ruleXplatformResourceDefinition_in_entryRuleXplatformResourceDefinition2130);
+            pushFollow(FOLLOW_ruleXplatformResourceDefinition_in_entryRuleXplatformResourceDefinition2378);
             iv_ruleXplatformResourceDefinition=ruleXplatformResourceDefinition();
 
             state._fsp--;
 
              current =iv_ruleXplatformResourceDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXplatformResourceDefinition2140); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXplatformResourceDefinition2388); 
 
             }
 
@@ -2526,7 +2744,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXplatformResourceDefinition"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1019:1: ruleXplatformResourceDefinition returns [EObject current=null] : ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1095:1: ruleXplatformResourceDefinition returns [EObject current=null] : ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) ;
     public final EObject ruleXplatformResourceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2538,39 +2756,39 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1022:28: ( ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1023:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1098:28: ( ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1023:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA19_0==40) ) {
-                alt19=1;
+            if ( (LA21_0==40) ) {
+                alt21=1;
             }
-            else if ( (LA19_0==39) ) {
-                alt19=2;
+            else if ( (LA21_0==39) ) {
+                alt21=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt21) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1023:2: ( (lv_resources_0_0= ruleMapInstance ) )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:2: ( (lv_resources_0_0= ruleMapInstance ) )
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1023:2: ( (lv_resources_0_0= ruleMapInstance ) )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1024:1: (lv_resources_0_0= ruleMapInstance )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:2: ( (lv_resources_0_0= ruleMapInstance ) )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1100:1: (lv_resources_0_0= ruleMapInstance )
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1024:1: (lv_resources_0_0= ruleMapInstance )
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1025:3: lv_resources_0_0= ruleMapInstance
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1100:1: (lv_resources_0_0= ruleMapInstance )
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1101:3: lv_resources_0_0= ruleMapInstance
                     {
                      
                     	        newCompositeNode(grammarAccess.getXplatformResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleMapInstance_in_ruleXplatformResourceDefinition2186);
+                    pushFollow(FOLLOW_ruleMapInstance_in_ruleXplatformResourceDefinition2434);
                     lv_resources_0_0=ruleMapInstance();
 
                     state._fsp--;
@@ -2596,12 +2814,12 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1043:5: this_EnumInstance_1= ruleEnumInstance
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1119:5: this_EnumInstance_1= ruleEnumInstance
                     {
                      
                             newCompositeNode(grammarAccess.getXplatformResourceDefinitionAccess().getEnumInstanceParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEnumInstance_in_ruleXplatformResourceDefinition2214);
+                    pushFollow(FOLLOW_ruleEnumInstance_in_ruleXplatformResourceDefinition2462);
                     this_EnumInstance_1=ruleEnumInstance();
 
                     state._fsp--;
@@ -2634,7 +2852,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumInstance"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1059:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1135:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
     public final EObject entryRuleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2642,17 +2860,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1060:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1061:2: iv_ruleEnumInstance= ruleEnumInstance EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1136:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1137:2: iv_ruleEnumInstance= ruleEnumInstance EOF
             {
              newCompositeNode(grammarAccess.getEnumInstanceRule()); 
-            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2249);
+            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2497);
             iv_ruleEnumInstance=ruleEnumInstance();
 
             state._fsp--;
 
              current =iv_ruleEnumInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance2259); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance2507); 
 
             }
 
@@ -2670,7 +2888,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumInstance"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1068:1: ruleEnumInstance returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1144:1: ruleEnumInstance returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) ;
     public final EObject ruleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2686,23 +2904,23 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1071:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1072:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1147:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1148:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1072:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1072:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1148:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1148:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleEnumInstance2296); 
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleEnumInstance2544); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEnumInstanceAccess().getEnumKeyword_0());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1076:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1077:1: (lv_name_1_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1152:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1153:1: (lv_name_1_0= RULE_ID )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1077:1: (lv_name_1_0= RULE_ID )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1078:3: lv_name_1_0= RULE_ID
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1153:1: (lv_name_1_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1154:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2313); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2561); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2722,17 +2940,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleEnumInstance2330); 
+            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleEnumInstance2578); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEnumInstanceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1098:1: ( (lv_values_3_0= RULE_ID ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:1: (lv_values_3_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1174:1: ( (lv_values_3_0= RULE_ID ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1175:1: (lv_values_3_0= RULE_ID )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1099:1: (lv_values_3_0= RULE_ID )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1100:3: lv_values_3_0= RULE_ID
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1175:1: (lv_values_3_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1176:3: lv_values_3_0= RULE_ID
             {
-            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2347); 
+            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2595); 
 
             			newLeafNode(lv_values_3_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); 
             		
@@ -2752,38 +2970,38 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1116:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
-            loop20:
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1192:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
+            loop22:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA20_0==35) ) {
-                    int LA20_1 = input.LA(2);
+                if ( (LA22_0==35) ) {
+                    int LA22_1 = input.LA(2);
 
-                    if ( (LA20_1==RULE_ID) ) {
-                        alt20=1;
+                    if ( (LA22_1==RULE_ID) ) {
+                        alt22=1;
                     }
 
 
                 }
 
 
-                switch (alt20) {
+                switch (alt22) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1116:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1192:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
             	    {
-            	    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2365); 
+            	    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2613); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getEnumInstanceAccess().getCommaKeyword_4_0());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1120:1: ( (lv_values_5_0= RULE_ID ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1121:1: (lv_values_5_0= RULE_ID )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1196:1: ( (lv_values_5_0= RULE_ID ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1197:1: (lv_values_5_0= RULE_ID )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1121:1: (lv_values_5_0= RULE_ID )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1122:3: lv_values_5_0= RULE_ID
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1197:1: (lv_values_5_0= RULE_ID )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1198:3: lv_values_5_0= RULE_ID
             	    {
-            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2382); 
+            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2630); 
 
             	    			newLeafNode(lv_values_5_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); 
             	    		
@@ -2808,22 +3026,22 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop22;
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1138:4: (otherlv_6= ',' )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1214:4: (otherlv_6= ',' )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA21_0==35) ) {
-                alt21=1;
+            if ( (LA23_0==35) ) {
+                alt23=1;
             }
-            switch (alt21) {
+            switch (alt23) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1138:6: otherlv_6= ','
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1214:6: otherlv_6= ','
                     {
-                    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2402); 
+                    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2650); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getEnumInstanceAccess().getCommaKeyword_5());
                         
@@ -2833,7 +3051,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleEnumInstance2416); 
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleEnumInstance2664); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getEnumInstanceAccess().getRightCurlyBracketKeyword_6());
                 
@@ -2858,7 +3076,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMapInstance"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1154:1: entryRuleMapInstance returns [EObject current=null] : iv_ruleMapInstance= ruleMapInstance EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1230:1: entryRuleMapInstance returns [EObject current=null] : iv_ruleMapInstance= ruleMapInstance EOF ;
     public final EObject entryRuleMapInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2866,17 +3084,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1155:2: (iv_ruleMapInstance= ruleMapInstance EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1156:2: iv_ruleMapInstance= ruleMapInstance EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1231:2: (iv_ruleMapInstance= ruleMapInstance EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1232:2: iv_ruleMapInstance= ruleMapInstance EOF
             {
              newCompositeNode(grammarAccess.getMapInstanceRule()); 
-            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance2452);
+            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance2700);
             iv_ruleMapInstance=ruleMapInstance();
 
             state._fsp--;
 
              current =iv_ruleMapInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance2462); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance2710); 
 
             }
 
@@ -2894,7 +3112,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMapInstance"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1163:1: ruleMapInstance returns [EObject current=null] : (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1239:1: ruleMapInstance returns [EObject current=null] : (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) ;
     public final EObject ruleMapInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2916,23 +3134,23 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1166:28: ( (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1167:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1242:28: ( (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1243:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1167:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1167:3: otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1243:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1243:3: otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleMapInstance2499); 
+            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleMapInstance2747); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMapInstanceAccess().getMapKeyword_0());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1171:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1172:1: (lv_name_1_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1247:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1248:1: (lv_name_1_0= RULE_ID )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1172:1: (lv_name_1_0= RULE_ID )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1173:3: lv_name_1_0= RULE_ID
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1248:1: (lv_name_1_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1249:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2516); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2764); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getMapInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2952,20 +3170,20 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleMapInstance2533); 
+            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleMapInstance2781); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMapInstanceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1193:1: ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1193:2: ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1269:1: ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1269:2: ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1193:2: ( (lv_keys_3_0= RULE_ID ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1194:1: (lv_keys_3_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1269:2: ( (lv_keys_3_0= RULE_ID ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1270:1: (lv_keys_3_0= RULE_ID )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1194:1: (lv_keys_3_0= RULE_ID )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1195:3: lv_keys_3_0= RULE_ID
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1270:1: (lv_keys_3_0= RULE_ID )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1271:3: lv_keys_3_0= RULE_ID
             {
-            lv_keys_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2551); 
+            lv_keys_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2799); 
 
             			newLeafNode(lv_keys_3_0, grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_3_0_0()); 
             		
@@ -2985,20 +3203,20 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2568); 
+            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2816); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMapInstanceAccess().getColonKeyword_3_1());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1215:1: ( (lv_values_5_0= ruleNestedType ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1216:1: (lv_values_5_0= ruleNestedType )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1291:1: ( (lv_values_5_0= ruleNestedType ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1292:1: (lv_values_5_0= ruleNestedType )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1216:1: (lv_values_5_0= ruleNestedType )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1217:3: lv_values_5_0= ruleNestedType
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1292:1: (lv_values_5_0= ruleNestedType )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1293:3: lv_values_5_0= ruleNestedType
             {
              
             	        newCompositeNode(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_3_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2589);
+            pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2837);
             lv_values_5_0=ruleNestedType();
 
             state._fsp--;
@@ -3023,38 +3241,38 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1233:3: (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )*
-            loop22:
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1309:3: (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )*
+            loop24:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA22_0==35) ) {
-                    int LA22_1 = input.LA(2);
+                if ( (LA24_0==35) ) {
+                    int LA24_1 = input.LA(2);
 
-                    if ( (LA22_1==RULE_ID) ) {
-                        alt22=1;
+                    if ( (LA24_1==RULE_ID) ) {
+                        alt24=1;
                     }
 
 
                 }
 
 
-                switch (alt22) {
+                switch (alt24) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1233:5: otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1309:5: otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) )
             	    {
-            	    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2603); 
+            	    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2851); 
 
             	        	newLeafNode(otherlv_6, grammarAccess.getMapInstanceAccess().getCommaKeyword_4_0());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1237:1: ( (lv_keys_7_0= RULE_ID ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1238:1: (lv_keys_7_0= RULE_ID )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1313:1: ( (lv_keys_7_0= RULE_ID ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1314:1: (lv_keys_7_0= RULE_ID )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1238:1: (lv_keys_7_0= RULE_ID )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1239:3: lv_keys_7_0= RULE_ID
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1314:1: (lv_keys_7_0= RULE_ID )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1315:3: lv_keys_7_0= RULE_ID
             	    {
-            	    lv_keys_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2620); 
+            	    lv_keys_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2868); 
 
             	    			newLeafNode(lv_keys_7_0, grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_4_1_0()); 
             	    		
@@ -3074,20 +3292,20 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2637); 
+            	    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2885); 
 
             	        	newLeafNode(otherlv_8, grammarAccess.getMapInstanceAccess().getColonKeyword_4_2());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1259:1: ( (lv_values_9_0= ruleNestedType ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1260:1: (lv_values_9_0= ruleNestedType )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1335:1: ( (lv_values_9_0= ruleNestedType ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1336:1: (lv_values_9_0= ruleNestedType )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1260:1: (lv_values_9_0= ruleNestedType )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1261:3: lv_values_9_0= ruleNestedType
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1336:1: (lv_values_9_0= ruleNestedType )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1337:3: lv_values_9_0= ruleNestedType
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_4_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2658);
+            	    pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2906);
             	    lv_values_9_0=ruleNestedType();
 
             	    state._fsp--;
@@ -3114,22 +3332,22 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop24;
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1277:4: (otherlv_10= ',' )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1353:4: (otherlv_10= ',' )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA23_0==35) ) {
-                alt23=1;
+            if ( (LA25_0==35) ) {
+                alt25=1;
             }
-            switch (alt23) {
+            switch (alt25) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1277:6: otherlv_10= ','
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1353:6: otherlv_10= ','
                     {
-                    otherlv_10=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2673); 
+                    otherlv_10=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2921); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getMapInstanceAccess().getCommaKeyword_5());
                         
@@ -3139,7 +3357,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleMapInstance2687); 
+            otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleMapInstance2935); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getMapInstanceAccess().getRightCurlyBracketKeyword_6());
                 
@@ -3164,7 +3382,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringList"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1293:1: entryRuleStringList returns [EObject current=null] : iv_ruleStringList= ruleStringList EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1369:1: entryRuleStringList returns [EObject current=null] : iv_ruleStringList= ruleStringList EOF ;
     public final EObject entryRuleStringList() throws RecognitionException {
         EObject current = null;
 
@@ -3172,17 +3390,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1294:2: (iv_ruleStringList= ruleStringList EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1295:2: iv_ruleStringList= ruleStringList EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1370:2: (iv_ruleStringList= ruleStringList EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1371:2: iv_ruleStringList= ruleStringList EOF
             {
              newCompositeNode(grammarAccess.getStringListRule()); 
-            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList2723);
+            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList2971);
             iv_ruleStringList=ruleStringList();
 
             state._fsp--;
 
              current =iv_ruleStringList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList2733); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList2981); 
 
             }
 
@@ -3200,7 +3418,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringList"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1302:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1378:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
     public final EObject ruleStringList() throws RecognitionException {
         EObject current = null;
 
@@ -3214,23 +3432,23 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1305:28: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1306:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1381:28: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1382:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1306:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1306:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1382:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1382:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleStringList2770); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleStringList3018); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStringListAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1310:1: ( (lv_values_1_0= RULE_STRING ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1311:1: (lv_values_1_0= RULE_STRING )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1386:1: ( (lv_values_1_0= RULE_STRING ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1387:1: (lv_values_1_0= RULE_STRING )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1311:1: (lv_values_1_0= RULE_STRING )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1312:3: lv_values_1_0= RULE_STRING
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1387:1: (lv_values_1_0= RULE_STRING )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1388:3: lv_values_1_0= RULE_STRING
             {
-            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList2787); 
+            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3035); 
 
             			newLeafNode(lv_values_1_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
             		
@@ -3250,38 +3468,38 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1328:2: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
-            loop24:
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:2: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
+            loop26:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA24_0==35) ) {
-                    int LA24_1 = input.LA(2);
+                if ( (LA26_0==35) ) {
+                    int LA26_1 = input.LA(2);
 
-                    if ( (LA24_1==RULE_STRING) ) {
-                        alt24=1;
+                    if ( (LA26_1==RULE_STRING) ) {
+                        alt26=1;
                     }
 
 
                 }
 
 
-                switch (alt24) {
+                switch (alt26) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1328:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleStringList2805); 
+            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleStringList3053); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getStringListAccess().getCommaKeyword_2_0());
             	        
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1332:1: ( (lv_values_3_0= RULE_STRING ) )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1333:1: (lv_values_3_0= RULE_STRING )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1408:1: ( (lv_values_3_0= RULE_STRING ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1409:1: (lv_values_3_0= RULE_STRING )
             	    {
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1333:1: (lv_values_3_0= RULE_STRING )
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1334:3: lv_values_3_0= RULE_STRING
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1409:1: (lv_values_3_0= RULE_STRING )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1410:3: lv_values_3_0= RULE_STRING
             	    {
-            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList2822); 
+            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3070); 
 
             	    			newLeafNode(lv_values_3_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
             	    		
@@ -3306,22 +3524,22 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop26;
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1350:4: (otherlv_4= ',' )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1426:4: (otherlv_4= ',' )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA25_0==35) ) {
-                alt25=1;
+            if ( (LA27_0==35) ) {
+                alt27=1;
             }
-            switch (alt25) {
+            switch (alt27) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1350:6: otherlv_4= ','
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1426:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleStringList2842); 
+                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleStringList3090); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getStringListAccess().getCommaKeyword_3());
                         
@@ -3331,7 +3549,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleStringList2856); 
+            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleStringList3104); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getStringListAccess().getRightSquareBracketKeyword_4());
                 
@@ -3356,7 +3574,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNestedType"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1366:1: entryRuleNestedType returns [EObject current=null] : iv_ruleNestedType= ruleNestedType EOF ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1442:1: entryRuleNestedType returns [EObject current=null] : iv_ruleNestedType= ruleNestedType EOF ;
     public final EObject entryRuleNestedType() throws RecognitionException {
         EObject current = null;
 
@@ -3364,17 +3582,17 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1367:2: (iv_ruleNestedType= ruleNestedType EOF )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1368:2: iv_ruleNestedType= ruleNestedType EOF
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1443:2: (iv_ruleNestedType= ruleNestedType EOF )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1444:2: iv_ruleNestedType= ruleNestedType EOF
             {
              newCompositeNode(grammarAccess.getNestedTypeRule()); 
-            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType2892);
+            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType3140);
             iv_ruleNestedType=ruleNestedType();
 
             state._fsp--;
 
              current =iv_ruleNestedType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType2902); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType3150); 
 
             }
 
@@ -3392,7 +3610,7 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNestedType"
-    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1375:1: ruleNestedType returns [EObject current=null] : (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList ) ;
+    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1451:1: ruleNestedType returns [EObject current=null] : (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList ) ;
     public final EObject ruleNestedType() throws RecognitionException {
         EObject current = null;
 
@@ -3403,30 +3621,30 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1378:28: ( (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1379:1: (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1454:28: ( (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1455:1: (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1379:1: (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList )
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1455:1: (this_STRING_0= RULE_STRING | this_StringList_1= ruleStringList )
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_STRING) ) {
-                alt26=1;
+            if ( (LA28_0==RULE_STRING) ) {
+                alt28=1;
             }
-            else if ( (LA26_0==37) ) {
-                alt26=2;
+            else if ( (LA28_0==37) ) {
+                alt28=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
-            switch (alt26) {
+            switch (alt28) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1379:2: this_STRING_0= RULE_STRING
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1455:2: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNestedType2938); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNestedType3186); 
                      
                         newLeafNode(this_STRING_0, grammarAccess.getNestedTypeAccess().getSTRINGTerminalRuleCall_0()); 
                         
@@ -3434,12 +3652,12 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1385:5: this_StringList_1= ruleStringList
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1461:5: this_StringList_1= ruleStringList
                     {
                      
                             newCompositeNode(grammarAccess.getNestedTypeAccess().getStringListParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleStringList_in_ruleNestedType2965);
+                    pushFollow(FOLLOW_ruleStringList_in_ruleNestedType3213);
                     this_StringList_1=ruleStringList();
 
                     state._fsp--;
@@ -3542,75 +3760,81 @@ public class InternalXplatformParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_34_in_ruleXplatformJson1391 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue1427 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJsonObjectValue1437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonObjectValue1479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_ruleJsonObjectValue1512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_ruleJsonObjectValue1539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonObjectValue1555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonObjectValue1571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonObjectValue1587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonObjectValue1603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonObjectValue1619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_ruleJsonObjectValue1635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject1670 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject1680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleJsonObject1717 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1738 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonObject1751 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1772 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonObject1787 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleJsonObject1801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair1837 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair1847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair1889 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleJsonKeyValuePair1906 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair1927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray1963 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray1973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleJsonArray2010 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2031 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonArray2044 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2065 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonArray2080 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleJsonArray2094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXplatformResourceDefinition_in_entryRuleXplatformResourceDefinition2130 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXplatformResourceDefinition2140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_ruleXplatformResourceDefinition2186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleXplatformResourceDefinition2214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2249 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance2259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleEnumInstance2296 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2313 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleEnumInstance2330 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2347 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleEnumInstance2365 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2382 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleEnumInstance2402 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleEnumInstance2416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance2452 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance2462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleMapInstance2499 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2516 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMapInstance2533 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2551 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleMapInstance2568 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2589 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMapInstance2603 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2620 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleMapInstance2637 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2658 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMapInstance2673 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleMapInstance2687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList2723 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringList2733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleStringList2770 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList2787 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleStringList2805 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList2822 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleStringList2842 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleStringList2856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType2892 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType2902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNestedType2938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_ruleNestedType2965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1546 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonCompositeValue1556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1666 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonLiteralValue1677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue1873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject1918 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject1928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleJsonObject1965 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject1986 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleJsonObject1999 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2020 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleJsonObject2035 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleJsonObject2049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2085 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair2095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2137 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleJsonKeyValuePair2154 = new BitSet(new long[]{0x0000002000107E20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray2211 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray2221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleJsonArray2258 = new BitSet(new long[]{0x0000002000107E20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2279 = new BitSet(new long[]{0x0000004800000000L});
+    public static final BitSet FOLLOW_35_in_ruleJsonArray2292 = new BitSet(new long[]{0x0000002000107E20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2313 = new BitSet(new long[]{0x0000004800000000L});
+    public static final BitSet FOLLOW_35_in_ruleJsonArray2328 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleJsonArray2342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXplatformResourceDefinition_in_entryRuleXplatformResourceDefinition2378 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXplatformResourceDefinition2388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_ruleXplatformResourceDefinition2434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleXplatformResourceDefinition2462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2497 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance2507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleEnumInstance2544 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2561 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleEnumInstance2578 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2595 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleEnumInstance2613 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2630 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleEnumInstance2650 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleEnumInstance2664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance2700 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance2710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleMapInstance2747 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2764 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleMapInstance2781 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2799 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleMapInstance2816 = new BitSet(new long[]{0x0000002000000020L});
+    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2837 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleMapInstance2851 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2868 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleMapInstance2885 = new BitSet(new long[]{0x0000002000000020L});
+    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2906 = new BitSet(new long[]{0x0000000800400000L});
+    public static final BitSet FOLLOW_35_in_ruleMapInstance2921 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleMapInstance2935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList2971 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringList2981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleStringList3018 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3035 = new BitSet(new long[]{0x0000004800000000L});
+    public static final BitSet FOLLOW_35_in_ruleStringList3053 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3070 = new BitSet(new long[]{0x0000004800000000L});
+    public static final BitSet FOLLOW_35_in_ruleStringList3090 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleStringList3104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType3140 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType3150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNestedType3186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_ruleNestedType3213 = new BitSet(new long[]{0x0000000000000002L});
 
 }

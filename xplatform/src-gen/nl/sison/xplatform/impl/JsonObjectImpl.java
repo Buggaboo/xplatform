@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class JsonObjectImpl extends JsonObjectValueImpl implements JsonObject
+public class JsonObjectImpl extends JsonCompositeValueImpl implements JsonObject
 {
   /**
    * The cached value of the '{@link #getKeyValuePair() <em>Key Value Pair</em>}' containment reference list.

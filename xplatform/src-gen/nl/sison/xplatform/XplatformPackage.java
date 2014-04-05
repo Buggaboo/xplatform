@@ -389,14 +389,14 @@ public interface XplatformPackage extends EPackage
   int JSON_OBJECT_VALUE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonObjectImpl <em>Json Object</em>}' class.
+   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.sison.xplatform.impl.JsonObjectImpl
-   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonObject()
+   * @see nl.sison.xplatform.impl.JsonCompositeValueImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonCompositeValue()
    * @generated
    */
-  int JSON_OBJECT = 8;
+  int JSON_COMPOSITE_VALUE = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -405,7 +405,35 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_OBJECT__VALUE = JSON_OBJECT_VALUE__VALUE;
+  int JSON_COMPOSITE_VALUE__VALUE = JSON_OBJECT_VALUE__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Json Composite Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_COMPOSITE_VALUE_FEATURE_COUNT = JSON_OBJECT_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link nl.sison.xplatform.impl.JsonObjectImpl <em>Json Object</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.xplatform.impl.JsonObjectImpl
+   * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonObject()
+   * @generated
+   */
+  int JSON_OBJECT = 9;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_OBJECT__VALUE = JSON_COMPOSITE_VALUE__VALUE;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -414,7 +442,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_OBJECT__KEY_VALUE_PAIR = JSON_OBJECT_VALUE_FEATURE_COUNT + 0;
+  int JSON_OBJECT__KEY_VALUE_PAIR = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Json Object</em>' class.
@@ -423,7 +451,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_OBJECT_FEATURE_COUNT = JSON_OBJECT_VALUE_FEATURE_COUNT + 1;
+  int JSON_OBJECT_FEATURE_COUNT = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.JsonKeyValuePairImpl <em>Json Key Value Pair</em>}' class.
@@ -433,7 +461,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonKeyValuePair()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 9;
+  int JSON_KEY_VALUE_PAIR = 10;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -470,7 +498,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 10;
+  int JSON_ARRAY = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -479,7 +507,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_ARRAY__VALUE = JSON_OBJECT_VALUE__VALUE;
+  int JSON_ARRAY__VALUE = JSON_COMPOSITE_VALUE__VALUE;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -488,7 +516,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_ARRAY__ITEMS = JSON_OBJECT_VALUE_FEATURE_COUNT + 0;
+  int JSON_ARRAY__ITEMS = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Json Array</em>' class.
@@ -497,7 +525,7 @@ public interface XplatformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_ARRAY_FEATURE_COUNT = JSON_OBJECT_VALUE_FEATURE_COUNT + 1;
+  int JSON_ARRAY_FEATURE_COUNT = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link nl.sison.xplatform.impl.XplatformResourceDefinitionImpl <em>Resource Definition</em>}' class.
@@ -507,7 +535,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getXplatformResourceDefinition()
    * @generated
    */
-  int XPLATFORM_RESOURCE_DEFINITION = 11;
+  int XPLATFORM_RESOURCE_DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -535,7 +563,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 12;
+  int ENUM_INSTANCE = 13;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -581,7 +609,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 13;
+  int MAP_INSTANCE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,7 +655,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getNestedType()
    * @generated
    */
-  int NESTED_TYPE = 15;
+  int NESTED_TYPE = 16;
 
   /**
    * The number of structural features of the '<em>Nested Type</em>' class.
@@ -646,7 +674,7 @@ public interface XplatformPackage extends EPackage
    * @see nl.sison.xplatform.impl.XplatformPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 14;
+  int STRING_LIST = 15;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -966,6 +994,16 @@ public interface XplatformPackage extends EPackage
    * @generated
    */
   EAttribute getJsonObjectValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.xplatform.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Json Composite Value</em>'.
+   * @see nl.sison.xplatform.JsonCompositeValue
+   * @generated
+   */
+  EClass getJsonCompositeValue();
 
   /**
    * Returns the meta object for class '{@link nl.sison.xplatform.JsonObject <em>Json Object</em>}'.
@@ -1430,6 +1468,16 @@ public interface XplatformPackage extends EPackage
      * @generated
      */
     EAttribute JSON_OBJECT_VALUE__VALUE = eINSTANCE.getJsonObjectValue_Value();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.xplatform.impl.JsonCompositeValueImpl
+     * @see nl.sison.xplatform.impl.XplatformPackageImpl#getJsonCompositeValue()
+     * @generated
+     */
+    EClass JSON_COMPOSITE_VALUE = eINSTANCE.getJsonCompositeValue();
 
     /**
      * The meta object literal for the '{@link nl.sison.xplatform.impl.JsonObjectImpl <em>Json Object</em>}' class.

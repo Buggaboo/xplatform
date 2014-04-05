@@ -280,6 +280,62 @@ finally {
 
 
 
+// Entry rule entryRuleJsonCompositeValue
+entryRuleJsonCompositeValue 
+:
+{ before(grammarAccess.getJsonCompositeValueRule()); }
+	 ruleJsonCompositeValue
+{ after(grammarAccess.getJsonCompositeValueRule()); } 
+	 EOF 
+;
+
+// Rule JsonCompositeValue
+ruleJsonCompositeValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getJsonCompositeValueAccess().getAlternatives()); }
+(rule__JsonCompositeValue__Alternatives)
+{ after(grammarAccess.getJsonCompositeValueAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleJsonLiteralValue
+entryRuleJsonLiteralValue 
+:
+{ before(grammarAccess.getJsonLiteralValueRule()); }
+	 ruleJsonLiteralValue
+{ after(grammarAccess.getJsonLiteralValueRule()); } 
+	 EOF 
+;
+
+// Rule JsonLiteralValue
+ruleJsonLiteralValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getJsonLiteralValueAccess().getAlternatives()); }
+(rule__JsonLiteralValue__Alternatives)
+{ after(grammarAccess.getJsonLiteralValueAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleJsonObject
 entryRuleJsonObject 
 :
@@ -561,51 +617,83 @@ rule__JsonObjectValue__Alternatives
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJsonObjectParserRuleCall_1()); }
+{ before(grammarAccess.getJsonObjectValueAccess().getJsonCompositeValueParserRuleCall_1()); }
+	ruleJsonCompositeValue
+{ after(grammarAccess.getJsonObjectValueAccess().getJsonCompositeValueParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__JsonCompositeValue__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); }
 	ruleJsonObject
-{ after(grammarAccess.getJsonObjectValueAccess().getJsonObjectParserRuleCall_1()); }
+{ after(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJsonArrayParserRuleCall_2()); }
+{ before(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); }
 	ruleJsonArray
-{ after(grammarAccess.getJsonObjectValueAccess().getJsonArrayParserRuleCall_2()); }
+{ after(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__JsonLiteralValue__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); }
+	RULE_STRING
+{ after(grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_3()); }
+{ before(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); }
 	RULE_EMPTY_JSON_OBJECT
-{ after(grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_3()); }
+{ after(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_4()); }
+{ before(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); }
 	RULE_EMPTY_JSON_ARRAY
-{ after(grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_4()); }
+{ after(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_5()); }
+{ before(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); }
 	RULE_JSON_LITERAL_BOOLEAN
-{ after(grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_5()); }
+{ after(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_6()); }
+{ before(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); }
 	RULE_JSON_LITERAL_NULL
-{ after(grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_6()); }
+{ after(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); }
 )
 
     |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_7()); }
-	RULE_JSON_META_SCALAR_TYPE
-{ after(grammarAccess.getJsonObjectValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_7()); }
-)
-
-    |(
-{ before(grammarAccess.getJsonObjectValueAccess().getJSON_NUMBERTerminalRuleCall_8()); }
+{ before(grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); }
 	RULE_JSON_NUMBER
-{ after(grammarAccess.getJsonObjectValueAccess().getJSON_NUMBERTerminalRuleCall_8()); }
+{ after(grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); }
+)
+
+    |(
+{ before(grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); }
+	RULE_JSON_META_SCALAR_TYPE
+{ after(grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); }
 )
 
 ;
@@ -4275,8 +4363,8 @@ rule__JsonObjectValue__ValueAssignment_0
     }
 :
 (
-{ before(grammarAccess.getJsonObjectValueAccess().getValueSTRINGTerminalRuleCall_0_0()); }
-	RULE_STRING{ after(grammarAccess.getJsonObjectValueAccess().getValueSTRINGTerminalRuleCall_0_0()); }
+{ before(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); }
+	ruleJsonLiteralValue{ after(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); }
 )
 
 ;

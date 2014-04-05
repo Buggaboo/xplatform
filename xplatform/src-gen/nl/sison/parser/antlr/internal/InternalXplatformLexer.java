@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class InternalXplatformLexer extends Lexer {
     public static final int T__40=40;
     public static final int RULE_ID=4;
-    public static final int RULE_JSON_META_SCALAR_TYPE=13;
+    public static final int RULE_JSON_META_SCALAR_TYPE=14;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -42,7 +42,7 @@ public class InternalXplatformLexer extends Lexer {
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int RULE_JSON_NUMBER=14;
+    public static final int RULE_JSON_NUMBER=13;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int RULE_JSON_LITERAL_NULL=12;
@@ -524,8 +524,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_XPLATFORM_HEADER_PARAMETER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1400:33: ( '{' RULE_ID '}' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1400:35: '{' RULE_ID '}'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1476:33: ( '{' RULE_ID '}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1476:35: '{' RULE_ID '}'
             {
             match('{'); 
             mRULE_ID(); 
@@ -546,10 +546,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_RESTFUL_METHODS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 'P':
@@ -589,7 +589,7 @@ public class InternalXplatformLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:25: 'PUT'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:25: 'PUT'
                     {
                     match("PUT"); 
 
@@ -597,7 +597,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:31: 'POST'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:31: 'POST'
                     {
                     match("POST"); 
 
@@ -605,7 +605,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:38: 'GET'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:38: 'GET'
                     {
                     match("GET"); 
 
@@ -613,7 +613,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1402:44: 'DELETE'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1478:44: 'DELETE'
                     {
                     match("DELETE"); 
 
@@ -639,10 +639,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_META_SCALAR_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:28: ( ( 'boolean' | 'number' | 'string' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:30: ( 'boolean' | 'number' | 'string' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:28: ( ( 'boolean' | 'number' | 'string' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:30: ( 'boolean' | 'number' | 'string' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:30: ( 'boolean' | 'number' | 'string' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:30: ( 'boolean' | 'number' | 'string' )
             int alt2=3;
             switch ( input.LA(1) ) {
             case 'b':
@@ -669,7 +669,7 @@ public class InternalXplatformLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:31: 'boolean'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:31: 'boolean'
                     {
                     match("boolean"); 
 
@@ -677,7 +677,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:41: 'number'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:41: 'number'
                     {
                     match("number"); 
 
@@ -685,7 +685,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1404:50: 'string'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1480:50: 'string'
                     {
                     match("string"); 
 
@@ -711,8 +711,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_EMPTY_JSON_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1406:24: ( '{}' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1406:26: '{}'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1482:24: ( '{}' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1482:26: '{}'
             {
             match("{}"); 
 
@@ -732,8 +732,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_EMPTY_JSON_ARRAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1408:23: ( '[]' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1408:25: '[]'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1484:23: ( '[]' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1484:25: '[]'
             {
             match("[]"); 
 
@@ -753,8 +753,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1410:24: ( 'null' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1410:26: 'null'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1486:24: ( 'null' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1486:26: 'null'
             {
             match("null"); 
 
@@ -774,10 +774,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1412:27: ( ( 'true' | 'false' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1412:29: ( 'true' | 'false' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1488:27: ( ( 'true' | 'false' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1488:29: ( 'true' | 'false' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1412:29: ( 'true' | 'false' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1488:29: ( 'true' | 'false' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -795,7 +795,7 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1412:30: 'true'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1488:30: 'true'
                     {
                     match("true"); 
 
@@ -803,7 +803,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1412:37: 'false'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1488:37: 'false'
                     {
                     match("false"); 
 
@@ -829,10 +829,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_JSON_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:18: ( ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )? )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:20: ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:18: ( ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )? )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:20: ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )?
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:20: ( '0' | ( '1..9' )+ RULE_INT )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:20: ( '0' | ( '1..9' )+ RULE_INT )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -850,16 +850,16 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:21: '0'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:21: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:25: ( '1..9' )+ RULE_INT
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:25: ( '1..9' )+ RULE_INT
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:25: ( '1..9' )+
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:25: ( '1..9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -885,7 +885,7 @@ public class InternalXplatformLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:25: '1..9'
+                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:25: '1..9'
                     	    {
                     	    match("1..9"); 
 
@@ -909,7 +909,7 @@ public class InternalXplatformLexer extends Lexer {
 
             }
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:43: ( '.' RULE_INT )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:43: ( '.' RULE_INT )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -918,7 +918,7 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1414:44: '.' RULE_INT
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1490:44: '.' RULE_INT
                     {
                     match('.'); 
                     mRULE_INT(); 
@@ -944,10 +944,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1416:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1416:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1492:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1492:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1416:11: ( '^' )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1492:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -956,7 +956,7 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1416:11: '^'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1492:11: '^'
                     {
                     match('^'); 
 
@@ -974,7 +974,7 @@ public class InternalXplatformLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1416:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1492:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -1023,10 +1023,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1418:10: ( ( '0' .. '9' )+ )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1418:12: ( '0' .. '9' )+
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1494:10: ( ( '0' .. '9' )+ )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1494:12: ( '0' .. '9' )+
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1418:12: ( '0' .. '9' )+
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1494:12: ( '0' .. '9' )+
             int cnt9=0;
             loop9:
             do {
@@ -1040,7 +1040,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1418:13: '0' .. '9'
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1494:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1072,10 +1072,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1093,10 +1093,10 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -1112,7 +1112,7 @@ public class InternalXplatformLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1128,7 +1128,7 @@ public class InternalXplatformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1153,10 +1153,10 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -1172,7 +1172,7 @@ public class InternalXplatformLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1188,7 +1188,7 @@ public class InternalXplatformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1420:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1496:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1231,12 +1231,12 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1422:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1422:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1498:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1498:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1422:24: ( options {greedy=false; } : . )*
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1498:24: ( options {greedy=false; } : . )*
             loop13:
             do {
                 int alt13=2;
@@ -1261,7 +1261,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1422:52: .
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1498:52: .
             	    {
             	    matchAny(); 
 
@@ -1291,12 +1291,12 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -1309,7 +1309,7 @@ public class InternalXplatformLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1329,7 +1329,7 @@ public class InternalXplatformLexer extends Lexer {
                 }
             } while (true);
 
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:40: ( ( '\\r' )? '\\n' )?
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:40: ( ( '\\r' )? '\\n' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1338,9 +1338,9 @@ public class InternalXplatformLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:41: ( '\\r' )? '\\n'
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:41: ( '\\r' )? '\\n'
                     {
-                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:41: ( '\\r' )?
+                    // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:41: ( '\\r' )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -1349,7 +1349,7 @@ public class InternalXplatformLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1424:41: '\\r'
+                            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1500:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1381,10 +1381,10 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1426:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1426:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1502:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1502:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1426:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1502:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -1438,8 +1438,8 @@ public class InternalXplatformLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1428:16: ( . )
-            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1428:18: .
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1504:16: ( . )
+            // ../xplatform/src-gen/nl/sison/parser/antlr/internal/InternalXplatform.g:1504:18: .
             {
             matchAny(); 
 

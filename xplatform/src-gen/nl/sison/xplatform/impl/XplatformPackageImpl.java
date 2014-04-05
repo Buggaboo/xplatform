@@ -4,6 +4,7 @@ package nl.sison.xplatform.impl;
 
 import nl.sison.xplatform.EnumInstance;
 import nl.sison.xplatform.JsonArray;
+import nl.sison.xplatform.JsonCompositeValue;
 import nl.sison.xplatform.JsonKeyValuePair;
 import nl.sison.xplatform.JsonObject;
 import nl.sison.xplatform.JsonObjectValue;
@@ -90,6 +91,13 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * @generated
    */
   private EClass jsonObjectValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jsonCompositeValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -495,6 +503,16 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getJsonCompositeValue()
+  {
+    return jsonCompositeValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getJsonObject()
   {
     return jsonObjectEClass;
@@ -746,6 +764,8 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     jsonObjectValueEClass = createEClass(JSON_OBJECT_VALUE);
     createEAttribute(jsonObjectValueEClass, JSON_OBJECT_VALUE__VALUE);
 
+    jsonCompositeValueEClass = createEClass(JSON_COMPOSITE_VALUE);
+
     jsonObjectEClass = createEClass(JSON_OBJECT);
     createEReference(jsonObjectEClass, JSON_OBJECT__KEY_VALUE_PAIR);
 
@@ -803,8 +823,9 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    jsonObjectEClass.getESuperTypes().add(this.getJsonObjectValue());
-    jsonArrayEClass.getESuperTypes().add(this.getJsonObjectValue());
+    jsonCompositeValueEClass.getESuperTypes().add(this.getJsonObjectValue());
+    jsonObjectEClass.getESuperTypes().add(this.getJsonCompositeValue());
+    jsonArrayEClass.getESuperTypes().add(this.getJsonCompositeValue());
     enumInstanceEClass.getESuperTypes().add(this.getXplatformResourceDefinition());
     stringListEClass.getESuperTypes().add(this.getNestedType());
 
@@ -844,6 +865,8 @@ public class XplatformPackageImpl extends EPackageImpl implements XplatformPacka
 
     initEClass(jsonObjectValueEClass, JsonObjectValue.class, "JsonObjectValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getJsonObjectValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonCompositeValueEClass, JsonCompositeValue.class, "JsonCompositeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(jsonObjectEClass, JsonObject.class, "JsonObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJsonObject_KeyValuePair(), this.getJsonKeyValuePair(), null, "keyValuePair", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface JsonArray extends JsonObjectValue
+public interface JsonArray extends JsonCompositeValue
 {
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.

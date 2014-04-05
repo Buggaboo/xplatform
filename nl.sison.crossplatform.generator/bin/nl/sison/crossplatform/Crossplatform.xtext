@@ -1,9 +1,0 @@
-grammar nl.sison.crossplatform.Crossplatform with org.eclipse.xtext.common.Terminals
-
-generate crossplatform "http://www.sison.nl/crossplatform/Crossplatform"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';

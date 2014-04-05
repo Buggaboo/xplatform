@@ -72,6 +72,7 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
       case XplatformPackage.XPLATFORM_HEADER_KEY_VALUE_PAIR: return createXplatformHeaderKeyValuePair();
       case XplatformPackage.XPLATFORM_JSON: return createXplatformJson();
       case XplatformPackage.JSON_OBJECT_VALUE: return createJsonObjectValue();
+      case XplatformPackage.JSON_COMPOSITE_VALUE: return createJsonCompositeValue();
       case XplatformPackage.JSON_OBJECT: return createJsonObject();
       case XplatformPackage.JSON_KEY_VALUE_PAIR: return createJsonKeyValuePair();
       case XplatformPackage.JSON_ARRAY: return createJsonArray();
@@ -171,6 +172,17 @@ public class XplatformFactoryImpl extends EFactoryImpl implements XplatformFacto
   {
     JsonObjectValueImpl jsonObjectValue = new JsonObjectValueImpl();
     return jsonObjectValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonCompositeValue createJsonCompositeValue()
+  {
+    JsonCompositeValueImpl jsonCompositeValue = new JsonCompositeValueImpl();
+    return jsonCompositeValue;
   }
 
   /**

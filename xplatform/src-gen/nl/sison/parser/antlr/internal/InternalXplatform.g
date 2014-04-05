@@ -726,74 +726,150 @@ ruleJsonObjectValue returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_value_0_0=RULE_STRING
-		{
-			newLeafNode(lv_value_0_0, grammarAccess.getJsonObjectValueAccess().getValueSTRINGTerminalRuleCall_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); 
+	    }
+		lv_value_0_0=ruleJsonLiteralValue		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonObjectValueRule());
+	            $current = createModelElementForParent(grammarAccess.getJsonObjectValueRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"value",
         		lv_value_0_0, 
-        		"STRING");
+        		"JsonLiteralValue");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )
     |
     { 
-        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonObjectParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonCompositeValueParserRuleCall_1()); 
     }
-    this_JsonObject_1=ruleJsonObject
+    this_JsonCompositeValue_1=ruleJsonCompositeValue
     { 
-        $current = $this_JsonObject_1.current; 
+        $current = $this_JsonCompositeValue_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleJsonCompositeValue
+entryRuleJsonCompositeValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonCompositeValueRule()); }
+	 iv_ruleJsonCompositeValue=ruleJsonCompositeValue 
+	 { $current=$iv_ruleJsonCompositeValue.current; } 
+	 EOF 
+;
+
+// Rule JsonCompositeValue
+ruleJsonCompositeValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); 
+    }
+    this_JsonObject_0=ruleJsonObject
+    { 
+        $current = $this_JsonObject_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getJsonArrayParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); 
     }
-    this_JsonArray_2=ruleJsonArray
+    this_JsonArray_1=ruleJsonArray
     { 
-        $current = $this_JsonArray_2.current; 
+        $current = $this_JsonArray_1.current; 
         afterParserOrEnumRuleCall();
-    }
-
-    |this_EMPTY_JSON_OBJECT_3=RULE_EMPTY_JSON_OBJECT
-    { 
-    newLeafNode(this_EMPTY_JSON_OBJECT_3, grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_3()); 
-    }
-
-    |this_EMPTY_JSON_ARRAY_4=RULE_EMPTY_JSON_ARRAY
-    { 
-    newLeafNode(this_EMPTY_JSON_ARRAY_4, grammarAccess.getJsonObjectValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_4()); 
-    }
-
-    |this_JSON_LITERAL_BOOLEAN_5=RULE_JSON_LITERAL_BOOLEAN
-    { 
-    newLeafNode(this_JSON_LITERAL_BOOLEAN_5, grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_5()); 
-    }
-
-    |this_JSON_LITERAL_NULL_6=RULE_JSON_LITERAL_NULL
-    { 
-    newLeafNode(this_JSON_LITERAL_NULL_6, grammarAccess.getJsonObjectValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_6()); 
-    }
-
-    |this_JSON_META_SCALAR_TYPE_7=RULE_JSON_META_SCALAR_TYPE
-    { 
-    newLeafNode(this_JSON_META_SCALAR_TYPE_7, grammarAccess.getJsonObjectValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_7()); 
-    }
-
-    |this_JSON_NUMBER_8=RULE_JSON_NUMBER
-    { 
-    newLeafNode(this_JSON_NUMBER_8, grammarAccess.getJsonObjectValueAccess().getJSON_NUMBERTerminalRuleCall_8()); 
     }
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleJsonLiteralValue
+entryRuleJsonLiteralValue returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonLiteralValueRule()); } 
+	 iv_ruleJsonLiteralValue=ruleJsonLiteralValue 
+	 { $current=$iv_ruleJsonLiteralValue.current.getText(); }  
+	 EOF 
+;
+
+// Rule JsonLiteralValue
+ruleJsonLiteralValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); 
+    }
+
+    |    this_EMPTY_JSON_OBJECT_1=RULE_EMPTY_JSON_OBJECT    {
+		$current.merge(this_EMPTY_JSON_OBJECT_1);
+    }
+
+    { 
+    newLeafNode(this_EMPTY_JSON_OBJECT_1, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); 
+    }
+
+    |    this_EMPTY_JSON_ARRAY_2=RULE_EMPTY_JSON_ARRAY    {
+		$current.merge(this_EMPTY_JSON_ARRAY_2);
+    }
+
+    { 
+    newLeafNode(this_EMPTY_JSON_ARRAY_2, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); 
+    }
+
+    |    this_JSON_LITERAL_BOOLEAN_3=RULE_JSON_LITERAL_BOOLEAN    {
+		$current.merge(this_JSON_LITERAL_BOOLEAN_3);
+    }
+
+    { 
+    newLeafNode(this_JSON_LITERAL_BOOLEAN_3, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); 
+    }
+
+    |    this_JSON_LITERAL_NULL_4=RULE_JSON_LITERAL_NULL    {
+		$current.merge(this_JSON_LITERAL_NULL_4);
+    }
+
+    { 
+    newLeafNode(this_JSON_LITERAL_NULL_4, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); 
+    }
+
+    |    this_JSON_NUMBER_5=RULE_JSON_NUMBER    {
+		$current.merge(this_JSON_NUMBER_5);
+    }
+
+    { 
+    newLeafNode(this_JSON_NUMBER_5, grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); 
+    }
+
+    |    this_JSON_META_SCALAR_TYPE_6=RULE_JSON_META_SCALAR_TYPE    {
+		$current.merge(this_JSON_META_SCALAR_TYPE_6);
+    }
+
+    { 
+    newLeafNode(this_JSON_META_SCALAR_TYPE_6, grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); 
+    }
+)
+    ;
 
 
 

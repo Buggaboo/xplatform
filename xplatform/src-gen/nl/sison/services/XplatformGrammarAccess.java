@@ -441,87 +441,88 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonObjectValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
-		private final RuleCall cJsonObjectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cJsonArrayParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cEMPTY_JSON_OBJECTTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cEMPTY_JSON_ARRAYTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cJSON_LITERAL_BOOLEANTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cJSON_LITERAL_NULLTerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cJSON_META_SCALAR_TYPETerminalRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cJSON_NUMBERTerminalRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cValueJsonLiteralValueParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final RuleCall cJsonCompositeValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		/// *
-		//
-		//
-		//JsonMetaType:
-		//	scalar=JsonMetaScalarType | composite=JsonMetaArray
-		//;
-		//
-		//JsonCompositeType:
-		//	composite=JsonArray
-		//;
-		//
-		//JsonType:
-		//	scalar=JsonScalarType | composite=JsonCompositeType
-		//;
-		//
-		//JsonScalarType:
-		//	bool=JSON_LITERAL_BOOLEAN | string=STRING | number= | null=JSON_LITERAL_NULL 
-		//;
-		//
-		//JsonArray:
-		//	('[' (elements+=JsonScalarType) (',' elements+=JsonScalarType )* (',')? ']') |
-		//	('[' (composites+=JsonCompositeType) (',' composites+=JsonCompositeType )* (',')? ']')
-		//;
-		//
-		//JsonObject:
-		//	'{'
-		//		(keys+=STRING ':' values+=XplatformJson)
-		//		(','
-		//			keys+=STRING ':' values+=XplatformJson
-		//		)* (',')?
-		//	'}'
-		//;
-		// * / // Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
-		//JsonObjectValue:
-		//	value=STRING | JsonObject | JsonArray | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN |
-		//	JSON_LITERAL_NULL | JSON_META_SCALAR_TYPE | JSON_NUMBER;
+		/// **
+		// *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
+		// * / JsonObjectValue:
+		//	value=JsonLiteralValue | JsonCompositeValue;
 		public ParserRule getRule() { return rule; }
 
-		//value=STRING | JsonObject | JsonArray | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL
-		//| JSON_META_SCALAR_TYPE | JSON_NUMBER
+		//value=JsonLiteralValue | JsonCompositeValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//value=STRING
+		//value=JsonLiteralValue
 		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
 
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_0() { return cValueSTRINGTerminalRuleCall_0_0; }
+		//JsonLiteralValue
+		public RuleCall getValueJsonLiteralValueParserRuleCall_0_0() { return cValueJsonLiteralValueParserRuleCall_0_0; }
+
+		//JsonCompositeValue
+		public RuleCall getJsonCompositeValueParserRuleCall_1() { return cJsonCompositeValueParserRuleCall_1; }
+	}
+
+	public class JsonCompositeValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonCompositeValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cJsonObjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cJsonArrayParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//JsonCompositeValue:
+		//	JsonObject | JsonArray;
+		public ParserRule getRule() { return rule; }
+
+		//JsonObject | JsonArray
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//JsonObject
-		public RuleCall getJsonObjectParserRuleCall_1() { return cJsonObjectParserRuleCall_1; }
+		public RuleCall getJsonObjectParserRuleCall_0() { return cJsonObjectParserRuleCall_0; }
 
 		//JsonArray
-		public RuleCall getJsonArrayParserRuleCall_2() { return cJsonArrayParserRuleCall_2; }
+		public RuleCall getJsonArrayParserRuleCall_1() { return cJsonArrayParserRuleCall_1; }
+	}
+
+	public class JsonLiteralValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonLiteralValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEMPTY_JSON_OBJECTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEMPTY_JSON_ARRAYTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cJSON_LITERAL_BOOLEANTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cJSON_LITERAL_NULLTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cJSON_NUMBERTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cJSON_META_SCALAR_TYPETerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		
+		//JsonLiteralValue:
+		//	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
+		//	JSON_META_SCALAR_TYPE;
+		public ParserRule getRule() { return rule; }
+
+		//STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
+		//JSON_META_SCALAR_TYPE
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
 
 		//EMPTY_JSON_OBJECT
-		public RuleCall getEMPTY_JSON_OBJECTTerminalRuleCall_3() { return cEMPTY_JSON_OBJECTTerminalRuleCall_3; }
+		public RuleCall getEMPTY_JSON_OBJECTTerminalRuleCall_1() { return cEMPTY_JSON_OBJECTTerminalRuleCall_1; }
 
 		//EMPTY_JSON_ARRAY
-		public RuleCall getEMPTY_JSON_ARRAYTerminalRuleCall_4() { return cEMPTY_JSON_ARRAYTerminalRuleCall_4; }
+		public RuleCall getEMPTY_JSON_ARRAYTerminalRuleCall_2() { return cEMPTY_JSON_ARRAYTerminalRuleCall_2; }
 
 		//JSON_LITERAL_BOOLEAN
-		public RuleCall getJSON_LITERAL_BOOLEANTerminalRuleCall_5() { return cJSON_LITERAL_BOOLEANTerminalRuleCall_5; }
+		public RuleCall getJSON_LITERAL_BOOLEANTerminalRuleCall_3() { return cJSON_LITERAL_BOOLEANTerminalRuleCall_3; }
 
 		//JSON_LITERAL_NULL
-		public RuleCall getJSON_LITERAL_NULLTerminalRuleCall_6() { return cJSON_LITERAL_NULLTerminalRuleCall_6; }
-
-		//JSON_META_SCALAR_TYPE
-		public RuleCall getJSON_META_SCALAR_TYPETerminalRuleCall_7() { return cJSON_META_SCALAR_TYPETerminalRuleCall_7; }
+		public RuleCall getJSON_LITERAL_NULLTerminalRuleCall_4() { return cJSON_LITERAL_NULLTerminalRuleCall_4; }
 
 		//JSON_NUMBER
-		public RuleCall getJSON_NUMBERTerminalRuleCall_8() { return cJSON_NUMBERTerminalRuleCall_8; }
+		public RuleCall getJSON_NUMBERTerminalRuleCall_5() { return cJSON_NUMBERTerminalRuleCall_5; }
+
+		//JSON_META_SCALAR_TYPE
+		public RuleCall getJSON_META_SCALAR_TYPETerminalRuleCall_6() { return cJSON_META_SCALAR_TYPETerminalRuleCall_6; }
 	}
 
 	public class JsonObjectElements extends AbstractParserRuleElementFinder {
@@ -910,6 +911,8 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tRESTFUL_METHODS;
 	private XplatformJsonElements pXplatformJson;
 	private JsonObjectValueElements pJsonObjectValue;
+	private JsonCompositeValueElements pJsonCompositeValue;
+	private JsonLiteralValueElements pJsonLiteralValue;
 	private JsonObjectElements pJsonObject;
 	private JsonKeyValuePairElements pJsonKeyValuePair;
 	private JsonArrayElements pJsonArray;
@@ -1053,48 +1056,37 @@ public class XplatformGrammarAccess extends AbstractGrammarElementFinder {
 		return getXplatformJsonAccess().getRule();
 	}
 
-	/// *
-	//
-	//
-	//JsonMetaType:
-	//	scalar=JsonMetaScalarType | composite=JsonMetaArray
-	//;
-	//
-	//JsonCompositeType:
-	//	composite=JsonArray
-	//;
-	//
-	//JsonType:
-	//	scalar=JsonScalarType | composite=JsonCompositeType
-	//;
-	//
-	//JsonScalarType:
-	//	bool=JSON_LITERAL_BOOLEAN | string=STRING | number= | null=JSON_LITERAL_NULL 
-	//;
-	//
-	//JsonArray:
-	//	('[' (elements+=JsonScalarType) (',' elements+=JsonScalarType )* (',')? ']') |
-	//	('[' (composites+=JsonCompositeType) (',' composites+=JsonCompositeType )* (',')? ']')
-	//;
-	//
-	//JsonObject:
-	//	'{'
-	//		(keys+=STRING ':' values+=XplatformJson)
-	//		(','
-	//			keys+=STRING ':' values+=XplatformJson
-	//		)* (',')?
-	//	'}'
-	//;
-	// * / // Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
-	//JsonObjectValue:
-	//	value=STRING | JsonObject | JsonArray | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN |
-	//	JSON_LITERAL_NULL | JSON_META_SCALAR_TYPE | JSON_NUMBER;
+	/// **
+	// *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
+	// * / JsonObjectValue:
+	//	value=JsonLiteralValue | JsonCompositeValue;
 	public JsonObjectValueElements getJsonObjectValueAccess() {
 		return (pJsonObjectValue != null) ? pJsonObjectValue : (pJsonObjectValue = new JsonObjectValueElements());
 	}
 	
 	public ParserRule getJsonObjectValueRule() {
 		return getJsonObjectValueAccess().getRule();
+	}
+
+	//JsonCompositeValue:
+	//	JsonObject | JsonArray;
+	public JsonCompositeValueElements getJsonCompositeValueAccess() {
+		return (pJsonCompositeValue != null) ? pJsonCompositeValue : (pJsonCompositeValue = new JsonCompositeValueElements());
+	}
+	
+	public ParserRule getJsonCompositeValueRule() {
+		return getJsonCompositeValueAccess().getRule();
+	}
+
+	//JsonLiteralValue:
+	//	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
+	//	JSON_META_SCALAR_TYPE;
+	public JsonLiteralValueElements getJsonLiteralValueAccess() {
+		return (pJsonLiteralValue != null) ? pJsonLiteralValue : (pJsonLiteralValue = new JsonLiteralValueElements());
+	}
+	
+	public ParserRule getJsonLiteralValueRule() {
+		return getJsonLiteralValueAccess().getRule();
 	}
 
 	//JsonObject:

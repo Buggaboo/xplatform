@@ -43,6 +43,7 @@
     <genClasses ecoreClass="Xplatform.ecore#//JsonObjectValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xplatform.ecore#//JsonObjectValue/value"/>
     </genClasses>
+    <genClasses ecoreClass="Xplatform.ecore#//JsonCompositeValue"/>
     <genClasses ecoreClass="Xplatform.ecore#//JsonObject">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xplatform.ecore#//JsonObject/keyValuePair"/>
     </genClasses>

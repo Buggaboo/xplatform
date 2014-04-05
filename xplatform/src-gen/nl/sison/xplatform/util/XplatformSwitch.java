@@ -128,10 +128,19 @@ public class XplatformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XplatformPackage.JSON_COMPOSITE_VALUE:
+      {
+        JsonCompositeValue jsonCompositeValue = (JsonCompositeValue)theEObject;
+        T result = caseJsonCompositeValue(jsonCompositeValue);
+        if (result == null) result = caseJsonObjectValue(jsonCompositeValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XplatformPackage.JSON_OBJECT:
       {
         JsonObject jsonObject = (JsonObject)theEObject;
         T result = caseJsonObject(jsonObject);
+        if (result == null) result = caseJsonCompositeValue(jsonObject);
         if (result == null) result = caseJsonObjectValue(jsonObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -147,6 +156,7 @@ public class XplatformSwitch<T> extends Switch<T>
       {
         JsonArray jsonArray = (JsonArray)theEObject;
         T result = caseJsonArray(jsonArray);
+        if (result == null) result = caseJsonCompositeValue(jsonArray);
         if (result == null) result = caseJsonObjectValue(jsonArray);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -316,6 +326,22 @@ public class XplatformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonObjectValue(JsonObjectValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonCompositeValue(JsonCompositeValue object)
   {
     return null;
   }

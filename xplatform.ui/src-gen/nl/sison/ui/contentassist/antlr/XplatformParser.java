@@ -40,6 +40,8 @@ public class XplatformParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXplatformAccess().getAlternatives_1(), "rule__Xplatform__Alternatives_1");
 					put(grammarAccess.getXplatformHeaderKeyValuePairAccess().getAlternatives_2(), "rule__XplatformHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getJsonObjectValueAccess().getAlternatives(), "rule__JsonObjectValue__Alternatives");
+					put(grammarAccess.getJsonCompositeValueAccess().getAlternatives(), "rule__JsonCompositeValue__Alternatives");
+					put(grammarAccess.getJsonLiteralValueAccess().getAlternatives(), "rule__JsonLiteralValue__Alternatives");
 					put(grammarAccess.getXplatformResourceDefinitionAccess().getAlternatives(), "rule__XplatformResourceDefinition__Alternatives");
 					put(grammarAccess.getNestedTypeAccess().getAlternatives(), "rule__NestedType__Alternatives");
 					put(grammarAccess.getXplatformAccess().getGroup(), "rule__Xplatform__Group__0");

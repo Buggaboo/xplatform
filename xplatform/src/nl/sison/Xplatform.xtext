@@ -2,8 +2,6 @@ grammar nl.sison.Xplatform with org.eclipse.xtext.common.Terminals
 
 /*
  * 
- * This grammar describes how enum and maps should be defined to generate them
- * 
  * Handy links:
  * * http://pettergraff.blogspot.nl/2009/12/deploying-code-generator-with.html
  * * http://charandeepmatta.com/2012/09/01/how-to-generate-eclipse-plugin-for-your-dsl-written-in-xtext/ - sharing your plugin
@@ -90,7 +88,15 @@ XplatformJson:
  *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
  */
 JsonObjectValue:
-	value=STRING | JsonObject | JsonArray | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_META_SCALAR_TYPE | JSON_NUMBER
+	value=JsonLiteralValue | JsonCompositeValue
+;
+
+JsonCompositeValue:
+	JsonObject | JsonArray
+;
+
+JsonLiteralValue:
+	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL |  JSON_NUMBER | JSON_META_SCALAR_TYPE
 ;
 
 JsonObject:

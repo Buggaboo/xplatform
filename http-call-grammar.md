@@ -34,19 +34,16 @@ Restful GET/HEAD example
         "key1" : number,
         "key2" : string,
         alsoInCodeRenameToThisPropertyName("key3") : string?, // This is optional, the value might be null, or the whole key:value might be missing
-        "key4" : enum FourEnumValues {"this" | "that" | "something" | "else" },
+        "key4" : enum {"this" | "that" | "something" | "else" },
         "numberList" : [ number ],
         "stringList" : [ string ],
         "booleanList" : [ boolean ]
         "nestedJsonObject" :
-            Nested
-            '''
-            {
-                "meh" : [boolean],
-                "bla" : [string],
-                "hmf" : [number],
-            }
-            '''
+        {
+            "meh" : [boolean],
+            "bla" : [string],
+            "hmf" : [number],
+        }
     }
     '''
     or
