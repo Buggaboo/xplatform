@@ -1,9 +1,9 @@
-Xplatform
-=========
+Mobgen
+======
 
-Xplatform is a (mobile) crossplatform json parser + model and asset generator, created with xtext + xtend.
+Mobgen is a (mobile) crossplatform json parser + model and asset generator, created with xtext + xtend.
 
-This was created with the idea to quickly generate scaffolding code for making http calls from a diverse range of mobile applications on different platforms, as native as you can grok, according to the best practices from each platform.
+The goal of this project is to quickly generate scaffolding code for making http calls from a diverse range of mobile applications on different platforms, as native as you can grok, according to the best practices from each platform.
 
 From the back end and front end perspective.
 

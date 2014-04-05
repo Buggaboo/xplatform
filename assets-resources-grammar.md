@@ -1,4 +1,4 @@
-Examples of crossplatform string resources / translation files etc.
+Examples of cross platform string resources / translation files etc.
 ===================================================================
 
 Plist style syntax:
