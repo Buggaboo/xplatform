@@ -23,17 +23,49 @@ class MobgenAndroidTests {
     /**
      * These are just resource constants for android
      */
-    @Test def testMapInstance()
+    @Test def testEnumInstance()
     {
-    	
-    }
+    	assertTrue(true)
+	}
     
     /**
      * This generates enum classes for android
      */
-    @Test def testEnumInstance()
+    @Test def testMapInstance()
     {
-    	
+		val model = parseHelper.parse('''
+        map Alice
+        {
+        	label1 : "label1"
+        	label2 : "label2"
+        	hint1 : "hint1"
+        	hint2 : "hint2"
+        }
+        ''')
+
+        val fsa = new InMemoryFileSystemAccess()
+        underTest.doGenerate(model.eResource, fsa)            
+            
+		println(fsa.files)
+        val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"mobgen_strings.xml"
+
+//		assertTrue(fsa.files.containsKey(androidFileName))
+		
+		val expected ='''
+		<?xml version="1.0" encoding="utf-8"?>
+		<resources>
+			<string name="alice_label1">label1</string>
+			<string name="alice_label2">label2</string>
+			<string name="alice_hint1">hint1</string>
+			<string name="alice_hint2">hint2</string>
+		</resources>'''.toString
+		
+		val whatWeGot = fsa.files.get(androidFileName).toString
+		
+		println("expected: " + expected)
+		println("what we got: " + whatWeGot)
+		
+        assertEquals(expected, whatWeGot)
     }
     
 }
