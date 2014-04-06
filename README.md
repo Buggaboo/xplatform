@@ -15,7 +15,7 @@ Use the Domain Specific Language (DSL) for xplatform (in .xplatform files), to g
 TODO create videos how to set it up.
 
 
-Features on supported platforms
+Planned features on supported platforms
 -------------------------------
 * Android: xml string resource files, standard JSON parser code, POJ for Parcelable models, for use in AsyncTaskLoaders<Parcelable>.
 * iOS: plists, standard JSON parser, starting from iOS5, objective C code with @property for use in delegates for http calls.
@@ -27,16 +27,11 @@ Roadmap: front end
 * Blackberry 10
 * iOS
 * Windows
-* GreenSQL style database schema generation / iOS core data
 
 Roadmap: back end
 -----------------
-* node.js
-* Dependency Injection (DI)style mockapi generation
+* Spark (pure java restful web framework) + xtend
 * BSON
-* Spring
-* JEE
-* Database schema generation for PosgreSQL (bjson/bson)?
 
 Dependencies
 ------------
