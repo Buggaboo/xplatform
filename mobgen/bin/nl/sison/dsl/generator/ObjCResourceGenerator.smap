@@ -1,0 +1,10 @@
+SMAP
+ObjCResourceGenerator.java
+Xtend
+*S Xtend
+*F
++ 0 MobgenGenerator.xtend
+src/nl/sison/dsl/generator/MobgenGenerator.xtend
+*L
+115:10,2
+*E

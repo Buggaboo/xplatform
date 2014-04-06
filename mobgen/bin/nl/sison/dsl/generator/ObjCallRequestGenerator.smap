@@ -1,0 +1,10 @@
+SMAP
+ObjCallRequestGenerator.java
+Xtend
+*S Xtend
+*F
++ 0 MobgenGenerator.xtend
+src/nl/sison/dsl/generator/MobgenGenerator.xtend
+*L
+95:10,2
+*E

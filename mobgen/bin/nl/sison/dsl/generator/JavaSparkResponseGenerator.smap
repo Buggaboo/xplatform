@@ -1,0 +1,10 @@
+SMAP
+JavaSparkResponseGenerator.java
+Xtend
+*S Xtend
+*F
++ 0 MobgenGenerator.xtend
+src/nl/sison/dsl/generator/MobgenGenerator.xtend
+*L
+133:10,2
+*E

@@ -1,0 +1,10 @@
+SMAP
+AndroidCallRequestGenerator.java
+Xtend
+*S Xtend
+*F
++ 0 MobgenGenerator.xtend
+src/nl/sison/dsl/generator/MobgenGenerator.xtend
+*L
+106:10,2
+*E
