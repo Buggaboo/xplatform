@@ -31,7 +31,7 @@ class MobgenAndroidTests {
     /**
      * This generates enum classes for android
      */
-    @Test def testMapInstance()
+    @Test def testMapInstanceOnlyKeyValuePairs()
     {
 		val model = parseHelper.parse('''
         map Alice
@@ -46,7 +46,7 @@ class MobgenAndroidTests {
         val fsa = new InMemoryFileSystemAccess()
         underTest.doGenerate(model.eResource, fsa)            
             
-		println(fsa.files)
+//		println(fsa.files)
         val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"mobgen_strings.xml"
 
 //		assertTrue(fsa.files.containsKey(androidFileName))
@@ -58,6 +58,40 @@ class MobgenAndroidTests {
 			<string name="alice_label2">label2</string>
 			<string name="alice_hint1">hint1</string>
 			<string name="alice_hint2">hint2</string>
+		</resources>'''.toString
+		
+		val whatWeGot = fsa.files.get(androidFileName).toString
+		
+		println("expected: " + expected)
+		println("what we got: " + whatWeGot)
+		
+        assertEquals(expected, whatWeGot)
+    }
+    
+	@Test def testMapInstanceOnlyLists()
+    {
+		val model = parseHelper.parse('''
+        map Alice
+        {
+        	label1 : ["a", "b"],
+        }
+        ''')
+
+        val fsa = new InMemoryFileSystemAccess()
+        underTest.doGenerate(model.eResource, fsa)            
+            
+//		println(fsa.files)
+        val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"mobgen_strings.xml"
+
+//		assertTrue(fsa.files.containsKey(androidFileName))
+		
+		val expected ='''
+		<?xml version="1.0" encoding="utf-8"?>
+		<resources>
+			<string-array name="alice_label1">
+				<item>a</item>
+				<item>b</item>
+			</string-array>
 		</resources>'''.toString
 		
 		val whatWeGot = fsa.files.get(androidFileName).toString

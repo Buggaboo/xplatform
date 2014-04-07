@@ -1385,9 +1385,9 @@ ruleStringList returns [EObject current=null]
     }
 (
 (
-		lv_values_1_0=RULE_STRING
+		lv_items_1_0=RULE_STRING
 		{
-			newLeafNode(lv_values_1_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
+			newLeafNode(lv_items_1_0, grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1395,8 +1395,8 @@ ruleStringList returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"values",
-        		lv_values_1_0, 
+       			"items",
+        		lv_items_1_0, 
         		"STRING");
 	    }
 
@@ -1407,9 +1407,9 @@ ruleStringList returns [EObject current=null]
     }
 (
 (
-		lv_values_3_0=RULE_STRING
+		lv_items_3_0=RULE_STRING
 		{
-			newLeafNode(lv_values_3_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_items_3_0, grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1417,8 +1417,8 @@ ruleStringList returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"values",
-        		lv_values_3_0, 
+       			"items",
+        		lv_items_3_0, 
         		"STRING");
 	    }
 

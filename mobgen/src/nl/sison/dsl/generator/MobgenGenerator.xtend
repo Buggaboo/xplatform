@@ -28,6 +28,9 @@ class AndroidResourceGenerator implements IGenerator
 		enumInstances.writeJavaEnumFiles(fsa)
 	}
 	
+	/**
+	 * Enum related stuff
+	 */
 	def writeJavaEnumFiles(Iterator<EnumInstance> instances, IFileSystemAccess fsa) {
 		instances.forEach(m | fsa.generateFile(m.name.capitalizeFirstLetter+'Enum',
 			m.name.capitalizeFirstLetter.javaEnumTemplate(m.values.join(",\n"))
@@ -53,29 +56,30 @@ class AndroidResourceGenerator implements IGenerator
 		return instances.map(m | m.joinAndroidMapNameWithKeyValuePairs ).join('')
 	}
 	
-	def ArrayList<String> joinAndroidMapNameWithKeyValuePairs(MapInstance instance)
+	def String joinAndroidMapNameWithKeyValuePairs(MapInstance instance)
 	{
 		val name = instance.name.toLowerCase
 		val keys = instance.keys.listIterator
 		val values = instance.values.listIterator
 	
-		var result = new ArrayList<String>; // TODO use StringBuffer
-	
+		var result = new StringBuffer; // TODO use StringBuffer
+
 		while (keys.hasNext && values.hasNext)
 		{
 			val value = values.next
 			if (value instanceof StringList) // test
 			{
-				val stringList = value.eAllContents.filter(typeof(StringList))
-				val items = stringList.toList.map(s | s.toString.androidResourceItemize).join("\n")
-				result.add(name.androidKeyStringArray(keys.next, items).toString)
+//				val item = value. 
+				//.map(s | s.toString.androidResourceItemize).join("\n")
+//				result.append(name.androidKeyStringArray(keys.next, items).toString)
 			}else
 			{
-				result.add(name.androidKeyString(keys.next, value.toString).toString)
+				result.append(name.androidKeyString(keys.next, value.toString).toString)
 			}
 		}
-	
-		return result	
+
+		println("result: " + result.toString)	
+		return result.toString
 	}
 	
 	def androidKeyString(CharSequence mapName, CharSequence key, CharSequence value) '''

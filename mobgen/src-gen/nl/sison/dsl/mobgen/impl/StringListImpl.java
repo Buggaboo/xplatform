@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.StringListImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.StringListImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +29,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class StringListImpl extends NestedTypeImpl implements StringList
 {
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The cached value of the '{@link #getItems() <em>Items</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValues()
+   * @see #getItems()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
+  protected EList<String> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +64,13 @@ public class StringListImpl extends NestedTypeImpl implements StringList
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getValues()
+  public EList<String> getItems()
   {
-    if (values == null)
+    if (items == null)
     {
-      values = new EDataTypeEList<String>(String.class, this, MobgenPackage.STRING_LIST__VALUES);
+      items = new EDataTypeEList<String>(String.class, this, MobgenPackage.STRING_LIST__ITEMS);
     }
-    return values;
+    return items;
   }
 
   /**
@@ -83,8 +83,8 @@ public class StringListImpl extends NestedTypeImpl implements StringList
   {
     switch (featureID)
     {
-      case MobgenPackage.STRING_LIST__VALUES:
-        return getValues();
+      case MobgenPackage.STRING_LIST__ITEMS:
+        return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -100,9 +100,9 @@ public class StringListImpl extends NestedTypeImpl implements StringList
   {
     switch (featureID)
     {
-      case MobgenPackage.STRING_LIST__VALUES:
-        getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+      case MobgenPackage.STRING_LIST__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -118,8 +118,8 @@ public class StringListImpl extends NestedTypeImpl implements StringList
   {
     switch (featureID)
     {
-      case MobgenPackage.STRING_LIST__VALUES:
-        getValues().clear();
+      case MobgenPackage.STRING_LIST__ITEMS:
+        getItems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -135,8 +135,8 @@ public class StringListImpl extends NestedTypeImpl implements StringList
   {
     switch (featureID)
     {
-      case MobgenPackage.STRING_LIST__VALUES:
-        return values != null && !values.isEmpty();
+      case MobgenPackage.STRING_LIST__ITEMS:
+        return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -152,8 +152,8 @@ public class StringListImpl extends NestedTypeImpl implements StringList
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (values: ");
-    result.append(values);
+    result.append(" (items: ");
+    result.append(items);
     result.append(')');
     return result.toString();
   }

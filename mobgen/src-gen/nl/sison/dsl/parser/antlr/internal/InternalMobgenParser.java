@@ -3418,39 +3418,39 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringList"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1378:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1378:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_items_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
     public final EObject ruleStringList() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_values_1_0=null;
+        Token lv_items_1_0=null;
         Token otherlv_2=null;
-        Token lv_values_3_0=null;
+        Token lv_items_3_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
 
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1381:28: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1381:28: ( (otherlv_0= '[' ( (lv_items_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:1: (otherlv_0= '[' ( (lv_items_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:1: (otherlv_0= '[' ( (lv_items_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1382:3: otherlv_0= '[' ( (lv_items_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
             {
             otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleStringList3018); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStringListAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1386:1: ( (lv_values_1_0= RULE_STRING ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1387:1: (lv_values_1_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1386:1: ( (lv_items_1_0= RULE_STRING ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1387:1: (lv_items_1_0= RULE_STRING )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1387:1: (lv_values_1_0= RULE_STRING )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1388:3: lv_values_1_0= RULE_STRING
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1387:1: (lv_items_1_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1388:3: lv_items_1_0= RULE_STRING
             {
-            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3035); 
+            lv_items_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3035); 
 
-            			newLeafNode(lv_values_1_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_items_1_0, grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -3458,8 +3458,8 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             	        }
                    		addWithLastConsumed(
                    			current, 
-                   			"values",
-                    		lv_values_1_0, 
+                   			"items",
+                    		lv_items_1_0, 
                     		"STRING");
             	    
 
@@ -3468,7 +3468,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1404:2: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1404:2: (otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -3487,21 +3487,21 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1404:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1404:4: otherlv_2= ',' ( (lv_items_3_0= RULE_STRING ) )
             	    {
             	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleStringList3053); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getStringListAccess().getCommaKeyword_2_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1408:1: ( (lv_values_3_0= RULE_STRING ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1409:1: (lv_values_3_0= RULE_STRING )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1408:1: ( (lv_items_3_0= RULE_STRING ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1409:1: (lv_items_3_0= RULE_STRING )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1409:1: (lv_values_3_0= RULE_STRING )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1410:3: lv_values_3_0= RULE_STRING
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1409:1: (lv_items_3_0= RULE_STRING )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1410:3: lv_items_3_0= RULE_STRING
             	    {
-            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3070); 
+            	    lv_items_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3070); 
 
-            	    			newLeafNode(lv_values_3_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
+            	    			newLeafNode(lv_items_3_0, grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_2_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -3509,8 +3509,8 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		addWithLastConsumed(
             	           			current, 
-            	           			"values",
-            	            		lv_values_3_0, 
+            	           			"items",
+            	            		lv_items_3_0, 
             	            		"STRING");
             	    	    
 

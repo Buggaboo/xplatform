@@ -3867,9 +3867,9 @@ rule__StringList__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getStringListAccess().getValuesAssignment_1()); }
-(rule__StringList__ValuesAssignment_1)
-{ after(grammarAccess.getStringListAccess().getValuesAssignment_1()); }
+{ before(grammarAccess.getStringListAccess().getItemsAssignment_1()); }
+(rule__StringList__ItemsAssignment_1)
+{ after(grammarAccess.getStringListAccess().getItemsAssignment_1()); }
 )
 
 ;
@@ -4026,9 +4026,9 @@ rule__StringList__Group_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getStringListAccess().getValuesAssignment_2_1()); }
-(rule__StringList__ValuesAssignment_2_1)
-{ after(grammarAccess.getStringListAccess().getValuesAssignment_2_1()); }
+{ before(grammarAccess.getStringListAccess().getItemsAssignment_2_1()); }
+(rule__StringList__ItemsAssignment_2_1)
+{ after(grammarAccess.getStringListAccess().getItemsAssignment_2_1()); }
 )
 
 ;
@@ -4597,14 +4597,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringList__ValuesAssignment_1
+rule__StringList__ItemsAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); }
-	RULE_STRING{ after(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_1_0()); }
+	RULE_STRING{ after(grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -4612,14 +4612,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringList__ValuesAssignment_2_1
+rule__StringList__ItemsAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); }
-	RULE_STRING{ after(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); }
+{ before(grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_2_1_0()); }
+	RULE_STRING{ after(grammarAccess.getStringListAccess().getItemsSTRINGTerminalRuleCall_2_1_0()); }
 )
 
 ;

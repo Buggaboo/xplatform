@@ -683,7 +683,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStringList_Values()
+  public EAttribute getStringList_Items()
   {
     return (EAttribute)stringListEClass.getEStructuralFeatures().get(0);
   }
@@ -789,7 +789,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEReference(mapInstanceEClass, MAP_INSTANCE__VALUES);
 
     stringListEClass = createEClass(STRING_LIST);
-    createEAttribute(stringListEClass, STRING_LIST__VALUES);
+    createEAttribute(stringListEClass, STRING_LIST__ITEMS);
 
     nestedTypeEClass = createEClass(NESTED_TYPE);
   }
@@ -891,7 +891,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEReference(getMapInstance_Values(), this.getNestedType(), null, "values", null, 0, -1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringListEClass, StringList.class, "StringList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringList_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringList_Items(), ecorePackage.getEString(), "items", null, 0, -1, StringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nestedTypeEClass, NestedType.class, "NestedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

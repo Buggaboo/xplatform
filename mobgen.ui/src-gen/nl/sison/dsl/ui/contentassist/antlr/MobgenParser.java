@@ -107,8 +107,8 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMapInstanceAccess().getValuesAssignment_3_2(), "rule__MapInstance__ValuesAssignment_3_2");
 					put(grammarAccess.getMapInstanceAccess().getKeysAssignment_4_1(), "rule__MapInstance__KeysAssignment_4_1");
 					put(grammarAccess.getMapInstanceAccess().getValuesAssignment_4_3(), "rule__MapInstance__ValuesAssignment_4_3");
-					put(grammarAccess.getStringListAccess().getValuesAssignment_1(), "rule__StringList__ValuesAssignment_1");
-					put(grammarAccess.getStringListAccess().getValuesAssignment_2_1(), "rule__StringList__ValuesAssignment_2_1");
+					put(grammarAccess.getStringListAccess().getItemsAssignment_1(), "rule__StringList__ItemsAssignment_1");
+					put(grammarAccess.getStringListAccess().getItemsAssignment_2_1(), "rule__StringList__ItemsAssignment_2_1");
 				}
 			};
 		}

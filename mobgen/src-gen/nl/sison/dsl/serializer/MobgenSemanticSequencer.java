@@ -291,7 +291,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (values+=STRING values+=STRING*)
+	 *     (items+=STRING items+=STRING*)
 	 */
 	protected void sequence_StringList(EObject context, StringList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

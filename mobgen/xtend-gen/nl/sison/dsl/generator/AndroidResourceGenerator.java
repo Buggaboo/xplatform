@@ -1,9 +1,7 @@
 package nl.sison.dsl.generator;
 
 import com.google.common.collect.Iterators;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.ListIterator;
 import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.MapInstance;
@@ -17,9 +15,9 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
@@ -35,6 +33,9 @@ public class AndroidResourceGenerator implements IGenerator {
     this.writeJavaEnumFiles(enumInstances, fsa);
   }
   
+  /**
+   * Enum related stuff
+   */
   public void writeJavaEnumFiles(final Iterator<EnumInstance> instances, final IFileSystemAccess fsa) {
     final Procedure1<EnumInstance> _function = new Procedure1<EnumInstance>() {
         public void apply(final EnumInstance m) {
@@ -77,25 +78,25 @@ public class AndroidResourceGenerator implements IGenerator {
    * Map related code
    */
   public String prepareAndroidMap(final Iterator<MapInstance> instances) {
-    final Function1<MapInstance,ArrayList<String>> _function = new Function1<MapInstance,ArrayList<String>>() {
-        public ArrayList<String> apply(final MapInstance m) {
-          ArrayList<String> _joinAndroidMapNameWithKeyValuePairs = AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
+    final Function1<MapInstance,String> _function = new Function1<MapInstance,String>() {
+        public String apply(final MapInstance m) {
+          String _joinAndroidMapNameWithKeyValuePairs = AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
           return _joinAndroidMapNameWithKeyValuePairs;
         }
       };
-    Iterator<ArrayList<String>> _map = IteratorExtensions.<MapInstance, ArrayList<String>>map(instances, _function);
+    Iterator<String> _map = IteratorExtensions.<MapInstance, String>map(instances, _function);
     return IteratorExtensions.join(_map, "");
   }
   
-  public ArrayList<String> joinAndroidMapNameWithKeyValuePairs(final MapInstance instance) {
+  public String joinAndroidMapNameWithKeyValuePairs(final MapInstance instance) {
     String _name = instance.getName();
     final String name = _name.toLowerCase();
     EList<String> _keys = instance.getKeys();
     final ListIterator<String> keys = _keys.listIterator();
     EList<NestedType> _values = instance.getValues();
     final ListIterator<NestedType> values = _values.listIterator();
-    ArrayList<String> _arrayList = new ArrayList<String>();
-    ArrayList<String> result = _arrayList;
+    StringBuffer _stringBuffer = new StringBuffer();
+    StringBuffer result = _stringBuffer;
     boolean _and = false;
     boolean _hasNext = keys.hasNext();
     if (!_hasNext) {
@@ -109,28 +110,12 @@ public class AndroidResourceGenerator implements IGenerator {
       {
         final NestedType value = values.next();
         if ((value instanceof StringList)) {
-          TreeIterator<EObject> _eAllContents = value.eAllContents();
-          final Iterator<StringList> stringList = Iterators.<StringList>filter(_eAllContents, StringList.class);
-          List<StringList> _list = IteratorExtensions.<StringList>toList(stringList);
-          final Function1<StringList,CharSequence> _function = new Function1<StringList,CharSequence>() {
-              public CharSequence apply(final StringList s) {
-                String _string = s.toString();
-                CharSequence _androidResourceItemize = AndroidResourceGenerator.this.androidResourceItemize(_string);
-                return _androidResourceItemize;
-              }
-            };
-          List<CharSequence> _map = ListExtensions.<StringList, CharSequence>map(_list, _function);
-          final String items = IterableExtensions.join(_map, "\n");
-          String _next = keys.next();
-          CharSequence _androidKeyStringArray = this.androidKeyStringArray(name, _next, items);
-          String _string = _androidKeyStringArray.toString();
-          result.add(_string);
         } else {
-          String _next_1 = keys.next();
-          String _string_1 = value.toString();
-          CharSequence _androidKeyString = this.androidKeyString(name, _next_1, _string_1);
-          String _string_2 = _androidKeyString.toString();
-          result.add(_string_2);
+          String _next = keys.next();
+          String _string = value.toString();
+          CharSequence _androidKeyString = this.androidKeyString(name, _next, _string);
+          String _string_1 = _androidKeyString.toString();
+          result.append(_string_1);
         }
       }
       boolean _and_1 = false;
@@ -143,7 +128,10 @@ public class AndroidResourceGenerator implements IGenerator {
       }
       _while = _and_1;
     }
-    return result;
+    String _string = result.toString();
+    String _plus = ("result: " + _string);
+    InputOutput.<String>println(_plus);
+    return result.toString();
   }
   
   public CharSequence androidKeyString(final CharSequence mapName, final CharSequence key, final CharSequence value) {

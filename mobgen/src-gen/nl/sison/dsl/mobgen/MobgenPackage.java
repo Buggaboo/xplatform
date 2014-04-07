@@ -677,13 +677,13 @@ public interface MobgenPackage extends EPackage
   int STRING_LIST = 15;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Items</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_LIST__VALUES = NESTED_TYPE_FEATURE_COUNT + 0;
+  int STRING_LIST__ITEMS = NESTED_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>String List</em>' class.
@@ -1186,15 +1186,15 @@ public interface MobgenPackage extends EPackage
   EClass getStringList();
 
   /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.StringList#getValues <em>Values</em>}'.
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.StringList#getItems <em>Items</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
-   * @see nl.sison.dsl.mobgen.StringList#getValues()
+   * @return the meta object for the attribute list '<em>Items</em>'.
+   * @see nl.sison.dsl.mobgen.StringList#getItems()
    * @see #getStringList()
    * @generated
    */
-  EAttribute getStringList_Values();
+  EAttribute getStringList_Items();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.NestedType <em>Nested Type</em>}'.
@@ -1630,12 +1630,12 @@ public interface MobgenPackage extends EPackage
     EClass STRING_LIST = eINSTANCE.getStringList();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Items</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STRING_LIST__VALUES = eINSTANCE.getStringList_Values();
+    EAttribute STRING_LIST__ITEMS = eINSTANCE.getStringList_Items();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.NestedTypeImpl <em>Nested Type</em>}' class.
