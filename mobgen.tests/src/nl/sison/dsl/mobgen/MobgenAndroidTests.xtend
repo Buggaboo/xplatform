@@ -25,7 +25,28 @@ class MobgenAndroidTests {
      */
     @Test def testEnumInstance()
     {
-    	assertTrue(true)
+    	val model = parseHelper.parse('''
+    	enum nomnom {
+    		a, b, c
+    	}
+    	''')
+    	
+        val fsa = new InMemoryFileSystemAccess()
+        underTest.doGenerate(model.eResource, fsa)
+        
+        val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"NomnomEnum.java"
+        val whatWeGot = fsa.files.get(androidFileName).toString
+ 
+ 		val expected = '''
+ 		public enum NomnomEnum {
+ 			a, b, c;
+ 		}
+ 		'''.toString
+ 
+ 		println("expected: " + expected)
+		println("what we got: " + whatWeGot)
+ 
+ 		assertEquals(expected, whatWeGot)
 	}
     
     /**
@@ -36,9 +57,9 @@ class MobgenAndroidTests {
 		val model = parseHelper.parse('''
         map Alice
         {
-        	label1 : "label1"
-        	label2 : "label2"
-        	hint1 : "hint1"
+        	label1 : "label1",
+        	label2 : "label2",
+        	hint1 : "hint1",
         	hint2 : "hint2"
         }
         ''')
@@ -73,7 +94,7 @@ class MobgenAndroidTests {
 		val model = parseHelper.parse('''
         map Alice
         {
-        	label1 : ["a", "b"],
+        	label1 : ["a", "b"]
         }
         ''')
 
