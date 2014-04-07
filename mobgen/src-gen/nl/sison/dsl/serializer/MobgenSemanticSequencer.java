@@ -15,6 +15,7 @@ import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
 import nl.sison.dsl.mobgen.MobgenJson;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
+import nl.sison.dsl.mobgen.NestedType;
 import nl.sison.dsl.mobgen.Platform;
 import nl.sison.dsl.mobgen.StringList;
 import nl.sison.dsl.mobgen.URI;
@@ -48,8 +49,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else break;
 			case MobgenPackage.JSON_ARRAY:
 				if(context == grammarAccess.getJsonArrayRule() ||
-				   context == grammarAccess.getJsonCompositeValueRule() ||
-				   context == grammarAccess.getJsonObjectValueRule()) {
+				   context == grammarAccess.getJsonCompositeValueRule()) {
 					sequence_JsonArray(context, (JsonArray) semanticObject); 
 					return; 
 				}
@@ -62,8 +62,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else break;
 			case MobgenPackage.JSON_OBJECT:
 				if(context == grammarAccess.getJsonCompositeValueRule() ||
-				   context == grammarAccess.getJsonObjectRule() ||
-				   context == grammarAccess.getJsonObjectValueRule()) {
+				   context == grammarAccess.getJsonObjectRule()) {
 					sequence_JsonObject(context, (JsonObject) semanticObject); 
 					return; 
 				}
@@ -116,6 +115,12 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case MobgenPackage.NESTED_TYPE:
+				if(context == grammarAccess.getNestedTypeRule()) {
+					sequence_NestedType(context, (NestedType) semanticObject); 
+					return; 
+				}
+				else break;
 			case MobgenPackage.PLATFORM:
 				if(context == grammarAccess.getPlatformRule()) {
 					sequence_Platform(context, (Platform) semanticObject); 
@@ -123,8 +128,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case MobgenPackage.STRING_LIST:
-				if(context == grammarAccess.getNestedTypeRule() ||
-				   context == grammarAccess.getStringListRule()) {
+				if(context == grammarAccess.getStringListRule()) {
 					sequence_StringList(context, (StringList) semanticObject); 
 					return; 
 				}
@@ -178,17 +182,10 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     value=JsonLiteralValue
+	 *     (value=JsonLiteralValue | composite=JsonCompositeValue)
 	 */
 	protected void sequence_JsonObjectValue(EObject context, JsonObjectValue semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MobgenPackage.Literals.JSON_OBJECT_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MobgenPackage.Literals.JSON_OBJECT_VALUE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -217,7 +214,8 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         method=RESTFUL_METHODS 
 	 *         uri=URI 
 	 *         (requestHeaders=MobgenHeader responseHeaders=MobgenHeader?)? 
-	 *         (jsonToClient=MobgenJson jsonToServer=MobgenJson?)?
+	 *         jsonToClient=MobgenJson? 
+	 *         jsonToServer=MobgenJson?
 	 *     )
 	 */
 	protected void sequence_MobgenCallDefinition(EObject context, MobgenCallDefinition semanticObject) {
@@ -227,7 +225,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (key=STRING (value=STRING | value=Mobgen_HEADER_PARAMETER))
+	 *     (key=STRING (value=STRING | value=MOBGEN_HEADER_PARAMETER))
 	 */
 	protected void sequence_MobgenHeaderKeyValuePair(EObject context, MobgenHeaderKeyValuePair semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -282,6 +280,15 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (list=StringList | string=STRING)
+	 */
+	protected void sequence_NestedType(EObject context, NestedType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (platforms+=ID generateWhere+=STRING)+
 	 */
 	protected void sequence_Platform(EObject context, Platform semanticObject) {
@@ -291,7 +298,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (items+=STRING items+=STRING*)
+	 *     (values+=STRING values+=STRING*)
 	 */
 	protected void sequence_StringList(EObject context, StringList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

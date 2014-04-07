@@ -132,7 +132,6 @@ public class MobgenSwitch<T> extends Switch<T>
       {
         JsonCompositeValue jsonCompositeValue = (JsonCompositeValue)theEObject;
         T result = caseJsonCompositeValue(jsonCompositeValue);
-        if (result == null) result = caseJsonObjectValue(jsonCompositeValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -141,7 +140,6 @@ public class MobgenSwitch<T> extends Switch<T>
         JsonObject jsonObject = (JsonObject)theEObject;
         T result = caseJsonObject(jsonObject);
         if (result == null) result = caseJsonCompositeValue(jsonObject);
-        if (result == null) result = caseJsonObjectValue(jsonObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -157,7 +155,6 @@ public class MobgenSwitch<T> extends Switch<T>
         JsonArray jsonArray = (JsonArray)theEObject;
         T result = caseJsonArray(jsonArray);
         if (result == null) result = caseJsonCompositeValue(jsonArray);
-        if (result == null) result = caseJsonObjectValue(jsonArray);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,7 +184,6 @@ public class MobgenSwitch<T> extends Switch<T>
       {
         StringList stringList = (StringList)theEObject;
         T result = caseStringList(stringList);
-        if (result == null) result = caseNestedType(stringList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

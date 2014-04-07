@@ -42,6 +42,7 @@
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//JsonObjectValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonObjectValue/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonObjectValue/composite"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//JsonCompositeValue"/>
     <genClasses ecoreClass="Mobgen.ecore#//JsonObject">
@@ -67,8 +68,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//MapInstance/values"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//StringList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//StringList/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//StringList/values"/>
     </genClasses>
-    <genClasses ecoreClass="Mobgen.ecore#//NestedType"/>
+    <genClasses ecoreClass="Mobgen.ecore#//NestedType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//NestedType/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//NestedType/string"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

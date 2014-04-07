@@ -80,12 +80,12 @@
           <elements xsi:type="xtext:Assignment" feature="jsonToClient" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
           </elements>
-          <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="server"/>
-            <elements xsi:type="xtext:Keyword" value="expects"/>
-            <elements xsi:type="xtext:Assignment" feature="jsonToServer" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
-            </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="server"/>
+          <elements xsi:type="xtext:Keyword" value="expects"/>
+          <elements xsi:type="xtext:Assignment" feature="jsonToServer" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
           </elements>
         </elements>
       </alternatives>
@@ -149,7 +149,7 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:TerminalRule" name="Mobgen_HEADER_PARAMETER">
+    <rules xsi:type="xtext:TerminalRule" name="MOBGEN_HEADER_PARAMETER">
       <type metamodel="/1/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
@@ -193,7 +193,9 @@
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+        <elements xsi:type="xtext:Assignment" feature="composite" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="JsonCompositeValue">
@@ -399,12 +401,12 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="["/>
-        <elements xsi:type="xtext:Assignment" feature="items" operator="+=">
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
-          <elements xsi:type="xtext:Assignment" feature="items" operator="+=">
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
           </elements>
         </elements>
@@ -417,8 +419,12 @@
         <classifier xsi:type="ecore:EClass" href="http://www.sison.nl/dsl/Mobgen#//NestedType"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+        <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="string" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+        </elements>
       </alternatives>
     </rules>
   </xtext:Grammar>

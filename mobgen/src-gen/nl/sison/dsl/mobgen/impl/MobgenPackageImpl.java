@@ -503,6 +503,16 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getJsonObjectValue_Composite()
+  {
+    return (EReference)jsonObjectValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getJsonCompositeValue()
   {
     return jsonCompositeValueEClass;
@@ -683,7 +693,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStringList_Items()
+  public EAttribute getStringList_Values()
   {
     return (EAttribute)stringListEClass.getEStructuralFeatures().get(0);
   }
@@ -696,6 +706,26 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
   public EClass getNestedType()
   {
     return nestedTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNestedType_List()
+  {
+    return (EReference)nestedTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNestedType_String()
+  {
+    return (EAttribute)nestedTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -763,6 +793,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
 
     jsonObjectValueEClass = createEClass(JSON_OBJECT_VALUE);
     createEAttribute(jsonObjectValueEClass, JSON_OBJECT_VALUE__VALUE);
+    createEReference(jsonObjectValueEClass, JSON_OBJECT_VALUE__COMPOSITE);
 
     jsonCompositeValueEClass = createEClass(JSON_COMPOSITE_VALUE);
 
@@ -789,9 +820,11 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEReference(mapInstanceEClass, MAP_INSTANCE__VALUES);
 
     stringListEClass = createEClass(STRING_LIST);
-    createEAttribute(stringListEClass, STRING_LIST__ITEMS);
+    createEAttribute(stringListEClass, STRING_LIST__VALUES);
 
     nestedTypeEClass = createEClass(NESTED_TYPE);
+    createEReference(nestedTypeEClass, NESTED_TYPE__LIST);
+    createEAttribute(nestedTypeEClass, NESTED_TYPE__STRING);
   }
 
   /**
@@ -823,11 +856,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    jsonCompositeValueEClass.getESuperTypes().add(this.getJsonObjectValue());
     jsonObjectEClass.getESuperTypes().add(this.getJsonCompositeValue());
     jsonArrayEClass.getESuperTypes().add(this.getJsonCompositeValue());
     enumInstanceEClass.getESuperTypes().add(this.getMobgenResourceDefinition());
-    stringListEClass.getESuperTypes().add(this.getNestedType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(mobgenEClass, Mobgen.class, "Mobgen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -865,6 +896,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
 
     initEClass(jsonObjectValueEClass, JsonObjectValue.class, "JsonObjectValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getJsonObjectValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonObjectValue_Composite(), this.getJsonCompositeValue(), null, "composite", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonCompositeValueEClass, JsonCompositeValue.class, "JsonCompositeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -891,9 +923,11 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEReference(getMapInstance_Values(), this.getNestedType(), null, "values", null, 0, -1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringListEClass, StringList.class, "StringList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringList_Items(), ecorePackage.getEString(), "items", null, 0, -1, StringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringList_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nestedTypeEClass, NestedType.class, "NestedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNestedType_List(), this.getStringList(), null, "list", null, 0, 1, NestedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNestedType_String(), ecorePackage.getEString(), "string", null, 0, 1, NestedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

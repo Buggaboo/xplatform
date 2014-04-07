@@ -1,7 +1,9 @@
 package nl.sison.dsl.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
 import java.util.Iterator;
+import java.util.List;
 import java.util.ListIterator;
 import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.MapInstance;
@@ -15,9 +17,9 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
@@ -41,11 +43,11 @@ public class AndroidResourceGenerator implements IGenerator {
         public void apply(final EnumInstance m) {
           String _name = m.getName();
           String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
-          String _plus = (_capitalizeFirstLetter + "Enum");
+          String _plus = (_capitalizeFirstLetter + "Enum.java");
           String _name_1 = m.getName();
           String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
           EList<String> _values = m.getValues();
-          String _join = IterableExtensions.join(_values, ",\n");
+          String _join = IterableExtensions.join(_values, ", ");
           CharSequence _javaEnumTemplate = AndroidResourceGenerator.this.javaEnumTemplate(_capitalizeFirstLetter_1, _join);
           fsa.generateFile(_plus, _javaEnumTemplate);
         }
@@ -68,6 +70,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(commaSeparatedValues, "	");
+    _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
@@ -109,13 +112,27 @@ public class AndroidResourceGenerator implements IGenerator {
     while (_while) {
       {
         final NestedType value = values.next();
-        if ((value instanceof StringList)) {
+        final String key = keys.next();
+        StringList _list = value.getList();
+        boolean _notEquals = (!Objects.equal(_list, null));
+        if (_notEquals) {
+          final NestedType items = value;
+          StringList _list_1 = items.getList();
+          EList<String> _values_1 = _list_1.getValues();
+          final Function1<String,CharSequence> _function = new Function1<String,CharSequence>() {
+              public CharSequence apply(final String s) {
+                CharSequence _androidResourceItemize = AndroidResourceGenerator.this.androidResourceItemize(s);
+                return _androidResourceItemize;
+              }
+            };
+          List<CharSequence> _map = ListExtensions.<String, CharSequence>map(_values_1, _function);
+          String _join = IterableExtensions.join(_map, "");
+          CharSequence _androidKeyStringArray = this.androidKeyStringArray(name, key, _join);
+          result.append(_androidKeyStringArray);
         } else {
-          String _next = keys.next();
-          String _string = value.toString();
-          CharSequence _androidKeyString = this.androidKeyString(name, _next, _string);
-          String _string_1 = _androidKeyString.toString();
-          result.append(_string_1);
+          String _string = value.getString();
+          CharSequence _androidKeyString = this.androidKeyString(name, key, _string);
+          result.append(_androidKeyString);
         }
       }
       boolean _and_1 = false;
@@ -128,9 +145,6 @@ public class AndroidResourceGenerator implements IGenerator {
       }
       _while = _and_1;
     }
-    String _string = result.toString();
-    String _plus = ("result: " + _string);
-    InputOutput.<String>println(_plus);
     return result.toString();
   }
   
@@ -164,8 +178,8 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append(key, "");
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
-    _builder.append(s, "    ");
+    _builder.append("\t");
+    _builder.append(s, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("</string-array>");
     _builder.newLine();

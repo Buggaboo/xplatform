@@ -7,6 +7,8 @@ import nl.sison.dsl.mobgen.MobgenPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Json Composite Value</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class JsonCompositeValueImpl extends JsonObjectValueImpl implements JsonCompositeValue
+public class JsonCompositeValueImpl extends MinimalEObjectImpl.Container implements JsonCompositeValue
 {
   /**
    * <!-- begin-user-doc -->

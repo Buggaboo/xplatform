@@ -2,6 +2,7 @@
  */
 package nl.sison.dsl.mobgen;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package nl.sison.dsl.mobgen;
  * @model
  * @generated
  */
-public interface JsonCompositeValue extends JsonObjectValue
+public interface JsonCompositeValue extends EObject
 {
 } // JsonCompositeValue

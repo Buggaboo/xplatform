@@ -33,7 +33,41 @@ public class MobgenAndroidTests {
    */
   @Test
   public void testEnumInstance() {
-    Assert.assertTrue(true);
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("enum nomnom {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("a, b, c");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final Mobgen model = this.parseHelper.parse(_builder);
+      InMemoryFileSystemAccess _inMemoryFileSystemAccess = new InMemoryFileSystemAccess();
+      final InMemoryFileSystemAccess fsa = _inMemoryFileSystemAccess;
+      Resource _eResource = model.eResource();
+      this.underTest.doGenerate(_eResource, fsa);
+      final String androidFileName = (IFileSystemAccess.DEFAULT_OUTPUT + "NomnomEnum.java");
+      Map<String,CharSequence> _files = fsa.getFiles();
+      CharSequence _get = _files.get(androidFileName);
+      final String whatWeGot = _get.toString();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("public enum NomnomEnum {");
+      _builder_1.newLine();
+      _builder_1.append("\t");
+      _builder_1.append("a, b, c;");
+      _builder_1.newLine();
+      _builder_1.append("}");
+      _builder_1.newLine();
+      final String expected = _builder_1.toString();
+      String _plus = ("expected: " + expected);
+      InputOutput.<String>println(_plus);
+      String _plus_1 = ("what we got: " + whatWeGot);
+      InputOutput.<String>println(_plus_1);
+      Assert.assertEquals(expected, whatWeGot);
+    } catch (Exception _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
   
   /**
@@ -48,13 +82,13 @@ public class MobgenAndroidTests {
       _builder.append("{");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("label1 : \"label1\"");
+      _builder.append("label1 : \"label1\",");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("label2 : \"label2\"");
+      _builder.append("label2 : \"label2\",");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("hint1 : \"hint1\"");
+      _builder.append("hint1 : \"hint1\",");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("hint2 : \"hint2\"");
@@ -108,7 +142,7 @@ public class MobgenAndroidTests {
       _builder.append("{");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("label1 : [\"a\", \"b\"],");
+      _builder.append("label1 : [\"a\", \"b\"]");
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();

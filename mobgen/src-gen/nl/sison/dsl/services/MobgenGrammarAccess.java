@@ -140,21 +140,23 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cExpectsKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cJsonToClientAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cJsonToClientMobgenJsonParserRuleCall_7_2_0 = (RuleCall)cJsonToClientAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cServerKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Keyword cExpectsKeyword_7_3_1 = (Keyword)cGroup_7_3.eContents().get(1);
-		private final Assignment cJsonToServerAssignment_7_3_2 = (Assignment)cGroup_7_3.eContents().get(2);
-		private final RuleCall cJsonToServerMobgenJsonParserRuleCall_7_3_2_0 = (RuleCall)cJsonToServerAssignment_7_3_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cServerKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cExpectsKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cJsonToServerAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cJsonToServerMobgenJsonParserRuleCall_8_2_0 = (RuleCall)cJsonToServerAssignment_8_2.eContents().get(0);
 		
-		//MobgenCallDefinition:
+		/// **
+		// * Only POST / PUT request method can do a 'server' 'expects' 
+		// * / MobgenCallDefinition:
 		//	"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
 		//	requestHeaders=MobgenHeader ("and" "response" responseHeaders=MobgenHeader)?)? ("client" "expects"
-		//	jsonToClient=MobgenJson ("server" "expects" jsonToServer=MobgenJson)?)?;
+		//	jsonToClient=MobgenJson)? ("server" "expects" jsonToServer=MobgenJson)?;
 		public ParserRule getRule() { return rule; }
 
 		//"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request" requestHeaders=MobgenHeader
-		//("and" "response" responseHeaders=MobgenHeader)?)? ("client" "expects" jsonToClient=MobgenJson ("server" "expects"
-		//jsonToServer=MobgenJson)?)?
+		//("and" "response" responseHeaders=MobgenHeader)?)? ("client" "expects" jsonToClient=MobgenJson)? ("server" "expects"
+		//jsonToServer=MobgenJson)?
 		public Group getGroup() { return cGroup; }
 
 		//"call"
@@ -220,7 +222,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//MobgenHeader
 		public RuleCall getResponseHeadersMobgenHeaderParserRuleCall_6_5_2_0() { return cResponseHeadersMobgenHeaderParserRuleCall_6_5_2_0; }
 
-		//("client" "expects" jsonToClient=MobgenJson ("server" "expects" jsonToServer=MobgenJson)?)?
+		//("client" "expects" jsonToClient=MobgenJson)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"client"
@@ -236,19 +238,19 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getJsonToClientMobgenJsonParserRuleCall_7_2_0() { return cJsonToClientMobgenJsonParserRuleCall_7_2_0; }
 
 		//("server" "expects" jsonToServer=MobgenJson)?
-		public Group getGroup_7_3() { return cGroup_7_3; }
+		public Group getGroup_8() { return cGroup_8; }
 
 		//"server"
-		public Keyword getServerKeyword_7_3_0() { return cServerKeyword_7_3_0; }
+		public Keyword getServerKeyword_8_0() { return cServerKeyword_8_0; }
 
 		//"expects"
-		public Keyword getExpectsKeyword_7_3_1() { return cExpectsKeyword_7_3_1; }
+		public Keyword getExpectsKeyword_8_1() { return cExpectsKeyword_8_1; }
 
 		//jsonToServer=MobgenJson
-		public Assignment getJsonToServerAssignment_7_3_2() { return cJsonToServerAssignment_7_3_2; }
+		public Assignment getJsonToServerAssignment_8_2() { return cJsonToServerAssignment_8_2; }
 
 		//MobgenJson
-		public RuleCall getJsonToServerMobgenJsonParserRuleCall_7_3_2_0() { return cJsonToServerMobgenJsonParserRuleCall_7_3_2_0; }
+		public RuleCall getJsonToServerMobgenJsonParserRuleCall_8_2_0() { return cJsonToServerMobgenJsonParserRuleCall_8_2_0; }
 	}
 
 	public class URIElements extends AbstractParserRuleElementFinder {
@@ -367,13 +369,13 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
 		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final RuleCall cValueMobgen_HEADER_PARAMETERTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final RuleCall cValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		
 		//MobgenHeaderKeyValuePair:
-		//	key=STRING "=" (value=STRING | value=Mobgen_HEADER_PARAMETER);
+		//	key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER);
 		public ParserRule getRule() { return rule; }
 
-		//key=STRING "=" (value=STRING | value=Mobgen_HEADER_PARAMETER)
+		//key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER)
 		public Group getGroup() { return cGroup; }
 
 		//key=STRING
@@ -385,7 +387,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 
-		//value=STRING | value=Mobgen_HEADER_PARAMETER
+		//value=STRING | value=MOBGEN_HEADER_PARAMETER
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//value=STRING
@@ -394,11 +396,11 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
 
-		//value=Mobgen_HEADER_PARAMETER
+		//value=MOBGEN_HEADER_PARAMETER
 		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
 
-		//Mobgen_HEADER_PARAMETER
-		public RuleCall getValueMobgen_HEADER_PARAMETERTerminalRuleCall_2_1_0() { return cValueMobgen_HEADER_PARAMETERTerminalRuleCall_2_1_0; }
+		//MOBGEN_HEADER_PARAMETER
+		public RuleCall getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0() { return cValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0; }
 	}
 
 	public class MobgenJsonElements extends AbstractParserRuleElementFinder {
@@ -442,15 +444,16 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cValueJsonLiteralValueParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
-		private final RuleCall cJsonCompositeValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cCompositeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCompositeJsonCompositeValueParserRuleCall_1_0 = (RuleCall)cCompositeAssignment_1.eContents().get(0);
 		
 		/// **
 		// *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
 		// * / JsonObjectValue:
-		//	value=JsonLiteralValue | JsonCompositeValue;
+		//	value=JsonLiteralValue | composite=JsonCompositeValue;
 		public ParserRule getRule() { return rule; }
 
-		//value=JsonLiteralValue | JsonCompositeValue
+		//value=JsonLiteralValue | composite=JsonCompositeValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//value=JsonLiteralValue
@@ -459,8 +462,11 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//JsonLiteralValue
 		public RuleCall getValueJsonLiteralValueParserRuleCall_0_0() { return cValueJsonLiteralValueParserRuleCall_0_0; }
 
+		//composite=JsonCompositeValue
+		public Assignment getCompositeAssignment_1() { return cCompositeAssignment_1; }
+
 		//JsonCompositeValue
-		public RuleCall getJsonCompositeValueParserRuleCall_1() { return cJsonCompositeValueParserRuleCall_1; }
+		public RuleCall getCompositeJsonCompositeValueParserRuleCall_1_0() { return cCompositeJsonCompositeValueParserRuleCall_1_0; }
 	}
 
 	public class JsonCompositeValueElements extends AbstractParserRuleElementFinder {
@@ -836,42 +842,42 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringList");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cItemsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cItemsSTRINGTerminalRuleCall_1_0 = (RuleCall)cItemsAssignment_1.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cItemsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cItemsSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cItemsAssignment_2_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//StringList:
-		//	"[" items+=STRING ("," items+=STRING)* ","? "]";
+		//	"[" values+=STRING ("," values+=STRING)* ","? "]";
 		public ParserRule getRule() { return rule; }
 
-		//"[" items+=STRING ("," items+=STRING)* ","? "]"
+		//"[" values+=STRING ("," values+=STRING)* ","? "]"
 		public Group getGroup() { return cGroup; }
 
 		//"["
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
-		//items+=STRING
-		public Assignment getItemsAssignment_1() { return cItemsAssignment_1; }
+		//values+=STRING
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
 
 		//STRING
-		public RuleCall getItemsSTRINGTerminalRuleCall_1_0() { return cItemsSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getValuesSTRINGTerminalRuleCall_1_0() { return cValuesSTRINGTerminalRuleCall_1_0; }
 
-		//("," items+=STRING)*
+		//("," values+=STRING)*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
-		//items+=STRING
-		public Assignment getItemsAssignment_2_1() { return cItemsAssignment_2_1; }
+		//values+=STRING
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
 
 		//STRING
-		public RuleCall getItemsSTRINGTerminalRuleCall_2_1_0() { return cItemsSTRINGTerminalRuleCall_2_1_0; }
+		public RuleCall getValuesSTRINGTerminalRuleCall_2_1_0() { return cValuesSTRINGTerminalRuleCall_2_1_0; }
 
 		//","?
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
@@ -883,21 +889,29 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	public class NestedTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NestedType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cStringListParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cListAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cListStringListParserRuleCall_0_0 = (RuleCall)cListAssignment_0.eContents().get(0);
+		private final Assignment cStringAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cStringSTRINGTerminalRuleCall_1_0 = (RuleCall)cStringAssignment_1.eContents().get(0);
 		
 		//NestedType:
-		//	STRING | StringList;
+		//	list=StringList | string=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//STRING | StringList
+		//list=StringList | string=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		//list=StringList
+		public Assignment getListAssignment_0() { return cListAssignment_0; }
 
 		//StringList
-		public RuleCall getStringListParserRuleCall_1() { return cStringListParserRuleCall_1; }
+		public RuleCall getListStringListParserRuleCall_0_0() { return cListStringListParserRuleCall_0_0; }
+
+		//string=STRING
+		public Assignment getStringAssignment_1() { return cStringAssignment_1; }
+
+		//STRING
+		public RuleCall getStringSTRINGTerminalRuleCall_1_0() { return cStringSTRINGTerminalRuleCall_1_0; }
 	}
 	
 	
@@ -907,7 +921,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	private URIElements pURI;
 	private MobgenHeaderElements pMobgenHeader;
 	private MobgenHeaderKeyValuePairElements pMobgenHeaderKeyValuePair;
-	private TerminalRule tMobgen_HEADER_PARAMETER;
+	private TerminalRule tMOBGEN_HEADER_PARAMETER;
 	private TerminalRule tRESTFUL_METHODS;
 	private MobgenJsonElements pMobgenJson;
 	private JsonObjectValueElements pJsonObjectValue;
@@ -990,10 +1004,12 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getPlatformAccess().getRule();
 	}
 
-	//MobgenCallDefinition:
+	/// **
+	// * Only POST / PUT request method can do a 'server' 'expects' 
+	// * / MobgenCallDefinition:
 	//	"call" name=ID ":" method=RESTFUL_METHODS "from" uri=URI ("with" "headers" "from" "request"
 	//	requestHeaders=MobgenHeader ("and" "response" responseHeaders=MobgenHeader)?)? ("client" "expects"
-	//	jsonToClient=MobgenJson ("server" "expects" jsonToServer=MobgenJson)?)?;
+	//	jsonToClient=MobgenJson)? ("server" "expects" jsonToServer=MobgenJson)?;
 	public MobgenCallDefinitionElements getMobgenCallDefinitionAccess() {
 		return (pMobgenCallDefinition != null) ? pMobgenCallDefinition : (pMobgenCallDefinition = new MobgenCallDefinitionElements());
 	}
@@ -1024,7 +1040,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MobgenHeaderKeyValuePair:
-	//	key=STRING "=" (value=STRING | value=Mobgen_HEADER_PARAMETER);
+	//	key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER);
 	public MobgenHeaderKeyValuePairElements getMobgenHeaderKeyValuePairAccess() {
 		return (pMobgenHeaderKeyValuePair != null) ? pMobgenHeaderKeyValuePair : (pMobgenHeaderKeyValuePair = new MobgenHeaderKeyValuePairElements());
 	}
@@ -1033,14 +1049,14 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getMobgenHeaderKeyValuePairAccess().getRule();
 	}
 
-	//terminal Mobgen_HEADER_PARAMETER:
+	//terminal MOBGEN_HEADER_PARAMETER:
 	//	"{" ID "}";
-	public TerminalRule getMobgen_HEADER_PARAMETERRule() {
-		return (tMobgen_HEADER_PARAMETER != null) ? tMobgen_HEADER_PARAMETER : (tMobgen_HEADER_PARAMETER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Mobgen_HEADER_PARAMETER"));
+	public TerminalRule getMOBGEN_HEADER_PARAMETERRule() {
+		return (tMOBGEN_HEADER_PARAMETER != null) ? tMOBGEN_HEADER_PARAMETER : (tMOBGEN_HEADER_PARAMETER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MOBGEN_HEADER_PARAMETER"));
 	} 
 
 	//terminal RESTFUL_METHODS:
-	//	"PUT" | "POST" | "GET" | // TODO HEAD will be automagically generated as well, a body-less response
+	//	"PUT" | "POST" | "GET" | // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response
 	//	"DELETE";
 	public TerminalRule getRESTFUL_METHODSRule() {
 		return (tRESTFUL_METHODS != null) ? tRESTFUL_METHODS : (tRESTFUL_METHODS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RESTFUL_METHODS"));
@@ -1059,7 +1075,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
 	// * / JsonObjectValue:
-	//	value=JsonLiteralValue | JsonCompositeValue;
+	//	value=JsonLiteralValue | composite=JsonCompositeValue;
 	public JsonObjectValueElements getJsonObjectValueAccess() {
 		return (pJsonObjectValue != null) ? pJsonObjectValue : (pJsonObjectValue = new JsonObjectValueElements());
 	}
@@ -1191,7 +1207,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringList:
-	//	"[" items+=STRING ("," items+=STRING)* ","? "]";
+	//	"[" values+=STRING ("," values+=STRING)* ","? "]";
 	public StringListElements getStringListAccess() {
 		return (pStringList != null) ? pStringList : (pStringList = new StringListElements());
 	}
@@ -1201,7 +1217,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NestedType:
-	//	STRING | StringList;
+	//	list=StringList | string=STRING;
 	public NestedTypeElements getNestedTypeAccess() {
 		return (pNestedType != null) ? pNestedType : (pNestedType = new NestedTypeElements());
 	}

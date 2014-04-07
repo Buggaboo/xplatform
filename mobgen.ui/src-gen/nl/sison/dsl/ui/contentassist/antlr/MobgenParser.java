@@ -51,7 +51,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6(), "rule__MobgenCallDefinition__Group_6__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6_5(), "rule__MobgenCallDefinition__Group_6_5__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_7(), "rule__MobgenCallDefinition__Group_7__0");
-					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_7_3(), "rule__MobgenCallDefinition__Group_7_3__0");
+					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_8(), "rule__MobgenCallDefinition__Group_8__0");
 					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
 					put(grammarAccess.getURIAccess().getGroup_1(), "rule__URI__Group_1__0");
 					put(grammarAccess.getMobgenHeaderAccess().getGroup(), "rule__MobgenHeader__Group__0");
@@ -81,7 +81,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenCallDefinitionAccess().getRequestHeadersAssignment_6_4(), "rule__MobgenCallDefinition__RequestHeadersAssignment_6_4");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getResponseHeadersAssignment_6_5_2(), "rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToClientAssignment_7_2(), "rule__MobgenCallDefinition__JsonToClientAssignment_7_2");
-					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerAssignment_7_3_2(), "rule__MobgenCallDefinition__JsonToServerAssignment_7_3_2");
+					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerAssignment_8_2(), "rule__MobgenCallDefinition__JsonToServerAssignment_8_2");
 					put(grammarAccess.getURIAccess().getParametersAssignment_1_1(), "rule__URI__ParametersAssignment_1_1");
 					put(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0(), "rule__MobgenHeader__NameAssignment_0");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_3(), "rule__MobgenHeader__HeaderKeyValuesAssignment_3");
@@ -92,6 +92,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenJsonAccess().getNameAssignment_0(), "rule__MobgenJson__NameAssignment_0");
 					put(grammarAccess.getMobgenJsonAccess().getValueAssignment_2(), "rule__MobgenJson__ValueAssignment_2");
 					put(grammarAccess.getJsonObjectValueAccess().getValueAssignment_0(), "rule__JsonObjectValue__ValueAssignment_0");
+					put(grammarAccess.getJsonObjectValueAccess().getCompositeAssignment_1(), "rule__JsonObjectValue__CompositeAssignment_1");
 					put(grammarAccess.getJsonObjectAccess().getKeyValuePairAssignment_1(), "rule__JsonObject__KeyValuePairAssignment_1");
 					put(grammarAccess.getJsonObjectAccess().getKeyValuePairAssignment_2_1(), "rule__JsonObject__KeyValuePairAssignment_2_1");
 					put(grammarAccess.getJsonKeyValuePairAccess().getKeyAssignment_0(), "rule__JsonKeyValuePair__KeyAssignment_0");
@@ -107,8 +108,10 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMapInstanceAccess().getValuesAssignment_3_2(), "rule__MapInstance__ValuesAssignment_3_2");
 					put(grammarAccess.getMapInstanceAccess().getKeysAssignment_4_1(), "rule__MapInstance__KeysAssignment_4_1");
 					put(grammarAccess.getMapInstanceAccess().getValuesAssignment_4_3(), "rule__MapInstance__ValuesAssignment_4_3");
-					put(grammarAccess.getStringListAccess().getItemsAssignment_1(), "rule__StringList__ItemsAssignment_1");
-					put(grammarAccess.getStringListAccess().getItemsAssignment_2_1(), "rule__StringList__ItemsAssignment_2_1");
+					put(grammarAccess.getStringListAccess().getValuesAssignment_1(), "rule__StringList__ValuesAssignment_1");
+					put(grammarAccess.getStringListAccess().getValuesAssignment_2_1(), "rule__StringList__ValuesAssignment_2_1");
+					put(grammarAccess.getNestedTypeAccess().getListAssignment_0(), "rule__NestedType__ListAssignment_0");
+					put(grammarAccess.getNestedTypeAccess().getStringAssignment_1(), "rule__NestedType__StringAssignment_1");
 				}
 			};
 		}

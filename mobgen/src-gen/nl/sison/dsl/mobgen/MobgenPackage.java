@@ -380,13 +380,22 @@ public interface MobgenPackage extends EPackage
   int JSON_OBJECT_VALUE__VALUE = 0;
 
   /**
+   * The feature id for the '<em><b>Composite</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_OBJECT_VALUE__COMPOSITE = 1;
+
+  /**
    * The number of structural features of the '<em>Json Object Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_OBJECT_VALUE_FEATURE_COUNT = 1;
+  int JSON_OBJECT_VALUE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
@@ -399,22 +408,13 @@ public interface MobgenPackage extends EPackage
   int JSON_COMPOSITE_VALUE = 8;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_COMPOSITE_VALUE__VALUE = JSON_OBJECT_VALUE__VALUE;
-
-  /**
    * The number of structural features of the '<em>Json Composite Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_COMPOSITE_VALUE_FEATURE_COUNT = JSON_OBJECT_VALUE_FEATURE_COUNT + 0;
+  int JSON_COMPOSITE_VALUE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonObjectImpl <em>Json Object</em>}' class.
@@ -425,15 +425,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   int JSON_OBJECT = 9;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_OBJECT__VALUE = JSON_COMPOSITE_VALUE__VALUE;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -499,15 +490,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   int JSON_ARRAY = 11;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_ARRAY__VALUE = JSON_COMPOSITE_VALUE__VALUE;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -648,25 +630,6 @@ public interface MobgenPackage extends EPackage
   int MAP_INSTANCE_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.NestedTypeImpl <em>Nested Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.impl.NestedTypeImpl
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
-   * @generated
-   */
-  int NESTED_TYPE = 16;
-
-  /**
-   * The number of structural features of the '<em>Nested Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NESTED_TYPE_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.StringListImpl <em>String List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -677,13 +640,13 @@ public interface MobgenPackage extends EPackage
   int STRING_LIST = 15;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' attribute list.
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_LIST__ITEMS = NESTED_TYPE_FEATURE_COUNT + 0;
+  int STRING_LIST__VALUES = 0;
 
   /**
    * The number of structural features of the '<em>String List</em>' class.
@@ -692,7 +655,44 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_LIST_FEATURE_COUNT = NESTED_TYPE_FEATURE_COUNT + 1;
+  int STRING_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.NestedTypeImpl <em>Nested Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.impl.NestedTypeImpl
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
+   * @generated
+   */
+  int NESTED_TYPE = 16;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_TYPE__LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>String</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_TYPE__STRING = 1;
+
+  /**
+   * The number of structural features of the '<em>Nested Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_TYPE_FEATURE_COUNT = 2;
 
 
   /**
@@ -996,6 +996,17 @@ public interface MobgenPackage extends EPackage
   EAttribute getJsonObjectValue_Value();
 
   /**
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Composite</em>'.
+   * @see nl.sison.dsl.mobgen.JsonObjectValue#getComposite()
+   * @see #getJsonObjectValue()
+   * @generated
+   */
+  EReference getJsonObjectValue_Composite();
+
+  /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1186,15 +1197,15 @@ public interface MobgenPackage extends EPackage
   EClass getStringList();
 
   /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.StringList#getItems <em>Items</em>}'.
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.StringList#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Items</em>'.
-   * @see nl.sison.dsl.mobgen.StringList#getItems()
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see nl.sison.dsl.mobgen.StringList#getValues()
    * @see #getStringList()
    * @generated
    */
-  EAttribute getStringList_Items();
+  EAttribute getStringList_Values();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.NestedType <em>Nested Type</em>}'.
@@ -1205,6 +1216,28 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EClass getNestedType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.NestedType#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List</em>'.
+   * @see nl.sison.dsl.mobgen.NestedType#getList()
+   * @see #getNestedType()
+   * @generated
+   */
+  EReference getNestedType_List();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.NestedType#getString <em>String</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String</em>'.
+   * @see nl.sison.dsl.mobgen.NestedType#getString()
+   * @see #getNestedType()
+   * @generated
+   */
+  EAttribute getNestedType_String();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1470,6 +1503,14 @@ public interface MobgenPackage extends EPackage
     EAttribute JSON_OBJECT_VALUE__VALUE = eINSTANCE.getJsonObjectValue_Value();
 
     /**
+     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JSON_OBJECT_VALUE__COMPOSITE = eINSTANCE.getJsonObjectValue_Composite();
+
+    /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1630,12 +1671,12 @@ public interface MobgenPackage extends EPackage
     EClass STRING_LIST = eINSTANCE.getStringList();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STRING_LIST__ITEMS = eINSTANCE.getStringList_Items();
+    EAttribute STRING_LIST__VALUES = eINSTANCE.getStringList_Values();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.NestedTypeImpl <em>Nested Type</em>}' class.
@@ -1646,6 +1687,22 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EClass NESTED_TYPE = eINSTANCE.getNestedType();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NESTED_TYPE__LIST = eINSTANCE.getNestedType_List();
+
+    /**
+     * The meta object literal for the '<em><b>String</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NESTED_TYPE__STRING = eINSTANCE.getNestedType_String();
 
   }
 
