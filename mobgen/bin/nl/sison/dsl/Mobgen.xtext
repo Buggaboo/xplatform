@@ -40,16 +40,16 @@ Platform:
 	'}'
 ;
 
-
+/**
+ * Only POST / PUT request method can do a 'server' 'expects' 
+ */
 MobgenCallDefinition:
 	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=MobgenHeader
 		('and' 'response' responseHeaders=MobgenHeader)?
 	)?
-	(
-		'client' 'expects' jsonToClient=MobgenJson
-		('server' 'expects' jsonToServer=MobgenJson)?
-	)?
+	('client' 'expects' jsonToClient=MobgenJson)?
+	('server' 'expects' jsonToServer=MobgenJson)?
 ;
 
 URI:
@@ -65,15 +65,15 @@ MobgenHeader:
 ;
 
 MobgenHeaderKeyValuePair:
-	(key=STRING) '=' (value=STRING | value=Mobgen_HEADER_PARAMETER)	
+	(key=STRING) '=' (value=STRING | value=MOBGEN_HEADER_PARAMETER)	
 ;
 
-terminal Mobgen_HEADER_PARAMETER:
+terminal MOBGEN_HEADER_PARAMETER:
 	'{' ID '}'
 ;
 
 terminal RESTFUL_METHODS:
-	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD will be automagically generated as well, a body-less response
+	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response
 ;
 
 MobgenJson:
@@ -88,7 +88,7 @@ MobgenJson:
  *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
  */
 JsonObjectValue:
-	value=JsonLiteralValue | JsonCompositeValue
+	value=JsonLiteralValue | composite=JsonCompositeValue
 ;
 
 JsonCompositeValue:
@@ -165,5 +165,5 @@ StringList:
 ;
 
 NestedType:
-	STRING | StringList	
+	list=StringList | string=STRING
 ;
