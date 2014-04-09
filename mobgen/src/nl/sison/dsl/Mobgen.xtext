@@ -65,11 +65,11 @@ MobgenHeader:
 ;
 
 MobgenHeaderKeyValuePair:
-	(key=STRING) '=' (value=STRING | value=MOBGEN_HEADER_PARAMETER)	
+	(key=STRING) '=' value=STRING | parameter=MobgenHeaderParameter	
 ;
 
-terminal MOBGEN_HEADER_PARAMETER:
-	'{' ID '}'
+MobgenHeaderParameter:
+	'{' id=ID '}'
 ;
 
 terminal RESTFUL_METHODS:
