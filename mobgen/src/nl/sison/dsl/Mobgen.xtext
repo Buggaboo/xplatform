@@ -53,7 +53,7 @@ MobgenCallDefinition:
 ;
 
 URI:
-	(ANY_OTHER)+ ('{' parameters+=ID '}'(ANY_OTHER)*)*
+	stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER)+
 ;
 
 MobgenHeader:

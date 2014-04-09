@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IGenerator
 import nl.sison.dsl.mobgen.MobgenCallDefinition
 import nl.sison.dsl.mobgen.MobgenHeader
 import nl.sison.dsl.mobgen.MobgenJson
+import java.util.ArrayList
 
 class MobgenGenerator implements IGenerator {
 	
@@ -108,23 +109,88 @@ class AndroidCallRequestGenerator implements IGenerator
 
 	override doGenerate(Resource input, IFileSystemAccess fsa) {
 		val callDefinitions = input.allContents.filter(typeof(MobgenCallDefinition))
-		callDefinitions.forEach(d | d.androidCreateJavaFiles)
+		callDefinitions.forEach(d | d.androidCreateJavaFiles(fsa))
 	}
 	
-	def androidCreateJavaFiles(MobgenCallDefinition callDefinition)
+	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
+		val name = callDefinition.name
 		val method = callDefinition.method
 		val uri = callDefinition.uri
+		val urlParams = uri.parameters
+//		val addS = isTransportLayerSecured(uri.g)
 		// ... TODO start here
+		val stringBuffer = new StringBuffer
+		stringBuffer.append(uri.stringPrefix.toString.setPackage)
+		
+		fsa.generateFile(name.capitalizeFirstLetter + 'Loader.java', stringBuffer.toString)
 	}
+
+	def capitalizeFirstLetter(String s)
+	{
+		return s.substring(0, 1).toUpperCase() + s.substring(1);
+	}
+
+/*	
+	def setImports(ArrayList<String> list) 
+	{
+		return list.fold("") [result, s | result + "\nimport " + s]
+	}
+*/
 	
-	def setPackage(String callName, String url) '''
-	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF ».«callName»;
+	def wrapAsLoader(CharSequence packageName, CharSequence className, CharSequence returnType, CharSequence httpRequestMethod, CharSequence invokeHttpRequestMethod) '''
+	import android.content.AsyncTaskLoader;
+	import android.content.Context;
+	
+	public class «className»Loader extends AsyncTaskLoader<«returnType»>
+	{
+		«returnType» result;
+	
+		public «className»Loader(Context context) {
+			super(context);
+		}
+	
+		// Load the data asynchronously
+		@Override
+		public «returnType» loadInBackground() {
+			«invokeHttpRequestMethod»
+		}
+	
+		@Override
+		protected void onStartLoading() {
+		    if (result != null) {
+		      deliverResult(result);
+		    }
+		
+		    if (takeContentChanged() || result == null) {
+		      forceLoad();
+		    }
+		  }
+		}
+		
+		@Override
+		protected void onStopLoading() {
+			
+		}
+		
+		private static class «className»HttpRequest
+		{
+			private «className»HttpRequest() {}
+			
+			«httpRequestMethod»
+		}
+	}
 	'''
 	
-	def isTransportLayerSecured(String url) '''
-	« IF url.startsWith("https://") »"HttpsURLConnection"« ELSE »"HttpURLConnection"« ENDIF »
+	
+	def setPackage(String url) '''
+	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF »;
+	
 	'''
+	
+	def isTransportLayerSecured(String url) {
+		return if (url.startsWith("https://")) "HttpsURLConnection" else "HttpURLConnection"
+	}
 	
 	def setRequestProperty(CharSequence key, CharSequence parameterOrLiteral) '''
 	urlConnection.setRequestProperty("«key»", «parameterOrLiteral»);
@@ -139,7 +205,7 @@ class AndroidCallRequestGenerator implements IGenerator
 			IllegalAccessError
 	'''
 	
-	def setRequestSignature(CharSequence signature, CharSequence request) '''
+	def wrapAsMethod(CharSequence signature, CharSequence request) '''
 	«signature» {
 		«request»
 	}
@@ -156,7 +222,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	 * TODO must escape nasty symbols in the header injection part
 	 */
 	def httpRequestBuilder(CharSequence url, CharSequence method, CharSequence requestPropertyKeyValuePairs, String connectionTypeClass) '''
-	URL url = new URL("«url»");
+	URL url = new URL("«url»"); // URLEncoder.encode(...) 
 	«connectionTypeClass» urlConnection = new «connectionTypeClass»(url);
 	«requestPropertyKeyValuePairs»
 	urlConnection.setMethod("«method»")
@@ -176,7 +242,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	try {
 		urlConnection.connect();
 		if (!url.getHost().equals(urlConnection.getURL().getHost())) {
-			throw new IllegalStateException("You were probably redirected to a sign-on.");
+			throw new IllegalStateException("You were probably redirected to a sign-on."); // TODO fire up a browser to sign-on. sharedIntent.
 		}
 		in = new BufferedInputStream(urlConnection.getInputStream());
 		readStream(in);
@@ -184,6 +250,11 @@ class AndroidCallRequestGenerator implements IGenerator
 		out = new BufferedOutputStream(urlConnection.getOutputStream());
 		writeStream(out);
 		«ENDIF»
+		if (BuildConfig.DEBUG)
+		{
+			Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();
+			// TODO 
+		}
 	}catch(IOException e) // TODO do error handling on the UI thread? Toast#show
 	{
 		if (BuildConfig.DEBUG)
