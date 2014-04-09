@@ -27,16 +27,22 @@ class AndroidResourceGenerator implements IGenerator
 		fsa.generateFile('mobgen_strings.xml', mapInstances.prepareAndroidMap.androidResourceXMLWrap)
 		
 		val enumInstances = input.allContents.filter(typeof(EnumInstance))
-		enumInstances.writeJavaEnumFiles(fsa)
+		enumInstances.writeAndroidEnumFiles(fsa)
 	}
 	
 	/**
 	 * Enum related stuff
 	 */
-	def writeJavaEnumFiles(Iterator<EnumInstance> instances, IFileSystemAccess fsa) {
+	def writeAndroidEnumFiles(Iterator<EnumInstance> instances, IFileSystemAccess fsa) {
 		instances.forEach(m | fsa.generateFile(m.name.capitalizeFirstLetter+'Enum.java',
-			m.name.capitalizeFirstLetter.javaEnumTemplate(m.values.join(", "))
+			m.name.capitalizeFirstLetter.androidParcelableEnumTemplate(m.values.join(",\n"))
 		))
+		
+		// TODO refactor so that m.name.capitalizeFirstLetter is added as an XText feature
+		instances.forEach(m | fsa.generateFile(m.name.capitalizeFirstLetter+'Enum.java',
+			m.name.capitalizeFirstLetter.javaEnumTemplate(m.values.join(",\n"))
+		))
+		
 	}
 	
 	def capitalizeFirstLetter(String s)
@@ -45,9 +51,38 @@ class AndroidResourceGenerator implements IGenerator
 	}
 	
 	def javaEnumTemplate(String name, String commaSeparatedValues) '''
-    public enum «name»Enum {
-    	«commaSeparatedValues»;
-    }
+	public enum «name»Enum {
+		«commaSeparatedValues»;
+	}	
+	'''
+	
+	def androidParcelableEnumTemplate(String name, String commaSeparatedValues) '''
+	import android.os.Parcel;
+	import android.os.Parcelable;
+	
+	public enum «name»Enum implements Parcelable {
+		«commaSeparatedValues»;
+
+		public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+			public Status createFromParcel(Parcel in) {
+				return «name»Enum.values()[in.readInt()];
+			}
+
+			public Status[] newArray(int size) {
+				return new «name»Enum[size];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	
+		@Override
+		public void writeToParcel(Parcel out, int flags) {
+			out.writeInt(ordinal());
+		}
+	}
     '''
 
 	/**
@@ -141,6 +176,8 @@ class AndroidCallRequestGenerator implements IGenerator
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
+	import java.util.Map; // see http call
+	
 	// inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
 	public class «className»Loader extends AsyncTaskLoader<«returnType»>
 	{
@@ -160,7 +197,7 @@ class AndroidCallRequestGenerator implements IGenerator
 		public «returnType» loadInBackground() {
 			try
 			{
-				«className»HttpRequest.setParameters(TODO);
+				«className»HttpRequest.setParameters(TODO); // TODO
 				«className»HttpRequest.do«method»Request();
 				return «className»HttpRequest.getResult();
 				/**
@@ -257,7 +294,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	def createParcelable(CharSequence returnType, CharSequence parcelableBody) '''
 	public class «returnType» extends Parcelable
 	{
-		«parcelableBody»
+		«parcelableBody» // TODO - finish boilerplate
 	}
 	'''	
 	
@@ -274,15 +311,26 @@ class AndroidCallRequestGenerator implements IGenerator
 	urlConnection.setRequestProperty("«key»", «parameterOrLiteral»);
 	'''
 	
+	def generateExceptionHandlerLoggingAndThrow(CharSequence exceptionType) '''
+	}catch(«exceptionType» e) // TODO do error handling on the UI thread? Toast#show or pass it on via the result object thru the Loader?
+	{
+		if (BuildConfig.DEBUG)
+		{
+			Log.d("MOBGEN", "...");
+			e.printStackTrace();
+		}
+		throw e;
+	'''
+	
 	/**
-	 * TODO must escape nasty symbols in the header injection part
+	 * TODO must escape nasty symbols in the header injection part using URLEncoder#encode/?
 	 */
 	def httpRequestBuilder(CharSequence url, CharSequence method, CharSequence requestPropertyKeyValuePairs) '''
 	URL url = new URL("«url»"); // URLEncoder.encode(...) 
 	«url.toString.transportLayerSecured» urlConnection = new «url.toString.transportLayerSecured»(url);
 	«requestPropertyKeyValuePairs»
 	urlConnection.setMethod("«method.toString.toUpperCase»")
-	urlConnection.setConnectionTimeout(10000); // 10 seconds
+	urlConnection.setConnectionTimeout(10000); // 10 seconds, default over configuration principle
 	urlConnection.setReadTimeout(10000); // 10 seconds
 	urlConnection.setDoInput(true)
 	«IF method.toString.startsWith('P')» // if POST or PUT
@@ -309,63 +357,44 @@ class AndroidCallRequestGenerator implements IGenerator
 		«ENDIF»
 		if (BuildConfig.DEBUG)
 		{
-			Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();
-			// TODO start logging the header fields
+			Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields(); // do import statement
+			for (Map.Entry<String, List> entry : map.entrySet())
+			{
+				StringBuffer stringList = new StringBuffer();
+				for (String s : entry.getValue())
+				{
+					stringList.append(s);	
+				}
+			    Log.e("MOBGEN", String.format("key = %s / value = %s", entry.getKey(), stringList.toString()));
+			}
 		}
-	}catch(IOException e) // TODO do error handling on the UI thread? Toast#show
-	{
-		if (BuildConfig.DEBUG)
-		{
-			Log.d("MOBGEN", "...");
-			e.printStackTrace();
-		}
-		throw e;
-	}catch(UnknownServiceException e)
-	{
-		if (BuildConfig.DEBUG)
-		{
-			Log.d("MOBGEN", "...");
-			e.printStackTrace();
-		}
-		throw e;
-	}catch(IllegalAccessError e)
-	{
-		if (BuildConfig.DEBUG)
-		{
-			Log.d("MOBGEN", "...");
-			e.printStackTrace();
-		}
-		throw e;
+	«"IOException".generateExceptionHandlerLoggingAndThrow»
+	«"UnknownServiceException".generateExceptionHandlerLoggingAndThrow»
+	«"IllegalAccessError".generateExceptionHandlerLoggingAndThrow»
 	}finally {
 		try
 		{
 			if (urlConnection != null)
 			{
-				urlConnection.disconnect();
+				urlConnection.disconnect(); // TODO handle this exception separately
 			}
 			if (in != null)
 			{
-				in.close();
+				in.close(); // TODO handle this exception separately
 			}
 			«IF method.toString.startsWith('P')» // if POST or PUT
 			if (out != null)
 			{
-				out.close();
+				out.close(); // TODO handle this exception separately
 			}
 			«ENDIF»
-			
-		}catch(IOException e)
-		{
-			if(BuildConfig.DEBUG)
-			{
-				Log.d("MOBGEN", "...");
-				e.printStackTrace();
-				throw e;
-			}
-		}
+		«"IOException".generateExceptionHandlerLoggingAndThrow»
 	}
 	'''
 	
+	def createParcelable(CharSequence name) '''
+		
+	'''
 }
 
 class ObjCResourceGenerator implements IGenerator
