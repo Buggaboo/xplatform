@@ -21,16 +21,15 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMobgenParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_MOBGEN_HEADER_PARAMETER", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_NUMBER", "RULE_JSON_META_SCALAR_TYPE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'->'", "'}'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_NUMBER", "RULE_JSON_META_SCALAR_TYPE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'->'", "'}'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
     };
     public static final int RULE_ID=4;
-    public static final int T__40=40;
-    public static final int RULE_JSON_META_SCALAR_TYPE=14;
+    public static final int RULE_JSON_META_SCALAR_TYPE=13;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
-    public static final int RULE_EMPTY_JSON_ARRAY=10;
+    public static final int RULE_EMPTY_JSON_ARRAY=9;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
@@ -38,11 +37,11 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=7;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_JSON_LITERAL_BOOLEAN=11;
-    public static final int RULE_EMPTY_JSON_OBJECT=9;
-    public static final int RULE_SL_COMMENT=17;
+    public static final int RULE_JSON_LITERAL_BOOLEAN=10;
+    public static final int RULE_EMPTY_JSON_OBJECT=8;
+    public static final int RULE_SL_COMMENT=16;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=16;
+    public static final int RULE_ML_COMMENT=15;
     public static final int T__19=19;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -51,16 +50,16 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
-    public static final int RULE_JSON_NUMBER=13;
+    public static final int T__18=18;
+    public static final int RULE_JSON_NUMBER=12;
     public static final int T__36=36;
     public static final int T__37=37;
-    public static final int RULE_JSON_LITERAL_NULL=12;
+    public static final int RULE_JSON_LITERAL_NULL=11;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_MOBGEN_HEADER_PARAMETER=8;
-    public static final int RULE_INT=15;
+    public static final int RULE_INT=14;
     public static final int RULE_RESTFUL_METHODS=6;
-    public static final int RULE_WS=18;
+    public static final int RULE_WS=17;
 
     // delegates
     // delegators
@@ -195,10 +194,10 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 int alt1=3;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=39 && LA1_0<=40)) ) {
+                if ( ((LA1_0>=38 && LA1_0<=39)) ) {
                     alt1=1;
                 }
-                else if ( (LA1_0==23) ) {
+                else if ( (LA1_0==22) ) {
                     alt1=2;
                 }
 
@@ -365,11 +364,11 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:156:1: (otherlv_0= 'platform' otherlv_1= '{' ( ( (lv_platforms_2_0= RULE_ID ) ) otherlv_3= '->' ( (lv_generateWhere_4_0= RULE_STRING ) ) )+ otherlv_5= '}' )
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:156:3: otherlv_0= 'platform' otherlv_1= '{' ( ( (lv_platforms_2_0= RULE_ID ) ) otherlv_3= '->' ( (lv_generateWhere_4_0= RULE_STRING ) ) )+ otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_rulePlatform265); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_rulePlatform265); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPlatformAccess().getPlatformKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_rulePlatform277); 
+            otherlv_1=(Token)match(input,19,FOLLOW_19_in_rulePlatform277); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1());
                 
@@ -415,7 +414,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_rulePlatform312); 
+            	    otherlv_3=(Token)match(input,20,FOLLOW_20_in_rulePlatform312); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1());
             	        
@@ -458,7 +457,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 cnt2++;
             } while (true);
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_rulePlatform348); 
+            otherlv_5=(Token)match(input,21,FOLLOW_21_in_rulePlatform348); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3());
                 
@@ -558,7 +557,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:229:1: (otherlv_0= 'call' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_method_3_0= RULE_RESTFUL_METHODS ) ) otherlv_4= 'from' ( (lv_uri_5_0= ruleURI ) ) (otherlv_6= 'with' otherlv_7= 'headers' otherlv_8= 'from' otherlv_9= 'request' ( (lv_requestHeaders_10_0= ruleMobgenHeader ) ) (otherlv_11= 'and' otherlv_12= 'response' ( (lv_responseHeaders_13_0= ruleMobgenHeader ) ) )? )? (otherlv_14= 'client' otherlv_15= 'expects' ( (lv_jsonToClient_16_0= ruleMobgenJson ) ) )? (otherlv_17= 'server' otherlv_18= 'expects' ( (lv_jsonToServer_19_0= ruleMobgenJson ) ) )? )
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:229:3: otherlv_0= 'call' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (lv_method_3_0= RULE_RESTFUL_METHODS ) ) otherlv_4= 'from' ( (lv_uri_5_0= ruleURI ) ) (otherlv_6= 'with' otherlv_7= 'headers' otherlv_8= 'from' otherlv_9= 'request' ( (lv_requestHeaders_10_0= ruleMobgenHeader ) ) (otherlv_11= 'and' otherlv_12= 'response' ( (lv_responseHeaders_13_0= ruleMobgenHeader ) ) )? )? (otherlv_14= 'client' otherlv_15= 'expects' ( (lv_jsonToClient_16_0= ruleMobgenJson ) ) )? (otherlv_17= 'server' otherlv_18= 'expects' ( (lv_jsonToServer_19_0= ruleMobgenJson ) ) )?
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleMobgenCallDefinition431); 
+            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleMobgenCallDefinition431); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMobgenCallDefinitionAccess().getCallKeyword_0());
                 
@@ -588,7 +587,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleMobgenCallDefinition465); 
+            otherlv_2=(Token)match(input,23,FOLLOW_23_in_ruleMobgenCallDefinition465); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMobgenCallDefinitionAccess().getColonKeyword_2());
                 
@@ -618,7 +617,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleMobgenCallDefinition499); 
+            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleMobgenCallDefinition499); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_4());
                 
@@ -657,26 +656,26 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==26) ) {
+            if ( (LA4_0==25) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:295:4: otherlv_6= 'with' otherlv_7= 'headers' otherlv_8= 'from' otherlv_9= 'request' ( (lv_requestHeaders_10_0= ruleMobgenHeader ) ) (otherlv_11= 'and' otherlv_12= 'response' ( (lv_responseHeaders_13_0= ruleMobgenHeader ) ) )?
                     {
-                    otherlv_6=(Token)match(input,26,FOLLOW_26_in_ruleMobgenCallDefinition533); 
+                    otherlv_6=(Token)match(input,25,FOLLOW_25_in_ruleMobgenCallDefinition533); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getMobgenCallDefinitionAccess().getWithKeyword_6_0());
                         
-                    otherlv_7=(Token)match(input,27,FOLLOW_27_in_ruleMobgenCallDefinition545); 
+                    otherlv_7=(Token)match(input,26,FOLLOW_26_in_ruleMobgenCallDefinition545); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getMobgenCallDefinitionAccess().getHeadersKeyword_6_1());
                         
-                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleMobgenCallDefinition557); 
+                    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleMobgenCallDefinition557); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_6_2());
                         
-                    otherlv_9=(Token)match(input,28,FOLLOW_28_in_ruleMobgenCallDefinition569); 
+                    otherlv_9=(Token)match(input,27,FOLLOW_27_in_ruleMobgenCallDefinition569); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getMobgenCallDefinitionAccess().getRequestKeyword_6_3());
                         
@@ -715,18 +714,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
-                    if ( (LA3_0==29) ) {
+                    if ( (LA3_0==28) ) {
                         alt3=1;
                     }
                     switch (alt3) {
                         case 1 :
                             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:329:4: otherlv_11= 'and' otherlv_12= 'response' ( (lv_responseHeaders_13_0= ruleMobgenHeader ) )
                             {
-                            otherlv_11=(Token)match(input,29,FOLLOW_29_in_ruleMobgenCallDefinition603); 
+                            otherlv_11=(Token)match(input,28,FOLLOW_28_in_ruleMobgenCallDefinition603); 
 
                                 	newLeafNode(otherlv_11, grammarAccess.getMobgenCallDefinitionAccess().getAndKeyword_6_5_0());
                                 
-                            otherlv_12=(Token)match(input,30,FOLLOW_30_in_ruleMobgenCallDefinition615); 
+                            otherlv_12=(Token)match(input,29,FOLLOW_29_in_ruleMobgenCallDefinition615); 
 
                                 	newLeafNode(otherlv_12, grammarAccess.getMobgenCallDefinitionAccess().getResponseKeyword_6_5_1());
                                 
@@ -777,18 +776,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==31) ) {
+            if ( (LA5_0==30) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:355:8: otherlv_14= 'client' otherlv_15= 'expects' ( (lv_jsonToClient_16_0= ruleMobgenJson ) )
                     {
-                    otherlv_14=(Token)match(input,31,FOLLOW_31_in_ruleMobgenCallDefinition653); 
+                    otherlv_14=(Token)match(input,30,FOLLOW_30_in_ruleMobgenCallDefinition653); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getMobgenCallDefinitionAccess().getClientKeyword_7_0());
                         
-                    otherlv_15=(Token)match(input,32,FOLLOW_32_in_ruleMobgenCallDefinition665); 
+                    otherlv_15=(Token)match(input,31,FOLLOW_31_in_ruleMobgenCallDefinition665); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_7_1());
                         
@@ -833,18 +832,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==33) ) {
+            if ( (LA6_0==32) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:381:6: otherlv_17= 'server' otherlv_18= 'expects' ( (lv_jsonToServer_19_0= ruleMobgenJson ) )
                     {
-                    otherlv_17=(Token)match(input,33,FOLLOW_33_in_ruleMobgenCallDefinition701); 
+                    otherlv_17=(Token)match(input,32,FOLLOW_32_in_ruleMobgenCallDefinition701); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getMobgenCallDefinitionAccess().getServerKeyword_8_0());
                         
-                    otherlv_18=(Token)match(input,32,FOLLOW_32_in_ruleMobgenCallDefinition713); 
+                    otherlv_18=(Token)match(input,31,FOLLOW_31_in_ruleMobgenCallDefinition713); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_8_1());
                         
@@ -1017,7 +1016,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==20) ) {
+                if ( (LA8_0==19) ) {
                     alt8=1;
                 }
 
@@ -1026,7 +1025,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:446:5: otherlv_1= '{' ( (lv_parameters_2_0= RULE_ID ) ) otherlv_3= '}' ( (lv_stringSuffix_4_0= RULE_ANY_OTHER ) )
             	    {
-            	    otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleURI843); 
+            	    otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleURI843); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0());
             	        
@@ -1056,7 +1055,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleURI877); 
+            	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleURI877); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2());
             	        
@@ -1218,11 +1217,11 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleMobgenHeader1007); 
+            otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleMobgenHeader1007); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_1());
                 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleMobgenHeader1019); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleMobgenHeader1019); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMobgenHeaderAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -1263,10 +1262,10 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==35) ) {
+                if ( (LA10_0==34) ) {
                     int LA10_1 = input.LA(2);
 
-                    if ( (LA10_1==RULE_STRING) ) {
+                    if ( (LA10_1==RULE_STRING||LA10_1==19) ) {
                         alt10=1;
                     }
 
@@ -1278,7 +1277,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:555:4: otherlv_4= ',' ( (lv_headerKeyValues_5_0= ruleMobgenHeaderKeyValuePair ) )
             	    {
-            	    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleMobgenHeader1053); 
+            	    otherlv_4=(Token)match(input,34,FOLLOW_34_in_ruleMobgenHeader1053); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getMobgenHeaderAccess().getCommaKeyword_4_0());
             	        
@@ -1326,14 +1325,14 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==35) ) {
+            if ( (LA11_0==34) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:577:6: otherlv_6= ','
                     {
-                    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleMobgenHeader1089); 
+                    otherlv_6=(Token)match(input,34,FOLLOW_34_in_ruleMobgenHeader1089); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getMobgenHeaderAccess().getCommaKeyword_5());
                         
@@ -1343,11 +1342,11 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleMobgenHeader1103); 
+            otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleMobgenHeader1103); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getMobgenHeaderAccess().getRightCurlyBracketKeyword_6());
                 
-            otherlv_8=(Token)match(input,34,FOLLOW_34_in_ruleMobgenHeader1115); 
+            otherlv_8=(Token)match(input,33,FOLLOW_33_in_ruleMobgenHeader1115); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_7());
                 
@@ -1408,62 +1407,30 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMobgenHeaderKeyValuePair"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:606:1: ruleMobgenHeaderKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) ) ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:606:1: ruleMobgenHeaderKeyValuePair returns [EObject current=null] : ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) | ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) ) ) ;
     public final EObject ruleMobgenHeaderKeyValuePair() throws RecognitionException {
         EObject current = null;
 
         Token lv_key_0_0=null;
         Token otherlv_1=null;
         Token lv_value_2_0=null;
-        Token lv_value_3_0=null;
+        EObject lv_parameter_3_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:609:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:609:28: ( ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) | ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:1: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) | ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:2: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) )
-            {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:2: ( (lv_key_0_0= RULE_STRING ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:611:1: (lv_key_0_0= RULE_STRING )
-            {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:611:1: (lv_key_0_0= RULE_STRING )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:612:3: lv_key_0_0= RULE_STRING
-            {
-            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1203); 
-
-            			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMobgenHeaderKeyValuePairRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"key",
-                    		lv_key_0_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleMobgenHeaderKeyValuePair1220); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1());
-                
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:632:1: ( ( (lv_value_2_0= RULE_STRING ) ) | ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:1: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) | ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
             if ( (LA12_0==RULE_STRING) ) {
                 alt12=1;
             }
-            else if ( (LA12_0==RULE_MOBGEN_HEADER_PARAMETER) ) {
+            else if ( (LA12_0==19) ) {
                 alt12=2;
             }
             else {
@@ -1474,9 +1441,42 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:632:2: ( (lv_value_2_0= RULE_STRING ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:2: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:632:2: ( (lv_value_2_0= RULE_STRING ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:2: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:3: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) )
+                    {
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:610:3: ( (lv_key_0_0= RULE_STRING ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:611:1: (lv_key_0_0= RULE_STRING )
+                    {
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:611:1: (lv_key_0_0= RULE_STRING )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:612:3: lv_key_0_0= RULE_STRING
+                    {
+                    lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1204); 
+
+                    			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMobgenHeaderKeyValuePairRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"key",
+                            		lv_key_0_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleMobgenHeaderKeyValuePair1221); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1());
+                        
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:632:1: ( (lv_value_2_0= RULE_STRING ) )
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:633:1: (lv_value_2_0= RULE_STRING )
                     {
                     // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:633:1: (lv_value_2_0= RULE_STRING )
@@ -1484,7 +1484,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     {
                     lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1238); 
 
-                    			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
+                    			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); 
                     		
 
                     	        if (current==null) {
@@ -1504,29 +1504,37 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
                     }
+
+
+                    }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:651:6: ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:651:6: ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:651:6: ( (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:652:1: (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:651:6: ( (lv_parameter_3_0= ruleMobgenHeaderParameter ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:652:1: (lv_parameter_3_0= ruleMobgenHeaderParameter )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:652:1: (lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:653:3: lv_value_3_0= RULE_MOBGEN_HEADER_PARAMETER
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:652:1: (lv_parameter_3_0= ruleMobgenHeaderParameter )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:653:3: lv_parameter_3_0= ruleMobgenHeaderParameter
                     {
-                    lv_value_3_0=(Token)match(input,RULE_MOBGEN_HEADER_PARAMETER,FOLLOW_RULE_MOBGEN_HEADER_PARAMETER_in_ruleMobgenHeaderKeyValuePair1266); 
+                     
+                    	        newCompositeNode(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleMobgenHeaderParameter_in_ruleMobgenHeaderKeyValuePair1271);
+                    lv_parameter_3_0=ruleMobgenHeaderParameter();
 
-                    			newLeafNode(lv_value_3_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0()); 
-                    		
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getMobgenHeaderKeyValuePairRule());
+                    	            current = createModelElementForParent(grammarAccess.getMobgenHeaderKeyValuePairRule());
                     	        }
-                           		setWithLastConsumed(
+                           		set(
                            			current, 
-                           			"value",
-                            		lv_value_3_0, 
-                            		"MOBGEN_HEADER_PARAMETER");
+                           			"parameter",
+                            		lv_parameter_3_0, 
+                            		"MobgenHeaderParameter");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -1537,9 +1545,6 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-
-            }
-
 
             }
 
@@ -1560,8 +1565,116 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMobgenHeaderKeyValuePair"
 
 
+    // $ANTLR start "entryRuleMobgenHeaderParameter"
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:677:1: entryRuleMobgenHeaderParameter returns [EObject current=null] : iv_ruleMobgenHeaderParameter= ruleMobgenHeaderParameter EOF ;
+    public final EObject entryRuleMobgenHeaderParameter() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMobgenHeaderParameter = null;
+
+
+        try {
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:678:2: (iv_ruleMobgenHeaderParameter= ruleMobgenHeaderParameter EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:679:2: iv_ruleMobgenHeaderParameter= ruleMobgenHeaderParameter EOF
+            {
+             newCompositeNode(grammarAccess.getMobgenHeaderParameterRule()); 
+            pushFollow(FOLLOW_ruleMobgenHeaderParameter_in_entryRuleMobgenHeaderParameter1307);
+            iv_ruleMobgenHeaderParameter=ruleMobgenHeaderParameter();
+
+            state._fsp--;
+
+             current =iv_ruleMobgenHeaderParameter; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenHeaderParameter1317); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMobgenHeaderParameter"
+
+
+    // $ANTLR start "ruleMobgenHeaderParameter"
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:686:1: ruleMobgenHeaderParameter returns [EObject current=null] : (otherlv_0= '{' ( (lv_id_1_0= RULE_ID ) ) otherlv_2= '}' ) ;
+    public final EObject ruleMobgenHeaderParameter() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_id_1_0=null;
+        Token otherlv_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:689:28: ( (otherlv_0= '{' ( (lv_id_1_0= RULE_ID ) ) otherlv_2= '}' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:1: (otherlv_0= '{' ( (lv_id_1_0= RULE_ID ) ) otherlv_2= '}' )
+            {
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:1: (otherlv_0= '{' ( (lv_id_1_0= RULE_ID ) ) otherlv_2= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:3: otherlv_0= '{' ( (lv_id_1_0= RULE_ID ) ) otherlv_2= '}'
+            {
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleMobgenHeaderParameter1354); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getMobgenHeaderParameterAccess().getLeftCurlyBracketKeyword_0());
+                
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:694:1: ( (lv_id_1_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:695:1: (lv_id_1_0= RULE_ID )
+            {
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:695:1: (lv_id_1_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:696:3: lv_id_1_0= RULE_ID
+            {
+            lv_id_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMobgenHeaderParameter1371); 
+
+            			newLeafNode(lv_id_1_0, grammarAccess.getMobgenHeaderParameterAccess().getIdIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getMobgenHeaderParameterRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"id",
+                    		lv_id_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleMobgenHeaderParameter1388); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getMobgenHeaderParameterAccess().getRightCurlyBracketKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMobgenHeaderParameter"
+
+
     // $ANTLR start "entryRuleMobgenJson"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:677:1: entryRuleMobgenJson returns [EObject current=null] : iv_ruleMobgenJson= ruleMobgenJson EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:724:1: entryRuleMobgenJson returns [EObject current=null] : iv_ruleMobgenJson= ruleMobgenJson EOF ;
     public final EObject entryRuleMobgenJson() throws RecognitionException {
         EObject current = null;
 
@@ -1569,17 +1682,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:678:2: (iv_ruleMobgenJson= ruleMobgenJson EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:679:2: iv_ruleMobgenJson= ruleMobgenJson EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:725:2: (iv_ruleMobgenJson= ruleMobgenJson EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:726:2: iv_ruleMobgenJson= ruleMobgenJson EOF
             {
              newCompositeNode(grammarAccess.getMobgenJsonRule()); 
-            pushFollow(FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson1308);
+            pushFollow(FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson1424);
             iv_ruleMobgenJson=ruleMobgenJson();
 
             state._fsp--;
 
              current =iv_ruleMobgenJson; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenJson1318); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenJson1434); 
 
             }
 
@@ -1597,7 +1710,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMobgenJson"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:686:1: ruleMobgenJson returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:733:1: ruleMobgenJson returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' ) ;
     public final EObject ruleMobgenJson() throws RecognitionException {
         EObject current = null;
 
@@ -1610,19 +1723,19 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:689:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:736:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:737:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\''
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:737:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\'' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:737:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '\\'\\'\\'' ( (lv_value_2_0= ruleJsonObjectValue ) ) otherlv_3= '\\'\\'\\''
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:690:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:691:1: (lv_name_0_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:737:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:738:1: (lv_name_0_0= RULE_ID )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:691:1: (lv_name_0_0= RULE_ID )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:692:3: lv_name_0_0= RULE_ID
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:738:1: (lv_name_0_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:739:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMobgenJson1360); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMobgenJson1476); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getMobgenJsonAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -1642,20 +1755,20 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleMobgenJson1377); 
+            otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleMobgenJson1493); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_1());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:712:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:713:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:759:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:760:1: (lv_value_2_0= ruleJsonObjectValue )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:713:1: (lv_value_2_0= ruleJsonObjectValue )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:714:3: lv_value_2_0= ruleJsonObjectValue
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:760:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:761:3: lv_value_2_0= ruleJsonObjectValue
             {
              
             	        newCompositeNode(grammarAccess.getMobgenJsonAccess().getValueJsonObjectValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleMobgenJson1398);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleMobgenJson1514);
             lv_value_2_0=ruleJsonObjectValue();
 
             state._fsp--;
@@ -1677,7 +1790,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,34,FOLLOW_34_in_ruleMobgenJson1410); 
+            otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleMobgenJson1526); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_3());
                 
@@ -1702,7 +1815,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonObjectValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:742:1: entryRuleJsonObjectValue returns [EObject current=null] : iv_ruleJsonObjectValue= ruleJsonObjectValue EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:789:1: entryRuleJsonObjectValue returns [EObject current=null] : iv_ruleJsonObjectValue= ruleJsonObjectValue EOF ;
     public final EObject entryRuleJsonObjectValue() throws RecognitionException {
         EObject current = null;
 
@@ -1710,17 +1823,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:743:2: (iv_ruleJsonObjectValue= ruleJsonObjectValue EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:744:2: iv_ruleJsonObjectValue= ruleJsonObjectValue EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:790:2: (iv_ruleJsonObjectValue= ruleJsonObjectValue EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:791:2: iv_ruleJsonObjectValue= ruleJsonObjectValue EOF
             {
              newCompositeNode(grammarAccess.getJsonObjectValueRule()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue1446);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue1562);
             iv_ruleJsonObjectValue=ruleJsonObjectValue();
 
             state._fsp--;
 
              current =iv_ruleJsonObjectValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObjectValue1456); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObjectValue1572); 
 
             }
 
@@ -1738,7 +1851,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonObjectValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:751:1: ruleJsonObjectValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:798:1: ruleJsonObjectValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) ) ;
     public final EObject ruleJsonObjectValue() throws RecognitionException {
         EObject current = null;
 
@@ -1750,17 +1863,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:754:28: ( ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:755:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:801:28: ( ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:802:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:755:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:802:1: ( ( (lv_value_0_0= ruleJsonLiteralValue ) ) | ( (lv_composite_1_0= ruleJsonCompositeValue ) ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
             if ( (LA13_0==RULE_STRING||(LA13_0>=RULE_EMPTY_JSON_OBJECT && LA13_0<=RULE_JSON_META_SCALAR_TYPE)) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==20||LA13_0==37) ) {
+            else if ( (LA13_0==19||LA13_0==36) ) {
                 alt13=2;
             }
             else {
@@ -1771,18 +1884,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:755:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:802:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:755:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:756:1: (lv_value_0_0= ruleJsonLiteralValue )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:802:2: ( (lv_value_0_0= ruleJsonLiteralValue ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:803:1: (lv_value_0_0= ruleJsonLiteralValue )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:756:1: (lv_value_0_0= ruleJsonLiteralValue )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:757:3: lv_value_0_0= ruleJsonLiteralValue
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:803:1: (lv_value_0_0= ruleJsonLiteralValue )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:804:3: lv_value_0_0= ruleJsonLiteralValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1502);
+                    pushFollow(FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1618);
                     lv_value_0_0=ruleJsonLiteralValue();
 
                     state._fsp--;
@@ -1808,18 +1921,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:774:6: ( (lv_composite_1_0= ruleJsonCompositeValue ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:821:6: ( (lv_composite_1_0= ruleJsonCompositeValue ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:774:6: ( (lv_composite_1_0= ruleJsonCompositeValue ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:775:1: (lv_composite_1_0= ruleJsonCompositeValue )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:821:6: ( (lv_composite_1_0= ruleJsonCompositeValue ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:822:1: (lv_composite_1_0= ruleJsonCompositeValue )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:775:1: (lv_composite_1_0= ruleJsonCompositeValue )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:776:3: lv_composite_1_0= ruleJsonCompositeValue
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:822:1: (lv_composite_1_0= ruleJsonCompositeValue )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:823:3: lv_composite_1_0= ruleJsonCompositeValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getCompositeJsonCompositeValueParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1529);
+                    pushFollow(FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1645);
                     lv_composite_1_0=ruleJsonCompositeValue();
 
                     state._fsp--;
@@ -1865,7 +1978,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonCompositeValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:800:1: entryRuleJsonCompositeValue returns [EObject current=null] : iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:847:1: entryRuleJsonCompositeValue returns [EObject current=null] : iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF ;
     public final EObject entryRuleJsonCompositeValue() throws RecognitionException {
         EObject current = null;
 
@@ -1873,17 +1986,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:801:2: (iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:802:2: iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:848:2: (iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:849:2: iv_ruleJsonCompositeValue= ruleJsonCompositeValue EOF
             {
              newCompositeNode(grammarAccess.getJsonCompositeValueRule()); 
-            pushFollow(FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1565);
+            pushFollow(FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1681);
             iv_ruleJsonCompositeValue=ruleJsonCompositeValue();
 
             state._fsp--;
 
              current =iv_ruleJsonCompositeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonCompositeValue1575); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonCompositeValue1691); 
 
             }
 
@@ -1901,7 +2014,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonCompositeValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:809:1: ruleJsonCompositeValue returns [EObject current=null] : (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:856:1: ruleJsonCompositeValue returns [EObject current=null] : (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) ;
     public final EObject ruleJsonCompositeValue() throws RecognitionException {
         EObject current = null;
 
@@ -1913,17 +2026,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:812:28: ( (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:813:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:859:28: ( (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:860:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:813:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:860:1: (this_JsonObject_0= ruleJsonObject | this_JsonArray_1= ruleJsonArray )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==20) ) {
+            if ( (LA14_0==19) ) {
                 alt14=1;
             }
-            else if ( (LA14_0==37) ) {
+            else if ( (LA14_0==36) ) {
                 alt14=2;
             }
             else {
@@ -1934,12 +2047,12 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:814:5: this_JsonObject_0= ruleJsonObject
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:861:5: this_JsonObject_0= ruleJsonObject
                     {
                      
                             newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1622);
+                    pushFollow(FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1738);
                     this_JsonObject_0=ruleJsonObject();
 
                     state._fsp--;
@@ -1952,12 +2065,12 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:824:5: this_JsonArray_1= ruleJsonArray
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:871:5: this_JsonArray_1= ruleJsonArray
                     {
                      
                             newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1649);
+                    pushFollow(FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1765);
                     this_JsonArray_1=ruleJsonArray();
 
                     state._fsp--;
@@ -1990,7 +2103,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonLiteralValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:840:1: entryRuleJsonLiteralValue returns [String current=null] : iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:887:1: entryRuleJsonLiteralValue returns [String current=null] : iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF ;
     public final String entryRuleJsonLiteralValue() throws RecognitionException {
         String current = null;
 
@@ -1998,17 +2111,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:841:2: (iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:842:2: iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:888:2: (iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:889:2: iv_ruleJsonLiteralValue= ruleJsonLiteralValue EOF
             {
              newCompositeNode(grammarAccess.getJsonLiteralValueRule()); 
-            pushFollow(FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1685);
+            pushFollow(FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1801);
             iv_ruleJsonLiteralValue=ruleJsonLiteralValue();
 
             state._fsp--;
 
              current =iv_ruleJsonLiteralValue.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonLiteralValue1696); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonLiteralValue1812); 
 
             }
 
@@ -2026,7 +2139,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonLiteralValue"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:849:1: ruleJsonLiteralValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:896:1: ruleJsonLiteralValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) ;
     public final AntlrDatatypeRuleToken ruleJsonLiteralValue() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2041,10 +2154,10 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:852:28: ( (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:853:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:899:28: ( (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:900:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:853:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:900:1: (this_STRING_0= RULE_STRING | this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT | this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY | this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN | this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL | this_JSON_NUMBER_5= RULE_JSON_NUMBER | this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE )
             int alt15=7;
             switch ( input.LA(1) ) {
             case RULE_STRING:
@@ -2091,9 +2204,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:853:6: this_STRING_0= RULE_STRING
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:900:6: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1736); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1852); 
 
                     		current.merge(this_STRING_0);
                         
@@ -2104,9 +2217,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:861:10: this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:908:10: this_EMPTY_JSON_OBJECT_1= RULE_EMPTY_JSON_OBJECT
                     {
-                    this_EMPTY_JSON_OBJECT_1=(Token)match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1762); 
+                    this_EMPTY_JSON_OBJECT_1=(Token)match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1878); 
 
                     		current.merge(this_EMPTY_JSON_OBJECT_1);
                         
@@ -2117,9 +2230,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:869:10: this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:916:10: this_EMPTY_JSON_ARRAY_2= RULE_EMPTY_JSON_ARRAY
                     {
-                    this_EMPTY_JSON_ARRAY_2=(Token)match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1788); 
+                    this_EMPTY_JSON_ARRAY_2=(Token)match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1904); 
 
                     		current.merge(this_EMPTY_JSON_ARRAY_2);
                         
@@ -2130,9 +2243,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:877:10: this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:924:10: this_JSON_LITERAL_BOOLEAN_3= RULE_JSON_LITERAL_BOOLEAN
                     {
-                    this_JSON_LITERAL_BOOLEAN_3=(Token)match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1814); 
+                    this_JSON_LITERAL_BOOLEAN_3=(Token)match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1930); 
 
                     		current.merge(this_JSON_LITERAL_BOOLEAN_3);
                         
@@ -2143,9 +2256,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:885:10: this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:932:10: this_JSON_LITERAL_NULL_4= RULE_JSON_LITERAL_NULL
                     {
-                    this_JSON_LITERAL_NULL_4=(Token)match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1840); 
+                    this_JSON_LITERAL_NULL_4=(Token)match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1956); 
 
                     		current.merge(this_JSON_LITERAL_NULL_4);
                         
@@ -2156,9 +2269,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:893:10: this_JSON_NUMBER_5= RULE_JSON_NUMBER
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:940:10: this_JSON_NUMBER_5= RULE_JSON_NUMBER
                     {
-                    this_JSON_NUMBER_5=(Token)match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1866); 
+                    this_JSON_NUMBER_5=(Token)match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1982); 
 
                     		current.merge(this_JSON_NUMBER_5);
                         
@@ -2169,9 +2282,9 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:901:10: this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:948:10: this_JSON_META_SCALAR_TYPE_6= RULE_JSON_META_SCALAR_TYPE
                     {
-                    this_JSON_META_SCALAR_TYPE_6=(Token)match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue1892); 
+                    this_JSON_META_SCALAR_TYPE_6=(Token)match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue2008); 
 
                     		current.merge(this_JSON_META_SCALAR_TYPE_6);
                         
@@ -2202,7 +2315,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonObject"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:916:1: entryRuleJsonObject returns [EObject current=null] : iv_ruleJsonObject= ruleJsonObject EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:963:1: entryRuleJsonObject returns [EObject current=null] : iv_ruleJsonObject= ruleJsonObject EOF ;
     public final EObject entryRuleJsonObject() throws RecognitionException {
         EObject current = null;
 
@@ -2210,17 +2323,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:917:2: (iv_ruleJsonObject= ruleJsonObject EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:918:2: iv_ruleJsonObject= ruleJsonObject EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:964:2: (iv_ruleJsonObject= ruleJsonObject EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:965:2: iv_ruleJsonObject= ruleJsonObject EOF
             {
              newCompositeNode(grammarAccess.getJsonObjectRule()); 
-            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject1937);
+            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject2053);
             iv_ruleJsonObject=ruleJsonObject();
 
             state._fsp--;
 
              current =iv_ruleJsonObject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject1947); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject2063); 
 
             }
 
@@ -2238,7 +2351,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonObject"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:925:1: ruleJsonObject returns [EObject current=null] : (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:972:1: ruleJsonObject returns [EObject current=null] : (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) ;
     public final EObject ruleJsonObject() throws RecognitionException {
         EObject current = null;
 
@@ -2254,26 +2367,26 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:928:28: ( (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:929:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:975:28: ( (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:976:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:929:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:929:3: otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:976:1: (otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:976:3: otherlv_0= '{' ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) ) (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )* (otherlv_4= ',' )? otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleJsonObject1984); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleJsonObject2100); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:933:1: ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:934:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:980:1: ( (lv_keyValuePair_1_0= ruleJsonKeyValuePair ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:981:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:934:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:935:3: lv_keyValuePair_1_0= ruleJsonKeyValuePair
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:981:1: (lv_keyValuePair_1_0= ruleJsonKeyValuePair )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:982:3: lv_keyValuePair_1_0= ruleJsonKeyValuePair
             {
              
             	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2005);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2121);
             lv_keyValuePair_1_0=ruleJsonKeyValuePair();
 
             state._fsp--;
@@ -2295,13 +2408,13 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:951:2: (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:998:2: (otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) ) )*
             loop16:
             do {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==35) ) {
+                if ( (LA16_0==34) ) {
                     int LA16_1 = input.LA(2);
 
                     if ( (LA16_1==RULE_STRING) ) {
@@ -2314,22 +2427,22 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:951:4: otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:998:4: otherlv_2= ',' ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject2018); 
+            	    otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleJsonObject2134); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:955:1: ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:956:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1002:1: ( (lv_keyValuePair_3_0= ruleJsonKeyValuePair ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1003:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:956:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:957:3: lv_keyValuePair_3_0= ruleJsonKeyValuePair
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1003:1: (lv_keyValuePair_3_0= ruleJsonKeyValuePair )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1004:3: lv_keyValuePair_3_0= ruleJsonKeyValuePair
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2039);
+            	    pushFollow(FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2155);
             	    lv_keyValuePair_3_0=ruleJsonKeyValuePair();
 
             	    state._fsp--;
@@ -2360,18 +2473,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:973:4: (otherlv_4= ',' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1020:4: (otherlv_4= ',' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==35) ) {
+            if ( (LA17_0==34) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:973:6: otherlv_4= ','
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1020:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonObject2054); 
+                    otherlv_4=(Token)match(input,34,FOLLOW_34_in_ruleJsonObject2170); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getJsonObjectAccess().getCommaKeyword_3());
                         
@@ -2381,7 +2494,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleJsonObject2068); 
+            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleJsonObject2184); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2406,7 +2519,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonKeyValuePair"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:989:1: entryRuleJsonKeyValuePair returns [EObject current=null] : iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1036:1: entryRuleJsonKeyValuePair returns [EObject current=null] : iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF ;
     public final EObject entryRuleJsonKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -2414,17 +2527,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:990:2: (iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:991:2: iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1037:2: (iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1038:2: iv_ruleJsonKeyValuePair= ruleJsonKeyValuePair EOF
             {
              newCompositeNode(grammarAccess.getJsonKeyValuePairRule()); 
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2104);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2220);
             iv_ruleJsonKeyValuePair=ruleJsonKeyValuePair();
 
             state._fsp--;
 
              current =iv_ruleJsonKeyValuePair; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair2114); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair2230); 
 
             }
 
@@ -2442,7 +2555,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonKeyValuePair"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:998:1: ruleJsonKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1045:1: ruleJsonKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) ;
     public final EObject ruleJsonKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -2454,19 +2567,19 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1001:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1002:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1048:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1049:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1002:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1002:2: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1049:1: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1049:2: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= ':' ( (lv_value_2_0= ruleJsonObjectValue ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1002:2: ( (lv_key_0_0= RULE_STRING ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1003:1: (lv_key_0_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1049:2: ( (lv_key_0_0= RULE_STRING ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1050:1: (lv_key_0_0= RULE_STRING )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1003:1: (lv_key_0_0= RULE_STRING )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1004:3: lv_key_0_0= RULE_STRING
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1050:1: (lv_key_0_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1051:3: lv_key_0_0= RULE_STRING
             {
-            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2156); 
+            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2272); 
 
             			newLeafNode(lv_key_0_0, grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
             		
@@ -2486,20 +2599,20 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleJsonKeyValuePair2173); 
+            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleJsonKeyValuePair2289); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getJsonKeyValuePairAccess().getColonKeyword_1());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1024:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1025:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1071:1: ( (lv_value_2_0= ruleJsonObjectValue ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1072:1: (lv_value_2_0= ruleJsonObjectValue )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1025:1: (lv_value_2_0= ruleJsonObjectValue )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1026:3: lv_value_2_0= ruleJsonObjectValue
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1072:1: (lv_value_2_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1073:3: lv_value_2_0= ruleJsonObjectValue
             {
              
             	        newCompositeNode(grammarAccess.getJsonKeyValuePairAccess().getValueJsonObjectValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2194);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2310);
             lv_value_2_0=ruleJsonObjectValue();
 
             state._fsp--;
@@ -2542,7 +2655,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonArray"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1050:1: entryRuleJsonArray returns [EObject current=null] : iv_ruleJsonArray= ruleJsonArray EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1097:1: entryRuleJsonArray returns [EObject current=null] : iv_ruleJsonArray= ruleJsonArray EOF ;
     public final EObject entryRuleJsonArray() throws RecognitionException {
         EObject current = null;
 
@@ -2550,17 +2663,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1051:2: (iv_ruleJsonArray= ruleJsonArray EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1052:2: iv_ruleJsonArray= ruleJsonArray EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1098:2: (iv_ruleJsonArray= ruleJsonArray EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1099:2: iv_ruleJsonArray= ruleJsonArray EOF
             {
              newCompositeNode(grammarAccess.getJsonArrayRule()); 
-            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray2230);
+            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray2346);
             iv_ruleJsonArray=ruleJsonArray();
 
             state._fsp--;
 
              current =iv_ruleJsonArray; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray2240); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray2356); 
 
             }
 
@@ -2578,7 +2691,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonArray"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1059:1: ruleJsonArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1106:1: ruleJsonArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
     public final EObject ruleJsonArray() throws RecognitionException {
         EObject current = null;
 
@@ -2594,26 +2707,26 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1062:28: ( (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1063:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1109:28: ( (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1110:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1063:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1063:3: otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1110:1: (otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1110:3: otherlv_0= '[' ( (lv_items_1_0= ruleJsonObjectValue ) ) (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleJsonArray2277); 
+            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleJsonArray2393); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1067:1: ( (lv_items_1_0= ruleJsonObjectValue ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1068:1: (lv_items_1_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1114:1: ( (lv_items_1_0= ruleJsonObjectValue ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1115:1: (lv_items_1_0= ruleJsonObjectValue )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1068:1: (lv_items_1_0= ruleJsonObjectValue )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1069:3: lv_items_1_0= ruleJsonObjectValue
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1115:1: (lv_items_1_0= ruleJsonObjectValue )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1116:3: lv_items_1_0= ruleJsonObjectValue
             {
              
             	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2298);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2414);
             lv_items_1_0=ruleJsonObjectValue();
 
             state._fsp--;
@@ -2635,16 +2748,16 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1085:2: (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1132:2: (otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) ) )*
             loop18:
             do {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==35) ) {
+                if ( (LA18_0==34) ) {
                     int LA18_1 = input.LA(2);
 
-                    if ( (LA18_1==RULE_STRING||(LA18_1>=RULE_EMPTY_JSON_OBJECT && LA18_1<=RULE_JSON_META_SCALAR_TYPE)||LA18_1==20||LA18_1==37) ) {
+                    if ( (LA18_1==RULE_STRING||(LA18_1>=RULE_EMPTY_JSON_OBJECT && LA18_1<=RULE_JSON_META_SCALAR_TYPE)||LA18_1==19||LA18_1==36) ) {
                         alt18=1;
                     }
 
@@ -2654,22 +2767,22 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1085:4: otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1132:4: otherlv_2= ',' ( (lv_items_3_0= ruleJsonObjectValue ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2311); 
+            	    otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleJsonArray2427); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1089:1: ( (lv_items_3_0= ruleJsonObjectValue ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1090:1: (lv_items_3_0= ruleJsonObjectValue )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1136:1: ( (lv_items_3_0= ruleJsonObjectValue ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1137:1: (lv_items_3_0= ruleJsonObjectValue )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1090:1: (lv_items_3_0= ruleJsonObjectValue )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1091:3: lv_items_3_0= ruleJsonObjectValue
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1137:1: (lv_items_3_0= ruleJsonObjectValue )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1138:3: lv_items_3_0= ruleJsonObjectValue
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2332);
+            	    pushFollow(FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2448);
             	    lv_items_3_0=ruleJsonObjectValue();
 
             	    state._fsp--;
@@ -2700,18 +2813,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1107:4: (otherlv_4= ',' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1154:4: (otherlv_4= ',' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==35) ) {
+            if ( (LA19_0==34) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1107:6: otherlv_4= ','
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1154:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleJsonArray2347); 
+                    otherlv_4=(Token)match(input,34,FOLLOW_34_in_ruleJsonArray2463); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getJsonArrayAccess().getCommaKeyword_3());
                         
@@ -2721,7 +2834,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleJsonArray2361); 
+            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleJsonArray2477); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_4());
                 
@@ -2746,7 +2859,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMobgenResourceDefinition"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1123:1: entryRuleMobgenResourceDefinition returns [EObject current=null] : iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1170:1: entryRuleMobgenResourceDefinition returns [EObject current=null] : iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF ;
     public final EObject entryRuleMobgenResourceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2754,17 +2867,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1124:2: (iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1125:2: iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1171:2: (iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1172:2: iv_ruleMobgenResourceDefinition= ruleMobgenResourceDefinition EOF
             {
              newCompositeNode(grammarAccess.getMobgenResourceDefinitionRule()); 
-            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition2397);
+            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition2513);
             iv_ruleMobgenResourceDefinition=ruleMobgenResourceDefinition();
 
             state._fsp--;
 
              current =iv_ruleMobgenResourceDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenResourceDefinition2407); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenResourceDefinition2523); 
 
             }
 
@@ -2782,7 +2895,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMobgenResourceDefinition"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1132:1: ruleMobgenResourceDefinition returns [EObject current=null] : ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1179:1: ruleMobgenResourceDefinition returns [EObject current=null] : ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) ;
     public final EObject ruleMobgenResourceDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2794,17 +2907,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1135:28: ( ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1136:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1182:28: ( ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1183:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1136:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1183:1: ( ( (lv_resources_0_0= ruleMapInstance ) ) | this_EnumInstance_1= ruleEnumInstance )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==40) ) {
+            if ( (LA20_0==39) ) {
                 alt20=1;
             }
-            else if ( (LA20_0==39) ) {
+            else if ( (LA20_0==38) ) {
                 alt20=2;
             }
             else {
@@ -2815,18 +2928,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1136:2: ( (lv_resources_0_0= ruleMapInstance ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1183:2: ( (lv_resources_0_0= ruleMapInstance ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1136:2: ( (lv_resources_0_0= ruleMapInstance ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1137:1: (lv_resources_0_0= ruleMapInstance )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1183:2: ( (lv_resources_0_0= ruleMapInstance ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1184:1: (lv_resources_0_0= ruleMapInstance )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1137:1: (lv_resources_0_0= ruleMapInstance )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1138:3: lv_resources_0_0= ruleMapInstance
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1184:1: (lv_resources_0_0= ruleMapInstance )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1185:3: lv_resources_0_0= ruleMapInstance
                     {
                      
                     	        newCompositeNode(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleMapInstance_in_ruleMobgenResourceDefinition2453);
+                    pushFollow(FOLLOW_ruleMapInstance_in_ruleMobgenResourceDefinition2569);
                     lv_resources_0_0=ruleMapInstance();
 
                     state._fsp--;
@@ -2852,12 +2965,12 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1156:5: this_EnumInstance_1= ruleEnumInstance
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1203:5: this_EnumInstance_1= ruleEnumInstance
                     {
                      
                             newCompositeNode(grammarAccess.getMobgenResourceDefinitionAccess().getEnumInstanceParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEnumInstance_in_ruleMobgenResourceDefinition2481);
+                    pushFollow(FOLLOW_ruleEnumInstance_in_ruleMobgenResourceDefinition2597);
                     this_EnumInstance_1=ruleEnumInstance();
 
                     state._fsp--;
@@ -2890,7 +3003,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumInstance"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1172:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1219:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
     public final EObject entryRuleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2898,17 +3011,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1173:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1174:2: iv_ruleEnumInstance= ruleEnumInstance EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1220:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1221:2: iv_ruleEnumInstance= ruleEnumInstance EOF
             {
              newCompositeNode(grammarAccess.getEnumInstanceRule()); 
-            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2516);
+            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2632);
             iv_ruleEnumInstance=ruleEnumInstance();
 
             state._fsp--;
 
              current =iv_ruleEnumInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance2526); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance2642); 
 
             }
 
@@ -2926,7 +3039,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumInstance"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1181:1: ruleEnumInstance returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1228:1: ruleEnumInstance returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) ;
     public final EObject ruleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -2942,23 +3055,23 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1184:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1185:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1231:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1232:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1185:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1185:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1232:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1232:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* (otherlv_6= ',' )? otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleEnumInstance2563); 
+            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleEnumInstance2679); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEnumInstanceAccess().getEnumKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1189:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1190:1: (lv_name_1_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1236:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1237:1: (lv_name_1_0= RULE_ID )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1190:1: (lv_name_1_0= RULE_ID )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1191:3: lv_name_1_0= RULE_ID
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1237:1: (lv_name_1_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1238:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2580); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2696); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2978,17 +3091,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleEnumInstance2597); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleEnumInstance2713); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEnumInstanceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1211:1: ( (lv_values_3_0= RULE_ID ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1212:1: (lv_values_3_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1258:1: ( (lv_values_3_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1259:1: (lv_values_3_0= RULE_ID )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1212:1: (lv_values_3_0= RULE_ID )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1213:3: lv_values_3_0= RULE_ID
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1259:1: (lv_values_3_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1260:3: lv_values_3_0= RULE_ID
             {
-            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2614); 
+            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2730); 
 
             			newLeafNode(lv_values_3_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); 
             		
@@ -3008,13 +3121,13 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1229:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1276:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==35) ) {
+                if ( (LA21_0==34) ) {
                     int LA21_1 = input.LA(2);
 
                     if ( (LA21_1==RULE_ID) ) {
@@ -3027,19 +3140,19 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1229:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1276:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
             	    {
-            	    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2632); 
+            	    otherlv_4=(Token)match(input,34,FOLLOW_34_in_ruleEnumInstance2748); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getEnumInstanceAccess().getCommaKeyword_4_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1233:1: ( (lv_values_5_0= RULE_ID ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1234:1: (lv_values_5_0= RULE_ID )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1280:1: ( (lv_values_5_0= RULE_ID ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1281:1: (lv_values_5_0= RULE_ID )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1234:1: (lv_values_5_0= RULE_ID )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1235:3: lv_values_5_0= RULE_ID
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1281:1: (lv_values_5_0= RULE_ID )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1282:3: lv_values_5_0= RULE_ID
             	    {
-            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2649); 
+            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance2765); 
 
             	    			newLeafNode(lv_values_5_0, grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); 
             	    		
@@ -3068,18 +3181,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1251:4: (otherlv_6= ',' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1298:4: (otherlv_6= ',' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==35) ) {
+            if ( (LA22_0==34) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1251:6: otherlv_6= ','
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1298:6: otherlv_6= ','
                     {
-                    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleEnumInstance2669); 
+                    otherlv_6=(Token)match(input,34,FOLLOW_34_in_ruleEnumInstance2785); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getEnumInstanceAccess().getCommaKeyword_5());
                         
@@ -3089,7 +3202,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleEnumInstance2683); 
+            otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleEnumInstance2799); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getEnumInstanceAccess().getRightCurlyBracketKeyword_6());
                 
@@ -3114,7 +3227,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMapInstance"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1267:1: entryRuleMapInstance returns [EObject current=null] : iv_ruleMapInstance= ruleMapInstance EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1314:1: entryRuleMapInstance returns [EObject current=null] : iv_ruleMapInstance= ruleMapInstance EOF ;
     public final EObject entryRuleMapInstance() throws RecognitionException {
         EObject current = null;
 
@@ -3122,17 +3235,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1268:2: (iv_ruleMapInstance= ruleMapInstance EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1269:2: iv_ruleMapInstance= ruleMapInstance EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1315:2: (iv_ruleMapInstance= ruleMapInstance EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1316:2: iv_ruleMapInstance= ruleMapInstance EOF
             {
              newCompositeNode(grammarAccess.getMapInstanceRule()); 
-            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance2719);
+            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance2835);
             iv_ruleMapInstance=ruleMapInstance();
 
             state._fsp--;
 
              current =iv_ruleMapInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance2729); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance2845); 
 
             }
 
@@ -3150,7 +3263,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMapInstance"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1276:1: ruleMapInstance returns [EObject current=null] : (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1323:1: ruleMapInstance returns [EObject current=null] : (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) ;
     public final EObject ruleMapInstance() throws RecognitionException {
         EObject current = null;
 
@@ -3172,23 +3285,23 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1279:28: ( (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1280:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1326:28: ( (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1327:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1280:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1280:3: otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1327:1: (otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1327:3: otherlv_0= 'map' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) ) (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )* (otherlv_10= ',' )? otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleMapInstance2766); 
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleMapInstance2882); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMapInstanceAccess().getMapKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1284:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1285:1: (lv_name_1_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1331:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1332:1: (lv_name_1_0= RULE_ID )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1285:1: (lv_name_1_0= RULE_ID )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1286:3: lv_name_1_0= RULE_ID
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1332:1: (lv_name_1_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1333:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2783); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2899); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getMapInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -3208,20 +3321,20 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleMapInstance2800); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleMapInstance2916); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMapInstanceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1306:1: ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1306:2: ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1353:1: ( ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1353:2: ( (lv_keys_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_values_5_0= ruleNestedType ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1306:2: ( (lv_keys_3_0= RULE_ID ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1307:1: (lv_keys_3_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1353:2: ( (lv_keys_3_0= RULE_ID ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1354:1: (lv_keys_3_0= RULE_ID )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1307:1: (lv_keys_3_0= RULE_ID )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1308:3: lv_keys_3_0= RULE_ID
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1354:1: (lv_keys_3_0= RULE_ID )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1355:3: lv_keys_3_0= RULE_ID
             {
-            lv_keys_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2818); 
+            lv_keys_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2934); 
 
             			newLeafNode(lv_keys_3_0, grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_3_0_0()); 
             		
@@ -3241,20 +3354,20 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2835); 
+            otherlv_4=(Token)match(input,23,FOLLOW_23_in_ruleMapInstance2951); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMapInstanceAccess().getColonKeyword_3_1());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1328:1: ( (lv_values_5_0= ruleNestedType ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1329:1: (lv_values_5_0= ruleNestedType )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1375:1: ( (lv_values_5_0= ruleNestedType ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1376:1: (lv_values_5_0= ruleNestedType )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1329:1: (lv_values_5_0= ruleNestedType )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1330:3: lv_values_5_0= ruleNestedType
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1376:1: (lv_values_5_0= ruleNestedType )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1377:3: lv_values_5_0= ruleNestedType
             {
              
             	        newCompositeNode(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_3_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2856);
+            pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2972);
             lv_values_5_0=ruleNestedType();
 
             state._fsp--;
@@ -3279,13 +3392,13 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1346:3: (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1393:3: (otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) ) )*
             loop23:
             do {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( (LA23_0==35) ) {
+                if ( (LA23_0==34) ) {
                     int LA23_1 = input.LA(2);
 
                     if ( (LA23_1==RULE_ID) ) {
@@ -3298,19 +3411,19 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1346:5: otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1393:5: otherlv_6= ',' ( (lv_keys_7_0= RULE_ID ) ) otherlv_8= ':' ( (lv_values_9_0= ruleNestedType ) )
             	    {
-            	    otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2870); 
+            	    otherlv_6=(Token)match(input,34,FOLLOW_34_in_ruleMapInstance2986); 
 
             	        	newLeafNode(otherlv_6, grammarAccess.getMapInstanceAccess().getCommaKeyword_4_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1350:1: ( (lv_keys_7_0= RULE_ID ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1351:1: (lv_keys_7_0= RULE_ID )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1397:1: ( (lv_keys_7_0= RULE_ID ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1398:1: (lv_keys_7_0= RULE_ID )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1351:1: (lv_keys_7_0= RULE_ID )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1352:3: lv_keys_7_0= RULE_ID
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1398:1: (lv_keys_7_0= RULE_ID )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1399:3: lv_keys_7_0= RULE_ID
             	    {
-            	    lv_keys_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance2887); 
+            	    lv_keys_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapInstance3003); 
 
             	    			newLeafNode(lv_keys_7_0, grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_4_1_0()); 
             	    		
@@ -3330,20 +3443,20 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleMapInstance2904); 
+            	    otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleMapInstance3020); 
 
             	        	newLeafNode(otherlv_8, grammarAccess.getMapInstanceAccess().getColonKeyword_4_2());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1372:1: ( (lv_values_9_0= ruleNestedType ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1373:1: (lv_values_9_0= ruleNestedType )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1419:1: ( (lv_values_9_0= ruleNestedType ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1420:1: (lv_values_9_0= ruleNestedType )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1373:1: (lv_values_9_0= ruleNestedType )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1374:3: lv_values_9_0= ruleNestedType
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1420:1: (lv_values_9_0= ruleNestedType )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1421:3: lv_values_9_0= ruleNestedType
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_4_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance2925);
+            	    pushFollow(FOLLOW_ruleNestedType_in_ruleMapInstance3041);
             	    lv_values_9_0=ruleNestedType();
 
             	    state._fsp--;
@@ -3374,18 +3487,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1390:4: (otherlv_10= ',' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1437:4: (otherlv_10= ',' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==35) ) {
+            if ( (LA24_0==34) ) {
                 alt24=1;
             }
             switch (alt24) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1390:6: otherlv_10= ','
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1437:6: otherlv_10= ','
                     {
-                    otherlv_10=(Token)match(input,35,FOLLOW_35_in_ruleMapInstance2940); 
+                    otherlv_10=(Token)match(input,34,FOLLOW_34_in_ruleMapInstance3056); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getMapInstanceAccess().getCommaKeyword_5());
                         
@@ -3395,7 +3508,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleMapInstance2954); 
+            otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleMapInstance3070); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getMapInstanceAccess().getRightCurlyBracketKeyword_6());
                 
@@ -3420,7 +3533,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringList"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1406:1: entryRuleStringList returns [EObject current=null] : iv_ruleStringList= ruleStringList EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1453:1: entryRuleStringList returns [EObject current=null] : iv_ruleStringList= ruleStringList EOF ;
     public final EObject entryRuleStringList() throws RecognitionException {
         EObject current = null;
 
@@ -3428,17 +3541,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1407:2: (iv_ruleStringList= ruleStringList EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1408:2: iv_ruleStringList= ruleStringList EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1454:2: (iv_ruleStringList= ruleStringList EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1455:2: iv_ruleStringList= ruleStringList EOF
             {
              newCompositeNode(grammarAccess.getStringListRule()); 
-            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList2990);
+            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList3106);
             iv_ruleStringList=ruleStringList();
 
             state._fsp--;
 
              current =iv_ruleStringList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList3000); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList3116); 
 
             }
 
@@ -3456,7 +3569,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringList"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1415:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1462:1: ruleStringList returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) ;
     public final EObject ruleStringList() throws RecognitionException {
         EObject current = null;
 
@@ -3470,23 +3583,23 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1418:28: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1419:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1465:28: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1466:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1419:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1419:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1466:1: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1466:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* (otherlv_4= ',' )? otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleStringList3037); 
+            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleStringList3153); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStringListAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1423:1: ( (lv_values_1_0= RULE_STRING ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1424:1: (lv_values_1_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1470:1: ( (lv_values_1_0= RULE_STRING ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1471:1: (lv_values_1_0= RULE_STRING )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1424:1: (lv_values_1_0= RULE_STRING )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1425:3: lv_values_1_0= RULE_STRING
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1471:1: (lv_values_1_0= RULE_STRING )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1472:3: lv_values_1_0= RULE_STRING
             {
-            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3054); 
+            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3170); 
 
             			newLeafNode(lv_values_1_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
             		
@@ -3506,13 +3619,13 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1441:2: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1488:2: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
             loop25:
             do {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==35) ) {
+                if ( (LA25_0==34) ) {
                     int LA25_1 = input.LA(2);
 
                     if ( (LA25_1==RULE_STRING) ) {
@@ -3525,19 +3638,19 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
                 switch (alt25) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1441:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1488:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
             	    {
-            	    otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleStringList3072); 
+            	    otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleStringList3188); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getStringListAccess().getCommaKeyword_2_0());
             	        
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1445:1: ( (lv_values_3_0= RULE_STRING ) )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1446:1: (lv_values_3_0= RULE_STRING )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1492:1: ( (lv_values_3_0= RULE_STRING ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1493:1: (lv_values_3_0= RULE_STRING )
             	    {
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1446:1: (lv_values_3_0= RULE_STRING )
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1447:3: lv_values_3_0= RULE_STRING
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1493:1: (lv_values_3_0= RULE_STRING )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1494:3: lv_values_3_0= RULE_STRING
             	    {
-            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3089); 
+            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringList3205); 
 
             	    			newLeafNode(lv_values_3_0, grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
             	    		
@@ -3566,18 +3679,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1463:4: (otherlv_4= ',' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1510:4: (otherlv_4= ',' )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==35) ) {
+            if ( (LA26_0==34) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1463:6: otherlv_4= ','
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1510:6: otherlv_4= ','
                     {
-                    otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleStringList3109); 
+                    otherlv_4=(Token)match(input,34,FOLLOW_34_in_ruleStringList3225); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getStringListAccess().getCommaKeyword_3());
                         
@@ -3587,7 +3700,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,38,FOLLOW_38_in_ruleStringList3123); 
+            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleStringList3239); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getStringListAccess().getRightSquareBracketKeyword_4());
                 
@@ -3612,7 +3725,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNestedType"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1479:1: entryRuleNestedType returns [EObject current=null] : iv_ruleNestedType= ruleNestedType EOF ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1526:1: entryRuleNestedType returns [EObject current=null] : iv_ruleNestedType= ruleNestedType EOF ;
     public final EObject entryRuleNestedType() throws RecognitionException {
         EObject current = null;
 
@@ -3620,17 +3733,17 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1480:2: (iv_ruleNestedType= ruleNestedType EOF )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1481:2: iv_ruleNestedType= ruleNestedType EOF
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1527:2: (iv_ruleNestedType= ruleNestedType EOF )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1528:2: iv_ruleNestedType= ruleNestedType EOF
             {
              newCompositeNode(grammarAccess.getNestedTypeRule()); 
-            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType3159);
+            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType3275);
             iv_ruleNestedType=ruleNestedType();
 
             state._fsp--;
 
              current =iv_ruleNestedType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType3169); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType3285); 
 
             }
 
@@ -3648,7 +3761,7 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNestedType"
-    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1488:1: ruleNestedType returns [EObject current=null] : ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) ) ;
+    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1535:1: ruleNestedType returns [EObject current=null] : ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleNestedType() throws RecognitionException {
         EObject current = null;
 
@@ -3659,14 +3772,14 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1491:28: ( ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1492:1: ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:28: ( ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1539:1: ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1492:1: ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1539:1: ( ( (lv_list_0_0= ruleStringList ) ) | ( (lv_string_1_0= RULE_STRING ) ) )
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==37) ) {
+            if ( (LA27_0==36) ) {
                 alt27=1;
             }
             else if ( (LA27_0==RULE_STRING) ) {
@@ -3680,18 +3793,18 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
             }
             switch (alt27) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1492:2: ( (lv_list_0_0= ruleStringList ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1539:2: ( (lv_list_0_0= ruleStringList ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1492:2: ( (lv_list_0_0= ruleStringList ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1493:1: (lv_list_0_0= ruleStringList )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1539:2: ( (lv_list_0_0= ruleStringList ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:1: (lv_list_0_0= ruleStringList )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1493:1: (lv_list_0_0= ruleStringList )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1494:3: lv_list_0_0= ruleStringList
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:1: (lv_list_0_0= ruleStringList )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1541:3: lv_list_0_0= ruleStringList
                     {
                      
                     	        newCompositeNode(grammarAccess.getNestedTypeAccess().getListStringListParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStringList_in_ruleNestedType3215);
+                    pushFollow(FOLLOW_ruleStringList_in_ruleNestedType3331);
                     lv_list_0_0=ruleStringList();
 
                     state._fsp--;
@@ -3717,15 +3830,15 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1511:6: ( (lv_string_1_0= RULE_STRING ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:6: ( (lv_string_1_0= RULE_STRING ) )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1511:6: ( (lv_string_1_0= RULE_STRING ) )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1512:1: (lv_string_1_0= RULE_STRING )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:6: ( (lv_string_1_0= RULE_STRING ) )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1559:1: (lv_string_1_0= RULE_STRING )
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1512:1: (lv_string_1_0= RULE_STRING )
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1513:3: lv_string_1_0= RULE_STRING
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1559:1: (lv_string_1_0= RULE_STRING )
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:3: lv_string_1_0= RULE_STRING
                     {
-                    lv_string_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNestedType3238); 
+                    lv_string_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNestedType3354); 
 
                     			newLeafNode(lv_string_1_0, grammarAccess.getNestedTypeAccess().getStringSTRINGTerminalRuleCall_1_0()); 
                     		
@@ -3774,146 +3887,151 @@ public class InternalMobgenParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleMobgen_in_entryRuleMobgen75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMobgen85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlatform_in_ruleMobgen131 = new BitSet(new long[]{0x0000018000800000L});
-    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_ruleMobgen153 = new BitSet(new long[]{0x0000018000800002L});
-    public static final BitSet FOLLOW_ruleMobgenCallDefinition_in_ruleMobgen180 = new BitSet(new long[]{0x0000018000800002L});
+    public static final BitSet FOLLOW_rulePlatform_in_ruleMobgen131 = new BitSet(new long[]{0x000000C000400000L});
+    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_ruleMobgen153 = new BitSet(new long[]{0x000000C000400002L});
+    public static final BitSet FOLLOW_ruleMobgenCallDefinition_in_ruleMobgen180 = new BitSet(new long[]{0x000000C000400002L});
     public static final BitSet FOLLOW_rulePlatform_in_entryRulePlatform218 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePlatform228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rulePlatform265 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_rulePlatform277 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePlatform295 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_rulePlatform312 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePlatform329 = new BitSet(new long[]{0x0000000000400010L});
-    public static final BitSet FOLLOW_22_in_rulePlatform348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rulePlatform265 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_rulePlatform277 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePlatform295 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_rulePlatform312 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePlatform329 = new BitSet(new long[]{0x0000000000200010L});
+    public static final BitSet FOLLOW_21_in_rulePlatform348 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMobgenCallDefinition_in_entryRuleMobgenCallDefinition384 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMobgenCallDefinition394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleMobgenCallDefinition431 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenCallDefinition448 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleMobgenCallDefinition465 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_RESTFUL_METHODS_in_ruleMobgenCallDefinition482 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleMobgenCallDefinition499 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_ruleURI_in_ruleMobgenCallDefinition520 = new BitSet(new long[]{0x0000000284000002L});
-    public static final BitSet FOLLOW_26_in_ruleMobgenCallDefinition533 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleMobgenCallDefinition545 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleMobgenCallDefinition557 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleMobgenCallDefinition569 = new BitSet(new long[]{0x0000000400000010L});
-    public static final BitSet FOLLOW_ruleMobgenHeader_in_ruleMobgenCallDefinition590 = new BitSet(new long[]{0x00000002A0000002L});
-    public static final BitSet FOLLOW_29_in_ruleMobgenCallDefinition603 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleMobgenCallDefinition615 = new BitSet(new long[]{0x0000000400000010L});
-    public static final BitSet FOLLOW_ruleMobgenHeader_in_ruleMobgenCallDefinition636 = new BitSet(new long[]{0x0000000280000002L});
-    public static final BitSet FOLLOW_31_in_ruleMobgenCallDefinition653 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleMobgenCallDefinition665 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleMobgenJson_in_ruleMobgenCallDefinition686 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleMobgenCallDefinition701 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleMobgenCallDefinition713 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_22_in_ruleMobgenCallDefinition431 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenCallDefinition448 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleMobgenCallDefinition465 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_RESTFUL_METHODS_in_ruleMobgenCallDefinition482 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleMobgenCallDefinition499 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ruleURI_in_ruleMobgenCallDefinition520 = new BitSet(new long[]{0x0000000142000002L});
+    public static final BitSet FOLLOW_25_in_ruleMobgenCallDefinition533 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleMobgenCallDefinition545 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleMobgenCallDefinition557 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleMobgenCallDefinition569 = new BitSet(new long[]{0x0000000200000010L});
+    public static final BitSet FOLLOW_ruleMobgenHeader_in_ruleMobgenCallDefinition590 = new BitSet(new long[]{0x0000000150000002L});
+    public static final BitSet FOLLOW_28_in_ruleMobgenCallDefinition603 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleMobgenCallDefinition615 = new BitSet(new long[]{0x0000000200000010L});
+    public static final BitSet FOLLOW_ruleMobgenHeader_in_ruleMobgenCallDefinition636 = new BitSet(new long[]{0x0000000140000002L});
+    public static final BitSet FOLLOW_30_in_ruleMobgenCallDefinition653 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleMobgenCallDefinition665 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleMobgenJson_in_ruleMobgenCallDefinition686 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_32_in_ruleMobgenCallDefinition701 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleMobgenCallDefinition713 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleMobgenJson_in_ruleMobgenCallDefinition734 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleURI_in_entryRuleURI772 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleURI782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI824 = new BitSet(new long[]{0x0000000000100080L});
-    public static final BitSet FOLLOW_20_in_ruleURI843 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleURI860 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleURI877 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI894 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI824 = new BitSet(new long[]{0x0000000000080080L});
+    public static final BitSet FOLLOW_19_in_ruleURI843 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleURI860 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleURI877 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleURI894 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_ruleMobgenHeader_in_entryRuleMobgenHeader937 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMobgenHeader947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenHeader989 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleMobgenHeader1007 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMobgenHeader1019 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_ruleMobgenHeader1040 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMobgenHeader1053 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_ruleMobgenHeader1074 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMobgenHeader1089 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleMobgenHeader1103 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleMobgenHeader1115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenHeader989 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleMobgenHeader1007 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleMobgenHeader1019 = new BitSet(new long[]{0x0000000000080020L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_ruleMobgenHeader1040 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleMobgenHeader1053 = new BitSet(new long[]{0x0000000000080020L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_ruleMobgenHeader1074 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleMobgenHeader1089 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleMobgenHeader1103 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleMobgenHeader1115 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_entryRuleMobgenHeaderKeyValuePair1151 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMobgenHeaderKeyValuePair1161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1203 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleMobgenHeaderKeyValuePair1220 = new BitSet(new long[]{0x0000000000000120L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1204 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleMobgenHeaderKeyValuePair1221 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleMobgenHeaderKeyValuePair1238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MOBGEN_HEADER_PARAMETER_in_ruleMobgenHeaderKeyValuePair1266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson1308 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenJson1318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenJson1360 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleMobgenJson1377 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleMobgenJson1398 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleMobgenJson1410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue1446 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObjectValue1456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1565 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonCompositeValue1575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1685 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonLiteralValue1696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue1892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject1937 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject1947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleJsonObject1984 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2005 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonObject2018 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2039 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonObject2054 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleJsonObject2068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2104 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair2114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2156 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleJsonKeyValuePair2173 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray2230 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray2240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleJsonArray2277 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2298 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonArray2311 = new BitSet(new long[]{0x0000002000107E20L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2332 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleJsonArray2347 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleJsonArray2361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition2397 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenResourceDefinition2407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_ruleMobgenResourceDefinition2453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleMobgenResourceDefinition2481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2516 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance2526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleEnumInstance2563 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2580 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleEnumInstance2597 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2614 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleEnumInstance2632 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2649 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleEnumInstance2669 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleEnumInstance2683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance2719 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance2729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleMapInstance2766 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2783 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMapInstance2800 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2818 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleMapInstance2835 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2856 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMapInstance2870 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2887 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleMapInstance2904 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2925 = new BitSet(new long[]{0x0000000800400000L});
-    public static final BitSet FOLLOW_35_in_ruleMapInstance2940 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleMapInstance2954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList2990 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringList3000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleStringList3037 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3054 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleStringList3072 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3089 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_35_in_ruleStringList3109 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleStringList3123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType3159 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType3169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_ruleNestedType3215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNestedType3238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderParameter_in_ruleMobgenHeaderKeyValuePair1271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderParameter_in_entryRuleMobgenHeaderParameter1307 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenHeaderParameter1317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleMobgenHeaderParameter1354 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenHeaderParameter1371 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleMobgenHeaderParameter1388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson1424 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenJson1434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMobgenJson1476 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleMobgenJson1493 = new BitSet(new long[]{0x0000001000083F20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleMobgenJson1514 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleMobgenJson1526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue1562 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObjectValue1572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_ruleJsonObjectValue1618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_ruleJsonObjectValue1645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue1681 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonCompositeValue1691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_ruleJsonCompositeValue1738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_ruleJsonCompositeValue1765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue1801 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonLiteralValue1812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonLiteralValue1852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_ruleJsonLiteralValue1878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_ruleJsonLiteralValue1904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_ruleJsonLiteralValue1930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_ruleJsonLiteralValue1956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_ruleJsonLiteralValue1982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_ruleJsonLiteralValue2008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject2053 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject2063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleJsonObject2100 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2121 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleJsonObject2134 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_ruleJsonObject2155 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleJsonObject2170 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleJsonObject2184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair2220 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair2230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleJsonKeyValuePair2272 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleJsonKeyValuePair2289 = new BitSet(new long[]{0x0000001000083F20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonKeyValuePair2310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray2346 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray2356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleJsonArray2393 = new BitSet(new long[]{0x0000001000083F20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2414 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_34_in_ruleJsonArray2427 = new BitSet(new long[]{0x0000001000083F20L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_ruleJsonArray2448 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_34_in_ruleJsonArray2463 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleJsonArray2477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition2513 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenResourceDefinition2523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_ruleMobgenResourceDefinition2569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleMobgenResourceDefinition2597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance2632 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance2642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleEnumInstance2679 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2696 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleEnumInstance2713 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2730 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleEnumInstance2748 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance2765 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleEnumInstance2785 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleEnumInstance2799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance2835 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance2845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleMapInstance2882 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2899 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleMapInstance2916 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance2934 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleMapInstance2951 = new BitSet(new long[]{0x0000001000000020L});
+    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance2972 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleMapInstance2986 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMapInstance3003 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleMapInstance3020 = new BitSet(new long[]{0x0000001000000020L});
+    public static final BitSet FOLLOW_ruleNestedType_in_ruleMapInstance3041 = new BitSet(new long[]{0x0000000400200000L});
+    public static final BitSet FOLLOW_34_in_ruleMapInstance3056 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleMapInstance3070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList3106 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringList3116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleStringList3153 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3170 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_34_in_ruleStringList3188 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringList3205 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_34_in_ruleStringList3225 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleStringList3239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType3275 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType3285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_ruleNestedType3331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNestedType3354 = new BitSet(new long[]{0x0000000000000002L});
 
 }

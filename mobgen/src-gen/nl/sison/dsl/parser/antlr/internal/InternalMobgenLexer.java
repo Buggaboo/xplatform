@@ -12,14 +12,13 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalMobgenLexer extends Lexer {
-    public static final int T__40=40;
     public static final int RULE_ID=4;
-    public static final int RULE_JSON_META_SCALAR_TYPE=14;
+    public static final int RULE_JSON_META_SCALAR_TYPE=13;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
-    public static final int RULE_EMPTY_JSON_ARRAY=10;
+    public static final int RULE_EMPTY_JSON_ARRAY=9;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
@@ -27,11 +26,11 @@ public class InternalMobgenLexer extends Lexer {
     public static final int RULE_ANY_OTHER=7;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_JSON_LITERAL_BOOLEAN=11;
-    public static final int RULE_EMPTY_JSON_OBJECT=9;
-    public static final int RULE_SL_COMMENT=17;
+    public static final int RULE_JSON_LITERAL_BOOLEAN=10;
+    public static final int RULE_EMPTY_JSON_OBJECT=8;
+    public static final int RULE_SL_COMMENT=16;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=16;
+    public static final int RULE_ML_COMMENT=15;
     public static final int T__30=30;
     public static final int T__19=19;
     public static final int T__31=31;
@@ -39,17 +38,17 @@ public class InternalMobgenLexer extends Lexer {
     public static final int RULE_STRING=5;
     public static final int T__33=33;
     public static final int T__34=34;
+    public static final int T__18=18;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int RULE_JSON_NUMBER=13;
+    public static final int RULE_JSON_NUMBER=12;
     public static final int T__37=37;
     public static final int T__38=38;
-    public static final int RULE_JSON_LITERAL_NULL=12;
+    public static final int RULE_JSON_LITERAL_NULL=11;
     public static final int T__39=39;
-    public static final int RULE_MOBGEN_HEADER_PARAMETER=8;
     public static final int RULE_RESTFUL_METHODS=6;
-    public static final int RULE_INT=15;
-    public static final int RULE_WS=18;
+    public static final int RULE_INT=14;
+    public static final int RULE_WS=17;
 
     // delegates
     // delegators
@@ -64,16 +63,36 @@ public class InternalMobgenLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g"; }
 
-    // $ANTLR start "T__19"
-    public final void mT__19() throws RecognitionException {
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
         try {
-            int _type = T__19;
+            int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:11:7: ( 'platform' )
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:11:9: 'platform'
             {
             match("platform"); 
 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__18"
+
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
+        try {
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:12:7: ( '{' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:12:9: '{'
+            {
+            match('{'); 
 
             }
 
@@ -90,10 +109,11 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:12:7: ( '{' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:12:9: '{'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:13:7: ( '->' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:13:9: '->'
             {
-            match('{'); 
+            match("->"); 
+
 
             }
 
@@ -110,11 +130,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:13:7: ( '->' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:13:9: '->'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:14:7: ( '}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:14:9: '}'
             {
-            match("->"); 
-
+            match('}'); 
 
             }
 
@@ -131,10 +150,11 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:14:7: ( '}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:14:9: '}'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:15:7: ( 'call' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:15:9: 'call'
             {
-            match('}'); 
+            match("call"); 
+
 
             }
 
@@ -151,11 +171,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:15:7: ( 'call' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:15:9: 'call'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:16:7: ( ':' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:16:9: ':'
             {
-            match("call"); 
-
+            match(':'); 
 
             }
 
@@ -172,10 +191,11 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:16:7: ( ':' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:16:9: ':'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:17:7: ( 'from' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:17:9: 'from'
             {
-            match(':'); 
+            match("from"); 
+
 
             }
 
@@ -192,10 +212,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:17:7: ( 'from' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:17:9: 'from'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:18:7: ( 'with' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:18:9: 'with'
             {
-            match("from"); 
+            match("with"); 
 
 
             }
@@ -213,10 +233,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:18:7: ( 'with' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:18:9: 'with'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:19:7: ( 'headers' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:19:9: 'headers'
             {
-            match("with"); 
+            match("headers"); 
 
 
             }
@@ -234,10 +254,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:19:7: ( 'headers' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:19:9: 'headers'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:20:7: ( 'request' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:20:9: 'request'
             {
-            match("headers"); 
+            match("request"); 
 
 
             }
@@ -255,10 +275,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:20:7: ( 'request' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:20:9: 'request'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:21:7: ( 'and' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:21:9: 'and'
             {
-            match("request"); 
+            match("and"); 
 
 
             }
@@ -276,10 +296,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:21:7: ( 'and' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:21:9: 'and'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:22:7: ( 'response' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:22:9: 'response'
             {
-            match("and"); 
+            match("response"); 
 
 
             }
@@ -297,10 +317,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:22:7: ( 'response' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:22:9: 'response'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:23:7: ( 'client' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:23:9: 'client'
             {
-            match("response"); 
+            match("client"); 
 
 
             }
@@ -318,10 +338,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:23:7: ( 'client' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:23:9: 'client'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:24:7: ( 'expects' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:24:9: 'expects'
             {
-            match("client"); 
+            match("expects"); 
 
 
             }
@@ -339,10 +359,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:24:7: ( 'expects' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:24:9: 'expects'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:25:7: ( 'server' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:25:9: 'server'
             {
-            match("expects"); 
+            match("server"); 
 
 
             }
@@ -360,10 +380,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:25:7: ( 'server' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:25:9: 'server'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:26:7: ( '\\'\\'\\'' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:26:9: '\\'\\'\\''
             {
-            match("server"); 
+            match("'''"); 
 
 
             }
@@ -381,11 +401,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:26:7: ( '\\'\\'\\'' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:26:9: '\\'\\'\\''
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:27:7: ( ',' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:27:9: ','
             {
-            match("'''"); 
-
+            match(','); 
 
             }
 
@@ -402,10 +421,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:27:7: ( ',' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:27:9: ','
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:28:7: ( '=' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:28:9: '='
             {
-            match(','); 
+            match('='); 
 
             }
 
@@ -422,10 +441,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:28:7: ( '=' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:28:9: '='
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:29:7: ( '[' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:29:9: '['
             {
-            match('='); 
+            match('['); 
 
             }
 
@@ -442,10 +461,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:29:7: ( '[' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:29:9: '['
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:30:7: ( ']' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:30:9: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -462,10 +481,11 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:30:7: ( ']' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:30:9: ']'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:31:7: ( 'enum' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:31:9: 'enum'
             {
-            match(']'); 
+            match("enum"); 
+
 
             }
 
@@ -482,27 +502,6 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:31:7: ( 'enum' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:31:9: 'enum'
-            {
-            match("enum"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__39"
-
-    // $ANTLR start "T__40"
-    public final void mT__40() throws RecognitionException {
-        try {
-            int _type = T__40;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:32:7: ( 'map' )
             // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:32:9: 'map'
             {
@@ -517,39 +516,17 @@ public class InternalMobgenLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__40"
-
-    // $ANTLR start "RULE_MOBGEN_HEADER_PARAMETER"
-    public final void mRULE_MOBGEN_HEADER_PARAMETER() throws RecognitionException {
-        try {
-            int _type = RULE_MOBGEN_HEADER_PARAMETER;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1536:30: ( '{' RULE_ID '}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1536:32: '{' RULE_ID '}'
-            {
-            match('{'); 
-            mRULE_ID(); 
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_MOBGEN_HEADER_PARAMETER"
+    // $ANTLR end "T__39"
 
     // $ANTLR start "RULE_RESTFUL_METHODS"
     public final void mRULE_RESTFUL_METHODS() throws RecognitionException {
         try {
             int _type = RULE_RESTFUL_METHODS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:22: ( ( 'PUT' | 'POST' | 'GET' | 'DELETE' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:24: ( 'PUT' | 'POST' | 'GET' | 'DELETE' )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 'P':
@@ -589,7 +566,7 @@ public class InternalMobgenLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:25: 'PUT'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:25: 'PUT'
                     {
                     match("PUT"); 
 
@@ -597,7 +574,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:31: 'POST'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:31: 'POST'
                     {
                     match("POST"); 
 
@@ -605,7 +582,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:38: 'GET'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:38: 'GET'
                     {
                     match("GET"); 
 
@@ -613,7 +590,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1538:44: 'DELETE'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1583:44: 'DELETE'
                     {
                     match("DELETE"); 
 
@@ -639,10 +616,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_JSON_META_SCALAR_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:28: ( ( 'boolean' | 'number' | 'string' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:30: ( 'boolean' | 'number' | 'string' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:28: ( ( 'boolean' | 'number' | 'string' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:30: ( 'boolean' | 'number' | 'string' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:30: ( 'boolean' | 'number' | 'string' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:30: ( 'boolean' | 'number' | 'string' )
             int alt2=3;
             switch ( input.LA(1) ) {
             case 'b':
@@ -669,7 +646,7 @@ public class InternalMobgenLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:31: 'boolean'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:31: 'boolean'
                     {
                     match("boolean"); 
 
@@ -677,7 +654,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:41: 'number'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:41: 'number'
                     {
                     match("number"); 
 
@@ -685,7 +662,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1540:50: 'string'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1585:50: 'string'
                     {
                     match("string"); 
 
@@ -711,8 +688,8 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_EMPTY_JSON_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1542:24: ( '{}' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1542:26: '{}'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1587:24: ( '{}' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1587:26: '{}'
             {
             match("{}"); 
 
@@ -732,8 +709,8 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_EMPTY_JSON_ARRAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1544:23: ( '[]' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1544:25: '[]'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1589:23: ( '[]' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1589:25: '[]'
             {
             match("[]"); 
 
@@ -753,8 +730,8 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1546:24: ( 'null' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1546:26: 'null'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1591:24: ( 'null' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1591:26: 'null'
             {
             match("null"); 
 
@@ -774,10 +751,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_JSON_LITERAL_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1548:27: ( ( 'true' | 'false' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1548:29: ( 'true' | 'false' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1593:27: ( ( 'true' | 'false' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1593:29: ( 'true' | 'false' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1548:29: ( 'true' | 'false' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1593:29: ( 'true' | 'false' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -795,7 +772,7 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1548:30: 'true'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1593:30: 'true'
                     {
                     match("true"); 
 
@@ -803,7 +780,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1548:37: 'false'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1593:37: 'false'
                     {
                     match("false"); 
 
@@ -829,10 +806,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_JSON_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:18: ( ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )? )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:20: ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:18: ( ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )? )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:20: ( '0' | ( '1..9' )+ RULE_INT ) ( '.' RULE_INT )?
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:20: ( '0' | ( '1..9' )+ RULE_INT )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:20: ( '0' | ( '1..9' )+ RULE_INT )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -850,16 +827,16 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:21: '0'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:21: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:25: ( '1..9' )+ RULE_INT
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:25: ( '1..9' )+ RULE_INT
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:25: ( '1..9' )+
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:25: ( '1..9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -885,7 +862,7 @@ public class InternalMobgenLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:25: '1..9'
+                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:25: '1..9'
                     	    {
                     	    match("1..9"); 
 
@@ -909,7 +886,7 @@ public class InternalMobgenLexer extends Lexer {
 
             }
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:43: ( '.' RULE_INT )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:43: ( '.' RULE_INT )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -918,7 +895,7 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1550:44: '.' RULE_INT
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1595:44: '.' RULE_INT
                     {
                     match('.'); 
                     mRULE_INT(); 
@@ -944,10 +921,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1552:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1552:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1597:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1597:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1552:11: ( '^' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1597:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -956,7 +933,7 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1552:11: '^'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1597:11: '^'
                     {
                     match('^'); 
 
@@ -974,7 +951,7 @@ public class InternalMobgenLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1552:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1597:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -1023,10 +1000,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1554:10: ( ( '0' .. '9' )+ )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1554:12: ( '0' .. '9' )+
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1599:10: ( ( '0' .. '9' )+ )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1599:12: ( '0' .. '9' )+
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1554:12: ( '0' .. '9' )+
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1599:12: ( '0' .. '9' )+
             int cnt9=0;
             loop9:
             do {
@@ -1040,7 +1017,7 @@ public class InternalMobgenLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1554:13: '0' .. '9'
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1599:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1072,10 +1049,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1093,10 +1070,10 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -1112,7 +1089,7 @@ public class InternalMobgenLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1128,7 +1105,7 @@ public class InternalMobgenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1153,10 +1130,10 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -1172,7 +1149,7 @@ public class InternalMobgenLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1188,7 +1165,7 @@ public class InternalMobgenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1556:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1601:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1231,12 +1208,12 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1603:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1603:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:24: ( options {greedy=false; } : . )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1603:24: ( options {greedy=false; } : . )*
             loop13:
             do {
                 int alt13=2;
@@ -1261,7 +1238,7 @@ public class InternalMobgenLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1558:52: .
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1603:52: .
             	    {
             	    matchAny(); 
 
@@ -1291,12 +1268,12 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -1309,7 +1286,7 @@ public class InternalMobgenLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1329,7 +1306,7 @@ public class InternalMobgenLexer extends Lexer {
                 }
             } while (true);
 
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:40: ( ( '\\r' )? '\\n' )?
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:40: ( ( '\\r' )? '\\n' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1338,9 +1315,9 @@ public class InternalMobgenLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:41: ( '\\r' )? '\\n'
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:41: ( '\\r' )? '\\n'
                     {
-                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:41: ( '\\r' )?
+                    // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:41: ( '\\r' )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -1349,7 +1326,7 @@ public class InternalMobgenLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1560:41: '\\r'
+                            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1605:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1381,10 +1358,10 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1562:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1607:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1607:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1607:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -1438,8 +1415,8 @@ public class InternalMobgenLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1564:16: ( . )
-            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1564:18: .
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1609:16: ( . )
+            // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1609:18: .
             {
             matchAny(); 
 
@@ -1454,264 +1431,257 @@ public class InternalMobgenLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_MOBGEN_HEADER_PARAMETER | RULE_RESTFUL_METHODS | RULE_JSON_META_SCALAR_TYPE | RULE_EMPTY_JSON_OBJECT | RULE_EMPTY_JSON_ARRAY | RULE_JSON_LITERAL_NULL | RULE_JSON_LITERAL_BOOLEAN | RULE_JSON_NUMBER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt18=37;
+        // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:8: ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_RESTFUL_METHODS | RULE_JSON_META_SCALAR_TYPE | RULE_EMPTY_JSON_OBJECT | RULE_EMPTY_JSON_ARRAY | RULE_JSON_LITERAL_NULL | RULE_JSON_LITERAL_BOOLEAN | RULE_JSON_NUMBER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt18=36;
         alt18 = dfa18.predict(input);
         switch (alt18) {
             case 1 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:10: T__19
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:10: T__18
+                {
+                mT__18(); 
+
+                }
+                break;
+            case 2 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:16: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 2 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:16: T__20
+            case 3 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:22: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 3 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:22: T__21
+            case 4 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:28: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 4 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:28: T__22
+            case 5 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:34: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 5 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:34: T__23
+            case 6 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:40: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 6 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:40: T__24
+            case 7 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:46: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 7 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:46: T__25
+            case 8 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:52: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 8 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:52: T__26
+            case 9 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:58: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 9 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:58: T__27
+            case 10 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:64: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 10 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:64: T__28
+            case 11 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:70: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 11 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:70: T__29
+            case 12 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:76: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 12 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:76: T__30
+            case 13 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:82: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 13 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:82: T__31
+            case 14 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:88: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 14 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:88: T__32
+            case 15 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:94: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 15 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:94: T__33
+            case 16 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:100: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 16 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:100: T__34
+            case 17 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:106: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 17 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:106: T__35
+            case 18 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:112: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 18 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:112: T__36
+            case 19 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:118: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 19 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:118: T__37
+            case 20 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:124: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 20 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:124: T__38
+            case 21 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:130: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 21 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:130: T__39
+            case 22 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:136: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 22 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:136: T__40
-                {
-                mT__40(); 
-
-                }
-                break;
             case 23 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:142: RULE_MOBGEN_HEADER_PARAMETER
-                {
-                mRULE_MOBGEN_HEADER_PARAMETER(); 
-
-                }
-                break;
-            case 24 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:171: RULE_RESTFUL_METHODS
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:142: RULE_RESTFUL_METHODS
                 {
                 mRULE_RESTFUL_METHODS(); 
 
                 }
                 break;
-            case 25 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:192: RULE_JSON_META_SCALAR_TYPE
+            case 24 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:163: RULE_JSON_META_SCALAR_TYPE
                 {
                 mRULE_JSON_META_SCALAR_TYPE(); 
 
                 }
                 break;
-            case 26 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:219: RULE_EMPTY_JSON_OBJECT
+            case 25 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:190: RULE_EMPTY_JSON_OBJECT
                 {
                 mRULE_EMPTY_JSON_OBJECT(); 
 
                 }
                 break;
-            case 27 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:242: RULE_EMPTY_JSON_ARRAY
+            case 26 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:213: RULE_EMPTY_JSON_ARRAY
                 {
                 mRULE_EMPTY_JSON_ARRAY(); 
 
                 }
                 break;
-            case 28 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:264: RULE_JSON_LITERAL_NULL
+            case 27 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:235: RULE_JSON_LITERAL_NULL
                 {
                 mRULE_JSON_LITERAL_NULL(); 
 
                 }
                 break;
-            case 29 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:287: RULE_JSON_LITERAL_BOOLEAN
+            case 28 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:258: RULE_JSON_LITERAL_BOOLEAN
                 {
                 mRULE_JSON_LITERAL_BOOLEAN(); 
 
                 }
                 break;
-            case 30 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:313: RULE_JSON_NUMBER
+            case 29 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:284: RULE_JSON_NUMBER
                 {
                 mRULE_JSON_NUMBER(); 
 
                 }
                 break;
-            case 31 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:330: RULE_ID
+            case 30 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:301: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 32 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:338: RULE_INT
+            case 31 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:309: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 33 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:347: RULE_STRING
+            case 32 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:318: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 34 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:359: RULE_ML_COMMENT
+            case 33 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:330: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 35 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:375: RULE_SL_COMMENT
+            case 34 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:346: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 36 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:391: RULE_WS
+            case 35 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:362: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 37 :
-                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:399: RULE_ANY_OTHER
+            case 36 :
+                // ../mobgen/src-gen/nl/sison/dsl/parser/antlr/internal/InternalMobgen.g:1:370: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1726,20 +1696,20 @@ public class InternalMobgenLexer extends Lexer {
     protected DFA18 dfa18 = new DFA18(this);
     static final String DFA18_eotS =
         "\1\uffff\1\44\1\46\1\42\1\uffff\1\44\1\uffff\7\44\1\42\2\uffff\1"+
-        "\74\1\uffff\7\44\1\106\1\107\1\42\2\uffff\2\42\2\uffff\1\44\6\uffff"+
-        "\2\44\1\uffff\12\44\1\70\6\uffff\10\44\5\uffff\11\44\1\154\4\44"+
-        "\1\uffff\1\161\1\162\1\44\1\162\6\44\1\172\1\44\1\174\1\44\1\176"+
-        "\3\44\1\uffff\1\44\1\u0083\2\44\2\uffff\1\162\3\44\1\u0089\1\u008a"+
-        "\1\44\1\uffff\1\44\1\uffff\1\u008a\1\uffff\4\44\1\uffff\5\44\2\uffff"+
-        "\1\44\1\u0097\4\44\1\u009c\1\u009d\1\162\1\44\1\u009d\1\44\1\uffff"+
-        "\1\u00a0\1\u00a1\1\44\1\u00a3\2\uffff\1\u009d\1\u00a4\2\uffff\1"+
-        "\u00a5\3\uffff";
+        "\73\1\uffff\7\44\1\105\1\106\1\42\2\uffff\2\42\2\uffff\1\44\5\uffff"+
+        "\2\44\1\uffff\12\44\1\67\6\uffff\10\44\5\uffff\11\44\1\153\4\44"+
+        "\1\uffff\1\160\1\161\1\44\1\161\6\44\1\171\1\44\1\173\1\44\1\175"+
+        "\3\44\1\uffff\1\44\1\u0082\2\44\2\uffff\1\161\3\44\1\u0088\1\u0089"+
+        "\1\44\1\uffff\1\44\1\uffff\1\u0089\1\uffff\4\44\1\uffff\5\44\2\uffff"+
+        "\1\44\1\u0096\4\44\1\u009b\1\u009c\1\161\1\44\1\u009c\1\44\1\uffff"+
+        "\1\u009f\1\u00a0\1\44\1\u00a2\2\uffff\1\u009c\1\u00a3\2\uffff\1"+
+        "\u00a4\3\uffff";
     static final String DFA18_eofS =
-        "\u00a6\uffff";
+        "\u00a5\uffff";
     static final String DFA18_minS =
-        "\1\0\1\154\1\101\1\76\1\uffff\1\141\1\uffff\1\141\1\151\2\145\2"+
+        "\1\0\1\154\1\175\1\76\1\uffff\1\141\1\uffff\1\141\1\151\2\145\2"+
         "\156\1\145\1\0\2\uffff\1\135\1\uffff\1\141\1\117\2\105\1\157\1\165"+
-        "\1\162\1\60\1\56\1\101\2\uffff\1\0\1\52\2\uffff\1\141\6\uffff\1"+
+        "\1\162\1\60\1\56\1\101\2\uffff\1\0\1\52\2\uffff\1\141\5\uffff\1"+
         "\154\1\151\1\uffff\1\157\1\154\1\164\1\141\1\161\1\144\1\160\1\165"+
         "\2\162\1\47\6\uffff\1\160\1\124\1\123\1\124\1\114\1\157\1\154\1"+
         "\165\5\uffff\1\164\1\154\1\145\1\155\1\163\1\150\1\144\1\165\1\160"+
@@ -1754,7 +1724,7 @@ public class InternalMobgenLexer extends Lexer {
         "\1\uffff\1\154\1\175\1\76\1\uffff\1\154\1\uffff\1\162\1\151\2\145"+
         "\1\156\1\170\1\164\1\uffff\2\uffff\1\135\1\uffff\1\141\1\125\2\105"+
         "\1\157\1\165\1\162\1\71\1\56\1\172\2\uffff\1\uffff\1\57\2\uffff"+
-        "\1\141\6\uffff\1\154\1\151\1\uffff\1\157\1\154\1\164\1\141\1\163"+
+        "\1\141\5\uffff\1\154\1\151\1\uffff\1\157\1\154\1\164\1\141\1\163"+
         "\1\144\1\160\1\165\2\162\1\47\6\uffff\1\160\1\124\1\123\1\124\1"+
         "\114\1\157\1\155\1\165\5\uffff\1\164\1\154\1\145\1\155\1\163\1\150"+
         "\1\144\1\165\1\160\1\172\1\145\1\155\1\166\1\151\1\uffff\2\172\1"+
@@ -1766,14 +1736,14 @@ public class InternalMobgenLexer extends Lexer {
         "\2\172\1\145\1\172\2\uffff\2\172\2\uffff\1\172\3\uffff";
     static final String DFA18_acceptS =
         "\4\uffff\1\4\1\uffff\1\6\10\uffff\1\21\1\22\1\uffff\1\24\12\uffff"+
-        "\1\37\1\40\2\uffff\1\44\1\45\1\uffff\1\37\1\32\1\2\1\27\1\3\1\4"+
-        "\2\uffff\1\6\13\uffff\1\41\1\21\1\22\1\33\1\23\1\24\10\uffff\1\36"+
-        "\1\40\1\42\1\43\1\44\16\uffff\1\20\22\uffff\1\13\4\uffff\1\26\1"+
-        "\30\7\uffff\1\5\1\uffff\1\7\1\uffff\1\10\4\uffff\1\25\5\uffff\1"+
-        "\34\1\35\14\uffff\1\15\4\uffff\1\17\1\31\2\uffff\1\11\1\12\1\uffff"+
-        "\1\16\1\1\1\14";
+        "\1\36\1\37\2\uffff\1\43\1\44\1\uffff\1\36\1\31\1\2\1\3\1\4\2\uffff"+
+        "\1\6\13\uffff\1\40\1\21\1\22\1\32\1\23\1\24\10\uffff\1\35\1\37\1"+
+        "\41\1\42\1\43\16\uffff\1\20\22\uffff\1\13\4\uffff\1\26\1\27\7\uffff"+
+        "\1\5\1\uffff\1\7\1\uffff\1\10\4\uffff\1\25\5\uffff\1\33\1\34\14"+
+        "\uffff\1\15\4\uffff\1\17\1\30\2\uffff\1\11\1\12\1\uffff\1\16\1\1"+
+        "\1\14";
     static final String DFA18_specialS =
-        "\1\1\15\uffff\1\0\20\uffff\1\2\u0086\uffff}>";
+        "\1\2\15\uffff\1\1\20\uffff\1\0\u0085\uffff}>";
     static final String[] DFA18_transitionS = {
             "\11\42\2\41\2\42\1\41\22\42\1\41\1\42\1\37\4\42\1\16\4\42\1"+
             "\17\1\3\1\42\1\40\1\32\1\33\10\36\1\6\2\42\1\20\3\42\3\35\1"+
@@ -1781,79 +1751,79 @@ public class InternalMobgenLexer extends Lexer {
             "\1\13\1\27\1\5\1\35\1\14\1\7\1\35\1\11\4\35\1\23\1\30\1\35\1"+
             "\1\1\35\1\12\1\15\1\31\2\35\1\10\3\35\1\2\1\42\1\4\uff82\42",
             "\1\43",
-            "\32\47\3\uffff\2\47\1\uffff\32\47\2\uffff\1\45",
-            "\1\50",
+            "\1\45",
+            "\1\47",
             "",
-            "\1\52\12\uffff\1\53",
+            "\1\51\12\uffff\1\52",
             "",
-            "\1\56\20\uffff\1\55",
+            "\1\55\20\uffff\1\54",
+            "\1\56",
             "\1\57",
             "\1\60",
             "\1\61",
-            "\1\62",
-            "\1\64\11\uffff\1\63",
-            "\1\65\16\uffff\1\66",
-            "\47\70\1\67\uffd8\70",
+            "\1\63\11\uffff\1\62",
+            "\1\64\16\uffff\1\65",
+            "\47\67\1\66\uffd8\67",
             "",
             "",
-            "\1\73",
+            "\1\72",
             "",
-            "\1\76",
-            "\1\100\5\uffff\1\77",
+            "\1\75",
+            "\1\77\5\uffff\1\76",
+            "\1\100",
             "\1\101",
             "\1\102",
             "\1\103",
             "\1\104",
+            "\12\106",
             "\1\105",
-            "\12\107",
-            "\1\106",
             "\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "",
-            "\0\70",
-            "\1\110\4\uffff\1\111",
+            "\0\67",
+            "\1\107\4\uffff\1\110",
+            "",
+            "",
+            "\1\112",
+            "",
+            "",
+            "",
             "",
             "",
             "\1\113",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\114",
-            "\1\115",
             "",
+            "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
-            "\1\121",
-            "\1\122\1\uffff\1\123",
+            "\1\121\1\uffff\1\122",
+            "\1\123",
             "\1\124",
             "\1\125",
             "\1\126",
             "\1\127",
             "\1\130",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\131",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\132",
             "\1\133",
             "\1\134",
             "\1\135",
             "\1\136",
-            "\1\137",
-            "\1\141\1\140",
+            "\1\140\1\137",
+            "\1\141",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\142",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\143",
             "\1\144",
             "\1\145",
@@ -1862,78 +1832,77 @@ public class InternalMobgenLexer extends Lexer {
             "\1\150",
             "\1\151",
             "\1\152",
-            "\1\153",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\154",
             "\1\155",
             "\1\156",
             "\1\157",
-            "\1\160",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\163",
+            "\1\162",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\163",
             "\1\164",
             "\1\165",
             "\1\166",
             "\1\167",
             "\1\170",
-            "\1\171",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\173",
+            "\1\172",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\175",
+            "\1\174",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\176",
             "\1\177",
             "\1\u0080",
+            "",
             "\1\u0081",
-            "",
-            "\1\u0082",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u0083",
             "\1\u0084",
-            "\1\u0085",
             "",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u0085",
             "\1\u0086",
             "\1\u0087",
-            "\1\u0088",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u008a",
+            "",
             "\1\u008b",
             "",
-            "\1\u008c",
-            "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\1\u008c",
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
-            "\1\u0090",
             "",
+            "\1\u0090",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
+            "",
+            "",
             "\1\u0095",
-            "",
-            "",
-            "\1\u0096",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u0097",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
-            "\1\u009b",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u009d",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u009e",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u009f",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u00a2",
+            "\1\u00a1",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "",
@@ -1977,25 +1946,35 @@ public class InternalMobgenLexer extends Lexer {
             this.transition = DFA18_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_MOBGEN_HEADER_PARAMETER | RULE_RESTFUL_METHODS | RULE_JSON_META_SCALAR_TYPE | RULE_EMPTY_JSON_OBJECT | RULE_EMPTY_JSON_ARRAY | RULE_JSON_LITERAL_NULL | RULE_JSON_LITERAL_BOOLEAN | RULE_JSON_NUMBER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_RESTFUL_METHODS | RULE_JSON_META_SCALAR_TYPE | RULE_EMPTY_JSON_OBJECT | RULE_EMPTY_JSON_ARRAY | RULE_JSON_LITERAL_NULL | RULE_JSON_LITERAL_BOOLEAN | RULE_JSON_NUMBER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA18_14 = input.LA(1);
+                        int LA18_31 = input.LA(1);
 
                         s = -1;
-                        if ( (LA18_14=='\'') ) {s = 55;}
-
-                        else if ( ((LA18_14>='\u0000' && LA18_14<='&')||(LA18_14>='(' && LA18_14<='\uFFFF')) ) {s = 56;}
+                        if ( ((LA18_31>='\u0000' && LA18_31<='\uFFFF')) ) {s = 55;}
 
                         else s = 34;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA18_14 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA18_14=='\'') ) {s = 54;}
+
+                        else if ( ((LA18_14>='\u0000' && LA18_14<='&')||(LA18_14>='(' && LA18_14<='\uFFFF')) ) {s = 55;}
+
+                        else s = 34;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA18_0 = input.LA(1);
 
                         s = -1;
@@ -2066,16 +2045,6 @@ public class InternalMobgenLexer extends Lexer {
                         else if ( ((LA18_0>='\t' && LA18_0<='\n')||LA18_0=='\r'||LA18_0==' ') ) {s = 33;}
 
                         else if ( ((LA18_0>='\u0000' && LA18_0<='\b')||(LA18_0>='\u000B' && LA18_0<='\f')||(LA18_0>='\u000E' && LA18_0<='\u001F')||LA18_0=='!'||(LA18_0>='#' && LA18_0<='&')||(LA18_0>='(' && LA18_0<='+')||LA18_0=='.'||(LA18_0>=';' && LA18_0<='<')||(LA18_0>='>' && LA18_0<='@')||LA18_0=='\\'||LA18_0=='`'||LA18_0=='|'||(LA18_0>='~' && LA18_0<='\uFFFF')) ) {s = 34;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA18_31 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA18_31>='\u0000' && LA18_31<='\uFFFF')) ) {s = 56;}
-
-                        else s = 34;
 
                         if ( s>=0 ) return s;
                         break;

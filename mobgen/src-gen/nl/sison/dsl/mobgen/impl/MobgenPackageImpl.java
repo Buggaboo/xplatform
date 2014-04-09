@@ -14,6 +14,7 @@ import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.MobgenFactory;
 import nl.sison.dsl.mobgen.MobgenHeader;
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
+import nl.sison.dsl.mobgen.MobgenHeaderParameter;
 import nl.sison.dsl.mobgen.MobgenJson;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
@@ -77,6 +78,13 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * @generated
    */
   private EClass mobgenHeaderKeyValuePairEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mobgenHeaderParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -473,6 +481,36 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getMobgenHeaderKeyValuePair_Parameter()
+  {
+    return (EReference)mobgenHeaderKeyValuePairEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMobgenHeaderParameter()
+  {
+    return mobgenHeaderParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMobgenHeaderParameter_Id()
+  {
+    return (EAttribute)mobgenHeaderParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMobgenJson()
   {
     return mobgenJsonEClass;
@@ -808,6 +846,10 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     mobgenHeaderKeyValuePairEClass = createEClass(MOBGEN_HEADER_KEY_VALUE_PAIR);
     createEAttribute(mobgenHeaderKeyValuePairEClass, MOBGEN_HEADER_KEY_VALUE_PAIR__KEY);
     createEAttribute(mobgenHeaderKeyValuePairEClass, MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE);
+    createEReference(mobgenHeaderKeyValuePairEClass, MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER);
+
+    mobgenHeaderParameterEClass = createEClass(MOBGEN_HEADER_PARAMETER);
+    createEAttribute(mobgenHeaderParameterEClass, MOBGEN_HEADER_PARAMETER__ID);
 
     mobgenJsonEClass = createEClass(MOBGEN_JSON);
     createEAttribute(mobgenJsonEClass, MOBGEN_JSON__NAME);
@@ -913,6 +955,10 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEClass(mobgenHeaderKeyValuePairEClass, MobgenHeaderKeyValuePair.class, "MobgenHeaderKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMobgenHeaderKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, MobgenHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMobgenHeaderKeyValuePair_Value(), ecorePackage.getEString(), "value", null, 0, 1, MobgenHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMobgenHeaderKeyValuePair_Parameter(), this.getMobgenHeaderParameter(), null, "parameter", null, 0, 1, MobgenHeaderKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mobgenHeaderParameterEClass, MobgenHeaderParameter.class, "MobgenHeaderParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMobgenHeaderParameter_Id(), ecorePackage.getEString(), "id", null, 0, 1, MobgenHeaderParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mobgenJsonEClass, MobgenJson.class, "MobgenJson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMobgenJson_Name(), ecorePackage.getEString(), "name", null, 0, 1, MobgenJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

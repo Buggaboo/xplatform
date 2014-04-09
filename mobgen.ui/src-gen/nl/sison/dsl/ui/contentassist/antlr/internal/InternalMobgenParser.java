@@ -22,10 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_NUMBER", "RULE_JSON_META_SCALAR_TYPE", "RULE_ID", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_MOBGEN_HEADER_PARAMETER", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'}'", "'->'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_EMPTY_JSON_OBJECT", "RULE_EMPTY_JSON_ARRAY", "RULE_JSON_LITERAL_BOOLEAN", "RULE_JSON_LITERAL_NULL", "RULE_JSON_NUMBER", "RULE_JSON_META_SCALAR_TYPE", "RULE_ID", "RULE_RESTFUL_METHODS", "RULE_ANY_OTHER", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'platform'", "'{'", "'}'", "'->'", "'call'", "':'", "'from'", "'with'", "'headers'", "'request'", "'and'", "'response'", "'client'", "'expects'", "'server'", "'\\'\\'\\''", "','", "'='", "'['", "']'", "'enum'", "'map'"
     };
     public static final int RULE_ID=11;
-    public static final int T__40=40;
     public static final int RULE_JSON_META_SCALAR_TYPE=10;
     public static final int T__29=29;
     public static final int T__28=28;
@@ -41,9 +40,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     public static final int T__20=20;
     public static final int RULE_JSON_LITERAL_BOOLEAN=7;
     public static final int RULE_EMPTY_JSON_OBJECT=5;
-    public static final int RULE_SL_COMMENT=17;
+    public static final int RULE_SL_COMMENT=16;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=16;
+    public static final int RULE_ML_COMMENT=15;
     public static final int T__19=19;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -52,16 +51,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
+    public static final int T__18=18;
     public static final int RULE_JSON_NUMBER=9;
     public static final int T__36=36;
     public static final int T__37=37;
     public static final int RULE_JSON_LITERAL_NULL=8;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_MOBGEN_HEADER_PARAMETER=14;
-    public static final int RULE_INT=15;
+    public static final int RULE_INT=14;
     public static final int RULE_RESTFUL_METHODS=12;
-    public static final int RULE_WS=18;
+    public static final int RULE_WS=17;
 
     // delegates
     // delegators
@@ -516,31 +515,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMobgenHeaderKeyValuePair"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:209:1: ruleMobgenHeaderKeyValuePair : ( ( rule__MobgenHeaderKeyValuePair__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:209:1: ruleMobgenHeaderKeyValuePair : ( ( rule__MobgenHeaderKeyValuePair__Alternatives ) ) ;
     public final void ruleMobgenHeaderKeyValuePair() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:213:2: ( ( ( rule__MobgenHeaderKeyValuePair__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:214:1: ( ( rule__MobgenHeaderKeyValuePair__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:213:2: ( ( ( rule__MobgenHeaderKeyValuePair__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:214:1: ( ( rule__MobgenHeaderKeyValuePair__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:214:1: ( ( rule__MobgenHeaderKeyValuePair__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:215:1: ( rule__MobgenHeaderKeyValuePair__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:214:1: ( ( rule__MobgenHeaderKeyValuePair__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:215:1: ( rule__MobgenHeaderKeyValuePair__Alternatives )
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:216:1: ( rule__MobgenHeaderKeyValuePair__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:216:2: rule__MobgenHeaderKeyValuePair__Group__0
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives()); 
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:216:1: ( rule__MobgenHeaderKeyValuePair__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:216:2: rule__MobgenHeaderKeyValuePair__Alternatives
             {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__0_in_ruleMobgenHeaderKeyValuePair394);
-            rule__MobgenHeaderKeyValuePair__Group__0();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Alternatives_in_ruleMobgenHeaderKeyValuePair394);
+            rule__MobgenHeaderKeyValuePair__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup()); 
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives()); 
 
             }
 
@@ -562,21 +561,98 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleMobgenHeaderKeyValuePair"
 
 
+    // $ANTLR start "entryRuleMobgenHeaderParameter"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:228:1: entryRuleMobgenHeaderParameter : ruleMobgenHeaderParameter EOF ;
+    public final void entryRuleMobgenHeaderParameter() throws RecognitionException {
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:229:1: ( ruleMobgenHeaderParameter EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:230:1: ruleMobgenHeaderParameter EOF
+            {
+             before(grammarAccess.getMobgenHeaderParameterRule()); 
+            pushFollow(FOLLOW_ruleMobgenHeaderParameter_in_entryRuleMobgenHeaderParameter421);
+            ruleMobgenHeaderParameter();
+
+            state._fsp--;
+
+             after(grammarAccess.getMobgenHeaderParameterRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenHeaderParameter428); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleMobgenHeaderParameter"
+
+
+    // $ANTLR start "ruleMobgenHeaderParameter"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:237:1: ruleMobgenHeaderParameter : ( ( rule__MobgenHeaderParameter__Group__0 ) ) ;
+    public final void ruleMobgenHeaderParameter() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:241:2: ( ( ( rule__MobgenHeaderParameter__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:242:1: ( ( rule__MobgenHeaderParameter__Group__0 ) )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:242:1: ( ( rule__MobgenHeaderParameter__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:243:1: ( rule__MobgenHeaderParameter__Group__0 )
+            {
+             before(grammarAccess.getMobgenHeaderParameterAccess().getGroup()); 
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:244:1: ( rule__MobgenHeaderParameter__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:244:2: rule__MobgenHeaderParameter__Group__0
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__0_in_ruleMobgenHeaderParameter454);
+            rule__MobgenHeaderParameter__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMobgenHeaderParameterAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleMobgenHeaderParameter"
+
+
     // $ANTLR start "entryRuleMobgenJson"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:228:1: entryRuleMobgenJson : ruleMobgenJson EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:256:1: entryRuleMobgenJson : ruleMobgenJson EOF ;
     public final void entryRuleMobgenJson() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:229:1: ( ruleMobgenJson EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:230:1: ruleMobgenJson EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:257:1: ( ruleMobgenJson EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:258:1: ruleMobgenJson EOF
             {
              before(grammarAccess.getMobgenJsonRule()); 
-            pushFollow(FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson421);
+            pushFollow(FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson481);
             ruleMobgenJson();
 
             state._fsp--;
 
              after(grammarAccess.getMobgenJsonRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenJson428); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenJson488); 
 
             }
 
@@ -593,23 +669,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMobgenJson"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:237:1: ruleMobgenJson : ( ( rule__MobgenJson__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:265:1: ruleMobgenJson : ( ( rule__MobgenJson__Group__0 ) ) ;
     public final void ruleMobgenJson() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:241:2: ( ( ( rule__MobgenJson__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:242:1: ( ( rule__MobgenJson__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:269:2: ( ( ( rule__MobgenJson__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:270:1: ( ( rule__MobgenJson__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:242:1: ( ( rule__MobgenJson__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:243:1: ( rule__MobgenJson__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:270:1: ( ( rule__MobgenJson__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:271:1: ( rule__MobgenJson__Group__0 )
             {
              before(grammarAccess.getMobgenJsonAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:244:1: ( rule__MobgenJson__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:244:2: rule__MobgenJson__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:272:1: ( rule__MobgenJson__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:272:2: rule__MobgenJson__Group__0
             {
-            pushFollow(FOLLOW_rule__MobgenJson__Group__0_in_ruleMobgenJson454);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__0_in_ruleMobgenJson514);
             rule__MobgenJson__Group__0();
 
             state._fsp--;
@@ -640,20 +716,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonObjectValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:256:1: entryRuleJsonObjectValue : ruleJsonObjectValue EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:284:1: entryRuleJsonObjectValue : ruleJsonObjectValue EOF ;
     public final void entryRuleJsonObjectValue() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:257:1: ( ruleJsonObjectValue EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:258:1: ruleJsonObjectValue EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:285:1: ( ruleJsonObjectValue EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:286:1: ruleJsonObjectValue EOF
             {
              before(grammarAccess.getJsonObjectValueRule()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue481);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue541);
             ruleJsonObjectValue();
 
             state._fsp--;
 
              after(grammarAccess.getJsonObjectValueRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObjectValue488); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObjectValue548); 
 
             }
 
@@ -670,23 +746,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonObjectValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:265:1: ruleJsonObjectValue : ( ( rule__JsonObjectValue__Alternatives ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:293:1: ruleJsonObjectValue : ( ( rule__JsonObjectValue__Alternatives ) ) ;
     public final void ruleJsonObjectValue() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:269:2: ( ( ( rule__JsonObjectValue__Alternatives ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:270:1: ( ( rule__JsonObjectValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:297:2: ( ( ( rule__JsonObjectValue__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:298:1: ( ( rule__JsonObjectValue__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:270:1: ( ( rule__JsonObjectValue__Alternatives ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:271:1: ( rule__JsonObjectValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:298:1: ( ( rule__JsonObjectValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:299:1: ( rule__JsonObjectValue__Alternatives )
             {
              before(grammarAccess.getJsonObjectValueAccess().getAlternatives()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:272:1: ( rule__JsonObjectValue__Alternatives )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:272:2: rule__JsonObjectValue__Alternatives
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:300:1: ( rule__JsonObjectValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:300:2: rule__JsonObjectValue__Alternatives
             {
-            pushFollow(FOLLOW_rule__JsonObjectValue__Alternatives_in_ruleJsonObjectValue514);
+            pushFollow(FOLLOW_rule__JsonObjectValue__Alternatives_in_ruleJsonObjectValue574);
             rule__JsonObjectValue__Alternatives();
 
             state._fsp--;
@@ -717,20 +793,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonCompositeValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:284:1: entryRuleJsonCompositeValue : ruleJsonCompositeValue EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:312:1: entryRuleJsonCompositeValue : ruleJsonCompositeValue EOF ;
     public final void entryRuleJsonCompositeValue() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:285:1: ( ruleJsonCompositeValue EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:286:1: ruleJsonCompositeValue EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:313:1: ( ruleJsonCompositeValue EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:314:1: ruleJsonCompositeValue EOF
             {
              before(grammarAccess.getJsonCompositeValueRule()); 
-            pushFollow(FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue541);
+            pushFollow(FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue601);
             ruleJsonCompositeValue();
 
             state._fsp--;
 
              after(grammarAccess.getJsonCompositeValueRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonCompositeValue548); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonCompositeValue608); 
 
             }
 
@@ -747,23 +823,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonCompositeValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:293:1: ruleJsonCompositeValue : ( ( rule__JsonCompositeValue__Alternatives ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:321:1: ruleJsonCompositeValue : ( ( rule__JsonCompositeValue__Alternatives ) ) ;
     public final void ruleJsonCompositeValue() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:297:2: ( ( ( rule__JsonCompositeValue__Alternatives ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:298:1: ( ( rule__JsonCompositeValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:325:2: ( ( ( rule__JsonCompositeValue__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:326:1: ( ( rule__JsonCompositeValue__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:298:1: ( ( rule__JsonCompositeValue__Alternatives ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:299:1: ( rule__JsonCompositeValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:326:1: ( ( rule__JsonCompositeValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:327:1: ( rule__JsonCompositeValue__Alternatives )
             {
              before(grammarAccess.getJsonCompositeValueAccess().getAlternatives()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:300:1: ( rule__JsonCompositeValue__Alternatives )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:300:2: rule__JsonCompositeValue__Alternatives
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:328:1: ( rule__JsonCompositeValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:328:2: rule__JsonCompositeValue__Alternatives
             {
-            pushFollow(FOLLOW_rule__JsonCompositeValue__Alternatives_in_ruleJsonCompositeValue574);
+            pushFollow(FOLLOW_rule__JsonCompositeValue__Alternatives_in_ruleJsonCompositeValue634);
             rule__JsonCompositeValue__Alternatives();
 
             state._fsp--;
@@ -794,20 +870,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonLiteralValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:312:1: entryRuleJsonLiteralValue : ruleJsonLiteralValue EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:340:1: entryRuleJsonLiteralValue : ruleJsonLiteralValue EOF ;
     public final void entryRuleJsonLiteralValue() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:313:1: ( ruleJsonLiteralValue EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:314:1: ruleJsonLiteralValue EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:341:1: ( ruleJsonLiteralValue EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:342:1: ruleJsonLiteralValue EOF
             {
              before(grammarAccess.getJsonLiteralValueRule()); 
-            pushFollow(FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue601);
+            pushFollow(FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue661);
             ruleJsonLiteralValue();
 
             state._fsp--;
 
              after(grammarAccess.getJsonLiteralValueRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonLiteralValue608); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonLiteralValue668); 
 
             }
 
@@ -824,23 +900,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonLiteralValue"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:321:1: ruleJsonLiteralValue : ( ( rule__JsonLiteralValue__Alternatives ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:349:1: ruleJsonLiteralValue : ( ( rule__JsonLiteralValue__Alternatives ) ) ;
     public final void ruleJsonLiteralValue() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:325:2: ( ( ( rule__JsonLiteralValue__Alternatives ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:326:1: ( ( rule__JsonLiteralValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:353:2: ( ( ( rule__JsonLiteralValue__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:354:1: ( ( rule__JsonLiteralValue__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:326:1: ( ( rule__JsonLiteralValue__Alternatives ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:327:1: ( rule__JsonLiteralValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:354:1: ( ( rule__JsonLiteralValue__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:355:1: ( rule__JsonLiteralValue__Alternatives )
             {
              before(grammarAccess.getJsonLiteralValueAccess().getAlternatives()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:328:1: ( rule__JsonLiteralValue__Alternatives )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:328:2: rule__JsonLiteralValue__Alternatives
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:356:1: ( rule__JsonLiteralValue__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:356:2: rule__JsonLiteralValue__Alternatives
             {
-            pushFollow(FOLLOW_rule__JsonLiteralValue__Alternatives_in_ruleJsonLiteralValue634);
+            pushFollow(FOLLOW_rule__JsonLiteralValue__Alternatives_in_ruleJsonLiteralValue694);
             rule__JsonLiteralValue__Alternatives();
 
             state._fsp--;
@@ -871,20 +947,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonObject"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:340:1: entryRuleJsonObject : ruleJsonObject EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:368:1: entryRuleJsonObject : ruleJsonObject EOF ;
     public final void entryRuleJsonObject() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:341:1: ( ruleJsonObject EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:342:1: ruleJsonObject EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:369:1: ( ruleJsonObject EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:370:1: ruleJsonObject EOF
             {
              before(grammarAccess.getJsonObjectRule()); 
-            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject661);
+            pushFollow(FOLLOW_ruleJsonObject_in_entryRuleJsonObject721);
             ruleJsonObject();
 
             state._fsp--;
 
              after(grammarAccess.getJsonObjectRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject668); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonObject728); 
 
             }
 
@@ -901,23 +977,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonObject"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:349:1: ruleJsonObject : ( ( rule__JsonObject__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:377:1: ruleJsonObject : ( ( rule__JsonObject__Group__0 ) ) ;
     public final void ruleJsonObject() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:353:2: ( ( ( rule__JsonObject__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:354:1: ( ( rule__JsonObject__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:381:2: ( ( ( rule__JsonObject__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:382:1: ( ( rule__JsonObject__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:354:1: ( ( rule__JsonObject__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:355:1: ( rule__JsonObject__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:382:1: ( ( rule__JsonObject__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:383:1: ( rule__JsonObject__Group__0 )
             {
              before(grammarAccess.getJsonObjectAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:356:1: ( rule__JsonObject__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:356:2: rule__JsonObject__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:384:1: ( rule__JsonObject__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:384:2: rule__JsonObject__Group__0
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__0_in_ruleJsonObject694);
+            pushFollow(FOLLOW_rule__JsonObject__Group__0_in_ruleJsonObject754);
             rule__JsonObject__Group__0();
 
             state._fsp--;
@@ -948,20 +1024,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonKeyValuePair"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:368:1: entryRuleJsonKeyValuePair : ruleJsonKeyValuePair EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:396:1: entryRuleJsonKeyValuePair : ruleJsonKeyValuePair EOF ;
     public final void entryRuleJsonKeyValuePair() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:369:1: ( ruleJsonKeyValuePair EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:370:1: ruleJsonKeyValuePair EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:397:1: ( ruleJsonKeyValuePair EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:398:1: ruleJsonKeyValuePair EOF
             {
              before(grammarAccess.getJsonKeyValuePairRule()); 
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair721);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair781);
             ruleJsonKeyValuePair();
 
             state._fsp--;
 
              after(grammarAccess.getJsonKeyValuePairRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair728); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonKeyValuePair788); 
 
             }
 
@@ -978,23 +1054,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonKeyValuePair"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:377:1: ruleJsonKeyValuePair : ( ( rule__JsonKeyValuePair__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:405:1: ruleJsonKeyValuePair : ( ( rule__JsonKeyValuePair__Group__0 ) ) ;
     public final void ruleJsonKeyValuePair() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:381:2: ( ( ( rule__JsonKeyValuePair__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:382:1: ( ( rule__JsonKeyValuePair__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:409:2: ( ( ( rule__JsonKeyValuePair__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:410:1: ( ( rule__JsonKeyValuePair__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:382:1: ( ( rule__JsonKeyValuePair__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:383:1: ( rule__JsonKeyValuePair__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:410:1: ( ( rule__JsonKeyValuePair__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:411:1: ( rule__JsonKeyValuePair__Group__0 )
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:384:1: ( rule__JsonKeyValuePair__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:384:2: rule__JsonKeyValuePair__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:412:1: ( rule__JsonKeyValuePair__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:412:2: rule__JsonKeyValuePair__Group__0
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__0_in_ruleJsonKeyValuePair754);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__0_in_ruleJsonKeyValuePair814);
             rule__JsonKeyValuePair__Group__0();
 
             state._fsp--;
@@ -1025,20 +1101,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleJsonArray"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:396:1: entryRuleJsonArray : ruleJsonArray EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:424:1: entryRuleJsonArray : ruleJsonArray EOF ;
     public final void entryRuleJsonArray() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:397:1: ( ruleJsonArray EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:398:1: ruleJsonArray EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:425:1: ( ruleJsonArray EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:426:1: ruleJsonArray EOF
             {
              before(grammarAccess.getJsonArrayRule()); 
-            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray781);
+            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray841);
             ruleJsonArray();
 
             state._fsp--;
 
              after(grammarAccess.getJsonArrayRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray788); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray848); 
 
             }
 
@@ -1055,23 +1131,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleJsonArray"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:405:1: ruleJsonArray : ( ( rule__JsonArray__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:433:1: ruleJsonArray : ( ( rule__JsonArray__Group__0 ) ) ;
     public final void ruleJsonArray() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:409:2: ( ( ( rule__JsonArray__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:410:1: ( ( rule__JsonArray__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:437:2: ( ( ( rule__JsonArray__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:438:1: ( ( rule__JsonArray__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:410:1: ( ( rule__JsonArray__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:411:1: ( rule__JsonArray__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:438:1: ( ( rule__JsonArray__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:439:1: ( rule__JsonArray__Group__0 )
             {
              before(grammarAccess.getJsonArrayAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:412:1: ( rule__JsonArray__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:412:2: rule__JsonArray__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:440:1: ( rule__JsonArray__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:440:2: rule__JsonArray__Group__0
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__0_in_ruleJsonArray814);
+            pushFollow(FOLLOW_rule__JsonArray__Group__0_in_ruleJsonArray874);
             rule__JsonArray__Group__0();
 
             state._fsp--;
@@ -1102,20 +1178,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleMobgenResourceDefinition"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:424:1: entryRuleMobgenResourceDefinition : ruleMobgenResourceDefinition EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:452:1: entryRuleMobgenResourceDefinition : ruleMobgenResourceDefinition EOF ;
     public final void entryRuleMobgenResourceDefinition() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:425:1: ( ruleMobgenResourceDefinition EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:426:1: ruleMobgenResourceDefinition EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:453:1: ( ruleMobgenResourceDefinition EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:454:1: ruleMobgenResourceDefinition EOF
             {
              before(grammarAccess.getMobgenResourceDefinitionRule()); 
-            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition841);
+            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition901);
             ruleMobgenResourceDefinition();
 
             state._fsp--;
 
              after(grammarAccess.getMobgenResourceDefinitionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenResourceDefinition848); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMobgenResourceDefinition908); 
 
             }
 
@@ -1132,23 +1208,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMobgenResourceDefinition"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:433:1: ruleMobgenResourceDefinition : ( ( rule__MobgenResourceDefinition__Alternatives ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:461:1: ruleMobgenResourceDefinition : ( ( rule__MobgenResourceDefinition__Alternatives ) ) ;
     public final void ruleMobgenResourceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:437:2: ( ( ( rule__MobgenResourceDefinition__Alternatives ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:438:1: ( ( rule__MobgenResourceDefinition__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:465:2: ( ( ( rule__MobgenResourceDefinition__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:466:1: ( ( rule__MobgenResourceDefinition__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:438:1: ( ( rule__MobgenResourceDefinition__Alternatives ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:439:1: ( rule__MobgenResourceDefinition__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:466:1: ( ( rule__MobgenResourceDefinition__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:467:1: ( rule__MobgenResourceDefinition__Alternatives )
             {
              before(grammarAccess.getMobgenResourceDefinitionAccess().getAlternatives()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:440:1: ( rule__MobgenResourceDefinition__Alternatives )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:440:2: rule__MobgenResourceDefinition__Alternatives
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:468:1: ( rule__MobgenResourceDefinition__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:468:2: rule__MobgenResourceDefinition__Alternatives
             {
-            pushFollow(FOLLOW_rule__MobgenResourceDefinition__Alternatives_in_ruleMobgenResourceDefinition874);
+            pushFollow(FOLLOW_rule__MobgenResourceDefinition__Alternatives_in_ruleMobgenResourceDefinition934);
             rule__MobgenResourceDefinition__Alternatives();
 
             state._fsp--;
@@ -1179,20 +1255,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleEnumInstance"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:452:1: entryRuleEnumInstance : ruleEnumInstance EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:480:1: entryRuleEnumInstance : ruleEnumInstance EOF ;
     public final void entryRuleEnumInstance() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:453:1: ( ruleEnumInstance EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:454:1: ruleEnumInstance EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:481:1: ( ruleEnumInstance EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:482:1: ruleEnumInstance EOF
             {
              before(grammarAccess.getEnumInstanceRule()); 
-            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance901);
+            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance961);
             ruleEnumInstance();
 
             state._fsp--;
 
              after(grammarAccess.getEnumInstanceRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance908); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance968); 
 
             }
 
@@ -1209,23 +1285,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleEnumInstance"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:461:1: ruleEnumInstance : ( ( rule__EnumInstance__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:489:1: ruleEnumInstance : ( ( rule__EnumInstance__Group__0 ) ) ;
     public final void ruleEnumInstance() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:465:2: ( ( ( rule__EnumInstance__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:466:1: ( ( rule__EnumInstance__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:493:2: ( ( ( rule__EnumInstance__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:494:1: ( ( rule__EnumInstance__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:466:1: ( ( rule__EnumInstance__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:467:1: ( rule__EnumInstance__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:494:1: ( ( rule__EnumInstance__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:495:1: ( rule__EnumInstance__Group__0 )
             {
              before(grammarAccess.getEnumInstanceAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:468:1: ( rule__EnumInstance__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:468:2: rule__EnumInstance__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:496:1: ( rule__EnumInstance__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:496:2: rule__EnumInstance__Group__0
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__0_in_ruleEnumInstance934);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__0_in_ruleEnumInstance994);
             rule__EnumInstance__Group__0();
 
             state._fsp--;
@@ -1256,20 +1332,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleMapInstance"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:480:1: entryRuleMapInstance : ruleMapInstance EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:508:1: entryRuleMapInstance : ruleMapInstance EOF ;
     public final void entryRuleMapInstance() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:481:1: ( ruleMapInstance EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:482:1: ruleMapInstance EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:509:1: ( ruleMapInstance EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:510:1: ruleMapInstance EOF
             {
              before(grammarAccess.getMapInstanceRule()); 
-            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance961);
+            pushFollow(FOLLOW_ruleMapInstance_in_entryRuleMapInstance1021);
             ruleMapInstance();
 
             state._fsp--;
 
              after(grammarAccess.getMapInstanceRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance968); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMapInstance1028); 
 
             }
 
@@ -1286,23 +1362,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMapInstance"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:489:1: ruleMapInstance : ( ( rule__MapInstance__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:517:1: ruleMapInstance : ( ( rule__MapInstance__Group__0 ) ) ;
     public final void ruleMapInstance() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:493:2: ( ( ( rule__MapInstance__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:494:1: ( ( rule__MapInstance__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:521:2: ( ( ( rule__MapInstance__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:522:1: ( ( rule__MapInstance__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:494:1: ( ( rule__MapInstance__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:495:1: ( rule__MapInstance__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:522:1: ( ( rule__MapInstance__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:523:1: ( rule__MapInstance__Group__0 )
             {
              before(grammarAccess.getMapInstanceAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:496:1: ( rule__MapInstance__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:496:2: rule__MapInstance__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:524:1: ( rule__MapInstance__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:524:2: rule__MapInstance__Group__0
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__0_in_ruleMapInstance994);
+            pushFollow(FOLLOW_rule__MapInstance__Group__0_in_ruleMapInstance1054);
             rule__MapInstance__Group__0();
 
             state._fsp--;
@@ -1333,20 +1409,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleStringList"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:508:1: entryRuleStringList : ruleStringList EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:536:1: entryRuleStringList : ruleStringList EOF ;
     public final void entryRuleStringList() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:509:1: ( ruleStringList EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:510:1: ruleStringList EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:537:1: ( ruleStringList EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:538:1: ruleStringList EOF
             {
              before(grammarAccess.getStringListRule()); 
-            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList1021);
+            pushFollow(FOLLOW_ruleStringList_in_entryRuleStringList1081);
             ruleStringList();
 
             state._fsp--;
 
              after(grammarAccess.getStringListRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList1028); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringList1088); 
 
             }
 
@@ -1363,23 +1439,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleStringList"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:517:1: ruleStringList : ( ( rule__StringList__Group__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:545:1: ruleStringList : ( ( rule__StringList__Group__0 ) ) ;
     public final void ruleStringList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:521:2: ( ( ( rule__StringList__Group__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:522:1: ( ( rule__StringList__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:549:2: ( ( ( rule__StringList__Group__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:550:1: ( ( rule__StringList__Group__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:522:1: ( ( rule__StringList__Group__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:523:1: ( rule__StringList__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:550:1: ( ( rule__StringList__Group__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:551:1: ( rule__StringList__Group__0 )
             {
              before(grammarAccess.getStringListAccess().getGroup()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:524:1: ( rule__StringList__Group__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:524:2: rule__StringList__Group__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:552:1: ( rule__StringList__Group__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:552:2: rule__StringList__Group__0
             {
-            pushFollow(FOLLOW_rule__StringList__Group__0_in_ruleStringList1054);
+            pushFollow(FOLLOW_rule__StringList__Group__0_in_ruleStringList1114);
             rule__StringList__Group__0();
 
             state._fsp--;
@@ -1410,20 +1486,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleNestedType"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:536:1: entryRuleNestedType : ruleNestedType EOF ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:564:1: entryRuleNestedType : ruleNestedType EOF ;
     public final void entryRuleNestedType() throws RecognitionException {
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:537:1: ( ruleNestedType EOF )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:538:1: ruleNestedType EOF
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:565:1: ( ruleNestedType EOF )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:566:1: ruleNestedType EOF
             {
              before(grammarAccess.getNestedTypeRule()); 
-            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType1081);
+            pushFollow(FOLLOW_ruleNestedType_in_entryRuleNestedType1141);
             ruleNestedType();
 
             state._fsp--;
 
              after(grammarAccess.getNestedTypeRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType1088); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedType1148); 
 
             }
 
@@ -1440,23 +1516,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleNestedType"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:545:1: ruleNestedType : ( ( rule__NestedType__Alternatives ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:573:1: ruleNestedType : ( ( rule__NestedType__Alternatives ) ) ;
     public final void ruleNestedType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:549:2: ( ( ( rule__NestedType__Alternatives ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:550:1: ( ( rule__NestedType__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:577:2: ( ( ( rule__NestedType__Alternatives ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:578:1: ( ( rule__NestedType__Alternatives ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:550:1: ( ( rule__NestedType__Alternatives ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:551:1: ( rule__NestedType__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:578:1: ( ( rule__NestedType__Alternatives ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:579:1: ( rule__NestedType__Alternatives )
             {
              before(grammarAccess.getNestedTypeAccess().getAlternatives()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:552:1: ( rule__NestedType__Alternatives )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:552:2: rule__NestedType__Alternatives
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:580:1: ( rule__NestedType__Alternatives )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:580:2: rule__NestedType__Alternatives
             {
-            pushFollow(FOLLOW_rule__NestedType__Alternatives_in_ruleNestedType1114);
+            pushFollow(FOLLOW_rule__NestedType__Alternatives_in_ruleNestedType1174);
             rule__NestedType__Alternatives();
 
             state._fsp--;
@@ -1487,20 +1563,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__Alternatives_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:564:1: rule__Mobgen__Alternatives_1 : ( ( ( rule__Mobgen__ResourcesAssignment_1_0 ) ) | ( ( rule__Mobgen__CallsAssignment_1_1 ) ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:592:1: rule__Mobgen__Alternatives_1 : ( ( ( rule__Mobgen__ResourcesAssignment_1_0 ) ) | ( ( rule__Mobgen__CallsAssignment_1_1 ) ) );
     public final void rule__Mobgen__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:568:1: ( ( ( rule__Mobgen__ResourcesAssignment_1_0 ) ) | ( ( rule__Mobgen__CallsAssignment_1_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:596:1: ( ( ( rule__Mobgen__ResourcesAssignment_1_0 ) ) | ( ( rule__Mobgen__CallsAssignment_1_1 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( ((LA1_0>=39 && LA1_0<=40)) ) {
+            if ( ((LA1_0>=38 && LA1_0<=39)) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==23) ) {
+            else if ( (LA1_0==22) ) {
                 alt1=2;
             }
             else {
@@ -1511,16 +1587,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:569:1: ( ( rule__Mobgen__ResourcesAssignment_1_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:597:1: ( ( rule__Mobgen__ResourcesAssignment_1_0 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:569:1: ( ( rule__Mobgen__ResourcesAssignment_1_0 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:570:1: ( rule__Mobgen__ResourcesAssignment_1_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:597:1: ( ( rule__Mobgen__ResourcesAssignment_1_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:598:1: ( rule__Mobgen__ResourcesAssignment_1_0 )
                     {
                      before(grammarAccess.getMobgenAccess().getResourcesAssignment_1_0()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:571:1: ( rule__Mobgen__ResourcesAssignment_1_0 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:571:2: rule__Mobgen__ResourcesAssignment_1_0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:599:1: ( rule__Mobgen__ResourcesAssignment_1_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:599:2: rule__Mobgen__ResourcesAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__Mobgen__ResourcesAssignment_1_0_in_rule__Mobgen__Alternatives_11150);
+                    pushFollow(FOLLOW_rule__Mobgen__ResourcesAssignment_1_0_in_rule__Mobgen__Alternatives_11210);
                     rule__Mobgen__ResourcesAssignment_1_0();
 
                     state._fsp--;
@@ -1536,16 +1612,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:575:6: ( ( rule__Mobgen__CallsAssignment_1_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:603:6: ( ( rule__Mobgen__CallsAssignment_1_1 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:575:6: ( ( rule__Mobgen__CallsAssignment_1_1 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:576:1: ( rule__Mobgen__CallsAssignment_1_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:603:6: ( ( rule__Mobgen__CallsAssignment_1_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:604:1: ( rule__Mobgen__CallsAssignment_1_1 )
                     {
                      before(grammarAccess.getMobgenAccess().getCallsAssignment_1_1()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:577:1: ( rule__Mobgen__CallsAssignment_1_1 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:577:2: rule__Mobgen__CallsAssignment_1_1
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:605:1: ( rule__Mobgen__CallsAssignment_1_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:605:2: rule__Mobgen__CallsAssignment_1_1
                     {
-                    pushFollow(FOLLOW_rule__Mobgen__CallsAssignment_1_1_in_rule__Mobgen__Alternatives_11168);
+                    pushFollow(FOLLOW_rule__Mobgen__CallsAssignment_1_1_in_rule__Mobgen__Alternatives_11228);
                     rule__Mobgen__CallsAssignment_1_1();
 
                     state._fsp--;
@@ -1577,21 +1653,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Mobgen__Alternatives_1"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Alternatives_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:586:1: rule__MobgenHeaderKeyValuePair__Alternatives_2 : ( ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 ) ) | ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 ) ) );
-    public final void rule__MobgenHeaderKeyValuePair__Alternatives_2() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Alternatives"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:614:1: rule__MobgenHeaderKeyValuePair__Alternatives : ( ( ( rule__MobgenHeaderKeyValuePair__Group_0__0 ) ) | ( ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 ) ) );
+    public final void rule__MobgenHeaderKeyValuePair__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:590:1: ( ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 ) ) | ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:618:1: ( ( ( rule__MobgenHeaderKeyValuePair__Group_0__0 ) ) | ( ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0==RULE_STRING) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==RULE_MOBGEN_HEADER_PARAMETER) ) {
+            else if ( (LA2_0==19) ) {
                 alt2=2;
             }
             else {
@@ -1602,24 +1678,24 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:591:1: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:619:1: ( ( rule__MobgenHeaderKeyValuePair__Group_0__0 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:591:1: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:592:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:619:1: ( ( rule__MobgenHeaderKeyValuePair__Group_0__0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:620:1: ( rule__MobgenHeaderKeyValuePair__Group_0__0 )
                     {
-                     before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_0()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:593:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:593:2: rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0
+                     before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup_0()); 
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:621:1: ( rule__MobgenHeaderKeyValuePair__Group_0__0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:621:2: rule__MobgenHeaderKeyValuePair__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0_in_rule__MobgenHeaderKeyValuePair__Alternatives_21201);
-                    rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0();
+                    pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__0_in_rule__MobgenHeaderKeyValuePair__Alternatives1261);
+                    rule__MobgenHeaderKeyValuePair__Group_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_0()); 
+                     after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup_0()); 
 
                     }
 
@@ -1627,24 +1703,24 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:597:6: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:625:6: ( ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:597:6: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:598:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:625:6: ( ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:626:1: ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 )
                     {
-                     before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_1()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:599:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:599:2: rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1
+                     before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_1()); 
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:627:1: ( rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:627:2: rule__MobgenHeaderKeyValuePair__ParameterAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1_in_rule__MobgenHeaderKeyValuePair__Alternatives_21219);
-                    rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1();
+                    pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__ParameterAssignment_1_in_rule__MobgenHeaderKeyValuePair__Alternatives1279);
+                    rule__MobgenHeaderKeyValuePair__ParameterAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_1()); 
+                     after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_1()); 
 
                     }
 
@@ -1665,24 +1741,24 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Alternatives_2"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Alternatives"
 
 
     // $ANTLR start "rule__JsonObjectValue__Alternatives"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:608:1: rule__JsonObjectValue__Alternatives : ( ( ( rule__JsonObjectValue__ValueAssignment_0 ) ) | ( ( rule__JsonObjectValue__CompositeAssignment_1 ) ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:636:1: rule__JsonObjectValue__Alternatives : ( ( ( rule__JsonObjectValue__ValueAssignment_0 ) ) | ( ( rule__JsonObjectValue__CompositeAssignment_1 ) ) );
     public final void rule__JsonObjectValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:612:1: ( ( ( rule__JsonObjectValue__ValueAssignment_0 ) ) | ( ( rule__JsonObjectValue__CompositeAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:640:1: ( ( ( rule__JsonObjectValue__ValueAssignment_0 ) ) | ( ( rule__JsonObjectValue__CompositeAssignment_1 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( ((LA3_0>=RULE_STRING && LA3_0<=RULE_JSON_META_SCALAR_TYPE)) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==20||LA3_0==37) ) {
+            else if ( (LA3_0==19||LA3_0==36) ) {
                 alt3=2;
             }
             else {
@@ -1693,16 +1769,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:613:1: ( ( rule__JsonObjectValue__ValueAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:641:1: ( ( rule__JsonObjectValue__ValueAssignment_0 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:613:1: ( ( rule__JsonObjectValue__ValueAssignment_0 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:614:1: ( rule__JsonObjectValue__ValueAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:641:1: ( ( rule__JsonObjectValue__ValueAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:642:1: ( rule__JsonObjectValue__ValueAssignment_0 )
                     {
                      before(grammarAccess.getJsonObjectValueAccess().getValueAssignment_0()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:615:1: ( rule__JsonObjectValue__ValueAssignment_0 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:615:2: rule__JsonObjectValue__ValueAssignment_0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:643:1: ( rule__JsonObjectValue__ValueAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:643:2: rule__JsonObjectValue__ValueAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__JsonObjectValue__ValueAssignment_0_in_rule__JsonObjectValue__Alternatives1252);
+                    pushFollow(FOLLOW_rule__JsonObjectValue__ValueAssignment_0_in_rule__JsonObjectValue__Alternatives1312);
                     rule__JsonObjectValue__ValueAssignment_0();
 
                     state._fsp--;
@@ -1718,16 +1794,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:619:6: ( ( rule__JsonObjectValue__CompositeAssignment_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:647:6: ( ( rule__JsonObjectValue__CompositeAssignment_1 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:619:6: ( ( rule__JsonObjectValue__CompositeAssignment_1 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:620:1: ( rule__JsonObjectValue__CompositeAssignment_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:647:6: ( ( rule__JsonObjectValue__CompositeAssignment_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:648:1: ( rule__JsonObjectValue__CompositeAssignment_1 )
                     {
                      before(grammarAccess.getJsonObjectValueAccess().getCompositeAssignment_1()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:621:1: ( rule__JsonObjectValue__CompositeAssignment_1 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:621:2: rule__JsonObjectValue__CompositeAssignment_1
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:649:1: ( rule__JsonObjectValue__CompositeAssignment_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:649:2: rule__JsonObjectValue__CompositeAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__JsonObjectValue__CompositeAssignment_1_in_rule__JsonObjectValue__Alternatives1270);
+                    pushFollow(FOLLOW_rule__JsonObjectValue__CompositeAssignment_1_in_rule__JsonObjectValue__Alternatives1330);
                     rule__JsonObjectValue__CompositeAssignment_1();
 
                     state._fsp--;
@@ -1760,20 +1836,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonCompositeValue__Alternatives"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:630:1: rule__JsonCompositeValue__Alternatives : ( ( ruleJsonObject ) | ( ruleJsonArray ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:658:1: rule__JsonCompositeValue__Alternatives : ( ( ruleJsonObject ) | ( ruleJsonArray ) );
     public final void rule__JsonCompositeValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:634:1: ( ( ruleJsonObject ) | ( ruleJsonArray ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:662:1: ( ( ruleJsonObject ) | ( ruleJsonArray ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==20) ) {
+            if ( (LA4_0==19) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==37) ) {
+            else if ( (LA4_0==36) ) {
                 alt4=2;
             }
             else {
@@ -1784,13 +1860,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:635:1: ( ruleJsonObject )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:663:1: ( ruleJsonObject )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:635:1: ( ruleJsonObject )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:636:1: ruleJsonObject
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:663:1: ( ruleJsonObject )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:664:1: ruleJsonObject
                     {
                      before(grammarAccess.getJsonCompositeValueAccess().getJsonObjectParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleJsonObject_in_rule__JsonCompositeValue__Alternatives1303);
+                    pushFollow(FOLLOW_ruleJsonObject_in_rule__JsonCompositeValue__Alternatives1363);
                     ruleJsonObject();
 
                     state._fsp--;
@@ -1803,13 +1879,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:641:6: ( ruleJsonArray )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:669:6: ( ruleJsonArray )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:641:6: ( ruleJsonArray )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:642:1: ruleJsonArray
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:669:6: ( ruleJsonArray )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:670:1: ruleJsonArray
                     {
                      before(grammarAccess.getJsonCompositeValueAccess().getJsonArrayParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleJsonArray_in_rule__JsonCompositeValue__Alternatives1320);
+                    pushFollow(FOLLOW_ruleJsonArray_in_rule__JsonCompositeValue__Alternatives1380);
                     ruleJsonArray();
 
                     state._fsp--;
@@ -1839,13 +1915,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonLiteralValue__Alternatives"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:652:1: rule__JsonLiteralValue__Alternatives : ( ( RULE_STRING ) | ( RULE_EMPTY_JSON_OBJECT ) | ( RULE_EMPTY_JSON_ARRAY ) | ( RULE_JSON_LITERAL_BOOLEAN ) | ( RULE_JSON_LITERAL_NULL ) | ( RULE_JSON_NUMBER ) | ( RULE_JSON_META_SCALAR_TYPE ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:680:1: rule__JsonLiteralValue__Alternatives : ( ( RULE_STRING ) | ( RULE_EMPTY_JSON_OBJECT ) | ( RULE_EMPTY_JSON_ARRAY ) | ( RULE_JSON_LITERAL_BOOLEAN ) | ( RULE_JSON_LITERAL_NULL ) | ( RULE_JSON_NUMBER ) | ( RULE_JSON_META_SCALAR_TYPE ) );
     public final void rule__JsonLiteralValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:656:1: ( ( RULE_STRING ) | ( RULE_EMPTY_JSON_OBJECT ) | ( RULE_EMPTY_JSON_ARRAY ) | ( RULE_JSON_LITERAL_BOOLEAN ) | ( RULE_JSON_LITERAL_NULL ) | ( RULE_JSON_NUMBER ) | ( RULE_JSON_META_SCALAR_TYPE ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:684:1: ( ( RULE_STRING ) | ( RULE_EMPTY_JSON_OBJECT ) | ( RULE_EMPTY_JSON_ARRAY ) | ( RULE_JSON_LITERAL_BOOLEAN ) | ( RULE_JSON_LITERAL_NULL ) | ( RULE_JSON_NUMBER ) | ( RULE_JSON_META_SCALAR_TYPE ) )
             int alt5=7;
             switch ( input.LA(1) ) {
             case RULE_STRING:
@@ -1892,13 +1968,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
             switch (alt5) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:657:1: ( RULE_STRING )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:685:1: ( RULE_STRING )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:657:1: ( RULE_STRING )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:658:1: RULE_STRING
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:685:1: ( RULE_STRING )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:686:1: RULE_STRING
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JsonLiteralValue__Alternatives1352); 
+                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JsonLiteralValue__Alternatives1412); 
                      after(grammarAccess.getJsonLiteralValueAccess().getSTRINGTerminalRuleCall_0()); 
 
                     }
@@ -1907,13 +1983,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:663:6: ( RULE_EMPTY_JSON_OBJECT )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:691:6: ( RULE_EMPTY_JSON_OBJECT )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:663:6: ( RULE_EMPTY_JSON_OBJECT )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:664:1: RULE_EMPTY_JSON_OBJECT
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:691:6: ( RULE_EMPTY_JSON_OBJECT )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:692:1: RULE_EMPTY_JSON_OBJECT
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); 
-                    match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_rule__JsonLiteralValue__Alternatives1369); 
+                    match(input,RULE_EMPTY_JSON_OBJECT,FOLLOW_RULE_EMPTY_JSON_OBJECT_in_rule__JsonLiteralValue__Alternatives1429); 
                      after(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTTerminalRuleCall_1()); 
 
                     }
@@ -1922,13 +1998,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:669:6: ( RULE_EMPTY_JSON_ARRAY )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:697:6: ( RULE_EMPTY_JSON_ARRAY )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:669:6: ( RULE_EMPTY_JSON_ARRAY )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:670:1: RULE_EMPTY_JSON_ARRAY
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:697:6: ( RULE_EMPTY_JSON_ARRAY )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:698:1: RULE_EMPTY_JSON_ARRAY
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); 
-                    match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_rule__JsonLiteralValue__Alternatives1386); 
+                    match(input,RULE_EMPTY_JSON_ARRAY,FOLLOW_RULE_EMPTY_JSON_ARRAY_in_rule__JsonLiteralValue__Alternatives1446); 
                      after(grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYTerminalRuleCall_2()); 
 
                     }
@@ -1937,13 +2013,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:675:6: ( RULE_JSON_LITERAL_BOOLEAN )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:703:6: ( RULE_JSON_LITERAL_BOOLEAN )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:675:6: ( RULE_JSON_LITERAL_BOOLEAN )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:676:1: RULE_JSON_LITERAL_BOOLEAN
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:703:6: ( RULE_JSON_LITERAL_BOOLEAN )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:704:1: RULE_JSON_LITERAL_BOOLEAN
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); 
-                    match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_rule__JsonLiteralValue__Alternatives1403); 
+                    match(input,RULE_JSON_LITERAL_BOOLEAN,FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_rule__JsonLiteralValue__Alternatives1463); 
                      after(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANTerminalRuleCall_3()); 
 
                     }
@@ -1952,13 +2028,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:681:6: ( RULE_JSON_LITERAL_NULL )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:709:6: ( RULE_JSON_LITERAL_NULL )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:681:6: ( RULE_JSON_LITERAL_NULL )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:682:1: RULE_JSON_LITERAL_NULL
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:709:6: ( RULE_JSON_LITERAL_NULL )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:710:1: RULE_JSON_LITERAL_NULL
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); 
-                    match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_rule__JsonLiteralValue__Alternatives1420); 
+                    match(input,RULE_JSON_LITERAL_NULL,FOLLOW_RULE_JSON_LITERAL_NULL_in_rule__JsonLiteralValue__Alternatives1480); 
                      after(grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLTerminalRuleCall_4()); 
 
                     }
@@ -1967,13 +2043,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:687:6: ( RULE_JSON_NUMBER )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:715:6: ( RULE_JSON_NUMBER )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:687:6: ( RULE_JSON_NUMBER )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:688:1: RULE_JSON_NUMBER
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:715:6: ( RULE_JSON_NUMBER )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:716:1: RULE_JSON_NUMBER
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); 
-                    match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_rule__JsonLiteralValue__Alternatives1437); 
+                    match(input,RULE_JSON_NUMBER,FOLLOW_RULE_JSON_NUMBER_in_rule__JsonLiteralValue__Alternatives1497); 
                      after(grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBERTerminalRuleCall_5()); 
 
                     }
@@ -1982,13 +2058,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:693:6: ( RULE_JSON_META_SCALAR_TYPE )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:721:6: ( RULE_JSON_META_SCALAR_TYPE )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:693:6: ( RULE_JSON_META_SCALAR_TYPE )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:694:1: RULE_JSON_META_SCALAR_TYPE
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:721:6: ( RULE_JSON_META_SCALAR_TYPE )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:722:1: RULE_JSON_META_SCALAR_TYPE
                     {
                      before(grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); 
-                    match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_rule__JsonLiteralValue__Alternatives1454); 
+                    match(input,RULE_JSON_META_SCALAR_TYPE,FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_rule__JsonLiteralValue__Alternatives1514); 
                      after(grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPETerminalRuleCall_6()); 
 
                     }
@@ -2014,20 +2090,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenResourceDefinition__Alternatives"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:704:1: rule__MobgenResourceDefinition__Alternatives : ( ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) ) | ( ruleEnumInstance ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:732:1: rule__MobgenResourceDefinition__Alternatives : ( ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) ) | ( ruleEnumInstance ) );
     public final void rule__MobgenResourceDefinition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:708:1: ( ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) ) | ( ruleEnumInstance ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:736:1: ( ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) ) | ( ruleEnumInstance ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==40) ) {
+            if ( (LA6_0==39) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==39) ) {
+            else if ( (LA6_0==38) ) {
                 alt6=2;
             }
             else {
@@ -2038,16 +2114,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:709:1: ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:737:1: ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:709:1: ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:710:1: ( rule__MobgenResourceDefinition__ResourcesAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:737:1: ( ( rule__MobgenResourceDefinition__ResourcesAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:738:1: ( rule__MobgenResourceDefinition__ResourcesAssignment_0 )
                     {
                      before(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesAssignment_0()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:711:1: ( rule__MobgenResourceDefinition__ResourcesAssignment_0 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:711:2: rule__MobgenResourceDefinition__ResourcesAssignment_0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:739:1: ( rule__MobgenResourceDefinition__ResourcesAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:739:2: rule__MobgenResourceDefinition__ResourcesAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MobgenResourceDefinition__ResourcesAssignment_0_in_rule__MobgenResourceDefinition__Alternatives1486);
+                    pushFollow(FOLLOW_rule__MobgenResourceDefinition__ResourcesAssignment_0_in_rule__MobgenResourceDefinition__Alternatives1546);
                     rule__MobgenResourceDefinition__ResourcesAssignment_0();
 
                     state._fsp--;
@@ -2063,13 +2139,13 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:715:6: ( ruleEnumInstance )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:743:6: ( ruleEnumInstance )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:715:6: ( ruleEnumInstance )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:716:1: ruleEnumInstance
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:743:6: ( ruleEnumInstance )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:744:1: ruleEnumInstance
                     {
                      before(grammarAccess.getMobgenResourceDefinitionAccess().getEnumInstanceParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleEnumInstance_in_rule__MobgenResourceDefinition__Alternatives1504);
+                    pushFollow(FOLLOW_ruleEnumInstance_in_rule__MobgenResourceDefinition__Alternatives1564);
                     ruleEnumInstance();
 
                     state._fsp--;
@@ -2099,17 +2175,17 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedType__Alternatives"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:726:1: rule__NestedType__Alternatives : ( ( ( rule__NestedType__ListAssignment_0 ) ) | ( ( rule__NestedType__StringAssignment_1 ) ) );
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:754:1: rule__NestedType__Alternatives : ( ( ( rule__NestedType__ListAssignment_0 ) ) | ( ( rule__NestedType__StringAssignment_1 ) ) );
     public final void rule__NestedType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:730:1: ( ( ( rule__NestedType__ListAssignment_0 ) ) | ( ( rule__NestedType__StringAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:758:1: ( ( ( rule__NestedType__ListAssignment_0 ) ) | ( ( rule__NestedType__StringAssignment_1 ) ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==37) ) {
+            if ( (LA7_0==36) ) {
                 alt7=1;
             }
             else if ( (LA7_0==RULE_STRING) ) {
@@ -2123,16 +2199,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:731:1: ( ( rule__NestedType__ListAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:759:1: ( ( rule__NestedType__ListAssignment_0 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:731:1: ( ( rule__NestedType__ListAssignment_0 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:732:1: ( rule__NestedType__ListAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:759:1: ( ( rule__NestedType__ListAssignment_0 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:760:1: ( rule__NestedType__ListAssignment_0 )
                     {
                      before(grammarAccess.getNestedTypeAccess().getListAssignment_0()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:733:1: ( rule__NestedType__ListAssignment_0 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:733:2: rule__NestedType__ListAssignment_0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:761:1: ( rule__NestedType__ListAssignment_0 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:761:2: rule__NestedType__ListAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__NestedType__ListAssignment_0_in_rule__NestedType__Alternatives1536);
+                    pushFollow(FOLLOW_rule__NestedType__ListAssignment_0_in_rule__NestedType__Alternatives1596);
                     rule__NestedType__ListAssignment_0();
 
                     state._fsp--;
@@ -2148,16 +2224,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:737:6: ( ( rule__NestedType__StringAssignment_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:765:6: ( ( rule__NestedType__StringAssignment_1 ) )
                     {
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:737:6: ( ( rule__NestedType__StringAssignment_1 ) )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:738:1: ( rule__NestedType__StringAssignment_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:765:6: ( ( rule__NestedType__StringAssignment_1 ) )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:766:1: ( rule__NestedType__StringAssignment_1 )
                     {
                      before(grammarAccess.getNestedTypeAccess().getStringAssignment_1()); 
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:739:1: ( rule__NestedType__StringAssignment_1 )
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:739:2: rule__NestedType__StringAssignment_1
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:767:1: ( rule__NestedType__StringAssignment_1 )
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:767:2: rule__NestedType__StringAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__NestedType__StringAssignment_1_in_rule__NestedType__Alternatives1554);
+                    pushFollow(FOLLOW_rule__NestedType__StringAssignment_1_in_rule__NestedType__Alternatives1614);
                     rule__NestedType__StringAssignment_1();
 
                     state._fsp--;
@@ -2190,21 +2266,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:750:1: rule__Mobgen__Group__0 : rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:778:1: rule__Mobgen__Group__0 : rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1 ;
     public final void rule__Mobgen__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:754:1: ( rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:755:2: rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:782:1: ( rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:783:2: rule__Mobgen__Group__0__Impl rule__Mobgen__Group__1
             {
-            pushFollow(FOLLOW_rule__Mobgen__Group__0__Impl_in_rule__Mobgen__Group__01585);
+            pushFollow(FOLLOW_rule__Mobgen__Group__0__Impl_in_rule__Mobgen__Group__01645);
             rule__Mobgen__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mobgen__Group__1_in_rule__Mobgen__Group__01588);
+            pushFollow(FOLLOW_rule__Mobgen__Group__1_in_rule__Mobgen__Group__01648);
             rule__Mobgen__Group__1();
 
             state._fsp--;
@@ -2228,23 +2304,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:762:1: rule__Mobgen__Group__0__Impl : ( ( rule__Mobgen__PlatformAssignment_0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:790:1: rule__Mobgen__Group__0__Impl : ( ( rule__Mobgen__PlatformAssignment_0 ) ) ;
     public final void rule__Mobgen__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:766:1: ( ( ( rule__Mobgen__PlatformAssignment_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:767:1: ( ( rule__Mobgen__PlatformAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:794:1: ( ( ( rule__Mobgen__PlatformAssignment_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:795:1: ( ( rule__Mobgen__PlatformAssignment_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:767:1: ( ( rule__Mobgen__PlatformAssignment_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:768:1: ( rule__Mobgen__PlatformAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:795:1: ( ( rule__Mobgen__PlatformAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:796:1: ( rule__Mobgen__PlatformAssignment_0 )
             {
              before(grammarAccess.getMobgenAccess().getPlatformAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:769:1: ( rule__Mobgen__PlatformAssignment_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:769:2: rule__Mobgen__PlatformAssignment_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:797:1: ( rule__Mobgen__PlatformAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:797:2: rule__Mobgen__PlatformAssignment_0
             {
-            pushFollow(FOLLOW_rule__Mobgen__PlatformAssignment_0_in_rule__Mobgen__Group__0__Impl1615);
+            pushFollow(FOLLOW_rule__Mobgen__PlatformAssignment_0_in_rule__Mobgen__Group__0__Impl1675);
             rule__Mobgen__PlatformAssignment_0();
 
             state._fsp--;
@@ -2275,16 +2351,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:779:1: rule__Mobgen__Group__1 : rule__Mobgen__Group__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:807:1: rule__Mobgen__Group__1 : rule__Mobgen__Group__1__Impl ;
     public final void rule__Mobgen__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:783:1: ( rule__Mobgen__Group__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:784:2: rule__Mobgen__Group__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:811:1: ( rule__Mobgen__Group__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:812:2: rule__Mobgen__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Mobgen__Group__1__Impl_in_rule__Mobgen__Group__11645);
+            pushFollow(FOLLOW_rule__Mobgen__Group__1__Impl_in_rule__Mobgen__Group__11705);
             rule__Mobgen__Group__1__Impl();
 
             state._fsp--;
@@ -2308,26 +2384,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:790:1: rule__Mobgen__Group__1__Impl : ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:818:1: rule__Mobgen__Group__1__Impl : ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) ) ;
     public final void rule__Mobgen__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:794:1: ( ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:795:1: ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:822:1: ( ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:823:1: ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:795:1: ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:796:1: ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:823:1: ( ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:824:1: ( ( rule__Mobgen__Alternatives_1 ) ) ( ( rule__Mobgen__Alternatives_1 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:796:1: ( ( rule__Mobgen__Alternatives_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:797:1: ( rule__Mobgen__Alternatives_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:824:1: ( ( rule__Mobgen__Alternatives_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:825:1: ( rule__Mobgen__Alternatives_1 )
             {
              before(grammarAccess.getMobgenAccess().getAlternatives_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:798:1: ( rule__Mobgen__Alternatives_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:798:2: rule__Mobgen__Alternatives_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:826:1: ( rule__Mobgen__Alternatives_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:826:2: rule__Mobgen__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1674);
+            pushFollow(FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1734);
             rule__Mobgen__Alternatives_1();
 
             state._fsp--;
@@ -2339,26 +2415,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:801:1: ( ( rule__Mobgen__Alternatives_1 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:802:1: ( rule__Mobgen__Alternatives_1 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:829:1: ( ( rule__Mobgen__Alternatives_1 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:830:1: ( rule__Mobgen__Alternatives_1 )*
             {
              before(grammarAccess.getMobgenAccess().getAlternatives_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:803:1: ( rule__Mobgen__Alternatives_1 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:831:1: ( rule__Mobgen__Alternatives_1 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==23||(LA8_0>=39 && LA8_0<=40)) ) {
+                if ( (LA8_0==22||(LA8_0>=38 && LA8_0<=39)) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:803:2: rule__Mobgen__Alternatives_1
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:831:2: rule__Mobgen__Alternatives_1
             	    {
-            	    pushFollow(FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1686);
+            	    pushFollow(FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1746);
             	    rule__Mobgen__Alternatives_1();
 
             	    state._fsp--;
@@ -2398,21 +2474,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:818:1: rule__Platform__Group__0 : rule__Platform__Group__0__Impl rule__Platform__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:846:1: rule__Platform__Group__0 : rule__Platform__Group__0__Impl rule__Platform__Group__1 ;
     public final void rule__Platform__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:822:1: ( rule__Platform__Group__0__Impl rule__Platform__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:823:2: rule__Platform__Group__0__Impl rule__Platform__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:850:1: ( rule__Platform__Group__0__Impl rule__Platform__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:851:2: rule__Platform__Group__0__Impl rule__Platform__Group__1
             {
-            pushFollow(FOLLOW_rule__Platform__Group__0__Impl_in_rule__Platform__Group__01723);
+            pushFollow(FOLLOW_rule__Platform__Group__0__Impl_in_rule__Platform__Group__01783);
             rule__Platform__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Platform__Group__1_in_rule__Platform__Group__01726);
+            pushFollow(FOLLOW_rule__Platform__Group__1_in_rule__Platform__Group__01786);
             rule__Platform__Group__1();
 
             state._fsp--;
@@ -2436,20 +2512,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:830:1: rule__Platform__Group__0__Impl : ( 'platform' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:858:1: rule__Platform__Group__0__Impl : ( 'platform' ) ;
     public final void rule__Platform__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:834:1: ( ( 'platform' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:835:1: ( 'platform' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:862:1: ( ( 'platform' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:863:1: ( 'platform' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:835:1: ( 'platform' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:836:1: 'platform'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:863:1: ( 'platform' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:864:1: 'platform'
             {
              before(grammarAccess.getPlatformAccess().getPlatformKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__Platform__Group__0__Impl1754); 
+            match(input,18,FOLLOW_18_in_rule__Platform__Group__0__Impl1814); 
              after(grammarAccess.getPlatformAccess().getPlatformKeyword_0()); 
 
             }
@@ -2473,21 +2549,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:849:1: rule__Platform__Group__1 : rule__Platform__Group__1__Impl rule__Platform__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:877:1: rule__Platform__Group__1 : rule__Platform__Group__1__Impl rule__Platform__Group__2 ;
     public final void rule__Platform__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:853:1: ( rule__Platform__Group__1__Impl rule__Platform__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:854:2: rule__Platform__Group__1__Impl rule__Platform__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:881:1: ( rule__Platform__Group__1__Impl rule__Platform__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:882:2: rule__Platform__Group__1__Impl rule__Platform__Group__2
             {
-            pushFollow(FOLLOW_rule__Platform__Group__1__Impl_in_rule__Platform__Group__11785);
+            pushFollow(FOLLOW_rule__Platform__Group__1__Impl_in_rule__Platform__Group__11845);
             rule__Platform__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Platform__Group__2_in_rule__Platform__Group__11788);
+            pushFollow(FOLLOW_rule__Platform__Group__2_in_rule__Platform__Group__11848);
             rule__Platform__Group__2();
 
             state._fsp--;
@@ -2511,20 +2587,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:861:1: rule__Platform__Group__1__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:889:1: rule__Platform__Group__1__Impl : ( '{' ) ;
     public final void rule__Platform__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:865:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:866:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:893:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:894:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:866:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:867:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:894:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:895:1: '{'
             {
              before(grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,20,FOLLOW_20_in_rule__Platform__Group__1__Impl1816); 
+            match(input,19,FOLLOW_19_in_rule__Platform__Group__1__Impl1876); 
              after(grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -2548,21 +2624,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:880:1: rule__Platform__Group__2 : rule__Platform__Group__2__Impl rule__Platform__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:908:1: rule__Platform__Group__2 : rule__Platform__Group__2__Impl rule__Platform__Group__3 ;
     public final void rule__Platform__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:884:1: ( rule__Platform__Group__2__Impl rule__Platform__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:885:2: rule__Platform__Group__2__Impl rule__Platform__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:912:1: ( rule__Platform__Group__2__Impl rule__Platform__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:913:2: rule__Platform__Group__2__Impl rule__Platform__Group__3
             {
-            pushFollow(FOLLOW_rule__Platform__Group__2__Impl_in_rule__Platform__Group__21847);
+            pushFollow(FOLLOW_rule__Platform__Group__2__Impl_in_rule__Platform__Group__21907);
             rule__Platform__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Platform__Group__3_in_rule__Platform__Group__21850);
+            pushFollow(FOLLOW_rule__Platform__Group__3_in_rule__Platform__Group__21910);
             rule__Platform__Group__3();
 
             state._fsp--;
@@ -2586,26 +2662,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:892:1: rule__Platform__Group__2__Impl : ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:920:1: rule__Platform__Group__2__Impl : ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) ) ;
     public final void rule__Platform__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:896:1: ( ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:897:1: ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:924:1: ( ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:925:1: ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:897:1: ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:898:1: ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:925:1: ( ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:926:1: ( ( rule__Platform__Group_2__0 ) ) ( ( rule__Platform__Group_2__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:898:1: ( ( rule__Platform__Group_2__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:899:1: ( rule__Platform__Group_2__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:926:1: ( ( rule__Platform__Group_2__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:927:1: ( rule__Platform__Group_2__0 )
             {
              before(grammarAccess.getPlatformAccess().getGroup_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:900:1: ( rule__Platform__Group_2__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:900:2: rule__Platform__Group_2__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:928:1: ( rule__Platform__Group_2__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:928:2: rule__Platform__Group_2__0
             {
-            pushFollow(FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1879);
+            pushFollow(FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1939);
             rule__Platform__Group_2__0();
 
             state._fsp--;
@@ -2617,11 +2693,11 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:903:1: ( ( rule__Platform__Group_2__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:904:1: ( rule__Platform__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:931:1: ( ( rule__Platform__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:932:1: ( rule__Platform__Group_2__0 )*
             {
              before(grammarAccess.getPlatformAccess().getGroup_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:905:1: ( rule__Platform__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:933:1: ( rule__Platform__Group_2__0 )*
             loop9:
             do {
                 int alt9=2;
@@ -2634,9 +2710,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:905:2: rule__Platform__Group_2__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:933:2: rule__Platform__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1891);
+            	    pushFollow(FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1951);
             	    rule__Platform__Group_2__0();
 
             	    state._fsp--;
@@ -2676,16 +2752,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:916:1: rule__Platform__Group__3 : rule__Platform__Group__3__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:944:1: rule__Platform__Group__3 : rule__Platform__Group__3__Impl ;
     public final void rule__Platform__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:920:1: ( rule__Platform__Group__3__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:921:2: rule__Platform__Group__3__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:948:1: ( rule__Platform__Group__3__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:949:2: rule__Platform__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Platform__Group__3__Impl_in_rule__Platform__Group__31924);
+            pushFollow(FOLLOW_rule__Platform__Group__3__Impl_in_rule__Platform__Group__31984);
             rule__Platform__Group__3__Impl();
 
             state._fsp--;
@@ -2709,20 +2785,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:927:1: rule__Platform__Group__3__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:955:1: rule__Platform__Group__3__Impl : ( '}' ) ;
     public final void rule__Platform__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:931:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:932:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:959:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:960:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:932:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:933:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:960:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:961:1: '}'
             {
              before(grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,21,FOLLOW_21_in_rule__Platform__Group__3__Impl1952); 
+            match(input,20,FOLLOW_20_in_rule__Platform__Group__3__Impl2012); 
              after(grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -2746,21 +2822,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:954:1: rule__Platform__Group_2__0 : rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:982:1: rule__Platform__Group_2__0 : rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1 ;
     public final void rule__Platform__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:958:1: ( rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:959:2: rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:986:1: ( rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:987:2: rule__Platform__Group_2__0__Impl rule__Platform__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Platform__Group_2__0__Impl_in_rule__Platform__Group_2__01991);
+            pushFollow(FOLLOW_rule__Platform__Group_2__0__Impl_in_rule__Platform__Group_2__02051);
             rule__Platform__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Platform__Group_2__1_in_rule__Platform__Group_2__01994);
+            pushFollow(FOLLOW_rule__Platform__Group_2__1_in_rule__Platform__Group_2__02054);
             rule__Platform__Group_2__1();
 
             state._fsp--;
@@ -2784,23 +2860,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:966:1: rule__Platform__Group_2__0__Impl : ( ( rule__Platform__PlatformsAssignment_2_0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:994:1: rule__Platform__Group_2__0__Impl : ( ( rule__Platform__PlatformsAssignment_2_0 ) ) ;
     public final void rule__Platform__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:970:1: ( ( ( rule__Platform__PlatformsAssignment_2_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:971:1: ( ( rule__Platform__PlatformsAssignment_2_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:998:1: ( ( ( rule__Platform__PlatformsAssignment_2_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:999:1: ( ( rule__Platform__PlatformsAssignment_2_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:971:1: ( ( rule__Platform__PlatformsAssignment_2_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:972:1: ( rule__Platform__PlatformsAssignment_2_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:999:1: ( ( rule__Platform__PlatformsAssignment_2_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1000:1: ( rule__Platform__PlatformsAssignment_2_0 )
             {
              before(grammarAccess.getPlatformAccess().getPlatformsAssignment_2_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:973:1: ( rule__Platform__PlatformsAssignment_2_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:973:2: rule__Platform__PlatformsAssignment_2_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1001:1: ( rule__Platform__PlatformsAssignment_2_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1001:2: rule__Platform__PlatformsAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__Platform__PlatformsAssignment_2_0_in_rule__Platform__Group_2__0__Impl2021);
+            pushFollow(FOLLOW_rule__Platform__PlatformsAssignment_2_0_in_rule__Platform__Group_2__0__Impl2081);
             rule__Platform__PlatformsAssignment_2_0();
 
             state._fsp--;
@@ -2831,21 +2907,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:983:1: rule__Platform__Group_2__1 : rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1011:1: rule__Platform__Group_2__1 : rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2 ;
     public final void rule__Platform__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:987:1: ( rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:988:2: rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1015:1: ( rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1016:2: rule__Platform__Group_2__1__Impl rule__Platform__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Platform__Group_2__1__Impl_in_rule__Platform__Group_2__12051);
+            pushFollow(FOLLOW_rule__Platform__Group_2__1__Impl_in_rule__Platform__Group_2__12111);
             rule__Platform__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Platform__Group_2__2_in_rule__Platform__Group_2__12054);
+            pushFollow(FOLLOW_rule__Platform__Group_2__2_in_rule__Platform__Group_2__12114);
             rule__Platform__Group_2__2();
 
             state._fsp--;
@@ -2869,20 +2945,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:995:1: rule__Platform__Group_2__1__Impl : ( '->' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1023:1: rule__Platform__Group_2__1__Impl : ( '->' ) ;
     public final void rule__Platform__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:999:1: ( ( '->' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1000:1: ( '->' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1027:1: ( ( '->' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1028:1: ( '->' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1000:1: ( '->' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1001:1: '->'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1028:1: ( '->' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1029:1: '->'
             {
              before(grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1()); 
-            match(input,22,FOLLOW_22_in_rule__Platform__Group_2__1__Impl2082); 
+            match(input,21,FOLLOW_21_in_rule__Platform__Group_2__1__Impl2142); 
              after(grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1()); 
 
             }
@@ -2906,16 +2982,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1014:1: rule__Platform__Group_2__2 : rule__Platform__Group_2__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1042:1: rule__Platform__Group_2__2 : rule__Platform__Group_2__2__Impl ;
     public final void rule__Platform__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1018:1: ( rule__Platform__Group_2__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1019:2: rule__Platform__Group_2__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1046:1: ( rule__Platform__Group_2__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1047:2: rule__Platform__Group_2__2__Impl
             {
-            pushFollow(FOLLOW_rule__Platform__Group_2__2__Impl_in_rule__Platform__Group_2__22113);
+            pushFollow(FOLLOW_rule__Platform__Group_2__2__Impl_in_rule__Platform__Group_2__22173);
             rule__Platform__Group_2__2__Impl();
 
             state._fsp--;
@@ -2939,23 +3015,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__Group_2__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1025:1: rule__Platform__Group_2__2__Impl : ( ( rule__Platform__GenerateWhereAssignment_2_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1053:1: rule__Platform__Group_2__2__Impl : ( ( rule__Platform__GenerateWhereAssignment_2_2 ) ) ;
     public final void rule__Platform__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1029:1: ( ( ( rule__Platform__GenerateWhereAssignment_2_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1030:1: ( ( rule__Platform__GenerateWhereAssignment_2_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1057:1: ( ( ( rule__Platform__GenerateWhereAssignment_2_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1058:1: ( ( rule__Platform__GenerateWhereAssignment_2_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1030:1: ( ( rule__Platform__GenerateWhereAssignment_2_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1031:1: ( rule__Platform__GenerateWhereAssignment_2_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1058:1: ( ( rule__Platform__GenerateWhereAssignment_2_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1059:1: ( rule__Platform__GenerateWhereAssignment_2_2 )
             {
              before(grammarAccess.getPlatformAccess().getGenerateWhereAssignment_2_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1032:1: ( rule__Platform__GenerateWhereAssignment_2_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1032:2: rule__Platform__GenerateWhereAssignment_2_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1060:1: ( rule__Platform__GenerateWhereAssignment_2_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1060:2: rule__Platform__GenerateWhereAssignment_2_2
             {
-            pushFollow(FOLLOW_rule__Platform__GenerateWhereAssignment_2_2_in_rule__Platform__Group_2__2__Impl2140);
+            pushFollow(FOLLOW_rule__Platform__GenerateWhereAssignment_2_2_in_rule__Platform__Group_2__2__Impl2200);
             rule__Platform__GenerateWhereAssignment_2_2();
 
             state._fsp--;
@@ -2986,21 +3062,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1048:1: rule__MobgenCallDefinition__Group__0 : rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1076:1: rule__MobgenCallDefinition__Group__0 : rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1 ;
     public final void rule__MobgenCallDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1052:1: ( rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1053:2: rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1080:1: ( rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1081:2: rule__MobgenCallDefinition__Group__0__Impl rule__MobgenCallDefinition__Group__1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__0__Impl_in_rule__MobgenCallDefinition__Group__02176);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__0__Impl_in_rule__MobgenCallDefinition__Group__02236);
             rule__MobgenCallDefinition__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__1_in_rule__MobgenCallDefinition__Group__02179);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__1_in_rule__MobgenCallDefinition__Group__02239);
             rule__MobgenCallDefinition__Group__1();
 
             state._fsp--;
@@ -3024,20 +3100,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1060:1: rule__MobgenCallDefinition__Group__0__Impl : ( 'call' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1088:1: rule__MobgenCallDefinition__Group__0__Impl : ( 'call' ) ;
     public final void rule__MobgenCallDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1064:1: ( ( 'call' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1065:1: ( 'call' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1092:1: ( ( 'call' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1093:1: ( 'call' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1065:1: ( 'call' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1066:1: 'call'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1093:1: ( 'call' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1094:1: 'call'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getCallKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__MobgenCallDefinition__Group__0__Impl2207); 
+            match(input,22,FOLLOW_22_in_rule__MobgenCallDefinition__Group__0__Impl2267); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getCallKeyword_0()); 
 
             }
@@ -3061,21 +3137,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1079:1: rule__MobgenCallDefinition__Group__1 : rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1107:1: rule__MobgenCallDefinition__Group__1 : rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2 ;
     public final void rule__MobgenCallDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1083:1: ( rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1084:2: rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1111:1: ( rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1112:2: rule__MobgenCallDefinition__Group__1__Impl rule__MobgenCallDefinition__Group__2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__1__Impl_in_rule__MobgenCallDefinition__Group__12238);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__1__Impl_in_rule__MobgenCallDefinition__Group__12298);
             rule__MobgenCallDefinition__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__2_in_rule__MobgenCallDefinition__Group__12241);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__2_in_rule__MobgenCallDefinition__Group__12301);
             rule__MobgenCallDefinition__Group__2();
 
             state._fsp--;
@@ -3099,23 +3175,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1091:1: rule__MobgenCallDefinition__Group__1__Impl : ( ( rule__MobgenCallDefinition__NameAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1119:1: rule__MobgenCallDefinition__Group__1__Impl : ( ( rule__MobgenCallDefinition__NameAssignment_1 ) ) ;
     public final void rule__MobgenCallDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1095:1: ( ( ( rule__MobgenCallDefinition__NameAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1096:1: ( ( rule__MobgenCallDefinition__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1123:1: ( ( ( rule__MobgenCallDefinition__NameAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1124:1: ( ( rule__MobgenCallDefinition__NameAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1096:1: ( ( rule__MobgenCallDefinition__NameAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1097:1: ( rule__MobgenCallDefinition__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1124:1: ( ( rule__MobgenCallDefinition__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1125:1: ( rule__MobgenCallDefinition__NameAssignment_1 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getNameAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1098:1: ( rule__MobgenCallDefinition__NameAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1098:2: rule__MobgenCallDefinition__NameAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1126:1: ( rule__MobgenCallDefinition__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1126:2: rule__MobgenCallDefinition__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__NameAssignment_1_in_rule__MobgenCallDefinition__Group__1__Impl2268);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__NameAssignment_1_in_rule__MobgenCallDefinition__Group__1__Impl2328);
             rule__MobgenCallDefinition__NameAssignment_1();
 
             state._fsp--;
@@ -3146,21 +3222,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1108:1: rule__MobgenCallDefinition__Group__2 : rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1136:1: rule__MobgenCallDefinition__Group__2 : rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3 ;
     public final void rule__MobgenCallDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1112:1: ( rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1113:2: rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1140:1: ( rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1141:2: rule__MobgenCallDefinition__Group__2__Impl rule__MobgenCallDefinition__Group__3
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__2__Impl_in_rule__MobgenCallDefinition__Group__22298);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__2__Impl_in_rule__MobgenCallDefinition__Group__22358);
             rule__MobgenCallDefinition__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__3_in_rule__MobgenCallDefinition__Group__22301);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__3_in_rule__MobgenCallDefinition__Group__22361);
             rule__MobgenCallDefinition__Group__3();
 
             state._fsp--;
@@ -3184,20 +3260,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1120:1: rule__MobgenCallDefinition__Group__2__Impl : ( ':' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1148:1: rule__MobgenCallDefinition__Group__2__Impl : ( ':' ) ;
     public final void rule__MobgenCallDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1124:1: ( ( ':' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1125:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1152:1: ( ( ':' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1153:1: ( ':' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1125:1: ( ':' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1126:1: ':'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1153:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1154:1: ':'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getColonKeyword_2()); 
-            match(input,24,FOLLOW_24_in_rule__MobgenCallDefinition__Group__2__Impl2329); 
+            match(input,23,FOLLOW_23_in_rule__MobgenCallDefinition__Group__2__Impl2389); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getColonKeyword_2()); 
 
             }
@@ -3221,21 +3297,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1139:1: rule__MobgenCallDefinition__Group__3 : rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1167:1: rule__MobgenCallDefinition__Group__3 : rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4 ;
     public final void rule__MobgenCallDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1143:1: ( rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1144:2: rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1171:1: ( rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1172:2: rule__MobgenCallDefinition__Group__3__Impl rule__MobgenCallDefinition__Group__4
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__3__Impl_in_rule__MobgenCallDefinition__Group__32360);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__3__Impl_in_rule__MobgenCallDefinition__Group__32420);
             rule__MobgenCallDefinition__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__4_in_rule__MobgenCallDefinition__Group__32363);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__4_in_rule__MobgenCallDefinition__Group__32423);
             rule__MobgenCallDefinition__Group__4();
 
             state._fsp--;
@@ -3259,23 +3335,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1151:1: rule__MobgenCallDefinition__Group__3__Impl : ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1179:1: rule__MobgenCallDefinition__Group__3__Impl : ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) ) ;
     public final void rule__MobgenCallDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1155:1: ( ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1156:1: ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1183:1: ( ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1184:1: ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1156:1: ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1157:1: ( rule__MobgenCallDefinition__MethodAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1184:1: ( ( rule__MobgenCallDefinition__MethodAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1185:1: ( rule__MobgenCallDefinition__MethodAssignment_3 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getMethodAssignment_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1158:1: ( rule__MobgenCallDefinition__MethodAssignment_3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1158:2: rule__MobgenCallDefinition__MethodAssignment_3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1186:1: ( rule__MobgenCallDefinition__MethodAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1186:2: rule__MobgenCallDefinition__MethodAssignment_3
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__MethodAssignment_3_in_rule__MobgenCallDefinition__Group__3__Impl2390);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__MethodAssignment_3_in_rule__MobgenCallDefinition__Group__3__Impl2450);
             rule__MobgenCallDefinition__MethodAssignment_3();
 
             state._fsp--;
@@ -3306,21 +3382,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1168:1: rule__MobgenCallDefinition__Group__4 : rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1196:1: rule__MobgenCallDefinition__Group__4 : rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5 ;
     public final void rule__MobgenCallDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1172:1: ( rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1173:2: rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1200:1: ( rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1201:2: rule__MobgenCallDefinition__Group__4__Impl rule__MobgenCallDefinition__Group__5
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__4__Impl_in_rule__MobgenCallDefinition__Group__42420);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__4__Impl_in_rule__MobgenCallDefinition__Group__42480);
             rule__MobgenCallDefinition__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__5_in_rule__MobgenCallDefinition__Group__42423);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__5_in_rule__MobgenCallDefinition__Group__42483);
             rule__MobgenCallDefinition__Group__5();
 
             state._fsp--;
@@ -3344,20 +3420,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1180:1: rule__MobgenCallDefinition__Group__4__Impl : ( 'from' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1208:1: rule__MobgenCallDefinition__Group__4__Impl : ( 'from' ) ;
     public final void rule__MobgenCallDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1184:1: ( ( 'from' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1185:1: ( 'from' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1212:1: ( ( 'from' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1213:1: ( 'from' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1185:1: ( 'from' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1186:1: 'from'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1213:1: ( 'from' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1214:1: 'from'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_4()); 
-            match(input,25,FOLLOW_25_in_rule__MobgenCallDefinition__Group__4__Impl2451); 
+            match(input,24,FOLLOW_24_in_rule__MobgenCallDefinition__Group__4__Impl2511); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_4()); 
 
             }
@@ -3381,21 +3457,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1199:1: rule__MobgenCallDefinition__Group__5 : rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1227:1: rule__MobgenCallDefinition__Group__5 : rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6 ;
     public final void rule__MobgenCallDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1203:1: ( rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1204:2: rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1231:1: ( rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1232:2: rule__MobgenCallDefinition__Group__5__Impl rule__MobgenCallDefinition__Group__6
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__5__Impl_in_rule__MobgenCallDefinition__Group__52482);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__5__Impl_in_rule__MobgenCallDefinition__Group__52542);
             rule__MobgenCallDefinition__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__6_in_rule__MobgenCallDefinition__Group__52485);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__6_in_rule__MobgenCallDefinition__Group__52545);
             rule__MobgenCallDefinition__Group__6();
 
             state._fsp--;
@@ -3419,23 +3495,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__5__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1211:1: rule__MobgenCallDefinition__Group__5__Impl : ( ( rule__MobgenCallDefinition__UriAssignment_5 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1239:1: rule__MobgenCallDefinition__Group__5__Impl : ( ( rule__MobgenCallDefinition__UriAssignment_5 ) ) ;
     public final void rule__MobgenCallDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1215:1: ( ( ( rule__MobgenCallDefinition__UriAssignment_5 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1216:1: ( ( rule__MobgenCallDefinition__UriAssignment_5 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1243:1: ( ( ( rule__MobgenCallDefinition__UriAssignment_5 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1244:1: ( ( rule__MobgenCallDefinition__UriAssignment_5 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1216:1: ( ( rule__MobgenCallDefinition__UriAssignment_5 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1217:1: ( rule__MobgenCallDefinition__UriAssignment_5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1244:1: ( ( rule__MobgenCallDefinition__UriAssignment_5 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1245:1: ( rule__MobgenCallDefinition__UriAssignment_5 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getUriAssignment_5()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1218:1: ( rule__MobgenCallDefinition__UriAssignment_5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1218:2: rule__MobgenCallDefinition__UriAssignment_5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1246:1: ( rule__MobgenCallDefinition__UriAssignment_5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1246:2: rule__MobgenCallDefinition__UriAssignment_5
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__UriAssignment_5_in_rule__MobgenCallDefinition__Group__5__Impl2512);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__UriAssignment_5_in_rule__MobgenCallDefinition__Group__5__Impl2572);
             rule__MobgenCallDefinition__UriAssignment_5();
 
             state._fsp--;
@@ -3466,21 +3542,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__6"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1228:1: rule__MobgenCallDefinition__Group__6 : rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1256:1: rule__MobgenCallDefinition__Group__6 : rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7 ;
     public final void rule__MobgenCallDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1232:1: ( rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1233:2: rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1260:1: ( rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1261:2: rule__MobgenCallDefinition__Group__6__Impl rule__MobgenCallDefinition__Group__7
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__6__Impl_in_rule__MobgenCallDefinition__Group__62542);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__6__Impl_in_rule__MobgenCallDefinition__Group__62602);
             rule__MobgenCallDefinition__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__7_in_rule__MobgenCallDefinition__Group__62545);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__7_in_rule__MobgenCallDefinition__Group__62605);
             rule__MobgenCallDefinition__Group__7();
 
             state._fsp--;
@@ -3504,31 +3580,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__6__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1240:1: rule__MobgenCallDefinition__Group__6__Impl : ( ( rule__MobgenCallDefinition__Group_6__0 )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1268:1: rule__MobgenCallDefinition__Group__6__Impl : ( ( rule__MobgenCallDefinition__Group_6__0 )? ) ;
     public final void rule__MobgenCallDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1244:1: ( ( ( rule__MobgenCallDefinition__Group_6__0 )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1245:1: ( ( rule__MobgenCallDefinition__Group_6__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1272:1: ( ( ( rule__MobgenCallDefinition__Group_6__0 )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1273:1: ( ( rule__MobgenCallDefinition__Group_6__0 )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1245:1: ( ( rule__MobgenCallDefinition__Group_6__0 )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1246:1: ( rule__MobgenCallDefinition__Group_6__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1273:1: ( ( rule__MobgenCallDefinition__Group_6__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1274:1: ( rule__MobgenCallDefinition__Group_6__0 )?
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1247:1: ( rule__MobgenCallDefinition__Group_6__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1275:1: ( rule__MobgenCallDefinition__Group_6__0 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==26) ) {
+            if ( (LA10_0==25) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1247:2: rule__MobgenCallDefinition__Group_6__0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1275:2: rule__MobgenCallDefinition__Group_6__0
                     {
-                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__0_in_rule__MobgenCallDefinition__Group__6__Impl2572);
+                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__0_in_rule__MobgenCallDefinition__Group__6__Impl2632);
                     rule__MobgenCallDefinition__Group_6__0();
 
                     state._fsp--;
@@ -3562,21 +3638,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__7"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1257:1: rule__MobgenCallDefinition__Group__7 : rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1285:1: rule__MobgenCallDefinition__Group__7 : rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8 ;
     public final void rule__MobgenCallDefinition__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1261:1: ( rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1262:2: rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1289:1: ( rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1290:2: rule__MobgenCallDefinition__Group__7__Impl rule__MobgenCallDefinition__Group__8
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__7__Impl_in_rule__MobgenCallDefinition__Group__72603);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__7__Impl_in_rule__MobgenCallDefinition__Group__72663);
             rule__MobgenCallDefinition__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__8_in_rule__MobgenCallDefinition__Group__72606);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__8_in_rule__MobgenCallDefinition__Group__72666);
             rule__MobgenCallDefinition__Group__8();
 
             state._fsp--;
@@ -3600,31 +3676,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__7__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1269:1: rule__MobgenCallDefinition__Group__7__Impl : ( ( rule__MobgenCallDefinition__Group_7__0 )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1297:1: rule__MobgenCallDefinition__Group__7__Impl : ( ( rule__MobgenCallDefinition__Group_7__0 )? ) ;
     public final void rule__MobgenCallDefinition__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1273:1: ( ( ( rule__MobgenCallDefinition__Group_7__0 )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1274:1: ( ( rule__MobgenCallDefinition__Group_7__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1301:1: ( ( ( rule__MobgenCallDefinition__Group_7__0 )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1302:1: ( ( rule__MobgenCallDefinition__Group_7__0 )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1274:1: ( ( rule__MobgenCallDefinition__Group_7__0 )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1275:1: ( rule__MobgenCallDefinition__Group_7__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1302:1: ( ( rule__MobgenCallDefinition__Group_7__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1303:1: ( rule__MobgenCallDefinition__Group_7__0 )?
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getGroup_7()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1276:1: ( rule__MobgenCallDefinition__Group_7__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1304:1: ( rule__MobgenCallDefinition__Group_7__0 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==31) ) {
+            if ( (LA11_0==30) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1276:2: rule__MobgenCallDefinition__Group_7__0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1304:2: rule__MobgenCallDefinition__Group_7__0
                     {
-                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__0_in_rule__MobgenCallDefinition__Group__7__Impl2633);
+                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__0_in_rule__MobgenCallDefinition__Group__7__Impl2693);
                     rule__MobgenCallDefinition__Group_7__0();
 
                     state._fsp--;
@@ -3658,16 +3734,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__8"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1286:1: rule__MobgenCallDefinition__Group__8 : rule__MobgenCallDefinition__Group__8__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1314:1: rule__MobgenCallDefinition__Group__8 : rule__MobgenCallDefinition__Group__8__Impl ;
     public final void rule__MobgenCallDefinition__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1290:1: ( rule__MobgenCallDefinition__Group__8__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1291:2: rule__MobgenCallDefinition__Group__8__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1318:1: ( rule__MobgenCallDefinition__Group__8__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1319:2: rule__MobgenCallDefinition__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__8__Impl_in_rule__MobgenCallDefinition__Group__82664);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group__8__Impl_in_rule__MobgenCallDefinition__Group__82724);
             rule__MobgenCallDefinition__Group__8__Impl();
 
             state._fsp--;
@@ -3691,31 +3767,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group__8__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1297:1: rule__MobgenCallDefinition__Group__8__Impl : ( ( rule__MobgenCallDefinition__Group_8__0 )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1325:1: rule__MobgenCallDefinition__Group__8__Impl : ( ( rule__MobgenCallDefinition__Group_8__0 )? ) ;
     public final void rule__MobgenCallDefinition__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1301:1: ( ( ( rule__MobgenCallDefinition__Group_8__0 )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1302:1: ( ( rule__MobgenCallDefinition__Group_8__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1329:1: ( ( ( rule__MobgenCallDefinition__Group_8__0 )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1330:1: ( ( rule__MobgenCallDefinition__Group_8__0 )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1302:1: ( ( rule__MobgenCallDefinition__Group_8__0 )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1303:1: ( rule__MobgenCallDefinition__Group_8__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1330:1: ( ( rule__MobgenCallDefinition__Group_8__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1331:1: ( rule__MobgenCallDefinition__Group_8__0 )?
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getGroup_8()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1304:1: ( rule__MobgenCallDefinition__Group_8__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1332:1: ( rule__MobgenCallDefinition__Group_8__0 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==33) ) {
+            if ( (LA12_0==32) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1304:2: rule__MobgenCallDefinition__Group_8__0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1332:2: rule__MobgenCallDefinition__Group_8__0
                     {
-                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__0_in_rule__MobgenCallDefinition__Group__8__Impl2691);
+                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__0_in_rule__MobgenCallDefinition__Group__8__Impl2751);
                     rule__MobgenCallDefinition__Group_8__0();
 
                     state._fsp--;
@@ -3749,21 +3825,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1332:1: rule__MobgenCallDefinition__Group_6__0 : rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1360:1: rule__MobgenCallDefinition__Group_6__0 : rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1 ;
     public final void rule__MobgenCallDefinition__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1336:1: ( rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1337:2: rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1364:1: ( rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1365:2: rule__MobgenCallDefinition__Group_6__0__Impl rule__MobgenCallDefinition__Group_6__1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__0__Impl_in_rule__MobgenCallDefinition__Group_6__02740);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__0__Impl_in_rule__MobgenCallDefinition__Group_6__02800);
             rule__MobgenCallDefinition__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__1_in_rule__MobgenCallDefinition__Group_6__02743);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__1_in_rule__MobgenCallDefinition__Group_6__02803);
             rule__MobgenCallDefinition__Group_6__1();
 
             state._fsp--;
@@ -3787,20 +3863,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1344:1: rule__MobgenCallDefinition__Group_6__0__Impl : ( 'with' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1372:1: rule__MobgenCallDefinition__Group_6__0__Impl : ( 'with' ) ;
     public final void rule__MobgenCallDefinition__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1348:1: ( ( 'with' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1349:1: ( 'with' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1376:1: ( ( 'with' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1377:1: ( 'with' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1349:1: ( 'with' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1350:1: 'with'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1377:1: ( 'with' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1378:1: 'with'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getWithKeyword_6_0()); 
-            match(input,26,FOLLOW_26_in_rule__MobgenCallDefinition__Group_6__0__Impl2771); 
+            match(input,25,FOLLOW_25_in_rule__MobgenCallDefinition__Group_6__0__Impl2831); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getWithKeyword_6_0()); 
 
             }
@@ -3824,21 +3900,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1363:1: rule__MobgenCallDefinition__Group_6__1 : rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1391:1: rule__MobgenCallDefinition__Group_6__1 : rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2 ;
     public final void rule__MobgenCallDefinition__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1367:1: ( rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1368:2: rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1395:1: ( rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1396:2: rule__MobgenCallDefinition__Group_6__1__Impl rule__MobgenCallDefinition__Group_6__2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__1__Impl_in_rule__MobgenCallDefinition__Group_6__12802);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__1__Impl_in_rule__MobgenCallDefinition__Group_6__12862);
             rule__MobgenCallDefinition__Group_6__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__2_in_rule__MobgenCallDefinition__Group_6__12805);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__2_in_rule__MobgenCallDefinition__Group_6__12865);
             rule__MobgenCallDefinition__Group_6__2();
 
             state._fsp--;
@@ -3862,20 +3938,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1375:1: rule__MobgenCallDefinition__Group_6__1__Impl : ( 'headers' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1403:1: rule__MobgenCallDefinition__Group_6__1__Impl : ( 'headers' ) ;
     public final void rule__MobgenCallDefinition__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1379:1: ( ( 'headers' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1380:1: ( 'headers' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1407:1: ( ( 'headers' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1408:1: ( 'headers' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1380:1: ( 'headers' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1381:1: 'headers'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1408:1: ( 'headers' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1409:1: 'headers'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getHeadersKeyword_6_1()); 
-            match(input,27,FOLLOW_27_in_rule__MobgenCallDefinition__Group_6__1__Impl2833); 
+            match(input,26,FOLLOW_26_in_rule__MobgenCallDefinition__Group_6__1__Impl2893); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getHeadersKeyword_6_1()); 
 
             }
@@ -3899,21 +3975,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1394:1: rule__MobgenCallDefinition__Group_6__2 : rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1422:1: rule__MobgenCallDefinition__Group_6__2 : rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3 ;
     public final void rule__MobgenCallDefinition__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1398:1: ( rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1399:2: rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1426:1: ( rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1427:2: rule__MobgenCallDefinition__Group_6__2__Impl rule__MobgenCallDefinition__Group_6__3
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__2__Impl_in_rule__MobgenCallDefinition__Group_6__22864);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__2__Impl_in_rule__MobgenCallDefinition__Group_6__22924);
             rule__MobgenCallDefinition__Group_6__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__3_in_rule__MobgenCallDefinition__Group_6__22867);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__3_in_rule__MobgenCallDefinition__Group_6__22927);
             rule__MobgenCallDefinition__Group_6__3();
 
             state._fsp--;
@@ -3937,20 +4013,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1406:1: rule__MobgenCallDefinition__Group_6__2__Impl : ( 'from' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1434:1: rule__MobgenCallDefinition__Group_6__2__Impl : ( 'from' ) ;
     public final void rule__MobgenCallDefinition__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1410:1: ( ( 'from' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1411:1: ( 'from' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1438:1: ( ( 'from' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1439:1: ( 'from' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1411:1: ( 'from' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1412:1: 'from'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1439:1: ( 'from' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1440:1: 'from'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_6_2()); 
-            match(input,25,FOLLOW_25_in_rule__MobgenCallDefinition__Group_6__2__Impl2895); 
+            match(input,24,FOLLOW_24_in_rule__MobgenCallDefinition__Group_6__2__Impl2955); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getFromKeyword_6_2()); 
 
             }
@@ -3974,21 +4050,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1425:1: rule__MobgenCallDefinition__Group_6__3 : rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1453:1: rule__MobgenCallDefinition__Group_6__3 : rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4 ;
     public final void rule__MobgenCallDefinition__Group_6__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1429:1: ( rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1430:2: rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1457:1: ( rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1458:2: rule__MobgenCallDefinition__Group_6__3__Impl rule__MobgenCallDefinition__Group_6__4
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__3__Impl_in_rule__MobgenCallDefinition__Group_6__32926);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__3__Impl_in_rule__MobgenCallDefinition__Group_6__32986);
             rule__MobgenCallDefinition__Group_6__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__4_in_rule__MobgenCallDefinition__Group_6__32929);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__4_in_rule__MobgenCallDefinition__Group_6__32989);
             rule__MobgenCallDefinition__Group_6__4();
 
             state._fsp--;
@@ -4012,20 +4088,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1437:1: rule__MobgenCallDefinition__Group_6__3__Impl : ( 'request' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1465:1: rule__MobgenCallDefinition__Group_6__3__Impl : ( 'request' ) ;
     public final void rule__MobgenCallDefinition__Group_6__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1441:1: ( ( 'request' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1442:1: ( 'request' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1469:1: ( ( 'request' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1470:1: ( 'request' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1442:1: ( 'request' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1443:1: 'request'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1470:1: ( 'request' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1471:1: 'request'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getRequestKeyword_6_3()); 
-            match(input,28,FOLLOW_28_in_rule__MobgenCallDefinition__Group_6__3__Impl2957); 
+            match(input,27,FOLLOW_27_in_rule__MobgenCallDefinition__Group_6__3__Impl3017); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getRequestKeyword_6_3()); 
 
             }
@@ -4049,21 +4125,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1456:1: rule__MobgenCallDefinition__Group_6__4 : rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1484:1: rule__MobgenCallDefinition__Group_6__4 : rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5 ;
     public final void rule__MobgenCallDefinition__Group_6__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1460:1: ( rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1461:2: rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1488:1: ( rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1489:2: rule__MobgenCallDefinition__Group_6__4__Impl rule__MobgenCallDefinition__Group_6__5
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__4__Impl_in_rule__MobgenCallDefinition__Group_6__42988);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__4__Impl_in_rule__MobgenCallDefinition__Group_6__43048);
             rule__MobgenCallDefinition__Group_6__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__5_in_rule__MobgenCallDefinition__Group_6__42991);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__5_in_rule__MobgenCallDefinition__Group_6__43051);
             rule__MobgenCallDefinition__Group_6__5();
 
             state._fsp--;
@@ -4087,23 +4163,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1468:1: rule__MobgenCallDefinition__Group_6__4__Impl : ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1496:1: rule__MobgenCallDefinition__Group_6__4__Impl : ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) ) ;
     public final void rule__MobgenCallDefinition__Group_6__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1472:1: ( ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1473:1: ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1500:1: ( ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1501:1: ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1473:1: ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1474:1: ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1501:1: ( ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1502:1: ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getRequestHeadersAssignment_6_4()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1475:1: ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1475:2: rule__MobgenCallDefinition__RequestHeadersAssignment_6_4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1503:1: ( rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1503:2: rule__MobgenCallDefinition__RequestHeadersAssignment_6_4
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__RequestHeadersAssignment_6_4_in_rule__MobgenCallDefinition__Group_6__4__Impl3018);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__RequestHeadersAssignment_6_4_in_rule__MobgenCallDefinition__Group_6__4__Impl3078);
             rule__MobgenCallDefinition__RequestHeadersAssignment_6_4();
 
             state._fsp--;
@@ -4134,16 +4210,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1485:1: rule__MobgenCallDefinition__Group_6__5 : rule__MobgenCallDefinition__Group_6__5__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1513:1: rule__MobgenCallDefinition__Group_6__5 : rule__MobgenCallDefinition__Group_6__5__Impl ;
     public final void rule__MobgenCallDefinition__Group_6__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1489:1: ( rule__MobgenCallDefinition__Group_6__5__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1490:2: rule__MobgenCallDefinition__Group_6__5__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1517:1: ( rule__MobgenCallDefinition__Group_6__5__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1518:2: rule__MobgenCallDefinition__Group_6__5__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__5__Impl_in_rule__MobgenCallDefinition__Group_6__53048);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6__5__Impl_in_rule__MobgenCallDefinition__Group_6__53108);
             rule__MobgenCallDefinition__Group_6__5__Impl();
 
             state._fsp--;
@@ -4167,31 +4243,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6__5__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1496:1: rule__MobgenCallDefinition__Group_6__5__Impl : ( ( rule__MobgenCallDefinition__Group_6_5__0 )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1524:1: rule__MobgenCallDefinition__Group_6__5__Impl : ( ( rule__MobgenCallDefinition__Group_6_5__0 )? ) ;
     public final void rule__MobgenCallDefinition__Group_6__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1500:1: ( ( ( rule__MobgenCallDefinition__Group_6_5__0 )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1501:1: ( ( rule__MobgenCallDefinition__Group_6_5__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1528:1: ( ( ( rule__MobgenCallDefinition__Group_6_5__0 )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1529:1: ( ( rule__MobgenCallDefinition__Group_6_5__0 )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1501:1: ( ( rule__MobgenCallDefinition__Group_6_5__0 )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1502:1: ( rule__MobgenCallDefinition__Group_6_5__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1529:1: ( ( rule__MobgenCallDefinition__Group_6_5__0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1530:1: ( rule__MobgenCallDefinition__Group_6_5__0 )?
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6_5()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1503:1: ( rule__MobgenCallDefinition__Group_6_5__0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1531:1: ( rule__MobgenCallDefinition__Group_6_5__0 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==29) ) {
+            if ( (LA13_0==28) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1503:2: rule__MobgenCallDefinition__Group_6_5__0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1531:2: rule__MobgenCallDefinition__Group_6_5__0
                     {
-                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__0_in_rule__MobgenCallDefinition__Group_6__5__Impl3075);
+                    pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__0_in_rule__MobgenCallDefinition__Group_6__5__Impl3135);
                     rule__MobgenCallDefinition__Group_6_5__0();
 
                     state._fsp--;
@@ -4225,21 +4301,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1525:1: rule__MobgenCallDefinition__Group_6_5__0 : rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1553:1: rule__MobgenCallDefinition__Group_6_5__0 : rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1 ;
     public final void rule__MobgenCallDefinition__Group_6_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1529:1: ( rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1530:2: rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1557:1: ( rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1558:2: rule__MobgenCallDefinition__Group_6_5__0__Impl rule__MobgenCallDefinition__Group_6_5__1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__0__Impl_in_rule__MobgenCallDefinition__Group_6_5__03118);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__0__Impl_in_rule__MobgenCallDefinition__Group_6_5__03178);
             rule__MobgenCallDefinition__Group_6_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__1_in_rule__MobgenCallDefinition__Group_6_5__03121);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__1_in_rule__MobgenCallDefinition__Group_6_5__03181);
             rule__MobgenCallDefinition__Group_6_5__1();
 
             state._fsp--;
@@ -4263,20 +4339,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1537:1: rule__MobgenCallDefinition__Group_6_5__0__Impl : ( 'and' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1565:1: rule__MobgenCallDefinition__Group_6_5__0__Impl : ( 'and' ) ;
     public final void rule__MobgenCallDefinition__Group_6_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1541:1: ( ( 'and' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1542:1: ( 'and' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1569:1: ( ( 'and' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1570:1: ( 'and' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1542:1: ( 'and' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1543:1: 'and'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1570:1: ( 'and' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1571:1: 'and'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getAndKeyword_6_5_0()); 
-            match(input,29,FOLLOW_29_in_rule__MobgenCallDefinition__Group_6_5__0__Impl3149); 
+            match(input,28,FOLLOW_28_in_rule__MobgenCallDefinition__Group_6_5__0__Impl3209); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getAndKeyword_6_5_0()); 
 
             }
@@ -4300,21 +4376,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1556:1: rule__MobgenCallDefinition__Group_6_5__1 : rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1584:1: rule__MobgenCallDefinition__Group_6_5__1 : rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2 ;
     public final void rule__MobgenCallDefinition__Group_6_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1560:1: ( rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1561:2: rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1588:1: ( rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1589:2: rule__MobgenCallDefinition__Group_6_5__1__Impl rule__MobgenCallDefinition__Group_6_5__2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__1__Impl_in_rule__MobgenCallDefinition__Group_6_5__13180);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__1__Impl_in_rule__MobgenCallDefinition__Group_6_5__13240);
             rule__MobgenCallDefinition__Group_6_5__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__2_in_rule__MobgenCallDefinition__Group_6_5__13183);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__2_in_rule__MobgenCallDefinition__Group_6_5__13243);
             rule__MobgenCallDefinition__Group_6_5__2();
 
             state._fsp--;
@@ -4338,20 +4414,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1568:1: rule__MobgenCallDefinition__Group_6_5__1__Impl : ( 'response' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1596:1: rule__MobgenCallDefinition__Group_6_5__1__Impl : ( 'response' ) ;
     public final void rule__MobgenCallDefinition__Group_6_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1572:1: ( ( 'response' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1573:1: ( 'response' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1600:1: ( ( 'response' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1601:1: ( 'response' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1573:1: ( 'response' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1574:1: 'response'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1601:1: ( 'response' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1602:1: 'response'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getResponseKeyword_6_5_1()); 
-            match(input,30,FOLLOW_30_in_rule__MobgenCallDefinition__Group_6_5__1__Impl3211); 
+            match(input,29,FOLLOW_29_in_rule__MobgenCallDefinition__Group_6_5__1__Impl3271); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getResponseKeyword_6_5_1()); 
 
             }
@@ -4375,16 +4451,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1587:1: rule__MobgenCallDefinition__Group_6_5__2 : rule__MobgenCallDefinition__Group_6_5__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1615:1: rule__MobgenCallDefinition__Group_6_5__2 : rule__MobgenCallDefinition__Group_6_5__2__Impl ;
     public final void rule__MobgenCallDefinition__Group_6_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1591:1: ( rule__MobgenCallDefinition__Group_6_5__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1592:2: rule__MobgenCallDefinition__Group_6_5__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1619:1: ( rule__MobgenCallDefinition__Group_6_5__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1620:2: rule__MobgenCallDefinition__Group_6_5__2__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__2__Impl_in_rule__MobgenCallDefinition__Group_6_5__23242);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_6_5__2__Impl_in_rule__MobgenCallDefinition__Group_6_5__23302);
             rule__MobgenCallDefinition__Group_6_5__2__Impl();
 
             state._fsp--;
@@ -4408,23 +4484,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_6_5__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1598:1: rule__MobgenCallDefinition__Group_6_5__2__Impl : ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1626:1: rule__MobgenCallDefinition__Group_6_5__2__Impl : ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) ) ;
     public final void rule__MobgenCallDefinition__Group_6_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1602:1: ( ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1603:1: ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1630:1: ( ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1631:1: ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1603:1: ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1604:1: ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1631:1: ( ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1632:1: ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getResponseHeadersAssignment_6_5_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1605:1: ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1605:2: rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1633:1: ( rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1633:2: rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2_in_rule__MobgenCallDefinition__Group_6_5__2__Impl3269);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2_in_rule__MobgenCallDefinition__Group_6_5__2__Impl3329);
             rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2();
 
             state._fsp--;
@@ -4455,21 +4531,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1621:1: rule__MobgenCallDefinition__Group_7__0 : rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1649:1: rule__MobgenCallDefinition__Group_7__0 : rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1 ;
     public final void rule__MobgenCallDefinition__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1625:1: ( rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1626:2: rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1653:1: ( rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1654:2: rule__MobgenCallDefinition__Group_7__0__Impl rule__MobgenCallDefinition__Group_7__1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__0__Impl_in_rule__MobgenCallDefinition__Group_7__03305);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__0__Impl_in_rule__MobgenCallDefinition__Group_7__03365);
             rule__MobgenCallDefinition__Group_7__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__1_in_rule__MobgenCallDefinition__Group_7__03308);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__1_in_rule__MobgenCallDefinition__Group_7__03368);
             rule__MobgenCallDefinition__Group_7__1();
 
             state._fsp--;
@@ -4493,20 +4569,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1633:1: rule__MobgenCallDefinition__Group_7__0__Impl : ( 'client' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1661:1: rule__MobgenCallDefinition__Group_7__0__Impl : ( 'client' ) ;
     public final void rule__MobgenCallDefinition__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1637:1: ( ( 'client' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1638:1: ( 'client' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1665:1: ( ( 'client' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1666:1: ( 'client' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1638:1: ( 'client' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1639:1: 'client'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1666:1: ( 'client' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1667:1: 'client'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getClientKeyword_7_0()); 
-            match(input,31,FOLLOW_31_in_rule__MobgenCallDefinition__Group_7__0__Impl3336); 
+            match(input,30,FOLLOW_30_in_rule__MobgenCallDefinition__Group_7__0__Impl3396); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getClientKeyword_7_0()); 
 
             }
@@ -4530,21 +4606,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1652:1: rule__MobgenCallDefinition__Group_7__1 : rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1680:1: rule__MobgenCallDefinition__Group_7__1 : rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2 ;
     public final void rule__MobgenCallDefinition__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1656:1: ( rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1657:2: rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1684:1: ( rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1685:2: rule__MobgenCallDefinition__Group_7__1__Impl rule__MobgenCallDefinition__Group_7__2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__1__Impl_in_rule__MobgenCallDefinition__Group_7__13367);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__1__Impl_in_rule__MobgenCallDefinition__Group_7__13427);
             rule__MobgenCallDefinition__Group_7__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__2_in_rule__MobgenCallDefinition__Group_7__13370);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__2_in_rule__MobgenCallDefinition__Group_7__13430);
             rule__MobgenCallDefinition__Group_7__2();
 
             state._fsp--;
@@ -4568,20 +4644,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1664:1: rule__MobgenCallDefinition__Group_7__1__Impl : ( 'expects' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1692:1: rule__MobgenCallDefinition__Group_7__1__Impl : ( 'expects' ) ;
     public final void rule__MobgenCallDefinition__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1668:1: ( ( 'expects' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1669:1: ( 'expects' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1696:1: ( ( 'expects' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1697:1: ( 'expects' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1669:1: ( 'expects' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1670:1: 'expects'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1697:1: ( 'expects' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1698:1: 'expects'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_7_1()); 
-            match(input,32,FOLLOW_32_in_rule__MobgenCallDefinition__Group_7__1__Impl3398); 
+            match(input,31,FOLLOW_31_in_rule__MobgenCallDefinition__Group_7__1__Impl3458); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_7_1()); 
 
             }
@@ -4605,16 +4681,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1683:1: rule__MobgenCallDefinition__Group_7__2 : rule__MobgenCallDefinition__Group_7__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1711:1: rule__MobgenCallDefinition__Group_7__2 : rule__MobgenCallDefinition__Group_7__2__Impl ;
     public final void rule__MobgenCallDefinition__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1687:1: ( rule__MobgenCallDefinition__Group_7__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1688:2: rule__MobgenCallDefinition__Group_7__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1715:1: ( rule__MobgenCallDefinition__Group_7__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1716:2: rule__MobgenCallDefinition__Group_7__2__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__2__Impl_in_rule__MobgenCallDefinition__Group_7__23429);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_7__2__Impl_in_rule__MobgenCallDefinition__Group_7__23489);
             rule__MobgenCallDefinition__Group_7__2__Impl();
 
             state._fsp--;
@@ -4638,23 +4714,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_7__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1694:1: rule__MobgenCallDefinition__Group_7__2__Impl : ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1722:1: rule__MobgenCallDefinition__Group_7__2__Impl : ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) ) ;
     public final void rule__MobgenCallDefinition__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1698:1: ( ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1699:1: ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1726:1: ( ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1727:1: ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1699:1: ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1700:1: ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1727:1: ( ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1728:1: ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getJsonToClientAssignment_7_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1701:1: ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1701:2: rule__MobgenCallDefinition__JsonToClientAssignment_7_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1729:1: ( rule__MobgenCallDefinition__JsonToClientAssignment_7_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1729:2: rule__MobgenCallDefinition__JsonToClientAssignment_7_2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__JsonToClientAssignment_7_2_in_rule__MobgenCallDefinition__Group_7__2__Impl3456);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__JsonToClientAssignment_7_2_in_rule__MobgenCallDefinition__Group_7__2__Impl3516);
             rule__MobgenCallDefinition__JsonToClientAssignment_7_2();
 
             state._fsp--;
@@ -4685,21 +4761,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1717:1: rule__MobgenCallDefinition__Group_8__0 : rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1745:1: rule__MobgenCallDefinition__Group_8__0 : rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1 ;
     public final void rule__MobgenCallDefinition__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1721:1: ( rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1722:2: rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1749:1: ( rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1750:2: rule__MobgenCallDefinition__Group_8__0__Impl rule__MobgenCallDefinition__Group_8__1
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__0__Impl_in_rule__MobgenCallDefinition__Group_8__03492);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__0__Impl_in_rule__MobgenCallDefinition__Group_8__03552);
             rule__MobgenCallDefinition__Group_8__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__1_in_rule__MobgenCallDefinition__Group_8__03495);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__1_in_rule__MobgenCallDefinition__Group_8__03555);
             rule__MobgenCallDefinition__Group_8__1();
 
             state._fsp--;
@@ -4723,20 +4799,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1729:1: rule__MobgenCallDefinition__Group_8__0__Impl : ( 'server' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1757:1: rule__MobgenCallDefinition__Group_8__0__Impl : ( 'server' ) ;
     public final void rule__MobgenCallDefinition__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1733:1: ( ( 'server' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1734:1: ( 'server' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1761:1: ( ( 'server' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1762:1: ( 'server' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1734:1: ( 'server' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1735:1: 'server'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1762:1: ( 'server' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1763:1: 'server'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getServerKeyword_8_0()); 
-            match(input,33,FOLLOW_33_in_rule__MobgenCallDefinition__Group_8__0__Impl3523); 
+            match(input,32,FOLLOW_32_in_rule__MobgenCallDefinition__Group_8__0__Impl3583); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getServerKeyword_8_0()); 
 
             }
@@ -4760,21 +4836,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1748:1: rule__MobgenCallDefinition__Group_8__1 : rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1776:1: rule__MobgenCallDefinition__Group_8__1 : rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2 ;
     public final void rule__MobgenCallDefinition__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1752:1: ( rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1753:2: rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1780:1: ( rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1781:2: rule__MobgenCallDefinition__Group_8__1__Impl rule__MobgenCallDefinition__Group_8__2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__1__Impl_in_rule__MobgenCallDefinition__Group_8__13554);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__1__Impl_in_rule__MobgenCallDefinition__Group_8__13614);
             rule__MobgenCallDefinition__Group_8__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__2_in_rule__MobgenCallDefinition__Group_8__13557);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__2_in_rule__MobgenCallDefinition__Group_8__13617);
             rule__MobgenCallDefinition__Group_8__2();
 
             state._fsp--;
@@ -4798,20 +4874,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1760:1: rule__MobgenCallDefinition__Group_8__1__Impl : ( 'expects' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1788:1: rule__MobgenCallDefinition__Group_8__1__Impl : ( 'expects' ) ;
     public final void rule__MobgenCallDefinition__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1764:1: ( ( 'expects' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1765:1: ( 'expects' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1792:1: ( ( 'expects' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1793:1: ( 'expects' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1765:1: ( 'expects' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1766:1: 'expects'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1793:1: ( 'expects' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1794:1: 'expects'
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_8_1()); 
-            match(input,32,FOLLOW_32_in_rule__MobgenCallDefinition__Group_8__1__Impl3585); 
+            match(input,31,FOLLOW_31_in_rule__MobgenCallDefinition__Group_8__1__Impl3645); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getExpectsKeyword_8_1()); 
 
             }
@@ -4835,16 +4911,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1779:1: rule__MobgenCallDefinition__Group_8__2 : rule__MobgenCallDefinition__Group_8__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1807:1: rule__MobgenCallDefinition__Group_8__2 : rule__MobgenCallDefinition__Group_8__2__Impl ;
     public final void rule__MobgenCallDefinition__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1783:1: ( rule__MobgenCallDefinition__Group_8__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1784:2: rule__MobgenCallDefinition__Group_8__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1811:1: ( rule__MobgenCallDefinition__Group_8__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1812:2: rule__MobgenCallDefinition__Group_8__2__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__2__Impl_in_rule__MobgenCallDefinition__Group_8__23616);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__Group_8__2__Impl_in_rule__MobgenCallDefinition__Group_8__23676);
             rule__MobgenCallDefinition__Group_8__2__Impl();
 
             state._fsp--;
@@ -4868,23 +4944,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__Group_8__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1790:1: rule__MobgenCallDefinition__Group_8__2__Impl : ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1818:1: rule__MobgenCallDefinition__Group_8__2__Impl : ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) ) ;
     public final void rule__MobgenCallDefinition__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1794:1: ( ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1795:1: ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1822:1: ( ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1823:1: ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1795:1: ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1796:1: ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1823:1: ( ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1824:1: ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 )
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerAssignment_8_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1797:1: ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1797:2: rule__MobgenCallDefinition__JsonToServerAssignment_8_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1825:1: ( rule__MobgenCallDefinition__JsonToServerAssignment_8_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1825:2: rule__MobgenCallDefinition__JsonToServerAssignment_8_2
             {
-            pushFollow(FOLLOW_rule__MobgenCallDefinition__JsonToServerAssignment_8_2_in_rule__MobgenCallDefinition__Group_8__2__Impl3643);
+            pushFollow(FOLLOW_rule__MobgenCallDefinition__JsonToServerAssignment_8_2_in_rule__MobgenCallDefinition__Group_8__2__Impl3703);
             rule__MobgenCallDefinition__JsonToServerAssignment_8_2();
 
             state._fsp--;
@@ -4915,21 +4991,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1813:1: rule__URI__Group__0 : rule__URI__Group__0__Impl rule__URI__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1841:1: rule__URI__Group__0 : rule__URI__Group__0__Impl rule__URI__Group__1 ;
     public final void rule__URI__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1817:1: ( rule__URI__Group__0__Impl rule__URI__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1818:2: rule__URI__Group__0__Impl rule__URI__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1845:1: ( rule__URI__Group__0__Impl rule__URI__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1846:2: rule__URI__Group__0__Impl rule__URI__Group__1
             {
-            pushFollow(FOLLOW_rule__URI__Group__0__Impl_in_rule__URI__Group__03679);
+            pushFollow(FOLLOW_rule__URI__Group__0__Impl_in_rule__URI__Group__03739);
             rule__URI__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__URI__Group__1_in_rule__URI__Group__03682);
+            pushFollow(FOLLOW_rule__URI__Group__1_in_rule__URI__Group__03742);
             rule__URI__Group__1();
 
             state._fsp--;
@@ -4953,26 +5029,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1825:1: rule__URI__Group__0__Impl : ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1853:1: rule__URI__Group__0__Impl : ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) ) ;
     public final void rule__URI__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1829:1: ( ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1830:1: ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1857:1: ( ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1858:1: ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1830:1: ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1831:1: ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1858:1: ( ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1859:1: ( ( rule__URI__StringPrefixAssignment_0 ) ) ( ( rule__URI__StringPrefixAssignment_0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1831:1: ( ( rule__URI__StringPrefixAssignment_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1832:1: ( rule__URI__StringPrefixAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1859:1: ( ( rule__URI__StringPrefixAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1860:1: ( rule__URI__StringPrefixAssignment_0 )
             {
              before(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1833:1: ( rule__URI__StringPrefixAssignment_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1833:2: rule__URI__StringPrefixAssignment_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1861:1: ( rule__URI__StringPrefixAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1861:2: rule__URI__StringPrefixAssignment_0
             {
-            pushFollow(FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3711);
+            pushFollow(FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3771);
             rule__URI__StringPrefixAssignment_0();
 
             state._fsp--;
@@ -4984,11 +5060,11 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1836:1: ( ( rule__URI__StringPrefixAssignment_0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1837:1: ( rule__URI__StringPrefixAssignment_0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1864:1: ( ( rule__URI__StringPrefixAssignment_0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1865:1: ( rule__URI__StringPrefixAssignment_0 )*
             {
              before(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1838:1: ( rule__URI__StringPrefixAssignment_0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1866:1: ( rule__URI__StringPrefixAssignment_0 )*
             loop14:
             do {
                 int alt14=2;
@@ -5001,9 +5077,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1838:2: rule__URI__StringPrefixAssignment_0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1866:2: rule__URI__StringPrefixAssignment_0
             	    {
-            	    pushFollow(FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3723);
+            	    pushFollow(FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3783);
             	    rule__URI__StringPrefixAssignment_0();
 
             	    state._fsp--;
@@ -5043,16 +5119,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1849:1: rule__URI__Group__1 : rule__URI__Group__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1877:1: rule__URI__Group__1 : rule__URI__Group__1__Impl ;
     public final void rule__URI__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1853:1: ( rule__URI__Group__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1854:2: rule__URI__Group__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1881:1: ( rule__URI__Group__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1882:2: rule__URI__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__URI__Group__1__Impl_in_rule__URI__Group__13756);
+            pushFollow(FOLLOW_rule__URI__Group__1__Impl_in_rule__URI__Group__13816);
             rule__URI__Group__1__Impl();
 
             state._fsp--;
@@ -5076,26 +5152,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1860:1: rule__URI__Group__1__Impl : ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1888:1: rule__URI__Group__1__Impl : ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) ) ;
     public final void rule__URI__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1864:1: ( ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1865:1: ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1892:1: ( ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1893:1: ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1865:1: ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1866:1: ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1893:1: ( ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1894:1: ( ( rule__URI__Group_1__0 ) ) ( ( rule__URI__Group_1__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1866:1: ( ( rule__URI__Group_1__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1867:1: ( rule__URI__Group_1__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1894:1: ( ( rule__URI__Group_1__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1895:1: ( rule__URI__Group_1__0 )
             {
              before(grammarAccess.getURIAccess().getGroup_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1868:1: ( rule__URI__Group_1__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1868:2: rule__URI__Group_1__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1896:1: ( rule__URI__Group_1__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1896:2: rule__URI__Group_1__0
             {
-            pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3785);
+            pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3845);
             rule__URI__Group_1__0();
 
             state._fsp--;
@@ -5107,26 +5183,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1871:1: ( ( rule__URI__Group_1__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1872:1: ( rule__URI__Group_1__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1899:1: ( ( rule__URI__Group_1__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1900:1: ( rule__URI__Group_1__0 )*
             {
              before(grammarAccess.getURIAccess().getGroup_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1873:1: ( rule__URI__Group_1__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1901:1: ( rule__URI__Group_1__0 )*
             loop15:
             do {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==20) ) {
+                if ( (LA15_0==19) ) {
                     alt15=1;
                 }
 
 
                 switch (alt15) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1873:2: rule__URI__Group_1__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1901:2: rule__URI__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3797);
+            	    pushFollow(FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3857);
             	    rule__URI__Group_1__0();
 
             	    state._fsp--;
@@ -5166,21 +5242,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1888:1: rule__URI__Group_1__0 : rule__URI__Group_1__0__Impl rule__URI__Group_1__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1916:1: rule__URI__Group_1__0 : rule__URI__Group_1__0__Impl rule__URI__Group_1__1 ;
     public final void rule__URI__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1892:1: ( rule__URI__Group_1__0__Impl rule__URI__Group_1__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1893:2: rule__URI__Group_1__0__Impl rule__URI__Group_1__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1920:1: ( rule__URI__Group_1__0__Impl rule__URI__Group_1__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1921:2: rule__URI__Group_1__0__Impl rule__URI__Group_1__1
             {
-            pushFollow(FOLLOW_rule__URI__Group_1__0__Impl_in_rule__URI__Group_1__03834);
+            pushFollow(FOLLOW_rule__URI__Group_1__0__Impl_in_rule__URI__Group_1__03894);
             rule__URI__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__URI__Group_1__1_in_rule__URI__Group_1__03837);
+            pushFollow(FOLLOW_rule__URI__Group_1__1_in_rule__URI__Group_1__03897);
             rule__URI__Group_1__1();
 
             state._fsp--;
@@ -5204,20 +5280,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1900:1: rule__URI__Group_1__0__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1928:1: rule__URI__Group_1__0__Impl : ( '{' ) ;
     public final void rule__URI__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1904:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1905:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1932:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1933:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1905:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1906:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1933:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1934:1: '{'
             {
              before(grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0()); 
-            match(input,20,FOLLOW_20_in_rule__URI__Group_1__0__Impl3865); 
+            match(input,19,FOLLOW_19_in_rule__URI__Group_1__0__Impl3925); 
              after(grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0()); 
 
             }
@@ -5241,21 +5317,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1919:1: rule__URI__Group_1__1 : rule__URI__Group_1__1__Impl rule__URI__Group_1__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1947:1: rule__URI__Group_1__1 : rule__URI__Group_1__1__Impl rule__URI__Group_1__2 ;
     public final void rule__URI__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1923:1: ( rule__URI__Group_1__1__Impl rule__URI__Group_1__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1924:2: rule__URI__Group_1__1__Impl rule__URI__Group_1__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1951:1: ( rule__URI__Group_1__1__Impl rule__URI__Group_1__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1952:2: rule__URI__Group_1__1__Impl rule__URI__Group_1__2
             {
-            pushFollow(FOLLOW_rule__URI__Group_1__1__Impl_in_rule__URI__Group_1__13896);
+            pushFollow(FOLLOW_rule__URI__Group_1__1__Impl_in_rule__URI__Group_1__13956);
             rule__URI__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__URI__Group_1__2_in_rule__URI__Group_1__13899);
+            pushFollow(FOLLOW_rule__URI__Group_1__2_in_rule__URI__Group_1__13959);
             rule__URI__Group_1__2();
 
             state._fsp--;
@@ -5279,23 +5355,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1931:1: rule__URI__Group_1__1__Impl : ( ( rule__URI__ParametersAssignment_1_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1959:1: rule__URI__Group_1__1__Impl : ( ( rule__URI__ParametersAssignment_1_1 ) ) ;
     public final void rule__URI__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1935:1: ( ( ( rule__URI__ParametersAssignment_1_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1936:1: ( ( rule__URI__ParametersAssignment_1_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1963:1: ( ( ( rule__URI__ParametersAssignment_1_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1964:1: ( ( rule__URI__ParametersAssignment_1_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1936:1: ( ( rule__URI__ParametersAssignment_1_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1937:1: ( rule__URI__ParametersAssignment_1_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1964:1: ( ( rule__URI__ParametersAssignment_1_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1965:1: ( rule__URI__ParametersAssignment_1_1 )
             {
              before(grammarAccess.getURIAccess().getParametersAssignment_1_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1938:1: ( rule__URI__ParametersAssignment_1_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1938:2: rule__URI__ParametersAssignment_1_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1966:1: ( rule__URI__ParametersAssignment_1_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1966:2: rule__URI__ParametersAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__URI__ParametersAssignment_1_1_in_rule__URI__Group_1__1__Impl3926);
+            pushFollow(FOLLOW_rule__URI__ParametersAssignment_1_1_in_rule__URI__Group_1__1__Impl3986);
             rule__URI__ParametersAssignment_1_1();
 
             state._fsp--;
@@ -5326,21 +5402,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1948:1: rule__URI__Group_1__2 : rule__URI__Group_1__2__Impl rule__URI__Group_1__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1976:1: rule__URI__Group_1__2 : rule__URI__Group_1__2__Impl rule__URI__Group_1__3 ;
     public final void rule__URI__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1952:1: ( rule__URI__Group_1__2__Impl rule__URI__Group_1__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1953:2: rule__URI__Group_1__2__Impl rule__URI__Group_1__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1980:1: ( rule__URI__Group_1__2__Impl rule__URI__Group_1__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1981:2: rule__URI__Group_1__2__Impl rule__URI__Group_1__3
             {
-            pushFollow(FOLLOW_rule__URI__Group_1__2__Impl_in_rule__URI__Group_1__23956);
+            pushFollow(FOLLOW_rule__URI__Group_1__2__Impl_in_rule__URI__Group_1__24016);
             rule__URI__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__URI__Group_1__3_in_rule__URI__Group_1__23959);
+            pushFollow(FOLLOW_rule__URI__Group_1__3_in_rule__URI__Group_1__24019);
             rule__URI__Group_1__3();
 
             state._fsp--;
@@ -5364,20 +5440,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1960:1: rule__URI__Group_1__2__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1988:1: rule__URI__Group_1__2__Impl : ( '}' ) ;
     public final void rule__URI__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1964:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1965:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1992:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1993:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1965:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1966:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1993:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1994:1: '}'
             {
              before(grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2()); 
-            match(input,21,FOLLOW_21_in_rule__URI__Group_1__2__Impl3987); 
+            match(input,20,FOLLOW_20_in_rule__URI__Group_1__2__Impl4047); 
              after(grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2()); 
 
             }
@@ -5401,16 +5477,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1979:1: rule__URI__Group_1__3 : rule__URI__Group_1__3__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2007:1: rule__URI__Group_1__3 : rule__URI__Group_1__3__Impl ;
     public final void rule__URI__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1983:1: ( rule__URI__Group_1__3__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1984:2: rule__URI__Group_1__3__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2011:1: ( rule__URI__Group_1__3__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2012:2: rule__URI__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__URI__Group_1__3__Impl_in_rule__URI__Group_1__34018);
+            pushFollow(FOLLOW_rule__URI__Group_1__3__Impl_in_rule__URI__Group_1__34078);
             rule__URI__Group_1__3__Impl();
 
             state._fsp--;
@@ -5434,23 +5510,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__Group_1__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1990:1: rule__URI__Group_1__3__Impl : ( ( rule__URI__StringSuffixAssignment_1_3 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2018:1: rule__URI__Group_1__3__Impl : ( ( rule__URI__StringSuffixAssignment_1_3 ) ) ;
     public final void rule__URI__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1994:1: ( ( ( rule__URI__StringSuffixAssignment_1_3 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1995:1: ( ( rule__URI__StringSuffixAssignment_1_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2022:1: ( ( ( rule__URI__StringSuffixAssignment_1_3 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2023:1: ( ( rule__URI__StringSuffixAssignment_1_3 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1995:1: ( ( rule__URI__StringSuffixAssignment_1_3 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1996:1: ( rule__URI__StringSuffixAssignment_1_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2023:1: ( ( rule__URI__StringSuffixAssignment_1_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2024:1: ( rule__URI__StringSuffixAssignment_1_3 )
             {
              before(grammarAccess.getURIAccess().getStringSuffixAssignment_1_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1997:1: ( rule__URI__StringSuffixAssignment_1_3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:1997:2: rule__URI__StringSuffixAssignment_1_3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2025:1: ( rule__URI__StringSuffixAssignment_1_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2025:2: rule__URI__StringSuffixAssignment_1_3
             {
-            pushFollow(FOLLOW_rule__URI__StringSuffixAssignment_1_3_in_rule__URI__Group_1__3__Impl4045);
+            pushFollow(FOLLOW_rule__URI__StringSuffixAssignment_1_3_in_rule__URI__Group_1__3__Impl4105);
             rule__URI__StringSuffixAssignment_1_3();
 
             state._fsp--;
@@ -5481,21 +5557,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2015:1: rule__MobgenHeader__Group__0 : rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2043:1: rule__MobgenHeader__Group__0 : rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1 ;
     public final void rule__MobgenHeader__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2019:1: ( rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2020:2: rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2047:1: ( rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2048:2: rule__MobgenHeader__Group__0__Impl rule__MobgenHeader__Group__1
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__0__Impl_in_rule__MobgenHeader__Group__04083);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__0__Impl_in_rule__MobgenHeader__Group__04143);
             rule__MobgenHeader__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__1_in_rule__MobgenHeader__Group__04086);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__1_in_rule__MobgenHeader__Group__04146);
             rule__MobgenHeader__Group__1();
 
             state._fsp--;
@@ -5519,20 +5595,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2027:1: rule__MobgenHeader__Group__0__Impl : ( ( rule__MobgenHeader__NameAssignment_0 )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2055:1: rule__MobgenHeader__Group__0__Impl : ( ( rule__MobgenHeader__NameAssignment_0 )? ) ;
     public final void rule__MobgenHeader__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2031:1: ( ( ( rule__MobgenHeader__NameAssignment_0 )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2032:1: ( ( rule__MobgenHeader__NameAssignment_0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2059:1: ( ( ( rule__MobgenHeader__NameAssignment_0 )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2060:1: ( ( rule__MobgenHeader__NameAssignment_0 )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2032:1: ( ( rule__MobgenHeader__NameAssignment_0 )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2033:1: ( rule__MobgenHeader__NameAssignment_0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2060:1: ( ( rule__MobgenHeader__NameAssignment_0 )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2061:1: ( rule__MobgenHeader__NameAssignment_0 )?
             {
              before(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2034:1: ( rule__MobgenHeader__NameAssignment_0 )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2062:1: ( rule__MobgenHeader__NameAssignment_0 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -5541,9 +5617,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2034:2: rule__MobgenHeader__NameAssignment_0
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2062:2: rule__MobgenHeader__NameAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MobgenHeader__NameAssignment_0_in_rule__MobgenHeader__Group__0__Impl4113);
+                    pushFollow(FOLLOW_rule__MobgenHeader__NameAssignment_0_in_rule__MobgenHeader__Group__0__Impl4173);
                     rule__MobgenHeader__NameAssignment_0();
 
                     state._fsp--;
@@ -5577,21 +5653,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2044:1: rule__MobgenHeader__Group__1 : rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2072:1: rule__MobgenHeader__Group__1 : rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2 ;
     public final void rule__MobgenHeader__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2048:1: ( rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2049:2: rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2076:1: ( rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2077:2: rule__MobgenHeader__Group__1__Impl rule__MobgenHeader__Group__2
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__1__Impl_in_rule__MobgenHeader__Group__14144);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__1__Impl_in_rule__MobgenHeader__Group__14204);
             rule__MobgenHeader__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__2_in_rule__MobgenHeader__Group__14147);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__2_in_rule__MobgenHeader__Group__14207);
             rule__MobgenHeader__Group__2();
 
             state._fsp--;
@@ -5615,20 +5691,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2056:1: rule__MobgenHeader__Group__1__Impl : ( '\\'\\'\\'' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2084:1: rule__MobgenHeader__Group__1__Impl : ( '\\'\\'\\'' ) ;
     public final void rule__MobgenHeader__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2060:1: ( ( '\\'\\'\\'' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2061:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2088:1: ( ( '\\'\\'\\'' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2089:1: ( '\\'\\'\\'' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2061:1: ( '\\'\\'\\'' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2062:1: '\\'\\'\\''
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2089:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2090:1: '\\'\\'\\''
             {
              before(grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_1()); 
-            match(input,34,FOLLOW_34_in_rule__MobgenHeader__Group__1__Impl4175); 
+            match(input,33,FOLLOW_33_in_rule__MobgenHeader__Group__1__Impl4235); 
              after(grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_1()); 
 
             }
@@ -5652,21 +5728,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2075:1: rule__MobgenHeader__Group__2 : rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2103:1: rule__MobgenHeader__Group__2 : rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3 ;
     public final void rule__MobgenHeader__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2079:1: ( rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2080:2: rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2107:1: ( rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2108:2: rule__MobgenHeader__Group__2__Impl rule__MobgenHeader__Group__3
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__2__Impl_in_rule__MobgenHeader__Group__24206);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__2__Impl_in_rule__MobgenHeader__Group__24266);
             rule__MobgenHeader__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__3_in_rule__MobgenHeader__Group__24209);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__3_in_rule__MobgenHeader__Group__24269);
             rule__MobgenHeader__Group__3();
 
             state._fsp--;
@@ -5690,20 +5766,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2087:1: rule__MobgenHeader__Group__2__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2115:1: rule__MobgenHeader__Group__2__Impl : ( '{' ) ;
     public final void rule__MobgenHeader__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2091:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2092:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2119:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2120:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2092:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2093:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2120:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2121:1: '{'
             {
              before(grammarAccess.getMobgenHeaderAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,20,FOLLOW_20_in_rule__MobgenHeader__Group__2__Impl4237); 
+            match(input,19,FOLLOW_19_in_rule__MobgenHeader__Group__2__Impl4297); 
              after(grammarAccess.getMobgenHeaderAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -5727,21 +5803,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2106:1: rule__MobgenHeader__Group__3 : rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2134:1: rule__MobgenHeader__Group__3 : rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4 ;
     public final void rule__MobgenHeader__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2110:1: ( rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2111:2: rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2138:1: ( rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2139:2: rule__MobgenHeader__Group__3__Impl rule__MobgenHeader__Group__4
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__3__Impl_in_rule__MobgenHeader__Group__34268);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__3__Impl_in_rule__MobgenHeader__Group__34328);
             rule__MobgenHeader__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__4_in_rule__MobgenHeader__Group__34271);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__4_in_rule__MobgenHeader__Group__34331);
             rule__MobgenHeader__Group__4();
 
             state._fsp--;
@@ -5765,23 +5841,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2118:1: rule__MobgenHeader__Group__3__Impl : ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2146:1: rule__MobgenHeader__Group__3__Impl : ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) ) ;
     public final void rule__MobgenHeader__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2122:1: ( ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2123:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2150:1: ( ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2151:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2123:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2124:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2151:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2152:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 )
             {
              before(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2125:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2125:2: rule__MobgenHeader__HeaderKeyValuesAssignment_3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2153:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2153:2: rule__MobgenHeader__HeaderKeyValuesAssignment_3
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_3_in_rule__MobgenHeader__Group__3__Impl4298);
+            pushFollow(FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_3_in_rule__MobgenHeader__Group__3__Impl4358);
             rule__MobgenHeader__HeaderKeyValuesAssignment_3();
 
             state._fsp--;
@@ -5812,21 +5888,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2135:1: rule__MobgenHeader__Group__4 : rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2163:1: rule__MobgenHeader__Group__4 : rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5 ;
     public final void rule__MobgenHeader__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2139:1: ( rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2140:2: rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2167:1: ( rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2168:2: rule__MobgenHeader__Group__4__Impl rule__MobgenHeader__Group__5
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__4__Impl_in_rule__MobgenHeader__Group__44328);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__4__Impl_in_rule__MobgenHeader__Group__44388);
             rule__MobgenHeader__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__5_in_rule__MobgenHeader__Group__44331);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__5_in_rule__MobgenHeader__Group__44391);
             rule__MobgenHeader__Group__5();
 
             state._fsp--;
@@ -5850,29 +5926,29 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2147:1: rule__MobgenHeader__Group__4__Impl : ( ( rule__MobgenHeader__Group_4__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2175:1: rule__MobgenHeader__Group__4__Impl : ( ( rule__MobgenHeader__Group_4__0 )* ) ;
     public final void rule__MobgenHeader__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2151:1: ( ( ( rule__MobgenHeader__Group_4__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2152:1: ( ( rule__MobgenHeader__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2179:1: ( ( ( rule__MobgenHeader__Group_4__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2180:1: ( ( rule__MobgenHeader__Group_4__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2152:1: ( ( rule__MobgenHeader__Group_4__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2153:1: ( rule__MobgenHeader__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2180:1: ( ( rule__MobgenHeader__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2181:1: ( rule__MobgenHeader__Group_4__0 )*
             {
              before(grammarAccess.getMobgenHeaderAccess().getGroup_4()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2154:1: ( rule__MobgenHeader__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2182:1: ( rule__MobgenHeader__Group_4__0 )*
             loop17:
             do {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==35) ) {
+                if ( (LA17_0==34) ) {
                     int LA17_1 = input.LA(2);
 
-                    if ( (LA17_1==RULE_STRING) ) {
+                    if ( (LA17_1==RULE_STRING||LA17_1==19) ) {
                         alt17=1;
                     }
 
@@ -5882,9 +5958,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2154:2: rule__MobgenHeader__Group_4__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2182:2: rule__MobgenHeader__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__MobgenHeader__Group_4__0_in_rule__MobgenHeader__Group__4__Impl4358);
+            	    pushFollow(FOLLOW_rule__MobgenHeader__Group_4__0_in_rule__MobgenHeader__Group__4__Impl4418);
             	    rule__MobgenHeader__Group_4__0();
 
             	    state._fsp--;
@@ -5921,21 +5997,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2164:1: rule__MobgenHeader__Group__5 : rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2192:1: rule__MobgenHeader__Group__5 : rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6 ;
     public final void rule__MobgenHeader__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2168:1: ( rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2169:2: rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2196:1: ( rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2197:2: rule__MobgenHeader__Group__5__Impl rule__MobgenHeader__Group__6
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__5__Impl_in_rule__MobgenHeader__Group__54389);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__5__Impl_in_rule__MobgenHeader__Group__54449);
             rule__MobgenHeader__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__6_in_rule__MobgenHeader__Group__54392);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__6_in_rule__MobgenHeader__Group__54452);
             rule__MobgenHeader__Group__6();
 
             state._fsp--;
@@ -5959,31 +6035,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__5__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2176:1: rule__MobgenHeader__Group__5__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2204:1: rule__MobgenHeader__Group__5__Impl : ( ( ',' )? ) ;
     public final void rule__MobgenHeader__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2180:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2181:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2208:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2209:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2181:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2182:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2209:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2210:1: ( ',' )?
             {
              before(grammarAccess.getMobgenHeaderAccess().getCommaKeyword_5()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2183:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2211:1: ( ',' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==35) ) {
+            if ( (LA18_0==34) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2184:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2212:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__MobgenHeader__Group__5__Impl4421); 
+                    match(input,34,FOLLOW_34_in_rule__MobgenHeader__Group__5__Impl4481); 
 
                     }
                     break;
@@ -6013,21 +6089,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__6"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2195:1: rule__MobgenHeader__Group__6 : rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2223:1: rule__MobgenHeader__Group__6 : rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7 ;
     public final void rule__MobgenHeader__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2199:1: ( rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2200:2: rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2227:1: ( rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2228:2: rule__MobgenHeader__Group__6__Impl rule__MobgenHeader__Group__7
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__6__Impl_in_rule__MobgenHeader__Group__64454);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__6__Impl_in_rule__MobgenHeader__Group__64514);
             rule__MobgenHeader__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__7_in_rule__MobgenHeader__Group__64457);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__7_in_rule__MobgenHeader__Group__64517);
             rule__MobgenHeader__Group__7();
 
             state._fsp--;
@@ -6051,20 +6127,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__6__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2207:1: rule__MobgenHeader__Group__6__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2235:1: rule__MobgenHeader__Group__6__Impl : ( '}' ) ;
     public final void rule__MobgenHeader__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2211:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2212:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2239:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2240:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2212:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2213:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2240:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2241:1: '}'
             {
              before(grammarAccess.getMobgenHeaderAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,21,FOLLOW_21_in_rule__MobgenHeader__Group__6__Impl4485); 
+            match(input,20,FOLLOW_20_in_rule__MobgenHeader__Group__6__Impl4545); 
              after(grammarAccess.getMobgenHeaderAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -6088,16 +6164,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__7"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2226:1: rule__MobgenHeader__Group__7 : rule__MobgenHeader__Group__7__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2254:1: rule__MobgenHeader__Group__7 : rule__MobgenHeader__Group__7__Impl ;
     public final void rule__MobgenHeader__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2230:1: ( rule__MobgenHeader__Group__7__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2231:2: rule__MobgenHeader__Group__7__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2258:1: ( rule__MobgenHeader__Group__7__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2259:2: rule__MobgenHeader__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group__7__Impl_in_rule__MobgenHeader__Group__74516);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group__7__Impl_in_rule__MobgenHeader__Group__74576);
             rule__MobgenHeader__Group__7__Impl();
 
             state._fsp--;
@@ -6121,20 +6197,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group__7__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2237:1: rule__MobgenHeader__Group__7__Impl : ( '\\'\\'\\'' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2265:1: rule__MobgenHeader__Group__7__Impl : ( '\\'\\'\\'' ) ;
     public final void rule__MobgenHeader__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2241:1: ( ( '\\'\\'\\'' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2242:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2269:1: ( ( '\\'\\'\\'' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2270:1: ( '\\'\\'\\'' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2242:1: ( '\\'\\'\\'' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2243:1: '\\'\\'\\''
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2270:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2271:1: '\\'\\'\\''
             {
              before(grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_7()); 
-            match(input,34,FOLLOW_34_in_rule__MobgenHeader__Group__7__Impl4544); 
+            match(input,33,FOLLOW_33_in_rule__MobgenHeader__Group__7__Impl4604); 
              after(grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_7()); 
 
             }
@@ -6158,21 +6234,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group_4__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2272:1: rule__MobgenHeader__Group_4__0 : rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2300:1: rule__MobgenHeader__Group_4__0 : rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1 ;
     public final void rule__MobgenHeader__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2276:1: ( rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2277:2: rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2304:1: ( rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2305:2: rule__MobgenHeader__Group_4__0__Impl rule__MobgenHeader__Group_4__1
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__0__Impl_in_rule__MobgenHeader__Group_4__04591);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__0__Impl_in_rule__MobgenHeader__Group_4__04651);
             rule__MobgenHeader__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__1_in_rule__MobgenHeader__Group_4__04594);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__1_in_rule__MobgenHeader__Group_4__04654);
             rule__MobgenHeader__Group_4__1();
 
             state._fsp--;
@@ -6196,20 +6272,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group_4__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2284:1: rule__MobgenHeader__Group_4__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2312:1: rule__MobgenHeader__Group_4__0__Impl : ( ',' ) ;
     public final void rule__MobgenHeader__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2288:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2289:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2316:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2317:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2289:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2290:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2317:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2318:1: ','
             {
              before(grammarAccess.getMobgenHeaderAccess().getCommaKeyword_4_0()); 
-            match(input,35,FOLLOW_35_in_rule__MobgenHeader__Group_4__0__Impl4622); 
+            match(input,34,FOLLOW_34_in_rule__MobgenHeader__Group_4__0__Impl4682); 
              after(grammarAccess.getMobgenHeaderAccess().getCommaKeyword_4_0()); 
 
             }
@@ -6233,16 +6309,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group_4__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2303:1: rule__MobgenHeader__Group_4__1 : rule__MobgenHeader__Group_4__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2331:1: rule__MobgenHeader__Group_4__1 : rule__MobgenHeader__Group_4__1__Impl ;
     public final void rule__MobgenHeader__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2307:1: ( rule__MobgenHeader__Group_4__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2308:2: rule__MobgenHeader__Group_4__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2335:1: ( rule__MobgenHeader__Group_4__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2336:2: rule__MobgenHeader__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__1__Impl_in_rule__MobgenHeader__Group_4__14653);
+            pushFollow(FOLLOW_rule__MobgenHeader__Group_4__1__Impl_in_rule__MobgenHeader__Group_4__14713);
             rule__MobgenHeader__Group_4__1__Impl();
 
             state._fsp--;
@@ -6266,23 +6342,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__Group_4__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2314:1: rule__MobgenHeader__Group_4__1__Impl : ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2342:1: rule__MobgenHeader__Group_4__1__Impl : ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) ) ;
     public final void rule__MobgenHeader__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2318:1: ( ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2319:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2346:1: ( ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2347:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2319:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2320:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2347:1: ( ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2348:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 )
             {
              before(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_4_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2321:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2321:2: rule__MobgenHeader__HeaderKeyValuesAssignment_4_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2349:1: ( rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2349:2: rule__MobgenHeader__HeaderKeyValuesAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_4_1_in_rule__MobgenHeader__Group_4__1__Impl4680);
+            pushFollow(FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_4_1_in_rule__MobgenHeader__Group_4__1__Impl4740);
             rule__MobgenHeader__HeaderKeyValuesAssignment_4_1();
 
             state._fsp--;
@@ -6312,23 +6388,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MobgenHeader__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2335:1: rule__MobgenHeaderKeyValuePair__Group__0 : rule__MobgenHeaderKeyValuePair__Group__0__Impl rule__MobgenHeaderKeyValuePair__Group__1 ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__0"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2363:1: rule__MobgenHeaderKeyValuePair__Group_0__0 : rule__MobgenHeaderKeyValuePair__Group_0__0__Impl rule__MobgenHeaderKeyValuePair__Group_0__1 ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2339:1: ( rule__MobgenHeaderKeyValuePair__Group__0__Impl rule__MobgenHeaderKeyValuePair__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2340:2: rule__MobgenHeaderKeyValuePair__Group__0__Impl rule__MobgenHeaderKeyValuePair__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2367:1: ( rule__MobgenHeaderKeyValuePair__Group_0__0__Impl rule__MobgenHeaderKeyValuePair__Group_0__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2368:2: rule__MobgenHeaderKeyValuePair__Group_0__0__Impl rule__MobgenHeaderKeyValuePair__Group_0__1
             {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__0__Impl_in_rule__MobgenHeaderKeyValuePair__Group__04714);
-            rule__MobgenHeaderKeyValuePair__Group__0__Impl();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__0__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__04774);
+            rule__MobgenHeaderKeyValuePair__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__1_in_rule__MobgenHeaderKeyValuePair__Group__04717);
-            rule__MobgenHeaderKeyValuePair__Group__1();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__1_in_rule__MobgenHeaderKeyValuePair__Group_0__04777);
+            rule__MobgenHeaderKeyValuePair__Group_0__1();
 
             state._fsp--;
 
@@ -6347,35 +6423,35 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__0"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__0"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2347:1: rule__MobgenHeaderKeyValuePair__Group__0__Impl : ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 ) ) ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__0__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2375:1: rule__MobgenHeaderKeyValuePair__Group_0__0__Impl : ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 ) ) ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2351:1: ( ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2352:1: ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2379:1: ( ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2380:1: ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2352:1: ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2353:1: ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2380:1: ( ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2381:1: ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 )
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2354:1: ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2354:2: rule__MobgenHeaderKeyValuePair__KeyAssignment_0
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0_0()); 
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2382:1: ( rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2382:2: rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0
             {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_in_rule__MobgenHeaderKeyValuePair__Group__0__Impl4744);
-            rule__MobgenHeaderKeyValuePair__KeyAssignment_0();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0_in_rule__MobgenHeaderKeyValuePair__Group_0__0__Impl4804);
+            rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0()); 
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0_0()); 
 
             }
 
@@ -6394,96 +6470,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__0__Impl"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__0__Impl"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2364:1: rule__MobgenHeaderKeyValuePair__Group__1 : rule__MobgenHeaderKeyValuePair__Group__1__Impl rule__MobgenHeaderKeyValuePair__Group__2 ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__1"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2392:1: rule__MobgenHeaderKeyValuePair__Group_0__1 : rule__MobgenHeaderKeyValuePair__Group_0__1__Impl rule__MobgenHeaderKeyValuePair__Group_0__2 ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2368:1: ( rule__MobgenHeaderKeyValuePair__Group__1__Impl rule__MobgenHeaderKeyValuePair__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2369:2: rule__MobgenHeaderKeyValuePair__Group__1__Impl rule__MobgenHeaderKeyValuePair__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2396:1: ( rule__MobgenHeaderKeyValuePair__Group_0__1__Impl rule__MobgenHeaderKeyValuePair__Group_0__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2397:2: rule__MobgenHeaderKeyValuePair__Group_0__1__Impl rule__MobgenHeaderKeyValuePair__Group_0__2
             {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__1__Impl_in_rule__MobgenHeaderKeyValuePair__Group__14774);
-            rule__MobgenHeaderKeyValuePair__Group__1__Impl();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__1__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__14834);
+            rule__MobgenHeaderKeyValuePair__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__2_in_rule__MobgenHeaderKeyValuePair__Group__14777);
-            rule__MobgenHeaderKeyValuePair__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__1"
-
-
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2376:1: rule__MobgenHeaderKeyValuePair__Group__1__Impl : ( '=' ) ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2380:1: ( ( '=' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2381:1: ( '=' )
-            {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2381:1: ( '=' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2382:1: '='
-            {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1()); 
-            match(input,36,FOLLOW_36_in_rule__MobgenHeaderKeyValuePair__Group__1__Impl4805); 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__1__Impl"
-
-
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2395:1: rule__MobgenHeaderKeyValuePair__Group__2 : rule__MobgenHeaderKeyValuePair__Group__2__Impl ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2399:1: ( rule__MobgenHeaderKeyValuePair__Group__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2400:2: rule__MobgenHeaderKeyValuePair__Group__2__Impl
-            {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group__2__Impl_in_rule__MobgenHeaderKeyValuePair__Group__24836);
-            rule__MobgenHeaderKeyValuePair__Group__2__Impl();
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__2_in_rule__MobgenHeaderKeyValuePair__Group_0__14837);
+            rule__MobgenHeaderKeyValuePair__Group_0__2();
 
             state._fsp--;
 
@@ -6502,35 +6508,25 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__2"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__1"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2406:1: rule__MobgenHeaderKeyValuePair__Group__2__Impl : ( ( rule__MobgenHeaderKeyValuePair__Alternatives_2 ) ) ;
-    public final void rule__MobgenHeaderKeyValuePair__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__1__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2404:1: rule__MobgenHeaderKeyValuePair__Group_0__1__Impl : ( '=' ) ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2410:1: ( ( ( rule__MobgenHeaderKeyValuePair__Alternatives_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2411:1: ( ( rule__MobgenHeaderKeyValuePair__Alternatives_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2408:1: ( ( '=' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2409:1: ( '=' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2411:1: ( ( rule__MobgenHeaderKeyValuePair__Alternatives_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2412:1: ( rule__MobgenHeaderKeyValuePair__Alternatives_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2409:1: ( '=' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2410:1: '='
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2413:1: ( rule__MobgenHeaderKeyValuePair__Alternatives_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2413:2: rule__MobgenHeaderKeyValuePair__Alternatives_2
-            {
-            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Alternatives_2_in_rule__MobgenHeaderKeyValuePair__Group__2__Impl4863);
-            rule__MobgenHeaderKeyValuePair__Alternatives_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2()); 
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1()); 
+            match(input,35,FOLLOW_35_in_rule__MobgenHeaderKeyValuePair__Group_0__1__Impl4865); 
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1()); 
 
             }
 
@@ -6549,25 +6545,335 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group__2__Impl"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__2"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2423:1: rule__MobgenHeaderKeyValuePair__Group_0__2 : rule__MobgenHeaderKeyValuePair__Group_0__2__Impl ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2427:1: ( rule__MobgenHeaderKeyValuePair__Group_0__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2428:2: rule__MobgenHeaderKeyValuePair__Group_0__2__Impl
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__2__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__24896);
+            rule__MobgenHeaderKeyValuePair__Group_0__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__2"
+
+
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__Group_0__2__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2434:1: rule__MobgenHeaderKeyValuePair__Group_0__2__Impl : ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 ) ) ;
+    public final void rule__MobgenHeaderKeyValuePair__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2438:1: ( ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2439:1: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 ) )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2439:1: ( ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2440:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 )
+            {
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_0_2()); 
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2441:1: ( rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2441:2: rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2_in_rule__MobgenHeaderKeyValuePair__Group_0__2__Impl4923);
+            rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__0"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2457:1: rule__MobgenHeaderParameter__Group__0 : rule__MobgenHeaderParameter__Group__0__Impl rule__MobgenHeaderParameter__Group__1 ;
+    public final void rule__MobgenHeaderParameter__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2461:1: ( rule__MobgenHeaderParameter__Group__0__Impl rule__MobgenHeaderParameter__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2462:2: rule__MobgenHeaderParameter__Group__0__Impl rule__MobgenHeaderParameter__Group__1
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__0__Impl_in_rule__MobgenHeaderParameter__Group__04959);
+            rule__MobgenHeaderParameter__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__1_in_rule__MobgenHeaderParameter__Group__04962);
+            rule__MobgenHeaderParameter__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__0"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__0__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2469:1: rule__MobgenHeaderParameter__Group__0__Impl : ( '{' ) ;
+    public final void rule__MobgenHeaderParameter__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2473:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2474:1: ( '{' )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2474:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2475:1: '{'
+            {
+             before(grammarAccess.getMobgenHeaderParameterAccess().getLeftCurlyBracketKeyword_0()); 
+            match(input,19,FOLLOW_19_in_rule__MobgenHeaderParameter__Group__0__Impl4990); 
+             after(grammarAccess.getMobgenHeaderParameterAccess().getLeftCurlyBracketKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__0__Impl"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__1"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2488:1: rule__MobgenHeaderParameter__Group__1 : rule__MobgenHeaderParameter__Group__1__Impl rule__MobgenHeaderParameter__Group__2 ;
+    public final void rule__MobgenHeaderParameter__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2492:1: ( rule__MobgenHeaderParameter__Group__1__Impl rule__MobgenHeaderParameter__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2493:2: rule__MobgenHeaderParameter__Group__1__Impl rule__MobgenHeaderParameter__Group__2
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__1__Impl_in_rule__MobgenHeaderParameter__Group__15021);
+            rule__MobgenHeaderParameter__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__2_in_rule__MobgenHeaderParameter__Group__15024);
+            rule__MobgenHeaderParameter__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__1"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__1__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2500:1: rule__MobgenHeaderParameter__Group__1__Impl : ( ( rule__MobgenHeaderParameter__IdAssignment_1 ) ) ;
+    public final void rule__MobgenHeaderParameter__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2504:1: ( ( ( rule__MobgenHeaderParameter__IdAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2505:1: ( ( rule__MobgenHeaderParameter__IdAssignment_1 ) )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2505:1: ( ( rule__MobgenHeaderParameter__IdAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2506:1: ( rule__MobgenHeaderParameter__IdAssignment_1 )
+            {
+             before(grammarAccess.getMobgenHeaderParameterAccess().getIdAssignment_1()); 
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2507:1: ( rule__MobgenHeaderParameter__IdAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2507:2: rule__MobgenHeaderParameter__IdAssignment_1
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__IdAssignment_1_in_rule__MobgenHeaderParameter__Group__1__Impl5051);
+            rule__MobgenHeaderParameter__IdAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMobgenHeaderParameterAccess().getIdAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__1__Impl"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__2"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2517:1: rule__MobgenHeaderParameter__Group__2 : rule__MobgenHeaderParameter__Group__2__Impl ;
+    public final void rule__MobgenHeaderParameter__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2521:1: ( rule__MobgenHeaderParameter__Group__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2522:2: rule__MobgenHeaderParameter__Group__2__Impl
+            {
+            pushFollow(FOLLOW_rule__MobgenHeaderParameter__Group__2__Impl_in_rule__MobgenHeaderParameter__Group__25081);
+            rule__MobgenHeaderParameter__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__2"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__Group__2__Impl"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2528:1: rule__MobgenHeaderParameter__Group__2__Impl : ( '}' ) ;
+    public final void rule__MobgenHeaderParameter__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2532:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2533:1: ( '}' )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2533:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2534:1: '}'
+            {
+             before(grammarAccess.getMobgenHeaderParameterAccess().getRightCurlyBracketKeyword_2()); 
+            match(input,20,FOLLOW_20_in_rule__MobgenHeaderParameter__Group__2__Impl5109); 
+             after(grammarAccess.getMobgenHeaderParameterAccess().getRightCurlyBracketKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__Group__2__Impl"
 
 
     // $ANTLR start "rule__MobgenJson__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2429:1: rule__MobgenJson__Group__0 : rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2553:1: rule__MobgenJson__Group__0 : rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1 ;
     public final void rule__MobgenJson__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2433:1: ( rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2434:2: rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2557:1: ( rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2558:2: rule__MobgenJson__Group__0__Impl rule__MobgenJson__Group__1
             {
-            pushFollow(FOLLOW_rule__MobgenJson__Group__0__Impl_in_rule__MobgenJson__Group__04899);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__0__Impl_in_rule__MobgenJson__Group__05146);
             rule__MobgenJson__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenJson__Group__1_in_rule__MobgenJson__Group__04902);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__1_in_rule__MobgenJson__Group__05149);
             rule__MobgenJson__Group__1();
 
             state._fsp--;
@@ -6591,23 +6897,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2441:1: rule__MobgenJson__Group__0__Impl : ( ( rule__MobgenJson__NameAssignment_0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2565:1: rule__MobgenJson__Group__0__Impl : ( ( rule__MobgenJson__NameAssignment_0 ) ) ;
     public final void rule__MobgenJson__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2445:1: ( ( ( rule__MobgenJson__NameAssignment_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2446:1: ( ( rule__MobgenJson__NameAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2569:1: ( ( ( rule__MobgenJson__NameAssignment_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2570:1: ( ( rule__MobgenJson__NameAssignment_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2446:1: ( ( rule__MobgenJson__NameAssignment_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2447:1: ( rule__MobgenJson__NameAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2570:1: ( ( rule__MobgenJson__NameAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2571:1: ( rule__MobgenJson__NameAssignment_0 )
             {
              before(grammarAccess.getMobgenJsonAccess().getNameAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2448:1: ( rule__MobgenJson__NameAssignment_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2448:2: rule__MobgenJson__NameAssignment_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2572:1: ( rule__MobgenJson__NameAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2572:2: rule__MobgenJson__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__MobgenJson__NameAssignment_0_in_rule__MobgenJson__Group__0__Impl4929);
+            pushFollow(FOLLOW_rule__MobgenJson__NameAssignment_0_in_rule__MobgenJson__Group__0__Impl5176);
             rule__MobgenJson__NameAssignment_0();
 
             state._fsp--;
@@ -6638,21 +6944,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2458:1: rule__MobgenJson__Group__1 : rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2582:1: rule__MobgenJson__Group__1 : rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2 ;
     public final void rule__MobgenJson__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2462:1: ( rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2463:2: rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2586:1: ( rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2587:2: rule__MobgenJson__Group__1__Impl rule__MobgenJson__Group__2
             {
-            pushFollow(FOLLOW_rule__MobgenJson__Group__1__Impl_in_rule__MobgenJson__Group__14959);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__1__Impl_in_rule__MobgenJson__Group__15206);
             rule__MobgenJson__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenJson__Group__2_in_rule__MobgenJson__Group__14962);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__2_in_rule__MobgenJson__Group__15209);
             rule__MobgenJson__Group__2();
 
             state._fsp--;
@@ -6676,20 +6982,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2470:1: rule__MobgenJson__Group__1__Impl : ( '\\'\\'\\'' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2594:1: rule__MobgenJson__Group__1__Impl : ( '\\'\\'\\'' ) ;
     public final void rule__MobgenJson__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2474:1: ( ( '\\'\\'\\'' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2475:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2598:1: ( ( '\\'\\'\\'' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2599:1: ( '\\'\\'\\'' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2475:1: ( '\\'\\'\\'' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2476:1: '\\'\\'\\''
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2599:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2600:1: '\\'\\'\\''
             {
              before(grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_1()); 
-            match(input,34,FOLLOW_34_in_rule__MobgenJson__Group__1__Impl4990); 
+            match(input,33,FOLLOW_33_in_rule__MobgenJson__Group__1__Impl5237); 
              after(grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_1()); 
 
             }
@@ -6713,21 +7019,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2489:1: rule__MobgenJson__Group__2 : rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2613:1: rule__MobgenJson__Group__2 : rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3 ;
     public final void rule__MobgenJson__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2493:1: ( rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2494:2: rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2617:1: ( rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2618:2: rule__MobgenJson__Group__2__Impl rule__MobgenJson__Group__3
             {
-            pushFollow(FOLLOW_rule__MobgenJson__Group__2__Impl_in_rule__MobgenJson__Group__25021);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__2__Impl_in_rule__MobgenJson__Group__25268);
             rule__MobgenJson__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MobgenJson__Group__3_in_rule__MobgenJson__Group__25024);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__3_in_rule__MobgenJson__Group__25271);
             rule__MobgenJson__Group__3();
 
             state._fsp--;
@@ -6751,23 +7057,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2501:1: rule__MobgenJson__Group__2__Impl : ( ( rule__MobgenJson__ValueAssignment_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2625:1: rule__MobgenJson__Group__2__Impl : ( ( rule__MobgenJson__ValueAssignment_2 ) ) ;
     public final void rule__MobgenJson__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2505:1: ( ( ( rule__MobgenJson__ValueAssignment_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2506:1: ( ( rule__MobgenJson__ValueAssignment_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2629:1: ( ( ( rule__MobgenJson__ValueAssignment_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2630:1: ( ( rule__MobgenJson__ValueAssignment_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2506:1: ( ( rule__MobgenJson__ValueAssignment_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2507:1: ( rule__MobgenJson__ValueAssignment_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2630:1: ( ( rule__MobgenJson__ValueAssignment_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2631:1: ( rule__MobgenJson__ValueAssignment_2 )
             {
              before(grammarAccess.getMobgenJsonAccess().getValueAssignment_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2508:1: ( rule__MobgenJson__ValueAssignment_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2508:2: rule__MobgenJson__ValueAssignment_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2632:1: ( rule__MobgenJson__ValueAssignment_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2632:2: rule__MobgenJson__ValueAssignment_2
             {
-            pushFollow(FOLLOW_rule__MobgenJson__ValueAssignment_2_in_rule__MobgenJson__Group__2__Impl5051);
+            pushFollow(FOLLOW_rule__MobgenJson__ValueAssignment_2_in_rule__MobgenJson__Group__2__Impl5298);
             rule__MobgenJson__ValueAssignment_2();
 
             state._fsp--;
@@ -6798,16 +7104,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2518:1: rule__MobgenJson__Group__3 : rule__MobgenJson__Group__3__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2642:1: rule__MobgenJson__Group__3 : rule__MobgenJson__Group__3__Impl ;
     public final void rule__MobgenJson__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2522:1: ( rule__MobgenJson__Group__3__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2523:2: rule__MobgenJson__Group__3__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2646:1: ( rule__MobgenJson__Group__3__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2647:2: rule__MobgenJson__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__MobgenJson__Group__3__Impl_in_rule__MobgenJson__Group__35081);
+            pushFollow(FOLLOW_rule__MobgenJson__Group__3__Impl_in_rule__MobgenJson__Group__35328);
             rule__MobgenJson__Group__3__Impl();
 
             state._fsp--;
@@ -6831,20 +7137,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2529:1: rule__MobgenJson__Group__3__Impl : ( '\\'\\'\\'' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2653:1: rule__MobgenJson__Group__3__Impl : ( '\\'\\'\\'' ) ;
     public final void rule__MobgenJson__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2533:1: ( ( '\\'\\'\\'' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2534:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2657:1: ( ( '\\'\\'\\'' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2658:1: ( '\\'\\'\\'' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2534:1: ( '\\'\\'\\'' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2535:1: '\\'\\'\\''
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2658:1: ( '\\'\\'\\'' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2659:1: '\\'\\'\\''
             {
              before(grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_3()); 
-            match(input,34,FOLLOW_34_in_rule__MobgenJson__Group__3__Impl5109); 
+            match(input,33,FOLLOW_33_in_rule__MobgenJson__Group__3__Impl5356); 
              after(grammarAccess.getMobgenJsonAccess().getApostropheApostropheApostropheKeyword_3()); 
 
             }
@@ -6868,21 +7174,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2556:1: rule__JsonObject__Group__0 : rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2680:1: rule__JsonObject__Group__0 : rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1 ;
     public final void rule__JsonObject__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2560:1: ( rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2561:2: rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2684:1: ( rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2685:2: rule__JsonObject__Group__0__Impl rule__JsonObject__Group__1
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__0__Impl_in_rule__JsonObject__Group__05148);
+            pushFollow(FOLLOW_rule__JsonObject__Group__0__Impl_in_rule__JsonObject__Group__05395);
             rule__JsonObject__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonObject__Group__1_in_rule__JsonObject__Group__05151);
+            pushFollow(FOLLOW_rule__JsonObject__Group__1_in_rule__JsonObject__Group__05398);
             rule__JsonObject__Group__1();
 
             state._fsp--;
@@ -6906,20 +7212,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2568:1: rule__JsonObject__Group__0__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2692:1: rule__JsonObject__Group__0__Impl : ( '{' ) ;
     public final void rule__JsonObject__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2572:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2573:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2696:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2697:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2573:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2574:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2697:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2698:1: '{'
             {
              before(grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__JsonObject__Group__0__Impl5179); 
+            match(input,19,FOLLOW_19_in_rule__JsonObject__Group__0__Impl5426); 
              after(grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -6943,21 +7249,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2587:1: rule__JsonObject__Group__1 : rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2711:1: rule__JsonObject__Group__1 : rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2 ;
     public final void rule__JsonObject__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2591:1: ( rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2592:2: rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2715:1: ( rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2716:2: rule__JsonObject__Group__1__Impl rule__JsonObject__Group__2
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__1__Impl_in_rule__JsonObject__Group__15210);
+            pushFollow(FOLLOW_rule__JsonObject__Group__1__Impl_in_rule__JsonObject__Group__15457);
             rule__JsonObject__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonObject__Group__2_in_rule__JsonObject__Group__15213);
+            pushFollow(FOLLOW_rule__JsonObject__Group__2_in_rule__JsonObject__Group__15460);
             rule__JsonObject__Group__2();
 
             state._fsp--;
@@ -6981,23 +7287,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2599:1: rule__JsonObject__Group__1__Impl : ( ( rule__JsonObject__KeyValuePairAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2723:1: rule__JsonObject__Group__1__Impl : ( ( rule__JsonObject__KeyValuePairAssignment_1 ) ) ;
     public final void rule__JsonObject__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2603:1: ( ( ( rule__JsonObject__KeyValuePairAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2604:1: ( ( rule__JsonObject__KeyValuePairAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2727:1: ( ( ( rule__JsonObject__KeyValuePairAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2728:1: ( ( rule__JsonObject__KeyValuePairAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2604:1: ( ( rule__JsonObject__KeyValuePairAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2605:1: ( rule__JsonObject__KeyValuePairAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2728:1: ( ( rule__JsonObject__KeyValuePairAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2729:1: ( rule__JsonObject__KeyValuePairAssignment_1 )
             {
              before(grammarAccess.getJsonObjectAccess().getKeyValuePairAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2606:1: ( rule__JsonObject__KeyValuePairAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2606:2: rule__JsonObject__KeyValuePairAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2730:1: ( rule__JsonObject__KeyValuePairAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2730:2: rule__JsonObject__KeyValuePairAssignment_1
             {
-            pushFollow(FOLLOW_rule__JsonObject__KeyValuePairAssignment_1_in_rule__JsonObject__Group__1__Impl5240);
+            pushFollow(FOLLOW_rule__JsonObject__KeyValuePairAssignment_1_in_rule__JsonObject__Group__1__Impl5487);
             rule__JsonObject__KeyValuePairAssignment_1();
 
             state._fsp--;
@@ -7028,21 +7334,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2616:1: rule__JsonObject__Group__2 : rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2740:1: rule__JsonObject__Group__2 : rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3 ;
     public final void rule__JsonObject__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2620:1: ( rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2621:2: rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2744:1: ( rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2745:2: rule__JsonObject__Group__2__Impl rule__JsonObject__Group__3
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__2__Impl_in_rule__JsonObject__Group__25270);
+            pushFollow(FOLLOW_rule__JsonObject__Group__2__Impl_in_rule__JsonObject__Group__25517);
             rule__JsonObject__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonObject__Group__3_in_rule__JsonObject__Group__25273);
+            pushFollow(FOLLOW_rule__JsonObject__Group__3_in_rule__JsonObject__Group__25520);
             rule__JsonObject__Group__3();
 
             state._fsp--;
@@ -7066,26 +7372,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2628:1: rule__JsonObject__Group__2__Impl : ( ( rule__JsonObject__Group_2__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2752:1: rule__JsonObject__Group__2__Impl : ( ( rule__JsonObject__Group_2__0 )* ) ;
     public final void rule__JsonObject__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2632:1: ( ( ( rule__JsonObject__Group_2__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2633:1: ( ( rule__JsonObject__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2756:1: ( ( ( rule__JsonObject__Group_2__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2757:1: ( ( rule__JsonObject__Group_2__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2633:1: ( ( rule__JsonObject__Group_2__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2634:1: ( rule__JsonObject__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2757:1: ( ( rule__JsonObject__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2758:1: ( rule__JsonObject__Group_2__0 )*
             {
              before(grammarAccess.getJsonObjectAccess().getGroup_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2635:1: ( rule__JsonObject__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2759:1: ( rule__JsonObject__Group_2__0 )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( (LA19_0==35) ) {
+                if ( (LA19_0==34) ) {
                     int LA19_1 = input.LA(2);
 
                     if ( (LA19_1==RULE_STRING) ) {
@@ -7098,9 +7404,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2635:2: rule__JsonObject__Group_2__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2759:2: rule__JsonObject__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__JsonObject__Group_2__0_in_rule__JsonObject__Group__2__Impl5300);
+            	    pushFollow(FOLLOW_rule__JsonObject__Group_2__0_in_rule__JsonObject__Group__2__Impl5547);
             	    rule__JsonObject__Group_2__0();
 
             	    state._fsp--;
@@ -7137,21 +7443,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2645:1: rule__JsonObject__Group__3 : rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2769:1: rule__JsonObject__Group__3 : rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4 ;
     public final void rule__JsonObject__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2649:1: ( rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2650:2: rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2773:1: ( rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2774:2: rule__JsonObject__Group__3__Impl rule__JsonObject__Group__4
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__3__Impl_in_rule__JsonObject__Group__35331);
+            pushFollow(FOLLOW_rule__JsonObject__Group__3__Impl_in_rule__JsonObject__Group__35578);
             rule__JsonObject__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonObject__Group__4_in_rule__JsonObject__Group__35334);
+            pushFollow(FOLLOW_rule__JsonObject__Group__4_in_rule__JsonObject__Group__35581);
             rule__JsonObject__Group__4();
 
             state._fsp--;
@@ -7175,31 +7481,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2657:1: rule__JsonObject__Group__3__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2781:1: rule__JsonObject__Group__3__Impl : ( ( ',' )? ) ;
     public final void rule__JsonObject__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2661:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2662:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2785:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2786:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2662:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2663:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2786:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2787:1: ( ',' )?
             {
              before(grammarAccess.getJsonObjectAccess().getCommaKeyword_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2664:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2788:1: ( ',' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==35) ) {
+            if ( (LA20_0==34) ) {
                 alt20=1;
             }
             switch (alt20) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2665:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2789:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__JsonObject__Group__3__Impl5363); 
+                    match(input,34,FOLLOW_34_in_rule__JsonObject__Group__3__Impl5610); 
 
                     }
                     break;
@@ -7229,16 +7535,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2676:1: rule__JsonObject__Group__4 : rule__JsonObject__Group__4__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2800:1: rule__JsonObject__Group__4 : rule__JsonObject__Group__4__Impl ;
     public final void rule__JsonObject__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2680:1: ( rule__JsonObject__Group__4__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2681:2: rule__JsonObject__Group__4__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2804:1: ( rule__JsonObject__Group__4__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2805:2: rule__JsonObject__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group__4__Impl_in_rule__JsonObject__Group__45396);
+            pushFollow(FOLLOW_rule__JsonObject__Group__4__Impl_in_rule__JsonObject__Group__45643);
             rule__JsonObject__Group__4__Impl();
 
             state._fsp--;
@@ -7262,20 +7568,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2687:1: rule__JsonObject__Group__4__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2811:1: rule__JsonObject__Group__4__Impl : ( '}' ) ;
     public final void rule__JsonObject__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2691:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2692:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2815:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2816:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2692:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2693:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2816:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2817:1: '}'
             {
              before(grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,21,FOLLOW_21_in_rule__JsonObject__Group__4__Impl5424); 
+            match(input,20,FOLLOW_20_in_rule__JsonObject__Group__4__Impl5671); 
              after(grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -7299,21 +7605,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group_2__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2716:1: rule__JsonObject__Group_2__0 : rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2840:1: rule__JsonObject__Group_2__0 : rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1 ;
     public final void rule__JsonObject__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2720:1: ( rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2721:2: rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2844:1: ( rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2845:2: rule__JsonObject__Group_2__0__Impl rule__JsonObject__Group_2__1
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group_2__0__Impl_in_rule__JsonObject__Group_2__05465);
+            pushFollow(FOLLOW_rule__JsonObject__Group_2__0__Impl_in_rule__JsonObject__Group_2__05712);
             rule__JsonObject__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonObject__Group_2__1_in_rule__JsonObject__Group_2__05468);
+            pushFollow(FOLLOW_rule__JsonObject__Group_2__1_in_rule__JsonObject__Group_2__05715);
             rule__JsonObject__Group_2__1();
 
             state._fsp--;
@@ -7337,20 +7643,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group_2__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2728:1: rule__JsonObject__Group_2__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2852:1: rule__JsonObject__Group_2__0__Impl : ( ',' ) ;
     public final void rule__JsonObject__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2732:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2733:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2856:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2857:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2733:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2734:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2857:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2858:1: ','
             {
              before(grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__JsonObject__Group_2__0__Impl5496); 
+            match(input,34,FOLLOW_34_in_rule__JsonObject__Group_2__0__Impl5743); 
              after(grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0()); 
 
             }
@@ -7374,16 +7680,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group_2__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2747:1: rule__JsonObject__Group_2__1 : rule__JsonObject__Group_2__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2871:1: rule__JsonObject__Group_2__1 : rule__JsonObject__Group_2__1__Impl ;
     public final void rule__JsonObject__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2751:1: ( rule__JsonObject__Group_2__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2752:2: rule__JsonObject__Group_2__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2875:1: ( rule__JsonObject__Group_2__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2876:2: rule__JsonObject__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__JsonObject__Group_2__1__Impl_in_rule__JsonObject__Group_2__15527);
+            pushFollow(FOLLOW_rule__JsonObject__Group_2__1__Impl_in_rule__JsonObject__Group_2__15774);
             rule__JsonObject__Group_2__1__Impl();
 
             state._fsp--;
@@ -7407,23 +7713,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__Group_2__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2758:1: rule__JsonObject__Group_2__1__Impl : ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2882:1: rule__JsonObject__Group_2__1__Impl : ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) ) ;
     public final void rule__JsonObject__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2762:1: ( ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2763:1: ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2886:1: ( ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2887:1: ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2763:1: ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2764:1: ( rule__JsonObject__KeyValuePairAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2887:1: ( ( rule__JsonObject__KeyValuePairAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2888:1: ( rule__JsonObject__KeyValuePairAssignment_2_1 )
             {
              before(grammarAccess.getJsonObjectAccess().getKeyValuePairAssignment_2_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2765:1: ( rule__JsonObject__KeyValuePairAssignment_2_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2765:2: rule__JsonObject__KeyValuePairAssignment_2_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2889:1: ( rule__JsonObject__KeyValuePairAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2889:2: rule__JsonObject__KeyValuePairAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__JsonObject__KeyValuePairAssignment_2_1_in_rule__JsonObject__Group_2__1__Impl5554);
+            pushFollow(FOLLOW_rule__JsonObject__KeyValuePairAssignment_2_1_in_rule__JsonObject__Group_2__1__Impl5801);
             rule__JsonObject__KeyValuePairAssignment_2_1();
 
             state._fsp--;
@@ -7454,21 +7760,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2779:1: rule__JsonKeyValuePair__Group__0 : rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2903:1: rule__JsonKeyValuePair__Group__0 : rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1 ;
     public final void rule__JsonKeyValuePair__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2783:1: ( rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2784:2: rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2907:1: ( rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2908:2: rule__JsonKeyValuePair__Group__0__Impl rule__JsonKeyValuePair__Group__1
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__0__Impl_in_rule__JsonKeyValuePair__Group__05588);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__0__Impl_in_rule__JsonKeyValuePair__Group__05835);
             rule__JsonKeyValuePair__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__1_in_rule__JsonKeyValuePair__Group__05591);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__1_in_rule__JsonKeyValuePair__Group__05838);
             rule__JsonKeyValuePair__Group__1();
 
             state._fsp--;
@@ -7492,23 +7798,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2791:1: rule__JsonKeyValuePair__Group__0__Impl : ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2915:1: rule__JsonKeyValuePair__Group__0__Impl : ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) ) ;
     public final void rule__JsonKeyValuePair__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2795:1: ( ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2796:1: ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2919:1: ( ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2920:1: ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2796:1: ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2797:1: ( rule__JsonKeyValuePair__KeyAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2920:1: ( ( rule__JsonKeyValuePair__KeyAssignment_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2921:1: ( rule__JsonKeyValuePair__KeyAssignment_0 )
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getKeyAssignment_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2798:1: ( rule__JsonKeyValuePair__KeyAssignment_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2798:2: rule__JsonKeyValuePair__KeyAssignment_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2922:1: ( rule__JsonKeyValuePair__KeyAssignment_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2922:2: rule__JsonKeyValuePair__KeyAssignment_0
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__KeyAssignment_0_in_rule__JsonKeyValuePair__Group__0__Impl5618);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__KeyAssignment_0_in_rule__JsonKeyValuePair__Group__0__Impl5865);
             rule__JsonKeyValuePair__KeyAssignment_0();
 
             state._fsp--;
@@ -7539,21 +7845,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2808:1: rule__JsonKeyValuePair__Group__1 : rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2932:1: rule__JsonKeyValuePair__Group__1 : rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2 ;
     public final void rule__JsonKeyValuePair__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2812:1: ( rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2813:2: rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2936:1: ( rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2937:2: rule__JsonKeyValuePair__Group__1__Impl rule__JsonKeyValuePair__Group__2
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__1__Impl_in_rule__JsonKeyValuePair__Group__15648);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__1__Impl_in_rule__JsonKeyValuePair__Group__15895);
             rule__JsonKeyValuePair__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__2_in_rule__JsonKeyValuePair__Group__15651);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__2_in_rule__JsonKeyValuePair__Group__15898);
             rule__JsonKeyValuePair__Group__2();
 
             state._fsp--;
@@ -7577,20 +7883,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2820:1: rule__JsonKeyValuePair__Group__1__Impl : ( ':' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2944:1: rule__JsonKeyValuePair__Group__1__Impl : ( ':' ) ;
     public final void rule__JsonKeyValuePair__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2824:1: ( ( ':' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2825:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2948:1: ( ( ':' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2949:1: ( ':' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2825:1: ( ':' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2826:1: ':'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2949:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2950:1: ':'
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getColonKeyword_1()); 
-            match(input,24,FOLLOW_24_in_rule__JsonKeyValuePair__Group__1__Impl5679); 
+            match(input,23,FOLLOW_23_in_rule__JsonKeyValuePair__Group__1__Impl5926); 
              after(grammarAccess.getJsonKeyValuePairAccess().getColonKeyword_1()); 
 
             }
@@ -7614,16 +7920,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2839:1: rule__JsonKeyValuePair__Group__2 : rule__JsonKeyValuePair__Group__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2963:1: rule__JsonKeyValuePair__Group__2 : rule__JsonKeyValuePair__Group__2__Impl ;
     public final void rule__JsonKeyValuePair__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2843:1: ( rule__JsonKeyValuePair__Group__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2844:2: rule__JsonKeyValuePair__Group__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2967:1: ( rule__JsonKeyValuePair__Group__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2968:2: rule__JsonKeyValuePair__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__2__Impl_in_rule__JsonKeyValuePair__Group__25710);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__Group__2__Impl_in_rule__JsonKeyValuePair__Group__25957);
             rule__JsonKeyValuePair__Group__2__Impl();
 
             state._fsp--;
@@ -7647,23 +7953,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2850:1: rule__JsonKeyValuePair__Group__2__Impl : ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2974:1: rule__JsonKeyValuePair__Group__2__Impl : ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) ) ;
     public final void rule__JsonKeyValuePair__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2854:1: ( ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2855:1: ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2978:1: ( ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2979:1: ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2855:1: ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2856:1: ( rule__JsonKeyValuePair__ValueAssignment_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2979:1: ( ( rule__JsonKeyValuePair__ValueAssignment_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2980:1: ( rule__JsonKeyValuePair__ValueAssignment_2 )
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getValueAssignment_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2857:1: ( rule__JsonKeyValuePair__ValueAssignment_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2857:2: rule__JsonKeyValuePair__ValueAssignment_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2981:1: ( rule__JsonKeyValuePair__ValueAssignment_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2981:2: rule__JsonKeyValuePair__ValueAssignment_2
             {
-            pushFollow(FOLLOW_rule__JsonKeyValuePair__ValueAssignment_2_in_rule__JsonKeyValuePair__Group__2__Impl5737);
+            pushFollow(FOLLOW_rule__JsonKeyValuePair__ValueAssignment_2_in_rule__JsonKeyValuePair__Group__2__Impl5984);
             rule__JsonKeyValuePair__ValueAssignment_2();
 
             state._fsp--;
@@ -7694,21 +8000,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2873:1: rule__JsonArray__Group__0 : rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2997:1: rule__JsonArray__Group__0 : rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1 ;
     public final void rule__JsonArray__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2877:1: ( rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2878:2: rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3001:1: ( rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3002:2: rule__JsonArray__Group__0__Impl rule__JsonArray__Group__1
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__0__Impl_in_rule__JsonArray__Group__05773);
+            pushFollow(FOLLOW_rule__JsonArray__Group__0__Impl_in_rule__JsonArray__Group__06020);
             rule__JsonArray__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonArray__Group__1_in_rule__JsonArray__Group__05776);
+            pushFollow(FOLLOW_rule__JsonArray__Group__1_in_rule__JsonArray__Group__06023);
             rule__JsonArray__Group__1();
 
             state._fsp--;
@@ -7732,20 +8038,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2885:1: rule__JsonArray__Group__0__Impl : ( '[' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3009:1: rule__JsonArray__Group__0__Impl : ( '[' ) ;
     public final void rule__JsonArray__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2889:1: ( ( '[' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2890:1: ( '[' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3013:1: ( ( '[' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3014:1: ( '[' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2890:1: ( '[' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2891:1: '['
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3014:1: ( '[' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3015:1: '['
             {
              before(grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__JsonArray__Group__0__Impl5804); 
+            match(input,36,FOLLOW_36_in_rule__JsonArray__Group__0__Impl6051); 
              after(grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -7769,21 +8075,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2904:1: rule__JsonArray__Group__1 : rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3028:1: rule__JsonArray__Group__1 : rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2 ;
     public final void rule__JsonArray__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2908:1: ( rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2909:2: rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3032:1: ( rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3033:2: rule__JsonArray__Group__1__Impl rule__JsonArray__Group__2
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__1__Impl_in_rule__JsonArray__Group__15835);
+            pushFollow(FOLLOW_rule__JsonArray__Group__1__Impl_in_rule__JsonArray__Group__16082);
             rule__JsonArray__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonArray__Group__2_in_rule__JsonArray__Group__15838);
+            pushFollow(FOLLOW_rule__JsonArray__Group__2_in_rule__JsonArray__Group__16085);
             rule__JsonArray__Group__2();
 
             state._fsp--;
@@ -7807,23 +8113,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2916:1: rule__JsonArray__Group__1__Impl : ( ( rule__JsonArray__ItemsAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3040:1: rule__JsonArray__Group__1__Impl : ( ( rule__JsonArray__ItemsAssignment_1 ) ) ;
     public final void rule__JsonArray__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2920:1: ( ( ( rule__JsonArray__ItemsAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2921:1: ( ( rule__JsonArray__ItemsAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3044:1: ( ( ( rule__JsonArray__ItemsAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3045:1: ( ( rule__JsonArray__ItemsAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2921:1: ( ( rule__JsonArray__ItemsAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2922:1: ( rule__JsonArray__ItemsAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3045:1: ( ( rule__JsonArray__ItemsAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3046:1: ( rule__JsonArray__ItemsAssignment_1 )
             {
              before(grammarAccess.getJsonArrayAccess().getItemsAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2923:1: ( rule__JsonArray__ItemsAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2923:2: rule__JsonArray__ItemsAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3047:1: ( rule__JsonArray__ItemsAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3047:2: rule__JsonArray__ItemsAssignment_1
             {
-            pushFollow(FOLLOW_rule__JsonArray__ItemsAssignment_1_in_rule__JsonArray__Group__1__Impl5865);
+            pushFollow(FOLLOW_rule__JsonArray__ItemsAssignment_1_in_rule__JsonArray__Group__1__Impl6112);
             rule__JsonArray__ItemsAssignment_1();
 
             state._fsp--;
@@ -7854,21 +8160,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2933:1: rule__JsonArray__Group__2 : rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3057:1: rule__JsonArray__Group__2 : rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3 ;
     public final void rule__JsonArray__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2937:1: ( rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2938:2: rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3061:1: ( rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3062:2: rule__JsonArray__Group__2__Impl rule__JsonArray__Group__3
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__2__Impl_in_rule__JsonArray__Group__25895);
+            pushFollow(FOLLOW_rule__JsonArray__Group__2__Impl_in_rule__JsonArray__Group__26142);
             rule__JsonArray__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonArray__Group__3_in_rule__JsonArray__Group__25898);
+            pushFollow(FOLLOW_rule__JsonArray__Group__3_in_rule__JsonArray__Group__26145);
             rule__JsonArray__Group__3();
 
             state._fsp--;
@@ -7892,29 +8198,29 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2945:1: rule__JsonArray__Group__2__Impl : ( ( rule__JsonArray__Group_2__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3069:1: rule__JsonArray__Group__2__Impl : ( ( rule__JsonArray__Group_2__0 )* ) ;
     public final void rule__JsonArray__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2949:1: ( ( ( rule__JsonArray__Group_2__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2950:1: ( ( rule__JsonArray__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3073:1: ( ( ( rule__JsonArray__Group_2__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3074:1: ( ( rule__JsonArray__Group_2__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2950:1: ( ( rule__JsonArray__Group_2__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2951:1: ( rule__JsonArray__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3074:1: ( ( rule__JsonArray__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3075:1: ( rule__JsonArray__Group_2__0 )*
             {
              before(grammarAccess.getJsonArrayAccess().getGroup_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2952:1: ( rule__JsonArray__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3076:1: ( rule__JsonArray__Group_2__0 )*
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==35) ) {
+                if ( (LA21_0==34) ) {
                     int LA21_1 = input.LA(2);
 
-                    if ( ((LA21_1>=RULE_STRING && LA21_1<=RULE_JSON_META_SCALAR_TYPE)||LA21_1==20||LA21_1==37) ) {
+                    if ( ((LA21_1>=RULE_STRING && LA21_1<=RULE_JSON_META_SCALAR_TYPE)||LA21_1==19||LA21_1==36) ) {
                         alt21=1;
                     }
 
@@ -7924,9 +8230,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2952:2: rule__JsonArray__Group_2__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3076:2: rule__JsonArray__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__JsonArray__Group_2__0_in_rule__JsonArray__Group__2__Impl5925);
+            	    pushFollow(FOLLOW_rule__JsonArray__Group_2__0_in_rule__JsonArray__Group__2__Impl6172);
             	    rule__JsonArray__Group_2__0();
 
             	    state._fsp--;
@@ -7963,21 +8269,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2962:1: rule__JsonArray__Group__3 : rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3086:1: rule__JsonArray__Group__3 : rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4 ;
     public final void rule__JsonArray__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2966:1: ( rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2967:2: rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3090:1: ( rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3091:2: rule__JsonArray__Group__3__Impl rule__JsonArray__Group__4
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__3__Impl_in_rule__JsonArray__Group__35956);
+            pushFollow(FOLLOW_rule__JsonArray__Group__3__Impl_in_rule__JsonArray__Group__36203);
             rule__JsonArray__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonArray__Group__4_in_rule__JsonArray__Group__35959);
+            pushFollow(FOLLOW_rule__JsonArray__Group__4_in_rule__JsonArray__Group__36206);
             rule__JsonArray__Group__4();
 
             state._fsp--;
@@ -8001,31 +8307,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2974:1: rule__JsonArray__Group__3__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3098:1: rule__JsonArray__Group__3__Impl : ( ( ',' )? ) ;
     public final void rule__JsonArray__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2978:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2979:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3102:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3103:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2979:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2980:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3103:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3104:1: ( ',' )?
             {
              before(grammarAccess.getJsonArrayAccess().getCommaKeyword_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2981:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3105:1: ( ',' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==35) ) {
+            if ( (LA22_0==34) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2982:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3106:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__JsonArray__Group__3__Impl5988); 
+                    match(input,34,FOLLOW_34_in_rule__JsonArray__Group__3__Impl6235); 
 
                     }
                     break;
@@ -8055,16 +8361,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2993:1: rule__JsonArray__Group__4 : rule__JsonArray__Group__4__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3117:1: rule__JsonArray__Group__4 : rule__JsonArray__Group__4__Impl ;
     public final void rule__JsonArray__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2997:1: ( rule__JsonArray__Group__4__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:2998:2: rule__JsonArray__Group__4__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3121:1: ( rule__JsonArray__Group__4__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3122:2: rule__JsonArray__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group__4__Impl_in_rule__JsonArray__Group__46021);
+            pushFollow(FOLLOW_rule__JsonArray__Group__4__Impl_in_rule__JsonArray__Group__46268);
             rule__JsonArray__Group__4__Impl();
 
             state._fsp--;
@@ -8088,20 +8394,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3004:1: rule__JsonArray__Group__4__Impl : ( ']' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3128:1: rule__JsonArray__Group__4__Impl : ( ']' ) ;
     public final void rule__JsonArray__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3008:1: ( ( ']' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3009:1: ( ']' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3132:1: ( ( ']' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3133:1: ( ']' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3009:1: ( ']' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3010:1: ']'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3133:1: ( ']' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3134:1: ']'
             {
              before(grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_4()); 
-            match(input,38,FOLLOW_38_in_rule__JsonArray__Group__4__Impl6049); 
+            match(input,37,FOLLOW_37_in_rule__JsonArray__Group__4__Impl6296); 
              after(grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -8125,21 +8431,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group_2__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3033:1: rule__JsonArray__Group_2__0 : rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3157:1: rule__JsonArray__Group_2__0 : rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1 ;
     public final void rule__JsonArray__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3037:1: ( rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3038:2: rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3161:1: ( rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3162:2: rule__JsonArray__Group_2__0__Impl rule__JsonArray__Group_2__1
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group_2__0__Impl_in_rule__JsonArray__Group_2__06090);
+            pushFollow(FOLLOW_rule__JsonArray__Group_2__0__Impl_in_rule__JsonArray__Group_2__06337);
             rule__JsonArray__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JsonArray__Group_2__1_in_rule__JsonArray__Group_2__06093);
+            pushFollow(FOLLOW_rule__JsonArray__Group_2__1_in_rule__JsonArray__Group_2__06340);
             rule__JsonArray__Group_2__1();
 
             state._fsp--;
@@ -8163,20 +8469,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group_2__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3045:1: rule__JsonArray__Group_2__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3169:1: rule__JsonArray__Group_2__0__Impl : ( ',' ) ;
     public final void rule__JsonArray__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3049:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3050:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3173:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3174:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3050:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3051:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3174:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3175:1: ','
             {
              before(grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__JsonArray__Group_2__0__Impl6121); 
+            match(input,34,FOLLOW_34_in_rule__JsonArray__Group_2__0__Impl6368); 
              after(grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0()); 
 
             }
@@ -8200,16 +8506,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group_2__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3064:1: rule__JsonArray__Group_2__1 : rule__JsonArray__Group_2__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3188:1: rule__JsonArray__Group_2__1 : rule__JsonArray__Group_2__1__Impl ;
     public final void rule__JsonArray__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3068:1: ( rule__JsonArray__Group_2__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3069:2: rule__JsonArray__Group_2__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3192:1: ( rule__JsonArray__Group_2__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3193:2: rule__JsonArray__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__JsonArray__Group_2__1__Impl_in_rule__JsonArray__Group_2__16152);
+            pushFollow(FOLLOW_rule__JsonArray__Group_2__1__Impl_in_rule__JsonArray__Group_2__16399);
             rule__JsonArray__Group_2__1__Impl();
 
             state._fsp--;
@@ -8233,23 +8539,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__Group_2__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3075:1: rule__JsonArray__Group_2__1__Impl : ( ( rule__JsonArray__ItemsAssignment_2_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3199:1: rule__JsonArray__Group_2__1__Impl : ( ( rule__JsonArray__ItemsAssignment_2_1 ) ) ;
     public final void rule__JsonArray__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3079:1: ( ( ( rule__JsonArray__ItemsAssignment_2_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3080:1: ( ( rule__JsonArray__ItemsAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3203:1: ( ( ( rule__JsonArray__ItemsAssignment_2_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3204:1: ( ( rule__JsonArray__ItemsAssignment_2_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3080:1: ( ( rule__JsonArray__ItemsAssignment_2_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3081:1: ( rule__JsonArray__ItemsAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3204:1: ( ( rule__JsonArray__ItemsAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3205:1: ( rule__JsonArray__ItemsAssignment_2_1 )
             {
              before(grammarAccess.getJsonArrayAccess().getItemsAssignment_2_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3082:1: ( rule__JsonArray__ItemsAssignment_2_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3082:2: rule__JsonArray__ItemsAssignment_2_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3206:1: ( rule__JsonArray__ItemsAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3206:2: rule__JsonArray__ItemsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__JsonArray__ItemsAssignment_2_1_in_rule__JsonArray__Group_2__1__Impl6179);
+            pushFollow(FOLLOW_rule__JsonArray__ItemsAssignment_2_1_in_rule__JsonArray__Group_2__1__Impl6426);
             rule__JsonArray__ItemsAssignment_2_1();
 
             state._fsp--;
@@ -8280,21 +8586,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3096:1: rule__EnumInstance__Group__0 : rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3220:1: rule__EnumInstance__Group__0 : rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1 ;
     public final void rule__EnumInstance__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3100:1: ( rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3101:2: rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3224:1: ( rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3225:2: rule__EnumInstance__Group__0__Impl rule__EnumInstance__Group__1
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__0__Impl_in_rule__EnumInstance__Group__06213);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__0__Impl_in_rule__EnumInstance__Group__06460);
             rule__EnumInstance__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__1_in_rule__EnumInstance__Group__06216);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__1_in_rule__EnumInstance__Group__06463);
             rule__EnumInstance__Group__1();
 
             state._fsp--;
@@ -8318,20 +8624,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3108:1: rule__EnumInstance__Group__0__Impl : ( 'enum' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3232:1: rule__EnumInstance__Group__0__Impl : ( 'enum' ) ;
     public final void rule__EnumInstance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3112:1: ( ( 'enum' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3113:1: ( 'enum' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3236:1: ( ( 'enum' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3237:1: ( 'enum' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3113:1: ( 'enum' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3114:1: 'enum'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3237:1: ( 'enum' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3238:1: 'enum'
             {
              before(grammarAccess.getEnumInstanceAccess().getEnumKeyword_0()); 
-            match(input,39,FOLLOW_39_in_rule__EnumInstance__Group__0__Impl6244); 
+            match(input,38,FOLLOW_38_in_rule__EnumInstance__Group__0__Impl6491); 
              after(grammarAccess.getEnumInstanceAccess().getEnumKeyword_0()); 
 
             }
@@ -8355,21 +8661,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3127:1: rule__EnumInstance__Group__1 : rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3251:1: rule__EnumInstance__Group__1 : rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2 ;
     public final void rule__EnumInstance__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3131:1: ( rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3132:2: rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3255:1: ( rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3256:2: rule__EnumInstance__Group__1__Impl rule__EnumInstance__Group__2
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__1__Impl_in_rule__EnumInstance__Group__16275);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__1__Impl_in_rule__EnumInstance__Group__16522);
             rule__EnumInstance__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__2_in_rule__EnumInstance__Group__16278);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__2_in_rule__EnumInstance__Group__16525);
             rule__EnumInstance__Group__2();
 
             state._fsp--;
@@ -8393,23 +8699,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3139:1: rule__EnumInstance__Group__1__Impl : ( ( rule__EnumInstance__NameAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3263:1: rule__EnumInstance__Group__1__Impl : ( ( rule__EnumInstance__NameAssignment_1 ) ) ;
     public final void rule__EnumInstance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3143:1: ( ( ( rule__EnumInstance__NameAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3144:1: ( ( rule__EnumInstance__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3267:1: ( ( ( rule__EnumInstance__NameAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3268:1: ( ( rule__EnumInstance__NameAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3144:1: ( ( rule__EnumInstance__NameAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3145:1: ( rule__EnumInstance__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3268:1: ( ( rule__EnumInstance__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3269:1: ( rule__EnumInstance__NameAssignment_1 )
             {
              before(grammarAccess.getEnumInstanceAccess().getNameAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3146:1: ( rule__EnumInstance__NameAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3146:2: rule__EnumInstance__NameAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3270:1: ( rule__EnumInstance__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3270:2: rule__EnumInstance__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__EnumInstance__NameAssignment_1_in_rule__EnumInstance__Group__1__Impl6305);
+            pushFollow(FOLLOW_rule__EnumInstance__NameAssignment_1_in_rule__EnumInstance__Group__1__Impl6552);
             rule__EnumInstance__NameAssignment_1();
 
             state._fsp--;
@@ -8440,21 +8746,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3156:1: rule__EnumInstance__Group__2 : rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3280:1: rule__EnumInstance__Group__2 : rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3 ;
     public final void rule__EnumInstance__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3160:1: ( rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3161:2: rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3284:1: ( rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3285:2: rule__EnumInstance__Group__2__Impl rule__EnumInstance__Group__3
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__2__Impl_in_rule__EnumInstance__Group__26335);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__2__Impl_in_rule__EnumInstance__Group__26582);
             rule__EnumInstance__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__3_in_rule__EnumInstance__Group__26338);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__3_in_rule__EnumInstance__Group__26585);
             rule__EnumInstance__Group__3();
 
             state._fsp--;
@@ -8478,20 +8784,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3168:1: rule__EnumInstance__Group__2__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3292:1: rule__EnumInstance__Group__2__Impl : ( '{' ) ;
     public final void rule__EnumInstance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3172:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3173:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3296:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3297:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3173:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3174:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3297:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3298:1: '{'
             {
              before(grammarAccess.getEnumInstanceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,20,FOLLOW_20_in_rule__EnumInstance__Group__2__Impl6366); 
+            match(input,19,FOLLOW_19_in_rule__EnumInstance__Group__2__Impl6613); 
              after(grammarAccess.getEnumInstanceAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -8515,21 +8821,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3187:1: rule__EnumInstance__Group__3 : rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3311:1: rule__EnumInstance__Group__3 : rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4 ;
     public final void rule__EnumInstance__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3191:1: ( rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3192:2: rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3315:1: ( rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3316:2: rule__EnumInstance__Group__3__Impl rule__EnumInstance__Group__4
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__3__Impl_in_rule__EnumInstance__Group__36397);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__3__Impl_in_rule__EnumInstance__Group__36644);
             rule__EnumInstance__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__4_in_rule__EnumInstance__Group__36400);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__4_in_rule__EnumInstance__Group__36647);
             rule__EnumInstance__Group__4();
 
             state._fsp--;
@@ -8553,23 +8859,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3199:1: rule__EnumInstance__Group__3__Impl : ( ( rule__EnumInstance__ValuesAssignment_3 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3323:1: rule__EnumInstance__Group__3__Impl : ( ( rule__EnumInstance__ValuesAssignment_3 ) ) ;
     public final void rule__EnumInstance__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3203:1: ( ( ( rule__EnumInstance__ValuesAssignment_3 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3204:1: ( ( rule__EnumInstance__ValuesAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3327:1: ( ( ( rule__EnumInstance__ValuesAssignment_3 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3328:1: ( ( rule__EnumInstance__ValuesAssignment_3 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3204:1: ( ( rule__EnumInstance__ValuesAssignment_3 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3205:1: ( rule__EnumInstance__ValuesAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3328:1: ( ( rule__EnumInstance__ValuesAssignment_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3329:1: ( rule__EnumInstance__ValuesAssignment_3 )
             {
              before(grammarAccess.getEnumInstanceAccess().getValuesAssignment_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3206:1: ( rule__EnumInstance__ValuesAssignment_3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3206:2: rule__EnumInstance__ValuesAssignment_3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3330:1: ( rule__EnumInstance__ValuesAssignment_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3330:2: rule__EnumInstance__ValuesAssignment_3
             {
-            pushFollow(FOLLOW_rule__EnumInstance__ValuesAssignment_3_in_rule__EnumInstance__Group__3__Impl6427);
+            pushFollow(FOLLOW_rule__EnumInstance__ValuesAssignment_3_in_rule__EnumInstance__Group__3__Impl6674);
             rule__EnumInstance__ValuesAssignment_3();
 
             state._fsp--;
@@ -8600,21 +8906,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3216:1: rule__EnumInstance__Group__4 : rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3340:1: rule__EnumInstance__Group__4 : rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5 ;
     public final void rule__EnumInstance__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3220:1: ( rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3221:2: rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3344:1: ( rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3345:2: rule__EnumInstance__Group__4__Impl rule__EnumInstance__Group__5
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__4__Impl_in_rule__EnumInstance__Group__46457);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__4__Impl_in_rule__EnumInstance__Group__46704);
             rule__EnumInstance__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__5_in_rule__EnumInstance__Group__46460);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__5_in_rule__EnumInstance__Group__46707);
             rule__EnumInstance__Group__5();
 
             state._fsp--;
@@ -8638,26 +8944,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3228:1: rule__EnumInstance__Group__4__Impl : ( ( rule__EnumInstance__Group_4__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3352:1: rule__EnumInstance__Group__4__Impl : ( ( rule__EnumInstance__Group_4__0 )* ) ;
     public final void rule__EnumInstance__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3232:1: ( ( ( rule__EnumInstance__Group_4__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3233:1: ( ( rule__EnumInstance__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3356:1: ( ( ( rule__EnumInstance__Group_4__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3357:1: ( ( rule__EnumInstance__Group_4__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3233:1: ( ( rule__EnumInstance__Group_4__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3234:1: ( rule__EnumInstance__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3357:1: ( ( rule__EnumInstance__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3358:1: ( rule__EnumInstance__Group_4__0 )*
             {
              before(grammarAccess.getEnumInstanceAccess().getGroup_4()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3235:1: ( rule__EnumInstance__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3359:1: ( rule__EnumInstance__Group_4__0 )*
             loop23:
             do {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( (LA23_0==35) ) {
+                if ( (LA23_0==34) ) {
                     int LA23_1 = input.LA(2);
 
                     if ( (LA23_1==RULE_ID) ) {
@@ -8670,9 +8976,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3235:2: rule__EnumInstance__Group_4__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3359:2: rule__EnumInstance__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__EnumInstance__Group_4__0_in_rule__EnumInstance__Group__4__Impl6487);
+            	    pushFollow(FOLLOW_rule__EnumInstance__Group_4__0_in_rule__EnumInstance__Group__4__Impl6734);
             	    rule__EnumInstance__Group_4__0();
 
             	    state._fsp--;
@@ -8709,21 +9015,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3245:1: rule__EnumInstance__Group__5 : rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3369:1: rule__EnumInstance__Group__5 : rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6 ;
     public final void rule__EnumInstance__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3249:1: ( rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3250:2: rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3373:1: ( rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3374:2: rule__EnumInstance__Group__5__Impl rule__EnumInstance__Group__6
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__5__Impl_in_rule__EnumInstance__Group__56518);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__5__Impl_in_rule__EnumInstance__Group__56765);
             rule__EnumInstance__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group__6_in_rule__EnumInstance__Group__56521);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__6_in_rule__EnumInstance__Group__56768);
             rule__EnumInstance__Group__6();
 
             state._fsp--;
@@ -8747,31 +9053,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__5__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3257:1: rule__EnumInstance__Group__5__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3381:1: rule__EnumInstance__Group__5__Impl : ( ( ',' )? ) ;
     public final void rule__EnumInstance__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3261:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3262:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3385:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3386:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3262:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3263:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3386:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3387:1: ( ',' )?
             {
              before(grammarAccess.getEnumInstanceAccess().getCommaKeyword_5()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3264:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3388:1: ( ',' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==35) ) {
+            if ( (LA24_0==34) ) {
                 alt24=1;
             }
             switch (alt24) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3265:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3389:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__EnumInstance__Group__5__Impl6550); 
+                    match(input,34,FOLLOW_34_in_rule__EnumInstance__Group__5__Impl6797); 
 
                     }
                     break;
@@ -8801,16 +9107,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__6"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3276:1: rule__EnumInstance__Group__6 : rule__EnumInstance__Group__6__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3400:1: rule__EnumInstance__Group__6 : rule__EnumInstance__Group__6__Impl ;
     public final void rule__EnumInstance__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3280:1: ( rule__EnumInstance__Group__6__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3281:2: rule__EnumInstance__Group__6__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3404:1: ( rule__EnumInstance__Group__6__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3405:2: rule__EnumInstance__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group__6__Impl_in_rule__EnumInstance__Group__66583);
+            pushFollow(FOLLOW_rule__EnumInstance__Group__6__Impl_in_rule__EnumInstance__Group__66830);
             rule__EnumInstance__Group__6__Impl();
 
             state._fsp--;
@@ -8834,20 +9140,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group__6__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3287:1: rule__EnumInstance__Group__6__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3411:1: rule__EnumInstance__Group__6__Impl : ( '}' ) ;
     public final void rule__EnumInstance__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3291:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3292:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3415:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3416:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3292:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3293:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3416:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3417:1: '}'
             {
              before(grammarAccess.getEnumInstanceAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,21,FOLLOW_21_in_rule__EnumInstance__Group__6__Impl6611); 
+            match(input,20,FOLLOW_20_in_rule__EnumInstance__Group__6__Impl6858); 
              after(grammarAccess.getEnumInstanceAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -8871,21 +9177,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group_4__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3320:1: rule__EnumInstance__Group_4__0 : rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3444:1: rule__EnumInstance__Group_4__0 : rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1 ;
     public final void rule__EnumInstance__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3324:1: ( rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3325:2: rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3448:1: ( rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3449:2: rule__EnumInstance__Group_4__0__Impl rule__EnumInstance__Group_4__1
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group_4__0__Impl_in_rule__EnumInstance__Group_4__06656);
+            pushFollow(FOLLOW_rule__EnumInstance__Group_4__0__Impl_in_rule__EnumInstance__Group_4__06903);
             rule__EnumInstance__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumInstance__Group_4__1_in_rule__EnumInstance__Group_4__06659);
+            pushFollow(FOLLOW_rule__EnumInstance__Group_4__1_in_rule__EnumInstance__Group_4__06906);
             rule__EnumInstance__Group_4__1();
 
             state._fsp--;
@@ -8909,20 +9215,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group_4__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3332:1: rule__EnumInstance__Group_4__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3456:1: rule__EnumInstance__Group_4__0__Impl : ( ',' ) ;
     public final void rule__EnumInstance__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3336:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3337:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3460:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3461:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3337:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3338:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3461:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3462:1: ','
             {
              before(grammarAccess.getEnumInstanceAccess().getCommaKeyword_4_0()); 
-            match(input,35,FOLLOW_35_in_rule__EnumInstance__Group_4__0__Impl6687); 
+            match(input,34,FOLLOW_34_in_rule__EnumInstance__Group_4__0__Impl6934); 
              after(grammarAccess.getEnumInstanceAccess().getCommaKeyword_4_0()); 
 
             }
@@ -8946,16 +9252,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group_4__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3351:1: rule__EnumInstance__Group_4__1 : rule__EnumInstance__Group_4__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3475:1: rule__EnumInstance__Group_4__1 : rule__EnumInstance__Group_4__1__Impl ;
     public final void rule__EnumInstance__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3355:1: ( rule__EnumInstance__Group_4__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3356:2: rule__EnumInstance__Group_4__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3479:1: ( rule__EnumInstance__Group_4__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3480:2: rule__EnumInstance__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__EnumInstance__Group_4__1__Impl_in_rule__EnumInstance__Group_4__16718);
+            pushFollow(FOLLOW_rule__EnumInstance__Group_4__1__Impl_in_rule__EnumInstance__Group_4__16965);
             rule__EnumInstance__Group_4__1__Impl();
 
             state._fsp--;
@@ -8979,23 +9285,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__Group_4__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3362:1: rule__EnumInstance__Group_4__1__Impl : ( ( rule__EnumInstance__ValuesAssignment_4_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3486:1: rule__EnumInstance__Group_4__1__Impl : ( ( rule__EnumInstance__ValuesAssignment_4_1 ) ) ;
     public final void rule__EnumInstance__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3366:1: ( ( ( rule__EnumInstance__ValuesAssignment_4_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3367:1: ( ( rule__EnumInstance__ValuesAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3490:1: ( ( ( rule__EnumInstance__ValuesAssignment_4_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3491:1: ( ( rule__EnumInstance__ValuesAssignment_4_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3367:1: ( ( rule__EnumInstance__ValuesAssignment_4_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3368:1: ( rule__EnumInstance__ValuesAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3491:1: ( ( rule__EnumInstance__ValuesAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3492:1: ( rule__EnumInstance__ValuesAssignment_4_1 )
             {
              before(grammarAccess.getEnumInstanceAccess().getValuesAssignment_4_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3369:1: ( rule__EnumInstance__ValuesAssignment_4_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3369:2: rule__EnumInstance__ValuesAssignment_4_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3493:1: ( rule__EnumInstance__ValuesAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3493:2: rule__EnumInstance__ValuesAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__EnumInstance__ValuesAssignment_4_1_in_rule__EnumInstance__Group_4__1__Impl6745);
+            pushFollow(FOLLOW_rule__EnumInstance__ValuesAssignment_4_1_in_rule__EnumInstance__Group_4__1__Impl6992);
             rule__EnumInstance__ValuesAssignment_4_1();
 
             state._fsp--;
@@ -9026,21 +9332,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3383:1: rule__MapInstance__Group__0 : rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3507:1: rule__MapInstance__Group__0 : rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1 ;
     public final void rule__MapInstance__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3387:1: ( rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3388:2: rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3511:1: ( rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3512:2: rule__MapInstance__Group__0__Impl rule__MapInstance__Group__1
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__0__Impl_in_rule__MapInstance__Group__06779);
+            pushFollow(FOLLOW_rule__MapInstance__Group__0__Impl_in_rule__MapInstance__Group__07026);
             rule__MapInstance__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__1_in_rule__MapInstance__Group__06782);
+            pushFollow(FOLLOW_rule__MapInstance__Group__1_in_rule__MapInstance__Group__07029);
             rule__MapInstance__Group__1();
 
             state._fsp--;
@@ -9064,20 +9370,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3395:1: rule__MapInstance__Group__0__Impl : ( 'map' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3519:1: rule__MapInstance__Group__0__Impl : ( 'map' ) ;
     public final void rule__MapInstance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3399:1: ( ( 'map' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3400:1: ( 'map' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3523:1: ( ( 'map' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3524:1: ( 'map' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3400:1: ( 'map' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3401:1: 'map'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3524:1: ( 'map' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3525:1: 'map'
             {
              before(grammarAccess.getMapInstanceAccess().getMapKeyword_0()); 
-            match(input,40,FOLLOW_40_in_rule__MapInstance__Group__0__Impl6810); 
+            match(input,39,FOLLOW_39_in_rule__MapInstance__Group__0__Impl7057); 
              after(grammarAccess.getMapInstanceAccess().getMapKeyword_0()); 
 
             }
@@ -9101,21 +9407,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3414:1: rule__MapInstance__Group__1 : rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3538:1: rule__MapInstance__Group__1 : rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2 ;
     public final void rule__MapInstance__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3418:1: ( rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3419:2: rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3542:1: ( rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3543:2: rule__MapInstance__Group__1__Impl rule__MapInstance__Group__2
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__1__Impl_in_rule__MapInstance__Group__16841);
+            pushFollow(FOLLOW_rule__MapInstance__Group__1__Impl_in_rule__MapInstance__Group__17088);
             rule__MapInstance__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__2_in_rule__MapInstance__Group__16844);
+            pushFollow(FOLLOW_rule__MapInstance__Group__2_in_rule__MapInstance__Group__17091);
             rule__MapInstance__Group__2();
 
             state._fsp--;
@@ -9139,23 +9445,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3426:1: rule__MapInstance__Group__1__Impl : ( ( rule__MapInstance__NameAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3550:1: rule__MapInstance__Group__1__Impl : ( ( rule__MapInstance__NameAssignment_1 ) ) ;
     public final void rule__MapInstance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3430:1: ( ( ( rule__MapInstance__NameAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3431:1: ( ( rule__MapInstance__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3554:1: ( ( ( rule__MapInstance__NameAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3555:1: ( ( rule__MapInstance__NameAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3431:1: ( ( rule__MapInstance__NameAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3432:1: ( rule__MapInstance__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3555:1: ( ( rule__MapInstance__NameAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3556:1: ( rule__MapInstance__NameAssignment_1 )
             {
              before(grammarAccess.getMapInstanceAccess().getNameAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3433:1: ( rule__MapInstance__NameAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3433:2: rule__MapInstance__NameAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3557:1: ( rule__MapInstance__NameAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3557:2: rule__MapInstance__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__MapInstance__NameAssignment_1_in_rule__MapInstance__Group__1__Impl6871);
+            pushFollow(FOLLOW_rule__MapInstance__NameAssignment_1_in_rule__MapInstance__Group__1__Impl7118);
             rule__MapInstance__NameAssignment_1();
 
             state._fsp--;
@@ -9186,21 +9492,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3443:1: rule__MapInstance__Group__2 : rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3567:1: rule__MapInstance__Group__2 : rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3 ;
     public final void rule__MapInstance__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3447:1: ( rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3448:2: rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3571:1: ( rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3572:2: rule__MapInstance__Group__2__Impl rule__MapInstance__Group__3
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__2__Impl_in_rule__MapInstance__Group__26901);
+            pushFollow(FOLLOW_rule__MapInstance__Group__2__Impl_in_rule__MapInstance__Group__27148);
             rule__MapInstance__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__3_in_rule__MapInstance__Group__26904);
+            pushFollow(FOLLOW_rule__MapInstance__Group__3_in_rule__MapInstance__Group__27151);
             rule__MapInstance__Group__3();
 
             state._fsp--;
@@ -9224,20 +9530,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3455:1: rule__MapInstance__Group__2__Impl : ( '{' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3579:1: rule__MapInstance__Group__2__Impl : ( '{' ) ;
     public final void rule__MapInstance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3459:1: ( ( '{' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3460:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3583:1: ( ( '{' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3584:1: ( '{' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3460:1: ( '{' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3461:1: '{'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3584:1: ( '{' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3585:1: '{'
             {
              before(grammarAccess.getMapInstanceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,20,FOLLOW_20_in_rule__MapInstance__Group__2__Impl6932); 
+            match(input,19,FOLLOW_19_in_rule__MapInstance__Group__2__Impl7179); 
              after(grammarAccess.getMapInstanceAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -9261,21 +9567,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3474:1: rule__MapInstance__Group__3 : rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3598:1: rule__MapInstance__Group__3 : rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4 ;
     public final void rule__MapInstance__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3478:1: ( rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3479:2: rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3602:1: ( rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3603:2: rule__MapInstance__Group__3__Impl rule__MapInstance__Group__4
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__3__Impl_in_rule__MapInstance__Group__36963);
+            pushFollow(FOLLOW_rule__MapInstance__Group__3__Impl_in_rule__MapInstance__Group__37210);
             rule__MapInstance__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__4_in_rule__MapInstance__Group__36966);
+            pushFollow(FOLLOW_rule__MapInstance__Group__4_in_rule__MapInstance__Group__37213);
             rule__MapInstance__Group__4();
 
             state._fsp--;
@@ -9299,23 +9605,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3486:1: rule__MapInstance__Group__3__Impl : ( ( rule__MapInstance__Group_3__0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3610:1: rule__MapInstance__Group__3__Impl : ( ( rule__MapInstance__Group_3__0 ) ) ;
     public final void rule__MapInstance__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3490:1: ( ( ( rule__MapInstance__Group_3__0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3491:1: ( ( rule__MapInstance__Group_3__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3614:1: ( ( ( rule__MapInstance__Group_3__0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3615:1: ( ( rule__MapInstance__Group_3__0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3491:1: ( ( rule__MapInstance__Group_3__0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3492:1: ( rule__MapInstance__Group_3__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3615:1: ( ( rule__MapInstance__Group_3__0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3616:1: ( rule__MapInstance__Group_3__0 )
             {
              before(grammarAccess.getMapInstanceAccess().getGroup_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3493:1: ( rule__MapInstance__Group_3__0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3493:2: rule__MapInstance__Group_3__0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3617:1: ( rule__MapInstance__Group_3__0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3617:2: rule__MapInstance__Group_3__0
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__0_in_rule__MapInstance__Group__3__Impl6993);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__0_in_rule__MapInstance__Group__3__Impl7240);
             rule__MapInstance__Group_3__0();
 
             state._fsp--;
@@ -9346,21 +9652,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3503:1: rule__MapInstance__Group__4 : rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3627:1: rule__MapInstance__Group__4 : rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5 ;
     public final void rule__MapInstance__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3507:1: ( rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3508:2: rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3631:1: ( rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3632:2: rule__MapInstance__Group__4__Impl rule__MapInstance__Group__5
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__4__Impl_in_rule__MapInstance__Group__47023);
+            pushFollow(FOLLOW_rule__MapInstance__Group__4__Impl_in_rule__MapInstance__Group__47270);
             rule__MapInstance__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__5_in_rule__MapInstance__Group__47026);
+            pushFollow(FOLLOW_rule__MapInstance__Group__5_in_rule__MapInstance__Group__47273);
             rule__MapInstance__Group__5();
 
             state._fsp--;
@@ -9384,26 +9690,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3515:1: rule__MapInstance__Group__4__Impl : ( ( rule__MapInstance__Group_4__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3639:1: rule__MapInstance__Group__4__Impl : ( ( rule__MapInstance__Group_4__0 )* ) ;
     public final void rule__MapInstance__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3519:1: ( ( ( rule__MapInstance__Group_4__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3520:1: ( ( rule__MapInstance__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3643:1: ( ( ( rule__MapInstance__Group_4__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3644:1: ( ( rule__MapInstance__Group_4__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3520:1: ( ( rule__MapInstance__Group_4__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3521:1: ( rule__MapInstance__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3644:1: ( ( rule__MapInstance__Group_4__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3645:1: ( rule__MapInstance__Group_4__0 )*
             {
              before(grammarAccess.getMapInstanceAccess().getGroup_4()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3522:1: ( rule__MapInstance__Group_4__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3646:1: ( rule__MapInstance__Group_4__0 )*
             loop25:
             do {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==35) ) {
+                if ( (LA25_0==34) ) {
                     int LA25_1 = input.LA(2);
 
                     if ( (LA25_1==RULE_ID) ) {
@@ -9416,9 +9722,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt25) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3522:2: rule__MapInstance__Group_4__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3646:2: rule__MapInstance__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__MapInstance__Group_4__0_in_rule__MapInstance__Group__4__Impl7053);
+            	    pushFollow(FOLLOW_rule__MapInstance__Group_4__0_in_rule__MapInstance__Group__4__Impl7300);
             	    rule__MapInstance__Group_4__0();
 
             	    state._fsp--;
@@ -9455,21 +9761,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3532:1: rule__MapInstance__Group__5 : rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3656:1: rule__MapInstance__Group__5 : rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6 ;
     public final void rule__MapInstance__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3536:1: ( rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3537:2: rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3660:1: ( rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3661:2: rule__MapInstance__Group__5__Impl rule__MapInstance__Group__6
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__5__Impl_in_rule__MapInstance__Group__57084);
+            pushFollow(FOLLOW_rule__MapInstance__Group__5__Impl_in_rule__MapInstance__Group__57331);
             rule__MapInstance__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group__6_in_rule__MapInstance__Group__57087);
+            pushFollow(FOLLOW_rule__MapInstance__Group__6_in_rule__MapInstance__Group__57334);
             rule__MapInstance__Group__6();
 
             state._fsp--;
@@ -9493,31 +9799,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__5__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3544:1: rule__MapInstance__Group__5__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3668:1: rule__MapInstance__Group__5__Impl : ( ( ',' )? ) ;
     public final void rule__MapInstance__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3548:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3549:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3672:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3673:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3549:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3550:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3673:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3674:1: ( ',' )?
             {
              before(grammarAccess.getMapInstanceAccess().getCommaKeyword_5()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3551:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3675:1: ( ',' )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==35) ) {
+            if ( (LA26_0==34) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3552:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3676:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__MapInstance__Group__5__Impl7116); 
+                    match(input,34,FOLLOW_34_in_rule__MapInstance__Group__5__Impl7363); 
 
                     }
                     break;
@@ -9547,16 +9853,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__6"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3563:1: rule__MapInstance__Group__6 : rule__MapInstance__Group__6__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3687:1: rule__MapInstance__Group__6 : rule__MapInstance__Group__6__Impl ;
     public final void rule__MapInstance__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3567:1: ( rule__MapInstance__Group__6__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3568:2: rule__MapInstance__Group__6__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3691:1: ( rule__MapInstance__Group__6__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3692:2: rule__MapInstance__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group__6__Impl_in_rule__MapInstance__Group__67149);
+            pushFollow(FOLLOW_rule__MapInstance__Group__6__Impl_in_rule__MapInstance__Group__67396);
             rule__MapInstance__Group__6__Impl();
 
             state._fsp--;
@@ -9580,20 +9886,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group__6__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3574:1: rule__MapInstance__Group__6__Impl : ( '}' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3698:1: rule__MapInstance__Group__6__Impl : ( '}' ) ;
     public final void rule__MapInstance__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3578:1: ( ( '}' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3579:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3702:1: ( ( '}' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3703:1: ( '}' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3579:1: ( '}' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3580:1: '}'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3703:1: ( '}' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3704:1: '}'
             {
              before(grammarAccess.getMapInstanceAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,21,FOLLOW_21_in_rule__MapInstance__Group__6__Impl7177); 
+            match(input,20,FOLLOW_20_in_rule__MapInstance__Group__6__Impl7424); 
              after(grammarAccess.getMapInstanceAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -9617,21 +9923,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3607:1: rule__MapInstance__Group_3__0 : rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3731:1: rule__MapInstance__Group_3__0 : rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1 ;
     public final void rule__MapInstance__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3611:1: ( rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3612:2: rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3735:1: ( rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3736:2: rule__MapInstance__Group_3__0__Impl rule__MapInstance__Group_3__1
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__0__Impl_in_rule__MapInstance__Group_3__07222);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__0__Impl_in_rule__MapInstance__Group_3__07469);
             rule__MapInstance__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__1_in_rule__MapInstance__Group_3__07225);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__1_in_rule__MapInstance__Group_3__07472);
             rule__MapInstance__Group_3__1();
 
             state._fsp--;
@@ -9655,23 +9961,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3619:1: rule__MapInstance__Group_3__0__Impl : ( ( rule__MapInstance__KeysAssignment_3_0 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3743:1: rule__MapInstance__Group_3__0__Impl : ( ( rule__MapInstance__KeysAssignment_3_0 ) ) ;
     public final void rule__MapInstance__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3623:1: ( ( ( rule__MapInstance__KeysAssignment_3_0 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3624:1: ( ( rule__MapInstance__KeysAssignment_3_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3747:1: ( ( ( rule__MapInstance__KeysAssignment_3_0 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3748:1: ( ( rule__MapInstance__KeysAssignment_3_0 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3624:1: ( ( rule__MapInstance__KeysAssignment_3_0 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3625:1: ( rule__MapInstance__KeysAssignment_3_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3748:1: ( ( rule__MapInstance__KeysAssignment_3_0 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3749:1: ( rule__MapInstance__KeysAssignment_3_0 )
             {
              before(grammarAccess.getMapInstanceAccess().getKeysAssignment_3_0()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3626:1: ( rule__MapInstance__KeysAssignment_3_0 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3626:2: rule__MapInstance__KeysAssignment_3_0
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3750:1: ( rule__MapInstance__KeysAssignment_3_0 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3750:2: rule__MapInstance__KeysAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__MapInstance__KeysAssignment_3_0_in_rule__MapInstance__Group_3__0__Impl7252);
+            pushFollow(FOLLOW_rule__MapInstance__KeysAssignment_3_0_in_rule__MapInstance__Group_3__0__Impl7499);
             rule__MapInstance__KeysAssignment_3_0();
 
             state._fsp--;
@@ -9702,21 +10008,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3636:1: rule__MapInstance__Group_3__1 : rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3760:1: rule__MapInstance__Group_3__1 : rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2 ;
     public final void rule__MapInstance__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3640:1: ( rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3641:2: rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3764:1: ( rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3765:2: rule__MapInstance__Group_3__1__Impl rule__MapInstance__Group_3__2
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__1__Impl_in_rule__MapInstance__Group_3__17282);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__1__Impl_in_rule__MapInstance__Group_3__17529);
             rule__MapInstance__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__2_in_rule__MapInstance__Group_3__17285);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__2_in_rule__MapInstance__Group_3__17532);
             rule__MapInstance__Group_3__2();
 
             state._fsp--;
@@ -9740,20 +10046,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3648:1: rule__MapInstance__Group_3__1__Impl : ( ':' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3772:1: rule__MapInstance__Group_3__1__Impl : ( ':' ) ;
     public final void rule__MapInstance__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3652:1: ( ( ':' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3653:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3776:1: ( ( ':' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3777:1: ( ':' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3653:1: ( ':' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3654:1: ':'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3777:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3778:1: ':'
             {
              before(grammarAccess.getMapInstanceAccess().getColonKeyword_3_1()); 
-            match(input,24,FOLLOW_24_in_rule__MapInstance__Group_3__1__Impl7313); 
+            match(input,23,FOLLOW_23_in_rule__MapInstance__Group_3__1__Impl7560); 
              after(grammarAccess.getMapInstanceAccess().getColonKeyword_3_1()); 
 
             }
@@ -9777,16 +10083,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3667:1: rule__MapInstance__Group_3__2 : rule__MapInstance__Group_3__2__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3791:1: rule__MapInstance__Group_3__2 : rule__MapInstance__Group_3__2__Impl ;
     public final void rule__MapInstance__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3671:1: ( rule__MapInstance__Group_3__2__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3672:2: rule__MapInstance__Group_3__2__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3795:1: ( rule__MapInstance__Group_3__2__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3796:2: rule__MapInstance__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_3__2__Impl_in_rule__MapInstance__Group_3__27344);
+            pushFollow(FOLLOW_rule__MapInstance__Group_3__2__Impl_in_rule__MapInstance__Group_3__27591);
             rule__MapInstance__Group_3__2__Impl();
 
             state._fsp--;
@@ -9810,23 +10116,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_3__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3678:1: rule__MapInstance__Group_3__2__Impl : ( ( rule__MapInstance__ValuesAssignment_3_2 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3802:1: rule__MapInstance__Group_3__2__Impl : ( ( rule__MapInstance__ValuesAssignment_3_2 ) ) ;
     public final void rule__MapInstance__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3682:1: ( ( ( rule__MapInstance__ValuesAssignment_3_2 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3683:1: ( ( rule__MapInstance__ValuesAssignment_3_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3806:1: ( ( ( rule__MapInstance__ValuesAssignment_3_2 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3807:1: ( ( rule__MapInstance__ValuesAssignment_3_2 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3683:1: ( ( rule__MapInstance__ValuesAssignment_3_2 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3684:1: ( rule__MapInstance__ValuesAssignment_3_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3807:1: ( ( rule__MapInstance__ValuesAssignment_3_2 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3808:1: ( rule__MapInstance__ValuesAssignment_3_2 )
             {
              before(grammarAccess.getMapInstanceAccess().getValuesAssignment_3_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3685:1: ( rule__MapInstance__ValuesAssignment_3_2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3685:2: rule__MapInstance__ValuesAssignment_3_2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3809:1: ( rule__MapInstance__ValuesAssignment_3_2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3809:2: rule__MapInstance__ValuesAssignment_3_2
             {
-            pushFollow(FOLLOW_rule__MapInstance__ValuesAssignment_3_2_in_rule__MapInstance__Group_3__2__Impl7371);
+            pushFollow(FOLLOW_rule__MapInstance__ValuesAssignment_3_2_in_rule__MapInstance__Group_3__2__Impl7618);
             rule__MapInstance__ValuesAssignment_3_2();
 
             state._fsp--;
@@ -9857,21 +10163,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3701:1: rule__MapInstance__Group_4__0 : rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3825:1: rule__MapInstance__Group_4__0 : rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1 ;
     public final void rule__MapInstance__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3705:1: ( rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3706:2: rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3829:1: ( rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3830:2: rule__MapInstance__Group_4__0__Impl rule__MapInstance__Group_4__1
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__0__Impl_in_rule__MapInstance__Group_4__07407);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__0__Impl_in_rule__MapInstance__Group_4__07654);
             rule__MapInstance__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__1_in_rule__MapInstance__Group_4__07410);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__1_in_rule__MapInstance__Group_4__07657);
             rule__MapInstance__Group_4__1();
 
             state._fsp--;
@@ -9895,20 +10201,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3713:1: rule__MapInstance__Group_4__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3837:1: rule__MapInstance__Group_4__0__Impl : ( ',' ) ;
     public final void rule__MapInstance__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3717:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3718:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3841:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3842:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3718:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3719:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3842:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3843:1: ','
             {
              before(grammarAccess.getMapInstanceAccess().getCommaKeyword_4_0()); 
-            match(input,35,FOLLOW_35_in_rule__MapInstance__Group_4__0__Impl7438); 
+            match(input,34,FOLLOW_34_in_rule__MapInstance__Group_4__0__Impl7685); 
              after(grammarAccess.getMapInstanceAccess().getCommaKeyword_4_0()); 
 
             }
@@ -9932,21 +10238,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3732:1: rule__MapInstance__Group_4__1 : rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3856:1: rule__MapInstance__Group_4__1 : rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2 ;
     public final void rule__MapInstance__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3736:1: ( rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3737:2: rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3860:1: ( rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3861:2: rule__MapInstance__Group_4__1__Impl rule__MapInstance__Group_4__2
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__1__Impl_in_rule__MapInstance__Group_4__17469);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__1__Impl_in_rule__MapInstance__Group_4__17716);
             rule__MapInstance__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__2_in_rule__MapInstance__Group_4__17472);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__2_in_rule__MapInstance__Group_4__17719);
             rule__MapInstance__Group_4__2();
 
             state._fsp--;
@@ -9970,23 +10276,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3744:1: rule__MapInstance__Group_4__1__Impl : ( ( rule__MapInstance__KeysAssignment_4_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3868:1: rule__MapInstance__Group_4__1__Impl : ( ( rule__MapInstance__KeysAssignment_4_1 ) ) ;
     public final void rule__MapInstance__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3748:1: ( ( ( rule__MapInstance__KeysAssignment_4_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3749:1: ( ( rule__MapInstance__KeysAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3872:1: ( ( ( rule__MapInstance__KeysAssignment_4_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3873:1: ( ( rule__MapInstance__KeysAssignment_4_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3749:1: ( ( rule__MapInstance__KeysAssignment_4_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3750:1: ( rule__MapInstance__KeysAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3873:1: ( ( rule__MapInstance__KeysAssignment_4_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3874:1: ( rule__MapInstance__KeysAssignment_4_1 )
             {
              before(grammarAccess.getMapInstanceAccess().getKeysAssignment_4_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3751:1: ( rule__MapInstance__KeysAssignment_4_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3751:2: rule__MapInstance__KeysAssignment_4_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3875:1: ( rule__MapInstance__KeysAssignment_4_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3875:2: rule__MapInstance__KeysAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__MapInstance__KeysAssignment_4_1_in_rule__MapInstance__Group_4__1__Impl7499);
+            pushFollow(FOLLOW_rule__MapInstance__KeysAssignment_4_1_in_rule__MapInstance__Group_4__1__Impl7746);
             rule__MapInstance__KeysAssignment_4_1();
 
             state._fsp--;
@@ -10017,21 +10323,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3761:1: rule__MapInstance__Group_4__2 : rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3885:1: rule__MapInstance__Group_4__2 : rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3 ;
     public final void rule__MapInstance__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3765:1: ( rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3766:2: rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3889:1: ( rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3890:2: rule__MapInstance__Group_4__2__Impl rule__MapInstance__Group_4__3
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__2__Impl_in_rule__MapInstance__Group_4__27529);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__2__Impl_in_rule__MapInstance__Group_4__27776);
             rule__MapInstance__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__3_in_rule__MapInstance__Group_4__27532);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__3_in_rule__MapInstance__Group_4__27779);
             rule__MapInstance__Group_4__3();
 
             state._fsp--;
@@ -10055,20 +10361,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3773:1: rule__MapInstance__Group_4__2__Impl : ( ':' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3897:1: rule__MapInstance__Group_4__2__Impl : ( ':' ) ;
     public final void rule__MapInstance__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3777:1: ( ( ':' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3778:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3901:1: ( ( ':' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3902:1: ( ':' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3778:1: ( ':' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3779:1: ':'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3902:1: ( ':' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3903:1: ':'
             {
              before(grammarAccess.getMapInstanceAccess().getColonKeyword_4_2()); 
-            match(input,24,FOLLOW_24_in_rule__MapInstance__Group_4__2__Impl7560); 
+            match(input,23,FOLLOW_23_in_rule__MapInstance__Group_4__2__Impl7807); 
              after(grammarAccess.getMapInstanceAccess().getColonKeyword_4_2()); 
 
             }
@@ -10092,16 +10398,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3792:1: rule__MapInstance__Group_4__3 : rule__MapInstance__Group_4__3__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3916:1: rule__MapInstance__Group_4__3 : rule__MapInstance__Group_4__3__Impl ;
     public final void rule__MapInstance__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3796:1: ( rule__MapInstance__Group_4__3__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3797:2: rule__MapInstance__Group_4__3__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3920:1: ( rule__MapInstance__Group_4__3__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3921:2: rule__MapInstance__Group_4__3__Impl
             {
-            pushFollow(FOLLOW_rule__MapInstance__Group_4__3__Impl_in_rule__MapInstance__Group_4__37591);
+            pushFollow(FOLLOW_rule__MapInstance__Group_4__3__Impl_in_rule__MapInstance__Group_4__37838);
             rule__MapInstance__Group_4__3__Impl();
 
             state._fsp--;
@@ -10125,23 +10431,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__Group_4__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3803:1: rule__MapInstance__Group_4__3__Impl : ( ( rule__MapInstance__ValuesAssignment_4_3 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3927:1: rule__MapInstance__Group_4__3__Impl : ( ( rule__MapInstance__ValuesAssignment_4_3 ) ) ;
     public final void rule__MapInstance__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3807:1: ( ( ( rule__MapInstance__ValuesAssignment_4_3 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3808:1: ( ( rule__MapInstance__ValuesAssignment_4_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3931:1: ( ( ( rule__MapInstance__ValuesAssignment_4_3 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3932:1: ( ( rule__MapInstance__ValuesAssignment_4_3 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3808:1: ( ( rule__MapInstance__ValuesAssignment_4_3 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3809:1: ( rule__MapInstance__ValuesAssignment_4_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3932:1: ( ( rule__MapInstance__ValuesAssignment_4_3 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3933:1: ( rule__MapInstance__ValuesAssignment_4_3 )
             {
              before(grammarAccess.getMapInstanceAccess().getValuesAssignment_4_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3810:1: ( rule__MapInstance__ValuesAssignment_4_3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3810:2: rule__MapInstance__ValuesAssignment_4_3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3934:1: ( rule__MapInstance__ValuesAssignment_4_3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3934:2: rule__MapInstance__ValuesAssignment_4_3
             {
-            pushFollow(FOLLOW_rule__MapInstance__ValuesAssignment_4_3_in_rule__MapInstance__Group_4__3__Impl7618);
+            pushFollow(FOLLOW_rule__MapInstance__ValuesAssignment_4_3_in_rule__MapInstance__Group_4__3__Impl7865);
             rule__MapInstance__ValuesAssignment_4_3();
 
             state._fsp--;
@@ -10172,21 +10478,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3828:1: rule__StringList__Group__0 : rule__StringList__Group__0__Impl rule__StringList__Group__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3952:1: rule__StringList__Group__0 : rule__StringList__Group__0__Impl rule__StringList__Group__1 ;
     public final void rule__StringList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3832:1: ( rule__StringList__Group__0__Impl rule__StringList__Group__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3833:2: rule__StringList__Group__0__Impl rule__StringList__Group__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3956:1: ( rule__StringList__Group__0__Impl rule__StringList__Group__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3957:2: rule__StringList__Group__0__Impl rule__StringList__Group__1
             {
-            pushFollow(FOLLOW_rule__StringList__Group__0__Impl_in_rule__StringList__Group__07656);
+            pushFollow(FOLLOW_rule__StringList__Group__0__Impl_in_rule__StringList__Group__07903);
             rule__StringList__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringList__Group__1_in_rule__StringList__Group__07659);
+            pushFollow(FOLLOW_rule__StringList__Group__1_in_rule__StringList__Group__07906);
             rule__StringList__Group__1();
 
             state._fsp--;
@@ -10210,20 +10516,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3840:1: rule__StringList__Group__0__Impl : ( '[' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3964:1: rule__StringList__Group__0__Impl : ( '[' ) ;
     public final void rule__StringList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3844:1: ( ( '[' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3845:1: ( '[' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3968:1: ( ( '[' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3969:1: ( '[' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3845:1: ( '[' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3846:1: '['
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3969:1: ( '[' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3970:1: '['
             {
              before(grammarAccess.getStringListAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__StringList__Group__0__Impl7687); 
+            match(input,36,FOLLOW_36_in_rule__StringList__Group__0__Impl7934); 
              after(grammarAccess.getStringListAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -10247,21 +10553,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3859:1: rule__StringList__Group__1 : rule__StringList__Group__1__Impl rule__StringList__Group__2 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3983:1: rule__StringList__Group__1 : rule__StringList__Group__1__Impl rule__StringList__Group__2 ;
     public final void rule__StringList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3863:1: ( rule__StringList__Group__1__Impl rule__StringList__Group__2 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3864:2: rule__StringList__Group__1__Impl rule__StringList__Group__2
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3987:1: ( rule__StringList__Group__1__Impl rule__StringList__Group__2 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3988:2: rule__StringList__Group__1__Impl rule__StringList__Group__2
             {
-            pushFollow(FOLLOW_rule__StringList__Group__1__Impl_in_rule__StringList__Group__17718);
+            pushFollow(FOLLOW_rule__StringList__Group__1__Impl_in_rule__StringList__Group__17965);
             rule__StringList__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringList__Group__2_in_rule__StringList__Group__17721);
+            pushFollow(FOLLOW_rule__StringList__Group__2_in_rule__StringList__Group__17968);
             rule__StringList__Group__2();
 
             state._fsp--;
@@ -10285,23 +10591,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3871:1: rule__StringList__Group__1__Impl : ( ( rule__StringList__ValuesAssignment_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3995:1: rule__StringList__Group__1__Impl : ( ( rule__StringList__ValuesAssignment_1 ) ) ;
     public final void rule__StringList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3875:1: ( ( ( rule__StringList__ValuesAssignment_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3876:1: ( ( rule__StringList__ValuesAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3999:1: ( ( ( rule__StringList__ValuesAssignment_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4000:1: ( ( rule__StringList__ValuesAssignment_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3876:1: ( ( rule__StringList__ValuesAssignment_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3877:1: ( rule__StringList__ValuesAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4000:1: ( ( rule__StringList__ValuesAssignment_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4001:1: ( rule__StringList__ValuesAssignment_1 )
             {
              before(grammarAccess.getStringListAccess().getValuesAssignment_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3878:1: ( rule__StringList__ValuesAssignment_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3878:2: rule__StringList__ValuesAssignment_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4002:1: ( rule__StringList__ValuesAssignment_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4002:2: rule__StringList__ValuesAssignment_1
             {
-            pushFollow(FOLLOW_rule__StringList__ValuesAssignment_1_in_rule__StringList__Group__1__Impl7748);
+            pushFollow(FOLLOW_rule__StringList__ValuesAssignment_1_in_rule__StringList__Group__1__Impl7995);
             rule__StringList__ValuesAssignment_1();
 
             state._fsp--;
@@ -10332,21 +10638,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3888:1: rule__StringList__Group__2 : rule__StringList__Group__2__Impl rule__StringList__Group__3 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4012:1: rule__StringList__Group__2 : rule__StringList__Group__2__Impl rule__StringList__Group__3 ;
     public final void rule__StringList__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3892:1: ( rule__StringList__Group__2__Impl rule__StringList__Group__3 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3893:2: rule__StringList__Group__2__Impl rule__StringList__Group__3
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4016:1: ( rule__StringList__Group__2__Impl rule__StringList__Group__3 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4017:2: rule__StringList__Group__2__Impl rule__StringList__Group__3
             {
-            pushFollow(FOLLOW_rule__StringList__Group__2__Impl_in_rule__StringList__Group__27778);
+            pushFollow(FOLLOW_rule__StringList__Group__2__Impl_in_rule__StringList__Group__28025);
             rule__StringList__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringList__Group__3_in_rule__StringList__Group__27781);
+            pushFollow(FOLLOW_rule__StringList__Group__3_in_rule__StringList__Group__28028);
             rule__StringList__Group__3();
 
             state._fsp--;
@@ -10370,26 +10676,26 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__2__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3900:1: rule__StringList__Group__2__Impl : ( ( rule__StringList__Group_2__0 )* ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4024:1: rule__StringList__Group__2__Impl : ( ( rule__StringList__Group_2__0 )* ) ;
     public final void rule__StringList__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3904:1: ( ( ( rule__StringList__Group_2__0 )* ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3905:1: ( ( rule__StringList__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4028:1: ( ( ( rule__StringList__Group_2__0 )* ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4029:1: ( ( rule__StringList__Group_2__0 )* )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3905:1: ( ( rule__StringList__Group_2__0 )* )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3906:1: ( rule__StringList__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4029:1: ( ( rule__StringList__Group_2__0 )* )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4030:1: ( rule__StringList__Group_2__0 )*
             {
              before(grammarAccess.getStringListAccess().getGroup_2()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3907:1: ( rule__StringList__Group_2__0 )*
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4031:1: ( rule__StringList__Group_2__0 )*
             loop27:
             do {
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( (LA27_0==35) ) {
+                if ( (LA27_0==34) ) {
                     int LA27_1 = input.LA(2);
 
                     if ( (LA27_1==RULE_STRING) ) {
@@ -10402,9 +10708,9 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
                 switch (alt27) {
             	case 1 :
-            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3907:2: rule__StringList__Group_2__0
+            	    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4031:2: rule__StringList__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__StringList__Group_2__0_in_rule__StringList__Group__2__Impl7808);
+            	    pushFollow(FOLLOW_rule__StringList__Group_2__0_in_rule__StringList__Group__2__Impl8055);
             	    rule__StringList__Group_2__0();
 
             	    state._fsp--;
@@ -10441,21 +10747,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3917:1: rule__StringList__Group__3 : rule__StringList__Group__3__Impl rule__StringList__Group__4 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4041:1: rule__StringList__Group__3 : rule__StringList__Group__3__Impl rule__StringList__Group__4 ;
     public final void rule__StringList__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3921:1: ( rule__StringList__Group__3__Impl rule__StringList__Group__4 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3922:2: rule__StringList__Group__3__Impl rule__StringList__Group__4
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4045:1: ( rule__StringList__Group__3__Impl rule__StringList__Group__4 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4046:2: rule__StringList__Group__3__Impl rule__StringList__Group__4
             {
-            pushFollow(FOLLOW_rule__StringList__Group__3__Impl_in_rule__StringList__Group__37839);
+            pushFollow(FOLLOW_rule__StringList__Group__3__Impl_in_rule__StringList__Group__38086);
             rule__StringList__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringList__Group__4_in_rule__StringList__Group__37842);
+            pushFollow(FOLLOW_rule__StringList__Group__4_in_rule__StringList__Group__38089);
             rule__StringList__Group__4();
 
             state._fsp--;
@@ -10479,31 +10785,31 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__3__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3929:1: rule__StringList__Group__3__Impl : ( ( ',' )? ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4053:1: rule__StringList__Group__3__Impl : ( ( ',' )? ) ;
     public final void rule__StringList__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3933:1: ( ( ( ',' )? ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3934:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4057:1: ( ( ( ',' )? ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4058:1: ( ( ',' )? )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3934:1: ( ( ',' )? )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3935:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4058:1: ( ( ',' )? )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4059:1: ( ',' )?
             {
              before(grammarAccess.getStringListAccess().getCommaKeyword_3()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3936:1: ( ',' )?
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4060:1: ( ',' )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
-            if ( (LA28_0==35) ) {
+            if ( (LA28_0==34) ) {
                 alt28=1;
             }
             switch (alt28) {
                 case 1 :
-                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3937:2: ','
+                    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4061:2: ','
                     {
-                    match(input,35,FOLLOW_35_in_rule__StringList__Group__3__Impl7871); 
+                    match(input,34,FOLLOW_34_in_rule__StringList__Group__3__Impl8118); 
 
                     }
                     break;
@@ -10533,16 +10839,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3948:1: rule__StringList__Group__4 : rule__StringList__Group__4__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4072:1: rule__StringList__Group__4 : rule__StringList__Group__4__Impl ;
     public final void rule__StringList__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3952:1: ( rule__StringList__Group__4__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3953:2: rule__StringList__Group__4__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4076:1: ( rule__StringList__Group__4__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4077:2: rule__StringList__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__StringList__Group__4__Impl_in_rule__StringList__Group__47904);
+            pushFollow(FOLLOW_rule__StringList__Group__4__Impl_in_rule__StringList__Group__48151);
             rule__StringList__Group__4__Impl();
 
             state._fsp--;
@@ -10566,20 +10872,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group__4__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3959:1: rule__StringList__Group__4__Impl : ( ']' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4083:1: rule__StringList__Group__4__Impl : ( ']' ) ;
     public final void rule__StringList__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3963:1: ( ( ']' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3964:1: ( ']' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4087:1: ( ( ']' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4088:1: ( ']' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3964:1: ( ']' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3965:1: ']'
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4088:1: ( ']' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4089:1: ']'
             {
              before(grammarAccess.getStringListAccess().getRightSquareBracketKeyword_4()); 
-            match(input,38,FOLLOW_38_in_rule__StringList__Group__4__Impl7932); 
+            match(input,37,FOLLOW_37_in_rule__StringList__Group__4__Impl8179); 
              after(grammarAccess.getStringListAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -10603,21 +10909,21 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group_2__0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3988:1: rule__StringList__Group_2__0 : rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1 ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4112:1: rule__StringList__Group_2__0 : rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1 ;
     public final void rule__StringList__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3992:1: ( rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:3993:2: rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4116:1: ( rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4117:2: rule__StringList__Group_2__0__Impl rule__StringList__Group_2__1
             {
-            pushFollow(FOLLOW_rule__StringList__Group_2__0__Impl_in_rule__StringList__Group_2__07973);
+            pushFollow(FOLLOW_rule__StringList__Group_2__0__Impl_in_rule__StringList__Group_2__08220);
             rule__StringList__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringList__Group_2__1_in_rule__StringList__Group_2__07976);
+            pushFollow(FOLLOW_rule__StringList__Group_2__1_in_rule__StringList__Group_2__08223);
             rule__StringList__Group_2__1();
 
             state._fsp--;
@@ -10641,20 +10947,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group_2__0__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4000:1: rule__StringList__Group_2__0__Impl : ( ',' ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4124:1: rule__StringList__Group_2__0__Impl : ( ',' ) ;
     public final void rule__StringList__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4004:1: ( ( ',' ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4005:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4128:1: ( ( ',' ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4129:1: ( ',' )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4005:1: ( ',' )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4006:1: ','
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4129:1: ( ',' )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4130:1: ','
             {
              before(grammarAccess.getStringListAccess().getCommaKeyword_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__StringList__Group_2__0__Impl8004); 
+            match(input,34,FOLLOW_34_in_rule__StringList__Group_2__0__Impl8251); 
              after(grammarAccess.getStringListAccess().getCommaKeyword_2_0()); 
 
             }
@@ -10678,16 +10984,16 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group_2__1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4019:1: rule__StringList__Group_2__1 : rule__StringList__Group_2__1__Impl ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4143:1: rule__StringList__Group_2__1 : rule__StringList__Group_2__1__Impl ;
     public final void rule__StringList__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4023:1: ( rule__StringList__Group_2__1__Impl )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4024:2: rule__StringList__Group_2__1__Impl
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4147:1: ( rule__StringList__Group_2__1__Impl )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4148:2: rule__StringList__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__StringList__Group_2__1__Impl_in_rule__StringList__Group_2__18035);
+            pushFollow(FOLLOW_rule__StringList__Group_2__1__Impl_in_rule__StringList__Group_2__18282);
             rule__StringList__Group_2__1__Impl();
 
             state._fsp--;
@@ -10711,23 +11017,23 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__Group_2__1__Impl"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4030:1: rule__StringList__Group_2__1__Impl : ( ( rule__StringList__ValuesAssignment_2_1 ) ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4154:1: rule__StringList__Group_2__1__Impl : ( ( rule__StringList__ValuesAssignment_2_1 ) ) ;
     public final void rule__StringList__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4034:1: ( ( ( rule__StringList__ValuesAssignment_2_1 ) ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4035:1: ( ( rule__StringList__ValuesAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4158:1: ( ( ( rule__StringList__ValuesAssignment_2_1 ) ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4159:1: ( ( rule__StringList__ValuesAssignment_2_1 ) )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4035:1: ( ( rule__StringList__ValuesAssignment_2_1 ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4036:1: ( rule__StringList__ValuesAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4159:1: ( ( rule__StringList__ValuesAssignment_2_1 ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4160:1: ( rule__StringList__ValuesAssignment_2_1 )
             {
              before(grammarAccess.getStringListAccess().getValuesAssignment_2_1()); 
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4037:1: ( rule__StringList__ValuesAssignment_2_1 )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4037:2: rule__StringList__ValuesAssignment_2_1
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4161:1: ( rule__StringList__ValuesAssignment_2_1 )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4161:2: rule__StringList__ValuesAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__StringList__ValuesAssignment_2_1_in_rule__StringList__Group_2__1__Impl8062);
+            pushFollow(FOLLOW_rule__StringList__ValuesAssignment_2_1_in_rule__StringList__Group_2__1__Impl8309);
             rule__StringList__ValuesAssignment_2_1();
 
             state._fsp--;
@@ -10758,20 +11064,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__PlatformAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4052:1: rule__Mobgen__PlatformAssignment_0 : ( rulePlatform ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4176:1: rule__Mobgen__PlatformAssignment_0 : ( rulePlatform ) ;
     public final void rule__Mobgen__PlatformAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4056:1: ( ( rulePlatform ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4057:1: ( rulePlatform )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4180:1: ( ( rulePlatform ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4181:1: ( rulePlatform )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4057:1: ( rulePlatform )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4058:1: rulePlatform
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4181:1: ( rulePlatform )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4182:1: rulePlatform
             {
              before(grammarAccess.getMobgenAccess().getPlatformPlatformParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_rulePlatform_in_rule__Mobgen__PlatformAssignment_08101);
+            pushFollow(FOLLOW_rulePlatform_in_rule__Mobgen__PlatformAssignment_08348);
             rulePlatform();
 
             state._fsp--;
@@ -10799,20 +11105,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__ResourcesAssignment_1_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4067:1: rule__Mobgen__ResourcesAssignment_1_0 : ( ruleMobgenResourceDefinition ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4191:1: rule__Mobgen__ResourcesAssignment_1_0 : ( ruleMobgenResourceDefinition ) ;
     public final void rule__Mobgen__ResourcesAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4071:1: ( ( ruleMobgenResourceDefinition ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4072:1: ( ruleMobgenResourceDefinition )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4195:1: ( ( ruleMobgenResourceDefinition ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4196:1: ( ruleMobgenResourceDefinition )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4072:1: ( ruleMobgenResourceDefinition )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4073:1: ruleMobgenResourceDefinition
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4196:1: ( ruleMobgenResourceDefinition )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4197:1: ruleMobgenResourceDefinition
             {
              before(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_rule__Mobgen__ResourcesAssignment_1_08132);
+            pushFollow(FOLLOW_ruleMobgenResourceDefinition_in_rule__Mobgen__ResourcesAssignment_1_08379);
             ruleMobgenResourceDefinition();
 
             state._fsp--;
@@ -10840,20 +11146,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mobgen__CallsAssignment_1_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4082:1: rule__Mobgen__CallsAssignment_1_1 : ( ruleMobgenCallDefinition ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4206:1: rule__Mobgen__CallsAssignment_1_1 : ( ruleMobgenCallDefinition ) ;
     public final void rule__Mobgen__CallsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4086:1: ( ( ruleMobgenCallDefinition ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4087:1: ( ruleMobgenCallDefinition )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4210:1: ( ( ruleMobgenCallDefinition ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4211:1: ( ruleMobgenCallDefinition )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4087:1: ( ruleMobgenCallDefinition )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4088:1: ruleMobgenCallDefinition
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4211:1: ( ruleMobgenCallDefinition )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4212:1: ruleMobgenCallDefinition
             {
              before(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleMobgenCallDefinition_in_rule__Mobgen__CallsAssignment_1_18163);
+            pushFollow(FOLLOW_ruleMobgenCallDefinition_in_rule__Mobgen__CallsAssignment_1_18410);
             ruleMobgenCallDefinition();
 
             state._fsp--;
@@ -10881,20 +11187,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__PlatformsAssignment_2_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4097:1: rule__Platform__PlatformsAssignment_2_0 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4221:1: rule__Platform__PlatformsAssignment_2_0 : ( RULE_ID ) ;
     public final void rule__Platform__PlatformsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4101:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4102:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4225:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4226:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4102:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4103:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4226:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4227:1: RULE_ID
             {
              before(grammarAccess.getPlatformAccess().getPlatformsIDTerminalRuleCall_2_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Platform__PlatformsAssignment_2_08194); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Platform__PlatformsAssignment_2_08441); 
              after(grammarAccess.getPlatformAccess().getPlatformsIDTerminalRuleCall_2_0_0()); 
 
             }
@@ -10918,20 +11224,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Platform__GenerateWhereAssignment_2_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4112:1: rule__Platform__GenerateWhereAssignment_2_2 : ( RULE_STRING ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4236:1: rule__Platform__GenerateWhereAssignment_2_2 : ( RULE_STRING ) ;
     public final void rule__Platform__GenerateWhereAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4116:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4117:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4240:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4241:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4117:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4118:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4241:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4242:1: RULE_STRING
             {
              before(grammarAccess.getPlatformAccess().getGenerateWhereSTRINGTerminalRuleCall_2_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Platform__GenerateWhereAssignment_2_28225); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Platform__GenerateWhereAssignment_2_28472); 
              after(grammarAccess.getPlatformAccess().getGenerateWhereSTRINGTerminalRuleCall_2_2_0()); 
 
             }
@@ -10955,20 +11261,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__NameAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4127:1: rule__MobgenCallDefinition__NameAssignment_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4251:1: rule__MobgenCallDefinition__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__MobgenCallDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4131:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4132:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4255:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4256:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4132:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4133:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4256:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4257:1: RULE_ID
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenCallDefinition__NameAssignment_18256); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenCallDefinition__NameAssignment_18503); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -10992,20 +11298,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__MethodAssignment_3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4142:1: rule__MobgenCallDefinition__MethodAssignment_3 : ( RULE_RESTFUL_METHODS ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4266:1: rule__MobgenCallDefinition__MethodAssignment_3 : ( RULE_RESTFUL_METHODS ) ;
     public final void rule__MobgenCallDefinition__MethodAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4146:1: ( ( RULE_RESTFUL_METHODS ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4147:1: ( RULE_RESTFUL_METHODS )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4270:1: ( ( RULE_RESTFUL_METHODS ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4271:1: ( RULE_RESTFUL_METHODS )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4147:1: ( RULE_RESTFUL_METHODS )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4148:1: RULE_RESTFUL_METHODS
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4271:1: ( RULE_RESTFUL_METHODS )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4272:1: RULE_RESTFUL_METHODS
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getMethodRESTFUL_METHODSTerminalRuleCall_3_0()); 
-            match(input,RULE_RESTFUL_METHODS,FOLLOW_RULE_RESTFUL_METHODS_in_rule__MobgenCallDefinition__MethodAssignment_38287); 
+            match(input,RULE_RESTFUL_METHODS,FOLLOW_RULE_RESTFUL_METHODS_in_rule__MobgenCallDefinition__MethodAssignment_38534); 
              after(grammarAccess.getMobgenCallDefinitionAccess().getMethodRESTFUL_METHODSTerminalRuleCall_3_0()); 
 
             }
@@ -11029,20 +11335,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__UriAssignment_5"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4157:1: rule__MobgenCallDefinition__UriAssignment_5 : ( ruleURI ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4281:1: rule__MobgenCallDefinition__UriAssignment_5 : ( ruleURI ) ;
     public final void rule__MobgenCallDefinition__UriAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4161:1: ( ( ruleURI ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4162:1: ( ruleURI )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4285:1: ( ( ruleURI ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4286:1: ( ruleURI )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4162:1: ( ruleURI )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4163:1: ruleURI
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4286:1: ( ruleURI )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4287:1: ruleURI
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getUriURIParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleURI_in_rule__MobgenCallDefinition__UriAssignment_58318);
+            pushFollow(FOLLOW_ruleURI_in_rule__MobgenCallDefinition__UriAssignment_58565);
             ruleURI();
 
             state._fsp--;
@@ -11070,20 +11376,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__RequestHeadersAssignment_6_4"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4172:1: rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 : ( ruleMobgenHeader ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4296:1: rule__MobgenCallDefinition__RequestHeadersAssignment_6_4 : ( ruleMobgenHeader ) ;
     public final void rule__MobgenCallDefinition__RequestHeadersAssignment_6_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4176:1: ( ( ruleMobgenHeader ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4177:1: ( ruleMobgenHeader )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4300:1: ( ( ruleMobgenHeader ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4301:1: ( ruleMobgenHeader )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4177:1: ( ruleMobgenHeader )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4178:1: ruleMobgenHeader
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4301:1: ( ruleMobgenHeader )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4302:1: ruleMobgenHeader
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getRequestHeadersMobgenHeaderParserRuleCall_6_4_0()); 
-            pushFollow(FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__RequestHeadersAssignment_6_48349);
+            pushFollow(FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__RequestHeadersAssignment_6_48596);
             ruleMobgenHeader();
 
             state._fsp--;
@@ -11111,20 +11417,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4187:1: rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 : ( ruleMobgenHeader ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4311:1: rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2 : ( ruleMobgenHeader ) ;
     public final void rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4191:1: ( ( ruleMobgenHeader ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4192:1: ( ruleMobgenHeader )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4315:1: ( ( ruleMobgenHeader ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4316:1: ( ruleMobgenHeader )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4192:1: ( ruleMobgenHeader )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4193:1: ruleMobgenHeader
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4316:1: ( ruleMobgenHeader )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4317:1: ruleMobgenHeader
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getResponseHeadersMobgenHeaderParserRuleCall_6_5_2_0()); 
-            pushFollow(FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_28380);
+            pushFollow(FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_28627);
             ruleMobgenHeader();
 
             state._fsp--;
@@ -11152,20 +11458,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__JsonToClientAssignment_7_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4202:1: rule__MobgenCallDefinition__JsonToClientAssignment_7_2 : ( ruleMobgenJson ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4326:1: rule__MobgenCallDefinition__JsonToClientAssignment_7_2 : ( ruleMobgenJson ) ;
     public final void rule__MobgenCallDefinition__JsonToClientAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4206:1: ( ( ruleMobgenJson ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4207:1: ( ruleMobgenJson )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4330:1: ( ( ruleMobgenJson ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4331:1: ( ruleMobgenJson )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4207:1: ( ruleMobgenJson )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4208:1: ruleMobgenJson
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4331:1: ( ruleMobgenJson )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4332:1: ruleMobgenJson
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getJsonToClientMobgenJsonParserRuleCall_7_2_0()); 
-            pushFollow(FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToClientAssignment_7_28411);
+            pushFollow(FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToClientAssignment_7_28658);
             ruleMobgenJson();
 
             state._fsp--;
@@ -11193,20 +11499,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenCallDefinition__JsonToServerAssignment_8_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4217:1: rule__MobgenCallDefinition__JsonToServerAssignment_8_2 : ( ruleMobgenJson ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4341:1: rule__MobgenCallDefinition__JsonToServerAssignment_8_2 : ( ruleMobgenJson ) ;
     public final void rule__MobgenCallDefinition__JsonToServerAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4221:1: ( ( ruleMobgenJson ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4222:1: ( ruleMobgenJson )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4345:1: ( ( ruleMobgenJson ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4346:1: ( ruleMobgenJson )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4222:1: ( ruleMobgenJson )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4223:1: ruleMobgenJson
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4346:1: ( ruleMobgenJson )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4347:1: ruleMobgenJson
             {
              before(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerMobgenJsonParserRuleCall_8_2_0()); 
-            pushFollow(FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToServerAssignment_8_28442);
+            pushFollow(FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToServerAssignment_8_28689);
             ruleMobgenJson();
 
             state._fsp--;
@@ -11234,20 +11540,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__StringPrefixAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4232:1: rule__URI__StringPrefixAssignment_0 : ( RULE_ANY_OTHER ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4356:1: rule__URI__StringPrefixAssignment_0 : ( RULE_ANY_OTHER ) ;
     public final void rule__URI__StringPrefixAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4236:1: ( ( RULE_ANY_OTHER ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4237:1: ( RULE_ANY_OTHER )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4360:1: ( ( RULE_ANY_OTHER ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4361:1: ( RULE_ANY_OTHER )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4237:1: ( RULE_ANY_OTHER )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4238:1: RULE_ANY_OTHER
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4361:1: ( RULE_ANY_OTHER )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4362:1: RULE_ANY_OTHER
             {
              before(grammarAccess.getURIAccess().getStringPrefixANY_OTHERTerminalRuleCall_0_0()); 
-            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringPrefixAssignment_08473); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringPrefixAssignment_08720); 
              after(grammarAccess.getURIAccess().getStringPrefixANY_OTHERTerminalRuleCall_0_0()); 
 
             }
@@ -11271,20 +11577,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__ParametersAssignment_1_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4247:1: rule__URI__ParametersAssignment_1_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4371:1: rule__URI__ParametersAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__URI__ParametersAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4251:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4252:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4375:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4376:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4252:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4253:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4376:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4377:1: RULE_ID
             {
              before(grammarAccess.getURIAccess().getParametersIDTerminalRuleCall_1_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__URI__ParametersAssignment_1_18504); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__URI__ParametersAssignment_1_18751); 
              after(grammarAccess.getURIAccess().getParametersIDTerminalRuleCall_1_1_0()); 
 
             }
@@ -11308,20 +11614,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__URI__StringSuffixAssignment_1_3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4262:1: rule__URI__StringSuffixAssignment_1_3 : ( RULE_ANY_OTHER ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4386:1: rule__URI__StringSuffixAssignment_1_3 : ( RULE_ANY_OTHER ) ;
     public final void rule__URI__StringSuffixAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4266:1: ( ( RULE_ANY_OTHER ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4267:1: ( RULE_ANY_OTHER )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4390:1: ( ( RULE_ANY_OTHER ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4391:1: ( RULE_ANY_OTHER )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4267:1: ( RULE_ANY_OTHER )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4268:1: RULE_ANY_OTHER
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4391:1: ( RULE_ANY_OTHER )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4392:1: RULE_ANY_OTHER
             {
              before(grammarAccess.getURIAccess().getStringSuffixANY_OTHERTerminalRuleCall_1_3_0()); 
-            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringSuffixAssignment_1_38535); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringSuffixAssignment_1_38782); 
              after(grammarAccess.getURIAccess().getStringSuffixANY_OTHERTerminalRuleCall_1_3_0()); 
 
             }
@@ -11345,20 +11651,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__NameAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4277:1: rule__MobgenHeader__NameAssignment_0 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4401:1: rule__MobgenHeader__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__MobgenHeader__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4281:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4282:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4405:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4406:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4282:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4283:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4406:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4407:1: RULE_ID
             {
              before(grammarAccess.getMobgenHeaderAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenHeader__NameAssignment_08566); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenHeader__NameAssignment_08813); 
              after(grammarAccess.getMobgenHeaderAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -11382,20 +11688,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__HeaderKeyValuesAssignment_3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4292:1: rule__MobgenHeader__HeaderKeyValuesAssignment_3 : ( ruleMobgenHeaderKeyValuePair ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4416:1: rule__MobgenHeader__HeaderKeyValuesAssignment_3 : ( ruleMobgenHeaderKeyValuePair ) ;
     public final void rule__MobgenHeader__HeaderKeyValuesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4296:1: ( ( ruleMobgenHeaderKeyValuePair ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4297:1: ( ruleMobgenHeaderKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4420:1: ( ( ruleMobgenHeaderKeyValuePair ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4421:1: ( ruleMobgenHeaderKeyValuePair )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4297:1: ( ruleMobgenHeaderKeyValuePair )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4298:1: ruleMobgenHeaderKeyValuePair
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4421:1: ( ruleMobgenHeaderKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4422:1: ruleMobgenHeaderKeyValuePair
             {
              before(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesMobgenHeaderKeyValuePairParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_38597);
+            pushFollow(FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_38844);
             ruleMobgenHeaderKeyValuePair();
 
             state._fsp--;
@@ -11423,20 +11729,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenHeader__HeaderKeyValuesAssignment_4_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4307:1: rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 : ( ruleMobgenHeaderKeyValuePair ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4431:1: rule__MobgenHeader__HeaderKeyValuesAssignment_4_1 : ( ruleMobgenHeaderKeyValuePair ) ;
     public final void rule__MobgenHeader__HeaderKeyValuesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4311:1: ( ( ruleMobgenHeaderKeyValuePair ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4312:1: ( ruleMobgenHeaderKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4435:1: ( ( ruleMobgenHeaderKeyValuePair ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4436:1: ( ruleMobgenHeaderKeyValuePair )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4312:1: ( ruleMobgenHeaderKeyValuePair )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4313:1: ruleMobgenHeaderKeyValuePair
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4436:1: ( ruleMobgenHeaderKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4437:1: ruleMobgenHeaderKeyValuePair
             {
              before(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesMobgenHeaderKeyValuePairParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_4_18628);
+            pushFollow(FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_4_18875);
             ruleMobgenHeaderKeyValuePair();
 
             state._fsp--;
@@ -11463,22 +11769,22 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MobgenHeader__HeaderKeyValuesAssignment_4_1"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__KeyAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4322:1: rule__MobgenHeaderKeyValuePair__KeyAssignment_0 : ( RULE_STRING ) ;
-    public final void rule__MobgenHeaderKeyValuePair__KeyAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4446:1: rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0 : ( RULE_STRING ) ;
+    public final void rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4326:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4327:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4450:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4451:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4327:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4328:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4451:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4452:1: RULE_STRING
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__KeyAssignment_08659); 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_08906); 
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -11497,25 +11803,25 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__KeyAssignment_0"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4337:1: rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0 : ( RULE_STRING ) ;
-    public final void rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4461:1: rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2 : ( RULE_STRING ) ;
+    public final void rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4341:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4342:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4465:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4466:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4342:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4343:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4466:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4467:1: RULE_STRING
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_08690); 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_0_28937); 
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); 
 
             }
 
@@ -11534,25 +11840,29 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2"
 
 
-    // $ANTLR start "rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4352:1: rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1 : ( RULE_MOBGEN_HEADER_PARAMETER ) ;
-    public final void rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__MobgenHeaderKeyValuePair__ParameterAssignment_1"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4476:1: rule__MobgenHeaderKeyValuePair__ParameterAssignment_1 : ( ruleMobgenHeaderParameter ) ;
+    public final void rule__MobgenHeaderKeyValuePair__ParameterAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4356:1: ( ( RULE_MOBGEN_HEADER_PARAMETER ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4357:1: ( RULE_MOBGEN_HEADER_PARAMETER )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4480:1: ( ( ruleMobgenHeaderParameter ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4481:1: ( ruleMobgenHeaderParameter )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4357:1: ( RULE_MOBGEN_HEADER_PARAMETER )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4358:1: RULE_MOBGEN_HEADER_PARAMETER
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4481:1: ( ruleMobgenHeaderParameter )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4482:1: ruleMobgenHeaderParameter
             {
-             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0()); 
-            match(input,RULE_MOBGEN_HEADER_PARAMETER,FOLLOW_RULE_MOBGEN_HEADER_PARAMETER_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_18721); 
-             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0()); 
+             before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleMobgenHeaderParameter_in_rule__MobgenHeaderKeyValuePair__ParameterAssignment_18968);
+            ruleMobgenHeaderParameter();
+
+            state._fsp--;
+
+             after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); 
 
             }
 
@@ -11571,24 +11881,61 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1"
+    // $ANTLR end "rule__MobgenHeaderKeyValuePair__ParameterAssignment_1"
+
+
+    // $ANTLR start "rule__MobgenHeaderParameter__IdAssignment_1"
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4491:1: rule__MobgenHeaderParameter__IdAssignment_1 : ( RULE_ID ) ;
+    public final void rule__MobgenHeaderParameter__IdAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4495:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4496:1: ( RULE_ID )
+            {
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4496:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4497:1: RULE_ID
+            {
+             before(grammarAccess.getMobgenHeaderParameterAccess().getIdIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenHeaderParameter__IdAssignment_18999); 
+             after(grammarAccess.getMobgenHeaderParameterAccess().getIdIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MobgenHeaderParameter__IdAssignment_1"
 
 
     // $ANTLR start "rule__MobgenJson__NameAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4367:1: rule__MobgenJson__NameAssignment_0 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4506:1: rule__MobgenJson__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__MobgenJson__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4371:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4372:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4510:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4511:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4372:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4373:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4511:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4512:1: RULE_ID
             {
              before(grammarAccess.getMobgenJsonAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenJson__NameAssignment_08752); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MobgenJson__NameAssignment_09030); 
              after(grammarAccess.getMobgenJsonAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -11612,20 +11959,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenJson__ValueAssignment_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4382:1: rule__MobgenJson__ValueAssignment_2 : ( ruleJsonObjectValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4521:1: rule__MobgenJson__ValueAssignment_2 : ( ruleJsonObjectValue ) ;
     public final void rule__MobgenJson__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4386:1: ( ( ruleJsonObjectValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4387:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4525:1: ( ( ruleJsonObjectValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4526:1: ( ruleJsonObjectValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4387:1: ( ruleJsonObjectValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4388:1: ruleJsonObjectValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4526:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4527:1: ruleJsonObjectValue
             {
              before(grammarAccess.getMobgenJsonAccess().getValueJsonObjectValueParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__MobgenJson__ValueAssignment_28783);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__MobgenJson__ValueAssignment_29061);
             ruleJsonObjectValue();
 
             state._fsp--;
@@ -11653,20 +12000,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObjectValue__ValueAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4397:1: rule__JsonObjectValue__ValueAssignment_0 : ( ruleJsonLiteralValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4536:1: rule__JsonObjectValue__ValueAssignment_0 : ( ruleJsonLiteralValue ) ;
     public final void rule__JsonObjectValue__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4401:1: ( ( ruleJsonLiteralValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4402:1: ( ruleJsonLiteralValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4540:1: ( ( ruleJsonLiteralValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4541:1: ( ruleJsonLiteralValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4402:1: ( ruleJsonLiteralValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4403:1: ruleJsonLiteralValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4541:1: ( ruleJsonLiteralValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4542:1: ruleJsonLiteralValue
             {
              before(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleJsonLiteralValue_in_rule__JsonObjectValue__ValueAssignment_08814);
+            pushFollow(FOLLOW_ruleJsonLiteralValue_in_rule__JsonObjectValue__ValueAssignment_09092);
             ruleJsonLiteralValue();
 
             state._fsp--;
@@ -11694,20 +12041,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObjectValue__CompositeAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4412:1: rule__JsonObjectValue__CompositeAssignment_1 : ( ruleJsonCompositeValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4551:1: rule__JsonObjectValue__CompositeAssignment_1 : ( ruleJsonCompositeValue ) ;
     public final void rule__JsonObjectValue__CompositeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4416:1: ( ( ruleJsonCompositeValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4417:1: ( ruleJsonCompositeValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4555:1: ( ( ruleJsonCompositeValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4556:1: ( ruleJsonCompositeValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4417:1: ( ruleJsonCompositeValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4418:1: ruleJsonCompositeValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4556:1: ( ruleJsonCompositeValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4557:1: ruleJsonCompositeValue
             {
              before(grammarAccess.getJsonObjectValueAccess().getCompositeJsonCompositeValueParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleJsonCompositeValue_in_rule__JsonObjectValue__CompositeAssignment_18845);
+            pushFollow(FOLLOW_ruleJsonCompositeValue_in_rule__JsonObjectValue__CompositeAssignment_19123);
             ruleJsonCompositeValue();
 
             state._fsp--;
@@ -11735,20 +12082,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__KeyValuePairAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4427:1: rule__JsonObject__KeyValuePairAssignment_1 : ( ruleJsonKeyValuePair ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4566:1: rule__JsonObject__KeyValuePairAssignment_1 : ( ruleJsonKeyValuePair ) ;
     public final void rule__JsonObject__KeyValuePairAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4431:1: ( ( ruleJsonKeyValuePair ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4432:1: ( ruleJsonKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4570:1: ( ( ruleJsonKeyValuePair ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4571:1: ( ruleJsonKeyValuePair )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4432:1: ( ruleJsonKeyValuePair )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4433:1: ruleJsonKeyValuePair
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4571:1: ( ruleJsonKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4572:1: ruleJsonKeyValuePair
             {
              before(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_18876);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_19154);
             ruleJsonKeyValuePair();
 
             state._fsp--;
@@ -11776,20 +12123,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonObject__KeyValuePairAssignment_2_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4442:1: rule__JsonObject__KeyValuePairAssignment_2_1 : ( ruleJsonKeyValuePair ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4581:1: rule__JsonObject__KeyValuePairAssignment_2_1 : ( ruleJsonKeyValuePair ) ;
     public final void rule__JsonObject__KeyValuePairAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4446:1: ( ( ruleJsonKeyValuePair ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4447:1: ( ruleJsonKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4585:1: ( ( ruleJsonKeyValuePair ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4586:1: ( ruleJsonKeyValuePair )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4447:1: ( ruleJsonKeyValuePair )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4448:1: ruleJsonKeyValuePair
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4586:1: ( ruleJsonKeyValuePair )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4587:1: ruleJsonKeyValuePair
             {
              before(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_2_18907);
+            pushFollow(FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_2_19185);
             ruleJsonKeyValuePair();
 
             state._fsp--;
@@ -11817,20 +12164,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__KeyAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4457:1: rule__JsonKeyValuePair__KeyAssignment_0 : ( RULE_STRING ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4596:1: rule__JsonKeyValuePair__KeyAssignment_0 : ( RULE_STRING ) ;
     public final void rule__JsonKeyValuePair__KeyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4461:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4462:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4600:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4601:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4462:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4463:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4601:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4602:1: RULE_STRING
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JsonKeyValuePair__KeyAssignment_08938); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JsonKeyValuePair__KeyAssignment_09216); 
              after(grammarAccess.getJsonKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
 
             }
@@ -11854,20 +12201,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonKeyValuePair__ValueAssignment_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4472:1: rule__JsonKeyValuePair__ValueAssignment_2 : ( ruleJsonObjectValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4611:1: rule__JsonKeyValuePair__ValueAssignment_2 : ( ruleJsonObjectValue ) ;
     public final void rule__JsonKeyValuePair__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4476:1: ( ( ruleJsonObjectValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4477:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4615:1: ( ( ruleJsonObjectValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4616:1: ( ruleJsonObjectValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4477:1: ( ruleJsonObjectValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4478:1: ruleJsonObjectValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4616:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4617:1: ruleJsonObjectValue
             {
              before(grammarAccess.getJsonKeyValuePairAccess().getValueJsonObjectValueParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonKeyValuePair__ValueAssignment_28969);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonKeyValuePair__ValueAssignment_29247);
             ruleJsonObjectValue();
 
             state._fsp--;
@@ -11895,20 +12242,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__ItemsAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4487:1: rule__JsonArray__ItemsAssignment_1 : ( ruleJsonObjectValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4626:1: rule__JsonArray__ItemsAssignment_1 : ( ruleJsonObjectValue ) ;
     public final void rule__JsonArray__ItemsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4491:1: ( ( ruleJsonObjectValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4492:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4630:1: ( ( ruleJsonObjectValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4631:1: ( ruleJsonObjectValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4492:1: ( ruleJsonObjectValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4493:1: ruleJsonObjectValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4631:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4632:1: ruleJsonObjectValue
             {
              before(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_19000);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_19278);
             ruleJsonObjectValue();
 
             state._fsp--;
@@ -11936,20 +12283,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonArray__ItemsAssignment_2_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4502:1: rule__JsonArray__ItemsAssignment_2_1 : ( ruleJsonObjectValue ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4641:1: rule__JsonArray__ItemsAssignment_2_1 : ( ruleJsonObjectValue ) ;
     public final void rule__JsonArray__ItemsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4506:1: ( ( ruleJsonObjectValue ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4507:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4645:1: ( ( ruleJsonObjectValue ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4646:1: ( ruleJsonObjectValue )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4507:1: ( ruleJsonObjectValue )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4508:1: ruleJsonObjectValue
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4646:1: ( ruleJsonObjectValue )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4647:1: ruleJsonObjectValue
             {
              before(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_2_19031);
+            pushFollow(FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_2_19309);
             ruleJsonObjectValue();
 
             state._fsp--;
@@ -11977,20 +12324,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MobgenResourceDefinition__ResourcesAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4517:1: rule__MobgenResourceDefinition__ResourcesAssignment_0 : ( ruleMapInstance ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4656:1: rule__MobgenResourceDefinition__ResourcesAssignment_0 : ( ruleMapInstance ) ;
     public final void rule__MobgenResourceDefinition__ResourcesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4521:1: ( ( ruleMapInstance ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4522:1: ( ruleMapInstance )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4660:1: ( ( ruleMapInstance ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4661:1: ( ruleMapInstance )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4522:1: ( ruleMapInstance )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4523:1: ruleMapInstance
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4661:1: ( ruleMapInstance )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4662:1: ruleMapInstance
             {
              before(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleMapInstance_in_rule__MobgenResourceDefinition__ResourcesAssignment_09062);
+            pushFollow(FOLLOW_ruleMapInstance_in_rule__MobgenResourceDefinition__ResourcesAssignment_09340);
             ruleMapInstance();
 
             state._fsp--;
@@ -12018,20 +12365,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__NameAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4532:1: rule__EnumInstance__NameAssignment_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4671:1: rule__EnumInstance__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EnumInstance__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4536:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4537:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4675:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4676:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4537:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4538:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4676:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4677:1: RULE_ID
             {
              before(grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_19093); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_19371); 
              after(grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -12055,20 +12402,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__ValuesAssignment_3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4547:1: rule__EnumInstance__ValuesAssignment_3 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4686:1: rule__EnumInstance__ValuesAssignment_3 : ( RULE_ID ) ;
     public final void rule__EnumInstance__ValuesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4551:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4552:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4690:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4691:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4552:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4553:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4691:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4692:1: RULE_ID
             {
              before(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_39124); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_39402); 
              after(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_3_0()); 
 
             }
@@ -12092,20 +12439,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumInstance__ValuesAssignment_4_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4562:1: rule__EnumInstance__ValuesAssignment_4_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4701:1: rule__EnumInstance__ValuesAssignment_4_1 : ( RULE_ID ) ;
     public final void rule__EnumInstance__ValuesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4566:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4567:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4705:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4706:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4567:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4568:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4706:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4707:1: RULE_ID
             {
              before(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_4_19155); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_4_19433); 
              after(grammarAccess.getEnumInstanceAccess().getValuesIDTerminalRuleCall_4_1_0()); 
 
             }
@@ -12129,20 +12476,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__NameAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4577:1: rule__MapInstance__NameAssignment_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4716:1: rule__MapInstance__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__MapInstance__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4581:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4582:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4720:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4721:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4582:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4583:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4721:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4722:1: RULE_ID
             {
              before(grammarAccess.getMapInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__NameAssignment_19186); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__NameAssignment_19464); 
              after(grammarAccess.getMapInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -12166,20 +12513,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__KeysAssignment_3_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4592:1: rule__MapInstance__KeysAssignment_3_0 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4731:1: rule__MapInstance__KeysAssignment_3_0 : ( RULE_ID ) ;
     public final void rule__MapInstance__KeysAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4596:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4597:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4735:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4736:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4597:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4598:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4736:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4737:1: RULE_ID
             {
              before(grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_3_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_3_09217); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_3_09495); 
              after(grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_3_0_0()); 
 
             }
@@ -12203,20 +12550,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__ValuesAssignment_3_2"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4607:1: rule__MapInstance__ValuesAssignment_3_2 : ( ruleNestedType ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4746:1: rule__MapInstance__ValuesAssignment_3_2 : ( ruleNestedType ) ;
     public final void rule__MapInstance__ValuesAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4611:1: ( ( ruleNestedType ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4612:1: ( ruleNestedType )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4750:1: ( ( ruleNestedType ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4751:1: ( ruleNestedType )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4612:1: ( ruleNestedType )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4613:1: ruleNestedType
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4751:1: ( ruleNestedType )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4752:1: ruleNestedType
             {
              before(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_3_2_0()); 
-            pushFollow(FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_3_29248);
+            pushFollow(FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_3_29526);
             ruleNestedType();
 
             state._fsp--;
@@ -12244,20 +12591,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__KeysAssignment_4_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4622:1: rule__MapInstance__KeysAssignment_4_1 : ( RULE_ID ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4761:1: rule__MapInstance__KeysAssignment_4_1 : ( RULE_ID ) ;
     public final void rule__MapInstance__KeysAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4626:1: ( ( RULE_ID ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4627:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4765:1: ( ( RULE_ID ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4766:1: ( RULE_ID )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4627:1: ( RULE_ID )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4628:1: RULE_ID
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4766:1: ( RULE_ID )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4767:1: RULE_ID
             {
              before(grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_4_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_4_19279); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_4_19557); 
              after(grammarAccess.getMapInstanceAccess().getKeysIDTerminalRuleCall_4_1_0()); 
 
             }
@@ -12281,20 +12628,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapInstance__ValuesAssignment_4_3"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4637:1: rule__MapInstance__ValuesAssignment_4_3 : ( ruleNestedType ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4776:1: rule__MapInstance__ValuesAssignment_4_3 : ( ruleNestedType ) ;
     public final void rule__MapInstance__ValuesAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4641:1: ( ( ruleNestedType ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4642:1: ( ruleNestedType )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4780:1: ( ( ruleNestedType ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4781:1: ( ruleNestedType )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4642:1: ( ruleNestedType )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4643:1: ruleNestedType
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4781:1: ( ruleNestedType )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4782:1: ruleNestedType
             {
              before(grammarAccess.getMapInstanceAccess().getValuesNestedTypeParserRuleCall_4_3_0()); 
-            pushFollow(FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_4_39310);
+            pushFollow(FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_4_39588);
             ruleNestedType();
 
             state._fsp--;
@@ -12322,20 +12669,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__ValuesAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4652:1: rule__StringList__ValuesAssignment_1 : ( RULE_STRING ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4791:1: rule__StringList__ValuesAssignment_1 : ( RULE_STRING ) ;
     public final void rule__StringList__ValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4656:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4657:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4795:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4796:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4657:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4658:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4796:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4797:1: RULE_STRING
             {
              before(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_19341); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_19619); 
              after(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -12359,20 +12706,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringList__ValuesAssignment_2_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4667:1: rule__StringList__ValuesAssignment_2_1 : ( RULE_STRING ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4806:1: rule__StringList__ValuesAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__StringList__ValuesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4671:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4672:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4810:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4811:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4672:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4673:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4811:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4812:1: RULE_STRING
             {
              before(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_2_19372); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_2_19650); 
              after(grammarAccess.getStringListAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
 
             }
@@ -12396,20 +12743,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedType__ListAssignment_0"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4682:1: rule__NestedType__ListAssignment_0 : ( ruleStringList ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4821:1: rule__NestedType__ListAssignment_0 : ( ruleStringList ) ;
     public final void rule__NestedType__ListAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4686:1: ( ( ruleStringList ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4687:1: ( ruleStringList )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4825:1: ( ( ruleStringList ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4826:1: ( ruleStringList )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4687:1: ( ruleStringList )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4688:1: ruleStringList
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4826:1: ( ruleStringList )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4827:1: ruleStringList
             {
              before(grammarAccess.getNestedTypeAccess().getListStringListParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleStringList_in_rule__NestedType__ListAssignment_09403);
+            pushFollow(FOLLOW_ruleStringList_in_rule__NestedType__ListAssignment_09681);
             ruleStringList();
 
             state._fsp--;
@@ -12437,20 +12784,20 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedType__StringAssignment_1"
-    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4697:1: rule__NestedType__StringAssignment_1 : ( RULE_STRING ) ;
+    // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4836:1: rule__NestedType__StringAssignment_1 : ( RULE_STRING ) ;
     public final void rule__NestedType__StringAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4701:1: ( ( RULE_STRING ) )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4702:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4840:1: ( ( RULE_STRING ) )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4841:1: ( RULE_STRING )
             {
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4702:1: ( RULE_STRING )
-            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4703:1: RULE_STRING
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4841:1: ( RULE_STRING )
+            // ../mobgen.ui/src-gen/nl/sison/dsl/ui/contentassist/antlr/internal/InternalMobgen.g:4842:1: RULE_STRING
             {
              before(grammarAccess.getNestedTypeAccess().getStringSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NestedType__StringAssignment_19434); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__NestedType__StringAssignment_19712); 
              after(grammarAccess.getNestedTypeAccess().getStringSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -12494,392 +12841,404 @@ public class InternalMobgenParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MobgenHeader__Group__0_in_ruleMobgenHeader334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_entryRuleMobgenHeaderKeyValuePair361 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMobgenHeaderKeyValuePair368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__0_in_ruleMobgenHeaderKeyValuePair394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson421 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenJson428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__0_in_ruleMobgenJson454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue481 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObjectValue488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObjectValue__Alternatives_in_ruleJsonObjectValue514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue541 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonCompositeValue548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonCompositeValue__Alternatives_in_ruleJsonCompositeValue574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue601 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonLiteralValue608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonLiteralValue__Alternatives_in_ruleJsonLiteralValue634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject661 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__0_in_ruleJsonObject694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair721 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__0_in_ruleJsonKeyValuePair754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray781 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__0_in_ruleJsonArray814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition841 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenResourceDefinition848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenResourceDefinition__Alternatives_in_ruleMobgenResourceDefinition874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance901 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__0_in_ruleEnumInstance934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance961 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__0_in_ruleMapInstance994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList1021 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringList1028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__0_in_ruleStringList1054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType1081 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType1088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NestedType__Alternatives_in_ruleNestedType1114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__ResourcesAssignment_1_0_in_rule__Mobgen__Alternatives_11150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__CallsAssignment_1_1_in_rule__Mobgen__Alternatives_11168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0_in_rule__MobgenHeaderKeyValuePair__Alternatives_21201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_1_in_rule__MobgenHeaderKeyValuePair__Alternatives_21219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObjectValue__ValueAssignment_0_in_rule__JsonObjectValue__Alternatives1252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObjectValue__CompositeAssignment_1_in_rule__JsonObjectValue__Alternatives1270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObject_in_rule__JsonCompositeValue__Alternatives1303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_rule__JsonCompositeValue__Alternatives1320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__JsonLiteralValue__Alternatives1352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_rule__JsonLiteralValue__Alternatives1369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_rule__JsonLiteralValue__Alternatives1386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_rule__JsonLiteralValue__Alternatives1403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_rule__JsonLiteralValue__Alternatives1420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_rule__JsonLiteralValue__Alternatives1437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_rule__JsonLiteralValue__Alternatives1454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenResourceDefinition__ResourcesAssignment_0_in_rule__MobgenResourceDefinition__Alternatives1486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_rule__MobgenResourceDefinition__Alternatives1504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NestedType__ListAssignment_0_in_rule__NestedType__Alternatives1536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NestedType__StringAssignment_1_in_rule__NestedType__Alternatives1554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__Group__0__Impl_in_rule__Mobgen__Group__01585 = new BitSet(new long[]{0x0000018000800000L});
-    public static final BitSet FOLLOW_rule__Mobgen__Group__1_in_rule__Mobgen__Group__01588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__PlatformAssignment_0_in_rule__Mobgen__Group__0__Impl1615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__Group__1__Impl_in_rule__Mobgen__Group__11645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1674 = new BitSet(new long[]{0x0000018000800002L});
-    public static final BitSet FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1686 = new BitSet(new long[]{0x0000018000800002L});
-    public static final BitSet FOLLOW_rule__Platform__Group__0__Impl_in_rule__Platform__Group__01723 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Platform__Group__1_in_rule__Platform__Group__01726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Platform__Group__0__Impl1754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group__1__Impl_in_rule__Platform__Group__11785 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__Platform__Group__2_in_rule__Platform__Group__11788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Platform__Group__1__Impl1816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group__2__Impl_in_rule__Platform__Group__21847 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__Platform__Group__3_in_rule__Platform__Group__21850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1879 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1891 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_rule__Platform__Group__3__Impl_in_rule__Platform__Group__31924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Platform__Group__3__Impl1952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__0__Impl_in_rule__Platform__Group_2__01991 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__1_in_rule__Platform__Group_2__01994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__PlatformsAssignment_2_0_in_rule__Platform__Group_2__0__Impl2021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__1__Impl_in_rule__Platform__Group_2__12051 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__2_in_rule__Platform__Group_2__12054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Platform__Group_2__1__Impl2082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__Group_2__2__Impl_in_rule__Platform__Group_2__22113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Platform__GenerateWhereAssignment_2_2_in_rule__Platform__Group_2__2__Impl2140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__0__Impl_in_rule__MobgenCallDefinition__Group__02176 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__1_in_rule__MobgenCallDefinition__Group__02179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__MobgenCallDefinition__Group__0__Impl2207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__1__Impl_in_rule__MobgenCallDefinition__Group__12238 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__2_in_rule__MobgenCallDefinition__Group__12241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__NameAssignment_1_in_rule__MobgenCallDefinition__Group__1__Impl2268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__2__Impl_in_rule__MobgenCallDefinition__Group__22298 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__3_in_rule__MobgenCallDefinition__Group__22301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__MobgenCallDefinition__Group__2__Impl2329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__3__Impl_in_rule__MobgenCallDefinition__Group__32360 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__4_in_rule__MobgenCallDefinition__Group__32363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__MethodAssignment_3_in_rule__MobgenCallDefinition__Group__3__Impl2390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__4__Impl_in_rule__MobgenCallDefinition__Group__42420 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__5_in_rule__MobgenCallDefinition__Group__42423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__MobgenCallDefinition__Group__4__Impl2451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__5__Impl_in_rule__MobgenCallDefinition__Group__52482 = new BitSet(new long[]{0x0000000284000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__6_in_rule__MobgenCallDefinition__Group__52485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__UriAssignment_5_in_rule__MobgenCallDefinition__Group__5__Impl2512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__6__Impl_in_rule__MobgenCallDefinition__Group__62542 = new BitSet(new long[]{0x0000000284000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__7_in_rule__MobgenCallDefinition__Group__62545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__0_in_rule__MobgenCallDefinition__Group__6__Impl2572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__7__Impl_in_rule__MobgenCallDefinition__Group__72603 = new BitSet(new long[]{0x0000000284000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__8_in_rule__MobgenCallDefinition__Group__72606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__0_in_rule__MobgenCallDefinition__Group__7__Impl2633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__8__Impl_in_rule__MobgenCallDefinition__Group__82664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__0_in_rule__MobgenCallDefinition__Group__8__Impl2691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__0__Impl_in_rule__MobgenCallDefinition__Group_6__02740 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__1_in_rule__MobgenCallDefinition__Group_6__02743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__MobgenCallDefinition__Group_6__0__Impl2771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__1__Impl_in_rule__MobgenCallDefinition__Group_6__12802 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__2_in_rule__MobgenCallDefinition__Group_6__12805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__MobgenCallDefinition__Group_6__1__Impl2833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__2__Impl_in_rule__MobgenCallDefinition__Group_6__22864 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__3_in_rule__MobgenCallDefinition__Group_6__22867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__MobgenCallDefinition__Group_6__2__Impl2895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__3__Impl_in_rule__MobgenCallDefinition__Group_6__32926 = new BitSet(new long[]{0x0000000400000800L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__4_in_rule__MobgenCallDefinition__Group_6__32929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__MobgenCallDefinition__Group_6__3__Impl2957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__4__Impl_in_rule__MobgenCallDefinition__Group_6__42988 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__5_in_rule__MobgenCallDefinition__Group_6__42991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__RequestHeadersAssignment_6_4_in_rule__MobgenCallDefinition__Group_6__4__Impl3018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__5__Impl_in_rule__MobgenCallDefinition__Group_6__53048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__0_in_rule__MobgenCallDefinition__Group_6__5__Impl3075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__0__Impl_in_rule__MobgenCallDefinition__Group_6_5__03118 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__1_in_rule__MobgenCallDefinition__Group_6_5__03121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__MobgenCallDefinition__Group_6_5__0__Impl3149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__1__Impl_in_rule__MobgenCallDefinition__Group_6_5__13180 = new BitSet(new long[]{0x0000000400000800L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__2_in_rule__MobgenCallDefinition__Group_6_5__13183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__MobgenCallDefinition__Group_6_5__1__Impl3211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__2__Impl_in_rule__MobgenCallDefinition__Group_6_5__23242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2_in_rule__MobgenCallDefinition__Group_6_5__2__Impl3269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__0__Impl_in_rule__MobgenCallDefinition__Group_7__03305 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__1_in_rule__MobgenCallDefinition__Group_7__03308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__MobgenCallDefinition__Group_7__0__Impl3336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__1__Impl_in_rule__MobgenCallDefinition__Group_7__13367 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__2_in_rule__MobgenCallDefinition__Group_7__13370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__MobgenCallDefinition__Group_7__1__Impl3398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__2__Impl_in_rule__MobgenCallDefinition__Group_7__23429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__JsonToClientAssignment_7_2_in_rule__MobgenCallDefinition__Group_7__2__Impl3456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__0__Impl_in_rule__MobgenCallDefinition__Group_8__03492 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__1_in_rule__MobgenCallDefinition__Group_8__03495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__MobgenCallDefinition__Group_8__0__Impl3523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__1__Impl_in_rule__MobgenCallDefinition__Group_8__13554 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__2_in_rule__MobgenCallDefinition__Group_8__13557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__MobgenCallDefinition__Group_8__1__Impl3585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__2__Impl_in_rule__MobgenCallDefinition__Group_8__23616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenCallDefinition__JsonToServerAssignment_8_2_in_rule__MobgenCallDefinition__Group_8__2__Impl3643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group__0__Impl_in_rule__URI__Group__03679 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__URI__Group__1_in_rule__URI__Group__03682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3711 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3723 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__URI__Group__1__Impl_in_rule__URI__Group__13756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3785 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3797 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__0__Impl_in_rule__URI__Group_1__03834 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__1_in_rule__URI__Group_1__03837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__URI__Group_1__0__Impl3865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__1__Impl_in_rule__URI__Group_1__13896 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__2_in_rule__URI__Group_1__13899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__ParametersAssignment_1_1_in_rule__URI__Group_1__1__Impl3926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__2__Impl_in_rule__URI__Group_1__23956 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__3_in_rule__URI__Group_1__23959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__URI__Group_1__2__Impl3987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__Group_1__3__Impl_in_rule__URI__Group_1__34018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__URI__StringSuffixAssignment_1_3_in_rule__URI__Group_1__3__Impl4045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__0__Impl_in_rule__MobgenHeader__Group__04083 = new BitSet(new long[]{0x0000000400000800L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__1_in_rule__MobgenHeader__Group__04086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__NameAssignment_0_in_rule__MobgenHeader__Group__0__Impl4113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__1__Impl_in_rule__MobgenHeader__Group__14144 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__2_in_rule__MobgenHeader__Group__14147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__MobgenHeader__Group__1__Impl4175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__2__Impl_in_rule__MobgenHeader__Group__24206 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__3_in_rule__MobgenHeader__Group__24209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__MobgenHeader__Group__2__Impl4237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__3__Impl_in_rule__MobgenHeader__Group__34268 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__4_in_rule__MobgenHeader__Group__34271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_3_in_rule__MobgenHeader__Group__3__Impl4298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__4__Impl_in_rule__MobgenHeader__Group__44328 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__5_in_rule__MobgenHeader__Group__44331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__0_in_rule__MobgenHeader__Group__4__Impl4358 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__5__Impl_in_rule__MobgenHeader__Group__54389 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__6_in_rule__MobgenHeader__Group__54392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__MobgenHeader__Group__5__Impl4421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__6__Impl_in_rule__MobgenHeader__Group__64454 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__7_in_rule__MobgenHeader__Group__64457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__MobgenHeader__Group__6__Impl4485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group__7__Impl_in_rule__MobgenHeader__Group__74516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__MobgenHeader__Group__7__Impl4544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__0__Impl_in_rule__MobgenHeader__Group_4__04591 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__1_in_rule__MobgenHeader__Group_4__04594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__MobgenHeader__Group_4__0__Impl4622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__1__Impl_in_rule__MobgenHeader__Group_4__14653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_4_1_in_rule__MobgenHeader__Group_4__1__Impl4680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__0__Impl_in_rule__MobgenHeaderKeyValuePair__Group__04714 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__1_in_rule__MobgenHeaderKeyValuePair__Group__04717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_in_rule__MobgenHeaderKeyValuePair__Group__0__Impl4744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__1__Impl_in_rule__MobgenHeaderKeyValuePair__Group__14774 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__2_in_rule__MobgenHeaderKeyValuePair__Group__14777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__MobgenHeaderKeyValuePair__Group__1__Impl4805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group__2__Impl_in_rule__MobgenHeaderKeyValuePair__Group__24836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Alternatives_2_in_rule__MobgenHeaderKeyValuePair__Group__2__Impl4863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__0__Impl_in_rule__MobgenJson__Group__04899 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__1_in_rule__MobgenJson__Group__04902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__NameAssignment_0_in_rule__MobgenJson__Group__0__Impl4929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__1__Impl_in_rule__MobgenJson__Group__14959 = new BitSet(new long[]{0x00000020001007F0L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__2_in_rule__MobgenJson__Group__14962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__MobgenJson__Group__1__Impl4990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__2__Impl_in_rule__MobgenJson__Group__25021 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__3_in_rule__MobgenJson__Group__25024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__ValueAssignment_2_in_rule__MobgenJson__Group__2__Impl5051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MobgenJson__Group__3__Impl_in_rule__MobgenJson__Group__35081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__MobgenJson__Group__3__Impl5109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__0__Impl_in_rule__JsonObject__Group__05148 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__1_in_rule__JsonObject__Group__05151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__JsonObject__Group__0__Impl5179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__1__Impl_in_rule__JsonObject__Group__15210 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__2_in_rule__JsonObject__Group__15213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__KeyValuePairAssignment_1_in_rule__JsonObject__Group__1__Impl5240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__2__Impl_in_rule__JsonObject__Group__25270 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__3_in_rule__JsonObject__Group__25273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group_2__0_in_rule__JsonObject__Group__2__Impl5300 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__3__Impl_in_rule__JsonObject__Group__35331 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__4_in_rule__JsonObject__Group__35334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__JsonObject__Group__3__Impl5363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group__4__Impl_in_rule__JsonObject__Group__45396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__JsonObject__Group__4__Impl5424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group_2__0__Impl_in_rule__JsonObject__Group_2__05465 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group_2__1_in_rule__JsonObject__Group_2__05468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__JsonObject__Group_2__0__Impl5496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__Group_2__1__Impl_in_rule__JsonObject__Group_2__15527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonObject__KeyValuePairAssignment_2_1_in_rule__JsonObject__Group_2__1__Impl5554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__0__Impl_in_rule__JsonKeyValuePair__Group__05588 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__1_in_rule__JsonKeyValuePair__Group__05591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__KeyAssignment_0_in_rule__JsonKeyValuePair__Group__0__Impl5618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__1__Impl_in_rule__JsonKeyValuePair__Group__15648 = new BitSet(new long[]{0x00000020001007F0L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__2_in_rule__JsonKeyValuePair__Group__15651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__JsonKeyValuePair__Group__1__Impl5679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__2__Impl_in_rule__JsonKeyValuePair__Group__25710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonKeyValuePair__ValueAssignment_2_in_rule__JsonKeyValuePair__Group__2__Impl5737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__0__Impl_in_rule__JsonArray__Group__05773 = new BitSet(new long[]{0x00000020001007F0L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__1_in_rule__JsonArray__Group__05776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__JsonArray__Group__0__Impl5804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__1__Impl_in_rule__JsonArray__Group__15835 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__2_in_rule__JsonArray__Group__15838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__ItemsAssignment_1_in_rule__JsonArray__Group__1__Impl5865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__2__Impl_in_rule__JsonArray__Group__25895 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__3_in_rule__JsonArray__Group__25898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group_2__0_in_rule__JsonArray__Group__2__Impl5925 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__3__Impl_in_rule__JsonArray__Group__35956 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__4_in_rule__JsonArray__Group__35959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__JsonArray__Group__3__Impl5988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group__4__Impl_in_rule__JsonArray__Group__46021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__JsonArray__Group__4__Impl6049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group_2__0__Impl_in_rule__JsonArray__Group_2__06090 = new BitSet(new long[]{0x00000020001007F0L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group_2__1_in_rule__JsonArray__Group_2__06093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__JsonArray__Group_2__0__Impl6121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__Group_2__1__Impl_in_rule__JsonArray__Group_2__16152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JsonArray__ItemsAssignment_2_1_in_rule__JsonArray__Group_2__1__Impl6179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__0__Impl_in_rule__EnumInstance__Group__06213 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__1_in_rule__EnumInstance__Group__06216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__EnumInstance__Group__0__Impl6244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__1__Impl_in_rule__EnumInstance__Group__16275 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__2_in_rule__EnumInstance__Group__16278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__NameAssignment_1_in_rule__EnumInstance__Group__1__Impl6305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__2__Impl_in_rule__EnumInstance__Group__26335 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__3_in_rule__EnumInstance__Group__26338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__EnumInstance__Group__2__Impl6366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__3__Impl_in_rule__EnumInstance__Group__36397 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__4_in_rule__EnumInstance__Group__36400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__ValuesAssignment_3_in_rule__EnumInstance__Group__3__Impl6427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__4__Impl_in_rule__EnumInstance__Group__46457 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__5_in_rule__EnumInstance__Group__46460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__0_in_rule__EnumInstance__Group__4__Impl6487 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__5__Impl_in_rule__EnumInstance__Group__56518 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__6_in_rule__EnumInstance__Group__56521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__EnumInstance__Group__5__Impl6550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group__6__Impl_in_rule__EnumInstance__Group__66583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__EnumInstance__Group__6__Impl6611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__0__Impl_in_rule__EnumInstance__Group_4__06656 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__1_in_rule__EnumInstance__Group_4__06659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__EnumInstance__Group_4__0__Impl6687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__1__Impl_in_rule__EnumInstance__Group_4__16718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumInstance__ValuesAssignment_4_1_in_rule__EnumInstance__Group_4__1__Impl6745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__0__Impl_in_rule__MapInstance__Group__06779 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__1_in_rule__MapInstance__Group__06782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__MapInstance__Group__0__Impl6810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__1__Impl_in_rule__MapInstance__Group__16841 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__2_in_rule__MapInstance__Group__16844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__NameAssignment_1_in_rule__MapInstance__Group__1__Impl6871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__2__Impl_in_rule__MapInstance__Group__26901 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__3_in_rule__MapInstance__Group__26904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__MapInstance__Group__2__Impl6932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__3__Impl_in_rule__MapInstance__Group__36963 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__4_in_rule__MapInstance__Group__36966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__0_in_rule__MapInstance__Group__3__Impl6993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__4__Impl_in_rule__MapInstance__Group__47023 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__5_in_rule__MapInstance__Group__47026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__0_in_rule__MapInstance__Group__4__Impl7053 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__5__Impl_in_rule__MapInstance__Group__57084 = new BitSet(new long[]{0x0000000800200000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__6_in_rule__MapInstance__Group__57087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__MapInstance__Group__5__Impl7116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group__6__Impl_in_rule__MapInstance__Group__67149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__MapInstance__Group__6__Impl7177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__0__Impl_in_rule__MapInstance__Group_3__07222 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__1_in_rule__MapInstance__Group_3__07225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__KeysAssignment_3_0_in_rule__MapInstance__Group_3__0__Impl7252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__1__Impl_in_rule__MapInstance__Group_3__17282 = new BitSet(new long[]{0x0000002000000010L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__2_in_rule__MapInstance__Group_3__17285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__MapInstance__Group_3__1__Impl7313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_3__2__Impl_in_rule__MapInstance__Group_3__27344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__ValuesAssignment_3_2_in_rule__MapInstance__Group_3__2__Impl7371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__0__Impl_in_rule__MapInstance__Group_4__07407 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__1_in_rule__MapInstance__Group_4__07410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__MapInstance__Group_4__0__Impl7438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__1__Impl_in_rule__MapInstance__Group_4__17469 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__2_in_rule__MapInstance__Group_4__17472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__KeysAssignment_4_1_in_rule__MapInstance__Group_4__1__Impl7499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__2__Impl_in_rule__MapInstance__Group_4__27529 = new BitSet(new long[]{0x0000002000000010L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__3_in_rule__MapInstance__Group_4__27532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__MapInstance__Group_4__2__Impl7560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__Group_4__3__Impl_in_rule__MapInstance__Group_4__37591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapInstance__ValuesAssignment_4_3_in_rule__MapInstance__Group_4__3__Impl7618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__0__Impl_in_rule__StringList__Group__07656 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__StringList__Group__1_in_rule__StringList__Group__07659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__StringList__Group__0__Impl7687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__1__Impl_in_rule__StringList__Group__17718 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__StringList__Group__2_in_rule__StringList__Group__17721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__ValuesAssignment_1_in_rule__StringList__Group__1__Impl7748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__2__Impl_in_rule__StringList__Group__27778 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__StringList__Group__3_in_rule__StringList__Group__27781 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group_2__0_in_rule__StringList__Group__2__Impl7808 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__3__Impl_in_rule__StringList__Group__37839 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_rule__StringList__Group__4_in_rule__StringList__Group__37842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__StringList__Group__3__Impl7871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group__4__Impl_in_rule__StringList__Group__47904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__StringList__Group__4__Impl7932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group_2__0__Impl_in_rule__StringList__Group_2__07973 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__StringList__Group_2__1_in_rule__StringList__Group_2__07976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__StringList__Group_2__0__Impl8004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__Group_2__1__Impl_in_rule__StringList__Group_2__18035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringList__ValuesAssignment_2_1_in_rule__StringList__Group_2__1__Impl8062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlatform_in_rule__Mobgen__PlatformAssignment_08101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_rule__Mobgen__ResourcesAssignment_1_08132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenCallDefinition_in_rule__Mobgen__CallsAssignment_1_18163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Platform__PlatformsAssignment_2_08194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Platform__GenerateWhereAssignment_2_28225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenCallDefinition__NameAssignment_18256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RESTFUL_METHODS_in_rule__MobgenCallDefinition__MethodAssignment_38287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleURI_in_rule__MobgenCallDefinition__UriAssignment_58318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__RequestHeadersAssignment_6_48349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_28380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToClientAssignment_7_28411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToServerAssignment_8_28442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringPrefixAssignment_08473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__URI__ParametersAssignment_1_18504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringSuffixAssignment_1_38535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenHeader__NameAssignment_08566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_38597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_4_18628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__KeyAssignment_08659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_08690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MOBGEN_HEADER_PARAMETER_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_2_18721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenJson__NameAssignment_08752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__MobgenJson__ValueAssignment_28783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_rule__JsonObjectValue__ValueAssignment_08814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_rule__JsonObjectValue__CompositeAssignment_18845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_18876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_2_18907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__JsonKeyValuePair__KeyAssignment_08938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonKeyValuePair__ValueAssignment_28969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_19000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_2_19031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapInstance_in_rule__MobgenResourceDefinition__ResourcesAssignment_09062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_19093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_39124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_4_19155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__NameAssignment_19186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_3_09217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_3_29248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_4_19279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_4_39310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_19341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_2_19372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringList_in_rule__NestedType__ListAssignment_09403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__NestedType__StringAssignment_19434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Alternatives_in_ruleMobgenHeaderKeyValuePair394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderParameter_in_entryRuleMobgenHeaderParameter421 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenHeaderParameter428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__0_in_ruleMobgenHeaderParameter454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenJson_in_entryRuleMobgenJson481 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenJson488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__0_in_ruleMobgenJson514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_entryRuleJsonObjectValue541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObjectValue548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObjectValue__Alternatives_in_ruleJsonObjectValue574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_entryRuleJsonCompositeValue601 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonCompositeValue608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonCompositeValue__Alternatives_in_ruleJsonCompositeValue634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_entryRuleJsonLiteralValue661 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonLiteralValue668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonLiteralValue__Alternatives_in_ruleJsonLiteralValue694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject721 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__0_in_ruleJsonObject754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_entryRuleJsonKeyValuePair781 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonKeyValuePair788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__0_in_ruleJsonKeyValuePair814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__0_in_ruleJsonArray874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_entryRuleMobgenResourceDefinition901 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMobgenResourceDefinition908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenResourceDefinition__Alternatives_in_ruleMobgenResourceDefinition934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__0_in_ruleEnumInstance994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_entryRuleMapInstance1021 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMapInstance1028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__0_in_ruleMapInstance1054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_entryRuleStringList1081 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringList1088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__0_in_ruleStringList1114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedType_in_entryRuleNestedType1141 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNestedType1148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NestedType__Alternatives_in_ruleNestedType1174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__ResourcesAssignment_1_0_in_rule__Mobgen__Alternatives_11210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__CallsAssignment_1_1_in_rule__Mobgen__Alternatives_11228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__0_in_rule__MobgenHeaderKeyValuePair__Alternatives1261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__ParameterAssignment_1_in_rule__MobgenHeaderKeyValuePair__Alternatives1279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObjectValue__ValueAssignment_0_in_rule__JsonObjectValue__Alternatives1312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObjectValue__CompositeAssignment_1_in_rule__JsonObjectValue__Alternatives1330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObject_in_rule__JsonCompositeValue__Alternatives1363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_rule__JsonCompositeValue__Alternatives1380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__JsonLiteralValue__Alternatives1412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_OBJECT_in_rule__JsonLiteralValue__Alternatives1429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTY_JSON_ARRAY_in_rule__JsonLiteralValue__Alternatives1446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_BOOLEAN_in_rule__JsonLiteralValue__Alternatives1463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_LITERAL_NULL_in_rule__JsonLiteralValue__Alternatives1480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_NUMBER_in_rule__JsonLiteralValue__Alternatives1497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JSON_META_SCALAR_TYPE_in_rule__JsonLiteralValue__Alternatives1514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenResourceDefinition__ResourcesAssignment_0_in_rule__MobgenResourceDefinition__Alternatives1546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_rule__MobgenResourceDefinition__Alternatives1564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NestedType__ListAssignment_0_in_rule__NestedType__Alternatives1596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NestedType__StringAssignment_1_in_rule__NestedType__Alternatives1614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__Group__0__Impl_in_rule__Mobgen__Group__01645 = new BitSet(new long[]{0x000000C000400000L});
+    public static final BitSet FOLLOW_rule__Mobgen__Group__1_in_rule__Mobgen__Group__01648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__PlatformAssignment_0_in_rule__Mobgen__Group__0__Impl1675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__Group__1__Impl_in_rule__Mobgen__Group__11705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1734 = new BitSet(new long[]{0x000000C000400002L});
+    public static final BitSet FOLLOW_rule__Mobgen__Alternatives_1_in_rule__Mobgen__Group__1__Impl1746 = new BitSet(new long[]{0x000000C000400002L});
+    public static final BitSet FOLLOW_rule__Platform__Group__0__Impl_in_rule__Platform__Group__01783 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__Platform__Group__1_in_rule__Platform__Group__01786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Platform__Group__0__Impl1814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group__1__Impl_in_rule__Platform__Group__11845 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__Platform__Group__2_in_rule__Platform__Group__11848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Platform__Group__1__Impl1876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group__2__Impl_in_rule__Platform__Group__21907 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__Platform__Group__3_in_rule__Platform__Group__21910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1939 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__0_in_rule__Platform__Group__2__Impl1951 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_rule__Platform__Group__3__Impl_in_rule__Platform__Group__31984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Platform__Group__3__Impl2012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__0__Impl_in_rule__Platform__Group_2__02051 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__1_in_rule__Platform__Group_2__02054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__PlatformsAssignment_2_0_in_rule__Platform__Group_2__0__Impl2081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__1__Impl_in_rule__Platform__Group_2__12111 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__2_in_rule__Platform__Group_2__12114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Platform__Group_2__1__Impl2142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__Group_2__2__Impl_in_rule__Platform__Group_2__22173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Platform__GenerateWhereAssignment_2_2_in_rule__Platform__Group_2__2__Impl2200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__0__Impl_in_rule__MobgenCallDefinition__Group__02236 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__1_in_rule__MobgenCallDefinition__Group__02239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__MobgenCallDefinition__Group__0__Impl2267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__1__Impl_in_rule__MobgenCallDefinition__Group__12298 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__2_in_rule__MobgenCallDefinition__Group__12301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__NameAssignment_1_in_rule__MobgenCallDefinition__Group__1__Impl2328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__2__Impl_in_rule__MobgenCallDefinition__Group__22358 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__3_in_rule__MobgenCallDefinition__Group__22361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__MobgenCallDefinition__Group__2__Impl2389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__3__Impl_in_rule__MobgenCallDefinition__Group__32420 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__4_in_rule__MobgenCallDefinition__Group__32423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__MethodAssignment_3_in_rule__MobgenCallDefinition__Group__3__Impl2450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__4__Impl_in_rule__MobgenCallDefinition__Group__42480 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__5_in_rule__MobgenCallDefinition__Group__42483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__MobgenCallDefinition__Group__4__Impl2511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__5__Impl_in_rule__MobgenCallDefinition__Group__52542 = new BitSet(new long[]{0x0000000142000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__6_in_rule__MobgenCallDefinition__Group__52545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__UriAssignment_5_in_rule__MobgenCallDefinition__Group__5__Impl2572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__6__Impl_in_rule__MobgenCallDefinition__Group__62602 = new BitSet(new long[]{0x0000000142000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__7_in_rule__MobgenCallDefinition__Group__62605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__0_in_rule__MobgenCallDefinition__Group__6__Impl2632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__7__Impl_in_rule__MobgenCallDefinition__Group__72663 = new BitSet(new long[]{0x0000000142000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__8_in_rule__MobgenCallDefinition__Group__72666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__0_in_rule__MobgenCallDefinition__Group__7__Impl2693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group__8__Impl_in_rule__MobgenCallDefinition__Group__82724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__0_in_rule__MobgenCallDefinition__Group__8__Impl2751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__0__Impl_in_rule__MobgenCallDefinition__Group_6__02800 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__1_in_rule__MobgenCallDefinition__Group_6__02803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__MobgenCallDefinition__Group_6__0__Impl2831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__1__Impl_in_rule__MobgenCallDefinition__Group_6__12862 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__2_in_rule__MobgenCallDefinition__Group_6__12865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__MobgenCallDefinition__Group_6__1__Impl2893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__2__Impl_in_rule__MobgenCallDefinition__Group_6__22924 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__3_in_rule__MobgenCallDefinition__Group_6__22927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__MobgenCallDefinition__Group_6__2__Impl2955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__3__Impl_in_rule__MobgenCallDefinition__Group_6__32986 = new BitSet(new long[]{0x0000000200000800L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__4_in_rule__MobgenCallDefinition__Group_6__32989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__MobgenCallDefinition__Group_6__3__Impl3017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__4__Impl_in_rule__MobgenCallDefinition__Group_6__43048 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__5_in_rule__MobgenCallDefinition__Group_6__43051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__RequestHeadersAssignment_6_4_in_rule__MobgenCallDefinition__Group_6__4__Impl3078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6__5__Impl_in_rule__MobgenCallDefinition__Group_6__53108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__0_in_rule__MobgenCallDefinition__Group_6__5__Impl3135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__0__Impl_in_rule__MobgenCallDefinition__Group_6_5__03178 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__1_in_rule__MobgenCallDefinition__Group_6_5__03181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__MobgenCallDefinition__Group_6_5__0__Impl3209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__1__Impl_in_rule__MobgenCallDefinition__Group_6_5__13240 = new BitSet(new long[]{0x0000000200000800L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__2_in_rule__MobgenCallDefinition__Group_6_5__13243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__MobgenCallDefinition__Group_6_5__1__Impl3271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_6_5__2__Impl_in_rule__MobgenCallDefinition__Group_6_5__23302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2_in_rule__MobgenCallDefinition__Group_6_5__2__Impl3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__0__Impl_in_rule__MobgenCallDefinition__Group_7__03365 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__1_in_rule__MobgenCallDefinition__Group_7__03368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__MobgenCallDefinition__Group_7__0__Impl3396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__1__Impl_in_rule__MobgenCallDefinition__Group_7__13427 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__2_in_rule__MobgenCallDefinition__Group_7__13430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__MobgenCallDefinition__Group_7__1__Impl3458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_7__2__Impl_in_rule__MobgenCallDefinition__Group_7__23489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__JsonToClientAssignment_7_2_in_rule__MobgenCallDefinition__Group_7__2__Impl3516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__0__Impl_in_rule__MobgenCallDefinition__Group_8__03552 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__1_in_rule__MobgenCallDefinition__Group_8__03555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__MobgenCallDefinition__Group_8__0__Impl3583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__1__Impl_in_rule__MobgenCallDefinition__Group_8__13614 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__2_in_rule__MobgenCallDefinition__Group_8__13617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__MobgenCallDefinition__Group_8__1__Impl3645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__Group_8__2__Impl_in_rule__MobgenCallDefinition__Group_8__23676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenCallDefinition__JsonToServerAssignment_8_2_in_rule__MobgenCallDefinition__Group_8__2__Impl3703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group__0__Impl_in_rule__URI__Group__03739 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__URI__Group__1_in_rule__URI__Group__03742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3771 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__URI__StringPrefixAssignment_0_in_rule__URI__Group__0__Impl3783 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__URI__Group__1__Impl_in_rule__URI__Group__13816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3845 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__0_in_rule__URI__Group__1__Impl3857 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__0__Impl_in_rule__URI__Group_1__03894 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__1_in_rule__URI__Group_1__03897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__URI__Group_1__0__Impl3925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__1__Impl_in_rule__URI__Group_1__13956 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__2_in_rule__URI__Group_1__13959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__ParametersAssignment_1_1_in_rule__URI__Group_1__1__Impl3986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__2__Impl_in_rule__URI__Group_1__24016 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__3_in_rule__URI__Group_1__24019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__URI__Group_1__2__Impl4047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__Group_1__3__Impl_in_rule__URI__Group_1__34078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__URI__StringSuffixAssignment_1_3_in_rule__URI__Group_1__3__Impl4105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__0__Impl_in_rule__MobgenHeader__Group__04143 = new BitSet(new long[]{0x0000000200000800L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__1_in_rule__MobgenHeader__Group__04146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__NameAssignment_0_in_rule__MobgenHeader__Group__0__Impl4173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__1__Impl_in_rule__MobgenHeader__Group__14204 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__2_in_rule__MobgenHeader__Group__14207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__MobgenHeader__Group__1__Impl4235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__2__Impl_in_rule__MobgenHeader__Group__24266 = new BitSet(new long[]{0x0000000000080010L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__3_in_rule__MobgenHeader__Group__24269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__MobgenHeader__Group__2__Impl4297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__3__Impl_in_rule__MobgenHeader__Group__34328 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__4_in_rule__MobgenHeader__Group__34331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_3_in_rule__MobgenHeader__Group__3__Impl4358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__4__Impl_in_rule__MobgenHeader__Group__44388 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__5_in_rule__MobgenHeader__Group__44391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__0_in_rule__MobgenHeader__Group__4__Impl4418 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__5__Impl_in_rule__MobgenHeader__Group__54449 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__6_in_rule__MobgenHeader__Group__54452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__MobgenHeader__Group__5__Impl4481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__6__Impl_in_rule__MobgenHeader__Group__64514 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__7_in_rule__MobgenHeader__Group__64517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__MobgenHeader__Group__6__Impl4545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group__7__Impl_in_rule__MobgenHeader__Group__74576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__MobgenHeader__Group__7__Impl4604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__0__Impl_in_rule__MobgenHeader__Group_4__04651 = new BitSet(new long[]{0x0000000000080010L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__1_in_rule__MobgenHeader__Group_4__04654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__MobgenHeader__Group_4__0__Impl4682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__Group_4__1__Impl_in_rule__MobgenHeader__Group_4__14713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeader__HeaderKeyValuesAssignment_4_1_in_rule__MobgenHeader__Group_4__1__Impl4740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__0__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__04774 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__1_in_rule__MobgenHeaderKeyValuePair__Group_0__04777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0_in_rule__MobgenHeaderKeyValuePair__Group_0__0__Impl4804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__1__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__14834 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__2_in_rule__MobgenHeaderKeyValuePair__Group_0__14837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__MobgenHeaderKeyValuePair__Group_0__1__Impl4865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__Group_0__2__Impl_in_rule__MobgenHeaderKeyValuePair__Group_0__24896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2_in_rule__MobgenHeaderKeyValuePair__Group_0__2__Impl4923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__0__Impl_in_rule__MobgenHeaderParameter__Group__04959 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__1_in_rule__MobgenHeaderParameter__Group__04962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__MobgenHeaderParameter__Group__0__Impl4990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__1__Impl_in_rule__MobgenHeaderParameter__Group__15021 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__2_in_rule__MobgenHeaderParameter__Group__15024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__IdAssignment_1_in_rule__MobgenHeaderParameter__Group__1__Impl5051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenHeaderParameter__Group__2__Impl_in_rule__MobgenHeaderParameter__Group__25081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__MobgenHeaderParameter__Group__2__Impl5109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__0__Impl_in_rule__MobgenJson__Group__05146 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__1_in_rule__MobgenJson__Group__05149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__NameAssignment_0_in_rule__MobgenJson__Group__0__Impl5176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__1__Impl_in_rule__MobgenJson__Group__15206 = new BitSet(new long[]{0x00000010000807F0L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__2_in_rule__MobgenJson__Group__15209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__MobgenJson__Group__1__Impl5237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__2__Impl_in_rule__MobgenJson__Group__25268 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__3_in_rule__MobgenJson__Group__25271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__ValueAssignment_2_in_rule__MobgenJson__Group__2__Impl5298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MobgenJson__Group__3__Impl_in_rule__MobgenJson__Group__35328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__MobgenJson__Group__3__Impl5356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__0__Impl_in_rule__JsonObject__Group__05395 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__1_in_rule__JsonObject__Group__05398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__JsonObject__Group__0__Impl5426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__1__Impl_in_rule__JsonObject__Group__15457 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__2_in_rule__JsonObject__Group__15460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__KeyValuePairAssignment_1_in_rule__JsonObject__Group__1__Impl5487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__2__Impl_in_rule__JsonObject__Group__25517 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__3_in_rule__JsonObject__Group__25520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group_2__0_in_rule__JsonObject__Group__2__Impl5547 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__3__Impl_in_rule__JsonObject__Group__35578 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__4_in_rule__JsonObject__Group__35581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__JsonObject__Group__3__Impl5610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group__4__Impl_in_rule__JsonObject__Group__45643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__JsonObject__Group__4__Impl5671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group_2__0__Impl_in_rule__JsonObject__Group_2__05712 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group_2__1_in_rule__JsonObject__Group_2__05715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__JsonObject__Group_2__0__Impl5743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__Group_2__1__Impl_in_rule__JsonObject__Group_2__15774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonObject__KeyValuePairAssignment_2_1_in_rule__JsonObject__Group_2__1__Impl5801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__0__Impl_in_rule__JsonKeyValuePair__Group__05835 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__1_in_rule__JsonKeyValuePair__Group__05838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__KeyAssignment_0_in_rule__JsonKeyValuePair__Group__0__Impl5865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__1__Impl_in_rule__JsonKeyValuePair__Group__15895 = new BitSet(new long[]{0x00000010000807F0L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__2_in_rule__JsonKeyValuePair__Group__15898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__JsonKeyValuePair__Group__1__Impl5926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__Group__2__Impl_in_rule__JsonKeyValuePair__Group__25957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonKeyValuePair__ValueAssignment_2_in_rule__JsonKeyValuePair__Group__2__Impl5984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__0__Impl_in_rule__JsonArray__Group__06020 = new BitSet(new long[]{0x00000010000807F0L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__1_in_rule__JsonArray__Group__06023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__JsonArray__Group__0__Impl6051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__1__Impl_in_rule__JsonArray__Group__16082 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__2_in_rule__JsonArray__Group__16085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__ItemsAssignment_1_in_rule__JsonArray__Group__1__Impl6112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__2__Impl_in_rule__JsonArray__Group__26142 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__3_in_rule__JsonArray__Group__26145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group_2__0_in_rule__JsonArray__Group__2__Impl6172 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__3__Impl_in_rule__JsonArray__Group__36203 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__4_in_rule__JsonArray__Group__36206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__JsonArray__Group__3__Impl6235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group__4__Impl_in_rule__JsonArray__Group__46268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__JsonArray__Group__4__Impl6296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group_2__0__Impl_in_rule__JsonArray__Group_2__06337 = new BitSet(new long[]{0x00000010000807F0L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group_2__1_in_rule__JsonArray__Group_2__06340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__JsonArray__Group_2__0__Impl6368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__Group_2__1__Impl_in_rule__JsonArray__Group_2__16399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JsonArray__ItemsAssignment_2_1_in_rule__JsonArray__Group_2__1__Impl6426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__0__Impl_in_rule__EnumInstance__Group__06460 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__1_in_rule__EnumInstance__Group__06463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__EnumInstance__Group__0__Impl6491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__1__Impl_in_rule__EnumInstance__Group__16522 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__2_in_rule__EnumInstance__Group__16525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__NameAssignment_1_in_rule__EnumInstance__Group__1__Impl6552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__2__Impl_in_rule__EnumInstance__Group__26582 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__3_in_rule__EnumInstance__Group__26585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__EnumInstance__Group__2__Impl6613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__3__Impl_in_rule__EnumInstance__Group__36644 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__4_in_rule__EnumInstance__Group__36647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__ValuesAssignment_3_in_rule__EnumInstance__Group__3__Impl6674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__4__Impl_in_rule__EnumInstance__Group__46704 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__5_in_rule__EnumInstance__Group__46707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__0_in_rule__EnumInstance__Group__4__Impl6734 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__5__Impl_in_rule__EnumInstance__Group__56765 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__6_in_rule__EnumInstance__Group__56768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__EnumInstance__Group__5__Impl6797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group__6__Impl_in_rule__EnumInstance__Group__66830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__EnumInstance__Group__6__Impl6858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__0__Impl_in_rule__EnumInstance__Group_4__06903 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__1_in_rule__EnumInstance__Group_4__06906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__EnumInstance__Group_4__0__Impl6934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__Group_4__1__Impl_in_rule__EnumInstance__Group_4__16965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumInstance__ValuesAssignment_4_1_in_rule__EnumInstance__Group_4__1__Impl6992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__0__Impl_in_rule__MapInstance__Group__07026 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__1_in_rule__MapInstance__Group__07029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__MapInstance__Group__0__Impl7057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__1__Impl_in_rule__MapInstance__Group__17088 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__2_in_rule__MapInstance__Group__17091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__NameAssignment_1_in_rule__MapInstance__Group__1__Impl7118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__2__Impl_in_rule__MapInstance__Group__27148 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__3_in_rule__MapInstance__Group__27151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__MapInstance__Group__2__Impl7179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__3__Impl_in_rule__MapInstance__Group__37210 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__4_in_rule__MapInstance__Group__37213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__0_in_rule__MapInstance__Group__3__Impl7240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__4__Impl_in_rule__MapInstance__Group__47270 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__5_in_rule__MapInstance__Group__47273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__0_in_rule__MapInstance__Group__4__Impl7300 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__5__Impl_in_rule__MapInstance__Group__57331 = new BitSet(new long[]{0x0000000400100000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__6_in_rule__MapInstance__Group__57334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__MapInstance__Group__5__Impl7363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group__6__Impl_in_rule__MapInstance__Group__67396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__MapInstance__Group__6__Impl7424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__0__Impl_in_rule__MapInstance__Group_3__07469 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__1_in_rule__MapInstance__Group_3__07472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__KeysAssignment_3_0_in_rule__MapInstance__Group_3__0__Impl7499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__1__Impl_in_rule__MapInstance__Group_3__17529 = new BitSet(new long[]{0x0000001000000010L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__2_in_rule__MapInstance__Group_3__17532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__MapInstance__Group_3__1__Impl7560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_3__2__Impl_in_rule__MapInstance__Group_3__27591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__ValuesAssignment_3_2_in_rule__MapInstance__Group_3__2__Impl7618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__0__Impl_in_rule__MapInstance__Group_4__07654 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__1_in_rule__MapInstance__Group_4__07657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__MapInstance__Group_4__0__Impl7685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__1__Impl_in_rule__MapInstance__Group_4__17716 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__2_in_rule__MapInstance__Group_4__17719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__KeysAssignment_4_1_in_rule__MapInstance__Group_4__1__Impl7746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__2__Impl_in_rule__MapInstance__Group_4__27776 = new BitSet(new long[]{0x0000001000000010L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__3_in_rule__MapInstance__Group_4__27779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__MapInstance__Group_4__2__Impl7807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__Group_4__3__Impl_in_rule__MapInstance__Group_4__37838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MapInstance__ValuesAssignment_4_3_in_rule__MapInstance__Group_4__3__Impl7865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__0__Impl_in_rule__StringList__Group__07903 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__StringList__Group__1_in_rule__StringList__Group__07906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__StringList__Group__0__Impl7934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__1__Impl_in_rule__StringList__Group__17965 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__StringList__Group__2_in_rule__StringList__Group__17968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__ValuesAssignment_1_in_rule__StringList__Group__1__Impl7995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__2__Impl_in_rule__StringList__Group__28025 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__StringList__Group__3_in_rule__StringList__Group__28028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group_2__0_in_rule__StringList__Group__2__Impl8055 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__3__Impl_in_rule__StringList__Group__38086 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_rule__StringList__Group__4_in_rule__StringList__Group__38089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__StringList__Group__3__Impl8118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group__4__Impl_in_rule__StringList__Group__48151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__StringList__Group__4__Impl8179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group_2__0__Impl_in_rule__StringList__Group_2__08220 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__StringList__Group_2__1_in_rule__StringList__Group_2__08223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__StringList__Group_2__0__Impl8251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__Group_2__1__Impl_in_rule__StringList__Group_2__18282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringList__ValuesAssignment_2_1_in_rule__StringList__Group_2__1__Impl8309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlatform_in_rule__Mobgen__PlatformAssignment_08348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenResourceDefinition_in_rule__Mobgen__ResourcesAssignment_1_08379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenCallDefinition_in_rule__Mobgen__CallsAssignment_1_18410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Platform__PlatformsAssignment_2_08441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Platform__GenerateWhereAssignment_2_28472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenCallDefinition__NameAssignment_18503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RESTFUL_METHODS_in_rule__MobgenCallDefinition__MethodAssignment_38534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleURI_in_rule__MobgenCallDefinition__UriAssignment_58565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__RequestHeadersAssignment_6_48596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeader_in_rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_28627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToClientAssignment_7_28658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenJson_in_rule__MobgenCallDefinition__JsonToServerAssignment_8_28689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringPrefixAssignment_08720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__URI__ParametersAssignment_1_18751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__URI__StringSuffixAssignment_1_38782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenHeader__NameAssignment_08813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_38844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderKeyValuePair_in_rule__MobgenHeader__HeaderKeyValuesAssignment_4_18875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__KeyAssignment_0_08906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__MobgenHeaderKeyValuePair__ValueAssignment_0_28937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMobgenHeaderParameter_in_rule__MobgenHeaderKeyValuePair__ParameterAssignment_18968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenHeaderParameter__IdAssignment_18999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MobgenJson__NameAssignment_09030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__MobgenJson__ValueAssignment_29061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonLiteralValue_in_rule__JsonObjectValue__ValueAssignment_09092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonCompositeValue_in_rule__JsonObjectValue__CompositeAssignment_19123 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_19154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonKeyValuePair_in_rule__JsonObject__KeyValuePairAssignment_2_19185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__JsonKeyValuePair__KeyAssignment_09216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonKeyValuePair__ValueAssignment_29247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_19278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonObjectValue_in_rule__JsonArray__ItemsAssignment_2_19309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapInstance_in_rule__MobgenResourceDefinition__ResourcesAssignment_09340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_19371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_39402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__ValuesAssignment_4_19433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__NameAssignment_19464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_3_09495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_3_29526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MapInstance__KeysAssignment_4_19557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedType_in_rule__MapInstance__ValuesAssignment_4_39588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_19619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringList__ValuesAssignment_2_19650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringList_in_rule__NestedType__ListAssignment_09681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__NestedType__StringAssignment_19712 = new BitSet(new long[]{0x0000000000000002L});
 
 }

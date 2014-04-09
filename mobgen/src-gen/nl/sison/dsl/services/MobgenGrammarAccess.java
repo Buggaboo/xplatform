@@ -369,46 +369,74 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class MobgenHeaderKeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MobgenHeaderKeyValuePair");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeySTRINGTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
-		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final RuleCall cValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cKeyAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cKeySTRINGTerminalRuleCall_0_0_0 = (RuleCall)cKeyAssignment_0_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
+		private final Assignment cParameterAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cParameterMobgenHeaderParameterParserRuleCall_1_0 = (RuleCall)cParameterAssignment_1.eContents().get(0);
 		
 		//MobgenHeaderKeyValuePair:
-		//	key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER);
+		//	key=STRING "=" value=STRING | parameter=MobgenHeaderParameter;
 		public ParserRule getRule() { return rule; }
 
-		//key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER)
-		public Group getGroup() { return cGroup; }
+		//key=STRING "=" value=STRING | parameter=MobgenHeaderParameter
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//key=STRING "=" value=STRING
+		public Group getGroup_0() { return cGroup_0; }
 
 		//key=STRING
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		public Assignment getKeyAssignment_0_0() { return cKeyAssignment_0_0; }
 
 		//STRING
-		public RuleCall getKeySTRINGTerminalRuleCall_0_0() { return cKeySTRINGTerminalRuleCall_0_0; }
+		public RuleCall getKeySTRINGTerminalRuleCall_0_0_0() { return cKeySTRINGTerminalRuleCall_0_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
-
-		//value=STRING | value=MOBGEN_HEADER_PARAMETER
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 
 		//value=STRING
-		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
+		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_0_2_0() { return cValueSTRINGTerminalRuleCall_0_2_0; }
 
-		//value=MOBGEN_HEADER_PARAMETER
-		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		//parameter=MobgenHeaderParameter
+		public Assignment getParameterAssignment_1() { return cParameterAssignment_1; }
 
-		//MOBGEN_HEADER_PARAMETER
-		public RuleCall getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0() { return cValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0; }
+		//MobgenHeaderParameter
+		public RuleCall getParameterMobgenHeaderParameterParserRuleCall_1_0() { return cParameterMobgenHeaderParameterParserRuleCall_1_0; }
+	}
+
+	public class MobgenHeaderParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MobgenHeaderParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//MobgenHeaderParameter:
+		//	"{" id=ID "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" id=ID "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//id=ID
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 
 	public class MobgenJsonElements extends AbstractParserRuleElementFinder {
@@ -929,7 +957,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	private URIElements pURI;
 	private MobgenHeaderElements pMobgenHeader;
 	private MobgenHeaderKeyValuePairElements pMobgenHeaderKeyValuePair;
-	private TerminalRule tMOBGEN_HEADER_PARAMETER;
+	private MobgenHeaderParameterElements pMobgenHeaderParameter;
 	private TerminalRule tRESTFUL_METHODS;
 	private MobgenJsonElements pMobgenJson;
 	private JsonObjectValueElements pJsonObjectValue;
@@ -1048,7 +1076,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MobgenHeaderKeyValuePair:
-	//	key=STRING "=" (value=STRING | value=MOBGEN_HEADER_PARAMETER);
+	//	key=STRING "=" value=STRING | parameter=MobgenHeaderParameter;
 	public MobgenHeaderKeyValuePairElements getMobgenHeaderKeyValuePairAccess() {
 		return (pMobgenHeaderKeyValuePair != null) ? pMobgenHeaderKeyValuePair : (pMobgenHeaderKeyValuePair = new MobgenHeaderKeyValuePairElements());
 	}
@@ -1057,11 +1085,15 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getMobgenHeaderKeyValuePairAccess().getRule();
 	}
 
-	//terminal MOBGEN_HEADER_PARAMETER:
-	//	"{" ID "}";
-	public TerminalRule getMOBGEN_HEADER_PARAMETERRule() {
-		return (tMOBGEN_HEADER_PARAMETER != null) ? tMOBGEN_HEADER_PARAMETER : (tMOBGEN_HEADER_PARAMETER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MOBGEN_HEADER_PARAMETER"));
-	} 
+	//MobgenHeaderParameter:
+	//	"{" id=ID "}";
+	public MobgenHeaderParameterElements getMobgenHeaderParameterAccess() {
+		return (pMobgenHeaderParameter != null) ? pMobgenHeaderParameter : (pMobgenHeaderParameter = new MobgenHeaderParameterElements());
+	}
+	
+	public ParserRule getMobgenHeaderParameterRule() {
+		return getMobgenHeaderParameterAccess().getRule();
+	}
 
 	//terminal RESTFUL_METHODS:
 	//	"PUT" | "POST" | "GET" | // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response

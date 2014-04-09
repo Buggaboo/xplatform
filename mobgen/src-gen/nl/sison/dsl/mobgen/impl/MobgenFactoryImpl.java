@@ -70,6 +70,7 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
       case MobgenPackage.URI: return createURI();
       case MobgenPackage.MOBGEN_HEADER: return createMobgenHeader();
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR: return createMobgenHeaderKeyValuePair();
+      case MobgenPackage.MOBGEN_HEADER_PARAMETER: return createMobgenHeaderParameter();
       case MobgenPackage.MOBGEN_JSON: return createMobgenJson();
       case MobgenPackage.JSON_OBJECT_VALUE: return createJsonObjectValue();
       case MobgenPackage.JSON_COMPOSITE_VALUE: return createJsonCompositeValue();
@@ -150,6 +151,17 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     MobgenHeaderKeyValuePairImpl mobgenHeaderKeyValuePair = new MobgenHeaderKeyValuePairImpl();
     return mobgenHeaderKeyValuePair;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MobgenHeaderParameter createMobgenHeaderParameter()
+  {
+    MobgenHeaderParameterImpl mobgenHeaderParameter = new MobgenHeaderParameterImpl();
+    return mobgenHeaderParameter;
   }
 
   /**

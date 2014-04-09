@@ -333,13 +333,50 @@ public interface MobgenPackage extends EPackage
   int MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE = 1;
 
   /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER = 2;
+
+  /**
    * The number of structural features of the '<em>Header Key Value Pair</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MOBGEN_HEADER_KEY_VALUE_PAIR_FEATURE_COUNT = 2;
+  int MOBGEN_HEADER_KEY_VALUE_PAIR_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderParameterImpl <em>Header Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.impl.MobgenHeaderParameterImpl
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderParameter()
+   * @generated
+   */
+  int MOBGEN_HEADER_PARAMETER = 6;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOBGEN_HEADER_PARAMETER__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Header Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOBGEN_HEADER_PARAMETER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenJsonImpl <em>Json</em>}' class.
@@ -349,7 +386,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenJson()
    * @generated
    */
-  int MOBGEN_JSON = 6;
+  int MOBGEN_JSON = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -386,7 +423,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObjectValue()
    * @generated
    */
-  int JSON_OBJECT_VALUE = 7;
+  int JSON_OBJECT_VALUE = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -423,7 +460,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
    * @generated
    */
-  int JSON_COMPOSITE_VALUE = 8;
+  int JSON_COMPOSITE_VALUE = 9;
 
   /**
    * The number of structural features of the '<em>Json Composite Value</em>' class.
@@ -442,7 +479,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_OBJECT = 9;
+  int JSON_OBJECT = 10;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -470,7 +507,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonKeyValuePair()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 10;
+  int JSON_KEY_VALUE_PAIR = 11;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -507,7 +544,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 11;
+  int JSON_ARRAY = 12;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -535,7 +572,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenResourceDefinition()
    * @generated
    */
-  int MOBGEN_RESOURCE_DEFINITION = 12;
+  int MOBGEN_RESOURCE_DEFINITION = 13;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -563,7 +600,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 13;
+  int ENUM_INSTANCE = 14;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -609,7 +646,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 14;
+  int MAP_INSTANCE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -655,7 +692,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 15;
+  int STRING_LIST = 16;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -683,7 +720,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
    * @generated
    */
-  int NESTED_TYPE = 16;
+  int NESTED_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -981,6 +1018,38 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EAttribute getMobgenHeaderKeyValuePair_Value();
+
+  /**
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getParameter()
+   * @see #getMobgenHeaderKeyValuePair()
+   * @generated
+   */
+  EReference getMobgenHeaderKeyValuePair_Parameter();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.MobgenHeaderParameter <em>Header Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Header Parameter</em>'.
+   * @see nl.sison.dsl.mobgen.MobgenHeaderParameter
+   * @generated
+   */
+  EClass getMobgenHeaderParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.MobgenHeaderParameter#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see nl.sison.dsl.mobgen.MobgenHeaderParameter#getId()
+   * @see #getMobgenHeaderParameter()
+   * @generated
+   */
+  EAttribute getMobgenHeaderParameter_Id();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.MobgenJson <em>Json</em>}'.
@@ -1513,6 +1582,32 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EAttribute MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE = eINSTANCE.getMobgenHeaderKeyValuePair_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER = eINSTANCE.getMobgenHeaderKeyValuePair_Parameter();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderParameterImpl <em>Header Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.impl.MobgenHeaderParameterImpl
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderParameter()
+     * @generated
+     */
+    EClass MOBGEN_HEADER_PARAMETER = eINSTANCE.getMobgenHeaderParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MOBGEN_HEADER_PARAMETER__ID = eINSTANCE.getMobgenHeaderParameter_Id();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.MobgenJsonImpl <em>Json</em>}' class.

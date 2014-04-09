@@ -115,11 +115,10 @@ class AndroidCallRequestGenerator implements IGenerator
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
 		val name = callDefinition.name
-		val method = callDefinition.method
+		val method = callDefinition.method.capitalizeFirstLetter
 		val uri = callDefinition.uri
 		val urlParams = uri.parameters
-//		val addS = isTransportLayerSecured(uri.g)
-		// ... TODO start here
+
 		val stringBuffer = new StringBuffer
 		stringBuffer.append(uri.stringPrefix.toString.setPackage)
 		
@@ -128,20 +127,21 @@ class AndroidCallRequestGenerator implements IGenerator
 
 	def capitalizeFirstLetter(String s)
 	{
-		return s.substring(0, 1).toUpperCase() + s.substring(1);
+		return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase;
 	}
 
-/*	
+/*	// TODO assemble imports from generated file(s)
 	def setImports(ArrayList<String> list) 
 	{
 		return list.fold("") [result, s | result + "\nimport " + s]
 	}
 */
 	
-	def wrapAsLoader(CharSequence packageName, CharSequence className, CharSequence returnType, CharSequence httpRequestMethod, CharSequence invokeHttpRequestMethod) '''
+	def wrapAsLoader(CharSequence packageName, CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
+	// inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
 	public class «className»Loader extends AsyncTaskLoader<«returnType»>
 	{
 		«returnType» result;
@@ -149,16 +149,44 @@ class AndroidCallRequestGenerator implements IGenerator
 		public «className»Loader(Context context) {
 			super(context);
 		}
+		
+		public «className»Loader(Context context, String param) { // TODO
+			this(context);
+			// this.param = param;
+		}
 	
 		// Load the data asynchronously
 		@Override
 		public «returnType» loadInBackground() {
-			«invokeHttpRequestMethod»
+			try
+			{
+				«className»HttpRequest.setParameters(TODO);
+				«className»HttpRequest.do«method»Request();
+				return «className»HttpRequest.getResult();
+				/**
+				 * if this invoked http request throws an exception
+				 * TODO Let the exception object come through the 'result' object
+				 */
+			}catch (Exception e)
+			{
+				return «returnType»(e); // TODO define this
+			}
+		}
+		
+		
+		@Override
+		public void deliverResult(«returnType» data) {
+			if (isReset()) {
+				// some data came in while the loader is stopped
+				return;
+			}
+			this.result = data;
+			super.deliverResult(data);
 		}
 	
 		@Override
 		protected void onStartLoading() {
-		    if (result != null) {
+		    if (result != null) { // This determines the difference between initLoader and restartLoader 
 		      deliverResult(result);
 		    }
 		
@@ -170,14 +198,47 @@ class AndroidCallRequestGenerator implements IGenerator
 		
 		@Override
 		protected void onStopLoading() {
-			
+			// TODO stop? abandon?
+			cancelLoad();
+		}
+		
+		@Override
+		protected void onReset() {
+			super.onReset();
+			cancelLoad();
+			result = null;
 		}
 		
 		private static class «className»HttpRequest
 		{
-			private «className»HttpRequest() {}
+			private «className»HttpRequest() {} // inactive ctor
 			
-			«httpRequestMethod»
+			private static «returnType» result = null; 
+			public static «returnType» getResult() { return result; }
+			
+			// TODO feed parameters to urlParams, headerParams, readStream and writeStream, through outer class, it's unnecessary to declare private members twice
+			
+			public static do«method»Request()
+			«requestBody»
+			
+			// TODO private static void readStream(BufferedInputStream in) { while (in != null) ... JSONParse ... result = new «returnType»(...) } // generate json parser here
+			// TODO private static void writeStream(BufferedOutputStream out) {} // construct output string here, determine if to use JSON or not.
+			
+			/**
+			 * TODO consider removing this remnant of the past, remove if it pre-dates AsyncTaskLoader(?).
+			 */
+			private static void disableConnectionReuseIfNecessary() {
+			    // HTTP connection reuse which was buggy pre-froyo
+			    if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
+			        System.setProperty("http.keepAlive", "false");
+			    }
+			}
+			
+		}
+		
+		public class «returnType» extends Parcelable
+		{
+			// TODO flesh out
 		}
 	}
 	'''
@@ -196,64 +257,44 @@ class AndroidCallRequestGenerator implements IGenerator
 	urlConnection.setRequestProperty("«key»", «parameterOrLiteral»);
 	'''
 	
-	def httpRequestParameterBuild(CharSequence method, CharSequence... params) '''
-	private void do«method.toString.substring(0,1).toUpperCase + method.toString.substring(1).toLowerCase»Request(«params.join(", ")»)
-		throws
-			IOException,
-			IllegalStateException,
-			UnKnownServiceException,
-			IllegalAccessError
-	'''
-	
-	def wrapAsMethod(CharSequence signature, CharSequence request) '''
-	«signature» {
-		«request»
-	}
-	
-	private void disableConnectionReuseIfNecessary() {
-	    // HTTP connection reuse which was buggy pre-froyo
-	    if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
-	        System.setProperty("http.keepAlive", "false");
-	    }
-	}
-	'''
-	
 	/**
 	 * TODO must escape nasty symbols in the header injection part
 	 */
-	def httpRequestBuilder(CharSequence url, CharSequence method, CharSequence requestPropertyKeyValuePairs, String connectionTypeClass) '''
+	def httpRequestBuilder(CharSequence url, CharSequence method, CharSequence requestPropertyKeyValuePairs) '''
 	URL url = new URL("«url»"); // URLEncoder.encode(...) 
-	«connectionTypeClass» urlConnection = new «connectionTypeClass»(url);
+	«url.toString.transportLayerSecured» urlConnection = new «url.toString.transportLayerSecured»(url);
 	«requestPropertyKeyValuePairs»
-	urlConnection.setMethod("«method»")
+	urlConnection.setMethod("«method.toString.toUpperCase»")
 	urlConnection.setConnectionTimeout(10000); // 10 seconds
 	urlConnection.setReadTimeout(10000); // 10 seconds
 	urlConnection.setDoInput(true)
-	«IF method.equals("POST") || method.equals("PUT")»
+	«IF method.toString.startsWith('P')» // if POST or PUT
 	urlConnection.setDoOutput(true);
 	«ELSE»
 	urlConnection.setDoOutput(false);
 	«ENDIF»
 	disableConnectionReuseIfNecessary();
 	InputStream in = null;
-	«IF method.equals("POST") || method.equals("PUT")»
+	«IF method.toString.startsWith('P')» // if POST or PUT
 	OutputStream out = null;
 	«ENDIF»
-	try {
+	try
+	{
 		urlConnection.connect();
 		if (!url.getHost().equals(urlConnection.getURL().getHost())) {
-			throw new IllegalStateException("You were probably redirected to a sign-on."); // TODO fire up a browser to sign-on. sharedIntent.
+			throw new IllegalStateException("You were probably redirected to a sign-on.");
+			// TODO fire up a browser to sign-on. sharedIntent.
 		}
 		in = new BufferedInputStream(urlConnection.getInputStream());
 		readStream(in);
-		«IF method.equals("POST") || method.equals("PUT")»
+		«IF method.toString.startsWith('P')» // if POST or PUT
 		out = new BufferedOutputStream(urlConnection.getOutputStream());
 		writeStream(out);
 		«ENDIF»
 		if (BuildConfig.DEBUG)
 		{
 			Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();
-			// TODO 
+			// TODO start logging the header fields
 		}
 	}catch(IOException e) // TODO do error handling on the UI thread? Toast#show
 	{
@@ -290,7 +331,7 @@ class AndroidCallRequestGenerator implements IGenerator
 			{
 				in.close();
 			}
-			«IF method.equals("POST") || method.equals("PUT")»
+			«IF method.toString.startsWith('P')» // if POST or PUT
 			if (out != null)
 			{
 				out.close();
@@ -303,6 +344,7 @@ class AndroidCallRequestGenerator implements IGenerator
 			{
 				Log.d("MOBGEN", "...");
 				e.printStackTrace();
+				throw e;
 			}
 		}
 	}

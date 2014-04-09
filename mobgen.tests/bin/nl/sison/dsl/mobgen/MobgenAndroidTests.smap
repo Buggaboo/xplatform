@@ -3,9 +3,40 @@ MobgenAndroidTests.java
 Xtend
 *S Xtend
 *F
-+ 0 MobgeniOSTests.xtend
-src/nl/sison/dsl/mobgen/MobgeniOSTests.xtend
++ 0 MobgenAndroidTests.xtend
+src/nl/sison/dsl/mobgen/MobgenAndroidTests.xtend
 *L
-27:28
-35:36
+27:36
+28:37,9
+34:46,2
+35:48,2
+37:50
+38:51,3
+40:54,9
+46:63,2
+47:65,2
+49:67
+27:68,3
+56:78
+57:79,20
+67:99,2
+68:101,2
+71:103
+75:104,19
+84:123,3
+86:126,2
+87:128,2
+89:130
+56:131,3
+93:138
+94:139,11
+101:150,2
+102:152,2
+105:154
+109:155,19
+118:174,3
+120:177,2
+121:179,2
+123:181
+93:182,3
 *E

@@ -12,6 +12,7 @@ import nl.sison.dsl.mobgen.Mobgen;
 import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.MobgenHeader;
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
+import nl.sison.dsl.mobgen.MobgenHeaderParameter;
 import nl.sison.dsl.mobgen.MobgenJson;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
@@ -100,6 +101,12 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR:
 				if(context == grammarAccess.getMobgenHeaderKeyValuePairRule()) {
 					sequence_MobgenHeaderKeyValuePair(context, (MobgenHeaderKeyValuePair) semanticObject); 
+					return; 
+				}
+				else break;
+			case MobgenPackage.MOBGEN_HEADER_PARAMETER:
+				if(context == grammarAccess.getMobgenHeaderParameterRule()) {
+					sequence_MobgenHeaderParameter(context, (MobgenHeaderParameter) semanticObject); 
 					return; 
 				}
 				else break;
@@ -225,10 +232,26 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (key=STRING (value=STRING | value=MOBGEN_HEADER_PARAMETER))
+	 *     ((key=STRING value=STRING) | parameter=MobgenHeaderParameter)
 	 */
 	protected void sequence_MobgenHeaderKeyValuePair(EObject context, MobgenHeaderKeyValuePair semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     id=ID
+	 */
+	protected void sequence_MobgenHeaderParameter(EObject context, MobgenHeaderParameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MobgenPackage.Literals.MOBGEN_HEADER_PARAMETER__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MobgenPackage.Literals.MOBGEN_HEADER_PARAMETER__ID));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMobgenHeaderParameterAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.finish();
 	}
 	
 	

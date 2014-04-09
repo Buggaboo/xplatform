@@ -77,6 +77,15 @@ public interface MobgenFactory extends EFactory
   MobgenHeaderKeyValuePair createMobgenHeaderKeyValuePair();
 
   /**
+   * Returns a new object of class '<em>Header Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Header Parameter</em>'.
+   * @generated
+   */
+  MobgenHeaderParameter createMobgenHeaderParameter();
+
+  /**
    * Returns a new object of class '<em>Json</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

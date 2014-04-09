@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getKey <em>Key</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getValue <em>Value</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getParameter <em>Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface MobgenHeaderKeyValuePair extends EObject
    * @generated
    */
   void setValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Parameter</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parameter</em>' containment reference.
+   * @see #setParameter(MobgenHeaderParameter)
+   * @see nl.sison.dsl.mobgen.MobgenPackage#getMobgenHeaderKeyValuePair_Parameter()
+   * @model containment="true"
+   * @generated
+   */
+  MobgenHeaderParameter getParameter();
+
+  /**
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair#getParameter <em>Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Parameter</em>' containment reference.
+   * @see #getParameter()
+   * @generated
+   */
+  void setParameter(MobgenHeaderParameter value);
 
 } // MobgenHeaderKeyValuePair

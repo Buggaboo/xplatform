@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
-import org.eclipse.xtext.xbase.lib.Conversions;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
@@ -31,7 +29,8 @@ public class AndroidCallRequestGenerator implements IGenerator {
   
   public void androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
     final String name = callDefinition.getName();
-    final String method = callDefinition.getMethod();
+    String _method = callDefinition.getMethod();
+    final String method = this.capitalizeFirstLetter(_method);
     final URI uri = callDefinition.getUri();
     final EList<String> urlParams = uri.getParameters();
     StringBuffer _stringBuffer = new StringBuffer();
@@ -50,21 +49,25 @@ public class AndroidCallRequestGenerator implements IGenerator {
     String _substring = s.substring(0, 1);
     String _upperCase = _substring.toUpperCase();
     String _substring_1 = s.substring(1);
-    return (_upperCase + _substring_1);
+    String _lowerCase = _substring_1.toLowerCase();
+    return (_upperCase + _lowerCase);
   }
   
   /**
+   * // TODO assemble imports from generated file(s)
    * def setImports(ArrayList<String> list)
    * {
    * return list.fold("") [result, s | result + "\nimport " + s]
    * }
    */
-  public CharSequence wrapAsLoader(final CharSequence packageName, final CharSequence className, final CharSequence returnType, final CharSequence httpRequestMethod, final CharSequence invokeHttpRequestMethod) {
+  public CharSequence wrapAsLoader(final CharSequence packageName, final CharSequence className, final CharSequence returnType, final CharSequence method, final CharSequence requestBody) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import android.content.AsyncTaskLoader;");
     _builder.newLine();
     _builder.append("import android.content.Context;");
     _builder.newLine();
+    _builder.newLine();
+    _builder.append("// inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html");
     _builder.newLine();
     _builder.append("public class ");
     _builder.append(className, "");
@@ -90,6 +93,22 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ");
+    _builder.append(className, "	");
+    _builder.append("Loader(Context context, String param) { // TODO");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("this(context);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// this.param = param;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("// Load the data asynchronously");
@@ -103,8 +122,85 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append(" loadInBackground() {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append(invokeHttpRequestMethod, "		");
+    _builder.append("try");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(className, "			");
+    _builder.append("HttpRequest.setParameters(TODO);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append(className, "			");
+    _builder.append("HttpRequest.do");
+    _builder.append(method, "			");
+    _builder.append("Request();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("return ");
+    _builder.append(className, "			");
+    _builder.append("HttpRequest.getResult();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("/**");
+    _builder.newLine();
+    _builder.append("\t\t\t ");
+    _builder.append("* if this invoked http request throws an exception");
+    _builder.newLine();
+    _builder.append("\t\t\t ");
+    _builder.append("* TODO Let the exception object come through the \'result\' object");
+    _builder.newLine();
+    _builder.append("\t\t\t ");
+    _builder.append("*/");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}catch (Exception e)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("return ");
+    _builder.append(returnType, "			");
+    _builder.append("(e); // TODO define this");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void deliverResult(");
+    _builder.append(returnType, "	");
+    _builder.append(" data) {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("if (isReset()) {");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("// some data came in while the loader is stopped");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("return;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.result = data;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("super.deliverResult(data);");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -116,7 +212,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("protected void onStartLoading() {");
     _builder.newLine();
     _builder.append("\t    ");
-    _builder.append("if (result != null) {");
+    _builder.append("if (result != null) { // This determines the difference between initLoader and restartLoader ");
     _builder.newLine();
     _builder.append("\t      ");
     _builder.append("deliverResult(result);");
@@ -150,6 +246,30 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("protected void onStopLoading() {");
     _builder.newLine();
     _builder.append("\t\t");
+    _builder.append("// TODO stop? abandon?");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("cancelLoad();");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("protected void onReset() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("super.onReset();");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("cancelLoad();");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("result = null;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -167,13 +287,92 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t\t");
     _builder.append("private ");
     _builder.append(className, "		");
-    _builder.append("HttpRequest() {}");
+    _builder.append("HttpRequest() {} // inactive ctor");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(httpRequestMethod, "		");
+    _builder.append("private static ");
+    _builder.append(returnType, "		");
+    _builder.append(" result = null; ");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("public static ");
+    _builder.append(returnType, "		");
+    _builder.append(" getResult() { return result; }");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// TODO feed parameters to urlParams, headerParams, readStream and writeStream, through outer class, it\'s unnecessary to declare private members twice");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public static do");
+    _builder.append(method, "		");
+    _builder.append("Request()");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(requestBody, "		");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// TODO private static void readStream(BufferedInputStream in) { while (in != null) ... JSONParse ... result = new ");
+    _builder.append(returnType, "		");
+    _builder.append("(...) } // generate json parser here");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("// TODO private static void writeStream(BufferedOutputStream out) {} // construct output string here, determine if to use JSON or not.");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("/**");
+    _builder.newLine();
+    _builder.append("\t\t ");
+    _builder.append("* TODO consider removing this remnant of the past, remove if it pre-dates AsyncTaskLoader(?).");
+    _builder.newLine();
+    _builder.append("\t\t ");
+    _builder.append("*/");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("private static void disableConnectionReuseIfNecessary() {");
+    _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("// HTTP connection reuse which was buggy pre-froyo");
+    _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("System.setProperty(\"http.keepAlive\", \"false\");");
+    _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public class ");
+    _builder.append(returnType, "	");
+    _builder.append(" extends Parcelable");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// TODO flesh out");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -219,88 +418,30 @@ public class AndroidCallRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence httpRequestParameterBuild(final CharSequence method, final CharSequence... params) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("private void do");
-    String _string = method.toString();
-    String _substring = _string.substring(0, 1);
-    String _upperCase = _substring.toUpperCase();
-    String _string_1 = method.toString();
-    String _substring_1 = _string_1.substring(1);
-    String _lowerCase = _substring_1.toLowerCase();
-    String _plus = (_upperCase + _lowerCase);
-    _builder.append(_plus, "");
-    _builder.append("Request(");
-    String _join = IterableExtensions.join(((Iterable<? extends Object>)Conversions.doWrapArray(params)), ", ");
-    _builder.append(_join, "");
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("throws");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("IOException,");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("IllegalStateException,");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("UnKnownServiceException,");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("IllegalAccessError");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence wrapAsMethod(final CharSequence signature, final CharSequence request) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(signature, "");
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append(request, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("private void disableConnectionReuseIfNecessary() {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("// HTTP connection reuse which was buggy pre-froyo");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("System.setProperty(\"http.keepAlive\", \"false\");");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
   /**
    * TODO must escape nasty symbols in the header injection part
    */
-  public CharSequence httpRequestBuilder(final CharSequence url, final CharSequence method, final CharSequence requestPropertyKeyValuePairs, final String connectionTypeClass) {
+  public CharSequence httpRequestBuilder(final CharSequence url, final CharSequence method, final CharSequence requestPropertyKeyValuePairs) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("URL url = new URL(\"");
     _builder.append(url, "");
     _builder.append("\"); // URLEncoder.encode(...) ");
     _builder.newLineIfNotEmpty();
-    _builder.append(connectionTypeClass, "");
+    String _string = url.toString();
+    String _isTransportLayerSecured = this.isTransportLayerSecured(_string);
+    _builder.append(_isTransportLayerSecured, "");
     _builder.append(" urlConnection = new ");
-    _builder.append(connectionTypeClass, "");
+    String _string_1 = url.toString();
+    String _isTransportLayerSecured_1 = this.isTransportLayerSecured(_string_1);
+    _builder.append(_isTransportLayerSecured_1, "");
     _builder.append("(url);");
     _builder.newLineIfNotEmpty();
     _builder.append(requestPropertyKeyValuePairs, "");
     _builder.newLineIfNotEmpty();
     _builder.append("urlConnection.setMethod(\"");
-    _builder.append(method, "");
+    String _string_2 = method.toString();
+    String _upperCase = _string_2.toUpperCase();
+    _builder.append(_upperCase, "");
     _builder.append("\")");
     _builder.newLineIfNotEmpty();
     _builder.append("urlConnection.setConnectionTimeout(10000); // 10 seconds");
@@ -310,15 +451,11 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("urlConnection.setDoInput(true)");
     _builder.newLine();
     {
-      boolean _or = false;
-      boolean _equals = method.equals("POST");
-      if (_equals) {
-        _or = true;
-      } else {
-        boolean _equals_1 = method.equals("PUT");
-        _or = (_equals || _equals_1);
-      }
-      if (_or) {
+      String _string_3 = method.toString();
+      boolean _startsWith = _string_3.startsWith("P");
+      if (_startsWith) {
+        _builder.append(" // if POST or PUT");
+        _builder.newLineIfNotEmpty();
         _builder.append("urlConnection.setDoOutput(true);");
         _builder.newLine();
       } else {
@@ -331,20 +468,18 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("InputStream in = null;");
     _builder.newLine();
     {
-      boolean _or_1 = false;
-      boolean _equals_2 = method.equals("POST");
-      if (_equals_2) {
-        _or_1 = true;
-      } else {
-        boolean _equals_3 = method.equals("PUT");
-        _or_1 = (_equals_2 || _equals_3);
-      }
-      if (_or_1) {
+      String _string_4 = method.toString();
+      boolean _startsWith_1 = _string_4.startsWith("P");
+      if (_startsWith_1) {
+        _builder.append(" // if POST or PUT");
+        _builder.newLineIfNotEmpty();
         _builder.append("OutputStream out = null;");
         _builder.newLine();
       }
     }
-    _builder.append("try {");
+    _builder.append("try");
+    _builder.newLine();
+    _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("urlConnection.connect();");
@@ -353,7 +488,10 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("if (!url.getHost().equals(urlConnection.getURL().getHost())) {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("throw new IllegalStateException(\"You were probably redirected to a sign-on.\"); // TODO fire up a browser to sign-on. sharedIntent.");
+    _builder.append("throw new IllegalStateException(\"You were probably redirected to a sign-on.\");");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// TODO fire up a browser to sign-on. sharedIntent.");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -364,16 +502,13 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t");
     _builder.append("readStream(in);");
     _builder.newLine();
+    _builder.append("\t");
     {
-      boolean _or_2 = false;
-      boolean _equals_4 = method.equals("POST");
-      if (_equals_4) {
-        _or_2 = true;
-      } else {
-        boolean _equals_5 = method.equals("PUT");
-        _or_2 = (_equals_4 || _equals_5);
-      }
-      if (_or_2) {
+      String _string_5 = method.toString();
+      boolean _startsWith_2 = _string_5.startsWith("P");
+      if (_startsWith_2) {
+        _builder.append(" // if POST or PUT");
+        _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("out = new BufferedOutputStream(urlConnection.getOutputStream());");
         _builder.newLine();
@@ -392,7 +527,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// TODO ");
+    _builder.append("// TODO start logging the header fields");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -495,16 +630,13 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t\t");
     {
-      boolean _or_3 = false;
-      boolean _equals_6 = method.equals("POST");
-      if (_equals_6) {
-        _or_3 = true;
-      } else {
-        boolean _equals_7 = method.equals("PUT");
-        _or_3 = (_equals_6 || _equals_7);
-      }
-      if (_or_3) {
+      String _string_6 = method.toString();
+      boolean _startsWith_3 = _string_6.startsWith("P");
+      if (_startsWith_3) {
+        _builder.append(" // if POST or PUT");
+        _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
         _builder.append("if (out != null)");
         _builder.newLine();
@@ -539,6 +671,9 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("throw e;");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("}");

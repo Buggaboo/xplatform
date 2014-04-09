@@ -3,11 +3,14 @@
 package nl.sison.dsl.mobgen.impl;
 
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
+import nl.sison.dsl.mobgen.MobgenHeaderParameter;
 import nl.sison.dsl.mobgen.MobgenPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenHeaderKeyValuePairImpl#getKey <em>Key</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenHeaderKeyValuePairImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenHeaderKeyValuePairImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +71,16 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParameter()
+   * @generated
+   * @ordered
+   */
+  protected MobgenHeaderParameter parameter;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,6 +154,70 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
+  public MobgenHeaderParameter getParameter()
+  {
+    return parameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParameter(MobgenHeaderParameter newParameter, NotificationChain msgs)
+  {
+    MobgenHeaderParameter oldParameter = parameter;
+    parameter = newParameter;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER, oldParameter, newParameter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParameter(MobgenHeaderParameter newParameter)
+  {
+    if (newParameter != parameter)
+    {
+      NotificationChain msgs = null;
+      if (parameter != null)
+        msgs = ((InternalEObject)parameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER, null, msgs);
+      if (newParameter != null)
+        msgs = ((InternalEObject)newParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER, null, msgs);
+      msgs = basicSetParameter(newParameter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER, newParameter, newParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER:
+        return basicSetParameter(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -149,6 +227,8 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
         return getKey();
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE:
         return getValue();
+      case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER:
+        return getParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,6 +248,9 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
         return;
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE:
         setValue((String)newValue);
+        return;
+      case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER:
+        setParameter((MobgenHeaderParameter)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,6 +272,9 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER:
+        setParameter((MobgenHeaderParameter)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -207,6 +293,8 @@ public class MobgenHeaderKeyValuePairImpl extends MinimalEObjectImpl.Container i
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR__PARAMETER:
+        return parameter != null;
     }
     return super.eIsSet(featureID);
   }

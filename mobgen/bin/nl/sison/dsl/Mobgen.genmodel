@@ -37,6 +37,10 @@
     <genClasses ecoreClass="Mobgen.ecore#//MobgenHeaderKeyValuePair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenHeaderKeyValuePair/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenHeaderKeyValuePair/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//MobgenHeaderKeyValuePair/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="Mobgen.ecore#//MobgenHeaderParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenHeaderParameter/id"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//MobgenJson">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenJson/name"/>

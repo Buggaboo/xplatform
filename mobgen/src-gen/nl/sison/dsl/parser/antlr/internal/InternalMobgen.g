@@ -607,11 +607,11 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
 		lv_key_0_0=RULE_STRING
 		{
-			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -627,13 +627,13 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
 )
 )	otherlv_1='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1());
     }
-((
+(
 (
 		lv_value_2_0=RULE_STRING
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -647,26 +647,73 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
 	    }
 
 )
-)
+))
     |(
 (
-		lv_value_3_0=RULE_MOBGEN_HEADER_PARAMETER
-		{
-			newLeafNode(lv_value_3_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueMOBGEN_HEADER_PARAMETERTerminalRuleCall_2_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); 
+	    }
+		lv_parameter_3_0=ruleMobgenHeaderParameter		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMobgenHeaderKeyValuePairRule());
+	            $current = createModelElementForParent(grammarAccess.getMobgenHeaderKeyValuePairRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
-       			"value",
-        		lv_value_3_0, 
-        		"MOBGEN_HEADER_PARAMETER");
+       			"parameter",
+        		lv_parameter_3_0, 
+        		"MobgenHeaderParameter");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)))
+))
+;
+
+
+
+
+
+// Entry rule entryRuleMobgenHeaderParameter
+entryRuleMobgenHeaderParameter returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMobgenHeaderParameterRule()); }
+	 iv_ruleMobgenHeaderParameter=ruleMobgenHeaderParameter 
+	 { $current=$iv_ruleMobgenHeaderParameter.current; } 
+	 EOF 
+;
+
+// Rule MobgenHeaderParameter
+ruleMobgenHeaderParameter returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='{' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMobgenHeaderParameterAccess().getLeftCurlyBracketKeyword_0());
+    }
+(
+(
+		lv_id_1_0=RULE_ID
+		{
+			newLeafNode(lv_id_1_0, grammarAccess.getMobgenHeaderParameterAccess().getIdIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMobgenHeaderParameterRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"id",
+        		lv_id_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='}' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMobgenHeaderParameterAccess().getRightCurlyBracketKeyword_2());
+    }
+)
 ;
 
 
@@ -1532,8 +1579,6 @@ ruleNestedType returns [EObject current=null]
 
 
 
-
-RULE_MOBGEN_HEADER_PARAMETER : '{' RULE_ID '}';
 
 RULE_RESTFUL_METHODS : ('PUT'|'POST'|'GET'|'DELETE');
 
