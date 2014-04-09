@@ -425,10 +425,24 @@ ruleURI returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((this_ANY_OTHER_0=RULE_ANY_OTHER
-    { 
-    newLeafNode(this_ANY_OTHER_0, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0()); 
-    }
+((
+(
+		lv_stringPrefix_0_0=RULE_ANY_OTHER
+		{
+			newLeafNode(lv_stringPrefix_0_0, grammarAccess.getURIAccess().getStringPrefixANY_OTHERTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getURIRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"stringPrefix",
+        		lv_stringPrefix_0_0, 
+        		"ANY_OTHER");
+	    }
+
+)
 )+(	otherlv_1='{' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getURIAccess().getLeftCurlyBracketKeyword_1_0());
@@ -455,11 +469,25 @@ ruleURI returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getURIAccess().getRightCurlyBracketKeyword_1_2());
     }
-(this_ANY_OTHER_4=RULE_ANY_OTHER
-    { 
-    newLeafNode(this_ANY_OTHER_4, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); 
-    }
-)*)*)
+(
+(
+		lv_stringSuffix_4_0=RULE_ANY_OTHER
+		{
+			newLeafNode(lv_stringSuffix_4_0, grammarAccess.getURIAccess().getStringSuffixANY_OTHERTerminalRuleCall_1_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getURIRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"stringSuffix",
+        		lv_stringSuffix_4_0, 
+        		"ANY_OTHER");
+	    }
+
+)
+))+)
 ;
 
 

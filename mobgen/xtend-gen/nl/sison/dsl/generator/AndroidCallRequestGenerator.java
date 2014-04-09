@@ -4,6 +4,7 @@ import com.google.common.collect.Iterators;
 import java.util.Iterator;
 import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.URI;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -22,18 +23,166 @@ public class AndroidCallRequestGenerator implements IGenerator {
     final Iterator<MobgenCallDefinition> callDefinitions = Iterators.<MobgenCallDefinition>filter(_allContents, MobgenCallDefinition.class);
     final Procedure1<MobgenCallDefinition> _function = new Procedure1<MobgenCallDefinition>() {
         public void apply(final MobgenCallDefinition d) {
-          AndroidCallRequestGenerator.this.androidCreateJavaFiles(d);
+          AndroidCallRequestGenerator.this.androidCreateJavaFiles(d, fsa);
         }
       };
     IteratorExtensions.<MobgenCallDefinition>forEach(callDefinitions, _function);
   }
   
-  public void androidCreateJavaFiles(final MobgenCallDefinition callDefinition) {
+  public void androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    final String name = callDefinition.getName();
     final String method = callDefinition.getMethod();
     final URI uri = callDefinition.getUri();
+    final EList<String> urlParams = uri.getParameters();
+    StringBuffer _stringBuffer = new StringBuffer();
+    final StringBuffer stringBuffer = _stringBuffer;
+    EList<String> _stringPrefix = uri.getStringPrefix();
+    String _string = _stringPrefix.toString();
+    CharSequence _setPackage = this.setPackage(_string);
+    stringBuffer.append(_setPackage);
+    String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
+    String _plus = (_capitalizeFirstLetter + "Loader.java");
+    String _string_1 = stringBuffer.toString();
+    fsa.generateFile(_plus, _string_1);
   }
   
-  public CharSequence setPackage(final String callName, final String url) {
+  public String capitalizeFirstLetter(final String s) {
+    String _substring = s.substring(0, 1);
+    String _upperCase = _substring.toUpperCase();
+    String _substring_1 = s.substring(1);
+    return (_upperCase + _substring_1);
+  }
+  
+  /**
+   * def setImports(ArrayList<String> list)
+   * {
+   * return list.fold("") [result, s | result + "\nimport " + s]
+   * }
+   */
+  public CharSequence wrapAsLoader(final CharSequence packageName, final CharSequence className, final CharSequence returnType, final CharSequence httpRequestMethod, final CharSequence invokeHttpRequestMethod) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("import android.content.AsyncTaskLoader;");
+    _builder.newLine();
+    _builder.append("import android.content.Context;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(className, "");
+    _builder.append("Loader extends AsyncTaskLoader<");
+    _builder.append(returnType, "");
+    _builder.append(">");
+    _builder.newLineIfNotEmpty();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(returnType, "	");
+    _builder.append(" result;");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ");
+    _builder.append(className, "	");
+    _builder.append("Loader(Context context) {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("super(context);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// Load the data asynchronously");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ");
+    _builder.append(returnType, "	");
+    _builder.append(" loadInBackground() {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(invokeHttpRequestMethod, "		");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("protected void onStartLoading() {");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("if (result != null) {");
+    _builder.newLine();
+    _builder.append("\t      ");
+    _builder.append("deliverResult(result);");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("if (takeContentChanged() || result == null) {");
+    _builder.newLine();
+    _builder.append("\t      ");
+    _builder.append("forceLoad();");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("protected void onStopLoading() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static class ");
+    _builder.append(className, "	");
+    _builder.append("HttpRequest");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("private ");
+    _builder.append(className, "		");
+    _builder.append("HttpRequest() {}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(httpRequestMethod, "		");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence setPackage(final String url) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package nl.sison.dsl.mobgen.http");
     {
@@ -42,25 +191,21 @@ public class AndroidCallRequestGenerator implements IGenerator {
         _builder.append("\"s\"");
       }
     }
-    _builder.append(".");
-    _builder.append(callName, "");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
+    _builder.newLine();
     return _builder;
   }
   
-  public CharSequence isTransportLayerSecured(final String url) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      boolean _startsWith = url.startsWith("https://");
-      if (_startsWith) {
-        _builder.append("\"HttpsURLConnection\"");
-      } else {
-        _builder.append("\"HttpURLConnection\"");
-      }
+  public String isTransportLayerSecured(final String url) {
+    String _xifexpression = null;
+    boolean _startsWith = url.startsWith("https://");
+    if (_startsWith) {
+      _xifexpression = "HttpsURLConnection";
+    } else {
+      _xifexpression = "HttpURLConnection";
     }
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    return _xifexpression;
   }
   
   public CharSequence setRequestProperty(final CharSequence key, final CharSequence parameterOrLiteral) {
@@ -108,7 +253,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence setRequestSignature(final CharSequence signature, final CharSequence request) {
+  public CharSequence wrapAsMethod(final CharSequence signature, final CharSequence request) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(signature, "");
     _builder.append(" {");
@@ -145,7 +290,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("URL url = new URL(\"");
     _builder.append(url, "");
-    _builder.append("\");");
+    _builder.append("\"); // URLEncoder.encode(...) ");
     _builder.newLineIfNotEmpty();
     _builder.append(connectionTypeClass, "");
     _builder.append(" urlConnection = new ");
@@ -208,7 +353,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("if (!url.getHost().equals(urlConnection.getURL().getHost())) {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("throw new IllegalStateException(\"You were probably redirected to a sign-on.\");");
+    _builder.append("throw new IllegalStateException(\"You were probably redirected to a sign-on.\"); // TODO fire up a browser to sign-on. sharedIntent.");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -237,6 +382,21 @@ public class AndroidCallRequestGenerator implements IGenerator {
         _builder.newLine();
       }
     }
+    _builder.append("\t");
+    _builder.append("if (BuildConfig.DEBUG)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// TODO ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("}catch(IOException e) // TODO do error handling on the UI thread? Toast#show");
     _builder.newLine();
     _builder.append("{");

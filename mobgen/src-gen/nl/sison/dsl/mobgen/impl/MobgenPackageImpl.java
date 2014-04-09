@@ -383,9 +383,29 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURI_Parameters()
+  public EAttribute getURI_StringPrefix()
   {
     return (EAttribute)uriEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getURI_Parameters()
+  {
+    return (EAttribute)uriEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getURI_StringSuffix()
+  {
+    return (EAttribute)uriEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -777,7 +797,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEReference(mobgenCallDefinitionEClass, MOBGEN_CALL_DEFINITION__JSON_TO_SERVER);
 
     uriEClass = createEClass(URI);
+    createEAttribute(uriEClass, URI__STRING_PREFIX);
     createEAttribute(uriEClass, URI__PARAMETERS);
+    createEAttribute(uriEClass, URI__STRING_SUFFIX);
 
     mobgenHeaderEClass = createEClass(MOBGEN_HEADER);
     createEAttribute(mobgenHeaderEClass, MOBGEN_HEADER__NAME);
@@ -880,7 +902,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEReference(getMobgenCallDefinition_JsonToServer(), this.getMobgenJson(), null, "jsonToServer", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(uriEClass, nl.sison.dsl.mobgen.URI.class, "URI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getURI_StringPrefix(), ecorePackage.getEString(), "stringPrefix", null, 0, -1, nl.sison.dsl.mobgen.URI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getURI_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, nl.sison.dsl.mobgen.URI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getURI_StringSuffix(), ecorePackage.getEString(), "stringSuffix", null, 0, -1, nl.sison.dsl.mobgen.URI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mobgenHeaderEClass, MobgenHeader.class, "MobgenHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMobgenHeader_Name(), ecorePackage.getEString(), "name", null, 0, 1, MobgenHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -1829,14 +1829,14 @@ rule__URI__Group__0__Impl
 :
 (
 (
-{ before(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0()); }
-(	RULE_ANY_OTHER)
-{ after(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0()); }
+{ before(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); }
+(rule__URI__StringPrefixAssignment_0)
+{ after(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); }
 )
 (
-{ before(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0()); }
-(	RULE_ANY_OTHER)*
-{ after(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0()); }
+{ before(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); }
+(rule__URI__StringPrefixAssignment_0)*
+{ after(grammarAccess.getURIAccess().getStringPrefixAssignment_0()); }
 )
 )
 
@@ -1863,9 +1863,16 @@ rule__URI__Group__1__Impl
     }
 :
 (
+(
+{ before(grammarAccess.getURIAccess().getGroup_1()); }
+(rule__URI__Group_1__0)
+{ after(grammarAccess.getURIAccess().getGroup_1()); }
+)
+(
 { before(grammarAccess.getURIAccess().getGroup_1()); }
 (rule__URI__Group_1__0)*
 { after(grammarAccess.getURIAccess().getGroup_1()); }
+)
 )
 
 ;
@@ -1986,9 +1993,9 @@ rule__URI__Group_1__3__Impl
     }
 :
 (
-{ before(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); }
-(	RULE_ANY_OTHER)*
-{ after(grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3()); }
+{ before(grammarAccess.getURIAccess().getStringSuffixAssignment_1_3()); }
+(rule__URI__StringSuffixAssignment_1_3)
+{ after(grammarAccess.getURIAccess().getStringSuffixAssignment_1_3()); }
 )
 
 ;
@@ -4222,6 +4229,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__URI__StringPrefixAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getURIAccess().getStringPrefixANY_OTHERTerminalRuleCall_0_0()); }
+	RULE_ANY_OTHER{ after(grammarAccess.getURIAccess().getStringPrefixANY_OTHERTerminalRuleCall_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__URI__ParametersAssignment_1_1
     @init {
 		int stackSize = keepStackSize();
@@ -4230,6 +4252,21 @@ rule__URI__ParametersAssignment_1_1
 (
 { before(grammarAccess.getURIAccess().getParametersIDTerminalRuleCall_1_1_0()); }
 	RULE_ID{ after(grammarAccess.getURIAccess().getParametersIDTerminalRuleCall_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__URI__StringSuffixAssignment_1_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getURIAccess().getStringSuffixANY_OTHERTerminalRuleCall_1_3_0()); }
+	RULE_ANY_OTHER{ after(grammarAccess.getURIAccess().getStringSuffixANY_OTHERTerminalRuleCall_1_3_0()); }
 )
 
 ;

@@ -22,7 +22,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getStringPrefix <em>String Prefix</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getStringSuffix <em>String Suffix</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +32,16 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  */
 public class URIImpl extends MinimalEObjectImpl.Container implements URI
 {
+  /**
+   * The cached value of the '{@link #getStringPrefix() <em>String Prefix</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStringPrefix()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> stringPrefix;
+
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -39,6 +51,16 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * @ordered
    */
   protected EList<String> parameters;
+
+  /**
+   * The cached value of the '{@link #getStringSuffix() <em>String Suffix</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStringSuffix()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> stringSuffix;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,6 +88,20 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getStringPrefix()
+  {
+    if (stringPrefix == null)
+    {
+      stringPrefix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__STRING_PREFIX);
+    }
+    return stringPrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getParameters()
   {
     if (parameters == null)
@@ -80,13 +116,31 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getStringSuffix()
+  {
+    if (stringSuffix == null)
+    {
+      stringSuffix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__STRING_SUFFIX);
+    }
+    return stringSuffix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case MobgenPackage.URI__STRING_PREFIX:
+        return getStringPrefix();
       case MobgenPackage.URI__PARAMETERS:
         return getParameters();
+      case MobgenPackage.URI__STRING_SUFFIX:
+        return getStringSuffix();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -102,9 +156,17 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
+      case MobgenPackage.URI__STRING_PREFIX:
+        getStringPrefix().clear();
+        getStringPrefix().addAll((Collection<? extends String>)newValue);
+        return;
       case MobgenPackage.URI__PARAMETERS:
         getParameters().clear();
         getParameters().addAll((Collection<? extends String>)newValue);
+        return;
+      case MobgenPackage.URI__STRING_SUFFIX:
+        getStringSuffix().clear();
+        getStringSuffix().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -120,8 +182,14 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
+      case MobgenPackage.URI__STRING_PREFIX:
+        getStringPrefix().clear();
+        return;
       case MobgenPackage.URI__PARAMETERS:
         getParameters().clear();
+        return;
+      case MobgenPackage.URI__STRING_SUFFIX:
+        getStringSuffix().clear();
         return;
     }
     super.eUnset(featureID);
@@ -137,8 +205,12 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
+      case MobgenPackage.URI__STRING_PREFIX:
+        return stringPrefix != null && !stringPrefix.isEmpty();
       case MobgenPackage.URI__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
+      case MobgenPackage.URI__STRING_SUFFIX:
+        return stringSuffix != null && !stringSuffix.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -154,8 +226,12 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (parameters: ");
+    result.append(" (stringPrefix: ");
+    result.append(stringPrefix);
+    result.append(", parameters: ");
     result.append(parameters);
+    result.append(", stringSuffix: ");
+    result.append(stringSuffix);
     result.append(')');
     return result.toString();
   }

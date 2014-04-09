@@ -23,8 +23,6 @@ public class MobgenSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_MapInstance_CommaKeyword_5_q;
 	protected AbstractElementAlias match_MobgenHeader_CommaKeyword_5_q;
 	protected AbstractElementAlias match_StringList_CommaKeyword_3_q;
-	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_0_p;
-	protected AbstractElementAlias match_URI_ANY_OTHERTerminalRuleCall_1_3_a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -35,25 +33,13 @@ public class MobgenSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_MapInstance_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getMapInstanceAccess().getCommaKeyword_5());
 		match_MobgenHeader_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getMobgenHeaderAccess().getCommaKeyword_5());
 		match_StringList_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getStringListAccess().getCommaKeyword_3());
-		match_URI_ANY_OTHERTerminalRuleCall_0_p = new TokenAlias(true, false, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_0());
-		match_URI_ANY_OTHERTerminalRuleCall_1_3_a = new TokenAlias(true, true, grammarAccess.getURIAccess().getANY_OTHERTerminalRuleCall_1_3());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getANY_OTHERRule())
-			return getANY_OTHERToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal ANY_OTHER: .;
-	 */
-	protected String getANY_OTHERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -73,10 +59,6 @@ public class MobgenSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_MobgenHeader_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_StringList_CommaKeyword_3_q.equals(syntax))
 				emit_StringList_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_URI_ANY_OTHERTerminalRuleCall_0_p.equals(syntax))
-				emit_URI_ANY_OTHERTerminalRuleCall_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_URI_ANY_OTHERTerminalRuleCall_1_3_a.equals(syntax))
-				emit_URI_ANY_OTHERTerminalRuleCall_1_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -126,22 +108,6 @@ public class MobgenSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 */
 	protected void emit_StringList_CommaKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ANY_OTHER+
-	 */
-	protected void emit_URI_ANY_OTHERTerminalRuleCall_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ANY_OTHER*
-	 */
-	protected void emit_URI_ANY_OTHERTerminalRuleCall_1_3_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

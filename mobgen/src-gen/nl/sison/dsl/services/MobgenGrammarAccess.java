@@ -256,25 +256,30 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	public class URIElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "URI");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cANY_OTHERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cStringPrefixAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStringPrefixANY_OTHERTerminalRuleCall_0_0 = (RuleCall)cStringPrefixAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cParametersAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cParametersIDTerminalRuleCall_1_1_0 = (RuleCall)cParametersAssignment_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final RuleCall cANY_OTHERTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Assignment cStringSuffixAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cStringSuffixANY_OTHERTerminalRuleCall_1_3_0 = (RuleCall)cStringSuffixAssignment_1_3.eContents().get(0);
 		
 		//URI:
-		//	ANY_OTHER+ ("{" parameters+=ID "}" ANY_OTHER*)*;
+		//	stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+;
 		public ParserRule getRule() { return rule; }
 
-		//ANY_OTHER+ ("{" parameters+=ID "}" ANY_OTHER*)*
+		//stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+
 		public Group getGroup() { return cGroup; }
 
-		//ANY_OTHER+
-		public RuleCall getANY_OTHERTerminalRuleCall_0() { return cANY_OTHERTerminalRuleCall_0; }
+		//stringPrefix+=ANY_OTHER+
+		public Assignment getStringPrefixAssignment_0() { return cStringPrefixAssignment_0; }
 
-		//("{" parameters+=ID "}" ANY_OTHER*)*
+		//ANY_OTHER
+		public RuleCall getStringPrefixANY_OTHERTerminalRuleCall_0_0() { return cStringPrefixANY_OTHERTerminalRuleCall_0_0; }
+
+		//("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"{"
@@ -289,8 +294,11 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 
-		//ANY_OTHER*
-		public RuleCall getANY_OTHERTerminalRuleCall_1_3() { return cANY_OTHERTerminalRuleCall_1_3; }
+		//stringSuffix+=ANY_OTHER
+		public Assignment getStringSuffixAssignment_1_3() { return cStringSuffixAssignment_1_3; }
+
+		//ANY_OTHER
+		public RuleCall getStringSuffixANY_OTHERTerminalRuleCall_1_3_0() { return cStringSuffixANY_OTHERTerminalRuleCall_1_3_0; }
 	}
 
 	public class MobgenHeaderElements extends AbstractParserRuleElementFinder {
@@ -1019,7 +1027,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//URI:
-	//	ANY_OTHER+ ("{" parameters+=ID "}" ANY_OTHER*)*;
+	//	stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+;
 	public URIElements getURIAccess() {
 		return (pURI != null) ? pURI : (pURI = new URIElements());
 	}

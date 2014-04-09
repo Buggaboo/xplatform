@@ -82,7 +82,9 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenCallDefinitionAccess().getResponseHeadersAssignment_6_5_2(), "rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToClientAssignment_7_2(), "rule__MobgenCallDefinition__JsonToClientAssignment_7_2");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerAssignment_8_2(), "rule__MobgenCallDefinition__JsonToServerAssignment_8_2");
+					put(grammarAccess.getURIAccess().getStringPrefixAssignment_0(), "rule__URI__StringPrefixAssignment_0");
 					put(grammarAccess.getURIAccess().getParametersAssignment_1_1(), "rule__URI__ParametersAssignment_1_1");
+					put(grammarAccess.getURIAccess().getStringSuffixAssignment_1_3(), "rule__URI__StringSuffixAssignment_1_3");
 					put(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0(), "rule__MobgenHeader__NameAssignment_0");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_3(), "rule__MobgenHeader__HeaderKeyValuesAssignment_3");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_4_1(), "rule__MobgenHeader__HeaderKeyValuesAssignment_4_1");

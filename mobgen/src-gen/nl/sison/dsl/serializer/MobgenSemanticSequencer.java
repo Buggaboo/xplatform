@@ -307,7 +307,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     parameters+=ID*
+	 *     (stringPrefix+=ANY_OTHER+ (parameters+=ID stringSuffix+=ANY_OTHER)+)
 	 */
 	protected void sequence_URI(EObject context, URI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -232,13 +232,31 @@ public interface MobgenPackage extends EPackage
   int URI = 3;
 
   /**
+   * The feature id for the '<em><b>String Prefix</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__STRING_PREFIX = 0;
+
+  /**
    * The feature id for the '<em><b>Parameters</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int URI__PARAMETERS = 0;
+  int URI__PARAMETERS = 1;
+
+  /**
+   * The feature id for the '<em><b>String Suffix</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__STRING_SUFFIX = 2;
 
   /**
    * The number of structural features of the '<em>URI</em>' class.
@@ -247,7 +265,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int URI_FEATURE_COUNT = 1;
+  int URI_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderImpl <em>Header</em>}' class.
@@ -868,6 +886,17 @@ public interface MobgenPackage extends EPackage
   EClass getURI();
 
   /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getStringPrefix <em>String Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>String Prefix</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getStringPrefix()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_StringPrefix();
+
+  /**
    * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -877,6 +906,17 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EAttribute getURI_Parameters();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getStringSuffix <em>String Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>String Suffix</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getStringSuffix()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_StringSuffix();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.MobgenHeader <em>Header</em>}'.
@@ -1399,12 +1439,28 @@ public interface MobgenPackage extends EPackage
     EClass URI = eINSTANCE.getURI();
 
     /**
+     * The meta object literal for the '<em><b>String Prefix</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__STRING_PREFIX = eINSTANCE.getURI_StringPrefix();
+
+    /**
      * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute URI__PARAMETERS = eINSTANCE.getURI_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>String Suffix</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__STRING_SUFFIX = eINSTANCE.getURI_StringSuffix();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderImpl <em>Header</em>}' class.
