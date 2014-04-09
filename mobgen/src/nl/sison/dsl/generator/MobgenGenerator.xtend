@@ -137,7 +137,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	}
 */
 	
-	def wrapAsLoader(CharSequence packageName, CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody) '''
+	def wrapAsLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
@@ -150,7 +150,7 @@ class AndroidCallRequestGenerator implements IGenerator
 			super(context);
 		}
 		
-		public «className»Loader(Context context, String param) { // TODO
+		public «className»Loader(Context context, String param) { // TODO params
 			this(context);
 			// this.param = param;
 		}
@@ -198,7 +198,6 @@ class AndroidCallRequestGenerator implements IGenerator
 		
 		@Override
 		protected void onStopLoading() {
-			// TODO stop? abandon?
 			cancelLoad();
 		}
 		
@@ -209,25 +208,41 @@ class AndroidCallRequestGenerator implements IGenerator
 			result = null;
 		}
 		
-		private static class «className»HttpRequest
+		private class «className»HttpRequest
 		{
-			private «className»HttpRequest() {} // inactive ctor
+			public final static «className»HttpRequest INSTANCE = new «className»HttpRequest(); 
+			
+			private «className»HttpRequest() {
+				disableConnectionReuseIfNecessary();
+			}
 			
 			private static «returnType» result = null; 
 			public static «returnType» getResult() { return result; }
 			
 			// TODO feed parameters to urlParams, headerParams, readStream and writeStream, through outer class, it's unnecessary to declare private members twice
 			
-			public static do«method»Request()
-			«requestBody»
+			public do«method»Request()
+			{
+				«requestBody»
+			}
 			
-			// TODO private static void readStream(BufferedInputStream in) { while (in != null) ... JSONParse ... result = new «returnType»(...) } // generate json parser here
-			// TODO private static void writeStream(BufferedOutputStream out) {} // construct output string here, determine if to use JSON or not.
+			/**
+			 * readStream assigns a Parcelable to this.result
+			 */
+			private void readStream(BufferedInputStream in)
+			{
+				«jsonParserToParcelable»
+			}
+			
+			private void writeStream(BufferedOutputStream out)
+			{
+				«serverBoundPayload»
+			}
 			
 			/**
 			 * TODO consider removing this remnant of the past, remove if it pre-dates AsyncTaskLoader(?).
 			 */
-			private static void disableConnectionReuseIfNecessary() {
+			private void disableConnectionReuseIfNecessary() {
 			    // HTTP connection reuse which was buggy pre-froyo
 			    if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
 			        System.setProperty("http.keepAlive", "false");
@@ -236,13 +251,15 @@ class AndroidCallRequestGenerator implements IGenerator
 			
 		}
 		
-		public class «returnType» extends Parcelable
-		{
-			// TODO flesh out
-		}
 	}
 	'''
-	
+
+	def createParcelable(CharSequence returnType, CharSequence parcelableBody) '''
+	public class «returnType» extends Parcelable
+	{
+		«parcelableBody»
+	}
+	'''	
 	
 	def setPackage(String url) '''
 	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF »;
@@ -273,7 +290,6 @@ class AndroidCallRequestGenerator implements IGenerator
 	«ELSE»
 	urlConnection.setDoOutput(false);
 	«ENDIF»
-	disableConnectionReuseIfNecessary();
 	InputStream in = null;
 	«IF method.toString.startsWith('P')» // if POST or PUT
 	OutputStream out = null;
@@ -282,7 +298,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	{
 		urlConnection.connect();
 		if (!url.getHost().equals(urlConnection.getURL().getHost())) {
-			throw new IllegalStateException("You were probably redirected to a sign-on.");
+			throw new IllegalStateException("You were probably redirected to a sign-on."); // TODO Let the Activity/Fragment handle this...
 			// TODO fire up a browser to sign-on. sharedIntent.
 		}
 		in = new BufferedInputStream(urlConnection.getInputStream());
