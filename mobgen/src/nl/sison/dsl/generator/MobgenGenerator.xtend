@@ -10,6 +10,7 @@ import nl.sison.dsl.mobgen.MobgenCallDefinition
 import nl.sison.dsl.mobgen.MobgenHeader
 import nl.sison.dsl.mobgen.MobgenJson
 import java.util.ArrayList
+import java.util.List
 
 class MobgenGenerator implements IGenerator {
 	
@@ -294,11 +295,35 @@ class AndroidCallRequestGenerator implements IGenerator
 	}
 	'''
 
-	def createParcelable(CharSequence returnType, CharSequence parcelableBody) '''
+	/**
+	 * 
+	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String... 
+	 * 
+	 */
+	def createParcelable(CharSequence returnType, List<String> parameterNames, List<String> parameterTypes) '''
 	public class «returnType» extends Parcelable
 	{
-		«parcelableBody» // TODO - finish boilerplate
-		
+	    protected String lastComment;
+	    protected Integer messageCount;
+	    protected Date createdAt;
+
+	    public Conversation(Parcel in) {
+	    	readFromParcel(in);
+	    }
+
+	    @Override
+	    public void writeToParcel(Parcel out, int flags) {
+	        out.writeString(lastComment);
+	        out.writeInt(messageCount);
+			out.writeSerializable(createdAt);
+	    }
+
+	    private void readFromParcel(Parcel in) {  
+	    	lastComment = in.readString();
+			messageCount = in.readInt();
+			createdAt = (Date) in.readSerializable();
+	    }
+
 	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
 
 	        public «returnType» createFromParcel(Parcel in) {
@@ -306,9 +331,9 @@ class AndroidCallRequestGenerator implements IGenerator
 	        }
 
 	        public «returnType»[] newArray(int size) {
-	            return new «returnType»[size];
+	            return new «returnType» [size];
 	        }
-		        
+
 	    };
 
 	    @Override
