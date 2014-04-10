@@ -264,18 +264,23 @@ class AndroidCallRequestGenerator implements IGenerator
 			}
 			
 			/**
-			 * readStream assigns a Parcelable to this.result
+			 * readStream parses a JSON then assigns a Parcelable to this.result
 			 */
 			private void readStream(BufferedInputStream in)
 			{
 				«jsonParserToParcelable»
 			}
-			
+			«IF method.toString.startsWith("P")»
+			/**
+			 *
+			 * Convert parameters to JSON conforming to the server's expection of the call
+			 *
+			 */
 			private void writeStream(BufferedOutputStream out)
 			{
 				«serverBoundPayload»
 			}
-			
+			«ENDIF»
 			/**
 			 * TODO consider removing this remnant of the past, remove if it pre-dates AsyncTaskLoader(?).
 			 */
@@ -285,9 +290,7 @@ class AndroidCallRequestGenerator implements IGenerator
 			        System.setProperty("http.keepAlive", "false");
 			    }
 			}
-			
 		}
-		
 	}
 	'''
 
@@ -295,6 +298,24 @@ class AndroidCallRequestGenerator implements IGenerator
 	public class «returnType» extends Parcelable
 	{
 		«parcelableBody» // TODO - finish boilerplate
+		
+	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+
+	        public «returnType» createFromParcel(Parcel in) {
+	            return new «returnType»(in);
+	        }
+
+	        public «returnType»[] newArray(int size) {
+	            return new «returnType»[size];
+	        }
+		        
+	    };
+
+	    @Override
+	    public int describeContents() {
+	        return 0;
+	    }
+		
 	}
 	'''	
 	
