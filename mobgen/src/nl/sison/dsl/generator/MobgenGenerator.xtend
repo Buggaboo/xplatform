@@ -437,10 +437,6 @@ class AndroidCallRequestGenerator implements IGenerator
 		«"IOException".generateExceptionHandlerLoggingAndThrow»
 	}
 	'''
-	
-	def createParcelable(CharSequence name) '''
-		
-	'''
 }
 
 class ObjCResourceGenerator implements IGenerator
