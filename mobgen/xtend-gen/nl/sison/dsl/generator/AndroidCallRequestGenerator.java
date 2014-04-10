@@ -828,11 +828,4 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     return _builder;
   }
-  
-  public CharSequence createParcelable(final CharSequence name) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t");
-    _builder.newLine();
-    return _builder;
-  }
 }
