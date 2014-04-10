@@ -172,7 +172,12 @@ class AndroidCallRequestGenerator implements IGenerator
 		return list.fold("") [result, s | result + "\nimport " + s]
 	}
 */
-	
+	/**
+         *
+         * TODO also generate the AsyncTask for this, because a Loader has a 1..1 relation with the Fragment/Activity
+         * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
+         *
+         */
 	def wrapAsLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
