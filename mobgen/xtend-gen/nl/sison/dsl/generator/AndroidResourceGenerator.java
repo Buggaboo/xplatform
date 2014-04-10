@@ -32,13 +32,13 @@ public class AndroidResourceGenerator implements IGenerator {
     fsa.generateFile("mobgen_strings.xml", _androidResourceXMLWrap);
     TreeIterator<EObject> _allContents_1 = input.getAllContents();
     final Iterator<EnumInstance> enumInstances = Iterators.<EnumInstance>filter(_allContents_1, EnumInstance.class);
-    this.writeJavaEnumFiles(enumInstances, fsa);
+    this.writeAndroidEnumFiles(enumInstances, fsa);
   }
   
   /**
    * Enum related stuff
    */
-  public void writeJavaEnumFiles(final Iterator<EnumInstance> instances, final IFileSystemAccess fsa) {
+  public void writeAndroidEnumFiles(final Iterator<EnumInstance> instances, final IFileSystemAccess fsa) {
     final Procedure1<EnumInstance> _function = new Procedure1<EnumInstance>() {
         public void apply(final EnumInstance m) {
           String _name = m.getName();
@@ -47,12 +47,26 @@ public class AndroidResourceGenerator implements IGenerator {
           String _name_1 = m.getName();
           String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
           EList<String> _values = m.getValues();
-          String _join = IterableExtensions.join(_values, ", ");
+          String _join = IterableExtensions.join(_values, ",\n");
+          CharSequence _androidParcelableEnumTemplate = AndroidResourceGenerator.this.androidParcelableEnumTemplate(_capitalizeFirstLetter_1, _join);
+          fsa.generateFile(_plus, _androidParcelableEnumTemplate);
+        }
+      };
+    IteratorExtensions.<EnumInstance>forEach(instances, _function);
+    final Procedure1<EnumInstance> _function_1 = new Procedure1<EnumInstance>() {
+        public void apply(final EnumInstance m) {
+          String _name = m.getName();
+          String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
+          String _plus = (_capitalizeFirstLetter + "Enum.java");
+          String _name_1 = m.getName();
+          String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
+          EList<String> _values = m.getValues();
+          String _join = IterableExtensions.join(_values, ",\n");
           CharSequence _javaEnumTemplate = AndroidResourceGenerator.this.javaEnumTemplate(_capitalizeFirstLetter_1, _join);
           fsa.generateFile(_plus, _javaEnumTemplate);
         }
       };
-    IteratorExtensions.<EnumInstance>forEach(instances, _function);
+    IteratorExtensions.<EnumInstance>forEach(instances, _function_1);
   }
   
   public String capitalizeFirstLetter(final String s) {
@@ -72,6 +86,82 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append(commaSeparatedValues, "	");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
+    _builder.append("}\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence androidParcelableEnumTemplate(final String name, final String commaSeparatedValues) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("import android.os.Parcel;");
+    _builder.newLine();
+    _builder.append("import android.os.Parcelable;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public enum ");
+    _builder.append(name, "");
+    _builder.append("Enum implements Parcelable {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(commaSeparatedValues, "	");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public Status createFromParcel(Parcel in) {");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("return ");
+    _builder.append(name, "			");
+    _builder.append("Enum.values()[in.readInt()];");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public Status[] newArray(int size) {");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("return new ");
+    _builder.append(name, "			");
+    _builder.append("Enum[size];");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("};");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public int describeContents() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return 0;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void writeToParcel(Parcel out, int flags) {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("out.writeInt(ordinal());");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;
