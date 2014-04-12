@@ -1,19 +1,14 @@
 package nl.sison.dsl.generator
 
 import java.util.Iterator
+import java.util.Map
 import nl.sison.dsl.mobgen.EnumInstance
 import nl.sison.dsl.mobgen.MapInstance
+import nl.sison.dsl.mobgen.MobgenCallDefinition
+import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import nl.sison.dsl.mobgen.MobgenCallDefinition
-import nl.sison.dsl.mobgen.MobgenHeader
-import nl.sison.dsl.mobgen.MobgenJson
-import java.util.ArrayList
-import java.util.List
-import java.util.HashMap
-import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair
-import java.util.Map
 
 class MobgenGenerator implements IGenerator {
 	
@@ -155,13 +150,6 @@ class AndroidHttpRequestGenerator implements IGenerator
 	
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
-		val name = callDefinition.name
-		val nameCapitalized = name.capitalizeFirstLetter
-		val uri = callDefinition.uri
-		val urlParams = uri.parameters
-		
-		// TODO also kill boiler plate for the Activity / Fragment
-
 		
 		/*
 		 * 1. Generate http request Parcelable, http request result Parcelable
@@ -170,20 +158,34 @@ class AndroidHttpRequestGenerator implements IGenerator
 		 * 4. Generate json parser, for http request response (validation to prevent attacks on the app)
 		 * 5. Generate mock Activity to test the call // TODO
 		 * 6. Generate Spark class to handle the call // TODO
+		// TODO also kill boiler plate for the Activity / Fragment
 		 */
+		 
 		/* 1. */
 		if (callDefinition.requestHeaders != null)
 		{
 			createParcelableRequestFile(callDefinition, fsa)
 		}
 		
+		/* 2. */
+		createParcelableRequestFile(callDefinition, fsa)
 		
 //		fsa.generateFile(nameCapitalized + 'Loader.java', stringBuffer.toString)
 	}
 	
+	def createLoader(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
+	{
+//		def createLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
+		val nameCapitalized = callDefinition.name.capitalizeFirstLetter
+		val methodCapitalized = callDefinition.method.capitalizeFirstLetter
+		val jsonResultTypeNameCapitalized = callDefinition.jsonToClient.name.capitalizeFirstLetter // probably of type Parcelable otherwise the validator should get in the way
+		nameCapitalized.createLoader(jsonResultTypeNameCapitalized, methodCapitalized, httpRequestBuilder())
+		
+	}
+	
 	def createParcelableRequestFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
-		val name = callDefinition.name
+		val name = callDefinition.requestHeaders.name
 		val nameCapitalized = name.capitalizeFirstLetter
 		val nameLowerCase = name.toLowerCase
 		
@@ -230,23 +232,23 @@ class AndroidHttpRequestGenerator implements IGenerator
      * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
      *
      */
-	def wrapAsLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
+	def createLoader(CharSequence classNamePrefix, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
 	import java.util.Map; // see http call
 	
 	/** inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html */
-	public class «className»Loader extends AsyncTaskLoader<«returnType»>
+	public class «classNamePrefix»Loader extends AsyncTaskLoader<«returnType»>
 	{
 		private «returnType» result;
-		private «className»RequestParameters parameters;
+		private «classNamePrefix»RequestParameters parameters;
 
-		public «className»Loader(Context context) {
+		public «classNamePrefix»Loader(Context context) {
 			super(context);
 		}
 		
-		public «className»Loader(Context context, Parcelable parameters) {
+		public «classNamePrefix»Loader(Context context, Parcelable parameters) {
 			this(context);
 			this.parameters = parameters;
 		}
@@ -256,7 +258,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 		public «returnType» loadInBackground() {
 			try
 			{
-				«className»HttpRequest httpRequest = new «className»HttpRequest<«className»RequestParameters,«returnType»>(parameters);
+				«classNamePrefix»HttpRequest httpRequest = new «classNamePrefix»HttpRequest(parameters);
 				httpRequest.do«method»Request();
 				return httpRequest.getResult();
 				/**
@@ -304,11 +306,11 @@ class AndroidHttpRequestGenerator implements IGenerator
 			result = null;
 		}
 		
-		private class «className»HttpRequest
+		private class «classNamePrefix»HttpRequest
 		{
-			private «className»RequestParameters parameters;
+			private «classNamePrefix»RequestParameters parameters;
 			
-			private «className»HttpRequest(Parcelable parameters) {
+			private «classNamePrefix»HttpRequest(Parcelable parameters) {
 				this.parameters = parameters;
 				disableConnectionReuseIfNecessary();
 			}
@@ -465,7 +467,11 @@ class AndroidHttpRequestGenerator implements IGenerator
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
 		«FOR s : members.entrySet»
+		«IF newLinkedList("String", "Integer", "Parcelable", "Serializable").contains(s.value)»
 			«s.key.createParcelableWriteToParcel(s.value)»
+		«ELSEIF s.value.equals("boolean")»
+			out.writeInteger(s.key ? 1 : 0);
+		«ENDIF»
 		«ENDFOR»
 			out.writeSerializable(exception);
 	    }
@@ -475,7 +481,11 @@ class AndroidHttpRequestGenerator implements IGenerator
 			«IF newLinkedList("String", "Integer", "Parcelable", "Serializable").contains(s.value)»
 			«s.key.createParcelableReadMember(s.value)»
 			«ELSE»
+				«IF s.value.equals("boolean")»
+			«s.key» = in.readInteger() > 0;
+				«ELSE»
 			«s.key.createParcelableReadMemberWithCast("Serializable", s.value)»
+				«ENDIF»
 			«ENDIF»
 		«ENDFOR»
 			exception = (Exception) in.readSerializable();
@@ -535,7 +545,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 	urlConnection.setReadTimeout(10000); // 10 seconds
 	urlConnection.setDoInput(true)
 	«IF method.toString.startsWith('P')» // if POST or PUT
-	urlConnection.setDoOutput(true);
+	urlConnection.setDoOutput(true); // consider: urlConnection.setDoOutput(urlConnection.getMethod().toUpperCase().startsWith("P")); // POST and PUT
 	«ELSE»
 	urlConnection.setDoOutput(false);
 	«ENDIF»
