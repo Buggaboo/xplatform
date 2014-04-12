@@ -11,6 +11,7 @@ import nl.sison.dsl.mobgen.MobgenHeader
 import nl.sison.dsl.mobgen.MobgenJson
 import java.util.ArrayList
 import java.util.List
+import java.util.HashMap
 
 class MobgenGenerator implements IGenerator {
 	
@@ -39,7 +40,7 @@ class AndroidResourceGenerator implements IGenerator
 			m.name.capitalizeFirstLetter.androidParcelableEnumTemplate(m.values.join(",\n"))
 		))
 		
-		// TODO refactor so that m.name.capitalizeFirstLetter is added as an XText feature
+		// TODO refactor so that m.name.capitalizeFirstLetter is added as an XText EFeature
 		instances.forEach(m | fsa.generateFile(m.name.capitalizeFirstLetter+'Enum.java',
 			m.name.capitalizeFirstLetter.javaEnumTemplate(m.values.join(",\n"))
 		))
@@ -63,6 +64,8 @@ class AndroidResourceGenerator implements IGenerator
 	
 	public enum «name»Enum implements Parcelable {
 		«commaSeparatedValues»;
+		
+		// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)
 
 		public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
 			public Status createFromParcel(Parcel in) {
@@ -151,12 +154,13 @@ class AndroidCallRequestGenerator implements IGenerator
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
 		val name = callDefinition.name
-		val method = callDefinition.method.capitalizeFirstLetter
 		val uri = callDefinition.uri
 		val urlParams = uri.parameters
+		
+		// TODO also kill boiler plate for the Activity / Fragment
 
 		val stringBuffer = new StringBuffer
-		stringBuffer.append(uri.stringPrefix.toString.setPackage)
+		stringBuffer.append(uri.stringPrefix.toString.setPackage(name))
 		
 		fsa.generateFile(name.capitalizeFirstLetter + 'Loader.java', stringBuffer.toString)
 	}
@@ -172,25 +176,28 @@ class AndroidCallRequestGenerator implements IGenerator
 		return list.fold("") [result, s | result + "\nimport " + s]
 	}
 */
-	
+	/**
+	 * The check for 'P' is to differentiatie between calls where the server expects a payload, which are POST and PUT
+	 */
 	def wrapAsLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
 	import java.util.Map; // see http call
 	
-	// inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
+	/** inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html */
 	public class «className»Loader extends AsyncTaskLoader<«returnType»>
 	{
-		«returnType» result;
-	
+		private «returnType» result;
+		private Parcelable parameters;
+
 		public «className»Loader(Context context) {
 			super(context);
 		}
 		
-		public «className»Loader(Context context, String param) { // TODO params
+		public «className»Loader(Context context, Parcelable parameters) {
 			this(context);
-			// this.param = param;
+			this.parameters = parameters;
 		}
 	
 		// Load the data asynchronously
@@ -198,16 +205,17 @@ class AndroidCallRequestGenerator implements IGenerator
 		public «returnType» loadInBackground() {
 			try
 			{
-				«className»HttpRequest.setParameters(TODO); // TODO
-				«className»HttpRequest.do«method»Request();
-				return «className»HttpRequest.getResult();
+				«className»HttpRequest httpRequest = new «className»HttpRequest();
+				httpRequest.setParameters(parameters);
+				httpRequest.do«method»Request();
+				return httpRequest.getResult();
 				/**
 				 * if this invoked http request throws an exception
 				 * TODO Let the exception object come through the 'result' object
 				 */
 			}catch (Exception e)
 			{
-				return «returnType»(e); // TODO define this
+				return «returnType»(e); // general exception catch: this must be passed on to the ui thread
 			}
 		}
 		
@@ -254,8 +262,8 @@ class AndroidCallRequestGenerator implements IGenerator
 				disableConnectionReuseIfNecessary();
 			}
 			
-			private static «returnType» result = null; 
-			public static «returnType» getResult() { return result; }
+			private «returnType» result = null; 
+			public «returnType» getResult() { return result; }
 			
 			// TODO feed parameters to urlParams, headerParams, readStream and writeStream, through outer class, it's unnecessary to declare private members twice
 			
@@ -295,43 +303,85 @@ class AndroidCallRequestGenerator implements IGenerator
 	}
 	'''
 
+	def createParcelableProtectedMembers(CharSequence parameterName, CharSequence parameterType) '''
+	protected «parameterType» «parameterName»;
+	''' 
+
+	def createParcelableWriteToParcel(CharSequence parameterName, CharSequence parameterType) '''
+	out.write«parameterType»(«parameterName»);
+	'''
+
+	def createParcelableReadMember(CharSequence parameterName, CharSequence readMethodName) '''
+	«parameterName» = in.read«readMethodName»();
+	'''
+	
+	def createParcelableReadMemberWithCast(CharSequence parameterName, CharSequence readMethodName, CharSequence castToType) '''
+	«parameterName» = («castToType») in.read«readMethodName»();
+	'''
+	
 	/**
 	 * 
-	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String... 
+	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays... 
 	 * 
 	 */
-	def createParcelable(CharSequence returnType, List<String> parameterNames, List<String> parameterTypes) '''
-	public class «returnType» extends Parcelable
+	def createParcelable(CharSequence parcelName, CharSequence members, CharSequence memberAccessors, CharSequence constructorForParameters, CharSequence writeToParcelMethodBody, CharSequence readFromParcelMethodBody) '''
+	/**
+	 * Parcelables are actually just POJOs that are faster than Serializables,
+	 * only Parcelables require manual work to pass on values from one object to the next
+	 *
+	 * This type of parcelable contains an Exception field in case of failure along the way
+	 * e.g. no internet connection etc.
+	 */ 
+	public class «parcelName» extends Parcelable
 	{
+	    /*
 	    protected String lastComment;
 	    protected Integer messageCount;
 	    protected Date createdAt;
+	    protected boolean ...
+	    protected Parcelable ...
+	    protected Serialized ...
+	    */
+	    «members»
+	    protected Exception exception;
+	    
+	    // for lack of properties
+	    «memberAccessors»
+	    
+	    «constructorForParameters»
+	    
+	    public «parcelName»(Exception exception) {
+	    	this.exception = exception;
+	    } 
 
-	    public Conversation(Parcel in) {
+	public boolean hasException()
+	{
+		return exception != null;
+	}
+
+	    public «parcelName»(Parcel in) {
 	    	readFromParcel(in);
 	    }
 
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
-	        out.writeString(lastComment);
-	        out.writeInt(messageCount);
-			out.writeSerializable(createdAt);
+			«writeToParcelMethodBody»
+			out.writeSerializable(exception);
 	    }
 
-	    private void readFromParcel(Parcel in) {  
-	    	lastComment = in.readString();
-			messageCount = in.readInt();
-			createdAt = (Date) in.readSerializable();
+	    private void readFromParcel(Parcel in) {
+			«readFromParcelMethodBody»
+			exception = (Exception) in.readSerializable();
 	    }
 
 	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
 
-	        public «returnType» createFromParcel(Parcel in) {
-	            return new «returnType»(in);
+	        public «parcelName» createFromParcel(Parcel in) {
+	            return new «parcelName»(in);
 	        }
 
-	        public «returnType»[] newArray(int size) {
-	            return new «returnType» [size];
+	        public «parcelName»[] newArray(int size) {
+	            return new «parcelName» [size];
 	        }
 
 	    };
@@ -344,8 +394,8 @@ class AndroidCallRequestGenerator implements IGenerator
 	}
 	'''	
 	
-	def setPackage(String url) '''
-	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF »;
+	def setPackage(String url, String name) '''
+	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF ».« name »;
 	
 	'''
 	
