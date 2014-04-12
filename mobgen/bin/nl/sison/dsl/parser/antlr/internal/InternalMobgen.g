@@ -526,7 +526,7 @@ ruleMobgenHeader returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_1='\'\'\'' 
+)	otherlv_1='\'\'\'' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderAccess().getApostropheApostropheApostropheKeyword_1());
     }
@@ -607,11 +607,11 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
+((
 (
 		lv_key_0_0=RULE_STRING
 		{
-			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_key_0_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -627,13 +627,13 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
 )
 )	otherlv_1='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1());
+    	newLeafNode(otherlv_1, grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1());
     }
-(
+((
 (
 		lv_value_2_0=RULE_STRING
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -647,11 +647,11 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
 	    }
 
 )
-))
+)
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_2_1_0()); 
 	    }
 		lv_parameter_3_0=ruleMobgenHeaderParameter		{
 	        if ($current==null) {
@@ -666,7 +666,7 @@ ruleMobgenHeaderKeyValuePair returns [EObject current=null]
 	    }
 
 )
-))
+)))
 ;
 
 

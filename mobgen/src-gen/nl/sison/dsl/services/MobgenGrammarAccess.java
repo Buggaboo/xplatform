@@ -319,15 +319,15 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cApostropheApostropheApostropheKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//MobgenHeader:
-		//	name=ID? "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
+		//	name=ID "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
 		//	"}" "\'\'\'";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID? "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
-		//"}" "\'\'\'"
+		//name=ID "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","? "}"
+		//"\'\'\'"
 		public Group getGroup() { return cGroup; }
 
-		//name=ID?
+		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
 		//ID
@@ -369,46 +369,46 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class MobgenHeaderKeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MobgenHeaderKeyValuePair");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cKeyAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cKeySTRINGTerminalRuleCall_0_0_0 = (RuleCall)cKeyAssignment_0_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
-		private final Assignment cParameterAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cParameterMobgenHeaderParameterParserRuleCall_1_0 = (RuleCall)cParameterAssignment_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeySTRINGTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cParameterAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cParameterMobgenHeaderParameterParserRuleCall_2_1_0 = (RuleCall)cParameterAssignment_2_1.eContents().get(0);
 		
 		//MobgenHeaderKeyValuePair:
-		//	key=STRING "=" value=STRING | parameter=MobgenHeaderParameter;
+		//	key=STRING "=" (value=STRING | parameter=MobgenHeaderParameter);
 		public ParserRule getRule() { return rule; }
 
-		//key=STRING "=" value=STRING | parameter=MobgenHeaderParameter
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//key=STRING "=" value=STRING
-		public Group getGroup_0() { return cGroup_0; }
+		//key=STRING "=" (value=STRING | parameter=MobgenHeaderParameter)
+		public Group getGroup() { return cGroup; }
 
 		//key=STRING
-		public Assignment getKeyAssignment_0_0() { return cKeyAssignment_0_0; }
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
 
 		//STRING
-		public RuleCall getKeySTRINGTerminalRuleCall_0_0_0() { return cKeySTRINGTerminalRuleCall_0_0_0; }
+		public RuleCall getKeySTRINGTerminalRuleCall_0_0() { return cKeySTRINGTerminalRuleCall_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=STRING | parameter=MobgenHeaderParameter
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//value=STRING
-		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_2_0() { return cValueSTRINGTerminalRuleCall_0_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
 
 		//parameter=MobgenHeaderParameter
-		public Assignment getParameterAssignment_1() { return cParameterAssignment_1; }
+		public Assignment getParameterAssignment_2_1() { return cParameterAssignment_2_1; }
 
 		//MobgenHeaderParameter
-		public RuleCall getParameterMobgenHeaderParameterParserRuleCall_1_0() { return cParameterMobgenHeaderParameterParserRuleCall_1_0; }
+		public RuleCall getParameterMobgenHeaderParameterParserRuleCall_2_1_0() { return cParameterMobgenHeaderParameterParserRuleCall_2_1_0; }
 	}
 
 	public class MobgenHeaderParameterElements extends AbstractParserRuleElementFinder {
@@ -1065,7 +1065,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MobgenHeader:
-	//	name=ID? "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
+	//	name=ID "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
 	//	"}" "\'\'\'";
 	public MobgenHeaderElements getMobgenHeaderAccess() {
 		return (pMobgenHeader != null) ? pMobgenHeader : (pMobgenHeader = new MobgenHeaderElements());
@@ -1076,7 +1076,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MobgenHeaderKeyValuePair:
-	//	key=STRING "=" value=STRING | parameter=MobgenHeaderParameter;
+	//	key=STRING "=" (value=STRING | parameter=MobgenHeaderParameter);
 	public MobgenHeaderKeyValuePairElements getMobgenHeaderKeyValuePairAccess() {
 		return (pMobgenHeaderKeyValuePair != null) ? pMobgenHeaderKeyValuePair : (pMobgenHeaderKeyValuePair = new MobgenHeaderKeyValuePairElements());
 	}

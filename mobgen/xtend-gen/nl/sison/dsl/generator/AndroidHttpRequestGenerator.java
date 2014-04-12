@@ -1,10 +1,19 @@
 package nl.sison.dsl.generator;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import nl.sison.dsl.mobgen.MobgenCallDefinition;
-import nl.sison.dsl.mobgen.URI;
+import nl.sison.dsl.mobgen.MobgenHeader;
+import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
+import nl.sison.dsl.mobgen.MobgenHeaderParameter;
+import nl.sison.dsl.mobgen.MobgenJson;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -12,38 +21,107 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
-public class AndroidCallRequestGenerator implements IGenerator {
+public class AndroidHttpRequestGenerator implements IGenerator {
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
     TreeIterator<EObject> _allContents = input.getAllContents();
     final Iterator<MobgenCallDefinition> callDefinitions = Iterators.<MobgenCallDefinition>filter(_allContents, MobgenCallDefinition.class);
     final Procedure1<MobgenCallDefinition> _function = new Procedure1<MobgenCallDefinition>() {
         public void apply(final MobgenCallDefinition d) {
-          AndroidCallRequestGenerator.this.androidCreateJavaFiles(d, fsa);
+          AndroidHttpRequestGenerator.this.androidCreateJavaFiles(d, fsa);
         }
       };
     IteratorExtensions.<MobgenCallDefinition>forEach(callDefinitions, _function);
   }
   
   public void androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
-    final String name = callDefinition.getName();
+    MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
+    boolean _notEquals = (!Objects.equal(_requestHeaders, null));
+    if (_notEquals) {
+      this.createParcelableRequestHeaderFile(callDefinition, fsa);
+    }
+  }
+  
+  public void createLoader(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    String _name = callDefinition.getName();
+    final String nameCapitalized = this.capitalizeFirstLetter(_name);
     String _method = callDefinition.getMethod();
-    final String method = this.capitalizeFirstLetter(_method);
-    final URI uri = callDefinition.getUri();
-    final EList<String> urlParams = uri.getParameters();
+    final String methodCapitalized = this.capitalizeFirstLetter(_method);
+    MobgenJson _jsonToClient = callDefinition.getJsonToClient();
+    String _name_1 = _jsonToClient.getName();
+    final String jsonResultTypeNameCapitalized = this.capitalizeFirstLetter(_name_1);
+  }
+  
+  public void createParcelableRequestUriFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
+    final String name = _requestHeaders.getName();
+    final String nameCapitalized = this.capitalizeFirstLetter(name);
+    final String nameLowerCase = name.toLowerCase();
     StringBuffer _stringBuffer = new StringBuffer();
     final StringBuffer stringBuffer = _stringBuffer;
-    EList<String> _stringPrefix = uri.getStringPrefix();
-    String _string = _stringPrefix.toString();
-    CharSequence _setPackage = this.setPackage(_string);
-    stringBuffer.append(_setPackage);
+    MobgenHeader _requestHeaders_1 = callDefinition.getRequestHeaders();
+    EList<MobgenHeaderKeyValuePair> _headerKeyValues = _requestHeaders_1.getHeaderKeyValues();
+    final Iterable<MobgenHeaderKeyValuePair> requestHeaderKeyValuePairs = Iterables.<MobgenHeaderKeyValuePair>filter(_headerKeyValues, MobgenHeaderKeyValuePair.class);
+    final HashMap<String,String> hashMap = CollectionLiterals.<String, String>newHashMap();
+    for (final MobgenHeaderKeyValuePair kvp : requestHeaderKeyValuePairs) {
+      MobgenHeaderParameter _parameter = kvp.getParameter();
+      boolean _notEquals = (!Objects.equal(_parameter, null));
+      if (_notEquals) {
+        MobgenHeaderParameter _parameter_1 = kvp.getParameter();
+        String _id = _parameter_1.getId();
+        hashMap.put(_id, "String");
+      }
+    }
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
-    String _plus = (_capitalizeFirstLetter + "Loader.java");
+    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap);
+    stringBuffer.append(_createParcelable);
+    CharSequence _setPackage = this.setPackage(nameLowerCase);
+    String _string = _setPackage.toString();
+    int _length = "package ".length();
+    String _substring = _string.substring(_length);
+    String _replace = _substring.replace(".", "/");
+    final String filePath = String.format("src/%s/%s%s", _replace, nameCapitalized, "Loader.java");
     String _string_1 = stringBuffer.toString();
-    fsa.generateFile(_plus, _string_1);
+    fsa.generateFile(filePath, _string_1);
+  }
+  
+  public void createParcelableRequestHeaderFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
+    final String name = _requestHeaders.getName();
+    final String nameCapitalized = this.capitalizeFirstLetter(name);
+    final String nameLowerCase = name.toLowerCase();
+    StringBuffer _stringBuffer = new StringBuffer();
+    final StringBuffer stringBuffer = _stringBuffer;
+    MobgenHeader _requestHeaders_1 = callDefinition.getRequestHeaders();
+    EList<MobgenHeaderKeyValuePair> _headerKeyValues = _requestHeaders_1.getHeaderKeyValues();
+    final Iterable<MobgenHeaderKeyValuePair> requestHeaderKeyValuePairs = Iterables.<MobgenHeaderKeyValuePair>filter(_headerKeyValues, MobgenHeaderKeyValuePair.class);
+    final HashMap<String,String> hashMap = CollectionLiterals.<String, String>newHashMap();
+    for (final MobgenHeaderKeyValuePair kvp : requestHeaderKeyValuePairs) {
+      MobgenHeaderParameter _parameter = kvp.getParameter();
+      boolean _notEquals = (!Objects.equal(_parameter, null));
+      if (_notEquals) {
+        MobgenHeaderParameter _parameter_1 = kvp.getParameter();
+        String _id = _parameter_1.getId();
+        hashMap.put(_id, "String");
+      }
+    }
+    String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
+    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap);
+    stringBuffer.append(_createParcelable);
+    CharSequence _setPackage = this.setPackage(nameLowerCase);
+    String _string = _setPackage.toString();
+    int _length = "package ".length();
+    String _substring = _string.substring(_length);
+    String _replace = _substring.replace(".", "/");
+    final String filePath = String.format("src/%s/%s%s", _replace, nameCapitalized, "Loader.java");
+    String _string_1 = stringBuffer.toString();
+    fsa.generateFile(filePath, _string_1);
   }
   
   public String capitalizeFirstLetter(final String s) {
@@ -54,14 +132,23 @@ public class AndroidCallRequestGenerator implements IGenerator {
     return (_upperCase + _lowerCase);
   }
   
+  public CharSequence setPackage(final CharSequence name) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package nl.sison.dsl.mobgen.");
+    _builder.append(name, "");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    return _builder;
+  }
+  
   /**
-   * // TODO assemble imports from generated file(s)
-   * def setImports(ArrayList<String> list)
-   * {
-   * return list.fold("") [result, s | result + "\nimport " + s]
-   * }
+   * The check for 'P' is to differentiate between calls where the server expects a payload, which are POST and PUT
+   * 
+   * TODO also generate the AsyncTask for this, because a Loader has a 1..1 relation with the Fragment/Activity
+   * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
    */
-  public CharSequence wrapAsLoader(final CharSequence className, final CharSequence returnType, final CharSequence method, final CharSequence requestBody, final CharSequence jsonParserToParcelable, final CharSequence serverBoundPayload) {
+  public CharSequence createLoader(final CharSequence classNamePrefix, final CharSequence returnType, final CharSequence method, final CharSequence requestBody, final CharSequence jsonParserToParcelable, final CharSequence serverBoundPayload) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import android.content.AsyncTaskLoader;");
     _builder.newLine();
@@ -71,10 +158,10 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("import java.util.Map; // see http call");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("// inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html");
+    _builder.append("/** inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html */");
     _builder.newLine();
     _builder.append("public class ");
-    _builder.append(className, "");
+    _builder.append(classNamePrefix, "");
     _builder.append("Loader extends AsyncTaskLoader<");
     _builder.append(returnType, "");
     _builder.append(">");
@@ -82,13 +169,19 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("private ");
     _builder.append(returnType, "	");
     _builder.append(" result;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("private ");
+    _builder.append(classNamePrefix, "	");
+    _builder.append("RequestParameters parameters;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(className, "	");
+    _builder.append(classNamePrefix, "	");
     _builder.append("Loader(Context context) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -101,14 +194,14 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(className, "	");
-    _builder.append("Loader(Context context, String param) { // TODO params");
+    _builder.append(classNamePrefix, "	");
+    _builder.append("Loader(Context context, Parcelable parameters) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("this(context);");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// this.param = param;");
+    _builder.append("this.parameters = parameters;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -132,20 +225,19 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(className, "			");
-    _builder.append("HttpRequest.setParameters(TODO); // TODO");
+    _builder.append(classNamePrefix, "			");
+    _builder.append("HttpRequest httpRequest = new ");
+    _builder.append(classNamePrefix, "			");
+    _builder.append("HttpRequest(parameters);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
-    _builder.append(className, "			");
-    _builder.append("HttpRequest.do");
+    _builder.append("httpRequest.do");
     _builder.append(method, "			");
     _builder.append("Request();");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
-    _builder.append("return ");
-    _builder.append(className, "			");
-    _builder.append("HttpRequest.getResult();");
-    _builder.newLineIfNotEmpty();
+    _builder.append("return httpRequest.getResult();");
+    _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("/**");
     _builder.newLine();
@@ -167,7 +259,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t\t\t");
     _builder.append("return ");
     _builder.append(returnType, "			");
-    _builder.append("(e); // TODO define this");
+    _builder.append("(e); // general exception catch: this must be passed on to the ui thread");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("}");
@@ -279,26 +371,27 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("private class ");
-    _builder.append(className, "	");
+    _builder.append(classNamePrefix, "	");
     _builder.append("HttpRequest");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public final static ");
-    _builder.append(className, "		");
-    _builder.append("HttpRequest INSTANCE = new ");
-    _builder.append(className, "		");
-    _builder.append("HttpRequest(); ");
+    _builder.append("private ");
+    _builder.append(classNamePrefix, "		");
+    _builder.append("RequestParameters parameters;");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("private ");
-    _builder.append(className, "		");
-    _builder.append("HttpRequest() {");
+    _builder.append(classNamePrefix, "		");
+    _builder.append("HttpRequest(Parcelable parameters) {");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("this.parameters = parameters;");
+    _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("disableConnectionReuseIfNecessary();");
     _builder.newLine();
@@ -308,12 +401,12 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("private static ");
+    _builder.append("private ");
     _builder.append(returnType, "		");
     _builder.append(" result = null; ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("public static ");
+    _builder.append("public ");
     _builder.append(returnType, "		");
     _builder.append(" getResult() { return result; }");
     _builder.newLineIfNotEmpty();
@@ -434,30 +527,272 @@ public class AndroidCallRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  /**
-   * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String...
-   */
-  public CharSequence createParcelable(final CharSequence returnType, final List<String> parameterNames, final List<String> parameterTypes) {
+  public HashMap<CharSequence,CharSequence> joinPairAsMap(final Iterator<CharSequence> keys, final Iterator<CharSequence> values) {
+    final HashMap<CharSequence,CharSequence> hashMap = CollectionLiterals.<CharSequence, CharSequence>newHashMap();
+    boolean _and = false;
+    boolean _hasNext = keys.hasNext();
+    if (!_hasNext) {
+      _and = false;
+    } else {
+      boolean _hasNext_1 = values.hasNext();
+      _and = (_hasNext && _hasNext_1);
+    }
+    boolean _while = _and;
+    while (_while) {
+      {
+        final CharSequence value = values.next();
+        final CharSequence key = keys.next();
+        hashMap.put(key, value);
+      }
+      boolean _and_1 = false;
+      boolean _hasNext_2 = keys.hasNext();
+      if (!_hasNext_2) {
+        _and_1 = false;
+      } else {
+        boolean _hasNext_3 = values.hasNext();
+        _and_1 = (_hasNext_2 && _hasNext_3);
+      }
+      _while = _and_1;
+    }
+    return hashMap;
+  }
+  
+  public CharSequence createParcelableProtectedMembers(final CharSequence parameterName, final CharSequence parameterType) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("protected ");
+    _builder.append(parameterType, "");
+    _builder.append(" ");
+    _builder.append(parameterName, "");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence createParcelableWriteToParcel(final CharSequence parameterName, final CharSequence writeMethodNameSuffix) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("out.write");
+    _builder.append(writeMethodNameSuffix, "");
+    _builder.append("(");
+    _builder.append(parameterName, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence createParcelableReadMember(final CharSequence parameterName, final CharSequence readMethodNameSuffix) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(parameterName, "");
+    _builder.append(" = in.read");
+    _builder.append(readMethodNameSuffix, "");
+    _builder.append("();");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence createParcelableReadMemberWithCast(final CharSequence parameterName, final CharSequence readMethodSuffix, final CharSequence castToType) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(parameterName, "");
+    _builder.append(" = (");
+    _builder.append(castToType, "");
+    _builder.append(") in.read");
+    _builder.append(readMethodSuffix, "");
+    _builder.append("();");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence createParcelableAccessors(final CharSequence parameterName, final CharSequence parameterType) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("void set");
+    String _string = parameterName.toString();
+    String _capitalizeFirstLetter = this.capitalizeFirstLetter(_string);
+    _builder.append(_capitalizeFirstLetter, "");
+    _builder.append(" (final ");
+    _builder.append(parameterType, "");
+    _builder.append(" ");
+    _builder.append(parameterName, "");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("return this.");
+    _builder.append(parameterName, "	");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("void get");
+    String _string_1 = parameterName.toString();
+    String _capitalizeFirstLetter_1 = this.capitalizeFirstLetter(_string_1);
+    _builder.append(_capitalizeFirstLetter_1, "");
+    _builder.append(" () { return ");
+    _builder.append(parameterName, "");
+    _builder.append("; }");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public void camelCaseHttpHeaderKey(final CharSequence headerKey) {
+    String _string = headerKey.toString();
+    final String[] strArr = _string.split("-");
+    StringBuffer _stringBuffer = new StringBuffer();
+    final StringBuffer strBuf = _stringBuffer;
+    String _head = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(strArr)));
+    String _string_1 = _head.toString();
+    String _lowerCase = _string_1.toLowerCase();
+    strBuf.append(_lowerCase);
+    for (final String str : strArr) {
+      String _head_1 = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(strArr)));
+      boolean _equals = str.equals(_head_1);
+      boolean _not = (!_equals);
+      if (_not) {
+        String _capitalizeFirstLetter = this.capitalizeFirstLetter(str);
+        strBuf.append(_capitalizeFirstLetter);
+      }
+    }
+  }
+  
+  /**
+   * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays...
+   */
+  public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String,String> members) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/**");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Parcelables are actually just POJOs that are faster than Serializables,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* only Parcelables require manual work to pass on values from one object to the next");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* This type of parcelable contains an Exception field in case of failure along the way");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* e.g. no internet connection etc.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* This implementation is intended to be passed on from the background threads");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* to the ui thread");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/ ");
+    _builder.newLine();
     _builder.append("public class ");
-    _builder.append(returnType, "");
+    _builder.append(parcelableClassName, "");
     _builder.append(" extends Parcelable");
     _builder.newLineIfNotEmpty();
     _builder.append("{");
     _builder.newLine();
+    {
+      Set<Entry<String,String>> _entrySet = members.entrySet();
+      for(final Entry<String,String> s : _entrySet) {
+        _builder.append("    ");
+        String _key = s.getKey();
+        String _value = s.getValue();
+        CharSequence _createParcelableProtectedMembers = this.createParcelableProtectedMembers(_key, _value);
+        _builder.append(_createParcelableProtectedMembers, "    ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("    ");
-    _builder.append("protected String lastComment;");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("protected Integer messageCount;");
+    _builder.append("protected Exception exception = null;");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("protected Date createdAt;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("// for lack of properties");
+    _builder.newLine();
+    {
+      Set<Entry<String,String>> _entrySet_1 = members.entrySet();
+      for(final Entry<String,String> s_1 : _entrySet_1) {
+        _builder.append("    ");
+        String _key_1 = s_1.getKey();
+        String _value_1 = s_1.getValue();
+        CharSequence _createParcelableAccessors = this.createParcelableAccessors(_key_1, _value_1);
+        _builder.append(_createParcelableAccessors, "    ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public ");
+    _builder.append(parcelableClassName, "    ");
+    _builder.append("(");
+    {
+      Set<Entry<String,String>> _entrySet_2 = members.entrySet();
+      for(final Entry<String,String> s_2 : _entrySet_2) {
+        String _key_2 = s_2.getKey();
+        _builder.append(_key_2, "    ");
+        _builder.append(" ");
+        String _value_2 = s_2.getValue();
+        _builder.append(_value_2, "    ");
+      }
+    }
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.append("{");
+    _builder.newLine();
+    {
+      Set<Entry<String,String>> _entrySet_3 = members.entrySet();
+      for(final Entry<String,String> s_3 : _entrySet_3) {
+        _builder.append("\t");
+        _builder.append("this.");
+        String _key_3 = s_3.getKey();
+        _builder.append(_key_3, "	");
+        _builder.append(" = ");
+        String _key_4 = s_3.getKey();
+        _builder.append(_key_4, "	");
+        _builder.append("; ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ");
+    _builder.append(parcelableClassName, "	");
+    _builder.append("(Exception exception) {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t    ");
+    _builder.append("this.exception = exception;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public boolean hasException()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return exception != null;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public Conversation(Parcel in) {");
-    _builder.newLine();
+    _builder.append("public ");
+    _builder.append(parcelableClassName, "    ");
+    _builder.append("(Parcel in) {");
+    _builder.newLineIfNotEmpty();
     _builder.append("    \t");
     _builder.append("readFromParcel(in);");
     _builder.newLine();
@@ -471,30 +806,79 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.append("    ");
     _builder.append("public void writeToParcel(Parcel out, int flags) {");
     _builder.newLine();
-    _builder.append("        ");
-    _builder.append("out.writeString(lastComment);");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("out.writeInt(messageCount);");
-    _builder.newLine();
+    {
+      Set<Entry<String,String>> _entrySet_4 = members.entrySet();
+      for(final Entry<String,String> s_4 : _entrySet_4) {
+        {
+          LinkedList<String> _newLinkedList = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");
+          String _value_3 = s_4.getValue();
+          boolean _contains = _newLinkedList.contains(_value_3);
+          if (_contains) {
+            _builder.append("\t");
+            String _key_5 = s_4.getKey();
+            String _value_4 = s_4.getValue();
+            CharSequence _createParcelableWriteToParcel = this.createParcelableWriteToParcel(_key_5, _value_4);
+            _builder.append(_createParcelableWriteToParcel, "	");
+            _builder.newLineIfNotEmpty();
+          } else {
+            String _value_5 = s_4.getValue();
+            boolean _equals = _value_5.equals("boolean");
+            if (_equals) {
+              _builder.append("\t");
+              _builder.append("out.writeInteger(s.key ? 1 : 0);");
+              _builder.newLine();
+            }
+          }
+        }
+      }
+    }
     _builder.append("\t\t");
-    _builder.append("out.writeSerializable(createdAt);");
+    _builder.append("out.writeSerializable(exception);");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("private void readFromParcel(Parcel in) {  ");
+    _builder.append("private void readFromParcel(Parcel in) {");
     _builder.newLine();
-    _builder.append("    \t");
-    _builder.append("lastComment = in.readString();");
-    _builder.newLine();
+    {
+      Set<Entry<String,String>> _entrySet_5 = members.entrySet();
+      for(final Entry<String,String> s_5 : _entrySet_5) {
+        {
+          LinkedList<String> _newLinkedList_1 = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");
+          String _value_6 = s_5.getValue();
+          boolean _contains_1 = _newLinkedList_1.contains(_value_6);
+          if (_contains_1) {
+            _builder.append("\t");
+            String _key_6 = s_5.getKey();
+            String _value_7 = s_5.getValue();
+            CharSequence _createParcelableReadMember = this.createParcelableReadMember(_key_6, _value_7);
+            _builder.append(_createParcelableReadMember, "	");
+            _builder.newLineIfNotEmpty();
+          } else {
+            {
+              String _value_8 = s_5.getValue();
+              boolean _equals_1 = _value_8.equals("boolean");
+              if (_equals_1) {
+                String _key_7 = s_5.getKey();
+                _builder.append(_key_7, "");
+                _builder.append(" = in.readInteger() > 0;");
+                _builder.newLineIfNotEmpty();
+              } else {
+                String _key_8 = s_5.getKey();
+                String _value_9 = s_5.getValue();
+                CharSequence _createParcelableReadMemberWithCast = this.createParcelableReadMemberWithCast(_key_8, "Serializable", _value_9);
+                _builder.append(_createParcelableReadMemberWithCast, "");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
+        }
+      }
+    }
     _builder.append("\t\t");
-    _builder.append("messageCount = in.readInt();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("createdAt = (Date) in.readSerializable();");
+    _builder.append("exception = (Exception) in.readSerializable();");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
@@ -506,12 +890,12 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("        ");
     _builder.append("public ");
-    _builder.append(returnType, "        ");
+    _builder.append(parcelableClassName, "        ");
     _builder.append(" createFromParcel(Parcel in) {");
     _builder.newLineIfNotEmpty();
     _builder.append("            ");
     _builder.append("return new ");
-    _builder.append(returnType, "            ");
+    _builder.append(parcelableClassName, "            ");
     _builder.append("(in);");
     _builder.newLineIfNotEmpty();
     _builder.append("        ");
@@ -520,12 +904,12 @@ public class AndroidCallRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("        ");
     _builder.append("public ");
-    _builder.append(returnType, "        ");
+    _builder.append(parcelableClassName, "        ");
     _builder.append("[] newArray(int size) {");
     _builder.newLineIfNotEmpty();
     _builder.append("            ");
     _builder.append("return new ");
-    _builder.append(returnType, "            ");
+    _builder.append(parcelableClassName, "            ");
     _builder.append(" [size];");
     _builder.newLineIfNotEmpty();
     _builder.append("        ");
@@ -555,21 +939,9 @@ public class AndroidCallRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence setPackage(final String url) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package nl.sison.dsl.mobgen.http");
-    {
-      boolean _startsWith = url.startsWith("https://");
-      if (_startsWith) {
-        _builder.append("\"s\"");
-      }
-    }
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    return _builder;
-  }
-  
+  /**
+   * TODO Check if Https is being used correctly
+   */
   public String isTransportLayerSecured(final String url) {
     String _xifexpression = null;
     boolean _startsWith = url.startsWith("https://");
@@ -659,7 +1031,7 @@ public class AndroidCallRequestGenerator implements IGenerator {
       if (_startsWith) {
         _builder.append(" // if POST or PUT");
         _builder.newLineIfNotEmpty();
-        _builder.append("urlConnection.setDoOutput(true);");
+        _builder.append("urlConnection.setDoOutput(true); // consider: urlConnection.setDoOutput(urlConnection.getMethod().toUpperCase().startsWith(\"P\")); // POST and PUT");
         _builder.newLine();
       } else {
         _builder.append("urlConnection.setDoOutput(false);");

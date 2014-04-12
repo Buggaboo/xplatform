@@ -106,6 +106,11 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append(commaSeparatedValues, "	");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {");

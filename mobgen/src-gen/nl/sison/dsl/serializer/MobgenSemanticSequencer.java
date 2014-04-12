@@ -232,7 +232,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((key=STRING value=STRING) | parameter=MobgenHeaderParameter)
+	 *     (key=STRING (value=STRING | parameter=MobgenHeaderParameter))
 	 */
 	protected void sequence_MobgenHeaderKeyValuePair(EObject context, MobgenHeaderKeyValuePair semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -257,7 +257,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? headerKeyValues+=MobgenHeaderKeyValuePair headerKeyValues+=MobgenHeaderKeyValuePair*)
+	 *     (name=ID headerKeyValues+=MobgenHeaderKeyValuePair headerKeyValues+=MobgenHeaderKeyValuePair*)
 	 */
 	protected void sequence_MobgenHeader(EObject context, MobgenHeader semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

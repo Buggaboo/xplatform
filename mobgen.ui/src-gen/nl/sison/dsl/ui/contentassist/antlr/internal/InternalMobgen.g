@@ -212,9 +212,9 @@ ruleMobgenHeaderKeyValuePair
     }
 	:
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives()); }
-(rule__MobgenHeaderKeyValuePair__Alternatives)
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup()); }
+(rule__MobgenHeaderKeyValuePair__Group__0)
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup()); }
 )
 
 ;
@@ -611,21 +611,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__Alternatives
+rule__MobgenHeaderKeyValuePair__Alternatives_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup_0()); }
-(rule__MobgenHeaderKeyValuePair__Group_0__0)
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup_0()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_0()); }
+(rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0)
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_0()); }
 )
 
     |(
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_1()); }
-(rule__MobgenHeaderKeyValuePair__ParameterAssignment_1)
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_1()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_2_1()); }
+(rule__MobgenHeaderKeyValuePair__ParameterAssignment_2_1)
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_2_1()); }
 )
 
 ;
@@ -2059,7 +2059,7 @@ rule__MobgenHeader__Group__0__Impl
 :
 (
 { before(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0()); }
-(rule__MobgenHeader__NameAssignment_0)?
+(rule__MobgenHeader__NameAssignment_0)
 { after(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0()); }
 )
 
@@ -2360,27 +2360,27 @@ finally {
 
 
 
-rule__MobgenHeaderKeyValuePair__Group_0__0
+rule__MobgenHeaderKeyValuePair__Group__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__MobgenHeaderKeyValuePair__Group_0__0__Impl
-	rule__MobgenHeaderKeyValuePair__Group_0__1
+	rule__MobgenHeaderKeyValuePair__Group__0__Impl
+	rule__MobgenHeaderKeyValuePair__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__Group_0__0__Impl
+rule__MobgenHeaderKeyValuePair__Group__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0_0()); }
-(rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0)
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0_0()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0()); }
+(rule__MobgenHeaderKeyValuePair__KeyAssignment_0)
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0()); }
 )
 
 ;
@@ -2389,29 +2389,29 @@ finally {
 }
 
 
-rule__MobgenHeaderKeyValuePair__Group_0__1
+rule__MobgenHeaderKeyValuePair__Group__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__MobgenHeaderKeyValuePair__Group_0__1__Impl
-	rule__MobgenHeaderKeyValuePair__Group_0__2
+	rule__MobgenHeaderKeyValuePair__Group__1__Impl
+	rule__MobgenHeaderKeyValuePair__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__Group_0__1__Impl
+rule__MobgenHeaderKeyValuePair__Group__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1()); }
 
 	'=' 
 
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_0_1()); }
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getEqualsSignKeyword_1()); }
 )
 
 ;
@@ -2420,26 +2420,26 @@ finally {
 }
 
 
-rule__MobgenHeaderKeyValuePair__Group_0__2
+rule__MobgenHeaderKeyValuePair__Group__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__MobgenHeaderKeyValuePair__Group_0__2__Impl
+	rule__MobgenHeaderKeyValuePair__Group__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__Group_0__2__Impl
+rule__MobgenHeaderKeyValuePair__Group__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_0_2()); }
-(rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2)
-{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_0_2()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2()); }
+(rule__MobgenHeaderKeyValuePair__Alternatives_2)
+{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2()); }
 )
 
 ;
@@ -4443,14 +4443,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0
+rule__MobgenHeaderKeyValuePair__KeyAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); }
-	RULE_STRING{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0_0()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); }
+	RULE_STRING{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeySTRINGTerminalRuleCall_0_0()); }
 )
 
 ;
@@ -4458,14 +4458,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2
+rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); }
-	RULE_STRING{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_0_2_0()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+	RULE_STRING{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
 )
 
 ;
@@ -4473,14 +4473,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MobgenHeaderKeyValuePair__ParameterAssignment_1
+rule__MobgenHeaderKeyValuePair__ParameterAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); }
-	ruleMobgenHeaderParameter{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_1_0()); }
+{ before(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_2_1_0()); }
+	ruleMobgenHeaderParameter{ after(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterMobgenHeaderParameterParserRuleCall_2_1_0()); }
 )
 
 ;

@@ -38,7 +38,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getMobgenAccess().getAlternatives_1(), "rule__Mobgen__Alternatives_1");
-					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives(), "rule__MobgenHeaderKeyValuePair__Alternatives");
+					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2(), "rule__MobgenHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getJsonObjectValueAccess().getAlternatives(), "rule__JsonObjectValue__Alternatives");
 					put(grammarAccess.getJsonCompositeValueAccess().getAlternatives(), "rule__JsonCompositeValue__Alternatives");
 					put(grammarAccess.getJsonLiteralValueAccess().getAlternatives(), "rule__JsonLiteralValue__Alternatives");
@@ -56,7 +56,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getURIAccess().getGroup_1(), "rule__URI__Group_1__0");
 					put(grammarAccess.getMobgenHeaderAccess().getGroup(), "rule__MobgenHeader__Group__0");
 					put(grammarAccess.getMobgenHeaderAccess().getGroup_4(), "rule__MobgenHeader__Group_4__0");
-					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup_0(), "rule__MobgenHeaderKeyValuePair__Group_0__0");
+					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup(), "rule__MobgenHeaderKeyValuePair__Group__0");
 					put(grammarAccess.getMobgenHeaderParameterAccess().getGroup(), "rule__MobgenHeaderParameter__Group__0");
 					put(grammarAccess.getMobgenJsonAccess().getGroup(), "rule__MobgenJson__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
@@ -89,9 +89,9 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0(), "rule__MobgenHeader__NameAssignment_0");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_3(), "rule__MobgenHeader__HeaderKeyValuesAssignment_3");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_4_1(), "rule__MobgenHeader__HeaderKeyValuesAssignment_4_1");
-					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0_0(), "rule__MobgenHeaderKeyValuePair__KeyAssignment_0_0");
-					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_0_2(), "rule__MobgenHeaderKeyValuePair__ValueAssignment_0_2");
-					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_1(), "rule__MobgenHeaderKeyValuePair__ParameterAssignment_1");
+					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getKeyAssignment_0(), "rule__MobgenHeaderKeyValuePair__KeyAssignment_0");
+					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getValueAssignment_2_0(), "rule__MobgenHeaderKeyValuePair__ValueAssignment_2_0");
+					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getParameterAssignment_2_1(), "rule__MobgenHeaderKeyValuePair__ParameterAssignment_2_1");
 					put(grammarAccess.getMobgenHeaderParameterAccess().getIdAssignment_1(), "rule__MobgenHeaderParameter__IdAssignment_1");
 					put(grammarAccess.getMobgenJsonAccess().getNameAssignment_0(), "rule__MobgenJson__NameAssignment_0");
 					put(grammarAccess.getMobgenJsonAccess().getValueAssignment_2(), "rule__MobgenJson__ValueAssignment_2");
