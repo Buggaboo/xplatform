@@ -57,7 +57,7 @@ URI:
 ;
 
 MobgenHeader:
-	(name=ID)?
+	name=ID
 	"'''" 
 	'{' (headerKeyValues+=MobgenHeaderKeyValuePair)
 		(',' headerKeyValues+=MobgenHeaderKeyValuePair )* (',')? '}'
@@ -77,11 +77,10 @@ terminal RESTFUL_METHODS:
 ;
 
 MobgenJson:
-	((name=ID)
-		"'''" 
-		value=JsonObjectValue
-		"'''"
-	) 
+	name=ID
+	"'''" 
+	value=JsonObjectValue
+	"'''"
 ;
 
 /**
