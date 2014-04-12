@@ -65,7 +65,7 @@ MobgenHeader:
 ;
 
 MobgenHeaderKeyValuePair:
-	(key=STRING) '=' value=STRING | parameter=MobgenHeaderParameter	
+	(key=STRING) '=' (value=STRING | parameter=MobgenHeaderParameter)	
 ;
 
 MobgenHeaderParameter:

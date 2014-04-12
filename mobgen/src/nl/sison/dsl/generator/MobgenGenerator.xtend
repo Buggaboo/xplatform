@@ -12,6 +12,8 @@ import nl.sison.dsl.mobgen.MobgenJson
 import java.util.ArrayList
 import java.util.List
 import java.util.HashMap
+import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair
+import java.util.Map
 
 class MobgenGenerator implements IGenerator {
 	
@@ -143,7 +145,7 @@ class AndroidResourceGenerator implements IGenerator
 	</resources>'''
 }
 
-class AndroidCallRequestGenerator implements IGenerator
+class AndroidHttpRequestGenerator implements IGenerator
 {
 
 	override doGenerate(Resource input, IFileSystemAccess fsa) {
@@ -154,21 +156,66 @@ class AndroidCallRequestGenerator implements IGenerator
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
 		val name = callDefinition.name
+		val nameCapitalized = name.capitalizeFirstLetter
 		val uri = callDefinition.uri
 		val urlParams = uri.parameters
 		
 		// TODO also kill boiler plate for the Activity / Fragment
 
-		val stringBuffer = new StringBuffer
-		stringBuffer.append(uri.stringPrefix.toString.setPackage(name))
 		
-		fsa.generateFile(name.capitalizeFirstLetter + 'Loader.java', stringBuffer.toString)
+		/*
+		 * 1. Generate http request Parcelable, http request result Parcelable
+		 * 2. Generate http Loader + Request classes
+		 * 3. Generate json parser, for http request parcelable (validation to prevent injection attacks at the server)
+		 * 4. Generate json parser, for http request response (validation to prevent attacks on the app)
+		 * 5. Generate mock Activity to test the call // TODO
+		 * 6. Generate Spark class to handle the call // TODO
+		 */
+		/* 1. */
+		if (callDefinition.requestHeaders != null)
+		{
+			createParcelableRequestFile(callDefinition, fsa)
+		}
+		
+		
+//		fsa.generateFile(nameCapitalized + 'Loader.java', stringBuffer.toString)
+	}
+	
+	def createParcelableRequestFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
+	{
+		val name = callDefinition.name
+		val nameCapitalized = name.capitalizeFirstLetter
+		val nameLowerCase = name.toLowerCase
+		
+		val stringBuffer = new StringBuffer
+		
+		// outgoing from the client's perspective
+		// uri header variables
+		val requestHeaderKeyValuePairs = callDefinition.requestHeaders.headerKeyValues.filter(typeof(MobgenHeaderKeyValuePair))
+		
+		val hashMap = <String, String>newHashMap()
+		for (kvp: requestHeaderKeyValuePairs)
+		{
+			if (kvp.parameter != null)
+			{
+				hashMap.put(kvp.parameter.id, "String") // for security sensitive stuff use a CharArray (char[])
+			}
+		}
+		
+		stringBuffer.append(name.capitalizeFirstLetter.createParcelable(hashMap))
+		val filePath = String::format("src/%s/%s%s", nameLowerCase.setPackage.toString.substring("package ".length).replace(".", "/"), nameCapitalized, 'Loader.java');
+		fsa.generateFile(filePath, stringBuffer.toString)
 	}
 
 	def capitalizeFirstLetter(String s)
 	{
 		return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase;
 	}
+	
+	def setPackage(CharSequence name) '''
+	package nl.sison.dsl.mobgen.« name »;
+	
+	'''
 
 /*	// TODO assemble imports from generated file(s)
 	def setImports(ArrayList<String> list) 
@@ -193,7 +240,7 @@ class AndroidCallRequestGenerator implements IGenerator
 	public class «className»Loader extends AsyncTaskLoader<«returnType»>
 	{
 		private «returnType» result;
-		private Parcelable parameters;
+		private «className»RequestParameters parameters;
 
 		public «className»Loader(Context context) {
 			super(context);
@@ -209,8 +256,7 @@ class AndroidCallRequestGenerator implements IGenerator
 		public «returnType» loadInBackground() {
 			try
 			{
-				«className»HttpRequest httpRequest = new «className»HttpRequest();
-				httpRequest.setParameters(parameters);
+				«className»HttpRequest httpRequest = new «className»HttpRequest<«className»RequestParameters,«returnType»>(parameters);
 				httpRequest.do«method»Request();
 				return httpRequest.getResult();
 				/**
@@ -260,9 +306,10 @@ class AndroidCallRequestGenerator implements IGenerator
 		
 		private class «className»HttpRequest
 		{
-			public final static «className»HttpRequest INSTANCE = new «className»HttpRequest(); 
+			private «className»RequestParameters parameters;
 			
-			private «className»HttpRequest() {
+			private «className»HttpRequest(Parcelable parameters) {
+				this.parameters = parameters;
 				disableConnectionReuseIfNecessary();
 			}
 			
@@ -306,86 +353,142 @@ class AndroidCallRequestGenerator implements IGenerator
 		}
 	}
 	'''
+	
+	def joinPairAsMap(Iterator<CharSequence> keys, Iterator<CharSequence> values)
+	{
+		val hashMap = <CharSequence, CharSequence>newHashMap()
+		while (keys.hasNext && values.hasNext)
+		{
+			val value = values.next
+			val key = keys.next
+			hashMap.put(key, value)
+		}
+		return hashMap
+	}
 
 	def createParcelableProtectedMembers(CharSequence parameterName, CharSequence parameterType) '''
 	protected «parameterType» «parameterName»;
 	''' 
 
-	def createParcelableWriteToParcel(CharSequence parameterName, CharSequence parameterType) '''
-	out.write«parameterType»(«parameterName»);
+	def createParcelableWriteToParcel(CharSequence parameterName, CharSequence writeMethodNameSuffix) '''
+	out.write«writeMethodNameSuffix»(«parameterName»);
 	'''
 
-	def createParcelableReadMember(CharSequence parameterName, CharSequence readMethodName) '''
-	«parameterName» = in.read«readMethodName»();
+	def createParcelableReadMember(CharSequence parameterName, CharSequence readMethodNameSuffix) '''
+	«parameterName» = in.read«readMethodNameSuffix»();
 	'''
 	
-	def createParcelableReadMemberWithCast(CharSequence parameterName, CharSequence readMethodName, CharSequence castToType) '''
-	«parameterName» = («castToType») in.read«readMethodName»();
+	def createParcelableReadMemberWithCast(CharSequence parameterName, CharSequence readMethodSuffix, CharSequence castToType) '''
+	«parameterName» = («castToType») in.read«readMethodSuffix»();
 	'''
+	
+	def createParcelableAccessors(CharSequence parameterName, CharSequence parameterType) '''
+	void set«parameterName.toString.capitalizeFirstLetter» (final «parameterType» «parameterName»)
+	{
+		return this.«parameterName»;
+	}
+	void get«parameterName.toString.capitalizeFirstLetter» () { return «parameterName»; }
+	'''
+	
+	def camelCaseHttpHeaderKey(CharSequence headerKey)
+	{
+		val strArr = headerKey.toString.split("-")
+		val strBuf = new StringBuffer
+		strBuf.append(strArr.head.toString.toLowerCase)
+		for (str : strArr)
+		{
+			if (!str.equals(strArr.head))
+			{
+				strBuf.append(str.capitalizeFirstLetter)
+			}
+		}
+	}
 	
 	/**
 	 * 
 	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays... 
 	 * 
 	 */
-	def createParcelable(CharSequence parcelName, CharSequence members, CharSequence memberAccessors, CharSequence constructorForParameters, CharSequence writeToParcelMethodBody, CharSequence readFromParcelMethodBody) '''
+	def createParcelable(CharSequence parcelableClassName, Map<String,String> members) '''
 	/**
 	 * Parcelables are actually just POJOs that are faster than Serializables,
 	 * only Parcelables require manual work to pass on values from one object to the next
 	 *
 	 * This type of parcelable contains an Exception field in case of failure along the way
 	 * e.g. no internet connection etc.
+	 * This implementation is intended to be passed on from the background threads
+	 * to the ui thread
+	 *
 	 */ 
-	public class «parcelName» extends Parcelable
+	public class «parcelableClassName» extends Parcelable
 	{
 	    /*
 	    protected String lastComment;
 	    protected Integer messageCount;
 	    protected Date createdAt;
-	    protected boolean ...
 	    protected Parcelable ...
 	    protected Serialized ...
+	    protected boolean ...
 	    */
-	    «members»
-	    protected Exception exception;
+
+	    «FOR s : members.entrySet»
+	    « s.key.createParcelableProtectedMembers(s.value) »
+	    «ENDFOR»
+	    
+	    protected Exception exception = null;
 	    
 	    // for lack of properties
-	    «memberAccessors»
-	    
-	    «constructorForParameters»
-	    
-	    public «parcelName»(Exception exception) {
-	    	this.exception = exception;
-	    } 
+	    «FOR s : members.entrySet»
+	    « s.key.createParcelableAccessors(s.value) »
+	    «ENDFOR»
 
-	public boolean hasException()
-	{
-		return exception != null;
-	}
+	    public «parcelableClassName»(«FOR s : members.entrySet»«s.key» «s.value»«ENDFOR»)
+	    {
+		«FOR s : members.entrySet»
+			this.« s.key » = « s.key »; 
+		«ENDFOR»
+	    }
 
-	    public «parcelName»(Parcel in) {
+		public «parcelableClassName»(Exception exception) {
+		    this.exception = exception;
+		}
+	
+		public boolean hasException()
+		{
+			return exception != null;
+		}
+
+	    public «parcelableClassName»(Parcel in) {
 	    	readFromParcel(in);
 	    }
 
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
-			«writeToParcelMethodBody»
+		«FOR s : members.entrySet»
+			«s.key.createParcelableWriteToParcel(s.value)»
+		«ENDFOR»
 			out.writeSerializable(exception);
 	    }
 
 	    private void readFromParcel(Parcel in) {
-			«readFromParcelMethodBody»
+		«FOR s : members.entrySet»
+			«IF newLinkedList("String", "Integer", "Parcelable", "Serializable").contains(s.value)»
+			«s.key.createParcelableReadMember(s.value)»
+			«ELSE»
+			«s.key.createParcelableReadMemberWithCast("Serializable", s.value)»
+			«ENDIF»
+		«ENDFOR»
 			exception = (Exception) in.readSerializable();
 	    }
 
 	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
 
-	        public «parcelName» createFromParcel(Parcel in) {
-	            return new «parcelName»(in);
+	        public «parcelableClassName» createFromParcel(Parcel in) {
+	            return new «parcelableClassName»(in);
 	        }
 
-	        public «parcelName»[] newArray(int size) {
-	            return new «parcelName» [size];
+	        public «parcelableClassName»[] newArray(int size) {
+	            return new «parcelableClassName» [size];
 	        }
 
 	    };
@@ -398,11 +501,9 @@ class AndroidCallRequestGenerator implements IGenerator
 	}
 	'''	
 	
-	def setPackage(String url, String name) '''
-	package nl.sison.dsl.mobgen.http« IF url.startsWith("https://") »"s"« ENDIF ».« name »;
-	
-	'''
-	
+	/**
+	 * TODO Check if Https is being used correctly
+	 */
 	def isTransportLayerSecured(String url) {
 		return if (url.startsWith("https://")) "HttpsURLConnection" else "HttpURLConnection"
 	}
