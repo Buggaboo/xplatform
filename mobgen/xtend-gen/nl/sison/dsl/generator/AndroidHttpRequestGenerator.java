@@ -14,6 +14,7 @@ import nl.sison.dsl.mobgen.MobgenHeader;
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
 import nl.sison.dsl.mobgen.MobgenHeaderParameter;
 import nl.sison.dsl.mobgen.MobgenJson;
+import nl.sison.dsl.mobgen.URI;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -40,12 +41,37 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     IteratorExtensions.<MobgenCallDefinition>forEach(callDefinitions, _function);
   }
   
-  public void androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+  /**
+   * 1. Generate http request header Parcelable
+   * 2. Generate http request URL Parcelable
+   * 3. Generate http request Json entity Parcelable // TODO put parser here?
+   * 4. Generate http response header Parcelable
+   * 5. Generate http response Json entity Parcelable
+   * 7. Generate mock Activity to test the call // TODO
+   * 8. Generate Spark class to handle the call // TODO
+   * // TODO also kill boiler plate for the Activity / Fragment
+   */
+  public Object androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    Object _xifexpression = null;
     MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
     boolean _notEquals = (!Objects.equal(_requestHeaders, null));
     if (_notEquals) {
-      this.createParcelableRequestHeaderFile(callDefinition, fsa);
+      Object _xblockexpression = null;
+      {
+        this.createParcelableRequestHeaderFile(callDefinition, fsa);
+        this.createParcelableRequestUrlFile(callDefinition, fsa);
+        Object _xifexpression_1 = null;
+        String _method = callDefinition.getMethod();
+        boolean _startsWith = _method.startsWith("P");
+        if (_startsWith) {
+          Object _createParcelableRequestJsonFile = this.createParcelableRequestJsonFile(callDefinition, fsa);
+          _xifexpression_1 = _createParcelableRequestJsonFile;
+        }
+        _xblockexpression = (_xifexpression_1);
+      }
+      _xifexpression = _xblockexpression;
     }
+    return _xifexpression;
   }
   
   public void createLoader(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
@@ -58,37 +84,169 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     final String jsonResultTypeNameCapitalized = this.capitalizeFirstLetter(_name_1);
   }
   
-  public void createParcelableRequestUriFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+  public void createParcelableRequestUrlFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
     MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
     final String name = _requestHeaders.getName();
     final String nameCapitalized = this.capitalizeFirstLetter(name);
     final String nameLowerCase = name.toLowerCase();
     StringBuffer _stringBuffer = new StringBuffer();
     final StringBuffer stringBuffer = _stringBuffer;
-    MobgenHeader _requestHeaders_1 = callDefinition.getRequestHeaders();
-    EList<MobgenHeaderKeyValuePair> _headerKeyValues = _requestHeaders_1.getHeaderKeyValues();
-    final Iterable<MobgenHeaderKeyValuePair> requestHeaderKeyValuePairs = Iterables.<MobgenHeaderKeyValuePair>filter(_headerKeyValues, MobgenHeaderKeyValuePair.class);
+    final URI url = callDefinition.getUri();
+    final String urlPrefix = url.getUrlPrefix();
+    final String urlPath = url.getPath();
+    final EList<String> urlPathParameters = url.getPathParameters();
+    final EList<String> urlPathSuffixes = url.getPathSuffix();
+    final EList<String> urlQueryPrefix = url.getQuery();
+    final EList<String> urlQueryParameters = url.getQueryParameters();
+    EList<String> urlQuerySuffixes = url.getQuerySuffix();
     final HashMap<String,String> hashMap = CollectionLiterals.<String, String>newHashMap();
-    for (final MobgenHeaderKeyValuePair kvp : requestHeaderKeyValuePairs) {
-      MobgenHeaderParameter _parameter = kvp.getParameter();
-      boolean _notEquals = (!Objects.equal(_parameter, null));
-      if (_notEquals) {
-        MobgenHeaderParameter _parameter_1 = kvp.getParameter();
-        String _id = _parameter_1.getId();
-        hashMap.put(_id, "String");
+    for (final String pp : urlPathParameters) {
+      hashMap.put(pp, "String");
+    }
+    for (final String qp : urlQueryParameters) {
+      hashMap.put(qp, "String");
+    }
+    final Iterator<String> iteratorUrlParams = urlPathParameters.iterator();
+    final Iterator<String> iteratorUrlSuffix = urlPathSuffixes.iterator();
+    StringBuffer _stringBuffer_1 = new StringBuffer();
+    final StringBuffer strBuf = _stringBuffer_1;
+    StringBuffer _append = strBuf.append(urlPrefix);
+    _append.append(urlPath);
+    boolean _or = false;
+    boolean _hasNext = iteratorUrlParams.hasNext();
+    if (_hasNext) {
+      _or = true;
+    } else {
+      boolean _hasNext_1 = iteratorUrlSuffix.hasNext();
+      _or = (_hasNext || _hasNext_1);
+    }
+    boolean _while = _or;
+    while (_while) {
+      {
+        String _next = iteratorUrlParams.next();
+        boolean _isEmpty = _next.isEmpty();
+        boolean _not = (!_isEmpty);
+        if (_not) {
+          strBuf.append("%s");
+        }
+        final String suf = iteratorUrlSuffix.next();
+        boolean _isEmpty_1 = suf.isEmpty();
+        boolean _not_1 = (!_isEmpty_1);
+        if (_not_1) {
+          strBuf.append(suf);
+        }
+      }
+      boolean _or_1 = false;
+      boolean _hasNext_2 = iteratorUrlParams.hasNext();
+      if (_hasNext_2) {
+        _or_1 = true;
+      } else {
+        boolean _hasNext_3 = iteratorUrlSuffix.hasNext();
+        _or_1 = (_hasNext_2 || _hasNext_3);
+      }
+      _while = _or_1;
+    }
+    final Iterator<String> iteratorUrlQueryParams = urlQueryParameters.iterator();
+    final Iterator<String> iteratorUrlQuerySuffix = urlQuerySuffixes.iterator();
+    strBuf.append(urlQueryPrefix);
+    boolean _or_1 = false;
+    boolean _hasNext_2 = iteratorUrlQueryParams.hasNext();
+    if (_hasNext_2) {
+      _or_1 = true;
+    } else {
+      boolean _hasNext_3 = iteratorUrlQuerySuffix.hasNext();
+      _or_1 = (_hasNext_2 || _hasNext_3);
+    }
+    boolean _while_1 = _or_1;
+    while (_while_1) {
+      {
+        String _next = iteratorUrlQueryParams.next();
+        boolean _isEmpty = _next.isEmpty();
+        boolean _not = (!_isEmpty);
+        if (_not) {
+          strBuf.append("%s");
+        }
+        final String suf = iteratorUrlQuerySuffix.next();
+        boolean _isEmpty_1 = suf.isEmpty();
+        boolean _not_1 = (!_isEmpty_1);
+        if (_not_1) {
+          strBuf.append(suf);
+        }
+      }
+      boolean _or_2 = false;
+      boolean _hasNext_4 = iteratorUrlQueryParams.hasNext();
+      if (_hasNext_4) {
+        _or_2 = true;
+      } else {
+        boolean _hasNext_5 = iteratorUrlQuerySuffix.hasNext();
+        _or_2 = (_hasNext_4 || _hasNext_5);
+      }
+      _while_1 = _or_2;
+    }
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("public URL getUrl()");
+    _builder.newLine();
+    _builder.append("{ // URLEncoder.encode(...) only the actual parameters, not everything");
+    _builder.newLine();
+    {
+      boolean _and = false;
+      boolean _isEmpty = urlPathParameters.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (!_not) {
+        _and = false;
+      } else {
+        boolean _isEmpty_1 = urlQueryParameters.isEmpty();
+        boolean _not_1 = (!_isEmpty_1);
+        _and = (_not && _not_1);
+      }
+      if (_and) {
+        _builder.append("return new URL(String.format(\"");
+        String _string = strBuf.toString();
+        _builder.append(_string, "");
+        _builder.append("\"");
+        {
+          for(final String p : urlPathParameters) {
+            _builder.append(", ");
+            CharSequence _wrapUrlEncoder = this.wrapUrlEncoder(p);
+            _builder.append(_wrapUrlEncoder, "");
+          }
+        }
+        {
+          for(final String q : urlQueryParameters) {
+            _builder.append(", ");
+            CharSequence _wrapUrlEncoder_1 = this.wrapUrlEncoder(q);
+            _builder.append(_wrapUrlEncoder_1, "");
+          }
+        }
+        _builder.append("));");
+        _builder.newLineIfNotEmpty();
+      } else {
+        _builder.append("return new URL(\"");
+        String _string_1 = strBuf.toString();
+        _builder.append(_string_1, "");
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("}");
+    _builder.newLine();
+    final CharSequence addMethod = _builder;
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
-    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap);
+    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap, addMethod);
     stringBuffer.append(_createParcelable);
-    CharSequence _setPackage = this.setPackage(nameLowerCase);
-    String _string = _setPackage.toString();
-    int _length = "package ".length();
-    String _substring = _string.substring(_length);
-    String _replace = _substring.replace(".", "/");
-    final String filePath = String.format("src/%s/%s%s", _replace, nameCapitalized, "Loader.java");
-    String _string_1 = stringBuffer.toString();
-    fsa.generateFile(filePath, _string_1);
+    String _pathForStringFormat = this.getPathForStringFormat(nameLowerCase);
+    final String filePath = String.format("src/%s/%s%s", _pathForStringFormat, nameCapitalized, "RequestUrl.java");
+    String _string_2 = stringBuffer.toString();
+    fsa.generateFile(filePath, _string_2);
+  }
+  
+  public CharSequence wrapUrlEncoder(final CharSequence parameter) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("URLEncoder.encode(");
+    _builder.append(parameter, "");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   public void createParcelableRequestHeaderFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
@@ -112,16 +270,16 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       }
     }
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
-    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap);
+    CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap, "");
     stringBuffer.append(_createParcelable);
-    CharSequence _setPackage = this.setPackage(nameLowerCase);
-    String _string = _setPackage.toString();
-    int _length = "package ".length();
-    String _substring = _string.substring(_length);
-    String _replace = _substring.replace(".", "/");
-    final String filePath = String.format("src/%s/%s%s", _replace, nameCapitalized, "Loader.java");
-    String _string_1 = stringBuffer.toString();
-    fsa.generateFile(filePath, _string_1);
+    String _pathForStringFormat = this.getPathForStringFormat(nameLowerCase);
+    final String filePath = String.format("src/%s/%s%s", _pathForStringFormat, nameCapitalized, "RequestHeader.java");
+    String _string = stringBuffer.toString();
+    fsa.generateFile(filePath, _string);
+  }
+  
+  public Object createParcelableRequestJsonFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    return null;
   }
   
   public String capitalizeFirstLetter(final String s) {
@@ -130,6 +288,14 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     String _substring_1 = s.substring(1);
     String _lowerCase = _substring_1.toLowerCase();
     return (_upperCase + _lowerCase);
+  }
+  
+  public String getPathForStringFormat(final CharSequence nameLowerCase) {
+    CharSequence _setPackage = this.setPackage(nameLowerCase);
+    String _string = _setPackage.toString();
+    int _length = "package ".length();
+    String _substring = _string.substring(_length);
+    return _substring.replace(".", "/");
   }
   
   public CharSequence setPackage(final CharSequence name) {
@@ -656,7 +822,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
   /**
    * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays...
    */
-  public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String,String> members) {
+  public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String,String> members, final CharSequence additionalMethodsEtc) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/**");
     _builder.newLine();
@@ -932,8 +1098,11 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("    ");
     _builder.newLine();
+    _builder.append("    ");
+    _builder.append(additionalMethodsEtc, "    ");
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;

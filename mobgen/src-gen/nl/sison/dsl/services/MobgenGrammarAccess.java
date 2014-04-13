@@ -253,54 +253,6 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getJsonToServerMobgenJsonParserRuleCall_8_2_0() { return cJsonToServerMobgenJsonParserRuleCall_8_2_0; }
 	}
 
-	public class URIElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "URI");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cStringPrefixAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cStringPrefixANY_OTHERTerminalRuleCall_0_0 = (RuleCall)cStringPrefixAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cParametersAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cParametersIDTerminalRuleCall_1_1_0 = (RuleCall)cParametersAssignment_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cStringSuffixAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cStringSuffixANY_OTHERTerminalRuleCall_1_3_0 = (RuleCall)cStringSuffixAssignment_1_3.eContents().get(0);
-		
-		//URI:
-		//	stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+;
-		public ParserRule getRule() { return rule; }
-
-		//stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+
-		public Group getGroup() { return cGroup; }
-
-		//stringPrefix+=ANY_OTHER+
-		public Assignment getStringPrefixAssignment_0() { return cStringPrefixAssignment_0; }
-
-		//ANY_OTHER
-		public RuleCall getStringPrefixANY_OTHERTerminalRuleCall_0_0() { return cStringPrefixANY_OTHERTerminalRuleCall_0_0; }
-
-		//("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
-
-		//parameters+=ID
-		public Assignment getParametersAssignment_1_1() { return cParametersAssignment_1_1; }
-
-		//ID
-		public RuleCall getParametersIDTerminalRuleCall_1_1_0() { return cParametersIDTerminalRuleCall_1_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
-
-		//stringSuffix+=ANY_OTHER
-		public Assignment getStringSuffixAssignment_1_3() { return cStringSuffixAssignment_1_3; }
-
-		//ANY_OTHER
-		public RuleCall getStringSuffixANY_OTHERTerminalRuleCall_1_3_0() { return cStringSuffixANY_OTHERTerminalRuleCall_1_3_0; }
-	}
-
 	public class MobgenHeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MobgenHeader");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -479,9 +431,9 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonObjectValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cValueJsonLiteralValueParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final RuleCall cValueJsonLiteralValueEnumRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
 		private final Assignment cCompositeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cCompositeJsonCompositeValueParserRuleCall_1_0 = (RuleCall)cCompositeAssignment_1.eContents().get(0);
+		private final RuleCall cCompositeJsonCompositeValueEnumRuleCall_1_0 = (RuleCall)cCompositeAssignment_1.eContents().get(0);
 		
 		/// **
 		// *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
@@ -496,75 +448,13 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
 
 		//JsonLiteralValue
-		public RuleCall getValueJsonLiteralValueParserRuleCall_0_0() { return cValueJsonLiteralValueParserRuleCall_0_0; }
+		public RuleCall getValueJsonLiteralValueEnumRuleCall_0_0() { return cValueJsonLiteralValueEnumRuleCall_0_0; }
 
 		//composite=JsonCompositeValue
 		public Assignment getCompositeAssignment_1() { return cCompositeAssignment_1; }
 
 		//JsonCompositeValue
-		public RuleCall getCompositeJsonCompositeValueParserRuleCall_1_0() { return cCompositeJsonCompositeValueParserRuleCall_1_0; }
-	}
-
-	public class JsonCompositeValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonCompositeValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cJsonObjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cJsonArrayParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//JsonCompositeValue:
-		//	JsonObject | JsonArray;
-		public ParserRule getRule() { return rule; }
-
-		//JsonObject | JsonArray
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//JsonObject
-		public RuleCall getJsonObjectParserRuleCall_0() { return cJsonObjectParserRuleCall_0; }
-
-		//JsonArray
-		public RuleCall getJsonArrayParserRuleCall_1() { return cJsonArrayParserRuleCall_1; }
-	}
-
-	public class JsonLiteralValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonLiteralValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEMPTY_JSON_OBJECTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEMPTY_JSON_ARRAYTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cJSON_LITERAL_BOOLEANTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cJSON_LITERAL_NULLTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cJSON_NUMBERTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cJSON_META_SCALAR_TYPETerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		
-		//JsonLiteralValue:
-		//	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
-		//	JSON_META_SCALAR_TYPE;
-		public ParserRule getRule() { return rule; }
-
-		//STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
-		//JSON_META_SCALAR_TYPE
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-
-		//EMPTY_JSON_OBJECT
-		public RuleCall getEMPTY_JSON_OBJECTTerminalRuleCall_1() { return cEMPTY_JSON_OBJECTTerminalRuleCall_1; }
-
-		//EMPTY_JSON_ARRAY
-		public RuleCall getEMPTY_JSON_ARRAYTerminalRuleCall_2() { return cEMPTY_JSON_ARRAYTerminalRuleCall_2; }
-
-		//JSON_LITERAL_BOOLEAN
-		public RuleCall getJSON_LITERAL_BOOLEANTerminalRuleCall_3() { return cJSON_LITERAL_BOOLEANTerminalRuleCall_3; }
-
-		//JSON_LITERAL_NULL
-		public RuleCall getJSON_LITERAL_NULLTerminalRuleCall_4() { return cJSON_LITERAL_NULLTerminalRuleCall_4; }
-
-		//JSON_NUMBER
-		public RuleCall getJSON_NUMBERTerminalRuleCall_5() { return cJSON_NUMBERTerminalRuleCall_5; }
-
-		//JSON_META_SCALAR_TYPE
-		public RuleCall getJSON_META_SCALAR_TYPETerminalRuleCall_6() { return cJSON_META_SCALAR_TYPETerminalRuleCall_6; }
+		public RuleCall getCompositeJsonCompositeValueEnumRuleCall_1_0() { return cCompositeJsonCompositeValueEnumRuleCall_1_0; }
 	}
 
 	public class JsonObjectElements extends AbstractParserRuleElementFinder {
@@ -949,20 +839,224 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getStringSTRINGTerminalRuleCall_1_0() { return cStringSTRINGTerminalRuleCall_1_0; }
 	}
+
+	public class URIElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "URI");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cUrlPrefixAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cUrlPrefixURL_PREFIXTerminalRuleCall_0_0 = (RuleCall)cUrlPrefixAssignment_0.eContents().get(0);
+		private final Assignment cPathAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPathURL_PATHTerminalRuleCall_1_0 = (RuleCall)cPathAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cPathParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPathParametersIDTerminalRuleCall_2_1_0 = (RuleCall)cPathParametersAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cPathSuffixAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cPathSuffixURL_PATHTerminalRuleCall_2_3_0 = (RuleCall)cPathSuffixAssignment_2_3.eContents().get(0);
+		private final Assignment cQueryAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cQueryURL_QUERYTerminalRuleCall_3_0 = (RuleCall)cQueryAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cQueryParametersAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cQueryParametersIDTerminalRuleCall_4_1_0 = (RuleCall)cQueryParametersAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Assignment cQuerySuffixAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cQuerySuffixURL_QUERY_SUFFIXTerminalRuleCall_4_3_0 = (RuleCall)cQuerySuffixAssignment_4_3.eContents().get(0);
+		
+		//// caveat: due to a hack numbers may not occur after the queryParameters
+		/// * 
+		//URI:
+		//    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* (query+=(URL_QUERY) '{' queryParameters+=ID '}' query+=ANY_OTHER*)* 
+		//;
+		// * / / *
+		//terminal ANY_OTHER_WITHOUT_CHEVRON: // TODO test this
+		//	!('{')
+		//;
+		// * / / *
+		//URI:
+		//       stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER_WITHOUT_CHEVRON)+
+		//;
+		// * / URI:
+		//	urlPrefix=URL_PREFIX path=URL_PATH ("{" pathParameters+=ID "}" pathSuffix+=URL_PATH)* query+=URL_QUERY ("{"
+		//	queryParameters+=ID "}" querySuffix+=URL_QUERY_SUFFIX)*;
+		public ParserRule getRule() { return rule; }
+
+		//urlPrefix=URL_PREFIX path=URL_PATH ("{" pathParameters+=ID "}" pathSuffix+=URL_PATH)* query+=URL_QUERY ("{"
+		//queryParameters+=ID "}" querySuffix+=URL_QUERY_SUFFIX)*
+		public Group getGroup() { return cGroup; }
+
+		//urlPrefix=URL_PREFIX
+		public Assignment getUrlPrefixAssignment_0() { return cUrlPrefixAssignment_0; }
+
+		//URL_PREFIX
+		public RuleCall getUrlPrefixURL_PREFIXTerminalRuleCall_0_0() { return cUrlPrefixURL_PREFIXTerminalRuleCall_0_0; }
+
+		//path=URL_PATH
+		public Assignment getPathAssignment_1() { return cPathAssignment_1; }
+
+		//URL_PATH
+		public RuleCall getPathURL_PATHTerminalRuleCall_1_0() { return cPathURL_PATHTerminalRuleCall_1_0; }
+
+		//("{" pathParameters+=ID "}" pathSuffix+=URL_PATH)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
+
+		//pathParameters+=ID
+		public Assignment getPathParametersAssignment_2_1() { return cPathParametersAssignment_2_1; }
+
+		//ID
+		public RuleCall getPathParametersIDTerminalRuleCall_2_1_0() { return cPathParametersIDTerminalRuleCall_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
+
+		//pathSuffix+=URL_PATH
+		public Assignment getPathSuffixAssignment_2_3() { return cPathSuffixAssignment_2_3; }
+
+		//URL_PATH
+		public RuleCall getPathSuffixURL_PATHTerminalRuleCall_2_3_0() { return cPathSuffixURL_PATHTerminalRuleCall_2_3_0; }
+
+		//query+=URL_QUERY
+		public Assignment getQueryAssignment_3() { return cQueryAssignment_3; }
+
+		//URL_QUERY
+		public RuleCall getQueryURL_QUERYTerminalRuleCall_3_0() { return cQueryURL_QUERYTerminalRuleCall_3_0; }
+
+		//("{" queryParameters+=ID "}" querySuffix+=URL_QUERY_SUFFIX)*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+
+		//queryParameters+=ID
+		public Assignment getQueryParametersAssignment_4_1() { return cQueryParametersAssignment_4_1; }
+
+		//ID
+		public RuleCall getQueryParametersIDTerminalRuleCall_4_1_0() { return cQueryParametersIDTerminalRuleCall_4_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
+
+		//querySuffix+=URL_QUERY_SUFFIX
+		public Assignment getQuerySuffixAssignment_4_3() { return cQuerySuffixAssignment_4_3; }
+
+		//URL_QUERY_SUFFIX
+		public RuleCall getQuerySuffixURL_QUERY_SUFFIXTerminalRuleCall_4_3_0() { return cQuerySuffixURL_QUERY_SUFFIXTerminalRuleCall_4_3_0; }
+	}
 	
+	
+	public class JsonCompositeValueElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "JsonCompositeValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cJsonObjectEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cJsonObjectJsonObjectKeyword_0_0 = (Keyword)cJsonObjectEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cJsonArrayEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cJsonArrayJsonArrayKeyword_1_0 = (Keyword)cJsonArrayEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum JsonCompositeValue:
+		//	JsonObject | JsonArray;
+		public EnumRule getRule() { return rule; }
+
+		//JsonObject | JsonArray
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//JsonObject
+		public EnumLiteralDeclaration getJsonObjectEnumLiteralDeclaration_0() { return cJsonObjectEnumLiteralDeclaration_0; }
+
+		//"JsonObject"
+		public Keyword getJsonObjectJsonObjectKeyword_0_0() { return cJsonObjectJsonObjectKeyword_0_0; }
+
+		//JsonArray
+		public EnumLiteralDeclaration getJsonArrayEnumLiteralDeclaration_1() { return cJsonArrayEnumLiteralDeclaration_1; }
+
+		//"JsonArray"
+		public Keyword getJsonArrayJsonArrayKeyword_1_0() { return cJsonArrayJsonArrayKeyword_1_0; }
+	}
+
+	public class JsonLiteralValueElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "JsonLiteralValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSTRINGEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSTRINGSTRINGKeyword_0_0 = (Keyword)cSTRINGEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cEMPTY_JSON_OBJECTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cEMPTY_JSON_OBJECTEMPTY_JSON_OBJECTKeyword_1_0 = (Keyword)cEMPTY_JSON_OBJECTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEMPTY_JSON_ARRAYEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEMPTY_JSON_ARRAYEMPTY_JSON_ARRAYKeyword_2_0 = (Keyword)cEMPTY_JSON_ARRAYEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cJSON_LITERAL_BOOLEANJSON_LITERAL_BOOLEANKeyword_3_0 = (Keyword)cJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cJSON_LITERAL_NULLEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cJSON_LITERAL_NULLJSON_LITERAL_NULLKeyword_4_0 = (Keyword)cJSON_LITERAL_NULLEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cJSON_NUMBEREnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cJSON_NUMBERJSON_NUMBERKeyword_5_0 = (Keyword)cJSON_NUMBEREnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cJSON_META_SCALAR_TYPEJSON_META_SCALAR_TYPEKeyword_6_0 = (Keyword)cJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6.eContents().get(0);
+		
+		//enum JsonLiteralValue:
+		//	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
+		//	JSON_META_SCALAR_TYPE;
+		public EnumRule getRule() { return rule; }
+
+		//STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
+		//JSON_META_SCALAR_TYPE
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public EnumLiteralDeclaration getSTRINGEnumLiteralDeclaration_0() { return cSTRINGEnumLiteralDeclaration_0; }
+
+		//"STRING"
+		public Keyword getSTRINGSTRINGKeyword_0_0() { return cSTRINGSTRINGKeyword_0_0; }
+
+		//EMPTY_JSON_OBJECT
+		public EnumLiteralDeclaration getEMPTY_JSON_OBJECTEnumLiteralDeclaration_1() { return cEMPTY_JSON_OBJECTEnumLiteralDeclaration_1; }
+
+		//"EMPTY_JSON_OBJECT"
+		public Keyword getEMPTY_JSON_OBJECTEMPTY_JSON_OBJECTKeyword_1_0() { return cEMPTY_JSON_OBJECTEMPTY_JSON_OBJECTKeyword_1_0; }
+
+		//EMPTY_JSON_ARRAY
+		public EnumLiteralDeclaration getEMPTY_JSON_ARRAYEnumLiteralDeclaration_2() { return cEMPTY_JSON_ARRAYEnumLiteralDeclaration_2; }
+
+		//"EMPTY_JSON_ARRAY"
+		public Keyword getEMPTY_JSON_ARRAYEMPTY_JSON_ARRAYKeyword_2_0() { return cEMPTY_JSON_ARRAYEMPTY_JSON_ARRAYKeyword_2_0; }
+
+		//JSON_LITERAL_BOOLEAN
+		public EnumLiteralDeclaration getJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3() { return cJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3; }
+
+		//"JSON_LITERAL_BOOLEAN"
+		public Keyword getJSON_LITERAL_BOOLEANJSON_LITERAL_BOOLEANKeyword_3_0() { return cJSON_LITERAL_BOOLEANJSON_LITERAL_BOOLEANKeyword_3_0; }
+
+		//JSON_LITERAL_NULL
+		public EnumLiteralDeclaration getJSON_LITERAL_NULLEnumLiteralDeclaration_4() { return cJSON_LITERAL_NULLEnumLiteralDeclaration_4; }
+
+		//"JSON_LITERAL_NULL"
+		public Keyword getJSON_LITERAL_NULLJSON_LITERAL_NULLKeyword_4_0() { return cJSON_LITERAL_NULLJSON_LITERAL_NULLKeyword_4_0; }
+
+		//JSON_NUMBER
+		public EnumLiteralDeclaration getJSON_NUMBEREnumLiteralDeclaration_5() { return cJSON_NUMBEREnumLiteralDeclaration_5; }
+
+		//"JSON_NUMBER"
+		public Keyword getJSON_NUMBERJSON_NUMBERKeyword_5_0() { return cJSON_NUMBERJSON_NUMBERKeyword_5_0; }
+
+		//JSON_META_SCALAR_TYPE
+		public EnumLiteralDeclaration getJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6() { return cJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6; }
+
+		//"JSON_META_SCALAR_TYPE"
+		public Keyword getJSON_META_SCALAR_TYPEJSON_META_SCALAR_TYPEKeyword_6_0() { return cJSON_META_SCALAR_TYPEJSON_META_SCALAR_TYPEKeyword_6_0; }
+	}
 	
 	private MobgenElements pMobgen;
 	private PlatformElements pPlatform;
 	private MobgenCallDefinitionElements pMobgenCallDefinition;
-	private URIElements pURI;
 	private MobgenHeaderElements pMobgenHeader;
 	private MobgenHeaderKeyValuePairElements pMobgenHeaderKeyValuePair;
 	private MobgenHeaderParameterElements pMobgenHeaderParameter;
 	private TerminalRule tRESTFUL_METHODS;
 	private MobgenJsonElements pMobgenJson;
 	private JsonObjectValueElements pJsonObjectValue;
-	private JsonCompositeValueElements pJsonCompositeValue;
-	private JsonLiteralValueElements pJsonLiteralValue;
+	private JsonCompositeValueElements unknownRuleJsonCompositeValue;
+	private JsonLiteralValueElements unknownRuleJsonLiteralValue;
 	private JsonObjectElements pJsonObject;
 	private JsonKeyValuePairElements pJsonKeyValuePair;
 	private JsonArrayElements pJsonArray;
@@ -977,6 +1071,11 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	private MapInstanceElements pMapInstance;
 	private StringListElements pStringList;
 	private NestedTypeElements pNestedType;
+	private TerminalRule tURL_PREFIX;
+	private TerminalRule tURL_PATH;
+	private TerminalRule tURL_QUERY;
+	private TerminalRule tURL_QUERY_SUFFIX;
+	private URIElements pURI;
 	
 	private final Grammar grammar;
 
@@ -1054,16 +1153,6 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getMobgenCallDefinitionAccess().getRule();
 	}
 
-	//URI:
-	//	stringPrefix+=ANY_OTHER+ ("{" parameters+=ID "}" stringSuffix+=ANY_OTHER)+;
-	public URIElements getURIAccess() {
-		return (pURI != null) ? pURI : (pURI = new URIElements());
-	}
-	
-	public ParserRule getURIRule() {
-		return getURIAccess().getRule();
-	}
-
 	//MobgenHeader:
 	//	name=ID "\'\'\'" "{" headerKeyValues+=MobgenHeaderKeyValuePair ("," headerKeyValues+=MobgenHeaderKeyValuePair)* ","?
 	//	"}" "\'\'\'";
@@ -1124,24 +1213,24 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getJsonObjectValueAccess().getRule();
 	}
 
-	//JsonCompositeValue:
+	//enum JsonCompositeValue:
 	//	JsonObject | JsonArray;
 	public JsonCompositeValueElements getJsonCompositeValueAccess() {
-		return (pJsonCompositeValue != null) ? pJsonCompositeValue : (pJsonCompositeValue = new JsonCompositeValueElements());
+		return (unknownRuleJsonCompositeValue != null) ? unknownRuleJsonCompositeValue : (unknownRuleJsonCompositeValue = new JsonCompositeValueElements());
 	}
 	
-	public ParserRule getJsonCompositeValueRule() {
+	public EnumRule getJsonCompositeValueRule() {
 		return getJsonCompositeValueAccess().getRule();
 	}
 
-	//JsonLiteralValue:
+	//enum JsonLiteralValue:
 	//	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL | JSON_NUMBER |
 	//	JSON_META_SCALAR_TYPE;
 	public JsonLiteralValueElements getJsonLiteralValueAccess() {
-		return (pJsonLiteralValue != null) ? pJsonLiteralValue : (pJsonLiteralValue = new JsonLiteralValueElements());
+		return (unknownRuleJsonLiteralValue != null) ? unknownRuleJsonLiteralValue : (unknownRuleJsonLiteralValue = new JsonLiteralValueElements());
 	}
 	
-	public ParserRule getJsonLiteralValueRule() {
+	public EnumRule getJsonLiteralValueRule() {
 		return getJsonLiteralValueAccess().getRule();
 	}
 
@@ -1206,7 +1295,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal JSON_NUMBER:
-	//	("0" | "1..9"+ INT) ("." INT)?;
+	//	INT ("." INT);
 	public TerminalRule getJSON_NUMBERRule() {
 		return (tJSON_NUMBER != null) ? tJSON_NUMBER : (tJSON_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "JSON_NUMBER"));
 	} 
@@ -1264,6 +1353,67 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNestedTypeRule() {
 		return getNestedTypeAccess().getRule();
+	}
+
+	//// lifted off from http://xtexterience.wordpress.com/2011/06/08/urls-in-xtext/
+	//terminal URL_PREFIX:
+	//	"http" "s"? "://" "0".."9"+ "." "0".."9"+ "." "0".."9"+ "." "0".."9"+ | (("a".."z" | "A".."Z") ("a".."z" | "A".."Z" |
+	//	"0".."9" | "$" | "-" | "_" | "\\" ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") | "%" "0".."9"
+	//	"0".."9")* ("." ("a".."z" | "A".."Z") ("a".."z" | "A".."Z" | "0".."9" | "$" | "-" | "_" | "\\" ("0".."9" | "a".."f" |
+	//	"A".."F") ("0".."9" | "a".."f" | "A".."F") | "%" "0".."9" "0".."9")*)*) (":" "0".."9"+)? // Portnumber
+	//;
+	public TerminalRule getURL_PREFIXRule() {
+		return (tURL_PREFIX != null) ? tURL_PREFIX : (tURL_PREFIX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL_PREFIX"));
+	} 
+
+	//// Path
+	//terminal URL_PATH:
+	//	("/" ("a".."z" | "A".."Z" | "0".."9" | "$" | "-" | "_" | "~" | "+" | "." | "\\" ("0".."9" | "a".."f" | "A".."F")
+	//	("0".."9" | "a".."f" | "A".."F") | "%" "0".."9" "0".."9")*)*;
+	public TerminalRule getURL_PATHRule() {
+		return (tURL_PATH != null) ? tURL_PATH : (tURL_PATH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL_PATH"));
+	} 
+
+	//terminal URL_QUERY:
+	//	("?" ("a".."z" | "A".."Z" | "0".."9" | "$" | "-" | "_" | "=" | "&" | ";" | "\\" ("0".."9" | "a".."f" | "A".."F")
+	//	("0".."9" | "a".."f" | "A".."F") | "%" "0".."9" "0".."9")+ ("+" ("a".."z" | "A".."Z" | "0".."9" | "$" | "-" | "_" |
+	//	"=" | "&" | ";" | "\\" ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") | "%" "0".."9"
+	//	"0".."9")+)*)?;
+	public TerminalRule getURL_QUERYRule() {
+		return (tURL_QUERY != null) ? tURL_QUERY : (tURL_QUERY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL_QUERY"));
+	} 
+
+	//terminal URL_QUERY_SUFFIX:
+	//	("&" "a".."z" | "A".."Z" | / *'0'..'9'|* / // Super-hack, TODO determine how to redefine this terminal rule so it won't clash with antlr RULE_INT
+	//	"$" | "-" | "_" | "=" | "&" | ";" | "\\" ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") | "%"
+	//	"0".."9" "0".."9")+ ("+" ("a".."z" | "A".."Z" | "0".."9" | "$" | "-" | "_" | "=" | "&" | ";" | "\\" ("0".."9" |
+	//	"a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") | "%" "0".."9" "0".."9")+)*;
+	public TerminalRule getURL_QUERY_SUFFIXRule() {
+		return (tURL_QUERY_SUFFIX != null) ? tURL_QUERY_SUFFIX : (tURL_QUERY_SUFFIX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL_QUERY_SUFFIX"));
+	} 
+
+	//// caveat: due to a hack numbers may not occur after the queryParameters
+	/// * 
+	//URI:
+	//    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* (query+=(URL_QUERY) '{' queryParameters+=ID '}' query+=ANY_OTHER*)* 
+	//;
+	// * / / *
+	//terminal ANY_OTHER_WITHOUT_CHEVRON: // TODO test this
+	//	!('{')
+	//;
+	// * / / *
+	//URI:
+	//       stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER_WITHOUT_CHEVRON)+
+	//;
+	// * / URI:
+	//	urlPrefix=URL_PREFIX path=URL_PATH ("{" pathParameters+=ID "}" pathSuffix+=URL_PATH)* query+=URL_QUERY ("{"
+	//	queryParameters+=ID "}" querySuffix+=URL_QUERY_SUFFIX)*;
+	public URIElements getURIAccess() {
+		return (pURI != null) ? pURI : (pURI = new URIElements());
+	}
+	
+	public ParserRule getURIRule() {
+		return getURIAccess().getRule();
 	}
 
 	//terminal ID:

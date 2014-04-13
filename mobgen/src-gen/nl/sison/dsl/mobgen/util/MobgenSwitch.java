@@ -93,13 +93,6 @@ public class MobgenSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MobgenPackage.URI:
-      {
-        URI uri = (URI)theEObject;
-        T result = caseURI(uri);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MobgenPackage.MOBGEN_HEADER:
       {
         MobgenHeader mobgenHeader = (MobgenHeader)theEObject;
@@ -135,18 +128,10 @@ public class MobgenSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MobgenPackage.JSON_COMPOSITE_VALUE:
-      {
-        JsonCompositeValue jsonCompositeValue = (JsonCompositeValue)theEObject;
-        T result = caseJsonCompositeValue(jsonCompositeValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MobgenPackage.JSON_OBJECT:
       {
         JsonObject jsonObject = (JsonObject)theEObject;
         T result = caseJsonObject(jsonObject);
-        if (result == null) result = caseJsonCompositeValue(jsonObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,7 +146,6 @@ public class MobgenSwitch<T> extends Switch<T>
       {
         JsonArray jsonArray = (JsonArray)theEObject;
         T result = caseJsonArray(jsonArray);
-        if (result == null) result = caseJsonCompositeValue(jsonArray);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -198,6 +182,13 @@ public class MobgenSwitch<T> extends Switch<T>
       {
         NestedType nestedType = (NestedType)theEObject;
         T result = caseNestedType(nestedType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MobgenPackage.URI:
+      {
+        URI uri = (URI)theEObject;
+        T result = caseURI(uri);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,22 +240,6 @@ public class MobgenSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMobgenCallDefinition(MobgenCallDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>URI</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>URI</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseURI(URI object)
   {
     return null;
   }
@@ -345,22 +320,6 @@ public class MobgenSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonObjectValue(JsonObjectValue object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJsonCompositeValue(JsonCompositeValue object)
   {
     return null;
   }
@@ -489,6 +448,22 @@ public class MobgenSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNestedType(NestedType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>URI</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>URI</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseURI(URI object)
   {
     return null;
   }

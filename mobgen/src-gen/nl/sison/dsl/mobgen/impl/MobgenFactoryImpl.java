@@ -5,6 +5,7 @@ package nl.sison.dsl.mobgen.impl;
 import nl.sison.dsl.mobgen.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -67,13 +68,11 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
       case MobgenPackage.MOBGEN: return createMobgen();
       case MobgenPackage.PLATFORM: return createPlatform();
       case MobgenPackage.MOBGEN_CALL_DEFINITION: return createMobgenCallDefinition();
-      case MobgenPackage.URI: return createURI();
       case MobgenPackage.MOBGEN_HEADER: return createMobgenHeader();
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR: return createMobgenHeaderKeyValuePair();
       case MobgenPackage.MOBGEN_HEADER_PARAMETER: return createMobgenHeaderParameter();
       case MobgenPackage.MOBGEN_JSON: return createMobgenJson();
       case MobgenPackage.JSON_OBJECT_VALUE: return createJsonObjectValue();
-      case MobgenPackage.JSON_COMPOSITE_VALUE: return createJsonCompositeValue();
       case MobgenPackage.JSON_OBJECT: return createJsonObject();
       case MobgenPackage.JSON_KEY_VALUE_PAIR: return createJsonKeyValuePair();
       case MobgenPackage.JSON_ARRAY: return createJsonArray();
@@ -82,8 +81,47 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
       case MobgenPackage.MAP_INSTANCE: return createMapInstance();
       case MobgenPackage.STRING_LIST: return createStringList();
       case MobgenPackage.NESTED_TYPE: return createNestedType();
+      case MobgenPackage.URI: return createURI();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MobgenPackage.JSON_COMPOSITE_VALUE:
+        return createJsonCompositeValueFromString(eDataType, initialValue);
+      case MobgenPackage.JSON_LITERAL_VALUE:
+        return createJsonLiteralValueFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MobgenPackage.JSON_COMPOSITE_VALUE:
+        return convertJsonCompositeValueToString(eDataType, instanceValue);
+      case MobgenPackage.JSON_LITERAL_VALUE:
+        return convertJsonLiteralValueToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -118,17 +156,6 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     MobgenCallDefinitionImpl mobgenCallDefinition = new MobgenCallDefinitionImpl();
     return mobgenCallDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public URI createURI()
-  {
-    URIImpl uri = new URIImpl();
-    return uri;
   }
 
   /**
@@ -184,17 +211,6 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     JsonObjectValueImpl jsonObjectValue = new JsonObjectValueImpl();
     return jsonObjectValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public JsonCompositeValue createJsonCompositeValue()
-  {
-    JsonCompositeValueImpl jsonCompositeValue = new JsonCompositeValueImpl();
-    return jsonCompositeValue;
   }
 
   /**
@@ -283,6 +299,61 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     NestedTypeImpl nestedType = new NestedTypeImpl();
     return nestedType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public URI createURI()
+  {
+    URIImpl uri = new URIImpl();
+    return uri;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonCompositeValue createJsonCompositeValueFromString(EDataType eDataType, String initialValue)
+  {
+    JsonCompositeValue result = JsonCompositeValue.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertJsonCompositeValueToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonLiteralValue createJsonLiteralValueFromString(EDataType eDataType, String initialValue)
+  {
+    JsonLiteralValue result = JsonLiteralValue.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertJsonLiteralValueToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

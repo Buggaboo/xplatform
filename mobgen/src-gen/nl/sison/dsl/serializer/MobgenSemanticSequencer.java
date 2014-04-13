@@ -49,8 +49,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case MobgenPackage.JSON_ARRAY:
-				if(context == grammarAccess.getJsonArrayRule() ||
-				   context == grammarAccess.getJsonCompositeValueRule()) {
+				if(context == grammarAccess.getJsonArrayRule()) {
 					sequence_JsonArray(context, (JsonArray) semanticObject); 
 					return; 
 				}
@@ -62,8 +61,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case MobgenPackage.JSON_OBJECT:
-				if(context == grammarAccess.getJsonCompositeValueRule() ||
-				   context == grammarAccess.getJsonObjectRule()) {
+				if(context == grammarAccess.getJsonObjectRule()) {
 					sequence_JsonObject(context, (JsonObject) semanticObject); 
 					return; 
 				}
@@ -330,7 +328,13 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (stringPrefix+=ANY_OTHER+ (parameters+=ID stringSuffix+=ANY_OTHER)+)
+	 *     (
+	 *         urlPrefix=URL_PREFIX 
+	 *         path=URL_PATH 
+	 *         (pathParameters+=ID pathSuffix+=URL_PATH)* 
+	 *         query+=URL_QUERY 
+	 *         (queryParameters+=ID querySuffix+=URL_QUERY_SUFFIX)*
+	 *     )
 	 */
 	protected void sequence_URI(EObject context, URI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

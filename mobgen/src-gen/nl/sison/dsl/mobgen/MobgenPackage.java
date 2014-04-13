@@ -4,6 +4,7 @@ package nl.sison.dsl.mobgen;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -222,52 +223,6 @@ public interface MobgenPackage extends EPackage
   int MOBGEN_CALL_DEFINITION_FEATURE_COUNT = 7;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.URIImpl <em>URI</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.impl.URIImpl
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
-   * @generated
-   */
-  int URI = 3;
-
-  /**
-   * The feature id for the '<em><b>String Prefix</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int URI__STRING_PREFIX = 0;
-
-  /**
-   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int URI__PARAMETERS = 1;
-
-  /**
-   * The feature id for the '<em><b>String Suffix</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int URI__STRING_SUFFIX = 2;
-
-  /**
-   * The number of structural features of the '<em>URI</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int URI_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderImpl <em>Header</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,7 +230,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeader()
    * @generated
    */
-  int MOBGEN_HEADER = 4;
+  int MOBGEN_HEADER = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -312,7 +267,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderKeyValuePair()
    * @generated
    */
-  int MOBGEN_HEADER_KEY_VALUE_PAIR = 5;
+  int MOBGEN_HEADER_KEY_VALUE_PAIR = 4;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -358,7 +313,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderParameter()
    * @generated
    */
-  int MOBGEN_HEADER_PARAMETER = 6;
+  int MOBGEN_HEADER_PARAMETER = 5;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -386,7 +341,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenJson()
    * @generated
    */
-  int MOBGEN_JSON = 7;
+  int MOBGEN_JSON = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -423,7 +378,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObjectValue()
    * @generated
    */
-  int JSON_OBJECT_VALUE = 8;
+  int JSON_OBJECT_VALUE = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -435,7 +390,7 @@ public interface MobgenPackage extends EPackage
   int JSON_OBJECT_VALUE__VALUE = 0;
 
   /**
-   * The feature id for the '<em><b>Composite</b></em>' containment reference.
+   * The feature id for the '<em><b>Composite</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -453,25 +408,6 @@ public interface MobgenPackage extends EPackage
   int JSON_OBJECT_VALUE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
-   * @generated
-   */
-  int JSON_COMPOSITE_VALUE = 9;
-
-  /**
-   * The number of structural features of the '<em>Json Composite Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_COMPOSITE_VALUE_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonObjectImpl <em>Json Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -479,7 +415,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_OBJECT = 10;
+  int JSON_OBJECT = 8;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -488,7 +424,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_OBJECT__KEY_VALUE_PAIR = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 0;
+  int JSON_OBJECT__KEY_VALUE_PAIR = 0;
 
   /**
    * The number of structural features of the '<em>Json Object</em>' class.
@@ -497,7 +433,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_OBJECT_FEATURE_COUNT = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 1;
+  int JSON_OBJECT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonKeyValuePairImpl <em>Json Key Value Pair</em>}' class.
@@ -507,7 +443,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonKeyValuePair()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 11;
+  int JSON_KEY_VALUE_PAIR = 9;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -544,7 +480,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 12;
+  int JSON_ARRAY = 10;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -553,7 +489,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_ARRAY__ITEMS = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 0;
+  int JSON_ARRAY__ITEMS = 0;
 
   /**
    * The number of structural features of the '<em>Json Array</em>' class.
@@ -562,7 +498,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_ARRAY_FEATURE_COUNT = JSON_COMPOSITE_VALUE_FEATURE_COUNT + 1;
+  int JSON_ARRAY_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenResourceDefinitionImpl <em>Resource Definition</em>}' class.
@@ -572,7 +508,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenResourceDefinition()
    * @generated
    */
-  int MOBGEN_RESOURCE_DEFINITION = 13;
+  int MOBGEN_RESOURCE_DEFINITION = 11;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -600,7 +536,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 14;
+  int ENUM_INSTANCE = 12;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -646,7 +582,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 15;
+  int MAP_INSTANCE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -692,7 +628,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 16;
+  int STRING_LIST = 14;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -720,7 +656,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
    * @generated
    */
-  int NESTED_TYPE = 17;
+  int NESTED_TYPE = 15;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -748,6 +684,108 @@ public interface MobgenPackage extends EPackage
    * @ordered
    */
   int NESTED_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.URIImpl <em>URI</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.impl.URIImpl
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
+   * @generated
+   */
+  int URI = 16;
+
+  /**
+   * The feature id for the '<em><b>Url Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__URL_PREFIX = 0;
+
+  /**
+   * The feature id for the '<em><b>Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__PATH = 1;
+
+  /**
+   * The feature id for the '<em><b>Path Parameters</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__PATH_PARAMETERS = 2;
+
+  /**
+   * The feature id for the '<em><b>Path Suffix</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__PATH_SUFFIX = 3;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__QUERY = 4;
+
+  /**
+   * The feature id for the '<em><b>Query Parameters</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__QUERY_PARAMETERS = 5;
+
+  /**
+   * The feature id for the '<em><b>Query Suffix</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__QUERY_SUFFIX = 6;
+
+  /**
+   * The number of structural features of the '<em>URI</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+   * @generated
+   */
+  int JSON_COMPOSITE_VALUE = 17;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+   * @generated
+   */
+  int JSON_LITERAL_VALUE = 18;
 
 
   /**
@@ -913,49 +951,6 @@ public interface MobgenPackage extends EPackage
   EReference getMobgenCallDefinition_JsonToServer();
 
   /**
-   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.URI <em>URI</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>URI</em>'.
-   * @see nl.sison.dsl.mobgen.URI
-   * @generated
-   */
-  EClass getURI();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getStringPrefix <em>String Prefix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>String Prefix</em>'.
-   * @see nl.sison.dsl.mobgen.URI#getStringPrefix()
-   * @see #getURI()
-   * @generated
-   */
-  EAttribute getURI_StringPrefix();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Parameters</em>'.
-   * @see nl.sison.dsl.mobgen.URI#getParameters()
-   * @see #getURI()
-   * @generated
-   */
-  EAttribute getURI_Parameters();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getStringSuffix <em>String Suffix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>String Suffix</em>'.
-   * @see nl.sison.dsl.mobgen.URI#getStringSuffix()
-   * @see #getURI()
-   * @generated
-   */
-  EAttribute getURI_StringSuffix();
-
-  /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.MobgenHeader <em>Header</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1105,25 +1100,15 @@ public interface MobgenPackage extends EPackage
   EAttribute getJsonObjectValue_Value();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Composite</em>'.
+   * @return the meta object for the attribute '<em>Composite</em>'.
    * @see nl.sison.dsl.mobgen.JsonObjectValue#getComposite()
    * @see #getJsonObjectValue()
    * @generated
    */
-  EReference getJsonObjectValue_Composite();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Json Composite Value</em>'.
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
-   * @generated
-   */
-  EClass getJsonCompositeValue();
+  EAttribute getJsonObjectValue_Composite();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonObject <em>Json Object</em>}'.
@@ -1349,6 +1334,113 @@ public interface MobgenPackage extends EPackage
   EAttribute getNestedType_String();
 
   /**
+   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.URI <em>URI</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>URI</em>'.
+   * @see nl.sison.dsl.mobgen.URI
+   * @generated
+   */
+  EClass getURI();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.URI#getUrlPrefix <em>Url Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url Prefix</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getUrlPrefix()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_UrlPrefix();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.URI#getPath <em>Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Path</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getPath()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_Path();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getPathParameters <em>Path Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Path Parameters</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getPathParameters()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_PathParameters();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getPathSuffix <em>Path Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Path Suffix</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getPathSuffix()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_PathSuffix();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Query</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getQuery()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_Query();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getQueryParameters <em>Query Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Query Parameters</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getQueryParameters()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_QueryParameters();
+
+  /**
+   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.URI#getQuerySuffix <em>Query Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Query Suffix</em>'.
+   * @see nl.sison.dsl.mobgen.URI#getQuerySuffix()
+   * @see #getURI()
+   * @generated
+   */
+  EAttribute getURI_QuerySuffix();
+
+  /**
+   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Json Composite Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @generated
+   */
+  EEnum getJsonCompositeValue();
+
+  /**
+   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Json Literal Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @generated
+   */
+  EEnum getJsonLiteralValue();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1498,40 +1590,6 @@ public interface MobgenPackage extends EPackage
     EReference MOBGEN_CALL_DEFINITION__JSON_TO_SERVER = eINSTANCE.getMobgenCallDefinition_JsonToServer();
 
     /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.URIImpl <em>URI</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.impl.URIImpl
-     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
-     * @generated
-     */
-    EClass URI = eINSTANCE.getURI();
-
-    /**
-     * The meta object literal for the '<em><b>String Prefix</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute URI__STRING_PREFIX = eINSTANCE.getURI_StringPrefix();
-
-    /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute URI__PARAMETERS = eINSTANCE.getURI_Parameters();
-
-    /**
-     * The meta object literal for the '<em><b>String Suffix</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute URI__STRING_SUFFIX = eINSTANCE.getURI_StringSuffix();
-
-    /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.MobgenHeaderImpl <em>Header</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1654,22 +1712,12 @@ public interface MobgenPackage extends EPackage
     EAttribute JSON_OBJECT_VALUE__VALUE = eINSTANCE.getJsonObjectValue_Value();
 
     /**
-     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Composite</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JSON_OBJECT_VALUE__COMPOSITE = eINSTANCE.getJsonObjectValue_Composite();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl
-     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
-     * @generated
-     */
-    EClass JSON_COMPOSITE_VALUE = eINSTANCE.getJsonCompositeValue();
+    EAttribute JSON_OBJECT_VALUE__COMPOSITE = eINSTANCE.getJsonObjectValue_Composite();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonObjectImpl <em>Json Object</em>}' class.
@@ -1854,6 +1902,92 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EAttribute NESTED_TYPE__STRING = eINSTANCE.getNestedType_String();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.URIImpl <em>URI</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.impl.URIImpl
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
+     * @generated
+     */
+    EClass URI = eINSTANCE.getURI();
+
+    /**
+     * The meta object literal for the '<em><b>Url Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__URL_PREFIX = eINSTANCE.getURI_UrlPrefix();
+
+    /**
+     * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__PATH = eINSTANCE.getURI_Path();
+
+    /**
+     * The meta object literal for the '<em><b>Path Parameters</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__PATH_PARAMETERS = eINSTANCE.getURI_PathParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Path Suffix</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__PATH_SUFFIX = eINSTANCE.getURI_PathSuffix();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__QUERY = eINSTANCE.getURI_Query();
+
+    /**
+     * The meta object literal for the '<em><b>Query Parameters</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__QUERY_PARAMETERS = eINSTANCE.getURI_QueryParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Query Suffix</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__QUERY_SUFFIX = eINSTANCE.getURI_QuerySuffix();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.JsonCompositeValue
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+     * @generated
+     */
+    EEnum JSON_COMPOSITE_VALUE = eINSTANCE.getJsonCompositeValue();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.JsonLiteralValue
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+     * @generated
+     */
+    EEnum JSON_LITERAL_VALUE = eINSTANCE.getJsonLiteralValue();
 
   }
 

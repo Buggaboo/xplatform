@@ -40,10 +40,10 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenAccess().getAlternatives_1(), "rule__Mobgen__Alternatives_1");
 					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2(), "rule__MobgenHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getJsonObjectValueAccess().getAlternatives(), "rule__JsonObjectValue__Alternatives");
-					put(grammarAccess.getJsonCompositeValueAccess().getAlternatives(), "rule__JsonCompositeValue__Alternatives");
-					put(grammarAccess.getJsonLiteralValueAccess().getAlternatives(), "rule__JsonLiteralValue__Alternatives");
 					put(grammarAccess.getMobgenResourceDefinitionAccess().getAlternatives(), "rule__MobgenResourceDefinition__Alternatives");
 					put(grammarAccess.getNestedTypeAccess().getAlternatives(), "rule__NestedType__Alternatives");
+					put(grammarAccess.getJsonCompositeValueAccess().getAlternatives(), "rule__JsonCompositeValue__Alternatives");
+					put(grammarAccess.getJsonLiteralValueAccess().getAlternatives(), "rule__JsonLiteralValue__Alternatives");
 					put(grammarAccess.getMobgenAccess().getGroup(), "rule__Mobgen__Group__0");
 					put(grammarAccess.getPlatformAccess().getGroup(), "rule__Platform__Group__0");
 					put(grammarAccess.getPlatformAccess().getGroup_2(), "rule__Platform__Group_2__0");
@@ -52,8 +52,6 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6_5(), "rule__MobgenCallDefinition__Group_6_5__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_7(), "rule__MobgenCallDefinition__Group_7__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_8(), "rule__MobgenCallDefinition__Group_8__0");
-					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
-					put(grammarAccess.getURIAccess().getGroup_1(), "rule__URI__Group_1__0");
 					put(grammarAccess.getMobgenHeaderAccess().getGroup(), "rule__MobgenHeader__Group__0");
 					put(grammarAccess.getMobgenHeaderAccess().getGroup_4(), "rule__MobgenHeader__Group_4__0");
 					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getGroup(), "rule__MobgenHeaderKeyValuePair__Group__0");
@@ -71,6 +69,9 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMapInstanceAccess().getGroup_4(), "rule__MapInstance__Group_4__0");
 					put(grammarAccess.getStringListAccess().getGroup(), "rule__StringList__Group__0");
 					put(grammarAccess.getStringListAccess().getGroup_2(), "rule__StringList__Group_2__0");
+					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
+					put(grammarAccess.getURIAccess().getGroup_2(), "rule__URI__Group_2__0");
+					put(grammarAccess.getURIAccess().getGroup_4(), "rule__URI__Group_4__0");
 					put(grammarAccess.getMobgenAccess().getPlatformAssignment_0(), "rule__Mobgen__PlatformAssignment_0");
 					put(grammarAccess.getMobgenAccess().getResourcesAssignment_1_0(), "rule__Mobgen__ResourcesAssignment_1_0");
 					put(grammarAccess.getMobgenAccess().getCallsAssignment_1_1(), "rule__Mobgen__CallsAssignment_1_1");
@@ -83,9 +84,6 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMobgenCallDefinitionAccess().getResponseHeadersAssignment_6_5_2(), "rule__MobgenCallDefinition__ResponseHeadersAssignment_6_5_2");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToClientAssignment_7_2(), "rule__MobgenCallDefinition__JsonToClientAssignment_7_2");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getJsonToServerAssignment_8_2(), "rule__MobgenCallDefinition__JsonToServerAssignment_8_2");
-					put(grammarAccess.getURIAccess().getStringPrefixAssignment_0(), "rule__URI__StringPrefixAssignment_0");
-					put(grammarAccess.getURIAccess().getParametersAssignment_1_1(), "rule__URI__ParametersAssignment_1_1");
-					put(grammarAccess.getURIAccess().getStringSuffixAssignment_1_3(), "rule__URI__StringSuffixAssignment_1_3");
 					put(grammarAccess.getMobgenHeaderAccess().getNameAssignment_0(), "rule__MobgenHeader__NameAssignment_0");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_3(), "rule__MobgenHeader__HeaderKeyValuesAssignment_3");
 					put(grammarAccess.getMobgenHeaderAccess().getHeaderKeyValuesAssignment_4_1(), "rule__MobgenHeader__HeaderKeyValuesAssignment_4_1");
@@ -116,6 +114,13 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStringListAccess().getValuesAssignment_2_1(), "rule__StringList__ValuesAssignment_2_1");
 					put(grammarAccess.getNestedTypeAccess().getListAssignment_0(), "rule__NestedType__ListAssignment_0");
 					put(grammarAccess.getNestedTypeAccess().getStringAssignment_1(), "rule__NestedType__StringAssignment_1");
+					put(grammarAccess.getURIAccess().getUrlPrefixAssignment_0(), "rule__URI__UrlPrefixAssignment_0");
+					put(grammarAccess.getURIAccess().getPathAssignment_1(), "rule__URI__PathAssignment_1");
+					put(grammarAccess.getURIAccess().getPathParametersAssignment_2_1(), "rule__URI__PathParametersAssignment_2_1");
+					put(grammarAccess.getURIAccess().getPathSuffixAssignment_2_3(), "rule__URI__PathSuffixAssignment_2_3");
+					put(grammarAccess.getURIAccess().getQueryAssignment_3(), "rule__URI__QueryAssignment_3");
+					put(grammarAccess.getURIAccess().getQueryParametersAssignment_4_1(), "rule__URI__QueryParametersAssignment_4_1");
+					put(grammarAccess.getURIAccess().getQuerySuffixAssignment_4_3(), "rule__URI__QuerySuffixAssignment_4_3");
 				}
 			};
 		}

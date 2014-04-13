@@ -50,15 +50,6 @@ public interface MobgenFactory extends EFactory
   MobgenCallDefinition createMobgenCallDefinition();
 
   /**
-   * Returns a new object of class '<em>URI</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>URI</em>'.
-   * @generated
-   */
-  URI createURI();
-
-  /**
    * Returns a new object of class '<em>Header</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,15 +93,6 @@ public interface MobgenFactory extends EFactory
    * @generated
    */
   JsonObjectValue createJsonObjectValue();
-
-  /**
-   * Returns a new object of class '<em>Json Composite Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Composite Value</em>'.
-   * @generated
-   */
-  JsonCompositeValue createJsonCompositeValue();
 
   /**
    * Returns a new object of class '<em>Json Object</em>'.
@@ -183,6 +165,15 @@ public interface MobgenFactory extends EFactory
    * @generated
    */
   NestedType createNestedType();
+
+  /**
+   * Returns a new object of class '<em>URI</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>URI</em>'.
+   * @generated
+   */
+  URI createURI();
 
   /**
    * Returns the package supported by this factory.

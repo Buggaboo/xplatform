@@ -4,6 +4,8 @@ package nl.sison.dsl.mobgen;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Json Array</b></em>'.
@@ -20,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface JsonArray extends JsonCompositeValue
+public interface JsonArray extends EObject
 {
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.

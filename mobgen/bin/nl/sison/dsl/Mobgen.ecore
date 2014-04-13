@@ -28,14 +28,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="jsonToServer" eType="#//MobgenJson"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="URI">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringPrefix" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringSuffix" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MobgenHeader">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="headerKeyValues" upperBound="-1"
@@ -56,12 +48,23 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonObjectValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonCompositeValue"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JsonLiteralValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="composite" eType="#//JsonCompositeValue"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonCompositeValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonObject" eSuperTypes="#//JsonCompositeValue">
+  <eClassifiers xsi:type="ecore:EEnum" name="JsonCompositeValue">
+    <eLiterals name="JsonObject" literal="JsonObject"/>
+    <eLiterals name="JsonArray" value="1" literal="JsonArray"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JsonLiteralValue">
+    <eLiterals name="STRING" literal="STRING"/>
+    <eLiterals name="EMPTY_JSON_OBJECT" value="1" literal="EMPTY_JSON_OBJECT"/>
+    <eLiterals name="EMPTY_JSON_ARRAY" value="2" literal="EMPTY_JSON_ARRAY"/>
+    <eLiterals name="JSON_LITERAL_BOOLEAN" value="3" literal="JSON_LITERAL_BOOLEAN"/>
+    <eLiterals name="JSON_LITERAL_NULL" value="4" literal="JSON_LITERAL_NULL"/>
+    <eLiterals name="JSON_NUMBER" value="5" literal="JSON_NUMBER"/>
+    <eLiterals name="JSON_META_SCALAR_TYPE" value="6" literal="JSON_META_SCALAR_TYPE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePair" upperBound="-1"
         eType="#//JsonKeyValuePair" containment="true"/>
   </eClassifiers>
@@ -70,7 +73,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//JsonObjectValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JsonArray" eSuperTypes="#//JsonCompositeValue">
+  <eClassifiers xsi:type="ecore:EClass" name="JsonArray">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//JsonObjectValue" containment="true"/>
   </eClassifiers>
@@ -98,5 +101,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//StringList"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URI">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="urlPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathParameters" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathSuffix" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryParameters" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="querySuffix" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

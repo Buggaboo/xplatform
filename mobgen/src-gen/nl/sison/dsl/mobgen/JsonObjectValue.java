@@ -25,6 +25,7 @@ public interface JsonObjectValue extends EObject
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * The literals are from the enumeration {@link nl.sison.dsl.mobgen.JsonLiteralValue}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -32,44 +33,49 @@ public interface JsonObjectValue extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @see #setValue(JsonLiteralValue)
    * @see nl.sison.dsl.mobgen.MobgenPackage#getJsonObjectValue_Value()
    * @model
    * @generated
    */
-  String getValue();
+  JsonLiteralValue getValue();
 
   /**
    * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
    * @see #getValue()
    * @generated
    */
-  void setValue(String value);
+  void setValue(JsonLiteralValue value);
 
   /**
-   * Returns the value of the '<em><b>Composite</b></em>' containment reference.
+   * Returns the value of the '<em><b>Composite</b></em>' attribute.
+   * The literals are from the enumeration {@link nl.sison.dsl.mobgen.JsonCompositeValue}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Composite</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Composite</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Composite</em>' containment reference.
+   * @return the value of the '<em>Composite</em>' attribute.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
    * @see #setComposite(JsonCompositeValue)
    * @see nl.sison.dsl.mobgen.MobgenPackage#getJsonObjectValue_Composite()
-   * @model containment="true"
+   * @model
    * @generated
    */
   JsonCompositeValue getComposite();
 
   /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}' containment reference.
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Composite</em>' containment reference.
+   * @param value the new value of the '<em>Composite</em>' attribute.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
    * @see #getComposite()
    * @generated
    */

@@ -7,10 +7,13 @@ import java.util.Collection;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.URI;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
@@ -22,9 +25,13 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getStringPrefix <em>String Prefix</em>}</li>
- *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getStringSuffix <em>String Suffix</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getUrlPrefix <em>Url Prefix</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getPathParameters <em>Path Parameters</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getPathSuffix <em>Path Suffix</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getQueryParameters <em>Query Parameters</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.URIImpl#getQuerySuffix <em>Query Suffix</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,34 +40,94 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class URIImpl extends MinimalEObjectImpl.Container implements URI
 {
   /**
-   * The cached value of the '{@link #getStringPrefix() <em>String Prefix</em>}' attribute list.
+   * The default value of the '{@link #getUrlPrefix() <em>Url Prefix</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStringPrefix()
+   * @see #getUrlPrefix()
    * @generated
    * @ordered
    */
-  protected EList<String> stringPrefix;
+  protected static final String URL_PREFIX_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
+   * The cached value of the '{@link #getUrlPrefix() <em>Url Prefix</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getUrlPrefix()
    * @generated
    * @ordered
    */
-  protected EList<String> parameters;
+  protected String urlPrefix = URL_PREFIX_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStringSuffix() <em>String Suffix</em>}' attribute list.
+   * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStringSuffix()
+   * @see #getPath()
    * @generated
    * @ordered
    */
-  protected EList<String> stringSuffix;
+  protected static final String PATH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPath()
+   * @generated
+   * @ordered
+   */
+  protected String path = PATH_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPathParameters() <em>Path Parameters</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPathParameters()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> pathParameters;
+
+  /**
+   * The cached value of the '{@link #getPathSuffix() <em>Path Suffix</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPathSuffix()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> pathSuffix;
+
+  /**
+   * The cached value of the '{@link #getQuery() <em>Query</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuery()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> query;
+
+  /**
+   * The cached value of the '{@link #getQueryParameters() <em>Query Parameters</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQueryParameters()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> queryParameters;
+
+  /**
+   * The cached value of the '{@link #getQuerySuffix() <em>Query Suffix</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuerySuffix()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> querySuffix;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,13 +155,9 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getStringPrefix()
+  public String getUrlPrefix()
   {
-    if (stringPrefix == null)
-    {
-      stringPrefix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__STRING_PREFIX);
-    }
-    return stringPrefix;
+    return urlPrefix;
   }
 
   /**
@@ -102,13 +165,12 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getParameters()
+  public void setUrlPrefix(String newUrlPrefix)
   {
-    if (parameters == null)
-    {
-      parameters = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__PARAMETERS);
-    }
-    return parameters;
+    String oldUrlPrefix = urlPrefix;
+    urlPrefix = newUrlPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.URI__URL_PREFIX, oldUrlPrefix, urlPrefix));
   }
 
   /**
@@ -116,13 +178,92 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getStringSuffix()
+  public String getPath()
   {
-    if (stringSuffix == null)
+    return path;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPath(String newPath)
+  {
+    String oldPath = path;
+    path = newPath;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.URI__PATH, oldPath, path));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getPathParameters()
+  {
+    if (pathParameters == null)
     {
-      stringSuffix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__STRING_SUFFIX);
+      pathParameters = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__PATH_PARAMETERS);
     }
-    return stringSuffix;
+    return pathParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getPathSuffix()
+  {
+    if (pathSuffix == null)
+    {
+      pathSuffix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__PATH_SUFFIX);
+    }
+    return pathSuffix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getQuery()
+  {
+    if (query == null)
+    {
+      query = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__QUERY);
+    }
+    return query;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getQueryParameters()
+  {
+    if (queryParameters == null)
+    {
+      queryParameters = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__QUERY_PARAMETERS);
+    }
+    return queryParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getQuerySuffix()
+  {
+    if (querySuffix == null)
+    {
+      querySuffix = new EDataTypeEList<String>(String.class, this, MobgenPackage.URI__QUERY_SUFFIX);
+    }
+    return querySuffix;
   }
 
   /**
@@ -135,12 +276,20 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case MobgenPackage.URI__STRING_PREFIX:
-        return getStringPrefix();
-      case MobgenPackage.URI__PARAMETERS:
-        return getParameters();
-      case MobgenPackage.URI__STRING_SUFFIX:
-        return getStringSuffix();
+      case MobgenPackage.URI__URL_PREFIX:
+        return getUrlPrefix();
+      case MobgenPackage.URI__PATH:
+        return getPath();
+      case MobgenPackage.URI__PATH_PARAMETERS:
+        return getPathParameters();
+      case MobgenPackage.URI__PATH_SUFFIX:
+        return getPathSuffix();
+      case MobgenPackage.URI__QUERY:
+        return getQuery();
+      case MobgenPackage.URI__QUERY_PARAMETERS:
+        return getQueryParameters();
+      case MobgenPackage.URI__QUERY_SUFFIX:
+        return getQuerySuffix();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,17 +305,31 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case MobgenPackage.URI__STRING_PREFIX:
-        getStringPrefix().clear();
-        getStringPrefix().addAll((Collection<? extends String>)newValue);
+      case MobgenPackage.URI__URL_PREFIX:
+        setUrlPrefix((String)newValue);
         return;
-      case MobgenPackage.URI__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends String>)newValue);
+      case MobgenPackage.URI__PATH:
+        setPath((String)newValue);
         return;
-      case MobgenPackage.URI__STRING_SUFFIX:
-        getStringSuffix().clear();
-        getStringSuffix().addAll((Collection<? extends String>)newValue);
+      case MobgenPackage.URI__PATH_PARAMETERS:
+        getPathParameters().clear();
+        getPathParameters().addAll((Collection<? extends String>)newValue);
+        return;
+      case MobgenPackage.URI__PATH_SUFFIX:
+        getPathSuffix().clear();
+        getPathSuffix().addAll((Collection<? extends String>)newValue);
+        return;
+      case MobgenPackage.URI__QUERY:
+        getQuery().clear();
+        getQuery().addAll((Collection<? extends String>)newValue);
+        return;
+      case MobgenPackage.URI__QUERY_PARAMETERS:
+        getQueryParameters().clear();
+        getQueryParameters().addAll((Collection<? extends String>)newValue);
+        return;
+      case MobgenPackage.URI__QUERY_SUFFIX:
+        getQuerySuffix().clear();
+        getQuerySuffix().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -182,14 +345,26 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case MobgenPackage.URI__STRING_PREFIX:
-        getStringPrefix().clear();
+      case MobgenPackage.URI__URL_PREFIX:
+        setUrlPrefix(URL_PREFIX_EDEFAULT);
         return;
-      case MobgenPackage.URI__PARAMETERS:
-        getParameters().clear();
+      case MobgenPackage.URI__PATH:
+        setPath(PATH_EDEFAULT);
         return;
-      case MobgenPackage.URI__STRING_SUFFIX:
-        getStringSuffix().clear();
+      case MobgenPackage.URI__PATH_PARAMETERS:
+        getPathParameters().clear();
+        return;
+      case MobgenPackage.URI__PATH_SUFFIX:
+        getPathSuffix().clear();
+        return;
+      case MobgenPackage.URI__QUERY:
+        getQuery().clear();
+        return;
+      case MobgenPackage.URI__QUERY_PARAMETERS:
+        getQueryParameters().clear();
+        return;
+      case MobgenPackage.URI__QUERY_SUFFIX:
+        getQuerySuffix().clear();
         return;
     }
     super.eUnset(featureID);
@@ -205,12 +380,20 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
   {
     switch (featureID)
     {
-      case MobgenPackage.URI__STRING_PREFIX:
-        return stringPrefix != null && !stringPrefix.isEmpty();
-      case MobgenPackage.URI__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
-      case MobgenPackage.URI__STRING_SUFFIX:
-        return stringSuffix != null && !stringSuffix.isEmpty();
+      case MobgenPackage.URI__URL_PREFIX:
+        return URL_PREFIX_EDEFAULT == null ? urlPrefix != null : !URL_PREFIX_EDEFAULT.equals(urlPrefix);
+      case MobgenPackage.URI__PATH:
+        return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+      case MobgenPackage.URI__PATH_PARAMETERS:
+        return pathParameters != null && !pathParameters.isEmpty();
+      case MobgenPackage.URI__PATH_SUFFIX:
+        return pathSuffix != null && !pathSuffix.isEmpty();
+      case MobgenPackage.URI__QUERY:
+        return query != null && !query.isEmpty();
+      case MobgenPackage.URI__QUERY_PARAMETERS:
+        return queryParameters != null && !queryParameters.isEmpty();
+      case MobgenPackage.URI__QUERY_SUFFIX:
+        return querySuffix != null && !querySuffix.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -226,12 +409,20 @@ public class URIImpl extends MinimalEObjectImpl.Container implements URI
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (stringPrefix: ");
-    result.append(stringPrefix);
-    result.append(", parameters: ");
-    result.append(parameters);
-    result.append(", stringSuffix: ");
-    result.append(stringSuffix);
+    result.append(" (urlPrefix: ");
+    result.append(urlPrefix);
+    result.append(", path: ");
+    result.append(path);
+    result.append(", pathParameters: ");
+    result.append(pathParameters);
+    result.append(", pathSuffix: ");
+    result.append(pathSuffix);
+    result.append(", query: ");
+    result.append(query);
+    result.append(", queryParameters: ");
+    result.append(queryParameters);
+    result.append(", querySuffix: ");
+    result.append(querySuffix);
     result.append(')');
     return result.toString();
   }

@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class JsonObjectImpl extends JsonCompositeValueImpl implements JsonObject
+public class JsonObjectImpl extends MinimalEObjectImpl.Container implements JsonObject
 {
   /**
    * The cached value of the '{@link #getKeyValuePair() <em>Key Value Pair</em>}' containment reference list.

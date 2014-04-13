@@ -90,11 +90,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
         return createMobgenCallDefinitionAdapter();
       }
       @Override
-      public Adapter caseURI(URI object)
-      {
-        return createURIAdapter();
-      }
-      @Override
       public Adapter caseMobgenHeader(MobgenHeader object)
       {
         return createMobgenHeaderAdapter();
@@ -118,11 +113,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
       public Adapter caseJsonObjectValue(JsonObjectValue object)
       {
         return createJsonObjectValueAdapter();
-      }
-      @Override
-      public Adapter caseJsonCompositeValue(JsonCompositeValue object)
-      {
-        return createJsonCompositeValueAdapter();
       }
       @Override
       public Adapter caseJsonObject(JsonObject object)
@@ -163,6 +153,11 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNestedType(NestedType object)
       {
         return createNestedTypeAdapter();
+      }
+      @Override
+      public Adapter caseURI(URI object)
+      {
+        return createURIAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -227,21 +222,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMobgenCallDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.URI <em>URI</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.dsl.mobgen.URI
-   * @generated
-   */
-  public Adapter createURIAdapter()
   {
     return null;
   }
@@ -317,21 +297,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonObjectValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
-   * @generated
-   */
-  public Adapter createJsonCompositeValueAdapter()
   {
     return null;
   }
@@ -452,6 +417,21 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNestedTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.URI <em>URI</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.dsl.mobgen.URI
+   * @generated
+   */
+  public Adapter createURIAdapter()
   {
     return null;
   }
