@@ -45,10 +45,14 @@ public class AndroidHttpRequestGenerator implements IGenerator {
    * 1. Generate http request header Parcelable
    * 2. Generate http request URL Parcelable
    * 3. Generate http request Json entity Parcelable // TODO put parser here?
-   * 4. Generate http response header Parcelable
-   * 5. Generate http response Json entity Parcelable
-   * 7. Generate mock Activity to test the call // TODO
-   * 8. Generate Spark class to handle the call // TODO
+   * 4. Generate Parcelable for previous three Parcelablesa
+   * 5. Generate http response header Parcelable
+   * 6. Generate http response Json entity Parcelable
+   * 7. Generate Parcelable for previous two Parcelables
+   * 8. Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
+   * 9. Generate http call method
+   * 10. Generate mock Activity to test the call // TODO
+   * 11. Generate Spark class to handle the call // TODO
    * // TODO also kill boiler plate for the Activity / Fragment
    */
   public Object androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
