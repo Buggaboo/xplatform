@@ -52,10 +52,6 @@ MobgenCallDefinition:
 	('server' 'expects' jsonToServer=MobgenJson)?
 ;
 
-URI:
-	stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER)+
-;
-
 MobgenHeader:
 	name=ID
 	"'''" 
@@ -90,11 +86,11 @@ JsonObjectValue:
 	value=JsonLiteralValue | composite=JsonCompositeValue
 ;
 
-JsonCompositeValue:
+enum JsonCompositeValue:
 	JsonObject | JsonArray
 ;
 
-JsonLiteralValue:
+enum JsonLiteralValue:
 	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL |  JSON_NUMBER | JSON_META_SCALAR_TYPE
 ;
 
@@ -131,7 +127,7 @@ terminal JSON_LITERAL_BOOLEAN:
 ;
 
 terminal JSON_NUMBER:
-	('0' | '1..9'+ INT) ('.' INT)?
+	INT ('.' INT)
 ;
 
 /**
@@ -166,3 +162,188 @@ StringList:
 NestedType:
 	list=StringList | string=STRING
 ;
+
+// lifted off from http://xtexterience.wordpress.com/2011/06/08/urls-in-xtext/
+terminal URL_PREFIX:
+    'http'('s')? '://'
+	'0'..'9'+ '.' '0'..'9'+ '.' '0'..'9'+ '.' '0'..'9'+
+    |
+        (
+            ('a'..'z'|'A'..'Z')
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )*
+            (
+                '.'
+                ('a'..'z'|'A'..'Z')
+                (
+                    'a'..'z'|'A'..'Z'|
+                    '0'..'9'|
+                    '$'|
+                    '-'|
+                    '_'|
+                    (
+                        '\\'
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                    ) |
+                    (
+                        '%'
+                        ('0'..'9')
+                        ('0'..'9')
+                    )
+                )*
+            )*
+        )
+    (':' ('0'..'9')+)? // Portnumber
+    ;
+
+terminal URL_PATH:
+    ('/'
+        (
+            'a'..'z'|'A'..'Z'|
+            '0'..'9'|
+            '$'|
+            '-'|
+            '_'|
+            '~'|
+            '+'|
+            '.'|
+            (
+                '\\'
+                ('0'..'9'|'a'..'f'|'A'..'F')
+                ('0'..'9'|'a'..'f'|'A'..'F')
+            ) |
+            (
+                '%'
+                ('0'..'9')
+                ('0'..'9')
+            )
+        )*
+    )*; // Path
+ 
+terminal URL_QUERY:
+('?'
+	(
+    'a'..'z'|'A'..'Z'|
+    '0'..'9'|
+    '$'|
+    '-'|
+    '_'|
+    '='|
+    '&'|
+    ';'|
+    (
+        '\\'
+        ('0'..'9'|'a'..'f'|'A'..'F')
+        ('0'..'9'|'a'..'f'|'A'..'F')
+    ) |
+    (
+        '%'
+        ('0'..'9')
+        ('0'..'9')
+            )
+        )+
+        ('+'
+    	(
+	        'a'..'z'|'A'..'Z'|
+	        '0'..'9'|
+	        '$'|
+	        '-'|
+	        '_'|
+	        '='|
+	        '&'|
+	        ';'|
+	        (
+	            '\\'
+	            ('0'..'9'|'a'..'f'|'A'..'F')
+	            ('0'..'9'|'a'..'f'|'A'..'F')
+	        ) |
+        	(
+            '%'
+            ('0'..'9')
+            ('0'..'9')
+            )
+        )+
+    )*
+)?
+;
+
+terminal URL_QUERY_SUFFIX:
+('&'
+	'a'..'z'|'A'..'Z'|
+    /*'0'..'9'|*/   // Super-hack, TODO determine how to redefine this terminal rule so it won't clash with antlr RULE_INT
+    '$'|
+    '-'|
+    '_'|
+    '='|
+    '&'|
+    ';'|
+    (
+        '\\'
+        ('0'..'9'|'a'..'f'|'A'..'F')
+        ('0'..'9'|'a'..'f'|'A'..'F')
+    ) |
+    (
+        '%'
+        ('0'..'9')
+        ('0'..'9')
+            )
+        )+
+ 
+        ('+'
+    (
+        'a'..'z'|'A'..'Z'|
+        '0'..'9'|
+        '$'|
+        '-'|
+        '_'|
+        '='|
+        '&'|
+        ';'|
+        (
+            '\\'
+            ('0'..'9'|'a'..'f'|'A'..'F')
+            ('0'..'9'|'a'..'f'|'A'..'F')
+        ) |
+        (
+            '%'
+            ('0'..'9')
+            ('0'..'9')
+        )
+    )+
+)*
+;
+
+URI: // caveat: due to a hack numbers may not occur after the queryParameters
+    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* query+=URL_QUERY ('{' queryParameters+=ID '}' querySuffix+=URL_QUERY_SUFFIX)* 
+;
+/* 
+URI:
+    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* (query+=(URL_QUERY) '{' queryParameters+=ID '}' query+=ANY_OTHER*)* 
+;
+*/ 
+/*
+terminal ANY_OTHER_WITHOUT_CHEVRON: // TODO test this
+	!('{')
+;
+*/
+/*
+URI:
+       stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER_WITHOUT_CHEVRON)+
+;
+*/ 

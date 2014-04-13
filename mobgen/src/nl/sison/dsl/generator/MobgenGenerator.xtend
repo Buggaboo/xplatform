@@ -148,27 +148,26 @@ class AndroidHttpRequestGenerator implements IGenerator
 		callDefinitions.forEach(d | d.androidCreateJavaFiles(fsa))
 	}
 	
+	/**
+	 * 1. Generate http request header Parcelable
+	 * 2. Generate http request URL Parcelable
+	 * 3. Generate http request Json entity Parcelable // TODO put parser here?
+	 * 4. Generate http response header Parcelable
+	 * 5. Generate http response Json entity Parcelable
+	 * 7. Generate mock Activity to test the call // TODO
+	 * 8. Generate Spark class to handle the call // TODO
+	 * // TODO also kill boiler plate for the Activity / Fragment
+	 */
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
-		
-		/*
-		 * 1. Generate http request header Parcelable
-		 * 2. Generate http request URL Parcelable
-		 * 3. Generate http request Json entity Parcelable // TODO put parser here?
-		 * 4.  
-		 * 
-		 * Loader + Request classes
-		 * 3. Generate json parser, for http request parcelable (validation to prevent injection attacks at the server)
-		 * 4. Generate json parser, for http request response (validation to prevent attacks on the app)
-		 * 5. Generate mock Activity to test the call // TODO
-		 * 6. Generate Spark class to handle the call // TODO
-		// TODO also kill boiler plate for the Activity / Fragment
-		 */
-		 
-		/* 1. */
 		if (callDefinition.requestHeaders != null)
 		{
-			createParcelableRequestHeaderFile(callDefinition, fsa)
+			createParcelableRequestHeaderFile(callDefinition, fsa) /* 1. */
+			createParcelableRequestUrlFile(callDefinition, fsa) /* 2. */
+			if (callDefinition.method.startsWith('P'))
+			{
+				createParcelableRequestJsonFile(callDefinition, fsa) // only for POST and PUT
+			}
 		}
 		
 		/* 2. */
@@ -184,7 +183,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 		
 	}
 	
-	def createParcelableRequestUriFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
+	def createParcelableRequestUrlFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
 		val name = callDefinition.requestHeaders.name
 		val nameCapitalized = name.capitalizeFirstLetter
@@ -194,21 +193,83 @@ class AndroidHttpRequestGenerator implements IGenerator
 		
 		// outgoing from the client's perspective
 		// uri header variables
-		val requestHeaderKeyValuePairs = callDefinition.requestHeaders.headerKeyValues.filter(typeof(MobgenHeaderKeyValuePair))
+		val url = callDefinition.uri
+		val urlPrefix = url.urlPrefix // probably contains the hostname and protocol https and initial path
+		val urlPath = url.path
+		val urlPathParameters = url.pathParameters
+		val urlPathSuffixes = url.pathSuffix
+		
+		val urlQueryPrefix = url.query
+		val urlQueryParameters = url.queryParameters
+		var urlQuerySuffixes = url.querySuffix
 		
 		val hashMap = <String, String>newHashMap()
-		for (kvp: requestHeaderKeyValuePairs)
+		
+		for (pp : urlPathParameters)
 		{
-			if (kvp.parameter != null)
+			hashMap.put(pp, "String") // for security sensitive stuff use a CharArray (char[])
+		}
+		
+		for (qp : urlQueryParameters)
+		{
+			hashMap.put(qp, "String") // for security sensitive stuff use a CharArray (char[])
+		}
+		
+		val iteratorUrlParams = urlPathParameters.iterator
+		val iteratorUrlSuffix = urlPathSuffixes.iterator
+		val strBuf = new StringBuffer
+		strBuf.append(urlPrefix).append(urlPath) 
+		while (iteratorUrlParams.hasNext || iteratorUrlSuffix.hasNext)
+		{
+			if (!iteratorUrlParams.next.empty)
 			{
-				hashMap.put(kvp.parameter.id, "String") // for security sensitive stuff use a CharArray (char[])
+				strBuf.append("%s")
+			}
+			
+			val suf = iteratorUrlSuffix.next
+			if (!suf.empty)
+			{
+				strBuf.append(suf)
 			}
 		}
 		
-		stringBuffer.append(name.capitalizeFirstLetter.createParcelable(hashMap))
-		val filePath = String::format("src/%s/%s%s", nameLowerCase.setPackage.toString.substring("package ".length).replace(".", "/"), nameCapitalized, 'Loader.java');
+		val iteratorUrlQueryParams = urlQueryParameters.iterator
+		val iteratorUrlQuerySuffix = urlQuerySuffixes.iterator
+		strBuf.append(urlQueryPrefix)
+		while (iteratorUrlQueryParams.hasNext || iteratorUrlQuerySuffix.hasNext)
+		{
+			if (!iteratorUrlQueryParams.next.empty)
+			{
+				strBuf.append("%s")
+			}
+			
+			val suf = iteratorUrlQuerySuffix.next
+			if (!suf.empty)
+			{
+				strBuf.append(suf)
+			}
+		}
+		
+		val addMethod = '''
+		public URL getUrl()
+		{ // URLEncoder.encode(...) only the actual parameters, not everything
+		«IF !urlPathParameters.empty && !urlQueryParameters.empty»
+			return new URL(String.format("«strBuf.toString»"«FOR p : urlPathParameters», «p.wrapUrlEncoder»«ENDFOR»«FOR q : urlQueryParameters», «q.wrapUrlEncoder»«ENDFOR»));
+		«ELSE»
+			return new URL("«strBuf.toString»");
+		«ENDIF»
+		}
+		'''
+		
+		stringBuffer.append(name.capitalizeFirstLetter.createParcelable(hashMap, addMethod))
+		val filePath = String::format("src/%s/%s%s", nameLowerCase.pathForStringFormat, nameCapitalized, 'RequestUrl.java');
 		fsa.generateFile(filePath, stringBuffer.toString)
 	}
+	
+	def wrapUrlEncoder(CharSequence parameter) '''
+	URLEncoder.encode(«parameter»)
+	'''
+	
 	
 	def createParcelableRequestHeaderFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
@@ -218,8 +279,6 @@ class AndroidHttpRequestGenerator implements IGenerator
 		
 		val stringBuffer = new StringBuffer
 		
-		// outgoing from the client's perspective
-		// uri header variables
 		val requestHeaderKeyValuePairs = callDefinition.requestHeaders.headerKeyValues.filter(typeof(MobgenHeaderKeyValuePair))
 		
 		val hashMap = <String, String>newHashMap()
@@ -231,14 +290,24 @@ class AndroidHttpRequestGenerator implements IGenerator
 			}
 		}
 		
-		stringBuffer.append(name.capitalizeFirstLetter.createParcelable(hashMap))
-		val filePath = String::format("src/%s/%s%s", nameLowerCase.setPackage.toString.substring("package ".length).replace(".", "/"), nameCapitalized, 'Loader.java');
+		stringBuffer.append(name.capitalizeFirstLetter.createParcelable(hashMap, ""))
+		val filePath = String::format("src/%s/%s%s", nameLowerCase.pathForStringFormat, nameCapitalized, 'RequestHeader.java');
 		fsa.generateFile(filePath, stringBuffer.toString)
+	}
+	
+	def createParcelableRequestJsonFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
+	{
+		// TODO ... figure out algorithm to do this
 	}
 
 	def capitalizeFirstLetter(String s)
 	{
 		return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase;
+	}
+	
+	def getPathForStringFormat(CharSequence nameLowerCase)
+	{
+		return nameLowerCase.setPackage.toString.substring("package ".length).replace(".", "/") 
 	}
 	
 	def setPackage(CharSequence name) '''
@@ -438,7 +507,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays... 
 	 * 
 	 */
-	def createParcelable(CharSequence parcelableClassName, Map<String,String> members) '''
+	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence additionalMethodsEtc) '''
 	/**
 	 * Parcelables are actually just POJOs that are faster than Serializables,
 	 * only Parcelables require manual work to pass on values from one object to the next
@@ -525,7 +594,8 @@ class AndroidHttpRequestGenerator implements IGenerator
 	    public int describeContents() {
 	        return 0;
 	    }
-		
+	    
+	    «additionalMethodsEtc»
 	}
 	'''	
 	
