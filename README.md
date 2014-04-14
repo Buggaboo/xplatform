@@ -22,16 +22,15 @@ Planned features on supported platforms
 
 Roadmap: front end
 ------------------
-* BSON
+* [UBJSON](http://ubjson.org/)
 * Android
-* Blackberry 10
 * iOS
 * Windows
 
 Roadmap: back end
 -----------------
-* Spark (pure java restful web framework) + xtend
-* BSON
+* [Spark](http://www.sparkjava.com/) and [git clone it](https://github.com/perwendel/spark) (pure java restful web framework) + xtend
+* [UBJSON](http://ubjson.org/)
 
 Dependencies
 ------------
