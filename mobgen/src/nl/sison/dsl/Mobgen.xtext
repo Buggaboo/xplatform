@@ -83,14 +83,14 @@ MobgenJson:
  *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
  */
 JsonObjectValue:
-	value=JsonLiteralValue | composite=JsonCompositeValue
+	scalar=JsonLiteralValue | composite=JsonCompositeValue
 ;
 
-enum JsonCompositeValue:
+JsonCompositeValue:
 	JsonObject | JsonArray
 ;
 
-enum JsonLiteralValue:
+JsonLiteralValue:
 	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL |  JSON_NUMBER | JSON_META_SCALAR_TYPE
 ;
 
