@@ -9,6 +9,7 @@ import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import nl.sison.dsl.mobgen.JsonCompositeValue
 
 class MobgenGenerator implements IGenerator {
 	
@@ -152,7 +153,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 	 * 1. Generate http request header Parcelable
 	 * 2. Generate http request URL Parcelable
 	 * 3. Generate http request Json entity Parcelable // TODO put parser here?
-	 * 4. Generate Parcelable for previous three Parcelablesa
+	 * 4. Generate Parcelable for previous three Parcelables
 	 * 5. Generate http response header Parcelable
 	 * 6. Generate http response Json entity Parcelable
 	 * 7. Generate Parcelable for previous two Parcelables
@@ -290,7 +291,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 		{
 			if (kvp.parameter != null)
 			{
-				hashMap.put(kvp.parameter.id, "String") // for security sensitive stuff use a CharArray (char[])
+				hashMap.put(kvp.parameter.id.camelCase, "String") // for security sensitive stuff use a CharArray (char[])
 			}
 		}
 		
@@ -299,9 +300,57 @@ class AndroidHttpRequestGenerator implements IGenerator
 		fsa.generateFile(filePath, stringBuffer.toString)
 	}
 	
+	/**
+	 * 
+	 * Design: pass values to a Parcelable (that is generated), then from a instance method, it spits out a json construct, that
+	 * can be referenced from the Loader. Then in the http request body entity (method: PUT/POST), #toString can be called on the JSON construct.   
+	 * 
+	 */
 	def createParcelableRequestJsonFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
-		// TODO ... figure out algorithm to do this
+		// use the enum
+		val composite = callDefinition.jsonToClient.value.composite
+		val scalar = callDefinition.jsonToClient.value.scalar
+		val stringBuilder = new StringBuilder
+		if (composite != null)
+		{
+			createCompositeJsonValue(composite, stringBuilder)
+		}else
+		{
+//			createCompositeScalarParser(composite, stringBuilder)
+			throw new IllegalArgumentException("The root JSON value must be a composite type. Skipping Parcelable generation. Use a bundle.")
+		}
+		
+		return stringBuilder.toString
+	}
+	
+	def createCompositeJsonValue(JsonCompositeValue composite, StringBuilder parserString)
+	{
+		if (composite.eClass.name.equals("JsonObject")) // TODO
+		{
+			val str = '''
+				JSONObject object = new JSONObject(); // TODO
+				try {
+					object.put("name", "Jack Hack");
+				object.put("score", new Integer(200));
+					object.put("current", new Double(152.32));
+					object.put("nickname", "Hacker");
+				} catch (JSONException e) {
+				    e.printStackTrace();
+				}
+			'''
+		}else if (composite.eClass.name.equals("JsonArray"))
+		{
+			print("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.")
+		}else
+		{
+			throw new IllegalArgumentException("Wrong type passed?")
+		}
+	}
+	
+	def createScalarJsonValue(JsonCompositeValue composite, StringBuilder parserString)
+	{
+		
 	}
 
 	def capitalizeFirstLetter(String s)
@@ -485,14 +534,14 @@ class AndroidHttpRequestGenerator implements IGenerator
 	'''
 	
 	def createParcelableAccessors(CharSequence parameterName, CharSequence parameterType) '''
-	void set«parameterName.toString.capitalizeFirstLetter» (final «parameterType» «parameterName»)
+	void set«parameterName» (final «parameterType» «parameterName»)
 	{
 		return this.«parameterName»;
 	}
-	void get«parameterName.toString.capitalizeFirstLetter» () { return «parameterName»; }
+	void get«parameterName» () { return «parameterName»; }
 	'''
 	
-	def camelCaseHttpHeaderKey(CharSequence headerKey)
+	def camelCase(CharSequence headerKey)
 	{
 		val strArr = headerKey.toString.split("-")
 		val strBuf = new StringBuffer
@@ -504,6 +553,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 				strBuf.append(str.capitalizeFirstLetter)
 			}
 		}
+		return strBuf.toString
 	}
 	
 	/**
