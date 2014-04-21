@@ -10,6 +10,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import nl.sison.dsl.mobgen.JsonCompositeValue
+import nl.sison.dsl.services.MobgenGrammarAccess.JsonLiteralValueElements
+import org.eclipse.xtext.common.parser.packrat.consumers.TerminalsSTRINGConsumer
+import nl.sison.dsl.mobgen.RestfulMethods
 
 class MobgenGenerator implements IGenerator {
 	
@@ -125,7 +128,7 @@ class AndroidResourceGenerator implements IGenerator
 	'''
 
 	def androidResourceItemize(CharSequence s) '''
-    	<item>«s»</item>
+    <item>«s»</item>
     '''
 
 	def androidKeyStringArray(CharSequence mapName, CharSequence key, CharSequence s) '''
@@ -169,7 +172,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 		{
 			createParcelableRequestHeaderFile(callDefinition, fsa) /* 1. */
 			createParcelableRequestUrlFile(callDefinition, fsa) /* 2. */
-			if (callDefinition.method.startsWith('P'))
+			if (callDefinition.method == RestfulMethods.POST || callDefinition.method == RestfulMethods.PUT)
 			{
 				createParcelableRequestJsonFile(callDefinition, fsa) // only for POST and PUT
 			}
@@ -182,7 +185,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 	{
 //		def createLoader(CharSequence className, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 		val nameCapitalized = callDefinition.name.capitalizeFirstLetter
-		val methodCapitalized = callDefinition.method.capitalizeFirstLetter
+		val methodCapitalized = callDefinition.method.literal
 		val jsonResultTypeNameCapitalized = callDefinition.jsonToClient.name.capitalizeFirstLetter // probably of type Parcelable otherwise the validator should get in the way
 //		nameCapitalized.createLoader(jsonResultTypeNameCapitalized, methodCapitalized, httpRequestBuilder())
 		
@@ -255,6 +258,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 			}
 		}
 		
+		// TODO auto-generate validation code based on the type?
 		val addMethod = '''
 		public URL getUrl()
 		{ // URLEncoder.encode(...) only the actual parameters, not everything
@@ -312,34 +316,54 @@ class AndroidHttpRequestGenerator implements IGenerator
 		val composite = callDefinition.jsonToClient.value.composite
 		val scalar = callDefinition.jsonToClient.value.scalar
 		val stringBuilder = new StringBuilder
+		
+		val startTryCatch = '''
+		try {
+		'''
+		
 		if (composite != null)
 		{
-			createCompositeJsonValue(composite, stringBuilder)
+			// create the JSON object factory method first to
+			createCompositeJsonValue(composite, stringBuilder, 0)
+			// inject it into the JSON request parcelable
+			// ...
 		}else
 		{
 //			createCompositeScalarParser(composite, stringBuilder)
-			throw new IllegalArgumentException("The root JSON value must be a composite type. Skipping Parcelable generation. Use a bundle.")
+			print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a bundle.")
 		}
+		
+		stringBuilder.append("JSONException".generateExceptionHandlerLoggingAndThrow).append("\n}")
 		
 		return stringBuilder.toString
 	}
 	
-	def createCompositeJsonValue(JsonCompositeValue composite, StringBuilder parserString)
+	def mapJsonLiteralValueToJava(JsonLiteralValueElements elements)
 	{
-		if (composite.eClass.name.equals("JsonObject")) // TODO
+		
+	}
+	
+	def createCompositeJsonValue(JsonCompositeValue composite, StringBuilder parserString, int recursionDepth)
+	{
+		if (composite.objectValue != null) // TODO check for correctness
 		{
 			val str = '''
-				JSONObject object = new JSONObject(); // TODO
-				try {
-					object.put("name", "Jack Hack");
-				object.put("score", new Integer(200));
-					object.put("current", new Double(152.32));
-					object.put("nickname", "Hacker");
-				} catch (JSONException e) {
-				    e.printStackTrace();
-				}
+			JSONObject n«recursionDepth» = new JSONObject();
 			'''
-		}else if (composite.eClass.name.equals("JsonArray"))
+			for (keyValue : composite.objectValue.keyValuePair)
+			{
+				if (keyValue.value.scalar != null)
+				{
+					val putStr = '''
+					n«recursionDepth».put(«keyValue.key», «keyValue.value»);
+					''' // TODO use accumulate, because it is the bomb (chaining)
+					parserString.append(putStr);
+				}else
+				{
+					
+				}
+			}
+		}else if (composite.arrayValue != null) // composite.eClass.name.equals("JsonArray")?
 		{
 			print("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.")
 		}else

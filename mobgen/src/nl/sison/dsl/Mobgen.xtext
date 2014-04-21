@@ -44,7 +44,7 @@ Platform:
  * Only POST / PUT request method can do a 'server' 'expects' 
  */
 MobgenCallDefinition:
-	'call' name=ID ':' method=RESTFUL_METHODS 'from' uri=URI
+	'call' name=ID ':' method=RestfulMethods 'from' uri=URI
 	('with' 'headers' 'from' 'request' requestHeaders=MobgenHeader
 		('and' 'response' responseHeaders=MobgenHeader)?
 	)?
@@ -68,8 +68,8 @@ MobgenHeaderParameter:
 	'{' id=ID '}'
 ;
 
-terminal RESTFUL_METHODS:
-	'PUT' | 'POST' | 'GET' | 'DELETE' // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response
+enum RestfulMethods:
+	put='PUT' | post='POST' | get='GET' | delete='DELETE' // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response
 ;
 
 MobgenJson:
@@ -87,11 +87,11 @@ JsonObjectValue:
 ;
 
 JsonCompositeValue:
-	JsonObject | JsonArray
+	objectValue=JsonObject | arrayValue=JsonArray
 ;
 
 JsonLiteralValue:
-	STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_BOOLEAN | JSON_LITERAL_NULL |  JSON_NUMBER | JSON_META_SCALAR_TYPE
+	stringType=(STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_NULL |  JSON_NUMBER) | enumType=JsonLiteralBoolean | metaType=JsonMetaScalarType
 ;
 
 JsonObject:
@@ -108,8 +108,8 @@ JsonArray:
 	'['items+=JsonObjectValue (',' items+=JsonObjectValue)* (',')? ']'
 ;
 
-terminal JSON_META_SCALAR_TYPE:
-	'boolean' | 'number' | 'string'
+enum JsonMetaScalarType:
+	BOOLEAN='boolean' | NUMBER='number' | STRING='string'
 ;
 
 terminal EMPTY_JSON_OBJECT:
@@ -122,8 +122,8 @@ terminal EMPTY_JSON_ARRAY:
 
 terminal JSON_LITERAL_NULL: 'null';
 
-terminal JSON_LITERAL_BOOLEAN:
-	'true' | 'false'
+enum JsonLiteralBoolean:
+	true='true' | false='false'
 ;
 
 terminal JSON_NUMBER:
