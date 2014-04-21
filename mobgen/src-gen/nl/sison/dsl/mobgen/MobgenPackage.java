@@ -381,16 +381,16 @@ public interface MobgenPackage extends EPackage
   int JSON_OBJECT_VALUE = 7;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Scalar</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_OBJECT_VALUE__VALUE = 0;
+  int JSON_OBJECT_VALUE__SCALAR = 0;
 
   /**
-   * The feature id for the '<em><b>Composite</b></em>' attribute.
+   * The feature id for the '<em><b>Composite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -408,6 +408,89 @@ public interface MobgenPackage extends EPackage
   int JSON_OBJECT_VALUE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+   * @generated
+   */
+  int JSON_COMPOSITE_VALUE = 8;
+
+  /**
+   * The feature id for the '<em><b>Object Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_COMPOSITE_VALUE__OBJECT_VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Array Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_COMPOSITE_VALUE__ARRAY_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Json Composite Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_COMPOSITE_VALUE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonLiteralValueImpl <em>Json Literal Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.impl.JsonLiteralValueImpl
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+   * @generated
+   */
+  int JSON_LITERAL_VALUE = 9;
+
+  /**
+   * The feature id for the '<em><b>String Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_LITERAL_VALUE__STRING_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Boolean Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_LITERAL_VALUE__BOOLEAN_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Meta Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_LITERAL_VALUE__META_TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>Json Literal Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_LITERAL_VALUE_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.JsonObjectImpl <em>Json Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -415,7 +498,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_OBJECT = 8;
+  int JSON_OBJECT = 10;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -443,7 +526,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonKeyValuePair()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 9;
+  int JSON_KEY_VALUE_PAIR = 11;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -480,7 +563,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 10;
+  int JSON_ARRAY = 12;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -508,7 +591,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenResourceDefinition()
    * @generated
    */
-  int MOBGEN_RESOURCE_DEFINITION = 11;
+  int MOBGEN_RESOURCE_DEFINITION = 13;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -536,7 +619,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 12;
+  int ENUM_INSTANCE = 14;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -582,7 +665,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 13;
+  int MAP_INSTANCE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -628,7 +711,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 14;
+  int STRING_LIST = 16;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -656,7 +739,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
    * @generated
    */
-  int NESTED_TYPE = 15;
+  int NESTED_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -693,7 +776,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
    * @generated
    */
-  int URI = 16;
+  int URI = 18;
 
   /**
    * The feature id for the '<em><b>Url Prefix</b></em>' attribute.
@@ -768,24 +851,34 @@ public interface MobgenPackage extends EPackage
   int URI_FEATURE_COUNT = 7;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}' enum.
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.RestfulMethods <em>Restful Methods</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+   * @see nl.sison.dsl.mobgen.RestfulMethods
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getRestfulMethods()
    * @generated
    */
-  int JSON_COMPOSITE_VALUE = 17;
+  int RESTFUL_METHODS = 19;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}' enum.
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonMetaScalarType <em>Json Meta Scalar Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.JsonLiteralValue
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+   * @see nl.sison.dsl.mobgen.JsonMetaScalarType
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonMetaScalarType()
    * @generated
    */
-  int JSON_LITERAL_VALUE = 18;
+  int JSON_META_SCALAR_TYPE = 20;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonLiteralBoolean <em>Json Literal Boolean</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.JsonLiteralBoolean
+   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralBoolean()
+   * @generated
+   */
+  int JSON_LITERAL_BOOLEAN = 21;
 
 
   /**
@@ -1089,26 +1182,101 @@ public interface MobgenPackage extends EPackage
   EClass getJsonObjectValue();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonObjectValue#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonObjectValue#getScalar <em>Scalar</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see nl.sison.dsl.mobgen.JsonObjectValue#getValue()
+   * @return the meta object for the containment reference '<em>Scalar</em>'.
+   * @see nl.sison.dsl.mobgen.JsonObjectValue#getScalar()
    * @see #getJsonObjectValue()
    * @generated
    */
-  EAttribute getJsonObjectValue_Value();
+  EReference getJsonObjectValue_Scalar();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}'.
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Composite</em>'.
+   * @return the meta object for the containment reference '<em>Composite</em>'.
    * @see nl.sison.dsl.mobgen.JsonObjectValue#getComposite()
    * @see #getJsonObjectValue()
    * @generated
    */
-  EAttribute getJsonObjectValue_Composite();
+  EReference getJsonObjectValue_Composite();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Json Composite Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @generated
+   */
+  EClass getJsonCompositeValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonCompositeValue#getObjectValue <em>Object Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Object Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue#getObjectValue()
+   * @see #getJsonCompositeValue()
+   * @generated
+   */
+  EReference getJsonCompositeValue_ObjectValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.JsonCompositeValue#getArrayValue <em>Array Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Array Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue#getArrayValue()
+   * @see #getJsonCompositeValue()
+   * @generated
+   */
+  EReference getJsonCompositeValue_ArrayValue();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Json Literal Value</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @generated
+   */
+  EClass getJsonLiteralValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonLiteralValue#getStringType <em>String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Type</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue#getStringType()
+   * @see #getJsonLiteralValue()
+   * @generated
+   */
+  EAttribute getJsonLiteralValue_StringType();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonLiteralValue#getBooleanType <em>Boolean Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Boolean Type</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue#getBooleanType()
+   * @see #getJsonLiteralValue()
+   * @generated
+   */
+  EAttribute getJsonLiteralValue_BooleanType();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.JsonLiteralValue#getMetaType <em>Meta Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Meta Type</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue#getMetaType()
+   * @see #getJsonLiteralValue()
+   * @generated
+   */
+  EAttribute getJsonLiteralValue_MetaType();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.JsonObject <em>Json Object</em>}'.
@@ -1421,24 +1589,34 @@ public interface MobgenPackage extends EPackage
   EAttribute getURI_QuerySuffix();
 
   /**
-   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.RestfulMethods <em>Restful Methods</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Json Composite Value</em>'.
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @return the meta object for enum '<em>Restful Methods</em>'.
+   * @see nl.sison.dsl.mobgen.RestfulMethods
    * @generated
    */
-  EEnum getJsonCompositeValue();
+  EEnum getRestfulMethods();
 
   /**
-   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}'.
+   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonMetaScalarType <em>Json Meta Scalar Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Json Literal Value</em>'.
-   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @return the meta object for enum '<em>Json Meta Scalar Type</em>'.
+   * @see nl.sison.dsl.mobgen.JsonMetaScalarType
    * @generated
    */
-  EEnum getJsonLiteralValue();
+  EEnum getJsonMetaScalarType();
+
+  /**
+   * Returns the meta object for enum '{@link nl.sison.dsl.mobgen.JsonLiteralBoolean <em>Json Literal Boolean</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Json Literal Boolean</em>'.
+   * @see nl.sison.dsl.mobgen.JsonLiteralBoolean
+   * @generated
+   */
+  EEnum getJsonLiteralBoolean();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1704,20 +1882,80 @@ public interface MobgenPackage extends EPackage
     EClass JSON_OBJECT_VALUE = eINSTANCE.getJsonObjectValue();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Scalar</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute JSON_OBJECT_VALUE__VALUE = eINSTANCE.getJsonObjectValue_Value();
+    EReference JSON_OBJECT_VALUE__SCALAR = eINSTANCE.getJsonObjectValue_Scalar();
 
     /**
-     * The meta object literal for the '<em><b>Composite</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Composite</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute JSON_OBJECT_VALUE__COMPOSITE = eINSTANCE.getJsonObjectValue_Composite();
+    EReference JSON_OBJECT_VALUE__COMPOSITE = eINSTANCE.getJsonObjectValue_Composite();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl <em>Json Composite Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.impl.JsonCompositeValueImpl
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+     * @generated
+     */
+    EClass JSON_COMPOSITE_VALUE = eINSTANCE.getJsonCompositeValue();
+
+    /**
+     * The meta object literal for the '<em><b>Object Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JSON_COMPOSITE_VALUE__OBJECT_VALUE = eINSTANCE.getJsonCompositeValue_ObjectValue();
+
+    /**
+     * The meta object literal for the '<em><b>Array Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JSON_COMPOSITE_VALUE__ARRAY_VALUE = eINSTANCE.getJsonCompositeValue_ArrayValue();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonLiteralValueImpl <em>Json Literal Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.impl.JsonLiteralValueImpl
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+     * @generated
+     */
+    EClass JSON_LITERAL_VALUE = eINSTANCE.getJsonLiteralValue();
+
+    /**
+     * The meta object literal for the '<em><b>String Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JSON_LITERAL_VALUE__STRING_TYPE = eINSTANCE.getJsonLiteralValue_StringType();
+
+    /**
+     * The meta object literal for the '<em><b>Boolean Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JSON_LITERAL_VALUE__BOOLEAN_TYPE = eINSTANCE.getJsonLiteralValue_BooleanType();
+
+    /**
+     * The meta object literal for the '<em><b>Meta Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JSON_LITERAL_VALUE__META_TYPE = eINSTANCE.getJsonLiteralValue_MetaType();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.JsonObjectImpl <em>Json Object</em>}' class.
@@ -1970,24 +2208,34 @@ public interface MobgenPackage extends EPackage
     EAttribute URI__QUERY_SUFFIX = eINSTANCE.getURI_QuerySuffix();
 
     /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}' enum.
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.RestfulMethods <em>Restful Methods</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.JsonCompositeValue
-     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
+     * @see nl.sison.dsl.mobgen.RestfulMethods
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getRestfulMethods()
      * @generated
      */
-    EEnum JSON_COMPOSITE_VALUE = eINSTANCE.getJsonCompositeValue();
+    EEnum RESTFUL_METHODS = eINSTANCE.getRestfulMethods();
 
     /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}' enum.
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonMetaScalarType <em>Json Meta Scalar Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.JsonLiteralValue
-     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
+     * @see nl.sison.dsl.mobgen.JsonMetaScalarType
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonMetaScalarType()
      * @generated
      */
-    EEnum JSON_LITERAL_VALUE = eINSTANCE.getJsonLiteralValue();
+    EEnum JSON_META_SCALAR_TYPE = eINSTANCE.getJsonMetaScalarType();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.JsonLiteralBoolean <em>Json Literal Boolean</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.JsonLiteralBoolean
+     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralBoolean()
+     * @generated
+     */
+    EEnum JSON_LITERAL_BOOLEAN = eINSTANCE.getJsonLiteralBoolean();
 
   }
 

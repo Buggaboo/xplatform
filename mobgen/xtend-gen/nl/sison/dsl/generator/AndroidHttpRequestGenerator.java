@@ -7,13 +7,21 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import nl.sison.dsl.mobgen.JsonArray;
+import nl.sison.dsl.mobgen.JsonCompositeValue;
+import nl.sison.dsl.mobgen.JsonKeyValuePair;
+import nl.sison.dsl.mobgen.JsonLiteralBoolean;
+import nl.sison.dsl.mobgen.JsonLiteralValue;
+import nl.sison.dsl.mobgen.JsonMetaScalarType;
+import nl.sison.dsl.mobgen.JsonObject;
+import nl.sison.dsl.mobgen.JsonObjectValue;
 import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.MobgenHeader;
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair;
 import nl.sison.dsl.mobgen.MobgenHeaderParameter;
 import nl.sison.dsl.mobgen.MobgenJson;
+import nl.sison.dsl.mobgen.RestfulMethods;
 import nl.sison.dsl.mobgen.URI;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -24,6 +32,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
@@ -34,10 +43,10 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     TreeIterator<EObject> _allContents = input.getAllContents();
     final Iterator<MobgenCallDefinition> callDefinitions = Iterators.<MobgenCallDefinition>filter(_allContents, MobgenCallDefinition.class);
     final Procedure1<MobgenCallDefinition> _function = new Procedure1<MobgenCallDefinition>() {
-        public void apply(final MobgenCallDefinition d) {
-          AndroidHttpRequestGenerator.this.androidCreateJavaFiles(d, fsa);
-        }
-      };
+      public void apply(final MobgenCallDefinition d) {
+        AndroidHttpRequestGenerator.this.androidCreateJavaFiles(d, fsa);
+      }
+    };
     IteratorExtensions.<MobgenCallDefinition>forEach(callDefinitions, _function);
   }
   
@@ -45,7 +54,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
    * 1. Generate http request header Parcelable
    * 2. Generate http request URL Parcelable
    * 3. Generate http request Json entity Parcelable // TODO put parser here?
-   * 4. Generate Parcelable for previous three Parcelablesa
+   * 4. Generate Parcelable for previous three Parcelables
    * 5. Generate http response header Parcelable
    * 6. Generate http response Json entity Parcelable
    * 7. Generate Parcelable for previous two Parcelables
@@ -55,23 +64,32 @@ public class AndroidHttpRequestGenerator implements IGenerator {
    * 11. Generate Spark class to handle the call // TODO
    * // TODO also kill boiler plate for the Activity / Fragment
    */
-  public Object androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
-    Object _xifexpression = null;
+  public String androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    String _xifexpression = null;
     MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
     boolean _notEquals = (!Objects.equal(_requestHeaders, null));
     if (_notEquals) {
-      Object _xblockexpression = null;
+      String _xblockexpression = null;
       {
         this.createParcelableRequestHeaderFile(callDefinition, fsa);
         this.createParcelableRequestUrlFile(callDefinition, fsa);
-        Object _xifexpression_1 = null;
-        String _method = callDefinition.getMethod();
-        boolean _startsWith = _method.startsWith("P");
-        if (_startsWith) {
-          Object _createParcelableRequestJsonFile = this.createParcelableRequestJsonFile(callDefinition, fsa);
-          _xifexpression_1 = _createParcelableRequestJsonFile;
+        String _xifexpression_1 = null;
+        boolean _or = false;
+        RestfulMethods _method = callDefinition.getMethod();
+        boolean _equals = Objects.equal(_method, RestfulMethods.POST);
+        if (_equals) {
+          _or = true;
+        } else {
+          RestfulMethods _method_1 = callDefinition.getMethod();
+          boolean _equals_1 = Objects.equal(_method_1, RestfulMethods.PUT);
+          _or = _equals_1;
         }
-        _xblockexpression = (_xifexpression_1);
+        if (_or) {
+          MobgenJson _jsonToClient = callDefinition.getJsonToClient();
+          JsonObjectValue _value = _jsonToClient.getValue();
+          _xifexpression_1 = this.createParcelableRequestJsonFile(_value);
+        }
+        _xblockexpression = _xifexpression_1;
       }
       _xifexpression = _xblockexpression;
     }
@@ -81,8 +99,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
   public void createLoader(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
     String _name = callDefinition.getName();
     final String nameCapitalized = this.capitalizeFirstLetter(_name);
-    String _method = callDefinition.getMethod();
-    final String methodCapitalized = this.capitalizeFirstLetter(_method);
+    RestfulMethods _method = callDefinition.getMethod();
+    final String methodCapitalized = _method.getLiteral();
     MobgenJson _jsonToClient = callDefinition.getJsonToClient();
     String _name_1 = _jsonToClient.getName();
     final String jsonResultTypeNameCapitalized = this.capitalizeFirstLetter(_name_1);
@@ -93,8 +111,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     final String name = _requestHeaders.getName();
     final String nameCapitalized = this.capitalizeFirstLetter(name);
     final String nameLowerCase = name.toLowerCase();
-    StringBuffer _stringBuffer = new StringBuffer();
-    final StringBuffer stringBuffer = _stringBuffer;
+    final StringBuffer stringBuffer = new StringBuffer();
     final URI url = callDefinition.getUri();
     final String urlPrefix = url.getUrlPrefix();
     final String urlPath = url.getPath();
@@ -112,8 +129,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     }
     final Iterator<String> iteratorUrlParams = urlPathParameters.iterator();
     final Iterator<String> iteratorUrlSuffix = urlPathSuffixes.iterator();
-    StringBuffer _stringBuffer_1 = new StringBuffer();
-    final StringBuffer strBuf = _stringBuffer_1;
+    final StringBuffer strBuf = new StringBuffer();
     StringBuffer _append = strBuf.append(urlPrefix);
     _append.append(urlPath);
     boolean _or = false;
@@ -122,7 +138,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       _or = true;
     } else {
       boolean _hasNext_1 = iteratorUrlSuffix.hasNext();
-      _or = (_hasNext || _hasNext_1);
+      _or = _hasNext_1;
     }
     boolean _while = _or;
     while (_while) {
@@ -146,7 +162,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         _or_1 = true;
       } else {
         boolean _hasNext_3 = iteratorUrlSuffix.hasNext();
-        _or_1 = (_hasNext_2 || _hasNext_3);
+        _or_1 = _hasNext_3;
       }
       _while = _or_1;
     }
@@ -159,7 +175,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       _or_1 = true;
     } else {
       boolean _hasNext_3 = iteratorUrlQuerySuffix.hasNext();
-      _or_1 = (_hasNext_2 || _hasNext_3);
+      _or_1 = _hasNext_3;
     }
     boolean _while_1 = _or_1;
     while (_while_1) {
@@ -183,7 +199,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         _or_2 = true;
       } else {
         boolean _hasNext_5 = iteratorUrlQuerySuffix.hasNext();
-        _or_2 = (_hasNext_4 || _hasNext_5);
+        _or_2 = _hasNext_5;
       }
       _while_1 = _or_2;
     }
@@ -201,7 +217,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       } else {
         boolean _isEmpty_1 = urlQueryParameters.isEmpty();
         boolean _not_1 = (!_isEmpty_1);
-        _and = (_not && _not_1);
+        _and = _not_1;
       }
       if (_and) {
         _builder.append("return new URL(String.format(\"");
@@ -234,7 +250,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     }
     _builder.append("}");
     _builder.newLine();
-    final CharSequence addMethod = _builder;
+    final String addMethod = _builder.toString();
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
     CharSequence _createParcelable = this.createParcelable(_capitalizeFirstLetter, hashMap, addMethod);
     stringBuffer.append(_createParcelable);
@@ -258,8 +274,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     final String name = _requestHeaders.getName();
     final String nameCapitalized = this.capitalizeFirstLetter(name);
     final String nameLowerCase = name.toLowerCase();
-    StringBuffer _stringBuffer = new StringBuffer();
-    final StringBuffer stringBuffer = _stringBuffer;
+    final StringBuffer stringBuffer = new StringBuffer();
     MobgenHeader _requestHeaders_1 = callDefinition.getRequestHeaders();
     EList<MobgenHeaderKeyValuePair> _headerKeyValues = _requestHeaders_1.getHeaderKeyValues();
     final Iterable<MobgenHeaderKeyValuePair> requestHeaderKeyValuePairs = Iterables.<MobgenHeaderKeyValuePair>filter(_headerKeyValues, MobgenHeaderKeyValuePair.class);
@@ -270,7 +285,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       if (_notEquals) {
         MobgenHeaderParameter _parameter_1 = kvp.getParameter();
         String _id = _parameter_1.getId();
-        hashMap.put(_id, "String");
+        String _camelCase = this.camelCase(_id);
+        hashMap.put(_camelCase, "String");
       }
     }
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(name);
@@ -282,7 +298,164 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     fsa.generateFile(filePath, _string);
   }
   
-  public Object createParcelableRequestJsonFile(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+  /**
+   * Design: pass values to a Parcelable (that is generated), then from a instance method, it spits out a json construct, that
+   * can be referenced from the Loader. Then in the http request body entity (method: PUT/POST), #toString can be called on the JSON construct.
+   */
+  public String createParcelableRequestJsonFile(final JsonObjectValue value) {
+    final JsonCompositeValue composite = value.getComposite();
+    final JsonLiteralValue scalar = value.getScalar();
+    final StringBuilder stringBuilder = new StringBuilder();
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("public JSONObject toJSON() {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("try {");
+    _builder.newLine();
+    stringBuilder.append(_builder);
+    boolean _notEquals = (!Objects.equal(composite, null));
+    if (_notEquals) {
+      this.createCompositeJsonValue(composite, stringBuilder, 0);
+    } else {
+      boolean _notEquals_1 = (!Objects.equal(scalar, null));
+      if (_notEquals_1) {
+        InputOutput.<String>print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a Bundle.");
+        throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a Bundle instead.");
+      }
+    }
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("\t\t");
+    _builder_1.append("return n0;");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    CharSequence _generateExceptionHandlerLoggingAndThrow = this.generateExceptionHandlerLoggingAndThrow("JSONException");
+    _builder_1.append(_generateExceptionHandlerLoggingAndThrow, "\t");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
+    _builder_1.append("}");
+    _builder_1.newLine();
+    _builder_1.append("}");
+    _builder_1.newLine();
+    stringBuilder.append(_builder_1);
+    return stringBuilder.toString();
+  }
+  
+  public String mapJsonLiteralValueToJava(final JsonLiteralValue value) {
+    String _stringType = value.getStringType();
+    boolean _notEquals = (!Objects.equal(_stringType, null));
+    if (_notEquals) {
+      String _stringType_1 = value.getStringType();
+      boolean _matched = false;
+      if (!_matched) {
+        if (Objects.equal(_stringType_1,"{}")) {
+          _matched=true;
+          return "new JSONObject()";
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_stringType_1,"[]")) {
+          _matched=true;
+          return "new JSONArray()";
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_stringType_1,"null")) {
+          _matched=true;
+          return "JSONObject.NULL";
+        }
+      }
+      return value.getStringType();
+    }
+    JsonLiteralBoolean _booleanType = value.getBooleanType();
+    boolean _notEquals_1 = (!Objects.equal(_booleanType, null));
+    if (_notEquals_1) {
+      JsonLiteralBoolean _booleanType_1 = value.getBooleanType();
+      return _booleanType_1.getLiteral();
+    }
+    return null;
+  }
+  
+  public void createCompositeJsonValue(final JsonCompositeValue composite, final StringBuilder parserString, final int recursionDepth) {
+    JsonObject _objectValue = composite.getObjectValue();
+    boolean _notEquals = (!Objects.equal(_objectValue, null));
+    if (_notEquals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("JSONObject n");
+      _builder.append(recursionDepth, "");
+      _builder.append(" = new JSONObject();");
+      _builder.newLineIfNotEmpty();
+      parserString.append(_builder);
+      JsonObject _objectValue_1 = composite.getObjectValue();
+      EList<JsonKeyValuePair> _keyValuePair = _objectValue_1.getKeyValuePair();
+      for (final JsonKeyValuePair keyValue : _keyValuePair) {
+        {
+          JsonObjectValue _value = keyValue.getValue();
+          final JsonLiteralValue scalar = _value.getScalar();
+          boolean _notEquals_1 = (!Objects.equal(scalar, null));
+          if (_notEquals_1) {
+            JsonMetaScalarType _metaType = scalar.getMetaType();
+            boolean _equals = Objects.equal(_metaType, null);
+            if (_equals) {
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append("n");
+              _builder_1.append(recursionDepth, "");
+              _builder_1.append(".put(");
+              String _key = keyValue.getKey();
+              _builder_1.append(_key, "");
+              _builder_1.append(", ");
+              String _mapJsonLiteralValueToJava = this.mapJsonLiteralValueToJava(scalar);
+              _builder_1.append(_mapJsonLiteralValueToJava, "");
+              _builder_1.append(");");
+              _builder_1.newLineIfNotEmpty();
+              final String putStr = _builder_1.toString();
+              parserString.append(putStr);
+            } else {
+              StringConcatenation _builder_2 = new StringConcatenation();
+              _builder_2.append("n");
+              _builder_2.append(recursionDepth, "");
+              _builder_2.append(".put(");
+              String _key_1 = keyValue.getKey();
+              _builder_2.append(_key_1, "");
+              _builder_2.append(", get");
+              String _key_2 = keyValue.getKey();
+              String _capitalizeFirstLetter = this.capitalizeFirstLetter(_key_2);
+              _builder_2.append(_capitalizeFirstLetter, "");
+              _builder_2.append(");");
+              parserString.append(_builder_2);
+            }
+          } else {
+            JsonObjectValue _value_1 = keyValue.getValue();
+            JsonCompositeValue _composite = _value_1.getComposite();
+            boolean _notEquals_2 = (!Objects.equal(_composite, null));
+            if (_notEquals_2) {
+              StringConcatenation _builder_3 = new StringConcatenation();
+              _builder_3.append("n");
+              _builder_3.append(recursionDepth, "");
+              _builder_3.append(".put(");
+              String _key_3 = keyValue.getKey();
+              _builder_3.append(_key_3, "");
+              _builder_3.append(", get");
+              String _key_4 = keyValue.getKey();
+              String _capitalizeFirstLetter_1 = this.capitalizeFirstLetter(_key_4);
+              _builder_3.append(_capitalizeFirstLetter_1, "");
+              _builder_3.append(".toJSON());");
+              parserString.append(_builder_3);
+            }
+          }
+        }
+      }
+    } else {
+      JsonArray _arrayValue = composite.getArrayValue();
+      boolean _notEquals_1 = (!Objects.equal(_arrayValue, null));
+      if (_notEquals_1) {
+        throw new IllegalArgumentException("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.");
+      } else {
+        throw new IllegalArgumentException("Wrong type passed?");
+      }
+    }
+  }
+  
+  public Object createScalarJsonValue(final JsonCompositeValue composite, final StringBuilder parserString) {
     return null;
   }
   
@@ -340,18 +513,18 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("private ");
-    _builder.append(returnType, "	");
+    _builder.append(returnType, "\t");
     _builder.append(" result;");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("private ");
-    _builder.append(classNamePrefix, "	");
+    _builder.append(classNamePrefix, "\t");
     _builder.append("RequestParameters parameters;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(classNamePrefix, "	");
+    _builder.append(classNamePrefix, "\t");
     _builder.append("Loader(Context context) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -364,7 +537,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(classNamePrefix, "	");
+    _builder.append(classNamePrefix, "\t");
     _builder.append("Loader(Context context, Parcelable parameters) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -385,7 +558,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(returnType, "	");
+    _builder.append(returnType, "\t");
     _builder.append(" loadInBackground() {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -395,14 +568,14 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(classNamePrefix, "			");
+    _builder.append(classNamePrefix, "\t\t\t");
     _builder.append("HttpRequest httpRequest = new ");
-    _builder.append(classNamePrefix, "			");
+    _builder.append(classNamePrefix, "\t\t\t");
     _builder.append("HttpRequest(parameters);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
     _builder.append("httpRequest.do");
-    _builder.append(method, "			");
+    _builder.append(method, "\t\t\t");
     _builder.append("Request();");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
@@ -428,7 +601,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("return ");
-    _builder.append(returnType, "			");
+    _builder.append(returnType, "\t\t\t");
     _builder.append("(e); // general exception catch: this must be passed on to the ui thread");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -446,7 +619,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public void deliverResult(");
-    _builder.append(returnType, "	");
+    _builder.append(returnType, "\t");
     _builder.append(" data) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -541,7 +714,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("private class ");
-    _builder.append(classNamePrefix, "	");
+    _builder.append(classNamePrefix, "\t");
     _builder.append("HttpRequest");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -549,14 +722,14 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("private ");
-    _builder.append(classNamePrefix, "		");
+    _builder.append(classNamePrefix, "\t\t");
     _builder.append("RequestParameters parameters;");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("private ");
-    _builder.append(classNamePrefix, "		");
+    _builder.append(classNamePrefix, "\t\t");
     _builder.append("HttpRequest(Parcelable parameters) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
@@ -572,12 +745,12 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("private ");
-    _builder.append(returnType, "		");
+    _builder.append(returnType, "\t\t");
     _builder.append(" result = null; ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("public ");
-    _builder.append(returnType, "		");
+    _builder.append(returnType, "\t\t");
     _builder.append(" getResult() { return result; }");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -589,14 +762,14 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("public do");
-    _builder.append(method, "		");
+    _builder.append(method, "\t\t");
     _builder.append("Request()");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(requestBody, "			");
+    _builder.append(requestBody, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("}");
@@ -619,7 +792,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(jsonParserToParcelable, "			");
+    _builder.append(jsonParserToParcelable, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("}");
@@ -655,7 +828,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("\t");
-        _builder.append(serverBoundPayload, "			");
+        _builder.append(serverBoundPayload, "\t\t\t");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
         _builder.append("}");
@@ -705,7 +878,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       _and = false;
     } else {
       boolean _hasNext_1 = values.hasNext();
-      _and = (_hasNext && _hasNext_1);
+      _and = _hasNext_1;
     }
     boolean _while = _and;
     while (_while) {
@@ -720,7 +893,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         _and_1 = false;
       } else {
         boolean _hasNext_3 = values.hasNext();
-        _and_1 = (_hasNext_2 && _hasNext_3);
+        _and_1 = _hasNext_3;
       }
       _while = _and_1;
     }
@@ -774,9 +947,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
   public CharSequence createParcelableAccessors(final CharSequence parameterName, final CharSequence parameterType) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("void set");
-    String _string = parameterName.toString();
-    String _capitalizeFirstLetter = this.capitalizeFirstLetter(_string);
-    _builder.append(_capitalizeFirstLetter, "");
+    _builder.append(parameterName, "");
     _builder.append(" (final ");
     _builder.append(parameterType, "");
     _builder.append(" ");
@@ -787,15 +958,13 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("return this.");
-    _builder.append(parameterName, "	");
+    _builder.append(parameterName, "\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     _builder.append("void get");
-    String _string_1 = parameterName.toString();
-    String _capitalizeFirstLetter_1 = this.capitalizeFirstLetter(_string_1);
-    _builder.append(_capitalizeFirstLetter_1, "");
+    _builder.append(parameterName, "");
     _builder.append(" () { return ");
     _builder.append(parameterName, "");
     _builder.append("; }");
@@ -803,17 +972,16 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  public void camelCaseHttpHeaderKey(final CharSequence headerKey) {
+  public String camelCase(final CharSequence headerKey) {
     String _string = headerKey.toString();
     final String[] strArr = _string.split("-");
-    StringBuffer _stringBuffer = new StringBuffer();
-    final StringBuffer strBuf = _stringBuffer;
+    final StringBuffer strBuf = new StringBuffer();
     String _head = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(strArr)));
     String _string_1 = _head.toString();
     String _lowerCase = _string_1.toLowerCase();
     strBuf.append(_lowerCase);
     for (final String str : strArr) {
-      String _head_1 = IterableExtensions.<String>head(((Iterable<String>)Conversions.doWrapArray(strArr)));
+      Object _head_1 = IterableExtensions.<Object>head(((Iterable<Object>)Conversions.doWrapArray(strArr)));
       boolean _equals = str.equals(_head_1);
       boolean _not = (!_equals);
       if (_not) {
@@ -821,6 +989,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         strBuf.append(_capitalizeFirstLetter);
       }
     }
+    return strBuf.toString();
   }
   
   /**
@@ -864,8 +1033,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     {
-      Set<Entry<String,String>> _entrySet = members.entrySet();
-      for(final Entry<String,String> s : _entrySet) {
+      Set<Map.Entry<String,String>> _entrySet = members.entrySet();
+      for(final Map.Entry<String, String> s : _entrySet) {
         _builder.append("    ");
         String _key = s.getKey();
         String _value = s.getValue();
@@ -885,8 +1054,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("// for lack of properties");
     _builder.newLine();
     {
-      Set<Entry<String,String>> _entrySet_1 = members.entrySet();
-      for(final Entry<String,String> s_1 : _entrySet_1) {
+      Set<Map.Entry<String,String>> _entrySet_1 = members.entrySet();
+      for(final Map.Entry<String, String> s_1 : _entrySet_1) {
         _builder.append("    ");
         String _key_1 = s_1.getKey();
         String _value_1 = s_1.getValue();
@@ -901,8 +1070,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append(parcelableClassName, "    ");
     _builder.append("(");
     {
-      Set<Entry<String,String>> _entrySet_2 = members.entrySet();
-      for(final Entry<String,String> s_2 : _entrySet_2) {
+      Set<Map.Entry<String,String>> _entrySet_2 = members.entrySet();
+      for(final Map.Entry<String, String> s_2 : _entrySet_2) {
         String _key_2 = s_2.getKey();
         _builder.append(_key_2, "    ");
         _builder.append(" ");
@@ -916,15 +1085,15 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     {
-      Set<Entry<String,String>> _entrySet_3 = members.entrySet();
-      for(final Entry<String,String> s_3 : _entrySet_3) {
+      Set<Map.Entry<String,String>> _entrySet_3 = members.entrySet();
+      for(final Map.Entry<String, String> s_3 : _entrySet_3) {
         _builder.append("\t");
         _builder.append("this.");
         String _key_3 = s_3.getKey();
-        _builder.append(_key_3, "	");
+        _builder.append(_key_3, "\t");
         _builder.append(" = ");
         String _key_4 = s_3.getKey();
-        _builder.append(_key_4, "	");
+        _builder.append(_key_4, "\t");
         _builder.append("; ");
         _builder.newLineIfNotEmpty();
       }
@@ -935,7 +1104,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    _builder.append(parcelableClassName, "	");
+    _builder.append(parcelableClassName, "\t");
     _builder.append("(Exception exception) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t    ");
@@ -977,8 +1146,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("public void writeToParcel(Parcel out, int flags) {");
     _builder.newLine();
     {
-      Set<Entry<String,String>> _entrySet_4 = members.entrySet();
-      for(final Entry<String,String> s_4 : _entrySet_4) {
+      Set<Map.Entry<String,String>> _entrySet_4 = members.entrySet();
+      for(final Map.Entry<String, String> s_4 : _entrySet_4) {
         {
           LinkedList<String> _newLinkedList = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");
           String _value_3 = s_4.getValue();
@@ -988,7 +1157,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
             String _key_5 = s_4.getKey();
             String _value_4 = s_4.getValue();
             CharSequence _createParcelableWriteToParcel = this.createParcelableWriteToParcel(_key_5, _value_4);
-            _builder.append(_createParcelableWriteToParcel, "	");
+            _builder.append(_createParcelableWriteToParcel, "\t");
             _builder.newLineIfNotEmpty();
           } else {
             String _value_5 = s_4.getValue();
@@ -1013,8 +1182,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("private void readFromParcel(Parcel in) {");
     _builder.newLine();
     {
-      Set<Entry<String,String>> _entrySet_5 = members.entrySet();
-      for(final Entry<String,String> s_5 : _entrySet_5) {
+      Set<Map.Entry<String,String>> _entrySet_5 = members.entrySet();
+      for(final Map.Entry<String, String> s_5 : _entrySet_5) {
         {
           LinkedList<String> _newLinkedList_1 = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");
           String _value_6 = s_5.getValue();
@@ -1024,7 +1193,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
             String _key_6 = s_5.getKey();
             String _value_7 = s_5.getValue();
             CharSequence _createParcelableReadMember = this.createParcelableReadMember(_key_6, _value_7);
-            _builder.append(_createParcelableReadMember, "	");
+            _builder.append(_createParcelableReadMember, "\t");
             _builder.newLineIfNotEmpty();
           } else {
             {
@@ -1367,7 +1536,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     }
     _builder.append("\t");
     CharSequence _generateExceptionHandlerLoggingAndThrow_3 = this.generateExceptionHandlerLoggingAndThrow("IOException");
-    _builder.append(_generateExceptionHandlerLoggingAndThrow_3, "	");
+    _builder.append(_generateExceptionHandlerLoggingAndThrow_3, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();

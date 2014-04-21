@@ -20,5 +20,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: nl.sison.dsl.ui.contentassist,
  nl.sison.dsl.ui.contentassist.antlr,
- nl.sison.dsl.ui.internal
+ nl.sison.dsl.ui.internal,
+ nl.sison.dsl.ui.quickfix
 Bundle-Activator: nl.sison.dsl.ui.internal.MobgenActivator

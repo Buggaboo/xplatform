@@ -6,6 +6,7 @@ import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.MobgenHeader;
 import nl.sison.dsl.mobgen.MobgenJson;
 import nl.sison.dsl.mobgen.MobgenPackage;
+import nl.sison.dsl.mobgen.RestfulMethods;
 import nl.sison.dsl.mobgen.URI;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -66,7 +67,7 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
    * @generated
    * @ordered
    */
-  protected static final String METHOD_EDEFAULT = null;
+  protected static final RestfulMethods METHOD_EDEFAULT = RestfulMethods.PUT;
 
   /**
    * The cached value of the '{@link #getMethod() <em>Method</em>}' attribute.
@@ -76,7 +77,7 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
    * @generated
    * @ordered
    */
-  protected String method = METHOD_EDEFAULT;
+  protected RestfulMethods method = METHOD_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getUri() <em>Uri</em>}' containment reference.
@@ -177,7 +178,7 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMethod()
+  public RestfulMethods getMethod()
   {
     return method;
   }
@@ -187,10 +188,10 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMethod(String newMethod)
+  public void setMethod(RestfulMethods newMethod)
   {
-    String oldMethod = method;
-    method = newMethod;
+    RestfulMethods oldMethod = method;
+    method = newMethod == null ? METHOD_EDEFAULT : newMethod;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN_CALL_DEFINITION__METHOD, oldMethod, method));
   }
@@ -501,7 +502,7 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
         setName((String)newValue);
         return;
       case MobgenPackage.MOBGEN_CALL_DEFINITION__METHOD:
-        setMethod((String)newValue);
+        setMethod((RestfulMethods)newValue);
         return;
       case MobgenPackage.MOBGEN_CALL_DEFINITION__URI:
         setUri((URI)newValue);
@@ -570,7 +571,7 @@ public class MobgenCallDefinitionImpl extends MinimalEObjectImpl.Container imple
       case MobgenPackage.MOBGEN_CALL_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MobgenPackage.MOBGEN_CALL_DEFINITION__METHOD:
-        return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
+        return method != METHOD_EDEFAULT;
       case MobgenPackage.MOBGEN_CALL_DEFINITION__URI:
         return uri != null;
       case MobgenPackage.MOBGEN_CALL_DEFINITION__REQUEST_HEADERS:

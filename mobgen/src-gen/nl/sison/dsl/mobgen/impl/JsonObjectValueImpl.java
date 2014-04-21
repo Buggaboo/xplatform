@@ -8,8 +8,10 @@ import nl.sison.dsl.mobgen.JsonObjectValue;
 import nl.sison.dsl.mobgen.MobgenPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.JsonObjectValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.JsonObjectValueImpl#getScalar <em>Scalar</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.JsonObjectValueImpl#getComposite <em>Composite</em>}</li>
  * </ul>
  * </p>
@@ -31,44 +33,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements JsonObjectValue
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getScalar() <em>Scalar</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getScalar()
    * @generated
    * @ordered
    */
-  protected static final JsonLiteralValue VALUE_EDEFAULT = JsonLiteralValue.STRING;
+  protected JsonLiteralValue scalar;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected JsonLiteralValue value = VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getComposite() <em>Composite</em>}' attribute.
+   * The cached value of the '{@link #getComposite() <em>Composite</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getComposite()
    * @generated
    * @ordered
    */
-  protected static final JsonCompositeValue COMPOSITE_EDEFAULT = JsonCompositeValue.JSON_OBJECT;
-
-  /**
-   * The cached value of the '{@link #getComposite() <em>Composite</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComposite()
-   * @generated
-   * @ordered
-   */
-  protected JsonCompositeValue composite = COMPOSITE_EDEFAULT;
+  protected JsonCompositeValue composite;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,9 +78,9 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonLiteralValue getValue()
+  public JsonLiteralValue getScalar()
   {
-    return value;
+    return scalar;
   }
 
   /**
@@ -106,12 +88,37 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(JsonLiteralValue newValue)
+  public NotificationChain basicSetScalar(JsonLiteralValue newScalar, NotificationChain msgs)
   {
-    JsonLiteralValue oldValue = value;
-    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    JsonLiteralValue oldScalar = scalar;
+    scalar = newScalar;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__SCALAR, oldScalar, newScalar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setScalar(JsonLiteralValue newScalar)
+  {
+    if (newScalar != scalar)
+    {
+      NotificationChain msgs = null;
+      if (scalar != null)
+        msgs = ((InternalEObject)scalar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.JSON_OBJECT_VALUE__SCALAR, null, msgs);
+      if (newScalar != null)
+        msgs = ((InternalEObject)newScalar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.JSON_OBJECT_VALUE__SCALAR, null, msgs);
+      msgs = basicSetScalar(newScalar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__SCALAR, newScalar, newScalar));
   }
 
   /**
@@ -129,12 +136,55 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComposite(JsonCompositeValue newComposite)
+  public NotificationChain basicSetComposite(JsonCompositeValue newComposite, NotificationChain msgs)
   {
     JsonCompositeValue oldComposite = composite;
-    composite = newComposite == null ? COMPOSITE_EDEFAULT : newComposite;
+    composite = newComposite;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE, oldComposite, composite));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE, oldComposite, newComposite);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComposite(JsonCompositeValue newComposite)
+  {
+    if (newComposite != composite)
+    {
+      NotificationChain msgs = null;
+      if (composite != null)
+        msgs = ((InternalEObject)composite).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE, null, msgs);
+      if (newComposite != null)
+        msgs = ((InternalEObject)newComposite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE, null, msgs);
+      msgs = basicSetComposite(newComposite, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE, newComposite, newComposite));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MobgenPackage.JSON_OBJECT_VALUE__SCALAR:
+        return basicSetScalar(null, msgs);
+      case MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE:
+        return basicSetComposite(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -147,8 +197,8 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MobgenPackage.JSON_OBJECT_VALUE__VALUE:
-        return getValue();
+      case MobgenPackage.JSON_OBJECT_VALUE__SCALAR:
+        return getScalar();
       case MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE:
         return getComposite();
     }
@@ -165,8 +215,8 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MobgenPackage.JSON_OBJECT_VALUE__VALUE:
-        setValue((JsonLiteralValue)newValue);
+      case MobgenPackage.JSON_OBJECT_VALUE__SCALAR:
+        setScalar((JsonLiteralValue)newValue);
         return;
       case MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE:
         setComposite((JsonCompositeValue)newValue);
@@ -185,11 +235,11 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MobgenPackage.JSON_OBJECT_VALUE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case MobgenPackage.JSON_OBJECT_VALUE__SCALAR:
+        setScalar((JsonLiteralValue)null);
         return;
       case MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE:
-        setComposite(COMPOSITE_EDEFAULT);
+        setComposite((JsonCompositeValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -205,31 +255,12 @@ public class JsonObjectValueImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MobgenPackage.JSON_OBJECT_VALUE__VALUE:
-        return value != VALUE_EDEFAULT;
+      case MobgenPackage.JSON_OBJECT_VALUE__SCALAR:
+        return scalar != null;
       case MobgenPackage.JSON_OBJECT_VALUE__COMPOSITE:
-        return composite != COMPOSITE_EDEFAULT;
+        return composite != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(", composite: ");
-    result.append(composite);
-    result.append(')');
-    return result.toString();
   }
 
 } //JsonObjectValueImpl

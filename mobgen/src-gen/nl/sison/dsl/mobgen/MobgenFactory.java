@@ -95,6 +95,24 @@ public interface MobgenFactory extends EFactory
   JsonObjectValue createJsonObjectValue();
 
   /**
+   * Returns a new object of class '<em>Json Composite Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Composite Value</em>'.
+   * @generated
+   */
+  JsonCompositeValue createJsonCompositeValue();
+
+  /**
+   * Returns a new object of class '<em>Json Literal Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Json Literal Value</em>'.
+   * @generated
+   */
+  JsonLiteralValue createJsonLiteralValue();
+
+  /**
    * Returns a new object of class '<em>Json Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

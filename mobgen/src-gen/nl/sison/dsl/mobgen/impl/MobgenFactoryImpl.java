@@ -73,6 +73,8 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
       case MobgenPackage.MOBGEN_HEADER_PARAMETER: return createMobgenHeaderParameter();
       case MobgenPackage.MOBGEN_JSON: return createMobgenJson();
       case MobgenPackage.JSON_OBJECT_VALUE: return createJsonObjectValue();
+      case MobgenPackage.JSON_COMPOSITE_VALUE: return createJsonCompositeValue();
+      case MobgenPackage.JSON_LITERAL_VALUE: return createJsonLiteralValue();
       case MobgenPackage.JSON_OBJECT: return createJsonObject();
       case MobgenPackage.JSON_KEY_VALUE_PAIR: return createJsonKeyValuePair();
       case MobgenPackage.JSON_ARRAY: return createJsonArray();
@@ -97,10 +99,12 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case MobgenPackage.JSON_COMPOSITE_VALUE:
-        return createJsonCompositeValueFromString(eDataType, initialValue);
-      case MobgenPackage.JSON_LITERAL_VALUE:
-        return createJsonLiteralValueFromString(eDataType, initialValue);
+      case MobgenPackage.RESTFUL_METHODS:
+        return createRestfulMethodsFromString(eDataType, initialValue);
+      case MobgenPackage.JSON_META_SCALAR_TYPE:
+        return createJsonMetaScalarTypeFromString(eDataType, initialValue);
+      case MobgenPackage.JSON_LITERAL_BOOLEAN:
+        return createJsonLiteralBooleanFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -116,10 +120,12 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case MobgenPackage.JSON_COMPOSITE_VALUE:
-        return convertJsonCompositeValueToString(eDataType, instanceValue);
-      case MobgenPackage.JSON_LITERAL_VALUE:
-        return convertJsonLiteralValueToString(eDataType, instanceValue);
+      case MobgenPackage.RESTFUL_METHODS:
+        return convertRestfulMethodsToString(eDataType, instanceValue);
+      case MobgenPackage.JSON_META_SCALAR_TYPE:
+        return convertJsonMetaScalarTypeToString(eDataType, instanceValue);
+      case MobgenPackage.JSON_LITERAL_BOOLEAN:
+        return convertJsonLiteralBooleanToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -211,6 +217,28 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     JsonObjectValueImpl jsonObjectValue = new JsonObjectValueImpl();
     return jsonObjectValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonCompositeValue createJsonCompositeValue()
+  {
+    JsonCompositeValueImpl jsonCompositeValue = new JsonCompositeValueImpl();
+    return jsonCompositeValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonLiteralValue createJsonLiteralValue()
+  {
+    JsonLiteralValueImpl jsonLiteralValue = new JsonLiteralValueImpl();
+    return jsonLiteralValue;
   }
 
   /**
@@ -317,9 +345,9 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonCompositeValue createJsonCompositeValueFromString(EDataType eDataType, String initialValue)
+  public RestfulMethods createRestfulMethodsFromString(EDataType eDataType, String initialValue)
   {
-    JsonCompositeValue result = JsonCompositeValue.get(initialValue);
+    RestfulMethods result = RestfulMethods.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -329,7 +357,7 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertJsonCompositeValueToString(EDataType eDataType, Object instanceValue)
+  public String convertRestfulMethodsToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -339,9 +367,9 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonLiteralValue createJsonLiteralValueFromString(EDataType eDataType, String initialValue)
+  public JsonMetaScalarType createJsonMetaScalarTypeFromString(EDataType eDataType, String initialValue)
   {
-    JsonLiteralValue result = JsonLiteralValue.get(initialValue);
+    JsonMetaScalarType result = JsonMetaScalarType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -351,7 +379,29 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertJsonLiteralValueToString(EDataType eDataType, Object instanceValue)
+  public String convertJsonMetaScalarTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonLiteralBoolean createJsonLiteralBooleanFromString(EDataType eDataType, String initialValue)
+  {
+    JsonLiteralBoolean result = JsonLiteralBoolean.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertJsonLiteralBooleanToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

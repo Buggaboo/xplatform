@@ -128,6 +128,20 @@ public class MobgenSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MobgenPackage.JSON_COMPOSITE_VALUE:
+      {
+        JsonCompositeValue jsonCompositeValue = (JsonCompositeValue)theEObject;
+        T result = caseJsonCompositeValue(jsonCompositeValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MobgenPackage.JSON_LITERAL_VALUE:
+      {
+        JsonLiteralValue jsonLiteralValue = (JsonLiteralValue)theEObject;
+        T result = caseJsonLiteralValue(jsonLiteralValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MobgenPackage.JSON_OBJECT:
       {
         JsonObject jsonObject = (JsonObject)theEObject;
@@ -320,6 +334,38 @@ public class MobgenSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonObjectValue(JsonObjectValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Composite Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonCompositeValue(JsonCompositeValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Json Literal Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Json Literal Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJsonLiteralValue(JsonLiteralValue object)
   {
     return null;
   }

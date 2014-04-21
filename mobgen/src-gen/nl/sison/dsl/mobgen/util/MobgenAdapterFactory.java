@@ -115,6 +115,16 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
         return createJsonObjectValueAdapter();
       }
       @Override
+      public Adapter caseJsonCompositeValue(JsonCompositeValue object)
+      {
+        return createJsonCompositeValueAdapter();
+      }
+      @Override
+      public Adapter caseJsonLiteralValue(JsonLiteralValue object)
+      {
+        return createJsonLiteralValueAdapter();
+      }
+      @Override
       public Adapter caseJsonObject(JsonObject object)
       {
         return createJsonObjectAdapter();
@@ -297,6 +307,36 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonObjectValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.JsonCompositeValue <em>Json Composite Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @generated
+   */
+  public Adapter createJsonCompositeValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.JsonLiteralValue <em>Json Literal Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.dsl.mobgen.JsonLiteralValue
+   * @generated
+   */
+  public Adapter createJsonLiteralValueAdapter()
   {
     return null;
   }

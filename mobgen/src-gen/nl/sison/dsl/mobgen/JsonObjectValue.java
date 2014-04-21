@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.JsonObjectValue#getValue <em>Value</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.JsonObjectValue#getScalar <em>Scalar</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}</li>
  * </ul>
  * </p>
@@ -24,58 +24,52 @@ import org.eclipse.emf.ecore.EObject;
 public interface JsonObjectValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
-   * The literals are from the enumeration {@link nl.sison.dsl.mobgen.JsonLiteralValue}.
+   * Returns the value of the '<em><b>Scalar</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Scalar</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see nl.sison.dsl.mobgen.JsonLiteralValue
-   * @see #setValue(JsonLiteralValue)
-   * @see nl.sison.dsl.mobgen.MobgenPackage#getJsonObjectValue_Value()
-   * @model
+   * @return the value of the '<em>Scalar</em>' containment reference.
+   * @see #setScalar(JsonLiteralValue)
+   * @see nl.sison.dsl.mobgen.MobgenPackage#getJsonObjectValue_Scalar()
+   * @model containment="true"
    * @generated
    */
-  JsonLiteralValue getValue();
+  JsonLiteralValue getScalar();
 
   /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getScalar <em>Scalar</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see nl.sison.dsl.mobgen.JsonLiteralValue
-   * @see #getValue()
+   * @param value the new value of the '<em>Scalar</em>' containment reference.
+   * @see #getScalar()
    * @generated
    */
-  void setValue(JsonLiteralValue value);
+  void setScalar(JsonLiteralValue value);
 
   /**
-   * Returns the value of the '<em><b>Composite</b></em>' attribute.
-   * The literals are from the enumeration {@link nl.sison.dsl.mobgen.JsonCompositeValue}.
+   * Returns the value of the '<em><b>Composite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Composite</em>' attribute isn't clear,
+   * If the meaning of the '<em>Composite</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Composite</em>' attribute.
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @return the value of the '<em>Composite</em>' containment reference.
    * @see #setComposite(JsonCompositeValue)
    * @see nl.sison.dsl.mobgen.MobgenPackage#getJsonObjectValue_Composite()
-   * @model
+   * @model containment="true"
    * @generated
    */
   JsonCompositeValue getComposite();
 
   /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}' attribute.
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.JsonObjectValue#getComposite <em>Composite</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Composite</em>' attribute.
-   * @see nl.sison.dsl.mobgen.JsonCompositeValue
+   * @param value the new value of the '<em>Composite</em>' containment reference.
    * @see #getComposite()
    * @generated
    */

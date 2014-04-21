@@ -4,7 +4,9 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.JsonArray;
+import nl.sison.dsl.mobgen.JsonCompositeValue;
 import nl.sison.dsl.mobgen.JsonKeyValuePair;
+import nl.sison.dsl.mobgen.JsonLiteralValue;
 import nl.sison.dsl.mobgen.JsonObject;
 import nl.sison.dsl.mobgen.JsonObjectValue;
 import nl.sison.dsl.mobgen.MapInstance;
@@ -54,9 +56,21 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case MobgenPackage.JSON_COMPOSITE_VALUE:
+				if(context == grammarAccess.getJsonCompositeValueRule()) {
+					sequence_JsonCompositeValue(context, (JsonCompositeValue) semanticObject); 
+					return; 
+				}
+				else break;
 			case MobgenPackage.JSON_KEY_VALUE_PAIR:
 				if(context == grammarAccess.getJsonKeyValuePairRule()) {
 					sequence_JsonKeyValuePair(context, (JsonKeyValuePair) semanticObject); 
+					return; 
+				}
+				else break;
+			case MobgenPackage.JSON_LITERAL_VALUE:
+				if(context == grammarAccess.getJsonLiteralValueRule()) {
+					sequence_JsonLiteralValue(context, (JsonLiteralValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -168,6 +182,15 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (objectValue=JsonObject | arrayValue=JsonArray)
+	 */
+	protected void sequence_JsonCompositeValue(EObject context, JsonCompositeValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (key=STRING value=JsonObjectValue)
 	 */
 	protected void sequence_JsonKeyValuePair(EObject context, JsonKeyValuePair semanticObject) {
@@ -187,7 +210,24 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (value=JsonLiteralValue | composite=JsonCompositeValue)
+	 *     (
+	 *         stringType=STRING | 
+	 *         stringType=EMPTY_JSON_OBJECT | 
+	 *         stringType=EMPTY_JSON_ARRAY | 
+	 *         stringType=JSON_LITERAL_NULL | 
+	 *         stringType=JSON_NUMBER | 
+	 *         booleanType=JsonLiteralBoolean | 
+	 *         metaType=JsonMetaScalarType
+	 *     )
+	 */
+	protected void sequence_JsonLiteralValue(EObject context, JsonLiteralValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (scalar=JsonLiteralValue | composite=JsonCompositeValue)
 	 */
 	protected void sequence_JsonObjectValue(EObject context, JsonObjectValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -216,7 +256,7 @@ public class MobgenSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         method=RESTFUL_METHODS 
+	 *         method=RestfulMethods 
 	 *         uri=URI 
 	 *         (requestHeaders=MobgenHeader responseHeaders=MobgenHeader?)? 
 	 *         jsonToClient=MobgenJson? 

@@ -40,32 +40,32 @@ public class AndroidResourceGenerator implements IGenerator {
    */
   public void writeAndroidEnumFiles(final Iterator<EnumInstance> instances, final IFileSystemAccess fsa) {
     final Procedure1<EnumInstance> _function = new Procedure1<EnumInstance>() {
-        public void apply(final EnumInstance m) {
-          String _name = m.getName();
-          String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
-          String _plus = (_capitalizeFirstLetter + "Enum.java");
-          String _name_1 = m.getName();
-          String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
-          EList<String> _values = m.getValues();
-          String _join = IterableExtensions.join(_values, ",\n");
-          CharSequence _androidParcelableEnumTemplate = AndroidResourceGenerator.this.androidParcelableEnumTemplate(_capitalizeFirstLetter_1, _join);
-          fsa.generateFile(_plus, _androidParcelableEnumTemplate);
-        }
-      };
+      public void apply(final EnumInstance m) {
+        String _name = m.getName();
+        String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
+        String _plus = (_capitalizeFirstLetter + "Enum.java");
+        String _name_1 = m.getName();
+        String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
+        EList<String> _values = m.getValues();
+        String _join = IterableExtensions.join(_values, ",\n");
+        CharSequence _androidParcelableEnumTemplate = AndroidResourceGenerator.this.androidParcelableEnumTemplate(_capitalizeFirstLetter_1, _join);
+        fsa.generateFile(_plus, _androidParcelableEnumTemplate);
+      }
+    };
     IteratorExtensions.<EnumInstance>forEach(instances, _function);
     final Procedure1<EnumInstance> _function_1 = new Procedure1<EnumInstance>() {
-        public void apply(final EnumInstance m) {
-          String _name = m.getName();
-          String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
-          String _plus = (_capitalizeFirstLetter + "Enum.java");
-          String _name_1 = m.getName();
-          String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
-          EList<String> _values = m.getValues();
-          String _join = IterableExtensions.join(_values, ",\n");
-          CharSequence _javaEnumTemplate = AndroidResourceGenerator.this.javaEnumTemplate(_capitalizeFirstLetter_1, _join);
-          fsa.generateFile(_plus, _javaEnumTemplate);
-        }
-      };
+      public void apply(final EnumInstance m) {
+        String _name = m.getName();
+        String _capitalizeFirstLetter = AndroidResourceGenerator.this.capitalizeFirstLetter(_name);
+        String _plus = (_capitalizeFirstLetter + "Enum.java");
+        String _name_1 = m.getName();
+        String _capitalizeFirstLetter_1 = AndroidResourceGenerator.this.capitalizeFirstLetter(_name_1);
+        EList<String> _values = m.getValues();
+        String _join = IterableExtensions.join(_values, ",\n");
+        CharSequence _javaEnumTemplate = AndroidResourceGenerator.this.javaEnumTemplate(_capitalizeFirstLetter_1, _join);
+        fsa.generateFile(_plus, _javaEnumTemplate);
+      }
+    };
     IteratorExtensions.<EnumInstance>forEach(instances, _function_1);
   }
   
@@ -83,7 +83,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append("Enum {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append(commaSeparatedValues, "	");
+    _builder.append(commaSeparatedValues, "\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("}\t");
@@ -103,7 +103,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append("Enum implements Parcelable {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append(commaSeparatedValues, "	");
+    _builder.append(commaSeparatedValues, "\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -120,7 +120,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("return ");
-    _builder.append(name, "			");
+    _builder.append(name, "\t\t\t");
     _builder.append("Enum.values()[in.readInt()];");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -132,7 +132,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("return new ");
-    _builder.append(name, "			");
+    _builder.append(name, "\t\t\t");
     _builder.append("Enum[size];");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -177,11 +177,10 @@ public class AndroidResourceGenerator implements IGenerator {
    */
   public String prepareAndroidMap(final Iterator<MapInstance> instances) {
     final Function1<MapInstance,String> _function = new Function1<MapInstance,String>() {
-        public String apply(final MapInstance m) {
-          String _joinAndroidMapNameWithKeyValuePairs = AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
-          return _joinAndroidMapNameWithKeyValuePairs;
-        }
-      };
+      public String apply(final MapInstance m) {
+        return AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
+      }
+    };
     Iterator<String> _map = IteratorExtensions.<MapInstance, String>map(instances, _function);
     return IteratorExtensions.join(_map, "");
   }
@@ -193,15 +192,14 @@ public class AndroidResourceGenerator implements IGenerator {
     final ListIterator<String> keys = _keys.listIterator();
     EList<NestedType> _values = instance.getValues();
     final ListIterator<NestedType> values = _values.listIterator();
-    StringBuffer _stringBuffer = new StringBuffer();
-    StringBuffer result = _stringBuffer;
+    StringBuffer result = new StringBuffer();
     boolean _and = false;
     boolean _hasNext = keys.hasNext();
     if (!_hasNext) {
       _and = false;
     } else {
       boolean _hasNext_1 = values.hasNext();
-      _and = (_hasNext && _hasNext_1);
+      _and = _hasNext_1;
     }
     boolean _while = _and;
     while (_while) {
@@ -215,11 +213,10 @@ public class AndroidResourceGenerator implements IGenerator {
           StringList _list_1 = items.getList();
           EList<String> _values_1 = _list_1.getValues();
           final Function1<String,CharSequence> _function = new Function1<String,CharSequence>() {
-              public CharSequence apply(final String s) {
-                CharSequence _androidResourceItemize = AndroidResourceGenerator.this.androidResourceItemize(s);
-                return _androidResourceItemize;
-              }
-            };
+            public CharSequence apply(final String s) {
+              return AndroidResourceGenerator.this.androidResourceItemize(s);
+            }
+          };
           List<CharSequence> _map = ListExtensions.<String, CharSequence>map(_values_1, _function);
           String _join = IterableExtensions.join(_map, "");
           CharSequence _androidKeyStringArray = this.androidKeyStringArray(name, key, _join);
@@ -236,7 +233,7 @@ public class AndroidResourceGenerator implements IGenerator {
         _and_1 = false;
       } else {
         boolean _hasNext_3 = values.hasNext();
-        _and_1 = (_hasNext_2 && _hasNext_3);
+        _and_1 = _hasNext_3;
       }
       _while = _and_1;
     }
@@ -274,7 +271,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append(s, "	");
+    _builder.append(s, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("</string-array>");
     _builder.newLine();
@@ -288,7 +285,7 @@ public class AndroidResourceGenerator implements IGenerator {
     _builder.append("<resources>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append(s, "	");
+    _builder.append(s, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("</resources>");
     return _builder;

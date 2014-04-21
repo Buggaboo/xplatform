@@ -17,7 +17,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MobgenCallDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//RestfulMethods"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uri" eType="#//URI" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requestHeaders" eType="#//MobgenHeader"
         containment="true"/>
@@ -42,27 +42,33 @@
   <eClassifiers xsi:type="ecore:EClass" name="MobgenHeaderParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RestfulMethods">
+    <eLiterals name="put" literal="PUT"/>
+    <eLiterals name="post" value="1" literal="POST"/>
+    <eLiterals name="get" value="2" literal="GET"/>
+    <eLiterals name="delete" value="3" literal="DELETE"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MobgenJson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//JsonObjectValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonObjectValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JsonLiteralValue"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="composite" eType="#//JsonCompositeValue"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalar" eType="#//JsonLiteralValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" eType="#//JsonCompositeValue"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="JsonCompositeValue">
-    <eLiterals name="JsonObject" literal="JsonObject"/>
-    <eLiterals name="JsonArray" value="1" literal="JsonArray"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonCompositeValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectValue" eType="#//JsonObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrayValue" eType="#//JsonArray"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="JsonLiteralValue">
-    <eLiterals name="STRING" literal="STRING"/>
-    <eLiterals name="EMPTY_JSON_OBJECT" value="1" literal="EMPTY_JSON_OBJECT"/>
-    <eLiterals name="EMPTY_JSON_ARRAY" value="2" literal="EMPTY_JSON_ARRAY"/>
-    <eLiterals name="JSON_LITERAL_BOOLEAN" value="3" literal="JSON_LITERAL_BOOLEAN"/>
-    <eLiterals name="JSON_LITERAL_NULL" value="4" literal="JSON_LITERAL_NULL"/>
-    <eLiterals name="JSON_NUMBER" value="5" literal="JSON_NUMBER"/>
-    <eLiterals name="JSON_META_SCALAR_TYPE" value="6" literal="JSON_META_SCALAR_TYPE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonLiteralValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanType" eType="#//JsonLiteralBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaType" eType="#//JsonMetaScalarType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JsonObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePair" upperBound="-1"
@@ -76,6 +82,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="JsonArray">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//JsonObjectValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JsonMetaScalarType">
+    <eLiterals name="BOOLEAN" literal="boolean"/>
+    <eLiterals name="NUMBER" value="1" literal="number"/>
+    <eLiterals name="STRING" value="2" literal="string"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JsonLiteralBoolean">
+    <eLiterals name="true" literal="true"/>
+    <eLiterals name="false" value="1" literal="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MobgenResourceDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"

@@ -255,19 +255,19 @@ ruleMobgenCallDefinition returns [EObject current=null]
     }
 (
 (
-		lv_method_3_0=RULE_RESTFUL_METHODS
-		{
-			newLeafNode(lv_method_3_0, grammarAccess.getMobgenCallDefinitionAccess().getMethodRESTFUL_METHODSTerminalRuleCall_3_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMobgenCallDefinitionAccess().getMethodRestfulMethodsEnumRuleCall_3_0()); 
+	    }
+		lv_method_3_0=ruleRestfulMethods		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMobgenCallDefinitionRule());
+	            $current = createModelElementForParent(grammarAccess.getMobgenCallDefinitionRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"method",
         		lv_method_3_0, 
-        		"RESTFUL_METHODS");
+        		"RestfulMethods");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -720,16 +720,16 @@ ruleJsonObjectValue returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getValueJsonLiteralValueEnumRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getScalarJsonLiteralValueParserRuleCall_0_0()); 
 	    }
-		lv_value_0_0=ruleJsonLiteralValue		{
+		lv_scalar_0_0=ruleJsonLiteralValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getJsonObjectValueRule());
 	        }
        		set(
        			$current, 
-       			"value",
-        		lv_value_0_0, 
+       			"scalar",
+        		lv_scalar_0_0, 
         		"JsonLiteralValue");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -739,7 +739,7 @@ ruleJsonObjectValue returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getCompositeJsonCompositeValueEnumRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getJsonObjectValueAccess().getCompositeJsonCompositeValueParserRuleCall_1_0()); 
 	    }
 		lv_composite_1_0=ruleJsonCompositeValue		{
 	        if ($current==null) {
@@ -758,6 +758,275 @@ ruleJsonObjectValue returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleJsonCompositeValue
+entryRuleJsonCompositeValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonCompositeValueRule()); }
+	 iv_ruleJsonCompositeValue=ruleJsonCompositeValue 
+	 { $current=$iv_ruleJsonCompositeValue.current; } 
+	 EOF 
+;
+
+// Rule JsonCompositeValue
+ruleJsonCompositeValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getObjectValueJsonObjectParserRuleCall_0_0()); 
+	    }
+		lv_objectValue_0_0=ruleJsonObject		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonCompositeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"objectValue",
+        		lv_objectValue_0_0, 
+        		"JsonObject");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonCompositeValueAccess().getArrayValueJsonArrayParserRuleCall_1_0()); 
+	    }
+		lv_arrayValue_1_0=ruleJsonArray		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonCompositeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"arrayValue",
+        		lv_arrayValue_1_0, 
+        		"JsonArray");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleJsonLiteralValue
+entryRuleJsonLiteralValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonLiteralValueRule()); }
+	 iv_ruleJsonLiteralValue=ruleJsonLiteralValue 
+	 { $current=$iv_ruleJsonLiteralValue.current; } 
+	 EOF 
+;
+
+// Rule JsonLiteralValue
+ruleJsonLiteralValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+(
+		lv_stringType_0_1=RULE_STRING
+		{
+			newLeafNode(lv_stringType_0_1, grammarAccess.getJsonLiteralValueAccess().getStringTypeSTRINGTerminalRuleCall_0_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"stringType",
+        		lv_stringType_0_1, 
+        		"STRING");
+	    }
+
+    |		lv_stringType_0_2=RULE_EMPTY_JSON_OBJECT
+		{
+			newLeafNode(lv_stringType_0_2, grammarAccess.getJsonLiteralValueAccess().getStringTypeEMPTY_JSON_OBJECTTerminalRuleCall_0_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"stringType",
+        		lv_stringType_0_2, 
+        		"EMPTY_JSON_OBJECT");
+	    }
+
+    |		lv_stringType_0_3=RULE_EMPTY_JSON_ARRAY
+		{
+			newLeafNode(lv_stringType_0_3, grammarAccess.getJsonLiteralValueAccess().getStringTypeEMPTY_JSON_ARRAYTerminalRuleCall_0_0_2()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"stringType",
+        		lv_stringType_0_3, 
+        		"EMPTY_JSON_ARRAY");
+	    }
+
+    |		lv_stringType_0_4=RULE_JSON_LITERAL_NULL
+		{
+			newLeafNode(lv_stringType_0_4, grammarAccess.getJsonLiteralValueAccess().getStringTypeJSON_LITERAL_NULLTerminalRuleCall_0_0_3()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"stringType",
+        		lv_stringType_0_4, 
+        		"JSON_LITERAL_NULL");
+	    }
+
+    |		lv_stringType_0_5=RULE_JSON_NUMBER
+		{
+			newLeafNode(lv_stringType_0_5, grammarAccess.getJsonLiteralValueAccess().getStringTypeJSON_NUMBERTerminalRuleCall_0_0_4()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"stringType",
+        		lv_stringType_0_5, 
+        		"JSON_NUMBER");
+	    }
+
+)
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonLiteralValueAccess().getBooleanTypeJsonLiteralBooleanEnumRuleCall_1_0()); 
+	    }
+		lv_booleanType_1_0=ruleJsonLiteralBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		set(
+       			$current, 
+       			"booleanType",
+        		lv_booleanType_1_0, 
+        		"JsonLiteralBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonLiteralValueAccess().getMetaTypeJsonMetaScalarTypeEnumRuleCall_2_0()); 
+	    }
+		lv_metaType_2_0=ruleJsonMetaScalarType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonLiteralValueRule());
+	        }
+       		set(
+       			$current, 
+       			"metaType",
+        		lv_metaType_2_0, 
+        		"JsonMetaScalarType");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleJsonObject
+entryRuleJsonObject returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonObjectRule()); }
+	 iv_ruleJsonObject=ruleJsonObject 
+	 { $current=$iv_ruleJsonObject.current; } 
+	 EOF 
+;
+
+// Rule JsonObject
+ruleJsonObject returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='{' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_1_0()); 
+	    }
+		lv_keyValuePair_1_0=ruleJsonKeyValuePair		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonObjectRule());
+	        }
+       		add(
+       			$current, 
+       			"keyValuePair",
+        		lv_keyValuePair_1_0, 
+        		"JsonKeyValuePair");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonObjectAccess().getKeyValuePairJsonKeyValuePairParserRuleCall_2_1_0()); 
+	    }
+		lv_keyValuePair_3_0=ruleJsonKeyValuePair		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonObjectRule());
+	        }
+       		add(
+       			$current, 
+       			"keyValuePair",
+        		lv_keyValuePair_3_0, 
+        		"JsonKeyValuePair");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*(	otherlv_4=',' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getJsonObjectAccess().getCommaKeyword_3());
+    }
+)?	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_4());
+    }
+)
+;
 
 
 
@@ -821,6 +1090,77 @@ ruleJsonKeyValuePair returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleJsonArray
+entryRuleJsonArray returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJsonArrayRule()); }
+	 iv_ruleJsonArray=ruleJsonArray 
+	 { $current=$iv_ruleJsonArray.current; } 
+	 EOF 
+;
+
+// Rule JsonArray
+ruleJsonArray returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='[' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_1_0()); 
+	    }
+		lv_items_1_0=ruleJsonObjectValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonArrayRule());
+	        }
+       		add(
+       			$current, 
+       			"items",
+        		lv_items_1_0, 
+        		"JsonObjectValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); 
+	    }
+		lv_items_3_0=ruleJsonObjectValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJsonArrayRule());
+	        }
+       		add(
+       			$current, 
+       			"items",
+        		lv_items_3_0, 
+        		"JsonObjectValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*(	otherlv_4=',' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getJsonArrayAccess().getCommaKeyword_3());
+    }
+)?	otherlv_5=']' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_4());
+    }
+)
+;
 
 
 
@@ -1403,85 +1743,86 @@ ruleURI returns [EObject current=null]
 
 
 
-// Rule JsonCompositeValue
-ruleJsonCompositeValue returns [Enumerator current=null] 
+// Rule RestfulMethods
+ruleRestfulMethods returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='JsonObject' 
+((	enumLiteral_0='PUT' 
 	{
-        $current = grammarAccess.getJsonCompositeValueAccess().getJsonObjectEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getJsonCompositeValueAccess().getJsonObjectEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getRestfulMethodsAccess().getPutEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getRestfulMethodsAccess().getPutEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='JsonArray' 
+    |(	enumLiteral_1='POST' 
 	{
-        $current = grammarAccess.getJsonCompositeValueAccess().getJsonArrayEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getJsonCompositeValueAccess().getJsonArrayEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getRestfulMethodsAccess().getPostEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getRestfulMethodsAccess().getPostEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='GET' 
+	{
+        $current = grammarAccess.getRestfulMethodsAccess().getGetEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getRestfulMethodsAccess().getGetEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='DELETE' 
+	{
+        $current = grammarAccess.getRestfulMethodsAccess().getDeleteEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getRestfulMethodsAccess().getDeleteEnumLiteralDeclaration_3()); 
     }
 ));
 
 
 
-// Rule JsonLiteralValue
-ruleJsonLiteralValue returns [Enumerator current=null] 
+// Rule JsonMetaScalarType
+ruleJsonMetaScalarType returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='STRING' 
+((	enumLiteral_0='boolean' 
 	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getSTRINGEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getJsonLiteralValueAccess().getSTRINGEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getJsonMetaScalarTypeAccess().getBOOLEANEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getJsonMetaScalarTypeAccess().getBOOLEANEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='EMPTY_JSON_OBJECT' 
+    |(	enumLiteral_1='number' 
 	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_OBJECTEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getJsonMetaScalarTypeAccess().getNUMBEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getJsonMetaScalarTypeAccess().getNUMBEREnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='EMPTY_JSON_ARRAY' 
+    |(	enumLiteral_2='string' 
 	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getJsonLiteralValueAccess().getEMPTY_JSON_ARRAYEnumLiteralDeclaration_2()); 
-    }
-)
-    |(	enumLiteral_3='JSON_LITERAL_BOOLEAN' 
-	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_BOOLEANEnumLiteralDeclaration_3()); 
-    }
-)
-    |(	enumLiteral_4='JSON_LITERAL_NULL' 
-	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getJsonLiteralValueAccess().getJSON_LITERAL_NULLEnumLiteralDeclaration_4()); 
-    }
-)
-    |(	enumLiteral_5='JSON_NUMBER' 
-	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBEREnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_5, grammarAccess.getJsonLiteralValueAccess().getJSON_NUMBEREnumLiteralDeclaration_5()); 
-    }
-)
-    |(	enumLiteral_6='JSON_META_SCALAR_TYPE' 
-	{
-        $current = grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_6, grammarAccess.getJsonLiteralValueAccess().getJSON_META_SCALAR_TYPEEnumLiteralDeclaration_6()); 
+        $current = grammarAccess.getJsonMetaScalarTypeAccess().getSTRINGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getJsonMetaScalarTypeAccess().getSTRINGEnumLiteralDeclaration_2()); 
     }
 ));
 
 
 
-RULE_RESTFUL_METHODS : ('PUT'|'POST'|'GET'|'DELETE');
+// Rule JsonLiteralBoolean
+ruleJsonLiteralBoolean returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='true' 
+	{
+        $current = grammarAccess.getJsonLiteralBooleanAccess().getTrueEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getJsonLiteralBooleanAccess().getTrueEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='false' 
+	{
+        $current = grammarAccess.getJsonLiteralBooleanAccess().getFalseEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getJsonLiteralBooleanAccess().getFalseEnumLiteralDeclaration_1()); 
+    }
+));
 
-RULE_JSON_META_SCALAR_TYPE : ('boolean'|'number'|'string');
+
 
 RULE_EMPTY_JSON_OBJECT : '{}';
 
 RULE_EMPTY_JSON_ARRAY : '[]';
 
 RULE_JSON_LITERAL_NULL : 'null';
-
-RULE_JSON_LITERAL_BOOLEAN : ('true'|'false');
 
 RULE_JSON_NUMBER : RULE_INT '.' RULE_INT;
 

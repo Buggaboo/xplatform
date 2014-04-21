@@ -7,7 +7,6 @@ import org.eclipse.xtext.generator.IGenerator;
 @SuppressWarnings("all")
 public class JavaSparkResponseGenerator implements IGenerator {
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
-    UnsupportedOperationException _unsupportedOperationException = new UnsupportedOperationException("Auto-generated function stub");
-    throw _unsupportedOperationException;
+    throw new UnsupportedOperationException("Auto-generated function stub");
   }
 }

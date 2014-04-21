@@ -7,18 +7,20 @@
     runtimeVersion="2.9">
   <genPackages prefix="Mobgen" basePackage="nl.sison.dsl" disposableProviderFactory="true"
       ecorePackage="Mobgen.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mobgen.ecore#//JsonCompositeValue">
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonCompositeValue/JsonObject"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonCompositeValue/JsonArray"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mobgen.ecore#//RestfulMethods">
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//RestfulMethods/put"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//RestfulMethods/post"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//RestfulMethods/get"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//RestfulMethods/delete"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mobgen.ecore#//JsonLiteralValue">
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/STRING"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/EMPTY_JSON_OBJECT"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/EMPTY_JSON_ARRAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/JSON_LITERAL_BOOLEAN"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/JSON_LITERAL_NULL"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/JSON_NUMBER"/>
-      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralValue/JSON_META_SCALAR_TYPE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mobgen.ecore#//JsonMetaScalarType">
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonMetaScalarType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonMetaScalarType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonMetaScalarType/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mobgen.ecore#//JsonLiteralBoolean">
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralBoolean/true"/>
+      <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralBoolean/false"/>
     </genEnums>
     <genClasses ecoreClass="Mobgen.ecore#//Mobgen">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//Mobgen/platform"/>
@@ -55,8 +57,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//MobgenJson/value"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//JsonObjectValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonObjectValue/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonObjectValue/composite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonObjectValue/scalar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonObjectValue/composite"/>
+    </genClasses>
+    <genClasses ecoreClass="Mobgen.ecore#//JsonCompositeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonCompositeValue/objectValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonCompositeValue/arrayValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Mobgen.ecore#//JsonLiteralValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonLiteralValue/stringType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonLiteralValue/booleanType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//JsonLiteralValue/metaType"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//JsonObject">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonObject/keyValuePair"/>

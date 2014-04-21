@@ -6,7 +6,9 @@ import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.JsonArray;
 import nl.sison.dsl.mobgen.JsonCompositeValue;
 import nl.sison.dsl.mobgen.JsonKeyValuePair;
+import nl.sison.dsl.mobgen.JsonLiteralBoolean;
 import nl.sison.dsl.mobgen.JsonLiteralValue;
+import nl.sison.dsl.mobgen.JsonMetaScalarType;
 import nl.sison.dsl.mobgen.JsonObject;
 import nl.sison.dsl.mobgen.JsonObjectValue;
 import nl.sison.dsl.mobgen.MapInstance;
@@ -21,6 +23,7 @@ import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
 import nl.sison.dsl.mobgen.NestedType;
 import nl.sison.dsl.mobgen.Platform;
+import nl.sison.dsl.mobgen.RestfulMethods;
 import nl.sison.dsl.mobgen.StringList;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -100,6 +103,20 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass jsonCompositeValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jsonLiteralValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass jsonObjectEClass = null;
 
   /**
@@ -163,14 +180,21 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum jsonCompositeValueEEnum = null;
+  private EEnum restfulMethodsEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum jsonLiteralValueEEnum = null;
+  private EEnum jsonMetaScalarTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum jsonLiteralBooleanEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -520,9 +544,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJsonObjectValue_Value()
+  public EReference getJsonObjectValue_Scalar()
   {
-    return (EAttribute)jsonObjectValueEClass.getEStructuralFeatures().get(0);
+    return (EReference)jsonObjectValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -530,9 +554,79 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJsonObjectValue_Composite()
+  public EReference getJsonObjectValue_Composite()
   {
-    return (EAttribute)jsonObjectValueEClass.getEStructuralFeatures().get(1);
+    return (EReference)jsonObjectValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJsonCompositeValue()
+  {
+    return jsonCompositeValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonCompositeValue_ObjectValue()
+  {
+    return (EReference)jsonCompositeValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJsonCompositeValue_ArrayValue()
+  {
+    return (EReference)jsonCompositeValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJsonLiteralValue()
+  {
+    return jsonLiteralValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonLiteralValue_StringType()
+  {
+    return (EAttribute)jsonLiteralValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonLiteralValue_BooleanType()
+  {
+    return (EAttribute)jsonLiteralValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJsonLiteralValue_MetaType()
+  {
+    return (EAttribute)jsonLiteralValueEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -830,9 +924,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getJsonCompositeValue()
+  public EEnum getRestfulMethods()
   {
-    return jsonCompositeValueEEnum;
+    return restfulMethodsEEnum;
   }
 
   /**
@@ -840,9 +934,19 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getJsonLiteralValue()
+  public EEnum getJsonMetaScalarType()
   {
-    return jsonLiteralValueEEnum;
+    return jsonMetaScalarTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getJsonLiteralBoolean()
+  {
+    return jsonLiteralBooleanEEnum;
   }
 
   /**
@@ -910,8 +1014,17 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEReference(mobgenJsonEClass, MOBGEN_JSON__VALUE);
 
     jsonObjectValueEClass = createEClass(JSON_OBJECT_VALUE);
-    createEAttribute(jsonObjectValueEClass, JSON_OBJECT_VALUE__VALUE);
-    createEAttribute(jsonObjectValueEClass, JSON_OBJECT_VALUE__COMPOSITE);
+    createEReference(jsonObjectValueEClass, JSON_OBJECT_VALUE__SCALAR);
+    createEReference(jsonObjectValueEClass, JSON_OBJECT_VALUE__COMPOSITE);
+
+    jsonCompositeValueEClass = createEClass(JSON_COMPOSITE_VALUE);
+    createEReference(jsonCompositeValueEClass, JSON_COMPOSITE_VALUE__OBJECT_VALUE);
+    createEReference(jsonCompositeValueEClass, JSON_COMPOSITE_VALUE__ARRAY_VALUE);
+
+    jsonLiteralValueEClass = createEClass(JSON_LITERAL_VALUE);
+    createEAttribute(jsonLiteralValueEClass, JSON_LITERAL_VALUE__STRING_TYPE);
+    createEAttribute(jsonLiteralValueEClass, JSON_LITERAL_VALUE__BOOLEAN_TYPE);
+    createEAttribute(jsonLiteralValueEClass, JSON_LITERAL_VALUE__META_TYPE);
 
     jsonObjectEClass = createEClass(JSON_OBJECT);
     createEReference(jsonObjectEClass, JSON_OBJECT__KEY_VALUE_PAIR);
@@ -952,8 +1065,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEAttribute(uriEClass, URI__QUERY_SUFFIX);
 
     // Create enums
-    jsonCompositeValueEEnum = createEEnum(JSON_COMPOSITE_VALUE);
-    jsonLiteralValueEEnum = createEEnum(JSON_LITERAL_VALUE);
+    restfulMethodsEEnum = createEEnum(RESTFUL_METHODS);
+    jsonMetaScalarTypeEEnum = createEEnum(JSON_META_SCALAR_TYPE);
+    jsonLiteralBooleanEEnum = createEEnum(JSON_LITERAL_BOOLEAN);
   }
 
   /**
@@ -999,7 +1113,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
 
     initEClass(mobgenCallDefinitionEClass, MobgenCallDefinition.class, "MobgenCallDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMobgenCallDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMobgenCallDefinition_Method(), ecorePackage.getEString(), "method", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMobgenCallDefinition_Method(), this.getRestfulMethods(), "method", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMobgenCallDefinition_Uri(), this.getURI(), null, "uri", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMobgenCallDefinition_RequestHeaders(), this.getMobgenHeader(), null, "requestHeaders", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMobgenCallDefinition_ResponseHeaders(), this.getMobgenHeader(), null, "responseHeaders", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1023,8 +1137,17 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEReference(getMobgenJson_Value(), this.getJsonObjectValue(), null, "value", null, 0, 1, MobgenJson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonObjectValueEClass, JsonObjectValue.class, "JsonObjectValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getJsonObjectValue_Value(), this.getJsonLiteralValue(), "value", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getJsonObjectValue_Composite(), this.getJsonCompositeValue(), "composite", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonObjectValue_Scalar(), this.getJsonLiteralValue(), null, "scalar", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonObjectValue_Composite(), this.getJsonCompositeValue(), null, "composite", null, 0, 1, JsonObjectValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonCompositeValueEClass, JsonCompositeValue.class, "JsonCompositeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJsonCompositeValue_ObjectValue(), this.getJsonObject(), null, "objectValue", null, 0, 1, JsonCompositeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonCompositeValue_ArrayValue(), this.getJsonArray(), null, "arrayValue", null, 0, 1, JsonCompositeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsonLiteralValueEClass, JsonLiteralValue.class, "JsonLiteralValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJsonLiteralValue_StringType(), ecorePackage.getEString(), "stringType", null, 0, 1, JsonLiteralValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonLiteralValue_BooleanType(), this.getJsonLiteralBoolean(), "booleanType", null, 0, 1, JsonLiteralValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJsonLiteralValue_MetaType(), this.getJsonMetaScalarType(), "metaType", null, 0, 1, JsonLiteralValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonObjectEClass, JsonObject.class, "JsonObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJsonObject_KeyValuePair(), this.getJsonKeyValuePair(), null, "keyValuePair", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1065,18 +1188,20 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEAttribute(getURI_QuerySuffix(), ecorePackage.getEString(), "querySuffix", null, 0, -1, nl.sison.dsl.mobgen.URI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(jsonCompositeValueEEnum, JsonCompositeValue.class, "JsonCompositeValue");
-    addEEnumLiteral(jsonCompositeValueEEnum, JsonCompositeValue.JSON_OBJECT);
-    addEEnumLiteral(jsonCompositeValueEEnum, JsonCompositeValue.JSON_ARRAY);
+    initEEnum(restfulMethodsEEnum, RestfulMethods.class, "RestfulMethods");
+    addEEnumLiteral(restfulMethodsEEnum, RestfulMethods.PUT);
+    addEEnumLiteral(restfulMethodsEEnum, RestfulMethods.POST);
+    addEEnumLiteral(restfulMethodsEEnum, RestfulMethods.GET);
+    addEEnumLiteral(restfulMethodsEEnum, RestfulMethods.DELETE);
 
-    initEEnum(jsonLiteralValueEEnum, JsonLiteralValue.class, "JsonLiteralValue");
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.STRING);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.EMPTY_JSON_OBJECT);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.EMPTY_JSON_ARRAY);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.JSON_LITERAL_BOOLEAN);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.JSON_LITERAL_NULL);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.JSON_NUMBER);
-    addEEnumLiteral(jsonLiteralValueEEnum, JsonLiteralValue.JSON_META_SCALAR_TYPE);
+    initEEnum(jsonMetaScalarTypeEEnum, JsonMetaScalarType.class, "JsonMetaScalarType");
+    addEEnumLiteral(jsonMetaScalarTypeEEnum, JsonMetaScalarType.BOOLEAN);
+    addEEnumLiteral(jsonMetaScalarTypeEEnum, JsonMetaScalarType.NUMBER);
+    addEEnumLiteral(jsonMetaScalarTypeEEnum, JsonMetaScalarType.STRING);
+
+    initEEnum(jsonLiteralBooleanEEnum, JsonLiteralBoolean.class, "JsonLiteralBoolean");
+    addEEnumLiteral(jsonLiteralBooleanEEnum, JsonLiteralBoolean.TRUE);
+    addEEnumLiteral(jsonLiteralBooleanEEnum, JsonLiteralBoolean.FALSE);
 
     // Create resource
     createResource(eNS_URI);
