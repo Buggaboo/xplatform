@@ -91,7 +91,7 @@ JsonCompositeValue:
 ;
 
 JsonLiteralValue:
-	stringType=(STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_NULL |  JSON_NUMBER) | enumType=JsonLiteralBoolean | metaType=JsonMetaScalarType
+	stringType=(STRING | EMPTY_JSON_OBJECT | EMPTY_JSON_ARRAY | JSON_LITERAL_NULL |  JSON_NUMBER) | booleanType=JsonLiteralBoolean | metaType=JsonMetaScalarType
 ;
 
 JsonObject:

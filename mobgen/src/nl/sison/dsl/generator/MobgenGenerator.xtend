@@ -13,6 +13,8 @@ import nl.sison.dsl.mobgen.JsonCompositeValue
 import nl.sison.dsl.services.MobgenGrammarAccess.JsonLiteralValueElements
 import org.eclipse.xtext.common.parser.packrat.consumers.TerminalsSTRINGConsumer
 import nl.sison.dsl.mobgen.RestfulMethods
+import nl.sison.dsl.mobgen.JsonLiteralBoolean
+import nl.sison.dsl.mobgen.JsonLiteralValue
 
 class MobgenGenerator implements IGenerator {
 	
@@ -317,9 +319,9 @@ class AndroidHttpRequestGenerator implements IGenerator
 		val scalar = callDefinition.jsonToClient.value.scalar
 		val stringBuilder = new StringBuilder
 		
-		val startTryCatch = '''
-		try {
-		'''
+		stringBuilder.append('''public JSONObject toJSON() {
+			try {
+		''')
 		
 		if (composite != null)
 		{
@@ -327,45 +329,81 @@ class AndroidHttpRequestGenerator implements IGenerator
 			createCompositeJsonValue(composite, stringBuilder, 0)
 			// inject it into the JSON request parcelable
 			// ...
+			// TODO also overload #toString to pretty print the JSON factory method
 		}else
 		{
-//			createCompositeScalarParser(composite, stringBuilder)
+//			createCompositeScalarParser(composite, stringBuilder) // TODO create generator for factory method: new Bundle() ... putString etc.
 			print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a bundle.")
+			throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a bundle instead.")
 		}
 		
-		stringBuilder.append("JSONException".generateExceptionHandlerLoggingAndThrow).append("\n}")
+		stringBuilder.append("JSONException".generateExceptionHandlerLoggingAndThrow)
+		.append('''
+			return n0;
+			}
+		}		
+		''')
 		
 		return stringBuilder.toString
 	}
 	
-	def mapJsonLiteralValueToJava(JsonLiteralValueElements elements)
+	def mapJsonLiteralValueToJava(JsonLiteralValue value)
 	{
+		if (value.stringType != null)
+		{
+			switch value.stringType
+			{
+				case "{}" : return "new JSONObject()"
+				case "[]" : return "new JSONArray()"
+				case "null" : return "JSONObject.NULL"
+				default: return value.stringType // JSON_NUMBER and STRING
+			}
+		}
 		
+		if (value.booleanType != null)
+		{
+			return value.booleanType.literal
+		}
 	}
 	
 	def createCompositeJsonValue(JsonCompositeValue composite, StringBuilder parserString, int recursionDepth)
 	{
 		if (composite.objectValue != null) // TODO check for correctness
 		{
-			val str = '''
+			parserString.append('''
 			JSONObject n«recursionDepth» = new JSONObject();
-			'''
+			''')
 			for (keyValue : composite.objectValue.keyValuePair)
 			{
-				if (keyValue.value.scalar != null)
+				val scalar = keyValue.value.scalar
+				if (scalar != null)
 				{
-					val putStr = '''
-					n«recursionDepth».put(«keyValue.key», «keyValue.value»);
-					''' // TODO use accumulate, because it is the bomb (chaining)
-					parserString.append(putStr);
-				}else
+					if (scalar.metaType == null)
+					{
+						val putStr = '''
+						n«recursionDepth».put(«keyValue.key», «scalar.mapJsonLiteralValueToJava»);
+						''' // TODO use accumulate, because it is the bomb (chaining)
+						parserString.append(putStr);
+					}else // scalar.metaType != null
+					{
+						// assume that the parcelable contains this get Method to get the Parcelable
+						parserString.append('''n«recursionDepth».put(«keyValue.key», get«keyValue.key.capitalizeFirstLetter»);''')
+					}
+				}else if (keyValue.value.composite != null)
 				{
-					
+					// assume that the parcelable contains this get Method to get the Parcelable
+					parserString.append('''n«recursionDepth».put(«keyValue.key», get«keyValue.key.capitalizeFirstLetter».toJSON());''')
 				}
 			}
 		}else if (composite.arrayValue != null) // composite.eClass.name.equals("JsonArray")?
 		{
-			print("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.")
+			// TODO check the type
+			throw new IllegalArgumentException("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.")
+//			createCompositeJsonValue(composite.arrayValue.items.head.composite, parserString, recursionDepth) // TODO create a new file
+//			parserString.append('''
+//			JSONArray n«recursionDepth» = new JSONArray();
+//			
+//			''')
 		}else
 		{
 			throw new IllegalArgumentException("Wrong type passed?")
