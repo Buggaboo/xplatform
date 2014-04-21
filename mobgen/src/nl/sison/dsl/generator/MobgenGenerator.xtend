@@ -3,18 +3,16 @@ package nl.sison.dsl.generator
 import java.util.Iterator
 import java.util.Map
 import nl.sison.dsl.mobgen.EnumInstance
+import nl.sison.dsl.mobgen.JsonCompositeValue
+import nl.sison.dsl.mobgen.JsonLiteralValue
 import nl.sison.dsl.mobgen.MapInstance
 import nl.sison.dsl.mobgen.MobgenCallDefinition
 import nl.sison.dsl.mobgen.MobgenHeaderKeyValuePair
+import nl.sison.dsl.mobgen.RestfulMethods
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import nl.sison.dsl.mobgen.JsonCompositeValue
-import nl.sison.dsl.services.MobgenGrammarAccess.JsonLiteralValueElements
-import org.eclipse.xtext.common.parser.packrat.consumers.TerminalsSTRINGConsumer
-import nl.sison.dsl.mobgen.RestfulMethods
-import nl.sison.dsl.mobgen.JsonLiteralBoolean
-import nl.sison.dsl.mobgen.JsonLiteralValue
+import nl.sison.dsl.mobgen.JsonObjectValue
 
 class MobgenGenerator implements IGenerator {
 	
@@ -176,7 +174,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 			createParcelableRequestUrlFile(callDefinition, fsa) /* 2. */
 			if (callDefinition.method == RestfulMethods.POST || callDefinition.method == RestfulMethods.PUT)
 			{
-				createParcelableRequestJsonFile(callDefinition, fsa) // only for POST and PUT
+				createParcelableRequestJsonFile(callDefinition.jsonToClient.value) // only for POST and PUT
 			}
 		}
 		
@@ -312,14 +310,15 @@ class AndroidHttpRequestGenerator implements IGenerator
 	 * can be referenced from the Loader. Then in the http request body entity (method: PUT/POST), #toString can be called on the JSON construct.   
 	 * 
 	 */
-	def createParcelableRequestJsonFile(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
+	def createParcelableRequestJsonFile(JsonObjectValue value)
 	{
 		// use the enum
-		val composite = callDefinition.jsonToClient.value.composite
-		val scalar = callDefinition.jsonToClient.value.scalar
+		val composite = value.composite
+		val scalar = value.scalar
 		val stringBuilder = new StringBuilder
 		
-		stringBuilder.append('''public JSONObject toJSON() {
+		stringBuilder.append('''
+		public JSONObject toJSON() {
 			try {
 		''')
 		
@@ -330,18 +329,20 @@ class AndroidHttpRequestGenerator implements IGenerator
 			// inject it into the JSON request parcelable
 			// ...
 			// TODO also overload #toString to pretty print the JSON factory method
-		}else
+		}else if (scalar != null)
 		{
+			// true, false, [], {}, 0.0f, 123, null, "#123412"
 //			createCompositeScalarParser(composite, stringBuilder) // TODO create generator for factory method: new Bundle() ... putString etc.
-			print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a bundle.")
-			throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a bundle instead.")
+			print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a Bundle.")
+			throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a Bundle instead.")
 		}
 		
-		stringBuilder.append("JSONException".generateExceptionHandlerLoggingAndThrow)
+		stringBuilder
 		.append('''
-			return n0;
+				return n0;
+			«"JSONException".generateExceptionHandlerLoggingAndThrow»
 			}
-		}		
+		}
 		''')
 		
 		return stringBuilder.toString
@@ -356,7 +357,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 				case "{}" : return "new JSONObject()"
 				case "[]" : return "new JSONArray()"
 				case "null" : return "JSONObject.NULL"
-				default: return value.stringType // JSON_NUMBER and STRING
+				default: return value.stringType // JSON_NUMBER and STRING, TODO do additional validation on number type, because 0000 is a legal value
 			}
 		}
 		
@@ -393,16 +394,19 @@ class AndroidHttpRequestGenerator implements IGenerator
 				{
 					// assume that the parcelable contains this get Method to get the Parcelable
 					parserString.append('''n«recursionDepth».put(«keyValue.key», get«keyValue.key.capitalizeFirstLetter».toJSON());''')
+					// TODO write this recursion to file
+					// TODO create a new file (new recursion step)
 				}
 			}
 		}else if (composite.arrayValue != null) // composite.eClass.name.equals("JsonArray")?
 		{
+//			val value = composite.arrayValue.items.head
+//			value.
 			// TODO check the type
 			throw new IllegalArgumentException("Currently, JsonArrays are not supported. Just build it yourself. For more complex arrays, with complex objects inside, try to build the composite object first. Pass a parcelable array of the object.")
 //			createCompositeJsonValue(composite.arrayValue.items.head.composite, parserString, recursionDepth) // TODO create a new file
 //			parserString.append('''
 //			JSONArray n«recursionDepth» = new JSONArray();
-//			
 //			''')
 		}else
 		{
