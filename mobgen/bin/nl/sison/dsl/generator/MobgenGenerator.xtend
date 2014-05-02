@@ -52,8 +52,12 @@ class AndroidResourceGenerator implements IGenerator
 	{
 		return s.substring(0, 1).toUpperCase() + s.substring(1);
 	}
-	
 	def javaEnumTemplate(String name, String commaSeparatedValues) '''
+	/**
+	 * 
+	 * TODO extend with whatever attributes you want to extend this with
+	 * 
+	 */
 	public enum «name»Enum {
 		«commaSeparatedValues»;
 	}	
@@ -153,32 +157,36 @@ class AndroidHttpRequestGenerator implements IGenerator
 	}
 	
 	/**
-	 * 1. Generate http request header Parcelable
-	 * 2. Generate http request URL Parcelable
-	 * 3. Generate http request Json entity Parcelable // TODO put parser here?
-	 * 4. Generate Parcelable for previous three Parcelables
-	 * 5. Generate http response header Parcelable
-	 * 6. Generate http response Json entity Parcelable
-	 * 7. Generate Parcelable for previous two Parcelables
-	 * 8. Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
-	 * 9. Generate http call method
+	 * 
+	 * Parcelable as basic data structure type, reasons are:
+	 * 
+	 * They are explicit, more explicit than the Bundle type.
+	 * They are easily passed on through Bundle type args, using #putParcelable
+	 * There is a direct mapping of a list of composite json objects to a list of Parcelables using #putParcelableArray(List)
+	 * 
+	 * 1.  Generate http request header Parcelable - DONE
+	 * 2.  Generate http request URL Parcelable - DONE
+	 * 3.  Generate http request Json entity Parcelable // TODO put parser here?
+	 * 4.  Generate Parcelable for previous three Parcelables
+	 * 5.  Generate http response header Parcelable
+	 * 6.  Generate http response Json entity Parcelable
+	 * 7.  Generate Parcelable for previous two Parcelables
+	 * 8.  Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
+	 * 9.  Generate http call method
 	 * 10. Generate mock Activity to test the call // TODO
 	 * 11. Generate Spark class to handle the call // TODO
-	 * // TODO also kill boiler plate for the Activity / Fragment
 	 */
 	def androidCreateJavaFiles(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
 	{
 		if (callDefinition.requestHeaders != null)
 		{
-			createParcelableRequestHeaderFile(callDefinition, fsa) /* 1. */
-			createParcelableRequestUrlFile(callDefinition, fsa) /* 2. */
+			createParcelableRequestHeaderFile(callDefinition, fsa) /* 1. */ // TODO write unit test
+			createParcelableRequestUrlFile(callDefinition, fsa) /* 2. */ // TODO write unit test
 			if (callDefinition.method == RestfulMethods.POST || callDefinition.method == RestfulMethods.PUT)
 			{
-				createParcelableRequestJsonFile(callDefinition.jsonToClient.value) // only for POST and PUT
+				createParcelableRequestJsonFile(callDefinition.jsonToClient.value, fsa) // only for POST and PUT // TODO write unit test
 			}
 		}
-		
-		/* 2. */
 	}
 	
 	def createLoader(MobgenCallDefinition callDefinition, IFileSystemAccess fsa)
@@ -310,7 +318,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 	 * can be referenced from the Loader. Then in the http request body entity (method: PUT/POST), #toString can be called on the JSON construct.   
 	 * 
 	 */
-	def createParcelableRequestJsonFile(JsonObjectValue value)
+	def createParcelableRequestJsonFile(JsonObjectValue value, IFileSystemAccess fsa)
 	{
 		// use the enum
 		val composite = value.composite
@@ -345,7 +353,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 		}
 		''')
 		
-		return stringBuilder.toString
+//		return stringBuilder.toString
 	}
 	
 	def mapJsonLiteralValueToJava(JsonLiteralValue value)
@@ -408,6 +416,7 @@ class AndroidHttpRequestGenerator implements IGenerator
 //			parserString.append('''
 //			JSONArray n«recursionDepth» = new JSONArray();
 //			''')
+			// TODO move this code to the validation unit, separation of concerns
 		}else
 		{
 			throw new IllegalArgumentException("Wrong type passed?")

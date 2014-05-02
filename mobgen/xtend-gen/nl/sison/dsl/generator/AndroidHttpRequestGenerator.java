@@ -51,29 +51,34 @@ public class AndroidHttpRequestGenerator implements IGenerator {
   }
   
   /**
-   * 1. Generate http request header Parcelable
-   * 2. Generate http request URL Parcelable
-   * 3. Generate http request Json entity Parcelable // TODO put parser here?
-   * 4. Generate Parcelable for previous three Parcelables
-   * 5. Generate http response header Parcelable
-   * 6. Generate http response Json entity Parcelable
-   * 7. Generate Parcelable for previous two Parcelables
-   * 8. Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
-   * 9. Generate http call method
+   * Parcelable as basic data structure type, reasons are:
+   * 
+   * They are explicit, more explicit than the Bundle type.
+   * They are easily passed on through Bundle type args, using #putParcelable
+   * There is a direct mapping of a list of composite json objects to a list of Parcelables using #putParcelableArray(List)
+   * 
+   * 1.  Generate http request header Parcelable - DONE
+   * 2.  Generate http request URL Parcelable - DONE
+   * 3.  Generate http request Json entity Parcelable // TODO put parser here?
+   * 4.  Generate Parcelable for previous three Parcelables
+   * 5.  Generate http response header Parcelable
+   * 6.  Generate http response Json entity Parcelable
+   * 7.  Generate Parcelable for previous two Parcelables
+   * 8.  Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
+   * 9.  Generate http call method
    * 10. Generate mock Activity to test the call // TODO
    * 11. Generate Spark class to handle the call // TODO
-   * // TODO also kill boiler plate for the Activity / Fragment
    */
-  public String androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
-    String _xifexpression = null;
+  public StringBuilder androidCreateJavaFiles(final MobgenCallDefinition callDefinition, final IFileSystemAccess fsa) {
+    StringBuilder _xifexpression = null;
     MobgenHeader _requestHeaders = callDefinition.getRequestHeaders();
     boolean _notEquals = (!Objects.equal(_requestHeaders, null));
     if (_notEquals) {
-      String _xblockexpression = null;
+      StringBuilder _xblockexpression = null;
       {
         this.createParcelableRequestHeaderFile(callDefinition, fsa);
         this.createParcelableRequestUrlFile(callDefinition, fsa);
-        String _xifexpression_1 = null;
+        StringBuilder _xifexpression_1 = null;
         boolean _or = false;
         RestfulMethods _method = callDefinition.getMethod();
         boolean _equals = Objects.equal(_method, RestfulMethods.POST);
@@ -87,7 +92,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
         if (_or) {
           MobgenJson _jsonToClient = callDefinition.getJsonToClient();
           JsonObjectValue _value = _jsonToClient.getValue();
-          _xifexpression_1 = this.createParcelableRequestJsonFile(_value);
+          _xifexpression_1 = this.createParcelableRequestJsonFile(_value, fsa);
         }
         _xblockexpression = _xifexpression_1;
       }
@@ -302,42 +307,45 @@ public class AndroidHttpRequestGenerator implements IGenerator {
    * Design: pass values to a Parcelable (that is generated), then from a instance method, it spits out a json construct, that
    * can be referenced from the Loader. Then in the http request body entity (method: PUT/POST), #toString can be called on the JSON construct.
    */
-  public String createParcelableRequestJsonFile(final JsonObjectValue value) {
-    final JsonCompositeValue composite = value.getComposite();
-    final JsonLiteralValue scalar = value.getScalar();
-    final StringBuilder stringBuilder = new StringBuilder();
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public JSONObject toJSON() {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("try {");
-    _builder.newLine();
-    stringBuilder.append(_builder);
-    boolean _notEquals = (!Objects.equal(composite, null));
-    if (_notEquals) {
-      this.createCompositeJsonValue(composite, stringBuilder, 0);
-    } else {
-      boolean _notEquals_1 = (!Objects.equal(scalar, null));
-      if (_notEquals_1) {
-        InputOutput.<String>print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a Bundle.");
-        throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a Bundle instead.");
+  public StringBuilder createParcelableRequestJsonFile(final JsonObjectValue value, final IFileSystemAccess fsa) {
+    StringBuilder _xblockexpression = null;
+    {
+      final JsonCompositeValue composite = value.getComposite();
+      final JsonLiteralValue scalar = value.getScalar();
+      final StringBuilder stringBuilder = new StringBuilder();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("public JSONObject toJSON() {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("try {");
+      _builder.newLine();
+      stringBuilder.append(_builder);
+      boolean _notEquals = (!Objects.equal(composite, null));
+      if (_notEquals) {
+        this.createCompositeJsonValue(composite, stringBuilder, 0);
+      } else {
+        boolean _notEquals_1 = (!Objects.equal(scalar, null));
+        if (_notEquals_1) {
+          InputOutput.<String>print("The root JSON value must be a composite type. Skipping Parcelable generation. Use a Bundle.");
+          throw new IllegalArgumentException("Currently, only JSON objects are supported. For android use a Bundle instead.");
+        }
       }
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("\t\t");
+      _builder_1.append("return n0;");
+      _builder_1.newLine();
+      _builder_1.append("\t");
+      CharSequence _generateExceptionHandlerLoggingAndThrow = this.generateExceptionHandlerLoggingAndThrow("JSONException");
+      _builder_1.append(_generateExceptionHandlerLoggingAndThrow, "\t");
+      _builder_1.newLineIfNotEmpty();
+      _builder_1.append("\t");
+      _builder_1.append("}");
+      _builder_1.newLine();
+      _builder_1.append("}");
+      _builder_1.newLine();
+      _xblockexpression = stringBuilder.append(_builder_1);
     }
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("\t\t");
-    _builder_1.append("return n0;");
-    _builder_1.newLine();
-    _builder_1.append("\t");
-    CharSequence _generateExceptionHandlerLoggingAndThrow = this.generateExceptionHandlerLoggingAndThrow("JSONException");
-    _builder_1.append(_generateExceptionHandlerLoggingAndThrow, "\t");
-    _builder_1.newLineIfNotEmpty();
-    _builder_1.append("\t");
-    _builder_1.append("}");
-    _builder_1.newLine();
-    _builder_1.append("}");
-    _builder_1.newLine();
-    stringBuilder.append(_builder_1);
-    return stringBuilder.toString();
+    return _xblockexpression;
   }
   
   public String mapJsonLiteralValueToJava(final JsonLiteralValue value) {

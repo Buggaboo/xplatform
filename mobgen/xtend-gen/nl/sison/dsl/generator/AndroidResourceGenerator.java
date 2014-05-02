@@ -78,6 +78,20 @@ public class AndroidResourceGenerator implements IGenerator {
   
   public CharSequence javaEnumTemplate(final String name, final String commaSeparatedValues) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/**");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* ");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* TODO extend with whatever attributes you want to extend this with");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* ");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/");
+    _builder.newLine();
     _builder.append("public enum ");
     _builder.append(name, "");
     _builder.append("Enum {");
