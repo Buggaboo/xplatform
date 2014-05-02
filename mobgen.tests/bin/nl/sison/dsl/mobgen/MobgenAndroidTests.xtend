@@ -23,10 +23,10 @@ class MobgenAndroidTests {
     /**
      * These are just resource constants for android
      */
-    @Test def testEnumInstance()
+    @Test def void testEnumInstance()
     {
     	val model = parseHelper.parse('''
-    	enum nomnom {
+    	enum Nomnom {
     		a, b, c
     	}
     	''')
@@ -35,7 +35,7 @@ class MobgenAndroidTests {
         underTest.doGenerate(model.eResource, fsa)
         
         val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"NomnomEnum.java"
-        val whatWeGot = fsa.files.get(androidFileName).toString
+        val whatWeGot = fsa.files.get(androidFileName)
  
  		val expected = '''
  		public enum NomnomEnum {
@@ -52,7 +52,7 @@ class MobgenAndroidTests {
     /**
      * This generates enum classes for android
      */
-    @Test def testMapInstanceOnlyKeyValuePairs()
+    @Test def void testMapInstanceOnlyKeyValuePairs()
     {
 		val model = parseHelper.parse('''
         map Alice
@@ -113,7 +113,7 @@ class MobgenAndroidTests {
 				<item>a</item>
 				<item>b</item>
 			</string-array>
-		</resources>'''.toString
+		</resources>'''
 		
 		val whatWeGot = fsa.files.get(androidFileName).toString
 		
