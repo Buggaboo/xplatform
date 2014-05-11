@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import nl.sison.dsl.mobgen.JsonObjectValue
+import nl.sison.dsl.mobgen.Mobgen
 
 class MobgenGenerator implements IGenerator {
 	
@@ -25,12 +26,20 @@ class MobgenGenerator implements IGenerator {
 class AndroidResourceGenerator implements IGenerator
 {
 
-	override doGenerate(Resource input, IFileSystemAccess fsa) {
-		val mapInstances = input.allContents.filter(typeof(MapInstance))
-		fsa.generateFile('mobgen_strings.xml', mapInstances.prepareAndroidMap.androidResourceXMLWrap)
+	override doGenerate(Resource resource, IFileSystemAccess fsa) {
+//		val mapInstances = resource.allContents.filter(typeof(MapInstance))
+//		val enumInstances = resource.allContents.filter(typeof(EnumInstance))
+
+//		val mapInstance = resource.contents.head as MapInstance
+//		fsa.generateFile('mobgen_strings.xml', mapInstance.joinAndroidMapNameWithKeyValuePairs)
 		
-		val enumInstances = input.allContents.filter(typeof(EnumInstance))
-		enumInstances.writeAndroidEnumFiles(fsa)
+//		fsa.generateFile('mobgen_strings.xml', mapInstances.map(m | m.joinAndroidMapNameWithKeyValuePairs ).join(''))
+//		enumInstances.writeAndroidEnumFiles(fsa)
+
+		val mobgen = resource.contents.head as Mobgen
+		val mapInstances = mobgen.resources.filter(typeof(MapInstance))
+		fsa.generateFile('mobgen_strings.xml', mapInstances.map(m | m.joinAndroidMapNameWithKeyValuePairs ).join(''))
+		println(mapInstances.empty)
 	}
 	
 	/**
@@ -52,6 +61,7 @@ class AndroidResourceGenerator implements IGenerator
 	{
 		return s.substring(0, 1).toUpperCase() + s.substring(1);
 	}
+	
 	def javaEnumTemplate(String name, String commaSeparatedValues) '''
 	/**
 	 * 
@@ -97,11 +107,6 @@ class AndroidResourceGenerator implements IGenerator
 	/**
 	 * Map related code
 	 */
-	def String prepareAndroidMap(Iterator<MapInstance> instances)
-	{
-		return instances.map(m | m.joinAndroidMapNameWithKeyValuePairs ).join('')
-	}
-	
 	def String joinAndroidMapNameWithKeyValuePairs(MapInstance instance)
 	{
 		val name = instance.name.toLowerCase
@@ -110,7 +115,7 @@ class AndroidResourceGenerator implements IGenerator
 	
 		var result = new StringBuffer; // TODO use StringBuffer
 
-		while (keys.hasNext && values.hasNext)
+		while (keys.hasNext || values.hasNext)
 		{
 			val value = values.next
 			val key = keys.next
@@ -118,7 +123,7 @@ class AndroidResourceGenerator implements IGenerator
 			{
 				val items = value
 				result.append(name.androidKeyStringArray(key, items.list.values.map(s | s.androidResourceItemize).join('')))
-			}else
+			}else if (value.string != null)
 			{
 				result.append(name.androidKeyString(key, value.string))
 			}
