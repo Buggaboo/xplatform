@@ -23,13 +23,8 @@
       <genEnumLiterals ecoreEnumLiteral="Mobgen.ecore#//JsonLiteralBoolean/false"/>
     </genEnums>
     <genClasses ecoreClass="Mobgen.ecore#//Mobgen">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//Mobgen/platform"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//Mobgen/resources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//Mobgen/calls"/>
-    </genClasses>
-    <genClasses ecoreClass="Mobgen.ecore#//Platform">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//Platform/platforms"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//Platform/generateWhere"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//MobgenCallDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenCallDefinition/name"/>
@@ -80,14 +75,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//JsonArray/items"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//MobgenResourceDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//MobgenResourceDefinition/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MobgenResourceDefinition/name"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//EnumInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//EnumInstance/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//EnumInstance/values"/>
     </genClasses>
     <genClasses ecoreClass="Mobgen.ecore#//MapInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MapInstance/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mobgen.ecore#//MapInstance/keys"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mobgen.ecore#//MapInstance/values"/>
     </genClasses>

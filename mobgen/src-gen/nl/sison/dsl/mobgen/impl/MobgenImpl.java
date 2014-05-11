@@ -8,9 +8,7 @@ import nl.sison.dsl.mobgen.Mobgen;
 import nl.sison.dsl.mobgen.MobgenCallDefinition;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
-import nl.sison.dsl.mobgen.Platform;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,7 +28,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenImpl#getPlatform <em>Platform</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenImpl#getCalls <em>Calls</em>}</li>
  * </ul>
@@ -41,16 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
 {
-  /**
-   * The cached value of the '{@link #getPlatform() <em>Platform</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPlatform()
-   * @generated
-   * @ordered
-   */
-  protected Platform platform;
-
   /**
    * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -97,54 +83,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Platform getPlatform()
-  {
-    return platform;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPlatform(Platform newPlatform, NotificationChain msgs)
-  {
-    Platform oldPlatform = platform;
-    platform = newPlatform;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN__PLATFORM, oldPlatform, newPlatform);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPlatform(Platform newPlatform)
-  {
-    if (newPlatform != platform)
-    {
-      NotificationChain msgs = null;
-      if (platform != null)
-        msgs = ((InternalEObject)platform).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.MOBGEN__PLATFORM, null, msgs);
-      if (newPlatform != null)
-        msgs = ((InternalEObject)newPlatform).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MobgenPackage.MOBGEN__PLATFORM, null, msgs);
-      msgs = basicSetPlatform(newPlatform, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN__PLATFORM, newPlatform, newPlatform));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<MobgenResourceDefinition> getResources()
   {
     if (resources == null)
@@ -178,8 +116,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN__PLATFORM:
-        return basicSetPlatform(null, msgs);
       case MobgenPackage.MOBGEN__RESOURCES:
         return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
       case MobgenPackage.MOBGEN__CALLS:
@@ -198,8 +134,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN__PLATFORM:
-        return getPlatform();
       case MobgenPackage.MOBGEN__RESOURCES:
         return getResources();
       case MobgenPackage.MOBGEN__CALLS:
@@ -219,9 +153,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN__PLATFORM:
-        setPlatform((Platform)newValue);
-        return;
       case MobgenPackage.MOBGEN__RESOURCES:
         getResources().clear();
         getResources().addAll((Collection<? extends MobgenResourceDefinition>)newValue);
@@ -244,9 +175,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN__PLATFORM:
-        setPlatform((Platform)null);
-        return;
       case MobgenPackage.MOBGEN__RESOURCES:
         getResources().clear();
         return;
@@ -267,8 +195,6 @@ public class MobgenImpl extends MinimalEObjectImpl.Container implements Mobgen
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN__PLATFORM:
-        return platform != null;
       case MobgenPackage.MOBGEN__RESOURCES:
         return resources != null && !resources.isEmpty();
       case MobgenPackage.MOBGEN__CALLS:

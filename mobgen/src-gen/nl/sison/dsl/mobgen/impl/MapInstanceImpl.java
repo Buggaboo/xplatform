@@ -8,16 +8,12 @@ import nl.sison.dsl.mobgen.MapInstance;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.NestedType;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -30,7 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.MapInstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MapInstanceImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.MapInstanceImpl#getValues <em>Values</em>}</li>
  * </ul>
@@ -38,28 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MapInstanceImpl extends MinimalEObjectImpl.Container implements MapInstance
+public class MapInstanceImpl extends MobgenResourceDefinitionImpl implements MapInstance
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -99,29 +74,6 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
   protected EClass eStaticClass()
   {
     return MobgenPackage.Literals.MAP_INSTANCE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.MAP_INSTANCE__NAME, oldName, name));
   }
 
   /**
@@ -178,8 +130,6 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
   {
     switch (featureID)
     {
-      case MobgenPackage.MAP_INSTANCE__NAME:
-        return getName();
       case MobgenPackage.MAP_INSTANCE__KEYS:
         return getKeys();
       case MobgenPackage.MAP_INSTANCE__VALUES:
@@ -199,9 +149,6 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
   {
     switch (featureID)
     {
-      case MobgenPackage.MAP_INSTANCE__NAME:
-        setName((String)newValue);
-        return;
       case MobgenPackage.MAP_INSTANCE__KEYS:
         getKeys().clear();
         getKeys().addAll((Collection<? extends String>)newValue);
@@ -224,9 +171,6 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
   {
     switch (featureID)
     {
-      case MobgenPackage.MAP_INSTANCE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case MobgenPackage.MAP_INSTANCE__KEYS:
         getKeys().clear();
         return;
@@ -247,8 +191,6 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
   {
     switch (featureID)
     {
-      case MobgenPackage.MAP_INSTANCE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MobgenPackage.MAP_INSTANCE__KEYS:
         return keys != null && !keys.isEmpty();
       case MobgenPackage.MAP_INSTANCE__VALUES:
@@ -268,9 +210,7 @@ public class MapInstanceImpl extends MinimalEObjectImpl.Container implements Map
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", keys: ");
+    result.append(" (keys: ");
     result.append(keys);
     result.append(')');
     return result.toString();

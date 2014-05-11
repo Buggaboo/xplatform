@@ -68,22 +68,13 @@ public interface MobgenPackage extends EPackage
   int MOBGEN = 0;
 
   /**
-   * The feature id for the '<em><b>Platform</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOBGEN__PLATFORM = 0;
-
-  /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MOBGEN__RESOURCES = 1;
+  int MOBGEN__RESOURCES = 0;
 
   /**
    * The feature id for the '<em><b>Calls</b></em>' containment reference list.
@@ -92,7 +83,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MOBGEN__CALLS = 2;
+  int MOBGEN__CALLS = 1;
 
   /**
    * The number of structural features of the '<em>Mobgen</em>' class.
@@ -101,44 +92,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MOBGEN_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.PlatformImpl <em>Platform</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.impl.PlatformImpl
-   * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getPlatform()
-   * @generated
-   */
-  int PLATFORM = 1;
-
-  /**
-   * The feature id for the '<em><b>Platforms</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLATFORM__PLATFORMS = 0;
-
-  /**
-   * The feature id for the '<em><b>Generate Where</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLATFORM__GENERATE_WHERE = 1;
-
-  /**
-   * The number of structural features of the '<em>Platform</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLATFORM_FEATURE_COUNT = 2;
+  int MOBGEN_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MobgenCallDefinitionImpl <em>Call Definition</em>}' class.
@@ -148,7 +102,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenCallDefinition()
    * @generated
    */
-  int MOBGEN_CALL_DEFINITION = 2;
+  int MOBGEN_CALL_DEFINITION = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -230,7 +184,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeader()
    * @generated
    */
-  int MOBGEN_HEADER = 3;
+  int MOBGEN_HEADER = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -267,7 +221,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderKeyValuePair()
    * @generated
    */
-  int MOBGEN_HEADER_KEY_VALUE_PAIR = 4;
+  int MOBGEN_HEADER_KEY_VALUE_PAIR = 3;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -313,7 +267,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenHeaderParameter()
    * @generated
    */
-  int MOBGEN_HEADER_PARAMETER = 5;
+  int MOBGEN_HEADER_PARAMETER = 4;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -341,7 +295,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenJson()
    * @generated
    */
-  int MOBGEN_JSON = 6;
+  int MOBGEN_JSON = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -378,7 +332,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObjectValue()
    * @generated
    */
-  int JSON_OBJECT_VALUE = 7;
+  int JSON_OBJECT_VALUE = 6;
 
   /**
    * The feature id for the '<em><b>Scalar</b></em>' containment reference.
@@ -415,7 +369,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonCompositeValue()
    * @generated
    */
-  int JSON_COMPOSITE_VALUE = 8;
+  int JSON_COMPOSITE_VALUE = 7;
 
   /**
    * The feature id for the '<em><b>Object Value</b></em>' containment reference.
@@ -452,7 +406,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralValue()
    * @generated
    */
-  int JSON_LITERAL_VALUE = 9;
+  int JSON_LITERAL_VALUE = 8;
 
   /**
    * The feature id for the '<em><b>String Type</b></em>' attribute.
@@ -498,7 +452,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonObject()
    * @generated
    */
-  int JSON_OBJECT = 10;
+  int JSON_OBJECT = 9;
 
   /**
    * The feature id for the '<em><b>Key Value Pair</b></em>' containment reference list.
@@ -526,7 +480,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonKeyValuePair()
    * @generated
    */
-  int JSON_KEY_VALUE_PAIR = 11;
+  int JSON_KEY_VALUE_PAIR = 10;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -563,7 +517,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonArray()
    * @generated
    */
-  int JSON_ARRAY = 12;
+  int JSON_ARRAY = 11;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -591,16 +545,16 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMobgenResourceDefinition()
    * @generated
    */
-  int MOBGEN_RESOURCE_DEFINITION = 13;
+  int MOBGEN_RESOURCE_DEFINITION = 12;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MOBGEN_RESOURCE_DEFINITION__RESOURCES = 0;
+  int MOBGEN_RESOURCE_DEFINITION__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Resource Definition</em>' class.
@@ -619,16 +573,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 14;
-
-  /**
-   * The feature id for the '<em><b>Resources</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENUM_INSTANCE__RESOURCES = MOBGEN_RESOURCE_DEFINITION__RESOURCES;
+  int ENUM_INSTANCE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -637,7 +582,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE__NAME = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 0;
+  int ENUM_INSTANCE__NAME = MOBGEN_RESOURCE_DEFINITION__NAME;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -646,7 +591,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE__VALUES = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 1;
+  int ENUM_INSTANCE__VALUES = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Enum Instance</em>' class.
@@ -655,7 +600,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE_FEATURE_COUNT = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 2;
+  int ENUM_INSTANCE_FEATURE_COUNT = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.MapInstanceImpl <em>Map Instance</em>}' class.
@@ -665,7 +610,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getMapInstance()
    * @generated
    */
-  int MAP_INSTANCE = 15;
+  int MAP_INSTANCE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -674,7 +619,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE__NAME = 0;
+  int MAP_INSTANCE__NAME = MOBGEN_RESOURCE_DEFINITION__NAME;
 
   /**
    * The feature id for the '<em><b>Keys</b></em>' attribute list.
@@ -683,7 +628,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE__KEYS = 1;
+  int MAP_INSTANCE__KEYS = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -692,7 +637,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE__VALUES = 2;
+  int MAP_INSTANCE__VALUES = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Map Instance</em>' class.
@@ -701,7 +646,7 @@ public interface MobgenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAP_INSTANCE_FEATURE_COUNT = 3;
+  int MAP_INSTANCE_FEATURE_COUNT = MOBGEN_RESOURCE_DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.impl.StringListImpl <em>String List</em>}' class.
@@ -711,7 +656,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getStringList()
    * @generated
    */
-  int STRING_LIST = 16;
+  int STRING_LIST = 15;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -739,7 +684,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getNestedType()
    * @generated
    */
-  int NESTED_TYPE = 17;
+  int NESTED_TYPE = 16;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -776,7 +721,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getURI()
    * @generated
    */
-  int URI = 18;
+  int URI = 17;
 
   /**
    * The feature id for the '<em><b>Url Prefix</b></em>' attribute.
@@ -858,7 +803,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getRestfulMethods()
    * @generated
    */
-  int RESTFUL_METHODS = 19;
+  int RESTFUL_METHODS = 18;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonMetaScalarType <em>Json Meta Scalar Type</em>}' enum.
@@ -868,7 +813,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonMetaScalarType()
    * @generated
    */
-  int JSON_META_SCALAR_TYPE = 20;
+  int JSON_META_SCALAR_TYPE = 19;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.JsonLiteralBoolean <em>Json Literal Boolean</em>}' enum.
@@ -878,7 +823,7 @@ public interface MobgenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getJsonLiteralBoolean()
    * @generated
    */
-  int JSON_LITERAL_BOOLEAN = 21;
+  int JSON_LITERAL_BOOLEAN = 20;
 
 
   /**
@@ -890,17 +835,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EClass getMobgen();
-
-  /**
-   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.Mobgen#getPlatform <em>Platform</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Platform</em>'.
-   * @see nl.sison.dsl.mobgen.Mobgen#getPlatform()
-   * @see #getMobgen()
-   * @generated
-   */
-  EReference getMobgen_Platform();
 
   /**
    * Returns the meta object for the containment reference list '{@link nl.sison.dsl.mobgen.Mobgen#getResources <em>Resources</em>}'.
@@ -923,38 +857,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EReference getMobgen_Calls();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.Platform <em>Platform</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Platform</em>'.
-   * @see nl.sison.dsl.mobgen.Platform
-   * @generated
-   */
-  EClass getPlatform();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.Platform#getPlatforms <em>Platforms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Platforms</em>'.
-   * @see nl.sison.dsl.mobgen.Platform#getPlatforms()
-   * @see #getPlatform()
-   * @generated
-   */
-  EAttribute getPlatform_Platforms();
-
-  /**
-   * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.Platform#getGenerateWhere <em>Generate Where</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Generate Where</em>'.
-   * @see nl.sison.dsl.mobgen.Platform#getGenerateWhere()
-   * @see #getPlatform()
-   * @generated
-   */
-  EAttribute getPlatform_GenerateWhere();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.MobgenCallDefinition <em>Call Definition</em>}'.
@@ -1363,15 +1265,15 @@ public interface MobgenPackage extends EPackage
   EClass getMobgenResourceDefinition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link nl.sison.dsl.mobgen.MobgenResourceDefinition#getResources <em>Resources</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.MobgenResourceDefinition#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Resources</em>'.
-   * @see nl.sison.dsl.mobgen.MobgenResourceDefinition#getResources()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see nl.sison.dsl.mobgen.MobgenResourceDefinition#getName()
    * @see #getMobgenResourceDefinition()
    * @generated
    */
-  EReference getMobgenResourceDefinition_Resources();
+  EAttribute getMobgenResourceDefinition_Name();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.EnumInstance <em>Enum Instance</em>}'.
@@ -1382,17 +1284,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EClass getEnumInstance();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.EnumInstance#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see nl.sison.dsl.mobgen.EnumInstance#getName()
-   * @see #getEnumInstance()
-   * @generated
-   */
-  EAttribute getEnumInstance_Name();
 
   /**
    * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.EnumInstance#getValues <em>Values</em>}'.
@@ -1414,17 +1305,6 @@ public interface MobgenPackage extends EPackage
    * @generated
    */
   EClass getMapInstance();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.MapInstance#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see nl.sison.dsl.mobgen.MapInstance#getName()
-   * @see #getMapInstance()
-   * @generated
-   */
-  EAttribute getMapInstance_Name();
 
   /**
    * Returns the meta object for the attribute list '{@link nl.sison.dsl.mobgen.MapInstance#getKeys <em>Keys</em>}'.
@@ -1652,14 +1532,6 @@ public interface MobgenPackage extends EPackage
     EClass MOBGEN = eINSTANCE.getMobgen();
 
     /**
-     * The meta object literal for the '<em><b>Platform</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MOBGEN__PLATFORM = eINSTANCE.getMobgen_Platform();
-
-    /**
      * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1674,32 +1546,6 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EReference MOBGEN__CALLS = eINSTANCE.getMobgen_Calls();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.PlatformImpl <em>Platform</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.impl.PlatformImpl
-     * @see nl.sison.dsl.mobgen.impl.MobgenPackageImpl#getPlatform()
-     * @generated
-     */
-    EClass PLATFORM = eINSTANCE.getPlatform();
-
-    /**
-     * The meta object literal for the '<em><b>Platforms</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PLATFORM__PLATFORMS = eINSTANCE.getPlatform_Platforms();
-
-    /**
-     * The meta object literal for the '<em><b>Generate Where</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PLATFORM__GENERATE_WHERE = eINSTANCE.getPlatform_GenerateWhere();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.MobgenCallDefinitionImpl <em>Call Definition</em>}' class.
@@ -2030,12 +1876,12 @@ public interface MobgenPackage extends EPackage
     EClass MOBGEN_RESOURCE_DEFINITION = eINSTANCE.getMobgenResourceDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MOBGEN_RESOURCE_DEFINITION__RESOURCES = eINSTANCE.getMobgenResourceDefinition_Resources();
+    EAttribute MOBGEN_RESOURCE_DEFINITION__NAME = eINSTANCE.getMobgenResourceDefinition_Name();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.impl.EnumInstanceImpl <em>Enum Instance</em>}' class.
@@ -2046,14 +1892,6 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EClass ENUM_INSTANCE = eINSTANCE.getEnumInstance();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENUM_INSTANCE__NAME = eINSTANCE.getEnumInstance_Name();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
@@ -2072,14 +1910,6 @@ public interface MobgenPackage extends EPackage
      * @generated
      */
     EClass MAP_INSTANCE = eINSTANCE.getMapInstance();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MAP_INSTANCE__NAME = eINSTANCE.getMapInstance_Name();
 
     /**
      * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.

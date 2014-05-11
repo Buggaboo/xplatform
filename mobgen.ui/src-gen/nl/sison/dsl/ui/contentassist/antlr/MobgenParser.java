@@ -37,7 +37,7 @@ public class MobgenParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getMobgenAccess().getAlternatives_1(), "rule__Mobgen__Alternatives_1");
+					put(grammarAccess.getMobgenAccess().getAlternatives(), "rule__Mobgen__Alternatives");
 					put(grammarAccess.getMobgenHeaderKeyValuePairAccess().getAlternatives_2(), "rule__MobgenHeaderKeyValuePair__Alternatives_2");
 					put(grammarAccess.getJsonObjectValueAccess().getAlternatives(), "rule__JsonObjectValue__Alternatives");
 					put(grammarAccess.getJsonCompositeValueAccess().getAlternatives(), "rule__JsonCompositeValue__Alternatives");
@@ -48,9 +48,6 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRestfulMethodsAccess().getAlternatives(), "rule__RestfulMethods__Alternatives");
 					put(grammarAccess.getJsonMetaScalarTypeAccess().getAlternatives(), "rule__JsonMetaScalarType__Alternatives");
 					put(grammarAccess.getJsonLiteralBooleanAccess().getAlternatives(), "rule__JsonLiteralBoolean__Alternatives");
-					put(grammarAccess.getMobgenAccess().getGroup(), "rule__Mobgen__Group__0");
-					put(grammarAccess.getPlatformAccess().getGroup(), "rule__Platform__Group__0");
-					put(grammarAccess.getPlatformAccess().getGroup_2(), "rule__Platform__Group_2__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup(), "rule__MobgenCallDefinition__Group__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6(), "rule__MobgenCallDefinition__Group_6__0");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getGroup_6_5(), "rule__MobgenCallDefinition__Group_6_5__0");
@@ -76,11 +73,8 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
 					put(grammarAccess.getURIAccess().getGroup_2(), "rule__URI__Group_2__0");
 					put(grammarAccess.getURIAccess().getGroup_4(), "rule__URI__Group_4__0");
-					put(grammarAccess.getMobgenAccess().getPlatformAssignment_0(), "rule__Mobgen__PlatformAssignment_0");
-					put(grammarAccess.getMobgenAccess().getResourcesAssignment_1_0(), "rule__Mobgen__ResourcesAssignment_1_0");
-					put(grammarAccess.getMobgenAccess().getCallsAssignment_1_1(), "rule__Mobgen__CallsAssignment_1_1");
-					put(grammarAccess.getPlatformAccess().getPlatformsAssignment_2_0(), "rule__Platform__PlatformsAssignment_2_0");
-					put(grammarAccess.getPlatformAccess().getGenerateWhereAssignment_2_2(), "rule__Platform__GenerateWhereAssignment_2_2");
+					put(grammarAccess.getMobgenAccess().getResourcesAssignment_0(), "rule__Mobgen__ResourcesAssignment_0");
+					put(grammarAccess.getMobgenAccess().getCallsAssignment_1(), "rule__Mobgen__CallsAssignment_1");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getNameAssignment_1(), "rule__MobgenCallDefinition__NameAssignment_1");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getMethodAssignment_3(), "rule__MobgenCallDefinition__MethodAssignment_3");
 					put(grammarAccess.getMobgenCallDefinitionAccess().getUriAssignment_5(), "rule__MobgenCallDefinition__UriAssignment_5");
@@ -110,7 +104,6 @@ public class MobgenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonKeyValuePairAccess().getValueAssignment_2(), "rule__JsonKeyValuePair__ValueAssignment_2");
 					put(grammarAccess.getJsonArrayAccess().getItemsAssignment_1(), "rule__JsonArray__ItemsAssignment_1");
 					put(grammarAccess.getJsonArrayAccess().getItemsAssignment_2_1(), "rule__JsonArray__ItemsAssignment_2_1");
-					put(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesAssignment_0(), "rule__MobgenResourceDefinition__ResourcesAssignment_0");
 					put(grammarAccess.getEnumInstanceAccess().getNameAssignment_1(), "rule__EnumInstance__NameAssignment_1");
 					put(grammarAccess.getEnumInstanceAccess().getValuesAssignment_3(), "rule__EnumInstance__ValuesAssignment_3");
 					put(grammarAccess.getEnumInstanceAccess().getValuesAssignment_4_1(), "rule__EnumInstance__ValuesAssignment_4_1");

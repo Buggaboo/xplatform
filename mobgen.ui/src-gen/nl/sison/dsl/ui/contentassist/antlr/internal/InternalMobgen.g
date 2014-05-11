@@ -72,37 +72,9 @@ ruleMobgen
     }
 	:
 (
-{ before(grammarAccess.getMobgenAccess().getGroup()); }
-(rule__Mobgen__Group__0)
-{ after(grammarAccess.getMobgenAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRulePlatform
-entryRulePlatform 
-:
-{ before(grammarAccess.getPlatformRule()); }
-	 rulePlatform
-{ after(grammarAccess.getPlatformRule()); } 
-	 EOF 
-;
-
-// Rule Platform
-rulePlatform
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getPlatformAccess().getGroup()); }
-(rule__Platform__Group__0)
-{ after(grammarAccess.getPlatformAccess().getGroup()); }
+{ before(grammarAccess.getMobgenAccess().getAlternatives()); }
+(rule__Mobgen__Alternatives)*
+{ after(grammarAccess.getMobgenAccess().getAlternatives()); }
 )
 
 ;
@@ -646,21 +618,21 @@ finally {
 
 
 
-rule__Mobgen__Alternatives_1
+rule__Mobgen__Alternatives
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenAccess().getResourcesAssignment_1_0()); }
-(rule__Mobgen__ResourcesAssignment_1_0)
-{ after(grammarAccess.getMobgenAccess().getResourcesAssignment_1_0()); }
+{ before(grammarAccess.getMobgenAccess().getResourcesAssignment_0()); }
+(rule__Mobgen__ResourcesAssignment_0)
+{ after(grammarAccess.getMobgenAccess().getResourcesAssignment_0()); }
 )
 
     |(
-{ before(grammarAccess.getMobgenAccess().getCallsAssignment_1_1()); }
-(rule__Mobgen__CallsAssignment_1_1)
-{ after(grammarAccess.getMobgenAccess().getCallsAssignment_1_1()); }
+{ before(grammarAccess.getMobgenAccess().getCallsAssignment_1()); }
+(rule__Mobgen__CallsAssignment_1)
+{ after(grammarAccess.getMobgenAccess().getCallsAssignment_1()); }
 )
 
 ;
@@ -808,9 +780,9 @@ rule__MobgenResourceDefinition__Alternatives
     }
 :
 (
-{ before(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesAssignment_0()); }
-(rule__MobgenResourceDefinition__ResourcesAssignment_0)
-{ after(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesAssignment_0()); }
+{ before(grammarAccess.getMobgenResourceDefinitionAccess().getMapInstanceParserRuleCall_0()); }
+	ruleMapInstance
+{ after(grammarAccess.getMobgenResourceDefinitionAccess().getMapInstanceParserRuleCall_0()); }
 )
 
     |(
@@ -938,304 +910,6 @@ rule__JsonLiteralBoolean__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
-rule__Mobgen__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Mobgen__Group__0__Impl
-	rule__Mobgen__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Mobgen__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMobgenAccess().getPlatformAssignment_0()); }
-(rule__Mobgen__PlatformAssignment_0)
-{ after(grammarAccess.getMobgenAccess().getPlatformAssignment_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Mobgen__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Mobgen__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Mobgen__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-(
-{ before(grammarAccess.getMobgenAccess().getAlternatives_1()); }
-(rule__Mobgen__Alternatives_1)
-{ after(grammarAccess.getMobgenAccess().getAlternatives_1()); }
-)
-(
-{ before(grammarAccess.getMobgenAccess().getAlternatives_1()); }
-(rule__Mobgen__Alternatives_1)*
-{ after(grammarAccess.getMobgenAccess().getAlternatives_1()); }
-)
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__Platform__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group__0__Impl
-	rule__Platform__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getPlatformKeyword_0()); }
-
-	'platform' 
-
-{ after(grammarAccess.getPlatformAccess().getPlatformKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Platform__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group__1__Impl
-	rule__Platform__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1()); }
-
-	'{' 
-
-{ after(grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Platform__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group__2__Impl
-	rule__Platform__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-(
-{ before(grammarAccess.getPlatformAccess().getGroup_2()); }
-(rule__Platform__Group_2__0)
-{ after(grammarAccess.getPlatformAccess().getGroup_2()); }
-)
-(
-{ before(grammarAccess.getPlatformAccess().getGroup_2()); }
-(rule__Platform__Group_2__0)*
-{ after(grammarAccess.getPlatformAccess().getGroup_2()); }
-)
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Platform__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3()); }
-
-	'}' 
-
-{ after(grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
-rule__Platform__Group_2__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group_2__0__Impl
-	rule__Platform__Group_2__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group_2__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getPlatformsAssignment_2_0()); }
-(rule__Platform__PlatformsAssignment_2_0)
-{ after(grammarAccess.getPlatformAccess().getPlatformsAssignment_2_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Platform__Group_2__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group_2__1__Impl
-	rule__Platform__Group_2__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group_2__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1()); }
-
-	'->' 
-
-{ after(grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Platform__Group_2__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Platform__Group_2__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__Group_2__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getGenerateWhereAssignment_2_2()); }
-(rule__Platform__GenerateWhereAssignment_2_2)
-{ after(grammarAccess.getPlatformAccess().getGenerateWhereAssignment_2_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
 
 
 
@@ -4545,14 +4219,14 @@ finally {
 
 
 
-rule__Mobgen__PlatformAssignment_0
+rule__Mobgen__ResourcesAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenAccess().getPlatformPlatformParserRuleCall_0_0()); }
-	rulePlatform{ after(grammarAccess.getMobgenAccess().getPlatformPlatformParserRuleCall_0_0()); }
+{ before(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_0_0()); }
+	ruleMobgenResourceDefinition{ after(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_0_0()); }
 )
 
 ;
@@ -4560,59 +4234,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Mobgen__ResourcesAssignment_1_0
+rule__Mobgen__CallsAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_1_0_0()); }
-	ruleMobgenResourceDefinition{ after(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_1_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Mobgen__CallsAssignment_1_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_1_0()); }
-	ruleMobgenCallDefinition{ after(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__PlatformsAssignment_2_0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getPlatformsIDTerminalRuleCall_2_0_0()); }
-	RULE_ID{ after(grammarAccess.getPlatformAccess().getPlatformsIDTerminalRuleCall_2_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Platform__GenerateWhereAssignment_2_2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPlatformAccess().getGenerateWhereSTRINGTerminalRuleCall_2_2_0()); }
-	RULE_STRING{ after(grammarAccess.getPlatformAccess().getGenerateWhereSTRINGTerminalRuleCall_2_2_0()); }
+{ before(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_0()); }
+	ruleMobgenCallDefinition{ after(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_0()); }
 )
 
 ;
@@ -5049,21 +4678,6 @@ rule__JsonArray__ItemsAssignment_2_1
 (
 { before(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); }
 	ruleJsonObjectValue{ after(grammarAccess.getJsonArrayAccess().getItemsJsonObjectValueParserRuleCall_2_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MobgenResourceDefinition__ResourcesAssignment_0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); }
-	ruleMapInstance{ after(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); }
 )
 
 ;

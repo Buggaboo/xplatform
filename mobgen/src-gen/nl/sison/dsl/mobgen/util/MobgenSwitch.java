@@ -79,13 +79,6 @@ public class MobgenSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MobgenPackage.PLATFORM:
-      {
-        Platform platform = (Platform)theEObject;
-        T result = casePlatform(platform);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MobgenPackage.MOBGEN_CALL_DEFINITION:
       {
         MobgenCallDefinition mobgenCallDefinition = (MobgenCallDefinition)theEObject;
@@ -182,6 +175,7 @@ public class MobgenSwitch<T> extends Switch<T>
       {
         MapInstance mapInstance = (MapInstance)theEObject;
         T result = caseMapInstance(mapInstance);
+        if (result == null) result = caseMobgenResourceDefinition(mapInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -222,22 +216,6 @@ public class MobgenSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMobgen(Mobgen object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Platform</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Platform</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePlatform(Platform object)
   {
     return null;
   }

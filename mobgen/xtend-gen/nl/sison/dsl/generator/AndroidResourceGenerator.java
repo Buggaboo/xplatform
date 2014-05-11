@@ -1,22 +1,24 @@
 package nl.sison.dsl.generator;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Iterators;
+import com.google.common.collect.Iterables;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.MapInstance;
+import nl.sison.dsl.mobgen.Mobgen;
+import nl.sison.dsl.mobgen.MobgenResourceDefinition;
 import nl.sison.dsl.mobgen.NestedType;
 import nl.sison.dsl.mobgen.StringList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -24,15 +26,22 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
 public class AndroidResourceGenerator implements IGenerator {
-  public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
-    TreeIterator<EObject> _allContents = input.getAllContents();
-    final Iterator<MapInstance> mapInstances = Iterators.<MapInstance>filter(_allContents, MapInstance.class);
-    String _prepareAndroidMap = this.prepareAndroidMap(mapInstances);
-    CharSequence _androidResourceXMLWrap = this.androidResourceXMLWrap(_prepareAndroidMap);
-    fsa.generateFile("mobgen_strings.xml", _androidResourceXMLWrap);
-    TreeIterator<EObject> _allContents_1 = input.getAllContents();
-    final Iterator<EnumInstance> enumInstances = Iterators.<EnumInstance>filter(_allContents_1, EnumInstance.class);
-    this.writeAndroidEnumFiles(enumInstances, fsa);
+  public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    EList<EObject> _contents = resource.getContents();
+    EObject _head = IterableExtensions.<EObject>head(_contents);
+    final Mobgen mobgen = ((Mobgen) _head);
+    EList<MobgenResourceDefinition> _resources = mobgen.getResources();
+    final Iterable<MapInstance> mapInstances = Iterables.<MapInstance>filter(_resources, MapInstance.class);
+    final Function1<MapInstance,String> _function = new Function1<MapInstance,String>() {
+      public String apply(final MapInstance m) {
+        return AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
+      }
+    };
+    Iterable<String> _map = IterableExtensions.<MapInstance, String>map(mapInstances, _function);
+    String _join = IterableExtensions.join(_map, "");
+    fsa.generateFile("mobgen_strings.xml", _join);
+    boolean _isEmpty = IterableExtensions.isEmpty(mapInstances);
+    InputOutput.<Boolean>println(Boolean.valueOf(_isEmpty));
   }
   
   /**
@@ -189,16 +198,6 @@ public class AndroidResourceGenerator implements IGenerator {
   /**
    * Map related code
    */
-  public String prepareAndroidMap(final Iterator<MapInstance> instances) {
-    final Function1<MapInstance,String> _function = new Function1<MapInstance,String>() {
-      public String apply(final MapInstance m) {
-        return AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
-      }
-    };
-    Iterator<String> _map = IteratorExtensions.<MapInstance, String>map(instances, _function);
-    return IteratorExtensions.join(_map, "");
-  }
-  
   public String joinAndroidMapNameWithKeyValuePairs(final MapInstance instance) {
     String _name = instance.getName();
     final String name = _name.toLowerCase();
@@ -207,15 +206,15 @@ public class AndroidResourceGenerator implements IGenerator {
     EList<NestedType> _values = instance.getValues();
     final ListIterator<NestedType> values = _values.listIterator();
     StringBuffer result = new StringBuffer();
-    boolean _and = false;
+    boolean _or = false;
     boolean _hasNext = keys.hasNext();
-    if (!_hasNext) {
-      _and = false;
+    if (_hasNext) {
+      _or = true;
     } else {
       boolean _hasNext_1 = values.hasNext();
-      _and = _hasNext_1;
+      _or = _hasNext_1;
     }
-    boolean _while = _and;
+    boolean _while = _or;
     while (_while) {
       {
         final NestedType value = values.next();
@@ -237,19 +236,23 @@ public class AndroidResourceGenerator implements IGenerator {
           result.append(_androidKeyStringArray);
         } else {
           String _string = value.getString();
-          CharSequence _androidKeyString = this.androidKeyString(name, key, _string);
-          result.append(_androidKeyString);
+          boolean _notEquals_1 = (!Objects.equal(_string, null));
+          if (_notEquals_1) {
+            String _string_1 = value.getString();
+            CharSequence _androidKeyString = this.androidKeyString(name, key, _string_1);
+            result.append(_androidKeyString);
+          }
         }
       }
-      boolean _and_1 = false;
+      boolean _or_1 = false;
       boolean _hasNext_2 = keys.hasNext();
-      if (!_hasNext_2) {
-        _and_1 = false;
+      if (_hasNext_2) {
+        _or_1 = true;
       } else {
         boolean _hasNext_3 = values.hasNext();
-        _and_1 = _hasNext_3;
+        _or_1 = _hasNext_3;
       }
-      _while = _and_1;
+      _while = _or_1;
     }
     return result.toString();
   }

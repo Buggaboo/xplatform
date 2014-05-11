@@ -66,7 +66,6 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
     switch (eClass.getClassifierID())
     {
       case MobgenPackage.MOBGEN: return createMobgen();
-      case MobgenPackage.PLATFORM: return createPlatform();
       case MobgenPackage.MOBGEN_CALL_DEFINITION: return createMobgenCallDefinition();
       case MobgenPackage.MOBGEN_HEADER: return createMobgenHeader();
       case MobgenPackage.MOBGEN_HEADER_KEY_VALUE_PAIR: return createMobgenHeaderKeyValuePair();
@@ -140,17 +139,6 @@ public class MobgenFactoryImpl extends EFactoryImpl implements MobgenFactory
   {
     MobgenImpl mobgen = new MobgenImpl();
     return mobgen;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Platform createPlatform()
-  {
-    PlatformImpl platform = new PlatformImpl();
-    return platform;
   }
 
   /**

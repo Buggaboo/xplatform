@@ -32,15 +32,6 @@ public interface MobgenFactory extends EFactory
   Mobgen createMobgen();
 
   /**
-   * Returns a new object of class '<em>Platform</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Platform</em>'.
-   * @generated
-   */
-  Platform createPlatform();
-
-  /**
    * Returns a new object of class '<em>Call Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

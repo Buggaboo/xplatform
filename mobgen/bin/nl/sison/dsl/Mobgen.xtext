@@ -26,19 +26,19 @@ generate mobgen "http://www.sison.nl/dsl/Mobgen"
  * Mobgen http call generator parser
  * 
  */
+ 
 Mobgen:
-	platform=Platform
-	(	
-		resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition	
-	)+
+	(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)*
 ;
 
+/*
 Platform:
 	'platform'
 	'{'
 		(platforms+=ID '->' generateWhere+=STRING)+
 	'}'
 ;
+*/
 
 /**
  * Only POST / PUT request method can do a 'server' 'expects' 
@@ -137,7 +137,7 @@ terminal JSON_NUMBER:
  */
  
 MobgenResourceDefinition:
-	resources += MapInstance | EnumInstance
+	MapInstance | EnumInstance
 ;
 
 

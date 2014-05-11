@@ -2,23 +2,15 @@
  */
 package nl.sison.dsl.mobgen.impl;
 
-import java.util.Collection;
-
-import nl.sison.dsl.mobgen.MapInstance;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenResourceDefinitionImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.impl.MobgenResourceDefinitionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +28,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container implements MobgenResourceDefinition
 {
   /**
-   * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResources()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<MapInstance> resources;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +73,9 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<MapInstance> getResources()
+  public String getName()
   {
-    if (resources == null)
-    {
-      resources = new EObjectContainmentEList<MapInstance>(MapInstance.class, this, MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES);
-    }
-    return resources;
+    return name;
   }
 
   /**
@@ -85,15 +83,12 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setName(String newName)
   {
-    switch (featureID)
-    {
-      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES:
-        return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.MOBGEN_RESOURCE_DEFINITION__NAME, oldName, name));
   }
 
   /**
@@ -106,8 +101,8 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES:
-        return getResources();
+      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,15 +112,13 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES:
-        getResources().clear();
-        getResources().addAll((Collection<? extends MapInstance>)newValue);
+      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +134,8 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES:
-        getResources().clear();
+      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +151,27 @@ public class MobgenResourceDefinitionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__RESOURCES:
-        return resources != null && !resources.isEmpty();
+      case MobgenPackage.MOBGEN_RESOURCE_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //MobgenResourceDefinitionImpl

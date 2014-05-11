@@ -7,13 +7,9 @@ import java.util.Collection;
 import nl.sison.dsl.mobgen.EnumInstance;
 import nl.sison.dsl.mobgen.MobgenPackage;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -24,7 +20,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.impl.EnumInstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.impl.EnumInstanceImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
@@ -33,26 +28,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  */
 public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements EnumInstance
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -89,29 +64,6 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MobgenPackage.ENUM_INSTANCE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<String> getValues()
   {
     if (values == null)
@@ -131,8 +83,6 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
   {
     switch (featureID)
     {
-      case MobgenPackage.ENUM_INSTANCE__NAME:
-        return getName();
       case MobgenPackage.ENUM_INSTANCE__VALUES:
         return getValues();
     }
@@ -150,9 +100,6 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
   {
     switch (featureID)
     {
-      case MobgenPackage.ENUM_INSTANCE__NAME:
-        setName((String)newValue);
-        return;
       case MobgenPackage.ENUM_INSTANCE__VALUES:
         getValues().clear();
         getValues().addAll((Collection<? extends String>)newValue);
@@ -171,9 +118,6 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
   {
     switch (featureID)
     {
-      case MobgenPackage.ENUM_INSTANCE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case MobgenPackage.ENUM_INSTANCE__VALUES:
         getValues().clear();
         return;
@@ -191,8 +135,6 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
   {
     switch (featureID)
     {
-      case MobgenPackage.ENUM_INSTANCE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MobgenPackage.ENUM_INSTANCE__VALUES:
         return values != null && !values.isEmpty();
     }
@@ -210,9 +152,7 @@ public class EnumInstanceImpl extends MobgenResourceDefinitionImpl implements En
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", values: ");
+    result.append(" (values: ");
     result.append(values);
     result.append(')');
     return result.toString();

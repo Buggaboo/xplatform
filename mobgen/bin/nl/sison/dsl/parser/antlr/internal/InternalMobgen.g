@@ -81,34 +81,16 @@ ruleMobgen returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMobgenAccess().getPlatformPlatformParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_0_0()); 
 	    }
-		lv_platform_0_0=rulePlatform		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMobgenRule());
-	        }
-       		set(
-       			$current, 
-       			"platform",
-        		lv_platform_0_0, 
-        		"Platform");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getMobgenAccess().getResourcesMobgenResourceDefinitionParserRuleCall_1_0_0()); 
-	    }
-		lv_resources_1_0=ruleMobgenResourceDefinition		{
+		lv_resources_0_0=ruleMobgenResourceDefinition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMobgenRule());
 	        }
        		add(
        			$current, 
        			"resources",
-        		lv_resources_1_0, 
+        		lv_resources_0_0, 
         		"MobgenResourceDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -118,95 +100,22 @@ ruleMobgen returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getMobgenAccess().getCallsMobgenCallDefinitionParserRuleCall_1_0()); 
 	    }
-		lv_calls_2_0=ruleMobgenCallDefinition		{
+		lv_calls_1_0=ruleMobgenCallDefinition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMobgenRule());
 	        }
        		add(
        			$current, 
        			"calls",
-        		lv_calls_2_0, 
+        		lv_calls_1_0, 
         		"MobgenCallDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))+)
-;
-
-
-
-
-
-// Entry rule entryRulePlatform
-entryRulePlatform returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPlatformRule()); }
-	 iv_rulePlatform=rulePlatform 
-	 { $current=$iv_rulePlatform.current; } 
-	 EOF 
-;
-
-// Rule Platform
-rulePlatform returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='platform' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getPlatformAccess().getPlatformKeyword_0());
-    }
-	otherlv_1='{' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_1());
-    }
-((
-(
-		lv_platforms_2_0=RULE_ID
-		{
-			newLeafNode(lv_platforms_2_0, grammarAccess.getPlatformAccess().getPlatformsIDTerminalRuleCall_2_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPlatformRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"platforms",
-        		lv_platforms_2_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_3='->' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getPlatformAccess().getHyphenMinusGreaterThanSignKeyword_2_1());
-    }
-(
-(
-		lv_generateWhere_4_0=RULE_STRING
-		{
-			newLeafNode(lv_generateWhere_4_0, grammarAccess.getPlatformAccess().getGenerateWhereSTRINGTerminalRuleCall_2_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPlatformRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"generateWhere",
-        		lv_generateWhere_4_0, 
-        		"STRING");
-	    }
-
-)
-))+	otherlv_5='}' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_3());
-    }
-)
+))*
 ;
 
 
@@ -1180,25 +1089,16 @@ ruleMobgenResourceDefinition returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
 (
-		{ 
-	        newCompositeNode(grammarAccess.getMobgenResourceDefinitionAccess().getResourcesMapInstanceParserRuleCall_0_0()); 
-	    }
-		lv_resources_0_0=ruleMapInstance		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMobgenResourceDefinitionRule());
-	        }
-       		add(
-       			$current, 
-       			"resources",
-        		lv_resources_0_0, 
-        		"MapInstance");
-	        afterParserOrEnumRuleCall();
-	    }
+    { 
+        newCompositeNode(grammarAccess.getMobgenResourceDefinitionAccess().getMapInstanceParserRuleCall_0()); 
+    }
+    this_MapInstance_0=ruleMapInstance
+    { 
+        $current = $this_MapInstance_0.current; 
+        afterParserOrEnumRuleCall();
+    }
 
-)
-)
     |
     { 
         newCompositeNode(grammarAccess.getMobgenResourceDefinitionAccess().getEnumInstanceParserRuleCall_1()); 

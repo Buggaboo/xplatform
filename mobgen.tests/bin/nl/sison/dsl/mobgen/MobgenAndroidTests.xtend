@@ -18,36 +18,37 @@ import static org.junit.Assert.*
 class MobgenAndroidTests {
      
     @Inject IGenerator underTest
-    @Inject ParseHelper<Mobgen> parseHelper 
+    @Inject ParseHelper<Mobgen> parseHelper
     
     /**
      * These are just resource constants for android
-     */
-    @Test def void testEnumInstance()
-    {
-    	val model = parseHelper.parse('''
-    	enum Nomnom {
-    		a, b, c
-    	}
-    	''')
-    	
-        val fsa = new InMemoryFileSystemAccess()
-        underTest.doGenerate(model.eResource, fsa)
-        
-        val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"NomnomEnum.java"
-        val whatWeGot = fsa.files.get(androidFileName)
- 
- 		val expected = '''
- 		public enum NomnomEnum {
- 			a, b, c;
- 		}
- 		'''.toString
- 
- 		println("expected: " + expected)
-		println("what we got: " + whatWeGot)
- 
- 		assertEquals(expected, whatWeGot)
-	}
+     */     
+//    @Test def void testEnumInstance()
+//    {
+//    	val model = parseHelper.parse('''
+//    	enum Nomnom {
+//    		a, b, c
+//    	}
+//    	''')
+//    	
+//        val fsa = new InMemoryFileSystemAccess()
+//        underTest.doGenerate(model.eResource, fsa)
+//        
+//        val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"NomnomEnum.java"
+//        val whatWeGot = fsa.files.get(androidFileName)
+//        assertTrue(fsa.files.containsKey(androidFileName))
+// 
+// 		val expected = '''
+// 		public enum NomnomEnum {
+// 			a, b, c;
+// 		}
+// 		'''.toString
+// 
+// 		println("expected: " + expected)
+//		println("what we got: " + whatWeGot)
+// 
+// 		assertEquals(expected, whatWeGot)
+//	}
     
     /**
      * This generates enum classes for android
@@ -67,10 +68,9 @@ class MobgenAndroidTests {
         val fsa = new InMemoryFileSystemAccess()
         underTest.doGenerate(model.eResource, fsa)            
             
-//		println(fsa.files)
         val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"mobgen_strings.xml"
 
-//		assertTrue(fsa.files.containsKey(androidFileName))
+		assertTrue(fsa.files.containsKey(androidFileName))
 		
 		val expected ='''
 		<?xml version="1.0" encoding="utf-8"?>
@@ -89,7 +89,7 @@ class MobgenAndroidTests {
         assertEquals(expected, whatWeGot)
     }
     
-	@Test def testMapInstanceOnlyLists()
+	@Test def void testMapInstanceOnlyLists()
     {
 		val model = parseHelper.parse('''
         map Alice
@@ -101,10 +101,11 @@ class MobgenAndroidTests {
         val fsa = new InMemoryFileSystemAccess()
         underTest.doGenerate(model.eResource, fsa)            
             
-//		println(fsa.files)
+		println(fsa.allFiles)
         val androidFileName = IFileSystemAccess::DEFAULT_OUTPUT+"mobgen_strings.xml"
+//        println("default output: " + androidFileName)
 
-//		assertTrue(fsa.files.containsKey(androidFileName))
+		assertTrue(fsa.files.containsKey(androidFileName))
 		
 		val expected ='''
 		<?xml version="1.0" encoding="utf-8"?>
@@ -115,7 +116,7 @@ class MobgenAndroidTests {
 			</string-array>
 		</resources>'''
 		
-		val whatWeGot = fsa.files.get(androidFileName).toString
+		val whatWeGot = fsa.allFiles.get(androidFileName).toString
 		
 		println("expected: " + expected)
 		println("what we got: " + whatWeGot)

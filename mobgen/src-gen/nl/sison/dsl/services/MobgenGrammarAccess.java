@@ -20,94 +20,34 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class MobgenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mobgen");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPlatformAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPlatformPlatformParserRuleCall_0_0 = (RuleCall)cPlatformAssignment_0.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cResourcesAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cResourcesMobgenResourceDefinitionParserRuleCall_1_0_0 = (RuleCall)cResourcesAssignment_1_0.eContents().get(0);
-		private final Assignment cCallsAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cCallsMobgenCallDefinitionParserRuleCall_1_1_0 = (RuleCall)cCallsAssignment_1_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cResourcesAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cResourcesMobgenResourceDefinitionParserRuleCall_0_0 = (RuleCall)cResourcesAssignment_0.eContents().get(0);
+		private final Assignment cCallsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCallsMobgenCallDefinitionParserRuleCall_1_0 = (RuleCall)cCallsAssignment_1.eContents().get(0);
 		
 		/// **
 		// * 
 		// * Mobgen http call generator parser
 		// * 
 		// * / Mobgen:
-		//	platform=Platform (resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)+;
+		//	(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)*;
 		public ParserRule getRule() { return rule; }
 
-		//platform=Platform (resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)+
-		public Group getGroup() { return cGroup; }
-
-		//platform=Platform
-		public Assignment getPlatformAssignment_0() { return cPlatformAssignment_0; }
-
-		//Platform
-		public RuleCall getPlatformPlatformParserRuleCall_0_0() { return cPlatformPlatformParserRuleCall_0_0; }
-
-		//(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)+
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		//(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)*
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//resources+=MobgenResourceDefinition
-		public Assignment getResourcesAssignment_1_0() { return cResourcesAssignment_1_0; }
+		public Assignment getResourcesAssignment_0() { return cResourcesAssignment_0; }
 
 		//MobgenResourceDefinition
-		public RuleCall getResourcesMobgenResourceDefinitionParserRuleCall_1_0_0() { return cResourcesMobgenResourceDefinitionParserRuleCall_1_0_0; }
+		public RuleCall getResourcesMobgenResourceDefinitionParserRuleCall_0_0() { return cResourcesMobgenResourceDefinitionParserRuleCall_0_0; }
 
 		//calls+=MobgenCallDefinition
-		public Assignment getCallsAssignment_1_1() { return cCallsAssignment_1_1; }
+		public Assignment getCallsAssignment_1() { return cCallsAssignment_1; }
 
 		//MobgenCallDefinition
-		public RuleCall getCallsMobgenCallDefinitionParserRuleCall_1_1_0() { return cCallsMobgenCallDefinitionParserRuleCall_1_1_0; }
-	}
-
-	public class PlatformElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Platform");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPlatformKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cPlatformsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cPlatformsIDTerminalRuleCall_2_0_0 = (RuleCall)cPlatformsAssignment_2_0.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cGenerateWhereAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cGenerateWhereSTRINGTerminalRuleCall_2_2_0 = (RuleCall)cGenerateWhereAssignment_2_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Platform:
-		//	"platform" "{" (platforms+=ID "->" generateWhere+=STRING)+ "}";
-		public ParserRule getRule() { return rule; }
-
-		//"platform" "{" (platforms+=ID "->" generateWhere+=STRING)+ "}"
-		public Group getGroup() { return cGroup; }
-
-		//"platform"
-		public Keyword getPlatformKeyword_0() { return cPlatformKeyword_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//(platforms+=ID "->" generateWhere+=STRING)+
-		public Group getGroup_2() { return cGroup_2; }
-
-		//platforms+=ID
-		public Assignment getPlatformsAssignment_2_0() { return cPlatformsAssignment_2_0; }
-
-		//ID
-		public RuleCall getPlatformsIDTerminalRuleCall_2_0_0() { return cPlatformsIDTerminalRuleCall_2_0_0; }
-
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2_1() { return cHyphenMinusGreaterThanSignKeyword_2_1; }
-
-		//generateWhere+=STRING
-		public Assignment getGenerateWhereAssignment_2_2() { return cGenerateWhereAssignment_2_2; }
-
-		//STRING
-		public RuleCall getGenerateWhereSTRINGTerminalRuleCall_2_2_0() { return cGenerateWhereSTRINGTerminalRuleCall_2_2_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public RuleCall getCallsMobgenCallDefinitionParserRuleCall_1_0() { return cCallsMobgenCallDefinitionParserRuleCall_1_0; }
 	}
 
 	public class MobgenCallDefinitionElements extends AbstractParserRuleElementFinder {
@@ -145,7 +85,14 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cJsonToServerAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cJsonToServerMobgenJsonParserRuleCall_8_2_0 = (RuleCall)cJsonToServerAssignment_8_2.eContents().get(0);
 		
-		/// **
+		/// *
+		//Platform:
+		//	'platform'
+		//	'{'
+		//		(platforms+=ID '->' generateWhere+=STRING)+
+		//	'}'
+		//;
+		// * / / **
 		// * Only POST / PUT request method can do a 'server' 'expects' 
 		// * / MobgenCallDefinition:
 		//	"call" name=ID ":" method=RestfulMethods "from" uri=URI ("with" "headers" "from" "request" requestHeaders=MobgenHeader
@@ -673,8 +620,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	public class MobgenResourceDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MobgenResourceDefinition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cResourcesAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cResourcesMapInstanceParserRuleCall_0_0 = (RuleCall)cResourcesAssignment_0.eContents().get(0);
+		private final RuleCall cMapInstanceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cEnumInstanceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		/// **
@@ -682,17 +628,14 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		// * Mobgen resource generator
 		// * 
 		// * / MobgenResourceDefinition:
-		//	resources+=MapInstance | EnumInstance;
+		//	MapInstance | EnumInstance;
 		public ParserRule getRule() { return rule; }
 
-		//resources+=MapInstance | EnumInstance
+		//MapInstance | EnumInstance
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//resources+=MapInstance
-		public Assignment getResourcesAssignment_0() { return cResourcesAssignment_0; }
-
 		//MapInstance
-		public RuleCall getResourcesMapInstanceParserRuleCall_0_0() { return cResourcesMapInstanceParserRuleCall_0_0; }
+		public RuleCall getMapInstanceParserRuleCall_0() { return cMapInstanceParserRuleCall_0; }
 
 		//EnumInstance
 		public RuleCall getEnumInstanceParserRuleCall_1() { return cEnumInstanceParserRuleCall_1; }
@@ -1146,7 +1089,6 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private MobgenElements pMobgen;
-	private PlatformElements pPlatform;
 	private MobgenCallDefinitionElements pMobgenCallDefinition;
 	private MobgenHeaderElements pMobgenHeader;
 	private MobgenHeaderKeyValuePairElements pMobgenHeaderKeyValuePair;
@@ -1219,7 +1161,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	// * Mobgen http call generator parser
 	// * 
 	// * / Mobgen:
-	//	platform=Platform (resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)+;
+	//	(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)*;
 	public MobgenElements getMobgenAccess() {
 		return (pMobgen != null) ? pMobgen : (pMobgen = new MobgenElements());
 	}
@@ -1228,17 +1170,14 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 		return getMobgenAccess().getRule();
 	}
 
+	/// *
 	//Platform:
-	//	"platform" "{" (platforms+=ID "->" generateWhere+=STRING)+ "}";
-	public PlatformElements getPlatformAccess() {
-		return (pPlatform != null) ? pPlatform : (pPlatform = new PlatformElements());
-	}
-	
-	public ParserRule getPlatformRule() {
-		return getPlatformAccess().getRule();
-	}
-
-	/// **
+	//	'platform'
+	//	'{'
+	//		(platforms+=ID '->' generateWhere+=STRING)+
+	//	'}'
+	//;
+	// * / / **
 	// * Only POST / PUT request method can do a 'server' 'expects' 
 	// * / MobgenCallDefinition:
 	//	"call" name=ID ":" method=RestfulMethods "from" uri=URI ("with" "headers" "from" "request" requestHeaders=MobgenHeader
@@ -1416,7 +1355,7 @@ public class MobgenGrammarAccess extends AbstractGrammarElementFinder {
 	// * Mobgen resource generator
 	// * 
 	// * / MobgenResourceDefinition:
-	//	resources+=MapInstance | EnumInstance;
+	//	MapInstance | EnumInstance;
 	public MobgenResourceDefinitionElements getMobgenResourceDefinitionAccess() {
 		return (pMobgenResourceDefinition != null) ? pMobgenResourceDefinition : (pMobgenResourceDefinition = new MobgenResourceDefinitionElements());
 	}

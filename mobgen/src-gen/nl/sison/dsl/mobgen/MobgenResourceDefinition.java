@@ -2,8 +2,6 @@
  */
 package nl.sison.dsl.mobgen;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.MobgenResourceDefinition#getResources <em>Resources</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.MobgenResourceDefinition#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,19 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface MobgenResourceDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
-   * The list contents are of type {@link nl.sison.dsl.mobgen.MapInstance}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Resources</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Resources</em>' containment reference list.
-   * @see nl.sison.dsl.mobgen.MobgenPackage#getMobgenResourceDefinition_Resources()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see nl.sison.dsl.mobgen.MobgenPackage#getMobgenResourceDefinition_Name()
+   * @model
    * @generated
    */
-  EList<MapInstance> getResources();
+  String getName();
+
+  /**
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.MobgenResourceDefinition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
 } // MobgenResourceDefinition

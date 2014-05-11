@@ -22,7 +22,6 @@ import nl.sison.dsl.mobgen.MobgenJson;
 import nl.sison.dsl.mobgen.MobgenPackage;
 import nl.sison.dsl.mobgen.MobgenResourceDefinition;
 import nl.sison.dsl.mobgen.NestedType;
-import nl.sison.dsl.mobgen.Platform;
 import nl.sison.dsl.mobgen.RestfulMethods;
 import nl.sison.dsl.mobgen.StringList;
 
@@ -48,13 +47,6 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * @generated
    */
   private EClass mobgenEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass platformEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -274,7 +266,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMobgen_Platform()
+  public EReference getMobgen_Resources()
   {
     return (EReference)mobgenEClass.getEStructuralFeatures().get(0);
   }
@@ -284,49 +276,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMobgen_Resources()
-  {
-    return (EReference)mobgenEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMobgen_Calls()
   {
-    return (EReference)mobgenEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPlatform()
-  {
-    return platformEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPlatform_Platforms()
-  {
-    return (EAttribute)platformEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPlatform_GenerateWhere()
-  {
-    return (EAttribute)platformEClass.getEStructuralFeatures().get(1);
+    return (EReference)mobgenEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -714,9 +666,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMobgenResourceDefinition_Resources()
+  public EAttribute getMobgenResourceDefinition_Name()
   {
-    return (EReference)mobgenResourceDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)mobgenResourceDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -734,19 +686,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEnumInstance_Name()
-  {
-    return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getEnumInstance_Values()
   {
-    return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -764,7 +706,7 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMapInstance_Name()
+  public EAttribute getMapInstance_Keys()
   {
     return (EAttribute)mapInstanceEClass.getEStructuralFeatures().get(0);
   }
@@ -774,19 +716,9 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMapInstance_Keys()
-  {
-    return (EAttribute)mapInstanceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMapInstance_Values()
   {
-    return (EReference)mapInstanceEClass.getEStructuralFeatures().get(2);
+    return (EReference)mapInstanceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -980,13 +912,8 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
 
     // Create classes and their features
     mobgenEClass = createEClass(MOBGEN);
-    createEReference(mobgenEClass, MOBGEN__PLATFORM);
     createEReference(mobgenEClass, MOBGEN__RESOURCES);
     createEReference(mobgenEClass, MOBGEN__CALLS);
-
-    platformEClass = createEClass(PLATFORM);
-    createEAttribute(platformEClass, PLATFORM__PLATFORMS);
-    createEAttribute(platformEClass, PLATFORM__GENERATE_WHERE);
 
     mobgenCallDefinitionEClass = createEClass(MOBGEN_CALL_DEFINITION);
     createEAttribute(mobgenCallDefinitionEClass, MOBGEN_CALL_DEFINITION__NAME);
@@ -1037,14 +964,12 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     createEReference(jsonArrayEClass, JSON_ARRAY__ITEMS);
 
     mobgenResourceDefinitionEClass = createEClass(MOBGEN_RESOURCE_DEFINITION);
-    createEReference(mobgenResourceDefinitionEClass, MOBGEN_RESOURCE_DEFINITION__RESOURCES);
+    createEAttribute(mobgenResourceDefinitionEClass, MOBGEN_RESOURCE_DEFINITION__NAME);
 
     enumInstanceEClass = createEClass(ENUM_INSTANCE);
-    createEAttribute(enumInstanceEClass, ENUM_INSTANCE__NAME);
     createEAttribute(enumInstanceEClass, ENUM_INSTANCE__VALUES);
 
     mapInstanceEClass = createEClass(MAP_INSTANCE);
-    createEAttribute(mapInstanceEClass, MAP_INSTANCE__NAME);
     createEAttribute(mapInstanceEClass, MAP_INSTANCE__KEYS);
     createEReference(mapInstanceEClass, MAP_INSTANCE__VALUES);
 
@@ -1100,16 +1025,12 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
 
     // Add supertypes to classes
     enumInstanceEClass.getESuperTypes().add(this.getMobgenResourceDefinition());
+    mapInstanceEClass.getESuperTypes().add(this.getMobgenResourceDefinition());
 
     // Initialize classes and features; add operations and parameters
     initEClass(mobgenEClass, Mobgen.class, "Mobgen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMobgen_Platform(), this.getPlatform(), null, "platform", null, 0, 1, Mobgen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMobgen_Resources(), this.getMobgenResourceDefinition(), null, "resources", null, 0, -1, Mobgen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMobgen_Calls(), this.getMobgenCallDefinition(), null, "calls", null, 0, -1, Mobgen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPlatform_Platforms(), ecorePackage.getEString(), "platforms", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlatform_GenerateWhere(), ecorePackage.getEString(), "generateWhere", null, 0, -1, Platform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mobgenCallDefinitionEClass, MobgenCallDefinition.class, "MobgenCallDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMobgenCallDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, MobgenCallDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1160,14 +1081,12 @@ public class MobgenPackageImpl extends EPackageImpl implements MobgenPackage
     initEReference(getJsonArray_Items(), this.getJsonObjectValue(), null, "items", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mobgenResourceDefinitionEClass, MobgenResourceDefinition.class, "MobgenResourceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMobgenResourceDefinition_Resources(), this.getMapInstance(), null, "resources", null, 0, -1, MobgenResourceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMobgenResourceDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, MobgenResourceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumInstanceEClass, EnumInstance.class, "EnumInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEnumInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEnumInstance_Values(), ecorePackage.getEString(), "values", null, 0, -1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mapInstanceEClass, MapInstance.class, "MapInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMapInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMapInstance_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMapInstance_Values(), this.getNestedType(), null, "values", null, 0, -1, MapInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

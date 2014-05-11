@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link nl.sison.dsl.mobgen.Mobgen#getPlatform <em>Platform</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.Mobgen#getResources <em>Resources</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.Mobgen#getCalls <em>Calls</em>}</li>
  * </ul>
@@ -26,32 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Mobgen extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Platform</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Platform</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Platform</em>' containment reference.
-   * @see #setPlatform(Platform)
-   * @see nl.sison.dsl.mobgen.MobgenPackage#getMobgen_Platform()
-   * @model containment="true"
-   * @generated
-   */
-  Platform getPlatform();
-
-  /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.Mobgen#getPlatform <em>Platform</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Platform</em>' containment reference.
-   * @see #getPlatform()
-   * @generated
-   */
-  void setPlatform(Platform value);
-
   /**
    * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
    * The list contents are of type {@link nl.sison.dsl.mobgen.MobgenResourceDefinition}.

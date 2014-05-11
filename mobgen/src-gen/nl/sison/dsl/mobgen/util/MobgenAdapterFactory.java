@@ -80,11 +80,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
         return createMobgenAdapter();
       }
       @Override
-      public Adapter casePlatform(Platform object)
-      {
-        return createPlatformAdapter();
-      }
-      @Override
       public Adapter caseMobgenCallDefinition(MobgenCallDefinition object)
       {
         return createMobgenCallDefinitionAdapter();
@@ -202,21 +197,6 @@ public class MobgenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMobgenAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.Platform <em>Platform</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.dsl.mobgen.Platform
-   * @generated
-   */
-  public Adapter createPlatformAdapter()
   {
     return null;
   }
