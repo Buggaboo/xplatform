@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/nl.sison.dsl.mobgen.Restful/src-gen" editDirectory="/nl.sison.dsl.mobgen.Restful.edit/src"
+    editorDirectory="/nl.sison.dsl.mobgen.Restful.editor/src" modelPluginID="nl.sison.dsl.mobgen.Restful"
+    forceOverwrite="true" modelName="Restful" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="nl.sison.dsl.mobgen.Restful.edit"
+    editorPluginID="nl.sison.dsl.mobgen.Restful.editor" runtimeVersion="2.9">
+  <genPackages prefix="Restful" basePackage="nl.sison.dsl.mobgen" disposableProviderFactory="true"
+      fileExtensions="Restful" ecorePackage="Restful.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Restful.ecore#//RestfulMethods">
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//RestfulMethods/put"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//RestfulMethods/post"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//RestfulMethods/get"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//RestfulMethods/delete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Restful.ecore#//JsonMetaScalarType">
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//JsonMetaScalarType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//JsonMetaScalarType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//JsonMetaScalarType/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Restful.ecore#//JsonLiteralBoolean">
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//JsonLiteralBoolean/true"/>
+      <genEnumLiterals ecoreEnumLiteral="Restful.ecore#//JsonLiteralBoolean/false"/>
+    </genEnums>
+    <genClasses ecoreClass="Restful.ecore#//Mobgen">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//Mobgen/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//Mobgen/calls"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenCallDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenCallDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenCallDefinition/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenCallDefinition/uri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenCallDefinition/requestHeaders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenCallDefinition/responseHeaders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenCallDefinition/jsonToClient"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenCallDefinition/jsonToServer"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenHeader/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenHeader/headerKeyValues"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenHeaderKeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenHeaderKeyValuePair/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenHeaderKeyValuePair/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenHeaderKeyValuePair/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenHeaderParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenHeaderParameter/id"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenJson">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenJson/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MobgenJson/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonObjectValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonObjectValue/scalar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonObjectValue/composite"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonCompositeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonCompositeValue/objectValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonCompositeValue/arrayValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonLiteralValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/literalString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/emptyObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/emptyArray"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/literalNull"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/numberFloat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/numberInteger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/enumType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/booleanValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonLiteralValue/metaScalarValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonObject/keyValuePair"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonKeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//JsonKeyValuePair/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonKeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//JsonArray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//JsonArray/items"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MobgenResourceDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MobgenResourceDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//EnumInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//EnumInstance/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//MapInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//MapInstance/keys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//MapInstance/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//StringList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//StringList/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//NestedType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Restful.ecore#//NestedType/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//NestedType/string"/>
+    </genClasses>
+    <genClasses ecoreClass="Restful.ecore#//URI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/urlPrefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/pathParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/pathSuffix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/query"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/queryParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Restful.ecore#//URI/querySuffix"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

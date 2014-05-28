@@ -1,0 +1,9 @@
+grammar nl.sison.dsl.mobgen.Resource with org.eclipse.xtext.common.Terminals
+
+generate resource "http://www.sison.nl/dsl/mobgen/Resource"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

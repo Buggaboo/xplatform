@@ -32,7 +32,7 @@ public class AndroidResourceGenerator implements IGenerator {
     final Mobgen mobgen = ((Mobgen) _head);
     EList<MobgenResourceDefinition> _resources = mobgen.getResources();
     final Iterable<MapInstance> mapInstances = Iterables.<MapInstance>filter(_resources, MapInstance.class);
-    final Function1<MapInstance,String> _function = new Function1<MapInstance,String>() {
+    final Function1<MapInstance, String> _function = new Function1<MapInstance, String>() {
       public String apply(final MapInstance m) {
         return AndroidResourceGenerator.this.joinAndroidMapNameWithKeyValuePairs(m);
       }
@@ -225,7 +225,7 @@ public class AndroidResourceGenerator implements IGenerator {
           final NestedType items = value;
           StringList _list_1 = items.getList();
           EList<String> _values_1 = _list_1.getValues();
-          final Function1<String,CharSequence> _function = new Function1<String,CharSequence>() {
+          final Function1<String, CharSequence> _function = new Function1<String, CharSequence>() {
             public CharSequence apply(final String s) {
               return AndroidResourceGenerator.this.androidResourceItemize(s);
             }

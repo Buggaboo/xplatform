@@ -125,7 +125,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     final EList<String> urlQueryPrefix = url.getQuery();
     final EList<String> urlQueryParameters = url.getQueryParameters();
     EList<String> urlQuerySuffixes = url.getQuerySuffix();
-    final HashMap<String,String> hashMap = CollectionLiterals.<String, String>newHashMap();
+    final HashMap<String, String> hashMap = CollectionLiterals.<String, String>newHashMap();
     for (final String pp : urlPathParameters) {
       hashMap.put(pp, "String");
     }
@@ -283,7 +283,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     MobgenHeader _requestHeaders_1 = callDefinition.getRequestHeaders();
     EList<MobgenHeaderKeyValuePair> _headerKeyValues = _requestHeaders_1.getHeaderKeyValues();
     final Iterable<MobgenHeaderKeyValuePair> requestHeaderKeyValuePairs = Iterables.<MobgenHeaderKeyValuePair>filter(_headerKeyValues, MobgenHeaderKeyValuePair.class);
-    final HashMap<String,String> hashMap = CollectionLiterals.<String, String>newHashMap();
+    final HashMap<String, String> hashMap = CollectionLiterals.<String, String>newHashMap();
     for (final MobgenHeaderKeyValuePair kvp : requestHeaderKeyValuePairs) {
       MobgenHeaderParameter _parameter = kvp.getParameter();
       boolean _notEquals = (!Objects.equal(_parameter, null));
@@ -355,19 +355,19 @@ public class AndroidHttpRequestGenerator implements IGenerator {
       String _stringType_1 = value.getStringType();
       boolean _matched = false;
       if (!_matched) {
-        if (Objects.equal(_stringType_1,"{}")) {
+        if (Objects.equal(_stringType_1, "{}")) {
           _matched=true;
           return "new JSONObject()";
         }
       }
       if (!_matched) {
-        if (Objects.equal(_stringType_1,"[]")) {
+        if (Objects.equal(_stringType_1, "[]")) {
           _matched=true;
           return "new JSONArray()";
         }
       }
       if (!_matched) {
-        if (Objects.equal(_stringType_1,"null")) {
+        if (Objects.equal(_stringType_1, "null")) {
           _matched=true;
           return "JSONObject.NULL";
         }
@@ -878,8 +878,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     return _builder;
   }
   
-  public HashMap<CharSequence,CharSequence> joinPairAsMap(final Iterator<CharSequence> keys, final Iterator<CharSequence> values) {
-    final HashMap<CharSequence,CharSequence> hashMap = CollectionLiterals.<CharSequence, CharSequence>newHashMap();
+  public HashMap<CharSequence, CharSequence> joinPairAsMap(final Iterator<CharSequence> keys, final Iterator<CharSequence> values) {
+    final HashMap<CharSequence, CharSequence> hashMap = CollectionLiterals.<CharSequence, CharSequence>newHashMap();
     boolean _and = false;
     boolean _hasNext = keys.hasNext();
     if (!_hasNext) {
@@ -1003,7 +1003,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
   /**
    * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays...
    */
-  public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String,String> members, final CharSequence additionalMethodsEtc) {
+  public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String, String> members, final CharSequence additionalMethodsEtc) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/**");
     _builder.newLine();
@@ -1041,7 +1041,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     {
-      Set<Map.Entry<String,String>> _entrySet = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet = members.entrySet();
       for(final Map.Entry<String, String> s : _entrySet) {
         _builder.append("    ");
         String _key = s.getKey();
@@ -1062,7 +1062,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("// for lack of properties");
     _builder.newLine();
     {
-      Set<Map.Entry<String,String>> _entrySet_1 = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet_1 = members.entrySet();
       for(final Map.Entry<String, String> s_1 : _entrySet_1) {
         _builder.append("    ");
         String _key_1 = s_1.getKey();
@@ -1078,7 +1078,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append(parcelableClassName, "    ");
     _builder.append("(");
     {
-      Set<Map.Entry<String,String>> _entrySet_2 = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet_2 = members.entrySet();
       for(final Map.Entry<String, String> s_2 : _entrySet_2) {
         String _key_2 = s_2.getKey();
         _builder.append(_key_2, "    ");
@@ -1093,7 +1093,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("{");
     _builder.newLine();
     {
-      Set<Map.Entry<String,String>> _entrySet_3 = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet_3 = members.entrySet();
       for(final Map.Entry<String, String> s_3 : _entrySet_3) {
         _builder.append("\t");
         _builder.append("this.");
@@ -1154,7 +1154,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("public void writeToParcel(Parcel out, int flags) {");
     _builder.newLine();
     {
-      Set<Map.Entry<String,String>> _entrySet_4 = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet_4 = members.entrySet();
       for(final Map.Entry<String, String> s_4 : _entrySet_4) {
         {
           LinkedList<String> _newLinkedList = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");
@@ -1190,7 +1190,7 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.append("private void readFromParcel(Parcel in) {");
     _builder.newLine();
     {
-      Set<Map.Entry<String,String>> _entrySet_5 = members.entrySet();
+      Set<Map.Entry<String, String>> _entrySet_5 = members.entrySet();
       for(final Map.Entry<String, String> s_5 : _entrySet_5) {
         {
           LinkedList<String> _newLinkedList_1 = CollectionLiterals.<String>newLinkedList("String", "Integer", "Parcelable", "Serializable");

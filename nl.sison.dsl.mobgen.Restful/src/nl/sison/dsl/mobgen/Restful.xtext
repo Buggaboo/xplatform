@@ -1,0 +1,345 @@
+grammar nl.sison.dsl.mobgen.Restful with org.eclipse.xtext.common.Terminals
+
+generate restful "http://www.sison.nl/dsl/mobgen/Restful"
+
+/*
+ * 
+ * Handy links:
+ * * http://pettergraff.blogspot.nl/2009/12/deploying-code-generator-with.html
+ * * http://charandeepmatta.com/2012/09/01/how-to-generate-eclipse-plugin-for-your-dsl-written-in-xtext/ - sharing your plugin
+ * * http://www.techjava.de/topics/2010/06/extending-xtext-build-participants/ - using "Nature" to distinguish DSLs
+ * * http://stackoverflow.com/questions/10917386/linking-xtext-with-stringtemplate-code-generator - run the generator from Main.java
+ * * http://wiki.eclipse.org/Xtext/FAQ#How_do_I_load_my_model_in_a_standalone_Java_application.C2.A0.3F - run xtend generation as standalone, e.g. from main method
+ * * http://davehofmann.de/blog/?p=101 // - standalone way of setting up the generator
+ * * http://koehnlein.blogspot.de/2012/11/xtext-tip-how-do-i-get-guice-injector.html - Guice and standalone dependency injection
+ * * http://christiandietrich.wordpress.com/2011/10/15/xtext-calling-the-generator-from-a-context-menu/ - Running "Generate code" from the context menu
+ * 
+ * IDEA name for the project, plate smasher (boilerplate smasher)
+ * IDEA feed vector graphics, generate assets l, m, h, xh, xxh, xxxh, pixel dimensions
+ * 
+ * -JS (06-Mar-2014)
+ * 
+ */
+
+
+/**
+ * 
+ * Mobgen http call generator parser
+ * 
+ */
+ 
+Mobgen:
+	(resources+=MobgenResourceDefinition | calls+=MobgenCallDefinition)*
+;
+
+/**
+ * Only POST / PUT request method can do a 'server' 'expects' 
+ */
+MobgenCallDefinition:
+	'call' name=ID ':' method=RestfulMethods 'from' uri=URI
+	('with' 'headers' 'from' 'request' requestHeaders=MobgenHeader
+		('and' 'response' responseHeaders=MobgenHeader)?
+	)?
+	('client' 'expects' jsonToClient=MobgenJson)?
+	('server' 'expects' jsonToServer=MobgenJson)?
+;
+
+MobgenHeader:
+	name=ID
+	"'''" 
+	'{' (headerKeyValues+=MobgenHeaderKeyValuePair)
+		(',' headerKeyValues+=MobgenHeaderKeyValuePair )* (',')? '}'
+	"'''"
+;
+
+MobgenHeaderKeyValuePair:
+	(key=STRING) '=' (value=STRING | parameter=MobgenHeaderParameter)	
+;
+
+MobgenHeaderParameter:
+	'{' id=ID '}'
+;
+
+enum RestfulMethods:
+	put='PUT' | post='POST' | get='GET' | delete='DELETE' // TODO HEAD | TRACE etc. will be automagically generated as well, a body-less response
+;
+
+MobgenJson:
+	name=ID
+	"'''" 
+	value=JsonObjectValue
+	"'''"
+;
+
+/**
+ *  Borrowed from http://www.ebpml.org/blog2/index.php/2010/11/05/mde-xtext-and-json
+ */
+JsonObjectValue:
+	scalar=JsonLiteralValue | composite=JsonCompositeValue
+;
+
+JsonCompositeValue:
+	objectValue=JsonObject | arrayValue=JsonArray
+;
+
+JsonLiteralValue:
+	literalString?=STRING | emptyObject?=EMPTY_JSON_OBJECT | emptyArray?=EMPTY_JSON_ARRAY | literalNull?=JSON_LITERAL_NULL | numberFloat?=JSON_NUMBER_FLOAT | numberInteger?=INT | enumType?=JsonEnumType | booleanValue = JsonLiteralBoolean | metaScalarValue = JsonMetaScalarType
+;
+
+JsonObject:
+	'{'
+		keyValuePair+=JsonKeyValuePair (',' keyValuePair+=JsonKeyValuePair)* (',')?
+	'}'
+;
+
+JsonKeyValuePair:
+	key=STRING ':' value=JsonObjectValue
+;
+
+JsonArray:
+	'['items+=JsonObjectValue (',' items+=JsonObjectValue)* (',')? ']'
+;
+
+enum JsonMetaScalarType:
+	BOOLEAN='boolean' | NUMBER='number' | STRING='string'
+;
+
+JsonEnumType:
+	'enum' '{' STRING (',' STRING)* (',')? '}'
+;
+
+terminal EMPTY_JSON_OBJECT:
+	'{}'
+;
+
+terminal EMPTY_JSON_ARRAY:
+	'[]'
+;
+
+terminal JSON_LITERAL_NULL: 'null';
+
+enum JsonLiteralBoolean:
+	true='true' | false='false'
+;
+
+terminal JSON_NUMBER_FLOAT:
+	INT ('.' INT) // TODO support float and INT
+;
+
+/**
+ * 
+ * Mobgen resource generator
+ * 
+ */
+ 
+MobgenResourceDefinition:
+	MapInstance | EnumInstance
+;
+
+
+EnumInstance:
+	'enum' name=ID
+	'{'
+		(values += ID) (',' values += ID)* (',')?
+	'}'	
+;
+
+MapInstance:
+	'map' name=ID
+	'{'
+		(keys+=ID ':' values+=NestedType) (',' keys+=ID ':' values+=NestedType)* (',')?
+	'}' // you must have at least one map
+;
+
+StringList:
+	'[' (values += STRING) (',' values += STRING)* (',')? ']'
+;
+
+NestedType:
+	list=StringList | string=STRING
+;
+
+// lifted off from http://xtexterience.wordpress.com/2011/06/08/urls-in-xtext/
+terminal URL_PREFIX:
+    'http'('s')? '://'
+	'0'..'9'+ '.' '0'..'9'+ '.' '0'..'9'+ '.' '0'..'9'+
+    |
+        (
+            ('a'..'z'|'A'..'Z')
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )*
+            (
+                '.'
+                ('a'..'z'|'A'..'Z')
+                (
+                    'a'..'z'|'A'..'Z'|
+                    '0'..'9'|
+                    '$'|
+                    '-'|
+                    '_'|
+                    (
+                        '\\'
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                    ) |
+                    (
+                        '%'
+                        ('0'..'9')
+                        ('0'..'9')
+                    )
+                )*
+            )*
+        )
+    (':' ('0'..'9')+)? // Portnumber
+    ;
+
+terminal URL_PATH:
+    ('/'
+        (
+            'a'..'z'|'A'..'Z'|
+            '0'..'9'|
+            '$'|
+            '-'|
+            '_'|
+            '~'|
+            '+'|
+            '.'|
+            (
+                '\\'
+                ('0'..'9'|'a'..'f'|'A'..'F')
+                ('0'..'9'|'a'..'f'|'A'..'F')
+            ) |
+            (
+                '%'
+                ('0'..'9')
+                ('0'..'9')
+            )
+        )*
+    )*; // Path
+ 
+terminal URL_QUERY:
+('?'
+	(
+    'a'..'z'|'A'..'Z'|
+    '0'..'9'|
+    '$'|
+    '-'|
+    '_'|
+    '='|
+    '&'|
+    ';'|
+    (
+        '\\'
+        ('0'..'9'|'a'..'f'|'A'..'F')
+        ('0'..'9'|'a'..'f'|'A'..'F')
+    ) |
+    (
+        '%'
+        ('0'..'9')
+        ('0'..'9')
+            )
+        )+
+        ('+'
+    	(
+	        'a'..'z'|'A'..'Z'|
+	        '0'..'9'|
+	        '$'|
+	        '-'|
+	        '_'|
+	        '='|
+	        '&'|
+	        ';'|
+	        (
+	            '\\'
+	            ('0'..'9'|'a'..'f'|'A'..'F')
+	            ('0'..'9'|'a'..'f'|'A'..'F')
+	        ) |
+        	(
+            '%'
+            ('0'..'9')
+            ('0'..'9')
+            )
+        )+
+    )*
+)?
+;
+
+terminal URL_QUERY_SUFFIX:
+('&'
+	'a'..'z'|'A'..'Z'|
+    /*'0'..'9'|*/   // Super-hack, TODO determine how to redefine this terminal rule so it won't clash with antlr RULE_INT
+    '$'|
+    '-'|
+    '_'|
+    '='|
+    '&'|
+    ';'|
+    (
+        '\\'
+        ('0'..'9'|'a'..'f'|'A'..'F')
+        ('0'..'9'|'a'..'f'|'A'..'F')
+    ) |
+    (
+        '%'
+        ('0'..'9')
+        ('0'..'9')
+            )
+        )+
+ 
+        ('+'
+    (
+        'a'..'z'|'A'..'Z'|
+        '0'..'9'|
+        '$'|
+        '-'|
+        '_'|
+        '='|
+        '&'|
+        ';'|
+        (
+            '\\'
+            ('0'..'9'|'a'..'f'|'A'..'F')
+            ('0'..'9'|'a'..'f'|'A'..'F')
+        ) |
+        (
+            '%'
+            ('0'..'9')
+            ('0'..'9')
+        )
+    )+
+)*
+;
+
+URI: // caveat: due to a hack numbers may not occur after the queryParameters
+    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* query+=URL_QUERY ('{' queryParameters+=ID '}' querySuffix+=URL_QUERY_SUFFIX)* 
+;
+/* 
+URI:
+    urlPrefix=URL_PREFIX path=URL_PATH ('{' pathParameters+=ID '}' pathSuffix+=URL_PATH)* (query+=(URL_QUERY) '{' queryParameters+=ID '}' query+=ANY_OTHER*)* 
+;
+*/ 
+/*
+terminal ANY_OTHER_WITHOUT_CHEVRON: // TODO test this
+	!('{')
+;
+*/
+/*
+URI:
+       stringPrefix+=(ANY_OTHER)+ ('{' parameters+=ID '}' stringSuffix+=ANY_OTHER_WITHOUT_CHEVRON)+
+;
+*/ 

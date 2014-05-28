@@ -1,5 +1,7 @@
 grammar nl.sison.dsl.Mobgen with org.eclipse.xtext.common.Terminals
 
+generate mobgen "http://www.sison.nl/dsl/Mobgen"
+
 /*
  * 
  * Handy links:
@@ -19,7 +21,6 @@ grammar nl.sison.dsl.Mobgen with org.eclipse.xtext.common.Terminals
  * 
  */
 
-generate mobgen "http://www.sison.nl/dsl/Mobgen"
 
 /**
  * 
