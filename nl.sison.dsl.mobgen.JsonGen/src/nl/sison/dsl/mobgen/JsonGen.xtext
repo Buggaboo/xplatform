@@ -27,7 +27,7 @@ terminal JSON_FLOAT:
 	'-'? INT '.' INT (('E'|'e') '-'? INT)?;
 	
 ExJsonEnum:
-	'enum' '{' values+=STRING (',' values+=STRING) '}';
+	'enum' '{' values+=STRING (',' values+=STRING)* '}';
 
 /*
  * TODO generate zulu validator SimpleDateFormatter

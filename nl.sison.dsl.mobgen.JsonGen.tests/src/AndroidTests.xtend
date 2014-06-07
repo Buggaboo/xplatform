@@ -28,7 +28,19 @@ class JsonToParcelableTests {
     }
     
     @Test
-    def void testIntegerFloats()
+    def void testEnums()
+    {
+    	val str = '''
+    	{
+    		"a hab" : enum {"blue", "green", "red"},
+    		"b low" : enum {"a", "b", "c"}
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
+    def void testIntegerAndFloats()
     {
     	val str = '''
     	{
@@ -43,12 +55,12 @@ class JsonToParcelableTests {
     }
      
     @Test
-    def void testBooleanParcelableString() {
+    def void testBooleanAndParcelableAndString() {
         val model = parseHelper.parse('''
         {
         	"a" : true,
         	"b" : "string",
-        	"count-zero" : { "d" : "string", "f-zero" : {"q" : "string"}},
+        	"count-zero" : { "d" : "string", "f-zero" : {"q" : "string", "z" : 1234}},
         	?"d-zebra" : { "e" : "fine" },
         	"tango mellow" : "string",
         	"monkey tits" : boolean
