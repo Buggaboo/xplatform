@@ -115,20 +115,22 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBoolJSON_BOOLEANTerminalRuleCall_3_0 = (RuleCall)cBoolAssignment_3.eContents().get(0);
 		private final Assignment cNullAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
 		private final RuleCall cNullJSON_NULLTerminalRuleCall_4_0 = (RuleCall)cNullAssignment_4.eContents().get(0);
-		private final Assignment cNumberAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final RuleCall cNumberJsonNumberParserRuleCall_5_0 = (RuleCall)cNumberAssignment_5.eContents().get(0);
-		private final Assignment cStrFromEnumAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final RuleCall cStrFromEnumExJsonEnumParserRuleCall_6_0 = (RuleCall)cStrFromEnumAssignment_6.eContents().get(0);
-		private final Assignment cDatetimeAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final RuleCall cDatetimeEX_JSON_UTCTerminalRuleCall_7_0 = (RuleCall)cDatetimeAssignment_7.eContents().get(0);
+		private final Assignment cIntAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cIntINTTerminalRuleCall_5_0 = (RuleCall)cIntAssignment_5.eContents().get(0);
+		private final Assignment cFloatAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cFloatJSON_FLOATTerminalRuleCall_6_0 = (RuleCall)cFloatAssignment_6.eContents().get(0);
+		private final Assignment cStrFromEnumAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cStrFromEnumExJsonEnumParserRuleCall_7_0 = (RuleCall)cStrFromEnumAssignment_7.eContents().get(0);
+		private final Assignment cDatetimeAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final RuleCall cDatetimeEX_JSON_UTCTerminalRuleCall_8_0 = (RuleCall)cDatetimeAssignment_8.eContents().get(0);
 		
 		//JsonValue:
 		//	obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-		//	number=JsonNumber | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+		//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
 		public ParserRule getRule() { return rule; }
 
 		//obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-		//number=JsonNumber | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC
+		//int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//obj=JsonObject
@@ -161,23 +163,29 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		//JSON_NULL
 		public RuleCall getNullJSON_NULLTerminalRuleCall_4_0() { return cNullJSON_NULLTerminalRuleCall_4_0; }
 
-		//number=JsonNumber
-		public Assignment getNumberAssignment_5() { return cNumberAssignment_5; }
+		//int?=INT
+		public Assignment getIntAssignment_5() { return cIntAssignment_5; }
 
-		//JsonNumber
-		public RuleCall getNumberJsonNumberParserRuleCall_5_0() { return cNumberJsonNumberParserRuleCall_5_0; }
+		//INT
+		public RuleCall getIntINTTerminalRuleCall_5_0() { return cIntINTTerminalRuleCall_5_0; }
+
+		//float?=JSON_FLOAT
+		public Assignment getFloatAssignment_6() { return cFloatAssignment_6; }
+
+		//JSON_FLOAT
+		public RuleCall getFloatJSON_FLOATTerminalRuleCall_6_0() { return cFloatJSON_FLOATTerminalRuleCall_6_0; }
 
 		//strFromEnum=ExJsonEnum
-		public Assignment getStrFromEnumAssignment_6() { return cStrFromEnumAssignment_6; }
+		public Assignment getStrFromEnumAssignment_7() { return cStrFromEnumAssignment_7; }
 
 		//ExJsonEnum
-		public RuleCall getStrFromEnumExJsonEnumParserRuleCall_6_0() { return cStrFromEnumExJsonEnumParserRuleCall_6_0; }
+		public RuleCall getStrFromEnumExJsonEnumParserRuleCall_7_0() { return cStrFromEnumExJsonEnumParserRuleCall_7_0; }
 
 		//datetime=EX_JSON_UTC
-		public Assignment getDatetimeAssignment_7() { return cDatetimeAssignment_7; }
+		public Assignment getDatetimeAssignment_8() { return cDatetimeAssignment_8; }
 
 		//EX_JSON_UTC
-		public RuleCall getDatetimeEX_JSON_UTCTerminalRuleCall_7_0() { return cDatetimeEX_JSON_UTCTerminalRuleCall_7_0; }
+		public RuleCall getDatetimeEX_JSON_UTCTerminalRuleCall_8_0() { return cDatetimeEX_JSON_UTCTerminalRuleCall_8_0; }
 	}
 
 	public class JsonArrayElements extends AbstractParserRuleElementFinder {
@@ -222,74 +230,6 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
-	}
-
-	public class JsonNumberElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JsonNumber");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cFloatAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Keyword cFloatFullStopKeyword_2_0 = (Keyword)cFloatAssignment_2.eContents().get(0);
-		private final Assignment cIntValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cIntValueINTTerminalRuleCall_3_0 = (RuleCall)cIntValueAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cExpAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final Alternatives cExpAlternatives_4_0_0 = (Alternatives)cExpAssignment_4_0.eContents().get(0);
-		private final Keyword cExpEKeyword_4_0_0_0 = (Keyword)cExpAlternatives_4_0_0.eContents().get(0);
-		private final Keyword cExpEKeyword_4_0_0_1 = (Keyword)cExpAlternatives_4_0_0.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cExpValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cExpValueINTTerminalRuleCall_4_2_0 = (RuleCall)cExpValueAssignment_4_2.eContents().get(0);
-		
-		//JsonNumber:
-		//	"-"? INT? float?="." intValue=INT (exp?=("E" | "e") "-"? expValue=INT)?;
-		public ParserRule getRule() { return rule; }
-
-		//"-"? INT? float?="." intValue=INT (exp?=("E" | "e") "-"? expValue=INT)?
-		public Group getGroup() { return cGroup; }
-
-		//"-"?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-
-		//INT?
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-
-		//float?="."
-		public Assignment getFloatAssignment_2() { return cFloatAssignment_2; }
-
-		//"."
-		public Keyword getFloatFullStopKeyword_2_0() { return cFloatFullStopKeyword_2_0; }
-
-		//intValue=INT
-		public Assignment getIntValueAssignment_3() { return cIntValueAssignment_3; }
-
-		//INT
-		public RuleCall getIntValueINTTerminalRuleCall_3_0() { return cIntValueINTTerminalRuleCall_3_0; }
-
-		//(exp?=("E" | "e") "-"? expValue=INT)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//exp?=("E" | "e")
-		public Assignment getExpAssignment_4_0() { return cExpAssignment_4_0; }
-
-		//"E" | "e"
-		public Alternatives getExpAlternatives_4_0_0() { return cExpAlternatives_4_0_0; }
-
-		//"E"
-		public Keyword getExpEKeyword_4_0_0_0() { return cExpEKeyword_4_0_0_0; }
-
-		//"e"
-		public Keyword getExpEKeyword_4_0_0_1() { return cExpEKeyword_4_0_0_1; }
-
-		//"-"?
-		public Keyword getHyphenMinusKeyword_4_1() { return cHyphenMinusKeyword_4_1; }
-
-		//expValue=INT
-		public Assignment getExpValueAssignment_4_2() { return cExpValueAssignment_4_2; }
-
-		//INT
-		public RuleCall getExpValueINTTerminalRuleCall_4_2_0() { return cExpValueINTTerminalRuleCall_4_2_0; }
 	}
 
 	public class ExJsonEnumElements extends AbstractParserRuleElementFinder {
@@ -347,7 +287,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 	private JsonArrayElements pJsonArray;
 	private TerminalRule tJSON_BOOLEAN;
 	private TerminalRule tJSON_NULL;
-	private JsonNumberElements pJsonNumber;
+	private TerminalRule tJSON_FLOAT;
 	private ExJsonEnumElements pExJsonEnum;
 	private TerminalRule tEX_JSON_UTC;
 	
@@ -411,7 +351,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	//JsonValue:
 	//	obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-	//	number=JsonNumber | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+	//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
 	public JsonValueElements getJsonValueAccess() {
 		return (pJsonValue != null) ? pJsonValue : (pJsonValue = new JsonValueElements());
 	}
@@ -442,15 +382,11 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		return (tJSON_NULL != null) ? tJSON_NULL : (tJSON_NULL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "JSON_NULL"));
 	} 
 
-	//JsonNumber:
-	//	"-"? INT? float?="." intValue=INT (exp?=("E" | "e") "-"? expValue=INT)?;
-	public JsonNumberElements getJsonNumberAccess() {
-		return (pJsonNumber != null) ? pJsonNumber : (pJsonNumber = new JsonNumberElements());
-	}
-	
-	public ParserRule getJsonNumberRule() {
-		return getJsonNumberAccess().getRule();
-	}
+	//terminal JSON_FLOAT:
+	//	"-"? INT "." INT (("E" | "e") "-"? INT)?;
+	public TerminalRule getJSON_FLOATRule() {
+		return (tJSON_FLOAT != null) ? tJSON_FLOAT : (tJSON_FLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "JSON_FLOAT"));
+	} 
 
 	//ExJsonEnum:
 	//	"enum" "{" values+=STRING ("," values+=STRING) "}";

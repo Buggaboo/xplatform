@@ -95,11 +95,6 @@ public class JsonGenAdapterFactory extends AdapterFactoryImpl
         return createJsonArrayAdapter();
       }
       @Override
-      public Adapter caseJsonNumber(JsonNumber object)
-      {
-        return createJsonNumberAdapter();
-      }
-      @Override
       public Adapter caseExJsonEnum(ExJsonEnum object)
       {
         return createExJsonEnumAdapter();
@@ -182,21 +177,6 @@ public class JsonGenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonArrayAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber <em>Json Number</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber
-   * @generated
-   */
-  public Adapter createJsonNumberAdapter()
   {
     return null;
   }

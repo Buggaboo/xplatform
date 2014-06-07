@@ -186,13 +186,22 @@ public interface JsonGenPackage extends EPackage
   int JSON_VALUE__NULL = 4;
 
   /**
-   * The feature id for the '<em><b>Number</b></em>' containment reference.
+   * The feature id for the '<em><b>Int</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_VALUE__NUMBER = 5;
+  int JSON_VALUE__INT = 5;
+
+  /**
+   * The feature id for the '<em><b>Float</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_VALUE__FLOAT = 6;
 
   /**
    * The feature id for the '<em><b>Str From Enum</b></em>' containment reference.
@@ -201,7 +210,7 @@ public interface JsonGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_VALUE__STR_FROM_ENUM = 6;
+  int JSON_VALUE__STR_FROM_ENUM = 7;
 
   /**
    * The feature id for the '<em><b>Datetime</b></em>' attribute.
@@ -210,7 +219,7 @@ public interface JsonGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_VALUE__DATETIME = 7;
+  int JSON_VALUE__DATETIME = 8;
 
   /**
    * The number of structural features of the '<em>Json Value</em>' class.
@@ -219,7 +228,7 @@ public interface JsonGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JSON_VALUE_FEATURE_COUNT = 8;
+  int JSON_VALUE_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonArrayImpl <em>Json Array</em>}' class.
@@ -250,61 +259,6 @@ public interface JsonGenPackage extends EPackage
   int JSON_ARRAY_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonNumberImpl <em>Json Number</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonNumberImpl
-   * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonGenPackageImpl#getJsonNumber()
-   * @generated
-   */
-  int JSON_NUMBER = 4;
-
-  /**
-   * The feature id for the '<em><b>Float</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_NUMBER__FLOAT = 0;
-
-  /**
-   * The feature id for the '<em><b>Int Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_NUMBER__INT_VALUE = 1;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_NUMBER__EXP = 2;
-
-  /**
-   * The feature id for the '<em><b>Exp Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_NUMBER__EXP_VALUE = 3;
-
-  /**
-   * The number of structural features of the '<em>Json Number</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JSON_NUMBER_FEATURE_COUNT = 4;
-
-  /**
    * The meta object id for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.ExJsonEnumImpl <em>Ex Json Enum</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -312,7 +266,7 @@ public interface JsonGenPackage extends EPackage
    * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonGenPackageImpl#getExJsonEnum()
    * @generated
    */
-  int EX_JSON_ENUM = 5;
+  int EX_JSON_ENUM = 4;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -463,15 +417,26 @@ public interface JsonGenPackage extends EPackage
   EAttribute getJsonValue_Null();
 
   /**
-   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getNumber <em>Number</em>}'.
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isInt <em>Int</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Number</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonValue#getNumber()
+   * @return the meta object for the attribute '<em>Int</em>'.
+   * @see nl.sison.dsl.mobgen.jsonGen.JsonValue#isInt()
    * @see #getJsonValue()
    * @generated
    */
-  EReference getJsonValue_Number();
+  EAttribute getJsonValue_Int();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isFloat <em>Float</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Float</em>'.
+   * @see nl.sison.dsl.mobgen.jsonGen.JsonValue#isFloat()
+   * @see #getJsonValue()
+   * @generated
+   */
+  EAttribute getJsonValue_Float();
 
   /**
    * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getStrFromEnum <em>Str From Enum</em>}'.
@@ -515,60 +480,6 @@ public interface JsonGenPackage extends EPackage
    * @generated
    */
   EReference getJsonArray_Values();
-
-  /**
-   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber <em>Json Number</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Json Number</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber
-   * @generated
-   */
-  EClass getJsonNumber();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber#isFloat <em>Float</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Float</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber#isFloat()
-   * @see #getJsonNumber()
-   * @generated
-   */
-  EAttribute getJsonNumber_Float();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber#getIntValue <em>Int Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Int Value</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber#getIntValue()
-   * @see #getJsonNumber()
-   * @generated
-   */
-  EAttribute getJsonNumber_IntValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber#isExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Exp</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber#isExp()
-   * @see #getJsonNumber()
-   * @generated
-   */
-  EAttribute getJsonNumber_Exp();
-
-  /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonNumber#getExpValue <em>Exp Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Exp Value</em>'.
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonNumber#getExpValue()
-   * @see #getJsonNumber()
-   * @generated
-   */
-  EAttribute getJsonNumber_ExpValue();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.jsonGen.ExJsonEnum <em>Ex Json Enum</em>}'.
@@ -717,12 +628,20 @@ public interface JsonGenPackage extends EPackage
     EAttribute JSON_VALUE__NULL = eINSTANCE.getJsonValue_Null();
 
     /**
-     * The meta object literal for the '<em><b>Number</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Int</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JSON_VALUE__NUMBER = eINSTANCE.getJsonValue_Number();
+    EAttribute JSON_VALUE__INT = eINSTANCE.getJsonValue_Int();
+
+    /**
+     * The meta object literal for the '<em><b>Float</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JSON_VALUE__FLOAT = eINSTANCE.getJsonValue_Float();
 
     /**
      * The meta object literal for the '<em><b>Str From Enum</b></em>' containment reference feature.
@@ -757,48 +676,6 @@ public interface JsonGenPackage extends EPackage
      * @generated
      */
     EReference JSON_ARRAY__VALUES = eINSTANCE.getJsonArray_Values();
-
-    /**
-     * The meta object literal for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonNumberImpl <em>Json Number</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonNumberImpl
-     * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonGenPackageImpl#getJsonNumber()
-     * @generated
-     */
-    EClass JSON_NUMBER = eINSTANCE.getJsonNumber();
-
-    /**
-     * The meta object literal for the '<em><b>Float</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JSON_NUMBER__FLOAT = eINSTANCE.getJsonNumber_Float();
-
-    /**
-     * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JSON_NUMBER__INT_VALUE = eINSTANCE.getJsonNumber_IntValue();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JSON_NUMBER__EXP = eINSTANCE.getJsonNumber_Exp();
-
-    /**
-     * The meta object literal for the '<em><b>Exp Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JSON_NUMBER__EXP_VALUE = eINSTANCE.getJsonNumber_ExpValue();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.ExJsonEnumImpl <em>Ex Json Enum</em>}' class.

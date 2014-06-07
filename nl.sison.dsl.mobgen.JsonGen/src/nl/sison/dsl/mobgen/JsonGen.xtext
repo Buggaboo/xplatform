@@ -12,7 +12,7 @@ Member:
 	(optional?='?')? key=STRING ':' value=JsonValue;
 	
 JsonValue:
-	obj=JsonObject | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL /* currently ignore nulls */| number=JsonNumber | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+	obj=JsonObject | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL /* currently ignore nulls */| int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
  
 JsonArray:
 	'[' (values+=JsonValue) (',' values+=JsonValue)* ']';
@@ -23,8 +23,8 @@ terminal JSON_BOOLEAN:
 terminal JSON_NULL:
   'null';
  
-JsonNumber:
-	'-'? INT? float?='.' intValue=INT (exp?=('E'|'e') '-'? expValue=INT)?;
+terminal JSON_FLOAT:
+	'-'? INT '.' INT (('E'|'e') '-'? INT)?;
 	
 ExJsonEnum:
 	'enum' '{' values+=STRING (',' values+=STRING) '}';

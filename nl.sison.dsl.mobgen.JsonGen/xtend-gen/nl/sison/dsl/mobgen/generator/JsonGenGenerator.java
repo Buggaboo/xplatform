@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import nl.sison.dsl.mobgen.jsonGen.JsonNumber;
 import nl.sison.dsl.mobgen.jsonGen.JsonObject;
 import nl.sison.dsl.mobgen.jsonGen.JsonValue;
 import nl.sison.dsl.mobgen.jsonGen.Member;
@@ -123,24 +122,13 @@ public class JsonGenGenerator implements IGenerator {
     if (_isBool) {
       return String.format("jsonRoot.getBoolean(\"%s\")", key);
     }
-    JsonNumber _number = value.getNumber();
-    boolean _notEquals_2 = (!Objects.equal(_number, null));
-    if (_notEquals_2) {
-      boolean _or = false;
-      JsonNumber _number_1 = value.getNumber();
-      boolean _isFloat = _number_1.isFloat();
-      if (_isFloat) {
-        _or = true;
-      } else {
-        JsonNumber _number_2 = value.getNumber();
-        boolean _isExp = _number_2.isExp();
-        _or = _isExp;
-      }
-      if (_or) {
-        return String.format("jsonRoot.getDouble(\"%s\")", key);
-      } else {
-        return String.format("jsonRoot.getLong(\"%s\")", key);
-      }
+    boolean _isFloat = value.isFloat();
+    if (_isFloat) {
+      return String.format("jsonRoot.getDouble(\"%s\")", key);
+    }
+    boolean _isInt = value.isInt();
+    if (_isInt) {
+      return String.format("jsonRoot.getLong(\"%s\")", key);
     }
     return "UNDEFINED";
   }
@@ -183,22 +171,13 @@ public class JsonGenGenerator implements IGenerator {
         if (_and) {
           map.put(key, "String");
         }
-        final JsonNumber number = value.getNumber();
-        boolean _notEquals_2 = (!Objects.equal(number, null));
-        if (_notEquals_2) {
-          boolean _or = false;
-          boolean _isExp = number.isExp();
-          if (_isExp) {
-            _or = true;
-          } else {
-            boolean _isFloat = number.isFloat();
-            _or = _isFloat;
-          }
-          if (_or) {
-            map.put(key, "Double");
-          } else {
-            map.put(key, "Long");
-          }
+        boolean _isFloat = value.isFloat();
+        if (_isFloat) {
+          map.put(key, "Double");
+        }
+        boolean _isInt = value.isInt();
+        if (_isInt) {
+          map.put(key, "Long");
         }
       }
     }
@@ -305,13 +284,13 @@ public class JsonGenGenerator implements IGenerator {
     {
       Set<Map.Entry<String, String>> _entrySet_3 = members.entrySet();
       for(final Map.Entry<String, String> s_2 : _entrySet_3) {
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("this.");
         String _key_2 = s_2.getKey();
-        _builder.append(_key_2, "\t");
+        _builder.append(_key_2, "\t\t");
         _builder.append(" = ");
         String _key_3 = s_2.getKey();
-        _builder.append(_key_3, "\t");
+        _builder.append(_key_3, "\t\t");
         _builder.append("; ");
         _builder.newLineIfNotEmpty();
       }
@@ -605,8 +584,8 @@ public class JsonGenGenerator implements IGenerator {
     return _builder;
   }
   
-  public String camelCase(final CharSequence headerKey) {
-    String _string = headerKey.toString();
+  public String camelCase(final CharSequence input) {
+    String _string = input.toString();
     String _replaceAll = _string.replaceAll("\\s", "-");
     String[] _split = _replaceAll.split("-");
     final Function1<String, String> _function = new Function1<String, String>() {

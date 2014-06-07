@@ -5,7 +5,6 @@ package nl.sison.dsl.mobgen.jsonGen.impl;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
 import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonGenPackage;
-import nl.sison.dsl.mobgen.jsonGen.JsonNumber;
 import nl.sison.dsl.mobgen.jsonGen.JsonObject;
 import nl.sison.dsl.mobgen.jsonGen.JsonValue;
 
@@ -30,7 +29,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#getArray <em>Array</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#isBool <em>Bool</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#isNull <em>Null</em>}</li>
- *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#isInt <em>Int</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#isFloat <em>Float</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#getStrFromEnum <em>Str From Enum</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonValueImpl#getDatetime <em>Datetime</em>}</li>
  * </ul>
@@ -121,14 +121,44 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
   protected boolean null_ = NULL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getNumber() <em>Number</em>}' containment reference.
+   * The default value of the '{@link #isInt() <em>Int</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNumber()
+   * @see #isInt()
    * @generated
    * @ordered
    */
-  protected JsonNumber number;
+  protected static final boolean INT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInt() <em>Int</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInt()
+   * @generated
+   * @ordered
+   */
+  protected boolean int_ = INT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isFloat() <em>Float</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFloat()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean FLOAT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isFloat() <em>Float</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFloat()
+   * @generated
+   * @ordered
+   */
+  protected boolean float_ = FLOAT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getStrFromEnum() <em>Str From Enum</em>}' containment reference.
@@ -351,9 +381,9 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
    * <!-- end-user-doc -->
    * @generated
    */
-  public JsonNumber getNumber()
+  public boolean isInt()
   {
-    return number;
+    return int_;
   }
 
   /**
@@ -361,16 +391,12 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNumber(JsonNumber newNumber, NotificationChain msgs)
+  public void setInt(boolean newInt)
   {
-    JsonNumber oldNumber = number;
-    number = newNumber;
+    boolean oldInt = int_;
+    int_ = newInt;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__NUMBER, oldNumber, newNumber);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__INT, oldInt, int_));
   }
 
   /**
@@ -378,20 +404,22 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNumber(JsonNumber newNumber)
+  public boolean isFloat()
   {
-    if (newNumber != number)
-    {
-      NotificationChain msgs = null;
-      if (number != null)
-        msgs = ((InternalEObject)number).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JsonGenPackage.JSON_VALUE__NUMBER, null, msgs);
-      if (newNumber != null)
-        msgs = ((InternalEObject)newNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JsonGenPackage.JSON_VALUE__NUMBER, null, msgs);
-      msgs = basicSetNumber(newNumber, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__NUMBER, newNumber, newNumber));
+    return float_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFloat(boolean newFloat)
+  {
+    boolean oldFloat = float_;
+    float_ = newFloat;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__FLOAT, oldFloat, float_));
   }
 
   /**
@@ -479,8 +507,6 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         return basicSetObj(null, msgs);
       case JsonGenPackage.JSON_VALUE__ARRAY:
         return basicSetArray(null, msgs);
-      case JsonGenPackage.JSON_VALUE__NUMBER:
-        return basicSetNumber(null, msgs);
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         return basicSetStrFromEnum(null, msgs);
     }
@@ -507,8 +533,10 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         return isBool();
       case JsonGenPackage.JSON_VALUE__NULL:
         return isNull();
-      case JsonGenPackage.JSON_VALUE__NUMBER:
-        return getNumber();
+      case JsonGenPackage.JSON_VALUE__INT:
+        return isInt();
+      case JsonGenPackage.JSON_VALUE__FLOAT:
+        return isFloat();
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         return getStrFromEnum();
       case JsonGenPackage.JSON_VALUE__DATETIME:
@@ -542,8 +570,11 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
       case JsonGenPackage.JSON_VALUE__NULL:
         setNull((Boolean)newValue);
         return;
-      case JsonGenPackage.JSON_VALUE__NUMBER:
-        setNumber((JsonNumber)newValue);
+      case JsonGenPackage.JSON_VALUE__INT:
+        setInt((Boolean)newValue);
+        return;
+      case JsonGenPackage.JSON_VALUE__FLOAT:
+        setFloat((Boolean)newValue);
         return;
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         setStrFromEnum((ExJsonEnum)newValue);
@@ -580,8 +611,11 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
       case JsonGenPackage.JSON_VALUE__NULL:
         setNull(NULL_EDEFAULT);
         return;
-      case JsonGenPackage.JSON_VALUE__NUMBER:
-        setNumber((JsonNumber)null);
+      case JsonGenPackage.JSON_VALUE__INT:
+        setInt(INT_EDEFAULT);
+        return;
+      case JsonGenPackage.JSON_VALUE__FLOAT:
+        setFloat(FLOAT_EDEFAULT);
         return;
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         setStrFromEnum((ExJsonEnum)null);
@@ -613,8 +647,10 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         return bool != BOOL_EDEFAULT;
       case JsonGenPackage.JSON_VALUE__NULL:
         return null_ != NULL_EDEFAULT;
-      case JsonGenPackage.JSON_VALUE__NUMBER:
-        return number != null;
+      case JsonGenPackage.JSON_VALUE__INT:
+        return int_ != INT_EDEFAULT;
+      case JsonGenPackage.JSON_VALUE__FLOAT:
+        return float_ != FLOAT_EDEFAULT;
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         return strFromEnum != null;
       case JsonGenPackage.JSON_VALUE__DATETIME:
@@ -640,6 +676,10 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
     result.append(bool);
     result.append(", null: ");
     result.append(null_);
+    result.append(", int: ");
+    result.append(int_);
+    result.append(", float: ");
+    result.append(float_);
     result.append(", datetime: ");
     result.append(datetime);
     result.append(')');

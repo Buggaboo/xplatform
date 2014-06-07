@@ -38,14 +38,11 @@ public class JsonGenParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getJsonValueAccess().getAlternatives(), "rule__JsonValue__Alternatives");
-					put(grammarAccess.getJsonNumberAccess().getExpAlternatives_4_0_0(), "rule__JsonNumber__ExpAlternatives_4_0_0");
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");
 					put(grammarAccess.getMemberAccess().getGroup(), "rule__Member__Group__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup(), "rule__JsonArray__Group__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup_2(), "rule__JsonArray__Group_2__0");
-					put(grammarAccess.getJsonNumberAccess().getGroup(), "rule__JsonNumber__Group__0");
-					put(grammarAccess.getJsonNumberAccess().getGroup_4(), "rule__JsonNumber__Group_4__0");
 					put(grammarAccess.getExJsonEnumAccess().getGroup(), "rule__ExJsonEnum__Group__0");
 					put(grammarAccess.getExJsonEnumAccess().getGroup_3(), "rule__ExJsonEnum__Group_3__0");
 					put(grammarAccess.getJsonObjectAccess().getMembersAssignment_1(), "rule__JsonObject__MembersAssignment_1");
@@ -58,15 +55,12 @@ public class JsonGenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonValueAccess().getArrayAssignment_2(), "rule__JsonValue__ArrayAssignment_2");
 					put(grammarAccess.getJsonValueAccess().getBoolAssignment_3(), "rule__JsonValue__BoolAssignment_3");
 					put(grammarAccess.getJsonValueAccess().getNullAssignment_4(), "rule__JsonValue__NullAssignment_4");
-					put(grammarAccess.getJsonValueAccess().getNumberAssignment_5(), "rule__JsonValue__NumberAssignment_5");
-					put(grammarAccess.getJsonValueAccess().getStrFromEnumAssignment_6(), "rule__JsonValue__StrFromEnumAssignment_6");
-					put(grammarAccess.getJsonValueAccess().getDatetimeAssignment_7(), "rule__JsonValue__DatetimeAssignment_7");
+					put(grammarAccess.getJsonValueAccess().getIntAssignment_5(), "rule__JsonValue__IntAssignment_5");
+					put(grammarAccess.getJsonValueAccess().getFloatAssignment_6(), "rule__JsonValue__FloatAssignment_6");
+					put(grammarAccess.getJsonValueAccess().getStrFromEnumAssignment_7(), "rule__JsonValue__StrFromEnumAssignment_7");
+					put(grammarAccess.getJsonValueAccess().getDatetimeAssignment_8(), "rule__JsonValue__DatetimeAssignment_8");
 					put(grammarAccess.getJsonArrayAccess().getValuesAssignment_1(), "rule__JsonArray__ValuesAssignment_1");
 					put(grammarAccess.getJsonArrayAccess().getValuesAssignment_2_1(), "rule__JsonArray__ValuesAssignment_2_1");
-					put(grammarAccess.getJsonNumberAccess().getFloatAssignment_2(), "rule__JsonNumber__FloatAssignment_2");
-					put(grammarAccess.getJsonNumberAccess().getIntValueAssignment_3(), "rule__JsonNumber__IntValueAssignment_3");
-					put(grammarAccess.getJsonNumberAccess().getExpAssignment_4_0(), "rule__JsonNumber__ExpAssignment_4_0");
-					put(grammarAccess.getJsonNumberAccess().getExpValueAssignment_4_2(), "rule__JsonNumber__ExpValueAssignment_4_2");
 					put(grammarAccess.getExJsonEnumAccess().getValuesAssignment_2(), "rule__ExJsonEnum__ValuesAssignment_2");
 					put(grammarAccess.getExJsonEnumAccess().getValuesAssignment_3_1(), "rule__ExJsonEnum__ValuesAssignment_3_1");
 				}

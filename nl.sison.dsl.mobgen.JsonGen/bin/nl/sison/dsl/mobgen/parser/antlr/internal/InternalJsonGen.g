@@ -319,19 +319,38 @@ ruleJsonValue returns [EObject current=null]
 )
     |(
 (
-		{ 
-	        newCompositeNode(grammarAccess.getJsonValueAccess().getNumberJsonNumberParserRuleCall_5_0()); 
-	    }
-		lv_number_5_0=ruleJsonNumber		{
+		lv_int_5_0=RULE_INT
+		{
+			newLeafNode(lv_int_5_0, grammarAccess.getJsonValueAccess().getIntINTTerminalRuleCall_5_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getJsonValueRule());
+	            $current = createModelElement(grammarAccess.getJsonValueRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
-       			"number",
-        		lv_number_5_0, 
-        		"JsonNumber");
-	        afterParserOrEnumRuleCall();
+       			"int",
+        		true, 
+        		"INT");
+	    }
+
+)
+)
+    |(
+(
+		lv_float_6_0=RULE_JSON_FLOAT
+		{
+			newLeafNode(lv_float_6_0, grammarAccess.getJsonValueAccess().getFloatJSON_FLOATTerminalRuleCall_6_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getJsonValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"float",
+        		true, 
+        		"JSON_FLOAT");
 	    }
 
 )
@@ -339,16 +358,16 @@ ruleJsonValue returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getJsonValueAccess().getStrFromEnumExJsonEnumParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getJsonValueAccess().getStrFromEnumExJsonEnumParserRuleCall_7_0()); 
 	    }
-		lv_strFromEnum_6_0=ruleExJsonEnum		{
+		lv_strFromEnum_7_0=ruleExJsonEnum		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getJsonValueRule());
 	        }
        		set(
        			$current, 
        			"strFromEnum",
-        		lv_strFromEnum_6_0, 
+        		lv_strFromEnum_7_0, 
         		"ExJsonEnum");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -357,9 +376,9 @@ ruleJsonValue returns [EObject current=null]
 )
     |(
 (
-		lv_datetime_7_0=RULE_EX_JSON_UTC
+		lv_datetime_8_0=RULE_EX_JSON_UTC
 		{
-			newLeafNode(lv_datetime_7_0, grammarAccess.getJsonValueAccess().getDatetimeEX_JSON_UTCTerminalRuleCall_7_0()); 
+			newLeafNode(lv_datetime_8_0, grammarAccess.getJsonValueAccess().getDatetimeEX_JSON_UTCTerminalRuleCall_8_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -368,7 +387,7 @@ ruleJsonValue returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"datetime",
-        		lv_datetime_7_0, 
+        		lv_datetime_8_0, 
         		"EX_JSON_UTC");
 	    }
 
@@ -443,120 +462,6 @@ ruleJsonArray returns [EObject current=null]
     	newLeafNode(otherlv_4, grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_3());
     }
 )
-;
-
-
-
-
-
-// Entry rule entryRuleJsonNumber
-entryRuleJsonNumber returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getJsonNumberRule()); }
-	 iv_ruleJsonNumber=ruleJsonNumber 
-	 { $current=$iv_ruleJsonNumber.current; } 
-	 EOF 
-;
-
-// Rule JsonNumber
-ruleJsonNumber returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((	otherlv_0='-' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getJsonNumberAccess().getHyphenMinusKeyword_0());
-    }
-)?(this_INT_1=RULE_INT
-    { 
-    newLeafNode(this_INT_1, grammarAccess.getJsonNumberAccess().getINTTerminalRuleCall_1()); 
-    }
-)?(
-(
-		lv_float_2_0=	'.' 
-    {
-        newLeafNode(lv_float_2_0, grammarAccess.getJsonNumberAccess().getFloatFullStopKeyword_2_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonNumberRule());
-	        }
-       		setWithLastConsumed($current, "float", true, ".");
-	    }
-
-)
-)(
-(
-		lv_intValue_3_0=RULE_INT
-		{
-			newLeafNode(lv_intValue_3_0, grammarAccess.getJsonNumberAccess().getIntValueINTTerminalRuleCall_3_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonNumberRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"intValue",
-        		lv_intValue_3_0, 
-        		"INT");
-	    }
-
-)
-)((
-(
-(
-		lv_exp_4_1=	'E' 
-    {
-        newLeafNode(lv_exp_4_1, grammarAccess.getJsonNumberAccess().getExpEKeyword_4_0_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonNumberRule());
-	        }
-       		setWithLastConsumed($current, "exp", true, null);
-	    }
-
-    |		lv_exp_4_2=	'e' 
-    {
-        newLeafNode(lv_exp_4_2, grammarAccess.getJsonNumberAccess().getExpEKeyword_4_0_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonNumberRule());
-	        }
-       		setWithLastConsumed($current, "exp", true, null);
-	    }
-
-)
-
-)
-)(	otherlv_5='-' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getJsonNumberAccess().getHyphenMinusKeyword_4_1());
-    }
-)?(
-(
-		lv_expValue_6_0=RULE_INT
-		{
-			newLeafNode(lv_expValue_6_0, grammarAccess.getJsonNumberAccess().getExpValueINTTerminalRuleCall_4_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonNumberRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"expValue",
-        		lv_expValue_6_0, 
-        		"INT");
-	    }
-
-)
-))?)
 ;
 
 
@@ -639,6 +544,8 @@ ruleExJsonEnum returns [EObject current=null]
 RULE_JSON_BOOLEAN : ('true'|'false'|'boolean');
 
 RULE_JSON_NULL : 'null';
+
+RULE_JSON_FLOAT : '-'? RULE_INT '.' RULE_INT (('E'|'e') '-'? RULE_INT)?;
 
 RULE_EX_JSON_UTC : 'UTC';
 

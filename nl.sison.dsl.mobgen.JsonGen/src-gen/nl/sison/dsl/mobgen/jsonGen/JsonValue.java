@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getArray <em>Array</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isBool <em>Bool</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isNull <em>Null</em>}</li>
- *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getNumber <em>Number</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isInt <em>Int</em>}</li>
+ *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isFloat <em>Float</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getStrFromEnum <em>Str From Enum</em>}</li>
  *   <li>{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime <em>Datetime</em>}</li>
  * </ul>
@@ -160,30 +161,56 @@ public interface JsonValue extends EObject
   void setNull(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Number</b></em>' containment reference.
+   * Returns the value of the '<em><b>Int</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Number</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Int</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Number</em>' containment reference.
-   * @see #setNumber(JsonNumber)
-   * @see nl.sison.dsl.mobgen.jsonGen.JsonGenPackage#getJsonValue_Number()
-   * @model containment="true"
+   * @return the value of the '<em>Int</em>' attribute.
+   * @see #setInt(boolean)
+   * @see nl.sison.dsl.mobgen.jsonGen.JsonGenPackage#getJsonValue_Int()
+   * @model
    * @generated
    */
-  JsonNumber getNumber();
+  boolean isInt();
 
   /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getNumber <em>Number</em>}' containment reference.
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isInt <em>Int</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Number</em>' containment reference.
-   * @see #getNumber()
+   * @param value the new value of the '<em>Int</em>' attribute.
+   * @see #isInt()
    * @generated
    */
-  void setNumber(JsonNumber value);
+  void setInt(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Float</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Float</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Float</em>' attribute.
+   * @see #setFloat(boolean)
+   * @see nl.sison.dsl.mobgen.jsonGen.JsonGenPackage#getJsonValue_Float()
+   * @model
+   * @generated
+   */
+  boolean isFloat();
+
+  /**
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#isFloat <em>Float</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Float</em>' attribute.
+   * @see #isFloat()
+   * @generated
+   */
+  void setFloat(boolean value);
 
   /**
    * Returns the value of the '<em><b>Str From Enum</b></em>' containment reference.

@@ -59,15 +59,6 @@ public interface JsonGenFactory extends EFactory
   JsonArray createJsonArray();
 
   /**
-   * Returns a new object of class '<em>Json Number</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Json Number</em>'.
-   * @generated
-   */
-  JsonNumber createJsonNumber();
-
-  /**
    * Returns a new object of class '<em>Ex Json Enum</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

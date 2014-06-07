@@ -21,18 +21,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/array"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/bool"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/null"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/int"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/float"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/strFromEnum"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/datetime"/>
     </genClasses>
     <genClasses ecoreClass="JsonGen.ecore#//JsonArray">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonArray/values"/>
-    </genClasses>
-    <genClasses ecoreClass="JsonGen.ecore#//JsonNumber">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/float"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/intValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/exp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/expValue"/>
     </genClasses>
     <genClasses ecoreClass="JsonGen.ecore#//ExJsonEnum">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//ExJsonEnum/values"/>

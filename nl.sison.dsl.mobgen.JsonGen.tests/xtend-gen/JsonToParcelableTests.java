@@ -45,10 +45,16 @@ public class JsonToParcelableTests {
     _builder.append("\"a hab\" : \"string\",");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("\"b low\" : 12344312,");
+    _builder.append("\"b low\" : 1,");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("\"c rab\" : 4.0001");
+    _builder.append("\"c rab\" : 4.0001,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"d elta\": \"1234\",");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("?\"efteLing\" : 2");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

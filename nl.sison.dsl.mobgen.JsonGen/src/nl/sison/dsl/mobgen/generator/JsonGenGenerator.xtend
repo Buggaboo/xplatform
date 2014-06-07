@@ -76,15 +76,8 @@ class JsonGenGenerator implements IGenerator {
 
 		if (value.bool) return String.format("jsonRoot.getBoolean(\"%s\")", key)
 		
-		if (value.number != null)
-		{
-			if (value.number.float || value.number.exp) {
-				return String.format("jsonRoot.getDouble(\"%s\")", key)
-			}else
-			{
-				return String.format("jsonRoot.getLong(\"%s\")", key)
-			}
-		}
+		if(value.float) return String.format("jsonRoot.getDouble(\"%s\")", key)
+		if(value.int)	return String.format("jsonRoot.getLong(\"%s\")", key)
 		
 		return "UNDEFINED"
 	}
@@ -117,15 +110,14 @@ class JsonGenGenerator implements IGenerator {
 				map.put(key, 'String')
 			}
 			
-			val number = value.number
-			if(number != null) {
-				if (number.exp || number.float)
-				{
-					map.put(key, "Double") // bigger? BigDecimal
-				}else
-				{
-					map.put(key, "Long") // bigger? BigInteger
-				}
+			if (value.float)
+			{
+				map.put(key, "Double") // bigger? BigDecimal
+			}
+			
+			if (value.int)
+			{
+				map.put(key, "Long") // bigger? BigInteger
 			}
 				
 //			value.number ?: map.put('BigInteger[] or int, prevent over and underflow in any case', member.key) // TODO
@@ -191,9 +183,9 @@ class JsonGenGenerator implements IGenerator {
 
 	    public «parcelableClassName»(«members.entrySet.map([t | String.format("final %s %s", t.value, t.key)]).join(', ')»)
 	    {
-		«FOR s : members.entrySet»
+			«FOR s : members.entrySet»
 			this.« s.key » = « s.key »; 
-		«ENDFOR»
+			«ENDFOR»
 	    }
 
 		public «parcelableClassName»(Exception exception)
@@ -287,9 +279,9 @@ class JsonGenGenerator implements IGenerator {
 	«parameterType» get«parameterName.toString.capitalizeFirstLetter»() { return «parameterName»; }
 	'''
 
-	def camelCase(CharSequence headerKey)
+	def camelCase(CharSequence input)
 	{
-		val strArr = headerKey.toString.replaceAll("\\s", "-").split("-").map(s | s.capitalizeFirstLetter).join('')
+		val strArr = input.toString.replaceAll("\\s", "-").split("-").map(s | s.capitalizeFirstLetter).join('')
 		return strArr.substring(0, 1).toLowerCase + strArr.substring(1)
 	}
 	

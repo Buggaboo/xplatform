@@ -8,8 +8,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -17,16 +15,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class JsonGenSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JsonGenGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_JsonNumber_HyphenMinusKeyword_0_q;
-	protected AbstractElementAlias match_JsonNumber_HyphenMinusKeyword_4_1_q;
-	protected AbstractElementAlias match_JsonNumber_INTTerminalRuleCall_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JsonGenGrammarAccess) access;
-		match_JsonNumber_HyphenMinusKeyword_0_q = new TokenAlias(false, true, grammarAccess.getJsonNumberAccess().getHyphenMinusKeyword_0());
-		match_JsonNumber_HyphenMinusKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getJsonNumberAccess().getHyphenMinusKeyword_4_1());
-		match_JsonNumber_INTTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getJsonNumberAccess().getINTTerminalRuleCall_1());
 	}
 	
 	@Override
@@ -35,6 +27,8 @@ public class JsonGenSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getINTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getJSON_BOOLEANRule())
 			return getJSON_BOOLEANToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getJSON_FLOATRule())
+			return getJSON_FLOATToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getJSON_NULLRule())
 			return getJSON_NULLToken(semanticObject, ruleCall, node);
 		return "";
@@ -60,6 +54,16 @@ public class JsonGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal JSON_FLOAT:
+	 * 	'-'? INT '.' INT (('E'|'e') '-'? INT)?;
+	 */
+	protected String getJSON_FLOATToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ".";
+	}
+	
+	/**
 	 * terminal JSON_NULL:
 	 *   'null';
 	 */
@@ -75,38 +79,8 @@ public class JsonGenSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_JsonNumber_HyphenMinusKeyword_0_q.equals(syntax))
-				emit_JsonNumber_HyphenMinusKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_JsonNumber_HyphenMinusKeyword_4_1_q.equals(syntax))
-				emit_JsonNumber_HyphenMinusKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_JsonNumber_INTTerminalRuleCall_1_q.equals(syntax))
-				emit_JsonNumber_INTTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Syntax:
-	 *     '-'?
-	 */
-	protected void emit_JsonNumber_HyphenMinusKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     '-'?
-	 */
-	protected void emit_JsonNumber_HyphenMinusKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     INT?
-	 */
-	protected void emit_JsonNumber_INTTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

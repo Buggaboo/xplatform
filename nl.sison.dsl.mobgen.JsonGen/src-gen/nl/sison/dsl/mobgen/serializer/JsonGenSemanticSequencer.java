@@ -5,7 +5,6 @@ import com.google.inject.Provider;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
 import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonGenPackage;
-import nl.sison.dsl.mobgen.jsonGen.JsonNumber;
 import nl.sison.dsl.mobgen.jsonGen.JsonObject;
 import nl.sison.dsl.mobgen.jsonGen.JsonValue;
 import nl.sison.dsl.mobgen.jsonGen.Member;
@@ -36,12 +35,6 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case JsonGenPackage.JSON_ARRAY:
 				if(context == grammarAccess.getJsonArrayRule()) {
 					sequence_JsonArray(context, (JsonArray) semanticObject); 
-					return; 
-				}
-				else break;
-			case JsonGenPackage.JSON_NUMBER:
-				if(context == grammarAccess.getJsonNumberRule()) {
-					sequence_JsonNumber(context, (JsonNumber) semanticObject); 
 					return; 
 				}
 				else break;
@@ -87,15 +80,6 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (float?='.' intValue=INT ((exp?='E' | exp?='e') expValue=INT)?)
-	 */
-	protected void sequence_JsonNumber(EObject context, JsonNumber semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (members+=Member members+=Member*)
 	 */
 	protected void sequence_JsonObject(EObject context, JsonObject semanticObject) {
@@ -111,7 +95,8 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         array=JsonArray | 
 	 *         bool?=JSON_BOOLEAN | 
 	 *         null?=JSON_NULL | 
-	 *         number=JsonNumber | 
+	 *         int?=INT | 
+	 *         float?=JSON_FLOAT | 
 	 *         strFromEnum=ExJsonEnum | 
 	 *         datetime=EX_JSON_UTC
 	 *     )

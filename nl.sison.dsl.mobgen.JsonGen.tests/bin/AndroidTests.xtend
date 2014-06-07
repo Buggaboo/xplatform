@@ -33,8 +33,10 @@ class JsonToParcelableTests {
     	val str = '''
     	{
     		"a hab" : "string",
-    		"b low" : 12344312,
-    		"c rab" : 4.0001
+    		"b low" : 1,
+    		"c rab" : 4.0001,
+    		"d elta": "1234",
+    		?"efteLing" : 2
     	}
     	'''
     	println(str.generateModelThenFiles.allFiles)
