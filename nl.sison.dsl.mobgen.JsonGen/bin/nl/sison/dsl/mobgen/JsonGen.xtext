@@ -1,0 +1,37 @@
+grammar nl.sison.dsl.mobgen.JsonGen with org.eclipse.xtext.common.Terminals
+
+generate jsonGen "http://www.sison.nl/dsl/mobgen/JsonGen"
+
+JsonObject:
+	'{' 
+		(members+=Member)
+		(',' members+=Member)*
+	'}';
+ 
+Member:
+	(optional?='?')? key=STRING ':' value=JsonValue;
+	
+JsonValue:
+	obj=JsonObject | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL /* currently ignore nulls */| number=JsonNumber | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+ 
+JsonArray:
+	'[' (values+=JsonValue) (',' values+=JsonValue)* ']';
+ 
+terminal JSON_BOOLEAN:
+  'true' | 'false' | 'boolean';
+ 
+terminal JSON_NULL:
+  'null';
+ 
+JsonNumber:
+	'-'? INT? float?='.' intValue=INT (exp?=('E'|'e') '-'? expValue=INT)?;
+	
+ExJsonEnum:
+	'enum' '{' values+=STRING (',' values+=STRING) '}';
+
+/*
+ * TODO generate zulu validator SimpleDateFormatter
+ */
+terminal EX_JSON_UTC:
+	'UTC';
+

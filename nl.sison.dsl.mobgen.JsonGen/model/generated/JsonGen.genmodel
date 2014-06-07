@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/nl.sison.dsl.mobgen.JsonGen/src-gen" editDirectory="/nl.sison.dsl.mobgen.JsonGen.edit/src"
+    editorDirectory="/nl.sison.dsl.mobgen.JsonGen.editor/src" modelPluginID="nl.sison.dsl.mobgen.JsonGen"
+    forceOverwrite="true" modelName="JsonGen" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="nl.sison.dsl.mobgen.JsonGen.edit"
+    editorPluginID="nl.sison.dsl.mobgen.JsonGen.editor" runtimeVersion="2.9">
+  <genPackages prefix="JsonGen" basePackage="nl.sison.dsl.mobgen" disposableProviderFactory="true"
+      fileExtensions="jsongen" ecorePackage="JsonGen.ecore#/">
+    <genClasses ecoreClass="JsonGen.ecore#//JsonObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonObject/members"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//Member">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//Member/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//Member/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//Member/value"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//JsonValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/obj"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/str"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/array"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/bool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/null"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/number"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/strFromEnum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/datetime"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//JsonArray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonArray/values"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//JsonNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/float"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/intValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/exp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonNumber/expValue"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//ExJsonEnum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//ExJsonEnum/values"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
