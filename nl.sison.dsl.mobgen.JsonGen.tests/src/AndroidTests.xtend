@@ -28,6 +28,20 @@ class JsonToParcelableTests {
     }
     
     @Test
+    def void testUTCAndDateFormat ()
+    {
+    	val str = '''
+    	{
+    		"a hab" : enum {"blue", "green", "red"},
+    		"b low" : enum {"a", "b", "c"},
+    		"c row" : UTC,
+    		"d elta" : datetime("ddd-MMM-yyyy")
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
     def void testEnums()
     {
     	val str = '''

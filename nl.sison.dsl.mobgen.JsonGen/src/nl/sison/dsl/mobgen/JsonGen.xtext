@@ -12,7 +12,7 @@ Member:
 	(optional?='?')? key=STRING ':' value=JsonValue;
 	
 JsonValue:
-	obj=JsonObject | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL /* currently ignore nulls */| int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+	obj=JsonObject | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL /* currently ignore nulls */| int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=ExJsonDateTime;
  
 JsonArray:
 	'[' (values+=JsonValue) (',' values+=JsonValue)* ']';
@@ -31,7 +31,9 @@ ExJsonEnum:
 
 /*
  * TODO generate zulu validator SimpleDateFormatter
+ * 
+ * There is a thread related security hole, fix this
  */
-terminal EX_JSON_UTC:
-	'UTC';
+ExJsonDateTime:
+	utc?='UTC' | 'datetime' '(' format=STRING ')';
 
