@@ -213,7 +213,7 @@ public interface JsonGenPackage extends EPackage
   int JSON_VALUE__STR_FROM_ENUM = 7;
 
   /**
-   * The feature id for the '<em><b>Datetime</b></em>' attribute.
+   * The feature id for the '<em><b>Datetime</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -285,6 +285,43 @@ public interface JsonGenPackage extends EPackage
    * @ordered
    */
   int EX_JSON_ENUM_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.ExJsonDateTimeImpl <em>Ex Json Date Time</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see nl.sison.dsl.mobgen.jsonGen.impl.ExJsonDateTimeImpl
+   * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonGenPackageImpl#getExJsonDateTime()
+   * @generated
+   */
+  int EX_JSON_DATE_TIME = 5;
+
+  /**
+   * The feature id for the '<em><b>Utc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EX_JSON_DATE_TIME__UTC = 0;
+
+  /**
+   * The feature id for the '<em><b>Format</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EX_JSON_DATE_TIME__FORMAT = 1;
+
+  /**
+   * The number of structural features of the '<em>Ex Json Date Time</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EX_JSON_DATE_TIME_FEATURE_COUNT = 2;
 
 
   /**
@@ -450,15 +487,15 @@ public interface JsonGenPackage extends EPackage
   EReference getJsonValue_StrFromEnum();
 
   /**
-   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime <em>Datetime</em>}'.
+   * Returns the meta object for the containment reference '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime <em>Datetime</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Datetime</em>'.
+   * @return the meta object for the containment reference '<em>Datetime</em>'.
    * @see nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime()
    * @see #getJsonValue()
    * @generated
    */
-  EAttribute getJsonValue_Datetime();
+  EReference getJsonValue_Datetime();
 
   /**
    * Returns the meta object for class '{@link nl.sison.dsl.mobgen.jsonGen.JsonArray <em>Json Array</em>}'.
@@ -501,6 +538,38 @@ public interface JsonGenPackage extends EPackage
    * @generated
    */
   EAttribute getExJsonEnum_Values();
+
+  /**
+   * Returns the meta object for class '{@link nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime <em>Ex Json Date Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ex Json Date Time</em>'.
+   * @see nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime
+   * @generated
+   */
+  EClass getExJsonDateTime();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime#isUtc <em>Utc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Utc</em>'.
+   * @see nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime#isUtc()
+   * @see #getExJsonDateTime()
+   * @generated
+   */
+  EAttribute getExJsonDateTime_Utc();
+
+  /**
+   * Returns the meta object for the attribute '{@link nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime#getFormat <em>Format</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Format</em>'.
+   * @see nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime#getFormat()
+   * @see #getExJsonDateTime()
+   * @generated
+   */
+  EAttribute getExJsonDateTime_Format();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -652,12 +721,12 @@ public interface JsonGenPackage extends EPackage
     EReference JSON_VALUE__STR_FROM_ENUM = eINSTANCE.getJsonValue_StrFromEnum();
 
     /**
-     * The meta object literal for the '<em><b>Datetime</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Datetime</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute JSON_VALUE__DATETIME = eINSTANCE.getJsonValue_Datetime();
+    EReference JSON_VALUE__DATETIME = eINSTANCE.getJsonValue_Datetime();
 
     /**
      * The meta object literal for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.JsonArrayImpl <em>Json Array</em>}' class.
@@ -694,6 +763,32 @@ public interface JsonGenPackage extends EPackage
      * @generated
      */
     EAttribute EX_JSON_ENUM__VALUES = eINSTANCE.getExJsonEnum_Values();
+
+    /**
+     * The meta object literal for the '{@link nl.sison.dsl.mobgen.jsonGen.impl.ExJsonDateTimeImpl <em>Ex Json Date Time</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see nl.sison.dsl.mobgen.jsonGen.impl.ExJsonDateTimeImpl
+     * @see nl.sison.dsl.mobgen.jsonGen.impl.JsonGenPackageImpl#getExJsonDateTime()
+     * @generated
+     */
+    EClass EX_JSON_DATE_TIME = eINSTANCE.getExJsonDateTime();
+
+    /**
+     * The meta object literal for the '<em><b>Utc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EX_JSON_DATE_TIME__UTC = eINSTANCE.getExJsonDateTime_Utc();
+
+    /**
+     * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EX_JSON_DATE_TIME__FORMAT = eINSTANCE.getExJsonDateTime_Format();
 
   }
 

@@ -2,6 +2,7 @@
  */
 package nl.sison.dsl.mobgen.jsonGen.impl;
 
+import nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
 import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonGenPackage;
@@ -171,24 +172,14 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
   protected ExJsonEnum strFromEnum;
 
   /**
-   * The default value of the '{@link #getDatetime() <em>Datetime</em>}' attribute.
+   * The cached value of the '{@link #getDatetime() <em>Datetime</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDatetime()
    * @generated
    * @ordered
    */
-  protected static final String DATETIME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDatetime() <em>Datetime</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatetime()
-   * @generated
-   * @ordered
-   */
-  protected String datetime = DATETIME_EDEFAULT;
+  protected ExJsonDateTime datetime;
 
   /**
    * <!-- begin-user-doc -->
@@ -475,7 +466,7 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDatetime()
+  public ExJsonDateTime getDatetime()
   {
     return datetime;
   }
@@ -485,12 +476,37 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDatetime(String newDatetime)
+  public NotificationChain basicSetDatetime(ExJsonDateTime newDatetime, NotificationChain msgs)
   {
-    String oldDatetime = datetime;
+    ExJsonDateTime oldDatetime = datetime;
     datetime = newDatetime;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__DATETIME, oldDatetime, datetime));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__DATETIME, oldDatetime, newDatetime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDatetime(ExJsonDateTime newDatetime)
+  {
+    if (newDatetime != datetime)
+    {
+      NotificationChain msgs = null;
+      if (datetime != null)
+        msgs = ((InternalEObject)datetime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JsonGenPackage.JSON_VALUE__DATETIME, null, msgs);
+      if (newDatetime != null)
+        msgs = ((InternalEObject)newDatetime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JsonGenPackage.JSON_VALUE__DATETIME, null, msgs);
+      msgs = basicSetDatetime(newDatetime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JsonGenPackage.JSON_VALUE__DATETIME, newDatetime, newDatetime));
   }
 
   /**
@@ -509,6 +525,8 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         return basicSetArray(null, msgs);
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         return basicSetStrFromEnum(null, msgs);
+      case JsonGenPackage.JSON_VALUE__DATETIME:
+        return basicSetDatetime(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -580,7 +598,7 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         setStrFromEnum((ExJsonEnum)newValue);
         return;
       case JsonGenPackage.JSON_VALUE__DATETIME:
-        setDatetime((String)newValue);
+        setDatetime((ExJsonDateTime)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -621,7 +639,7 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
         setStrFromEnum((ExJsonEnum)null);
         return;
       case JsonGenPackage.JSON_VALUE__DATETIME:
-        setDatetime(DATETIME_EDEFAULT);
+        setDatetime((ExJsonDateTime)null);
         return;
     }
     super.eUnset(featureID);
@@ -654,7 +672,7 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
       case JsonGenPackage.JSON_VALUE__STR_FROM_ENUM:
         return strFromEnum != null;
       case JsonGenPackage.JSON_VALUE__DATETIME:
-        return DATETIME_EDEFAULT == null ? datetime != null : !DATETIME_EDEFAULT.equals(datetime);
+        return datetime != null;
     }
     return super.eIsSet(featureID);
   }
@@ -680,8 +698,6 @@ public class JsonValueImpl extends MinimalEObjectImpl.Container implements JsonV
     result.append(int_);
     result.append(", float: ");
     result.append(float_);
-    result.append(", datetime: ");
-    result.append(datetime);
     result.append(')');
     return result.toString();
   }

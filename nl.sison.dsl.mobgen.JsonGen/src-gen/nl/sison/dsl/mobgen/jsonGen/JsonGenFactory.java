@@ -68,6 +68,15 @@ public interface JsonGenFactory extends EFactory
   ExJsonEnum createExJsonEnum();
 
   /**
+   * Returns a new object of class '<em>Ex Json Date Time</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ex Json Date Time</em>'.
+   * @generated
+   */
+  ExJsonDateTime createExJsonDateTime();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

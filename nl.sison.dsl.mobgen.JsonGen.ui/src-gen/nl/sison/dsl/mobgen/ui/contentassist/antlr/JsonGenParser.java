@@ -38,6 +38,7 @@ public class JsonGenParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getJsonValueAccess().getAlternatives(), "rule__JsonValue__Alternatives");
+					put(grammarAccess.getExJsonDateTimeAccess().getAlternatives(), "rule__ExJsonDateTime__Alternatives");
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");
 					put(grammarAccess.getMemberAccess().getGroup(), "rule__Member__Group__0");
@@ -45,6 +46,7 @@ public class JsonGenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonArrayAccess().getGroup_2(), "rule__JsonArray__Group_2__0");
 					put(grammarAccess.getExJsonEnumAccess().getGroup(), "rule__ExJsonEnum__Group__0");
 					put(grammarAccess.getExJsonEnumAccess().getGroup_3(), "rule__ExJsonEnum__Group_3__0");
+					put(grammarAccess.getExJsonDateTimeAccess().getGroup_1(), "rule__ExJsonDateTime__Group_1__0");
 					put(grammarAccess.getJsonObjectAccess().getMembersAssignment_1(), "rule__JsonObject__MembersAssignment_1");
 					put(grammarAccess.getJsonObjectAccess().getMembersAssignment_2_1(), "rule__JsonObject__MembersAssignment_2_1");
 					put(grammarAccess.getMemberAccess().getOptionalAssignment_0(), "rule__Member__OptionalAssignment_0");
@@ -63,6 +65,8 @@ public class JsonGenParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonArrayAccess().getValuesAssignment_2_1(), "rule__JsonArray__ValuesAssignment_2_1");
 					put(grammarAccess.getExJsonEnumAccess().getValuesAssignment_2(), "rule__ExJsonEnum__ValuesAssignment_2");
 					put(grammarAccess.getExJsonEnumAccess().getValuesAssignment_3_1(), "rule__ExJsonEnum__ValuesAssignment_3_1");
+					put(grammarAccess.getExJsonDateTimeAccess().getUtcAssignment_0(), "rule__ExJsonDateTime__UtcAssignment_0");
+					put(grammarAccess.getExJsonDateTimeAccess().getFormatAssignment_1_2(), "rule__ExJsonDateTime__FormatAssignment_1_2");
 				}
 			};
 		}

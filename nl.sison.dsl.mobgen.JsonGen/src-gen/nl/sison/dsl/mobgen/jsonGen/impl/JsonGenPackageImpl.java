@@ -2,6 +2,7 @@
  */
 package nl.sison.dsl.mobgen.jsonGen.impl;
 
+import nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
 import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonGenFactory;
@@ -59,6 +60,13 @@ public class JsonGenPackageImpl extends EPackageImpl implements JsonGenPackage
    * @generated
    */
   private EClass exJsonEnumEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass exJsonDateTimeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -278,9 +286,9 @@ public class JsonGenPackageImpl extends EPackageImpl implements JsonGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJsonValue_Datetime()
+  public EReference getJsonValue_Datetime()
   {
-    return (EAttribute)jsonValueEClass.getEStructuralFeatures().get(8);
+    return (EReference)jsonValueEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -321,6 +329,36 @@ public class JsonGenPackageImpl extends EPackageImpl implements JsonGenPackage
   public EAttribute getExJsonEnum_Values()
   {
     return (EAttribute)exJsonEnumEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExJsonDateTime()
+  {
+    return exJsonDateTimeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExJsonDateTime_Utc()
+  {
+    return (EAttribute)exJsonDateTimeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExJsonDateTime_Format()
+  {
+    return (EAttribute)exJsonDateTimeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -370,13 +408,17 @@ public class JsonGenPackageImpl extends EPackageImpl implements JsonGenPackage
     createEAttribute(jsonValueEClass, JSON_VALUE__INT);
     createEAttribute(jsonValueEClass, JSON_VALUE__FLOAT);
     createEReference(jsonValueEClass, JSON_VALUE__STR_FROM_ENUM);
-    createEAttribute(jsonValueEClass, JSON_VALUE__DATETIME);
+    createEReference(jsonValueEClass, JSON_VALUE__DATETIME);
 
     jsonArrayEClass = createEClass(JSON_ARRAY);
     createEReference(jsonArrayEClass, JSON_ARRAY__VALUES);
 
     exJsonEnumEClass = createEClass(EX_JSON_ENUM);
     createEAttribute(exJsonEnumEClass, EX_JSON_ENUM__VALUES);
+
+    exJsonDateTimeEClass = createEClass(EX_JSON_DATE_TIME);
+    createEAttribute(exJsonDateTimeEClass, EX_JSON_DATE_TIME__UTC);
+    createEAttribute(exJsonDateTimeEClass, EX_JSON_DATE_TIME__FORMAT);
   }
 
   /**
@@ -427,13 +469,17 @@ public class JsonGenPackageImpl extends EPackageImpl implements JsonGenPackage
     initEAttribute(getJsonValue_Int(), ecorePackage.getEBoolean(), "int", null, 0, 1, JsonValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getJsonValue_Float(), ecorePackage.getEBoolean(), "float", null, 0, 1, JsonValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJsonValue_StrFromEnum(), this.getExJsonEnum(), null, "strFromEnum", null, 0, 1, JsonValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getJsonValue_Datetime(), ecorePackage.getEString(), "datetime", null, 0, 1, JsonValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJsonValue_Datetime(), this.getExJsonDateTime(), null, "datetime", null, 0, 1, JsonValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonArrayEClass, JsonArray.class, "JsonArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJsonArray_Values(), this.getJsonValue(), null, "values", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exJsonEnumEClass, ExJsonEnum.class, "ExJsonEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExJsonEnum_Values(), ecorePackage.getEString(), "values", null, 0, -1, ExJsonEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(exJsonDateTimeEClass, ExJsonDateTime.class, "ExJsonDateTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExJsonDateTime_Utc(), ecorePackage.getEBoolean(), "utc", null, 0, 1, ExJsonDateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExJsonDateTime_Format(), ecorePackage.getEString(), "format", null, 0, 1, ExJsonDateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -24,13 +24,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/int"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/float"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/strFromEnum"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//JsonValue/datetime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonValue/datetime"/>
     </genClasses>
     <genClasses ecoreClass="JsonGen.ecore#//JsonArray">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JsonGen.ecore#//JsonArray/values"/>
     </genClasses>
     <genClasses ecoreClass="JsonGen.ecore#//ExJsonEnum">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//ExJsonEnum/values"/>
+    </genClasses>
+    <genClasses ecoreClass="JsonGen.ecore#//ExJsonDateTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//ExJsonDateTime/utc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JsonGen.ecore#//ExJsonDateTime/format"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,6 +2,7 @@ package nl.sison.dsl.mobgen.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
 import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonGenPackage;
@@ -26,6 +27,12 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == JsonGenPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case JsonGenPackage.EX_JSON_DATE_TIME:
+				if(context == grammarAccess.getExJsonDateTimeRule()) {
+					sequence_ExJsonDateTime(context, (ExJsonDateTime) semanticObject); 
+					return; 
+				}
+				else break;
 			case JsonGenPackage.EX_JSON_ENUM:
 				if(context == grammarAccess.getExJsonEnumRule()) {
 					sequence_ExJsonEnum(context, (ExJsonEnum) semanticObject); 
@@ -62,7 +69,16 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (values+=STRING values+=STRING)
+	 *     (utc?='UTC' | format=STRING)
+	 */
+	protected void sequence_ExJsonDateTime(EObject context, ExJsonDateTime semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=STRING values+=STRING*)
 	 */
 	protected void sequence_ExJsonEnum(EObject context, ExJsonEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -98,7 +114,7 @@ public class JsonGenSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         int?=INT | 
 	 *         float?=JSON_FLOAT | 
 	 *         strFromEnum=ExJsonEnum | 
-	 *         datetime=EX_JSON_UTC
+	 *         datetime=ExJsonDateTime
 	 *     )
 	 */
 	protected void sequence_JsonValue(EObject context, JsonValue semanticObject) {

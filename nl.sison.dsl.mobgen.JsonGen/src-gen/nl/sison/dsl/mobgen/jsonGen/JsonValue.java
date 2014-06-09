@@ -239,29 +239,29 @@ public interface JsonValue extends EObject
   void setStrFromEnum(ExJsonEnum value);
 
   /**
-   * Returns the value of the '<em><b>Datetime</b></em>' attribute.
+   * Returns the value of the '<em><b>Datetime</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Datetime</em>' attribute isn't clear,
+   * If the meaning of the '<em>Datetime</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Datetime</em>' attribute.
-   * @see #setDatetime(String)
+   * @return the value of the '<em>Datetime</em>' containment reference.
+   * @see #setDatetime(ExJsonDateTime)
    * @see nl.sison.dsl.mobgen.jsonGen.JsonGenPackage#getJsonValue_Datetime()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDatetime();
+  ExJsonDateTime getDatetime();
 
   /**
-   * Sets the value of the '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime <em>Datetime</em>}' attribute.
+   * Sets the value of the '{@link nl.sison.dsl.mobgen.jsonGen.JsonValue#getDatetime <em>Datetime</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Datetime</em>' attribute.
+   * @param value the new value of the '<em>Datetime</em>' containment reference.
    * @see #getDatetime()
    * @generated
    */
-  void setDatetime(String value);
+  void setDatetime(ExJsonDateTime value);
 
 } // JsonValue

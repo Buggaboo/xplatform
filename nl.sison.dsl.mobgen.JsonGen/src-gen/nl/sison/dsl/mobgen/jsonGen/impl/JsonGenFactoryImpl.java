@@ -69,6 +69,7 @@ public class JsonGenFactoryImpl extends EFactoryImpl implements JsonGenFactory
       case JsonGenPackage.JSON_VALUE: return createJsonValue();
       case JsonGenPackage.JSON_ARRAY: return createJsonArray();
       case JsonGenPackage.EX_JSON_ENUM: return createExJsonEnum();
+      case JsonGenPackage.EX_JSON_DATE_TIME: return createExJsonDateTime();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -127,6 +128,17 @@ public class JsonGenFactoryImpl extends EFactoryImpl implements JsonGenFactory
   {
     ExJsonEnumImpl exJsonEnum = new ExJsonEnumImpl();
     return exJsonEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExJsonDateTime createExJsonDateTime()
+  {
+    ExJsonDateTimeImpl exJsonDateTime = new ExJsonDateTimeImpl();
+    return exJsonDateTime;
   }
 
   /**

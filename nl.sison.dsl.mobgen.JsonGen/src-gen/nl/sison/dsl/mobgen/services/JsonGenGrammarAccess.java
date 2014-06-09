@@ -122,15 +122,15 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStrFromEnumAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
 		private final RuleCall cStrFromEnumExJsonEnumParserRuleCall_7_0 = (RuleCall)cStrFromEnumAssignment_7.eContents().get(0);
 		private final Assignment cDatetimeAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final RuleCall cDatetimeEX_JSON_UTCTerminalRuleCall_8_0 = (RuleCall)cDatetimeAssignment_8.eContents().get(0);
+		private final RuleCall cDatetimeExJsonDateTimeParserRuleCall_8_0 = (RuleCall)cDatetimeAssignment_8.eContents().get(0);
 		
 		//JsonValue:
 		//	obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-		//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+		//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=ExJsonDateTime;
 		public ParserRule getRule() { return rule; }
 
 		//obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-		//int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC
+		//int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=ExJsonDateTime
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//obj=JsonObject
@@ -181,11 +181,11 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		//ExJsonEnum
 		public RuleCall getStrFromEnumExJsonEnumParserRuleCall_7_0() { return cStrFromEnumExJsonEnumParserRuleCall_7_0; }
 
-		//datetime=EX_JSON_UTC
+		//datetime=ExJsonDateTime
 		public Assignment getDatetimeAssignment_8() { return cDatetimeAssignment_8; }
 
-		//EX_JSON_UTC
-		public RuleCall getDatetimeEX_JSON_UTCTerminalRuleCall_8_0() { return cDatetimeEX_JSON_UTCTerminalRuleCall_8_0; }
+		//ExJsonDateTime
+		public RuleCall getDatetimeExJsonDateTimeParserRuleCall_8_0() { return cDatetimeExJsonDateTimeParserRuleCall_8_0; }
 	}
 
 	public class JsonArrayElements extends AbstractParserRuleElementFinder {
@@ -246,10 +246,10 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ExJsonEnum:
-		//	"enum" "{" values+=STRING ("," values+=STRING) "}";
+		//	"enum" "{" values+=STRING ("," values+=STRING)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"enum" "{" values+=STRING ("," values+=STRING) "}"
+		//"enum" "{" values+=STRING ("," values+=STRING)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
@@ -264,7 +264,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValuesSTRINGTerminalRuleCall_2_0() { return cValuesSTRINGTerminalRuleCall_2_0; }
 
-		//"," values+=STRING
+		//("," values+=STRING)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//","
@@ -279,6 +279,54 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+
+	public class ExJsonDateTimeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExJsonDateTime");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cUtcAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cUtcUTCKeyword_0_0 = (Keyword)cUtcAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cDatetimeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cFormatAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cFormatSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cFormatAssignment_1_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		/// *
+		// * TODO generate zulu validator SimpleDateFormatter
+		// * 
+		// * There is a thread related security hole, fix this
+		// * / ExJsonDateTime:
+		//	utc?="UTC" | "datetime" "(" format=STRING ")";
+		public ParserRule getRule() { return rule; }
+
+		//utc?="UTC" | "datetime" "(" format=STRING ")"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//utc?="UTC"
+		public Assignment getUtcAssignment_0() { return cUtcAssignment_0; }
+
+		//"UTC"
+		public Keyword getUtcUTCKeyword_0_0() { return cUtcUTCKeyword_0_0; }
+
+		//"datetime" "(" format=STRING ")"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"datetime"
+		public Keyword getDatetimeKeyword_1_0() { return cDatetimeKeyword_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+
+		//format=STRING
+		public Assignment getFormatAssignment_1_2() { return cFormatAssignment_1_2; }
+
+		//STRING
+		public RuleCall getFormatSTRINGTerminalRuleCall_1_2_0() { return cFormatSTRINGTerminalRuleCall_1_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+	}
 	
 	
 	private JsonObjectElements pJsonObject;
@@ -289,7 +337,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tJSON_NULL;
 	private TerminalRule tJSON_FLOAT;
 	private ExJsonEnumElements pExJsonEnum;
-	private TerminalRule tEX_JSON_UTC;
+	private ExJsonDateTimeElements pExJsonDateTime;
 	
 	private final Grammar grammar;
 
@@ -351,7 +399,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	//JsonValue:
 	//	obj=JsonObject / * currently ignore nulls * / | str=STRING | array=JsonArray | bool?=JSON_BOOLEAN | null?=JSON_NULL |
-	//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=EX_JSON_UTC;
+	//	int?=INT | float?=JSON_FLOAT | strFromEnum=ExJsonEnum | datetime=ExJsonDateTime;
 	public JsonValueElements getJsonValueAccess() {
 		return (pJsonValue != null) ? pJsonValue : (pJsonValue = new JsonValueElements());
 	}
@@ -389,7 +437,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//ExJsonEnum:
-	//	"enum" "{" values+=STRING ("," values+=STRING) "}";
+	//	"enum" "{" values+=STRING ("," values+=STRING)* "}";
 	public ExJsonEnumElements getExJsonEnumAccess() {
 		return (pExJsonEnum != null) ? pExJsonEnum : (pExJsonEnum = new ExJsonEnumElements());
 	}
@@ -400,11 +448,17 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * TODO generate zulu validator SimpleDateFormatter
-	// * / terminal EX_JSON_UTC:
-	//	"UTC";
-	public TerminalRule getEX_JSON_UTCRule() {
-		return (tEX_JSON_UTC != null) ? tEX_JSON_UTC : (tEX_JSON_UTC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EX_JSON_UTC"));
-	} 
+	// * 
+	// * There is a thread related security hole, fix this
+	// * / ExJsonDateTime:
+	//	utc?="UTC" | "datetime" "(" format=STRING ")";
+	public ExJsonDateTimeElements getExJsonDateTimeAccess() {
+		return (pExJsonDateTime != null) ? pExJsonDateTime : (pExJsonDateTime = new ExJsonDateTimeElements());
+	}
+	
+	public ParserRule getExJsonDateTimeRule() {
+		return getExJsonDateTimeAccess().getRule();
+	}
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

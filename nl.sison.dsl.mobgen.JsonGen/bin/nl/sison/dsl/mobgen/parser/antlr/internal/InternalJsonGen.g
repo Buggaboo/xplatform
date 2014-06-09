@@ -376,19 +376,19 @@ ruleJsonValue returns [EObject current=null]
 )
     |(
 (
-		lv_datetime_8_0=RULE_EX_JSON_UTC
-		{
-			newLeafNode(lv_datetime_8_0, grammarAccess.getJsonValueAccess().getDatetimeEX_JSON_UTCTerminalRuleCall_8_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getJsonValueAccess().getDatetimeExJsonDateTimeParserRuleCall_8_0()); 
+	    }
+		lv_datetime_8_0=ruleExJsonDateTime		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getJsonValueRule());
+	            $current = createModelElementForParent(grammarAccess.getJsonValueRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"datetime",
         		lv_datetime_8_0, 
-        		"EX_JSON_UTC");
+        		"ExJsonDateTime");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -530,11 +530,78 @@ ruleExJsonEnum returns [EObject current=null]
 	    }
 
 )
-))	otherlv_5='}' 
+))*	otherlv_5='}' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getExJsonEnumAccess().getRightCurlyBracketKeyword_4());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleExJsonDateTime
+entryRuleExJsonDateTime returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getExJsonDateTimeRule()); }
+	 iv_ruleExJsonDateTime=ruleExJsonDateTime 
+	 { $current=$iv_ruleExJsonDateTime.current; } 
+	 EOF 
+;
+
+// Rule ExJsonDateTime
+ruleExJsonDateTime returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_utc_0_0=	'UTC' 
+    {
+        newLeafNode(lv_utc_0_0, grammarAccess.getExJsonDateTimeAccess().getUtcUTCKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExJsonDateTimeRule());
+	        }
+       		setWithLastConsumed($current, "utc", true, "UTC");
+	    }
+
+)
+)
+    |(	otherlv_1='datetime' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getExJsonDateTimeAccess().getDatetimeKeyword_1_0());
+    }
+	otherlv_2='(' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getExJsonDateTimeAccess().getLeftParenthesisKeyword_1_1());
+    }
+(
+(
+		lv_format_3_0=RULE_STRING
+		{
+			newLeafNode(lv_format_3_0, grammarAccess.getExJsonDateTimeAccess().getFormatSTRINGTerminalRuleCall_1_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExJsonDateTimeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"format",
+        		lv_format_3_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_4=')' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getExJsonDateTimeAccess().getRightParenthesisKeyword_1_3());
+    }
+))
 ;
 
 
@@ -546,8 +613,6 @@ RULE_JSON_BOOLEAN : ('true'|'false'|'boolean');
 RULE_JSON_NULL : 'null';
 
 RULE_JSON_FLOAT : '-'? RULE_INT '.' RULE_INT (('E'|'e') '-'? RULE_INT)?;
-
-RULE_EX_JSON_UTC : 'UTC';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

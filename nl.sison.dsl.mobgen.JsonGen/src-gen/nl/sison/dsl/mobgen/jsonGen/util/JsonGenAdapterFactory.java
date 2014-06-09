@@ -100,6 +100,11 @@ public class JsonGenAdapterFactory extends AdapterFactoryImpl
         return createExJsonEnumAdapter();
       }
       @Override
+      public Adapter caseExJsonDateTime(ExJsonDateTime object)
+      {
+        return createExJsonDateTimeAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -192,6 +197,21 @@ public class JsonGenAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExJsonEnumAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime <em>Ex Json Date Time</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime
+   * @generated
+   */
+  public Adapter createExJsonDateTimeAdapter()
   {
     return null;
   }

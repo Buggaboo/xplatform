@@ -37,7 +37,51 @@ public class JsonToParcelableTests {
   }
   
   @Test
-  public void testIntegerFloats() {
+  public void testUTCAndDateFormat() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"a hab\" : enum {\"blue\", \"green\", \"red\"},");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"b low\" : enum {\"a\", \"b\", \"c\"},");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"c row\" : UTC,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"d elta\" : datetime(\"ddd-MMM-yyyy\")");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testEnums() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"a hab\" : enum {\"blue\", \"green\", \"red\"},");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"b low\" : enum {\"a\", \"b\", \"c\"}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testIntegerAndFloats() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");
     _builder.newLine();
@@ -65,7 +109,7 @@ public class JsonToParcelableTests {
   }
   
   @Test
-  public void testBooleanParcelableString() {
+  public void testBooleanAndParcelableAndString() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("{");
@@ -77,7 +121,7 @@ public class JsonToParcelableTests {
       _builder.append("\"b\" : \"string\",");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("\"count-zero\" : { \"d\" : \"string\", \"f-zero\" : {\"q\" : \"string\"}},");
+      _builder.append("\"count-zero\" : { \"d\" : \"string\", \"f-zero\" : {\"q\" : \"string\", \"z\" : 1234}},");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("?\"d-zebra\" : { \"e\" : \"fine\" },");

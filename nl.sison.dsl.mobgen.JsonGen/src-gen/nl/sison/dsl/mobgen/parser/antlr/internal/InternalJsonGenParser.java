@@ -21,26 +21,29 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJsonGenParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_JSON_BOOLEAN", "RULE_JSON_NULL", "RULE_INT", "RULE_JSON_FLOAT", "RULE_EX_JSON_UTC", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "','", "'}'", "'?'", "':'", "'['", "']'", "'enum'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_JSON_BOOLEAN", "RULE_JSON_NULL", "RULE_INT", "RULE_JSON_FLOAT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "','", "'}'", "'?'", "':'", "'['", "']'", "'enum'", "'UTC'", "'datetime'", "'('", "')'"
     };
-    public static final int RULE_EX_JSON_UTC=9;
     public static final int RULE_JSON_NULL=6;
     public static final int RULE_JSON_BOOLEAN=5;
     public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=11;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=10;
-    public static final int RULE_WS=13;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_ID=9;
+    public static final int RULE_WS=12;
+    public static final int RULE_ANY_OTHER=13;
     public static final int RULE_JSON_FLOAT=8;
     public static final int RULE_INT=7;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_ML_COMMENT=10;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -140,7 +143,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:80:1: (otherlv_0= '{' ( (lv_members_1_0= ruleMember ) ) (otherlv_2= ',' ( (lv_members_3_0= ruleMember ) ) )* otherlv_4= '}' )
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:80:3: otherlv_0= '{' ( (lv_members_1_0= ruleMember ) ) (otherlv_2= ',' ( (lv_members_3_0= ruleMember ) ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleJsonObject122); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleJsonObject122); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_0());
                 
@@ -181,7 +184,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==16) ) {
+                if ( (LA1_0==15) ) {
                     alt1=1;
                 }
 
@@ -190,7 +193,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:102:4: otherlv_2= ',' ( (lv_members_3_0= ruleMember ) )
             	    {
-            	    otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleJsonObject156); 
+            	    otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleJsonObject156); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonObjectAccess().getCommaKeyword_2_0());
             	        
@@ -234,7 +237,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleJsonObject191); 
+            otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleJsonObject191); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_3());
                 
@@ -318,7 +321,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==18) ) {
+            if ( (LA2_0==17) ) {
                 alt2=1;
             }
             switch (alt2) {
@@ -328,7 +331,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                     // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:150:1: (lv_optional_0_0= '?' )
                     // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:151:3: lv_optional_0_0= '?'
                     {
-                    lv_optional_0_0=(Token)match(input,18,FOLLOW_18_in_ruleMember280); 
+                    lv_optional_0_0=(Token)match(input,17,FOLLOW_17_in_ruleMember280); 
 
                             newLeafNode(lv_optional_0_0, grammarAccess.getMemberAccess().getOptionalQuestionMarkKeyword_0_0());
                         
@@ -373,7 +376,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleMember328); 
+            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleMember328); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMemberAccess().getColonKeyword_2());
                 
@@ -465,7 +468,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonValue"
-    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:221:1: ruleJsonValue returns [EObject current=null] : ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) ) ) ;
+    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:221:1: ruleJsonValue returns [EObject current=null] : ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= ruleExJsonDateTime ) ) ) ;
     public final EObject ruleJsonValue() throws RecognitionException {
         EObject current = null;
 
@@ -474,24 +477,25 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
         Token lv_null_4_0=null;
         Token lv_int_5_0=null;
         Token lv_float_6_0=null;
-        Token lv_datetime_8_0=null;
         EObject lv_obj_0_0 = null;
 
         EObject lv_array_2_0 = null;
 
         EObject lv_strFromEnum_7_0 = null;
 
+        EObject lv_datetime_8_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:224:28: ( ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) ) ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:225:1: ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:224:28: ( ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= ruleExJsonDateTime ) ) ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:225:1: ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= ruleExJsonDateTime ) ) )
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:225:1: ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:225:1: ( ( (lv_obj_0_0= ruleJsonObject ) ) | ( (lv_str_1_0= RULE_STRING ) ) | ( (lv_array_2_0= ruleJsonArray ) ) | ( (lv_bool_3_0= RULE_JSON_BOOLEAN ) ) | ( (lv_null_4_0= RULE_JSON_NULL ) ) | ( (lv_int_5_0= RULE_INT ) ) | ( (lv_float_6_0= RULE_JSON_FLOAT ) ) | ( (lv_strFromEnum_7_0= ruleExJsonEnum ) ) | ( (lv_datetime_8_0= ruleExJsonDateTime ) ) )
             int alt3=9;
             switch ( input.LA(1) ) {
-            case 15:
+            case 14:
                 {
                 alt3=1;
                 }
@@ -501,7 +505,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 alt3=2;
                 }
                 break;
-            case 20:
+            case 19:
                 {
                 alt3=3;
                 }
@@ -526,12 +530,13 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 alt3=7;
                 }
                 break;
-            case 22:
+            case 21:
                 {
                 alt3=8;
                 }
                 break;
-            case RULE_EX_JSON_UTC:
+            case 22:
+            case 23:
                 {
                 alt3=9;
                 }
@@ -816,27 +821,32 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:377:6: ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:377:6: ( (lv_datetime_8_0= ruleExJsonDateTime ) )
                     {
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:377:6: ( (lv_datetime_8_0= RULE_EX_JSON_UTC ) )
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:378:1: (lv_datetime_8_0= RULE_EX_JSON_UTC )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:377:6: ( (lv_datetime_8_0= ruleExJsonDateTime ) )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:378:1: (lv_datetime_8_0= ruleExJsonDateTime )
                     {
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:378:1: (lv_datetime_8_0= RULE_EX_JSON_UTC )
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:379:3: lv_datetime_8_0= RULE_EX_JSON_UTC
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:378:1: (lv_datetime_8_0= ruleExJsonDateTime )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:379:3: lv_datetime_8_0= ruleExJsonDateTime
                     {
-                    lv_datetime_8_0=(Token)match(input,RULE_EX_JSON_UTC,FOLLOW_RULE_EX_JSON_UTC_in_ruleJsonValue658); 
+                     
+                    	        newCompositeNode(grammarAccess.getJsonValueAccess().getDatetimeExJsonDateTimeParserRuleCall_8_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleExJsonDateTime_in_ruleJsonValue662);
+                    lv_datetime_8_0=ruleExJsonDateTime();
 
-                    			newLeafNode(lv_datetime_8_0, grammarAccess.getJsonValueAccess().getDatetimeEX_JSON_UTCTerminalRuleCall_8_0()); 
-                    		
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getJsonValueRule());
+                    	            current = createModelElementForParent(grammarAccess.getJsonValueRule());
                     	        }
-                           		setWithLastConsumed(
+                           		set(
                            			current, 
                            			"datetime",
                             		lv_datetime_8_0, 
-                            		"EX_JSON_UTC");
+                            		"ExJsonDateTime");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -880,13 +890,13 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:405:2: iv_ruleJsonArray= ruleJsonArray EOF
             {
              newCompositeNode(grammarAccess.getJsonArrayRule()); 
-            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray699);
+            pushFollow(FOLLOW_ruleJsonArray_in_entryRuleJsonArray698);
             iv_ruleJsonArray=ruleJsonArray();
 
             state._fsp--;
 
              current =iv_ruleJsonArray; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray709); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJsonArray708); 
 
             }
 
@@ -925,7 +935,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:416:1: (otherlv_0= '[' ( (lv_values_1_0= ruleJsonValue ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleJsonValue ) ) )* otherlv_4= ']' )
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:416:3: otherlv_0= '[' ( (lv_values_1_0= ruleJsonValue ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleJsonValue ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleJsonArray746); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleJsonArray745); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJsonArrayAccess().getLeftSquareBracketKeyword_0());
                 
@@ -938,7 +948,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getJsonArrayAccess().getValuesJsonValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleJsonValue_in_ruleJsonArray767);
+            pushFollow(FOLLOW_ruleJsonValue_in_ruleJsonArray766);
             lv_values_1_0=ruleJsonValue();
 
             state._fsp--;
@@ -966,7 +976,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==16) ) {
+                if ( (LA4_0==15) ) {
                     alt4=1;
                 }
 
@@ -975,7 +985,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:438:4: otherlv_2= ',' ( (lv_values_3_0= ruleJsonValue ) )
             	    {
-            	    otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleJsonArray780); 
+            	    otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleJsonArray779); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getJsonArrayAccess().getCommaKeyword_2_0());
             	        
@@ -988,7 +998,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getJsonArrayAccess().getValuesJsonValueParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleJsonValue_in_ruleJsonArray801);
+            	    pushFollow(FOLLOW_ruleJsonValue_in_ruleJsonArray800);
             	    lv_values_3_0=ruleJsonValue();
 
             	    state._fsp--;
@@ -1019,7 +1029,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleJsonArray815); 
+            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleJsonArray814); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getJsonArrayAccess().getRightSquareBracketKeyword_3());
                 
@@ -1056,13 +1066,13 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:474:2: iv_ruleExJsonEnum= ruleExJsonEnum EOF
             {
              newCompositeNode(grammarAccess.getExJsonEnumRule()); 
-            pushFollow(FOLLOW_ruleExJsonEnum_in_entryRuleExJsonEnum851);
+            pushFollow(FOLLOW_ruleExJsonEnum_in_entryRuleExJsonEnum850);
             iv_ruleExJsonEnum=ruleExJsonEnum();
 
             state._fsp--;
 
              current =iv_ruleExJsonEnum; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExJsonEnum861); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExJsonEnum860); 
 
             }
 
@@ -1080,7 +1090,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExJsonEnum"
-    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:481:1: ruleExJsonEnum returns [EObject current=null] : (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) ) otherlv_5= '}' ) ;
+    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:481:1: ruleExJsonEnum returns [EObject current=null] : (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleExJsonEnum() throws RecognitionException {
         EObject current = null;
 
@@ -1094,17 +1104,17 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:484:28: ( (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) ) otherlv_5= '}' ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:1: (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) ) otherlv_5= '}' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:484:28: ( (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )* otherlv_5= '}' ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:1: (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )* otherlv_5= '}' )
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:1: (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) ) otherlv_5= '}' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:3: otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) ) otherlv_5= '}'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:1: (otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )* otherlv_5= '}' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:485:3: otherlv_0= 'enum' otherlv_1= '{' ( (lv_values_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleExJsonEnum898); 
+            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleExJsonEnum897); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExJsonEnumAccess().getEnumKeyword_0());
                 
-            otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleExJsonEnum910); 
+            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleExJsonEnum909); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getExJsonEnumAccess().getLeftCurlyBracketKeyword_1());
                 
@@ -1114,7 +1124,7 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:494:1: (lv_values_2_0= RULE_STRING )
             // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:495:3: lv_values_2_0= RULE_STRING
             {
-            lv_values_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleExJsonEnum927); 
+            lv_values_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleExJsonEnum926); 
 
             			newLeafNode(lv_values_2_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_2_0()); 
             		
@@ -1134,43 +1144,61 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:511:2: (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:511:4: otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) )
-            {
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleExJsonEnum945); 
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:511:2: (otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) ) )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                	newLeafNode(otherlv_3, grammarAccess.getExJsonEnumAccess().getCommaKeyword_3_0());
-                
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:515:1: ( (lv_values_4_0= RULE_STRING ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:516:1: (lv_values_4_0= RULE_STRING )
-            {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:516:1: (lv_values_4_0= RULE_STRING )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:517:3: lv_values_4_0= RULE_STRING
-            {
-            lv_values_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleExJsonEnum962); 
-
-            			newLeafNode(lv_values_4_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_3_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getExJsonEnumRule());
-            	        }
-                   		addWithLastConsumed(
-                   			current, 
-                   			"values",
-                    		lv_values_4_0, 
-                    		"STRING");
-            	    
-
-            }
+                if ( (LA5_0==15) ) {
+                    alt5=1;
+                }
 
 
-            }
+                switch (alt5) {
+            	case 1 :
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:511:4: otherlv_3= ',' ( (lv_values_4_0= RULE_STRING ) )
+            	    {
+            	    otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleExJsonEnum944); 
+
+            	        	newLeafNode(otherlv_3, grammarAccess.getExJsonEnumAccess().getCommaKeyword_3_0());
+            	        
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:515:1: ( (lv_values_4_0= RULE_STRING ) )
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:516:1: (lv_values_4_0= RULE_STRING )
+            	    {
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:516:1: (lv_values_4_0= RULE_STRING )
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:517:3: lv_values_4_0= RULE_STRING
+            	    {
+            	    lv_values_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleExJsonEnum961); 
+
+            	    			newLeafNode(lv_values_4_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_3_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getExJsonEnumRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"values",
+            	            		lv_values_4_0, 
+            	            		"STRING");
+            	    	    
+
+            	    }
 
 
-            }
+            	    }
 
-            otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleExJsonEnum980); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleExJsonEnum980); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getExJsonEnumAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1193,6 +1221,174 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleExJsonEnum"
 
+
+    // $ANTLR start "entryRuleExJsonDateTime"
+    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:545:1: entryRuleExJsonDateTime returns [EObject current=null] : iv_ruleExJsonDateTime= ruleExJsonDateTime EOF ;
+    public final EObject entryRuleExJsonDateTime() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleExJsonDateTime = null;
+
+
+        try {
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:546:2: (iv_ruleExJsonDateTime= ruleExJsonDateTime EOF )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:547:2: iv_ruleExJsonDateTime= ruleExJsonDateTime EOF
+            {
+             newCompositeNode(grammarAccess.getExJsonDateTimeRule()); 
+            pushFollow(FOLLOW_ruleExJsonDateTime_in_entryRuleExJsonDateTime1016);
+            iv_ruleExJsonDateTime=ruleExJsonDateTime();
+
+            state._fsp--;
+
+             current =iv_ruleExJsonDateTime; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExJsonDateTime1026); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleExJsonDateTime"
+
+
+    // $ANTLR start "ruleExJsonDateTime"
+    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:554:1: ruleExJsonDateTime returns [EObject current=null] : ( ( (lv_utc_0_0= 'UTC' ) ) | (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' ) ) ;
+    public final EObject ruleExJsonDateTime() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_utc_0_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_format_3_0=null;
+        Token otherlv_4=null;
+
+         enterRule(); 
+            
+        try {
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:557:28: ( ( ( (lv_utc_0_0= 'UTC' ) ) | (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' ) ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:558:1: ( ( (lv_utc_0_0= 'UTC' ) ) | (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' ) )
+            {
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:558:1: ( ( (lv_utc_0_0= 'UTC' ) ) | (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==22) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==23) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:558:2: ( (lv_utc_0_0= 'UTC' ) )
+                    {
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:558:2: ( (lv_utc_0_0= 'UTC' ) )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:559:1: (lv_utc_0_0= 'UTC' )
+                    {
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:559:1: (lv_utc_0_0= 'UTC' )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:560:3: lv_utc_0_0= 'UTC'
+                    {
+                    lv_utc_0_0=(Token)match(input,22,FOLLOW_22_in_ruleExJsonDateTime1069); 
+
+                            newLeafNode(lv_utc_0_0, grammarAccess.getExJsonDateTimeAccess().getUtcUTCKeyword_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getExJsonDateTimeRule());
+                    	        }
+                           		setWithLastConsumed(current, "utc", true, "UTC");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:574:6: (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' )
+                    {
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:574:6: (otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')' )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:574:8: otherlv_1= 'datetime' otherlv_2= '(' ( (lv_format_3_0= RULE_STRING ) ) otherlv_4= ')'
+                    {
+                    otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleExJsonDateTime1101); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getExJsonDateTimeAccess().getDatetimeKeyword_1_0());
+                        
+                    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleExJsonDateTime1113); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getExJsonDateTimeAccess().getLeftParenthesisKeyword_1_1());
+                        
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:582:1: ( (lv_format_3_0= RULE_STRING ) )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:583:1: (lv_format_3_0= RULE_STRING )
+                    {
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:583:1: (lv_format_3_0= RULE_STRING )
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:584:3: lv_format_3_0= RULE_STRING
+                    {
+                    lv_format_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleExJsonDateTime1130); 
+
+                    			newLeafNode(lv_format_3_0, grammarAccess.getExJsonDateTimeAccess().getFormatSTRINGTerminalRuleCall_1_2_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getExJsonDateTimeRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"format",
+                            		lv_format_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleExJsonDateTime1147); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getExJsonDateTimeAccess().getRightParenthesisKeyword_1_3());
+                        
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleExJsonDateTime"
+
     // Delegated rules
 
 
@@ -1200,16 +1396,16 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleJsonObject_in_entryRuleJsonObject75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJsonObject85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleJsonObject122 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_ruleMember_in_ruleJsonObject143 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_16_in_ruleJsonObject156 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_ruleMember_in_ruleJsonObject177 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_17_in_ruleJsonObject191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleJsonObject122 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_ruleMember_in_ruleJsonObject143 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_15_in_ruleJsonObject156 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_ruleMember_in_ruleJsonObject177 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_16_in_ruleJsonObject191 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMember_in_entryRuleMember227 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMember237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleMember280 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleMember311 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleMember328 = new BitSet(new long[]{0x00000000005083F0L});
+    public static final BitSet FOLLOW_17_in_ruleMember280 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMember311 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleMember328 = new BitSet(new long[]{0x0000000000E841F0L});
     public static final BitSet FOLLOW_ruleJsonValue_in_ruleMember349 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJsonValue_in_entryRuleJsonValue385 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJsonValue395 = new BitSet(new long[]{0x0000000000000002L});
@@ -1221,21 +1417,28 @@ public class InternalJsonGenParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_INT_in_ruleJsonValue575 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_JSON_FLOAT_in_ruleJsonValue603 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExJsonEnum_in_ruleJsonValue635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EX_JSON_UTC_in_ruleJsonValue658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray699 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleJsonArray746 = new BitSet(new long[]{0x00000000005083F0L});
-    public static final BitSet FOLLOW_ruleJsonValue_in_ruleJsonArray767 = new BitSet(new long[]{0x0000000000210000L});
-    public static final BitSet FOLLOW_16_in_ruleJsonArray780 = new BitSet(new long[]{0x00000000005083F0L});
-    public static final BitSet FOLLOW_ruleJsonValue_in_ruleJsonArray801 = new BitSet(new long[]{0x0000000000210000L});
-    public static final BitSet FOLLOW_21_in_ruleJsonArray815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExJsonEnum_in_entryRuleExJsonEnum851 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExJsonEnum861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleExJsonEnum898 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleExJsonEnum910 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleExJsonEnum927 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleExJsonEnum945 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleExJsonEnum962 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleExJsonEnum980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExJsonDateTime_in_ruleJsonValue662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJsonArray_in_entryRuleJsonArray698 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJsonArray708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleJsonArray745 = new BitSet(new long[]{0x0000000000E841F0L});
+    public static final BitSet FOLLOW_ruleJsonValue_in_ruleJsonArray766 = new BitSet(new long[]{0x0000000000108000L});
+    public static final BitSet FOLLOW_15_in_ruleJsonArray779 = new BitSet(new long[]{0x0000000000E841F0L});
+    public static final BitSet FOLLOW_ruleJsonValue_in_ruleJsonArray800 = new BitSet(new long[]{0x0000000000108000L});
+    public static final BitSet FOLLOW_20_in_ruleJsonArray814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExJsonEnum_in_entryRuleExJsonEnum850 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExJsonEnum860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleExJsonEnum897 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleExJsonEnum909 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleExJsonEnum926 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_15_in_ruleExJsonEnum944 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleExJsonEnum961 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_16_in_ruleExJsonEnum980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExJsonDateTime_in_entryRuleExJsonDateTime1016 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExJsonDateTime1026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleExJsonDateTime1069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleExJsonDateTime1101 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleExJsonDateTime1113 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleExJsonDateTime1130 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleExJsonDateTime1147 = new BitSet(new long[]{0x0000000000000002L});
 
 }
