@@ -247,14 +247,14 @@
 	    <persistent value="true"/>
 	</extension>
 
-   <extension
+   <!--<extension
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="nl.sison.dsl.mobgen.ui.JsonGenExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
             fileExtensions="jsongen"
             >
       </participant>
-   </extension>
+   </extension>-->
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
@@ -312,6 +312,55 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
+	</extension>
+	<!-- Context menu extension -->
+	<extension
+        point="org.eclipse.ui.handlers">
+     <handler
+           class="nl.sison.dsl.mobgen.ui.JsonGenExecutableExtensionFactory:nl.sison.dsl.mobgen.ui.handler.GenerationHandler"
+           commandId="nl.sison.dsl.mobgen.JsonGen.ui.handler.GenerationCommand">
+     </handler>
+      
+  </extension>
+   
+  <extension
+        point="org.eclipse.ui.commands">
+        <command name="Generate Code"
+              id="nl.sison.dsl.mobgen.JsonGen.ui.handler.GenerationCommand">
+        </command>
+  </extension>
+   
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+        <command
+            commandId="nl.sison.dsl.mobgen.JsonGen.ui.handler.GenerationCommand"
+            style="push">
+            <visibleWhen
+                  checkEnabled="false">
+                  <iterate>
+       <adapt type="org.eclipse.core.resources.IResource">
+          <test property="org.eclipse.core.resources.name" 
+                value="*.jsongen"/>
+       </adapt>
+    </iterate>
+            </visibleWhen>
+        </command>
+    </menuContribution>
+    </extension>
+    
+    <extension point="org.eclipse.ui.menus">
+    	<menuContribution locationURI="popup:#TextEditorContext?after=additions">
+        	<command
+            	commandId="nl.sison.dsl.mobgen.JsonGen.ui.handler.GenerationCommand"
+            	style="push">
+            	<visibleWhen
+                      checkEnabled="false">
+                   		<reference
+                         definitionId="nl.sison.dsl.mobgen.JsonGen.Editor.opened">
+                  		</reference>
+                	</visibleWhen>
+        	</command>
+    	</menuContribution>
 	</extension>
     <!-- quickfix marker resolution generator for nl.sison.dsl.mobgen.JsonGen -->
     <extension
