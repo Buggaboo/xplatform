@@ -27,15 +27,91 @@ class JsonToParcelableTests {
     	return fsa
     }
     
+    
+    @Test
+    def void testListScalarEnum()
+    {
+    	val str = '''
+    	{
+    		"f" : [ enum("ab", "cd", "ef")],
+    		"g" : [datetime("ddd-MMM-yyyy")],
+    		"h" : [ enum{"xy", "yz", "xz"} ],
+    		"i" : enum{"xy", "yz", "xz"},
+    		"j" : enum{"a", "b", "c"}
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
+    def void testListScalarDate()
+    {
+    	val str = '''
+    	{
+    		"f" : [UTC],
+    		"f1" : UTC,
+    		"g" : [datetime("ddd-MMM-yyyy")],
+    		"h" : { "i" : UTC, "j" : [datetime("ddd-MMM-yyyy")] }
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
+    def void testListScalarString()
+    {
+    	val str = '''
+    	{
+    		"b" : [1.1,1.2,1.3],
+    		"d" : ["a", "b", "c"],
+    		"i" : { "a" : [ "x", "y", "z"] }
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
+    def void testListScalarNumber()
+    {
+    	val str = '''
+    	{
+    		"a" : [1,2,3,4,5,6],
+    		?"b" : [1.1,1.2,1.3],
+    		"c" : [1.1e10,1.2E6,-1.3e-10],
+    		"i nformation" : { "a" : [ "x", "y", "z"] }
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
+    @Test
+    def void testListScalar()
+    {
+    	val str = '''
+    	{
+    		"a" : [1,2,3,4,5,6], // INT
+    		"b" : [1.1,1.2,1.3], // JsonFloat
+    		?"c" : [1.1e10,1.2E6,-1.3e-10], // JsonFloat
+    		"d" : ["a", "b", "c"], // STRING
+    		"e" : [true, false], // JSON_BOOLEAN
+    		"f" : [UTC], // ExJsonDateTime
+    		"g" : [datetime("ddd-MMM-yyyy")], // ExJsonDateTime
+    		?"h" : [enum{"a", "b", "c"}], // ExJsonEnum
+    		"i" : UTC
+    	}
+    	'''
+    	println(str.generateModelThenFiles.allFiles)
+    }
+    
     @Test
     def void testUTCAndDateFormat ()
     {
     	val str = '''
     	{
+    		"f" : UTC,
+    		"g" : datetime("ddd-MMM-yyyy"),
     		"a hab" : enum {"blue", "green", "red"},
-    		"b low" : enum {"a", "b", "c"},
-    		"c row" : UTC,
-    		"d elta" : datetime("ddd-MMM-yyyy")
+    		"b eel zebub" : enum ("cyan", "red", "muck")
     	}
     	'''
     	println(str.generateModelThenFiles.allFiles)
@@ -47,7 +123,11 @@ class JsonToParcelableTests {
     	val str = '''
     	{
     		"a hab" : enum {"blue", "green", "red"},
-    		"b low" : enum {"a", "b", "c"}
+    		"b low" : enum {"a", "b", "c"},
+    		"c rab" : 4.0001,
+    		"d elta": "1234",
+    		?"efteLing" : 2,
+    		"f" : -4.0e-10
     	}
     	'''
     	println(str.generateModelThenFiles.allFiles)
@@ -62,7 +142,11 @@ class JsonToParcelableTests {
     		"b low" : 1,
     		"c rab" : 4.0001,
     		"d elta": "1234",
-    		?"efteLing" : 2
+    		?"efteLing" : 2,
+    		"f" : -4.0e-10,
+    		"g" : -5.0E-10,
+    		"h" : -6.0E10,
+    		"i" : 7.0e10
     	}
     	'''
     	println(str.generateModelThenFiles.allFiles)

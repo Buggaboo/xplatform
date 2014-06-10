@@ -2,14 +2,16 @@ package nl.sison.dsl.mobgen.generator;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonDateTime;
 import nl.sison.dsl.mobgen.jsonGen.ExJsonEnum;
+import nl.sison.dsl.mobgen.jsonGen.JsonArray;
 import nl.sison.dsl.mobgen.jsonGen.JsonObject;
 import nl.sison.dsl.mobgen.jsonGen.JsonValue;
 import nl.sison.dsl.mobgen.jsonGen.Member;
@@ -21,6 +23,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -154,16 +157,13 @@ public class JsonGenGenerator implements IGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("// TODO define method convertDateToString/2{date:Date, stringFormat:String} using the same principle as above");
+    _builder.append("// TODO define method convertDateToString/2{dateDate, stringFormat:String} using the same principle as above");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;
   }
   
-  /**
-   * TODO add mapping of JSONArray
-   */
   public CharSequence createJsonParserCtor(final CharSequence className, final JsonObject jsonRootObject) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public ");
@@ -187,35 +187,149 @@ public class JsonGenGenerator implements IGenerator {
             _builder.append("\t");
             _builder.append("{");
             _builder.newLine();
-            _builder.append("\t");
-            _builder.append("\t");
-            _builder.append("this.");
-            String _key_1 = member.getKey();
-            String _camelCase = this.camelCase(_key_1);
-            _builder.append(_camelCase, "\t\t");
-            _builder.append(" = ");
-            String _mapToSerializedType = this.mapToSerializedType(member);
-            _builder.append(_mapToSerializedType, "\t\t");
-            _builder.newLineIfNotEmpty();
+            {
+              JsonValue _value = member.getValue();
+              JsonArray _array = _value.getArray();
+              boolean _notEquals = (!Objects.equal(_array, null));
+              if (_notEquals) {
+                _builder.append("\t");
+                _builder.append("\t");
+                CharSequence _createJsonListParser = this.createJsonListParser(member);
+                _builder.append(_createJsonListParser, "\t\t");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("this.");
+                String _key_1 = member.getKey();
+                String _camelCase = this.camelCase(_key_1);
+                _builder.append(_camelCase, "\t\t");
+                _builder.append(" = ");
+                String _mapToSerializedType = this.mapToSerializedType(member);
+                _builder.append(_mapToSerializedType, "\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
             _builder.append("\t");
             _builder.append("}");
             _builder.newLine();
           } else {
-            _builder.append("\t");
-            _builder.append("this.");
-            String _key_2 = member.getKey();
-            String _camelCase_1 = this.camelCase(_key_2);
-            _builder.append(_camelCase_1, "\t");
-            _builder.append(" = ");
-            String _mapToSerializedType_1 = this.mapToSerializedType(member);
-            _builder.append(_mapToSerializedType_1, "\t");
-            _builder.newLineIfNotEmpty();
+            {
+              JsonValue _value_1 = member.getValue();
+              JsonArray _array_1 = _value_1.getArray();
+              boolean _notEquals_1 = (!Objects.equal(_array_1, null));
+              if (_notEquals_1) {
+                _builder.append("\t");
+                CharSequence _createJsonListParser_1 = this.createJsonListParser(member);
+                _builder.append(_createJsonListParser_1, "\t");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("this.");
+                String _key_2 = member.getKey();
+                String _camelCase_1 = this.camelCase(_key_2);
+                _builder.append(_camelCase_1, "\t");
+                _builder.append(" = ");
+                String _mapToSerializedType_1 = this.mapToSerializedType(member);
+                _builder.append(_mapToSerializedType_1, "\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
           }
         }
       }
     }
     _builder.append("}");
     _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence createJsonListParser(final Member member) {
+    JsonValue _value = member.getValue();
+    JsonArray _array = _value.getArray();
+    EList<JsonValue> _values = _array.getValues();
+    final JsonValue value = IterableExtensions.<JsonValue>head(_values);
+    final String key = member.getKey();
+    final String camelCaseKey = this.camelCase(key);
+    final String generatedType = this.getGeneratedType(key);
+    JsonObject _obj = value.getObj();
+    boolean _notEquals = (!Objects.equal(_obj, null));
+    if (_notEquals) {
+      String _format = String.format((camelCaseKey + "List.add(new %s(inputArray.getJSONObject(i)));"), generatedType);
+      return this.createJsonListParser(_format, key, generatedType);
+    }
+    String _str = value.getStr();
+    boolean _notEquals_1 = (!Objects.equal(_str, null));
+    if (_notEquals_1) {
+      return this.createJsonListParser((camelCaseKey + "List.add(inputArray.getString(i));"), key, "String");
+    }
+    boolean _isBool = value.isBool();
+    if (_isBool) {
+      return this.createJsonListParser((camelCaseKey + "List.add(inputArray.getBoolean(i));"), key, "boolean");
+    }
+    boolean _isFloat = value.isFloat();
+    if (_isFloat) {
+      return this.createJsonListParser((camelCaseKey + "List.add(inputArray.getDouble(i));"), key, "double");
+    }
+    boolean _isInt = value.isInt();
+    if (_isInt) {
+      return this.createJsonListParser((camelCaseKey + "List.add(inputArray.getLong(i));"), key, "long");
+    }
+    ExJsonEnum _strFromEnum = value.getStrFromEnum();
+    boolean _notEquals_2 = (!Objects.equal(_strFromEnum, null));
+    if (_notEquals_2) {
+      String _format_1 = String.format((camelCaseKey + "List.add(%sEnum.fromString(inputArray.getString(i)))"), generatedType);
+      return this.createJsonListParser(_format_1, key, (generatedType + "Enum"));
+    }
+    ExJsonDateTime _datetime = value.getDatetime();
+    boolean _notEquals_3 = (!Objects.equal(_datetime, null));
+    if (_notEquals_3) {
+      final ExJsonDateTime df = value.getDatetime();
+      String _xifexpression = null;
+      boolean _isUtc = df.isUtc();
+      if (_isUtc) {
+        _xifexpression = "yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'";
+      } else {
+        _xifexpression = df.getFormat();
+      }
+      String _format_2 = String.format((camelCaseKey + "List.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", inputArray.getString(i)))"), _xifexpression);
+      return this.createJsonListParser(_format_2, key, "Date");
+    }
+    return "UNDEFINED";
+  }
+  
+  public CharSequence createJsonListParser(final String assignment, final CharSequence arrayKey, final CharSequence realType) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("ArrayList<");
+    _builder.append(realType, "");
+    _builder.append("> ");
+    String _camelCase = this.camelCase(arrayKey);
+    _builder.append(_camelCase, "");
+    _builder.append("List = new ArrayList<");
+    _builder.append(realType, "");
+    _builder.append(">();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("JSONArray inputArray = jsonRoot.getJSONArray(\"");
+    _builder.append(arrayKey, "");
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("for (int i = 0; i < inputArray.length(); i++)");
+    _builder.newLine();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(assignment, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("this.");
+    String _camelCase_1 = this.camelCase(arrayKey);
+    _builder.append(_camelCase_1, "");
+    _builder.append(" = ");
+    String _camelCase_2 = this.camelCase(arrayKey);
+    _builder.append(_camelCase_2, "");
+    _builder.append("List.toArray();");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -226,7 +340,7 @@ public class JsonGenGenerator implements IGenerator {
     boolean _notEquals = (!Objects.equal(_obj, null));
     if (_notEquals) {
       String _generatedType = this.getGeneratedType(key);
-      return String.format("new %s(jsonRoot.getJsonObject());", _generatedType);
+      return String.format("new %s(jsonRoot.getJSONObject(\"%s\"));", _generatedType, key);
     }
     String _str = value.getStr();
     boolean _notEquals_1 = (!Objects.equal(_str, null));
@@ -307,16 +421,17 @@ public class JsonGenGenerator implements IGenerator {
         }
         boolean _isFloat = value.isFloat();
         if (_isFloat) {
-          map.put(key, "Double");
+          map.put(key, "double");
         }
         boolean _isInt = value.isInt();
         if (_isInt) {
-          map.put(key, "Long");
+          map.put(key, "long");
         }
         ExJsonEnum _strFromEnum = value.getStrFromEnum();
         boolean _notEquals_2 = (!Objects.equal(_strFromEnum, null));
         if (_notEquals_2) {
-          final String generatedType_1 = this.getGeneratedType(key);
+          String _generatedType = this.getGeneratedType(key);
+          final String generatedType_1 = (_generatedType + "Enum");
           ExJsonEnum _strFromEnum_1 = value.getStrFromEnum();
           EList<String> _values = _strFromEnum_1.getValues();
           this.createParcelableEnumType(generatedType_1, _values, fsa);
@@ -328,6 +443,14 @@ public class JsonGenGenerator implements IGenerator {
           CharSequence _createConcurrentDateFormatHashMap = this.createConcurrentDateFormatHashMap();
           fsa.generateFile("ConcurrentDateFormatHashMap.java", _createConcurrentDateFormatHashMap);
           map.put(key, "Date");
+        }
+        JsonArray _array = value.getArray();
+        boolean _notEquals_4 = (!Objects.equal(_array, null));
+        if (_notEquals_4) {
+          JsonArray _array_1 = value.getArray();
+          EList<JsonValue> _values_1 = _array_1.getValues();
+          JsonValue _head = IterableExtensions.<JsonValue>head(_values_1);
+          this.parseJsonArray(_head, map, key, fsa);
         }
       }
     }
@@ -501,23 +624,49 @@ public class JsonGenGenerator implements IGenerator {
   /**
    * TODO read http://stackoverflow.com/questions/10071502/read-writing-arrays-of-parcelable-objects
    */
-  public Object parseJsonListItem(final JsonValue value, final Map<String, String> map, final String key, final IFileSystemAccess fsa) {
-    Object _elvis = null;
+  public void parseJsonArray(final JsonValue value, final Map<String, String> map, final String key, final IFileSystemAccess fsa) {
+    final String generatedType = this.getGeneratedType(key);
     JsonObject _obj = value.getObj();
-    if (_obj != null) {
-      _elvis = _obj;
-    } else {
-      String _xblockexpression = null;
-      {
-        String _string = key.toString();
-        String _capitalizeFirstLetter = this.capitalizeFirstLetter(_string);
-        JsonObject _obj_1 = value.getObj();
-        this.parseJsonObject(_capitalizeFirstLetter, _obj_1, fsa);
-        _xblockexpression = map.put("Parcelable[]", (key + "s"));
-      }
-      _elvis = _xblockexpression;
+    boolean _notEquals = (!Objects.equal(_obj, null));
+    if (_notEquals) {
+      String _string = key.toString();
+      String _capitalizeFirstLetter = this.capitalizeFirstLetter(_string);
+      JsonObject _obj_1 = value.getObj();
+      this.parseJsonObject(_capitalizeFirstLetter, _obj_1, fsa);
+      map.put(key, (generatedType + "[]"));
     }
-    return _elvis;
+    String _str = value.getStr();
+    boolean _notEquals_1 = (!Objects.equal(_str, null));
+    if (_notEquals_1) {
+      map.put(key, "String[]");
+    }
+    boolean _isFloat = value.isFloat();
+    if (_isFloat) {
+      map.put(key, "double[]");
+    }
+    boolean _isInt = value.isInt();
+    if (_isInt) {
+      map.put(key, "long[]");
+    }
+    boolean _isBool = value.isBool();
+    if (_isBool) {
+      map.put(key, "boolean[]");
+    }
+    ExJsonDateTime _datetime = value.getDatetime();
+    boolean _notEquals_2 = (!Objects.equal(_datetime, null));
+    if (_notEquals_2) {
+      map.put(key, "Date[]");
+      CharSequence _createConcurrentDateFormatHashMap = this.createConcurrentDateFormatHashMap();
+      fsa.generateFile("ConcurrentDateFormatHashMap.java", _createConcurrentDateFormatHashMap);
+    }
+    ExJsonEnum _strFromEnum = value.getStrFromEnum();
+    boolean _notEquals_3 = (!Objects.equal(_strFromEnum, null));
+    if (_notEquals_3) {
+      map.put(key, (generatedType + "Enum[]"));
+      ExJsonEnum _strFromEnum_1 = value.getStrFromEnum();
+      EList<String> _values = _strFromEnum_1.getValues();
+      this.createParcelableEnumType(generatedType, _values, fsa);
+    }
   }
   
   /**
@@ -533,6 +682,21 @@ public class JsonGenGenerator implements IGenerator {
    * to the ui thread
    */
   private final LinkedList<String> acceptedTypes = CollectionLiterals.<String>newLinkedList("String", "Integer", "Long", "Float", "Double");
+  
+  private final Map<String, String> acceptedArrayTypes = new Function0<Map<String, String>>() {
+    public Map<String, String> apply() {
+      Map<String, String> _xsetliteral = null;
+      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
+      _tempMap.put("String[]", "StringArray");
+      _tempMap.put("int[]", "IntegerArray");
+      _tempMap.put("long[]", "LongArray");
+      _tempMap.put("float[]", "FloatArray");
+      _tempMap.put("double[]", "DoubleArray");
+      _tempMap.put("boolean[]", "BooleanArray");
+      _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
+      return _xsetliteral;
+    }
+  }.apply();
   
   public CharSequence createParcelable(final CharSequence parcelableClassName, final Map<String, String> members, final CharSequence additionalMethodsEtc) {
     StringConcatenation _builder = new StringConcatenation();
@@ -613,7 +777,7 @@ public class JsonGenGenerator implements IGenerator {
     _builder.append("\t");
     _builder.append("public ");
     _builder.append(parcelableClassName, "\t");
-    _builder.append("(Exception exception)");
+    _builder.append("(final Exception exception)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("{");
@@ -674,44 +838,113 @@ public class JsonGenGenerator implements IGenerator {
             _builder.newLineIfNotEmpty();
           } else {
             String _value_4 = s_3.getValue();
-            boolean _equals = _value_4.equals("Date");
-            if (_equals) {
+            boolean _containsKey = this.acceptedArrayTypes.containsKey(_value_4);
+            if (_containsKey) {
               _builder.append("\t");
-              _builder.append("if (");
+              _builder.append("out.write");
+              String _value_5 = s_3.getValue();
+              String _get = this.acceptedArrayTypes.get(_value_5);
+              _builder.append(_get, "\t");
+              _builder.append("(");
               String _key_5 = s_3.getKey();
               _builder.append(_key_5, "\t");
-              _builder.append(" != null)");
+              _builder.append(");");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("{");
-              _builder.newLine();
-              _builder.append("\t");
-              _builder.append("\t");
-              _builder.append("out.writeLong(");
-              String _key_6 = s_3.getKey();
-              _builder.append(_key_6, "\t\t");
-              _builder.append(".getTime());");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t");
-              _builder.append("}");
-              _builder.newLine();
             } else {
-              String _value_5 = s_3.getValue();
-              boolean _equals_1 = _value_5.equals("boolean");
-              if (_equals_1) {
+              String _value_6 = s_3.getValue();
+              boolean _startsWith = _value_6.startsWith("Date");
+              if (_startsWith) {
                 _builder.append("\t");
-                _builder.append("out.writeInteger(");
-                String _key_7 = s_3.getKey();
-                _builder.append(_key_7, "\t");
-                _builder.append(" ? 1 : 0);");
+                _builder.append("if (");
+                String _key_6 = s_3.getKey();
+                _builder.append(_key_6, "\t");
+                _builder.append(" != null)");
                 _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("{");
+                _builder.newLine();
+                {
+                  String _value_7 = s_3.getValue();
+                  boolean _endsWith = _value_7.endsWith("[]");
+                  if (_endsWith) {
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("long[] ");
+                    String _key_7 = s_3.getKey();
+                    _builder.append(_key_7, "\t\t");
+                    _builder.append("LongList = new ArrayList<Long>();");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("for (Date d: ");
+                    String _key_8 = s_3.getKey();
+                    _builder.append(_key_8, "\t\t");
+                    _builder.append(")");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("{");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    String _key_9 = s_3.getKey();
+                    _builder.append(_key_9, "\t\t\t");
+                    _builder.append("LongList.append(d.getTime());");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("}");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("out.writeLongArray(");
+                    String _key_10 = s_3.getKey();
+                    _builder.append(_key_10, "\t\t");
+                    _builder.append("LongList.toArray());");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("out.writeLong(");
+                    String _key_11 = s_3.getKey();
+                    _builder.append(_key_11, "\t\t");
+                    _builder.append(".getTime());");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("\t");
+                _builder.append("}");
+                _builder.newLine();
               } else {
-                _builder.append("\t");
-                _builder.append("out.writeParcelable(");
-                String _key_8 = s_3.getKey();
-                _builder.append(_key_8, "\t");
-                _builder.append(", flags);");
-                _builder.newLineIfNotEmpty();
+                String _value_8 = s_3.getValue();
+                boolean _equals = _value_8.equals("boolean");
+                if (_equals) {
+                  _builder.append("\t");
+                  _builder.append("out.writeInteger(");
+                  String _key_12 = s_3.getKey();
+                  _builder.append(_key_12, "\t");
+                  _builder.append(" ? 1 : 0);");
+                  _builder.newLineIfNotEmpty();
+                } else {
+                  String _value_9 = s_3.getValue();
+                  boolean _endsWith_1 = _value_9.endsWith("Enum[]");
+                  if (_endsWith_1) {
+                    _builder.append("\t");
+                    _builder.append("out.writeParcelableArray(");
+                    String _key_13 = s_3.getKey();
+                    _builder.append(_key_13, "\t");
+                    _builder.append(", flags);");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    _builder.append("\t");
+                    _builder.append("out.writeParcelable(");
+                    String _key_14 = s_3.getKey();
+                    _builder.append(_key_14, "\t");
+                    _builder.append(", flags);");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
               }
             }
           }
@@ -735,49 +968,108 @@ public class JsonGenGenerator implements IGenerator {
       Set<Map.Entry<String, String>> _entrySet_5 = members.entrySet();
       for(final Map.Entry<String, String> s_4 : _entrySet_5) {
         {
-          String _value_6 = s_4.getValue();
-          boolean _contains_1 = this.acceptedTypes.contains(_value_6);
+          String _value_10 = s_4.getValue();
+          boolean _contains_1 = this.acceptedTypes.contains(_value_10);
           if (_contains_1) {
             _builder.append("\t");
-            String _key_9 = s_4.getKey();
-            _builder.append(_key_9, "\t");
+            String _key_15 = s_4.getKey();
+            _builder.append(_key_15, "\t");
             _builder.append(" = in.read");
-            String _value_7 = s_4.getValue();
-            _builder.append(_value_7, "\t");
+            String _value_11 = s_4.getValue();
+            _builder.append(_value_11, "\t");
             _builder.append("();");
             _builder.newLineIfNotEmpty();
           } else {
-            String _value_8 = s_4.getValue();
-            boolean _equals_2 = _value_8.equals("boolean");
-            if (_equals_2) {
+            String _value_12 = s_4.getValue();
+            boolean _containsKey_1 = this.acceptedArrayTypes.containsKey(_value_12);
+            if (_containsKey_1) {
               _builder.append("\t");
-              String _key_10 = s_4.getKey();
-              _builder.append(_key_10, "\t");
-              _builder.append(" = in.readInteger() > 0;");
+              String _key_16 = s_4.getKey();
+              _builder.append(_key_16, "\t");
+              _builder.append(" = in.read");
+              String _value_13 = s_4.getValue();
+              String _get_1 = this.acceptedArrayTypes.get(_value_13);
+              _builder.append(_get_1, "\t");
+              _builder.append("();");
               _builder.newLineIfNotEmpty();
             } else {
-              String _value_9 = s_4.getValue();
-              boolean _equals_3 = _value_9.equals("Date");
-              if (_equals_3) {
+              String _value_14 = s_4.getValue();
+              boolean _equals_1 = _value_14.equals("boolean");
+              if (_equals_1) {
                 _builder.append("\t");
-                String _key_11 = s_4.getKey();
-                _builder.append(_key_11, "\t");
-                _builder.append(" = new Date(in.readLong());");
+                String _key_17 = s_4.getKey();
+                _builder.append(_key_17, "\t");
+                _builder.append(" = in.readInteger() > 0;");
                 _builder.newLineIfNotEmpty();
               } else {
-                _builder.append("\t");
-                String _key_12 = s_4.getKey();
-                String _value_10 = s_4.getValue();
-                CharSequence _createParcelableReadMember = this.createParcelableReadMember(_key_12, _value_10);
-                _builder.append(_createParcelableReadMember, "\t");
-                _builder.newLineIfNotEmpty();
+                String _value_15 = s_4.getValue();
+                boolean _startsWith_1 = _value_15.startsWith("Date");
+                if (_startsWith_1) {
+                  {
+                    String _value_16 = s_4.getValue();
+                    boolean _endsWith_2 = _value_16.endsWith("[]");
+                    if (_endsWith_2) {
+                      _builder.append("\t");
+                      _builder.append("long[] ");
+                      String _key_18 = s_4.getKey();
+                      _builder.append(_key_18, "\t");
+                      _builder.append("LongArray = in.readLongArray();");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("\t");
+                      _builder.append("ArrayList<Date> ");
+                      String _key_19 = s_4.getKey();
+                      _builder.append(_key_19, "\t");
+                      _builder.append("DateList = new ArrayList<Date>();");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("\t");
+                      _builder.append("for (long l: ");
+                      String _key_20 = s_4.getKey();
+                      _builder.append(_key_20, "\t");
+                      _builder.append("LongArray)");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("\t");
+                      _builder.append("{");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("\t");
+                      String _key_21 = s_4.getKey();
+                      _builder.append(_key_21, "\t\t");
+                      _builder.append("DateList.append(new Date(l));");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("\t");
+                      _builder.append("}");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      String _key_22 = s_4.getKey();
+                      _builder.append(_key_22, "\t");
+                      _builder.append(" = ");
+                      String _key_23 = s_4.getKey();
+                      _builder.append(_key_23, "\t");
+                      _builder.append("DateList.toArray();");
+                      _builder.newLineIfNotEmpty();
+                    } else {
+                      _builder.append("\t");
+                      String _key_24 = s_4.getKey();
+                      _builder.append(_key_24, "\t");
+                      _builder.append(" = new Date(in.readLong());");
+                      _builder.newLineIfNotEmpty();
+                    }
+                  }
+                } else {
+                  _builder.append("\t");
+                  String _key_25 = s_4.getKey();
+                  String _value_17 = s_4.getValue();
+                  CharSequence _createParcelableReadMember = this.createParcelableReadMember(_key_25, _value_17);
+                  _builder.append(_createParcelableReadMember, "\t");
+                  _builder.newLineIfNotEmpty();
+                }
               }
             }
           }
         }
       }
     }
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.append("exception = (Exception) in.readSerializable();");
     _builder.newLine();
     _builder.append("    ");
@@ -842,36 +1134,6 @@ public class JsonGenGenerator implements IGenerator {
     return _builder;
   }
   
-  public HashMap<CharSequence, CharSequence> joinPairAsMap(final Iterator<CharSequence> keys, final Iterator<CharSequence> values) {
-    final HashMap<CharSequence, CharSequence> hashMap = CollectionLiterals.<CharSequence, CharSequence>newHashMap();
-    boolean _and = false;
-    boolean _hasNext = keys.hasNext();
-    if (!_hasNext) {
-      _and = false;
-    } else {
-      boolean _hasNext_1 = values.hasNext();
-      _and = _hasNext_1;
-    }
-    boolean _while = _and;
-    while (_while) {
-      {
-        final CharSequence value = values.next();
-        final CharSequence key = keys.next();
-        hashMap.put(key, value);
-      }
-      boolean _and_1 = false;
-      boolean _hasNext_2 = keys.hasNext();
-      if (!_hasNext_2) {
-        _and_1 = false;
-      } else {
-        boolean _hasNext_3 = values.hasNext();
-        _and_1 = _hasNext_3;
-      }
-      _while = _and_1;
-    }
-    return hashMap;
-  }
-  
   public CharSequence createParcelableProtectedMembers(final CharSequence parameterName, final CharSequence parameterType) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("protected ");
@@ -883,20 +1145,29 @@ public class JsonGenGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence createParcelableReadMember(final String parameterName, final CharSequence readMethodNameSuffix) {
+  public CharSequence createParcelableReadMember(final String parameterName, final String type) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(parameterName, "");
-    _builder.append(" = in.readParcelable(");
-    String _generatedType = this.getGeneratedType(parameterName);
-    _builder.append(_generatedType, "");
+    _builder.append(" = in.readParcelable");
+    {
+      boolean _endsWith = type.endsWith("[]");
+      if (_endsWith) {
+        _builder.append("Array");
+      }
+    }
+    _builder.append("(");
+    _builder.append(type, "");
     _builder.append(".class.getClassLoader());");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
+  /**
+   * TODO make getters return defensive copy
+   */
   public CharSequence createParcelableAccessors(final CharSequence parameterName, final CharSequence parameterType) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("void set");
+    _builder.append("public void set");
     String _string = parameterName.toString();
     String _capitalizeFirstLetter = this.capitalizeFirstLetter(_string);
     _builder.append(_capitalizeFirstLetter, "");
@@ -917,6 +1188,7 @@ public class JsonGenGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
+    _builder.append("public ");
     _builder.append(parameterType, "");
     _builder.append(" get");
     String _string_1 = parameterName.toString();

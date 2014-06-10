@@ -38,6 +38,8 @@ public class JsonGenParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getJsonValueAccess().getAlternatives(), "rule__JsonValue__Alternatives");
+					put(grammarAccess.getExJsonEnumAccess().getAlternatives_1(), "rule__ExJsonEnum__Alternatives_1");
+					put(grammarAccess.getExJsonEnumAccess().getAlternatives_4(), "rule__ExJsonEnum__Alternatives_4");
 					put(grammarAccess.getExJsonDateTimeAccess().getAlternatives(), "rule__ExJsonDateTime__Alternatives");
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");

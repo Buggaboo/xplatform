@@ -1,6 +1,5 @@
 package nl.sison.dsl.mobgen.generator
 
-import java.util.Iterator
 import java.util.List
 import java.util.Map
 import nl.sison.dsl.mobgen.jsonGen.JsonObject
@@ -77,13 +76,12 @@ class JsonGenGenerator implements IGenerator {
 			
 		}
 		
-		// TODO define method convertDateToString/2{date:Date, stringFormat:String} using the same principle as above
+		// TODO define method convertDateToString/2{dateDate, stringFormat:String} using the same principle as above
 	}
 	'''
 
-	/**
-	 * TODO add mapping of JSONArray
-	 */	
+	// TODO wrap with JSONParseException and place it in the exception member
+	// TODO remove code duplication
 	def createJsonParserCtor(CharSequence className, JsonObject jsonRootObject) '''
 	public «className»(final JSONObject jsonRoot)
 	{
@@ -91,13 +89,63 @@ class JsonGenGenerator implements IGenerator {
 		«IF member.optional»
 		if (!jsonRoot.isNull("«member.key»"))
 		{
+			«IF member.value.array != null»
+			«member.createJsonListParser»
+			«ELSE»
 			this.«member.key.camelCase» = «member.mapToSerializedType»
+			«ENDIF»
 		}
 		«ELSE»
-		this.«member.key.camelCase» = «member.mapToSerializedType»
+			«IF member.value.array != null»
+			«member.createJsonListParser»
+			«ELSE»
+			this.«member.key.camelCase» = «member.mapToSerializedType»
+			«ENDIF»
 		«ENDIF»
 		«ENDFOR»
 	}
+	'''
+	
+	def createJsonListParser(Member member) {
+		val value = member.value.array.values.head
+		val key = member.key
+		val camelCaseKey = key.camelCase
+		val generatedType = key.generatedType
+		
+		if (value.obj != null)
+			return String.format(camelCaseKey + "List.add(new %s(inputArray.getJSONObject(i)));", generatedType).createJsonListParser(key, generatedType)
+			
+		if (value.str != null)
+			return (camelCaseKey + "List.add(inputArray.getString(i));").createJsonListParser(key, 'String')
+		
+		if (value.bool) return (camelCaseKey + "List.add(inputArray.getBoolean(i));").createJsonListParser(key, 'boolean')
+		
+		if(value.float) return (camelCaseKey + "List.add(inputArray.getDouble(i));").createJsonListParser(key, 'double')
+		if(value.int)	return (camelCaseKey + "List.add(inputArray.getLong(i));").createJsonListParser(key, 'long')
+		
+		if(value.strFromEnum != null)
+		{
+			return String.format(camelCaseKey + "List.add(%sEnum.fromString(inputArray.getString(i)))", generatedType).createJsonListParser(key, generatedType + 'Enum')
+		}
+		
+		if(value.datetime != null)
+		{
+			val df = value.datetime
+			return String.format(camelCaseKey + "List.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", inputArray.getString(i)))", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format).createJsonListParser(key, 'Date')
+		}
+		
+		return "UNDEFINED"
+
+	}
+	
+	def createJsonListParser (String assignment, CharSequence arrayKey, CharSequence realType) '''
+	ArrayList<«realType»> «arrayKey.camelCase»List = new ArrayList<«realType»>();
+	JSONArray inputArray = jsonRoot.getJSONArray("«arrayKey»");
+	for (int i = 0; i < inputArray.length(); i++)
+	{
+		«assignment»
+	}
+	this.«arrayKey.camelCase» = «arrayKey.camelCase»List.toArray();
 	'''
 	
 	def mapToSerializedType(Member member)
@@ -106,15 +154,13 @@ class JsonGenGenerator implements IGenerator {
 		val key = member.key
 		
 		if (value.obj != null)
-			return String.format("new %s(jsonRoot.getJsonObject());", key.generatedType)
+			return String.format("new %s(jsonRoot.getJSONObject(\"%s\"));", key.generatedType, key)
 			
 		if (value.str != null)
 		{
 			return String.format("jsonRoot.getString(\"%s\")", key)
 		}
 		
-		// TODO array, number
-
 		if (value.bool) return String.format("jsonRoot.getBoolean(\"%s\")", key)
 		
 		if(value.float) return String.format("jsonRoot.getDouble(\"%s\")", key)
@@ -165,17 +211,17 @@ class JsonGenGenerator implements IGenerator {
 			
 			if (value.float)
 			{
-				map.put(key, "Double") // bigger? BigDecimal
+				map.put(key, "double") // bigger? BigDecimal
 			}
 			
 			if (value.int)
 			{
-				map.put(key, "Long") // bigger? BigInteger
+				map.put(key, "long") // bigger? BigInteger
 			}
 			
 			if (value.strFromEnum != null)
 			{
-				val generatedType = key.generatedType
+				val generatedType = key.generatedType + 'Enum'
 				createParcelableEnumType(generatedType, value.strFromEnum.values, fsa)
 				map.put(key, generatedType)
 			}
@@ -190,7 +236,10 @@ class JsonGenGenerator implements IGenerator {
 			/**
 			 * Inspect first object then generalize for the whole list
 			 */
-//			value.array ?: value.array.values ?: value.array.values.get(0).parseJsonListItem(map, key, fsa)
+			if (value.array != null)
+			{
+				value.array.values.head.parseJsonArray(map, key, fsa)
+			}
 		}
 		
 		fsa.generateFile(className + '.java', className.createParcelable(map, className.createJsonParserCtor(jsonRootObject)))
@@ -257,20 +306,37 @@ class JsonGenGenerator implements IGenerator {
 	/**
 	 * TODO read http://stackoverflow.com/questions/10071502/read-writing-arrays-of-parcelable-objects
 	 */
-	def parseJsonListItem(JsonValue value, Map<String,String> map, String key, IFileSystemAccess fsa)
+	def parseJsonArray(JsonValue value, Map<String,String> map, String key, IFileSystemAccess fsa)
 	{
-		value.obj?:
+		val generatedType = key.generatedType
+		
+		if (value.obj != null)
 		{
 			parseJsonObject(key.toString.capitalizeFirstLetter, value.obj, fsa)
-			map.put('Parcelable[]', key + 's')
+			map.put(key, generatedType +'[]')
 		}
 		
-//		if (value.bool) map.put('boolean[]', key + 's')
-//		value.str ?: map.put('String[]', key + 's')
-//		value.number ?: map.put('BigInteger[] or int, prevent over and underflow in any case', member.key) // TODO
-//		value.strFromEnum ?: map.put('Parcelable[]', member.key) // TODO generate enum type, copy paste existing code
-//		value.datetime ?: map.put('int[]', member.key) // TODO add conversion to int in the serialization process 
-//		value.array? // TODO multi-dimensional array
+		if(value.str != null) map.put(key, 'String[]')
+		
+		if (value.float) map.put(key, 'double[]')
+
+		if (value.int) map.put(key, 'long[]')
+		
+		if (value.bool) map.put(key, 'boolean[]')
+		
+		if (value.datetime != null) {
+			map.put(key, 'Date[]')
+			fsa.generateFile('ConcurrentDateFormatHashMap.java', createConcurrentDateFormatHashMap);
+		}
+		
+		
+		if (value.strFromEnum != null)
+		{
+			map.put(key, generatedType + 'Enum[]') // TODO generate enum type, copy paste existing code
+			createParcelableEnumType(generatedType, value.strFromEnum.values, fsa)
+		}
+		
+//		value.array? // TODO multi-dimensional array // TODO throw IllegalArgumentException
 		
 	}
 	
@@ -287,8 +353,12 @@ class JsonGenGenerator implements IGenerator {
 	 * This implementation is intended to be passed on from the background threads
 	 * to the ui thread
 	 *
-	 */ 
+	 */
+	// TODO fix (un)marshalling of optional fields, because that will break	 
 	val acceptedTypes = newLinkedList("String", "Integer", "Long", "Float", "Double")
+	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntegerArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
+		'boolean[]' -> 'BooleanArray' // TODO write SparseBooleanArray code
+	}
 	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence additionalMethodsEtc) '''
 	public class «parcelableClassName» extends Parcelable
 	{
@@ -309,7 +379,7 @@ class JsonGenGenerator implements IGenerator {
 			«ENDFOR»
 	    }
 
-		public «parcelableClassName»(Exception exception)
+		public «parcelableClassName»(final Exception exception)
 		{
 			this.exception = exception;
 		}
@@ -325,16 +395,29 @@ class JsonGenGenerator implements IGenerator {
 
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
-		«FOR s : members.entrySet»
+		«FOR s : members.entrySet»		
 		«IF acceptedTypes.contains(s.value)»
 			out.write«s.value»(«s.key»);
-		«ELSEIF s.value.equals("Date")»
+		«ELSEIF acceptedArrayTypes.containsKey(s.value)»
+			out.write«acceptedArrayTypes.get(s.value)»(«s.key»);
+		«ELSEIF s.value.startsWith("Date")»
 			if («s.key» != null)
 			{
+				«IF s.value.endsWith('[]')»
+				long[] «s.key»LongList = new ArrayList<Long>();
+				for (Date d: «s.key»)
+				{
+					«s.key»LongList.append(d.getTime());
+				}
+				out.writeLongArray(«s.key»LongList.toArray());
+				«ELSE»
 				out.writeLong(«s.key».getTime());
+				«ENDIF»
 			}
 		«ELSEIF s.value.equals("boolean")»
 			out.writeInteger(«s.key» ? 1 : 0);
+		«ELSEIF s.value.endsWith("Enum[]")»
+			out.writeParcelableArray(«s.key», flags);
 		«ELSE»
 			out.writeParcelable(«s.key», flags);
 		«ENDIF»
@@ -347,15 +430,27 @@ class JsonGenGenerator implements IGenerator {
 		«FOR s : members.entrySet»
 			«IF acceptedTypes.contains(s.value)»
 			«s.key» = in.read«s.value»();
+			«ELSEIF acceptedArrayTypes.containsKey(s.value)»
+			«s.key» = in.read«acceptedArrayTypes.get(s.value)»();
 			«ELSEIF s.value.equals("boolean")»
 			«s.key» = in.readInteger() > 0;
-			«ELSEIF s.value.equals("Date")»
-			«s.key» = new Date(in.readLong());
+			«ELSEIF s.value.startsWith("Date")»
+				«IF s.value.endsWith('[]')»
+				long[] «s.key»LongArray = in.readLongArray();
+				ArrayList<Date> «s.key»DateList = new ArrayList<Date>();
+				for (long l: «s.key»LongArray)
+				{
+					«s.key»DateList.append(new Date(l));
+				}
+				«s.key» = «s.key»DateList.toArray();
+				«ELSE»
+				«s.key» = new Date(in.readLong());
+				«ENDIF»
 			«ELSE»
 			«s.key.createParcelableReadMember(s.value)»
 			«ENDIF»
 		«ENDFOR»
-			exception = (Exception) in.readSerializable();
+		exception = (Exception) in.readSerializable();
 	    }
 
 	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -378,33 +473,22 @@ class JsonGenGenerator implements IGenerator {
 	    «additionalMethodsEtc»
 	}
 	'''
-	
-	def joinPairAsMap(Iterator<CharSequence> keys, Iterator<CharSequence> values)
-	{
-		val hashMap = <CharSequence, CharSequence>newHashMap()
-		while (keys.hasNext && values.hasNext)
-		{
-			val value = values.next
-			val key = keys.next
-			hashMap.put(key, value)
-		}
-		return hashMap
-	}
 
 	def createParcelableProtectedMembers(CharSequence parameterName, CharSequence parameterType) '''
 	protected «parameterType» «parameterName»;
 	''' 
 
-	def createParcelableReadMember(String parameterName, CharSequence readMethodNameSuffix) '''
-	«parameterName» = in.readParcelable(«parameterName.generatedType».class.getClassLoader());
+	def createParcelableReadMember(String parameterName, String type) '''
+	«parameterName» = in.readParcelable«IF type.endsWith("[]")»Array«ENDIF»(«type».class.getClassLoader());
 	'''
 
+	/* TODO make getters return defensive copy */
 	def createParcelableAccessors(CharSequence parameterName, CharSequence parameterType) '''
-	void set«parameterName.toString.capitalizeFirstLetter»(final «parameterType» «parameterName»)
+	public void set«parameterName.toString.capitalizeFirstLetter»(final «parameterType» «parameterName»)
 	{
 		this.«parameterName» = «parameterName»;
 	}
-	«parameterType» get«parameterName.toString.capitalizeFirstLetter»() { return «parameterName»; }
+	public «parameterType» get«parameterName.toString.capitalizeFirstLetter»() { return «parameterName»; }
 	'''
 
 	def camelCase(CharSequence input)

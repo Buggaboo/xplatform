@@ -37,21 +37,161 @@ public class JsonToParcelableTests {
   }
   
   @Test
+  public void testListScalarEnum() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f\" : [ enum(\"ab\", \"cd\", \"ef\")],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"g\" : [datetime(\"ddd-MMM-yyyy\")],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"h\" : [ enum{\"xy\", \"yz\", \"xz\"} ],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"i\" : enum{\"xy\", \"yz\", \"xz\"},");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"j\" : enum{\"a\", \"b\", \"c\"}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testListScalarDate() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f\" : [UTC],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f1\" : UTC,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"g\" : [datetime(\"ddd-MMM-yyyy\")],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"h\" : { \"i\" : UTC, \"j\" : [datetime(\"ddd-MMM-yyyy\")] }");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testListScalarString() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"b\" : [1.1,1.2,1.3],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"d\" : [\"a\", \"b\", \"c\"],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"i\" : { \"a\" : [ \"x\", \"y\", \"z\"] }");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testListScalarNumber() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"a\" : [1,2,3,4,5,6],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("?\"b\" : [1.1,1.2,1.3],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"c\" : [1.1e10,1.2E6,-1.3e-10],");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"i nformation\" : { \"a\" : [ \"x\", \"y\", \"z\"] }");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
+  public void testListScalar() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"a\" : [1,2,3,4,5,6], // INT");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"b\" : [1.1,1.2,1.3], // JsonFloat");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("?\"c\" : [1.1e10,1.2E6,-1.3e-10], // JsonFloat");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"d\" : [\"a\", \"b\", \"c\"], // STRING");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"e\" : [true, false], // JSON_BOOLEAN");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f\" : [UTC], // ExJsonDateTime");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"g\" : [datetime(\"ddd-MMM-yyyy\")], // ExJsonDateTime");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("?\"h\" : [enum{\"a\", \"b\", \"c\"}], // ExJsonEnum");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"i\" : UTC");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    final String str = _builder.toString();
+    InMemoryFileSystemAccess _generateModelThenFiles = this.generateModelThenFiles(str);
+    Map<String, Object> _allFiles = _generateModelThenFiles.getAllFiles();
+    InputOutput.<Map<String, Object>>println(_allFiles);
+  }
+  
+  @Test
   public void testUTCAndDateFormat() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("\"f\" : UTC,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"g\" : datetime(\"ddd-MMM-yyyy\"),");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("\"a hab\" : enum {\"blue\", \"green\", \"red\"},");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("\"b low\" : enum {\"a\", \"b\", \"c\"},");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("\"c row\" : UTC,");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("\"d elta\" : datetime(\"ddd-MMM-yyyy\")");
+    _builder.append("\"b eel zebub\" : enum (\"cyan\", \"red\", \"muck\")");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -70,7 +210,19 @@ public class JsonToParcelableTests {
     _builder.append("\"a hab\" : enum {\"blue\", \"green\", \"red\"},");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("\"b low\" : enum {\"a\", \"b\", \"c\"}");
+    _builder.append("\"b low\" : enum {\"a\", \"b\", \"c\"},");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"c rab\" : 4.0001,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"d elta\": \"1234\",");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("?\"efteLing\" : 2,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f\" : -4.0e-10");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -98,7 +250,19 @@ public class JsonToParcelableTests {
     _builder.append("\"d elta\": \"1234\",");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("?\"efteLing\" : 2");
+    _builder.append("?\"efteLing\" : 2,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"f\" : -4.0e-10,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"g\" : -5.0E-10,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"h\" : -6.0E10,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"i\" : 7.0e10");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

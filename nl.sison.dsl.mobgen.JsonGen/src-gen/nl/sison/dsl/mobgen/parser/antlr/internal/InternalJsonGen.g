@@ -486,15 +486,20 @@ ruleExJsonEnum returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getExJsonEnumAccess().getEnumKeyword_0());
     }
-	otherlv_1='{' 
+(	otherlv_1='{' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getExJsonEnumAccess().getLeftCurlyBracketKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getExJsonEnumAccess().getLeftCurlyBracketKeyword_1_0());
     }
+
+    |	otherlv_2='(' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getExJsonEnumAccess().getLeftParenthesisKeyword_1_1());
+    }
+)(
 (
-(
-		lv_values_2_0=RULE_STRING
+		lv_values_3_0=RULE_STRING
 		{
-			newLeafNode(lv_values_2_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_2_0()); 
+			newLeafNode(lv_values_3_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -503,20 +508,20 @@ ruleExJsonEnum returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"values",
-        		lv_values_2_0, 
+        		lv_values_3_0, 
         		"STRING");
 	    }
 
 )
-)(	otherlv_3=',' 
+)(	otherlv_4=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getExJsonEnumAccess().getCommaKeyword_3_0());
+    	newLeafNode(otherlv_4, grammarAccess.getExJsonEnumAccess().getCommaKeyword_3_0());
     }
 (
 (
-		lv_values_4_0=RULE_STRING
+		lv_values_5_0=RULE_STRING
 		{
-			newLeafNode(lv_values_4_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_3_1_0()); 
+			newLeafNode(lv_values_5_0, grammarAccess.getExJsonEnumAccess().getValuesSTRINGTerminalRuleCall_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -525,16 +530,21 @@ ruleExJsonEnum returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"values",
-        		lv_values_4_0, 
+        		lv_values_5_0, 
         		"STRING");
 	    }
 
 )
-))*	otherlv_5='}' 
+))*(	otherlv_6=')' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getExJsonEnumAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getExJsonEnumAccess().getRightParenthesisKeyword_4_0());
     }
-)
+
+    |	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getExJsonEnumAccess().getRightCurlyBracketKeyword_4_1());
+    }
+))
 ;
 
 

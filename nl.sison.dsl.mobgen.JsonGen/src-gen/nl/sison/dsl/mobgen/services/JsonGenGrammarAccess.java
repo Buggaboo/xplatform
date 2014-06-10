@@ -236,27 +236,37 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExJsonEnum");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValuesSTRINGTerminalRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cValuesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cValuesSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Keyword cRightParenthesisKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
 		
 		//ExJsonEnum:
-		//	"enum" "{" values+=STRING ("," values+=STRING)* "}";
+		//	"enum" ("{" | "(") values+=STRING ("," values+=STRING)* (")" | "}");
 		public ParserRule getRule() { return rule; }
 
-		//"enum" "{" values+=STRING ("," values+=STRING)* "}"
+		//"enum" ("{" | "(") values+=STRING ("," values+=STRING)* (")" | "}")
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
 		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
 
+		//"{" | "("
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
 
 		//values+=STRING
 		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
@@ -276,8 +286,14 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValuesSTRINGTerminalRuleCall_3_1_0() { return cValuesSTRINGTerminalRuleCall_3_1_0; }
 
+		//")" | "}"
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_4_0() { return cRightParenthesisKeyword_4_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_4_1() { return cRightCurlyBracketKeyword_4_1; }
 	}
 
 	public class ExJsonDateTimeElements extends AbstractParserRuleElementFinder {
@@ -437,7 +453,7 @@ public class JsonGenGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//ExJsonEnum:
-	//	"enum" "{" values+=STRING ("," values+=STRING)* "}";
+	//	"enum" ("{" | "(") values+=STRING ("," values+=STRING)* (")" | "}");
 	public ExJsonEnumElements getExJsonEnumAccess() {
 		return (pExJsonEnum != null) ? pExJsonEnum : (pExJsonEnum = new ExJsonEnumElements());
 	}

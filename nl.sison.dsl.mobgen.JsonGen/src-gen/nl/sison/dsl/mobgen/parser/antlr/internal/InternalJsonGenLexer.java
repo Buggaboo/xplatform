@@ -215,11 +215,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:19:7: ( 'UTC' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:19:9: 'UTC'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:19:7: ( '(' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:19:9: '('
             {
-            match("UTC"); 
-
+            match('('); 
 
             }
 
@@ -236,11 +235,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:20:7: ( 'datetime' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:20:9: 'datetime'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:20:7: ( ')' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:20:9: ')'
             {
-            match("datetime"); 
-
+            match(')'); 
 
             }
 
@@ -257,10 +255,11 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:21:7: ( '(' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:21:9: '('
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:21:7: ( 'UTC' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:21:9: 'UTC'
             {
-            match('('); 
+            match("UTC"); 
+
 
             }
 
@@ -277,10 +276,11 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:22:7: ( ')' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:22:9: ')'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:22:7: ( 'datetime' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:22:9: 'datetime'
             {
-            match(')'); 
+            match("datetime"); 
+
 
             }
 
@@ -297,10 +297,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_JSON_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:19: ( ( 'true' | 'false' | 'boolean' ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:21: ( 'true' | 'false' | 'boolean' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:19: ( ( 'true' | 'false' | 'boolean' ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:21: ( 'true' | 'false' | 'boolean' )
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:21: ( 'true' | 'false' | 'boolean' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:21: ( 'true' | 'false' | 'boolean' )
             int alt1=3;
             switch ( input.LA(1) ) {
             case 't':
@@ -327,7 +327,7 @@ public class InternalJsonGenLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:22: 'true'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:22: 'true'
                     {
                     match("true"); 
 
@@ -335,7 +335,7 @@ public class InternalJsonGenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:29: 'false'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:29: 'false'
                     {
                     match("false"); 
 
@@ -343,7 +343,7 @@ public class InternalJsonGenLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:611:37: 'boolean'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:37: 'boolean'
                     {
                     match("boolean"); 
 
@@ -369,8 +369,8 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_JSON_NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:613:16: ( 'null' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:613:18: 'null'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:16: ( 'null' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:18: 'null'
             {
             match("null"); 
 
@@ -390,10 +390,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_JSON_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:17: ( ( '-' )? RULE_INT '.' RULE_INT ( ( 'E' | 'e' ) ( '-' )? RULE_INT )? )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:19: ( '-' )? RULE_INT '.' RULE_INT ( ( 'E' | 'e' ) ( '-' )? RULE_INT )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:17: ( ( '-' )? RULE_INT '.' RULE_INT ( ( 'E' | 'e' ) ( '-' )? RULE_INT )? )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:19: ( '-' )? RULE_INT '.' RULE_INT ( ( 'E' | 'e' ) ( '-' )? RULE_INT )?
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:19: ( '-' )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:19: ( '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -402,7 +402,7 @@ public class InternalJsonGenLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:19: '-'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:19: '-'
                     {
                     match('-'); 
 
@@ -414,7 +414,7 @@ public class InternalJsonGenLexer extends Lexer {
             mRULE_INT(); 
             match('.'); 
             mRULE_INT(); 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:46: ( ( 'E' | 'e' ) ( '-' )? RULE_INT )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:46: ( ( 'E' | 'e' ) ( '-' )? RULE_INT )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -423,7 +423,7 @@ public class InternalJsonGenLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:47: ( 'E' | 'e' ) ( '-' )? RULE_INT
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:47: ( 'E' | 'e' ) ( '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -434,7 +434,7 @@ public class InternalJsonGenLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:57: ( '-' )?
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:57: ( '-' )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -443,7 +443,7 @@ public class InternalJsonGenLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:615:57: '-'
+                            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:57: '-'
                             {
                             match('-'); 
 
@@ -475,10 +475,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:617:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:617:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:617:11: ( '^' )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -487,7 +487,7 @@ public class InternalJsonGenLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:617:11: '^'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:11: '^'
                     {
                     match('^'); 
 
@@ -505,7 +505,7 @@ public class InternalJsonGenLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:617:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -554,10 +554,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:619:10: ( ( '0' .. '9' )+ )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:619:12: ( '0' .. '9' )+
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:10: ( ( '0' .. '9' )+ )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:12: ( '0' .. '9' )+
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:619:12: ( '0' .. '9' )+
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:12: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -571,7 +571,7 @@ public class InternalJsonGenLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:619:13: '0' .. '9'
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -603,10 +603,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -624,10 +624,10 @@ public class InternalJsonGenLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -643,7 +643,7 @@ public class InternalJsonGenLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -659,7 +659,7 @@ public class InternalJsonGenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -684,10 +684,10 @@ public class InternalJsonGenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -703,7 +703,7 @@ public class InternalJsonGenLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -719,7 +719,7 @@ public class InternalJsonGenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:621:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:631:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -762,12 +762,12 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:633:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:633:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:24: ( options {greedy=false; } : . )*
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:633:24: ( options {greedy=false; } : . )*
             loop11:
             do {
                 int alt11=2;
@@ -792,7 +792,7 @@ public class InternalJsonGenLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:623:52: .
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:633:52: .
             	    {
             	    matchAny(); 
 
@@ -822,12 +822,12 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -840,7 +840,7 @@ public class InternalJsonGenLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -860,7 +860,7 @@ public class InternalJsonGenLexer extends Lexer {
                 }
             } while (true);
 
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:40: ( ( '\\r' )? '\\n' )?
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:40: ( ( '\\r' )? '\\n' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -869,9 +869,9 @@ public class InternalJsonGenLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:41: ( '\\r' )? '\\n'
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:41: ( '\\r' )? '\\n'
                     {
-                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:41: ( '\\r' )?
+                    // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:41: ( '\\r' )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -880,7 +880,7 @@ public class InternalJsonGenLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:625:41: '\\r'
+                            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:635:41: '\\r'
                             {
                             match('\r'); 
 
@@ -912,10 +912,10 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:637:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:637:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:627:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:637:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt15=0;
             loop15:
             do {
@@ -969,8 +969,8 @@ public class InternalJsonGenLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:16: ( . )
-            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:629:18: .
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:639:16: ( . )
+            // ../nl.sison.dsl.mobgen.JsonGen/src-gen/nl/sison/dsl/mobgen/parser/antlr/internal/InternalJsonGen.g:639:18: .
             {
             matchAny(); 
 
@@ -1151,36 +1151,35 @@ public class InternalJsonGenLexer extends Lexer {
 
     protected DFA16 dfa16 = new DFA16(this);
     static final String DFA16_eotS =
-        "\10\uffff\3\42\2\uffff\4\42\1\31\1\54\1\31\1\uffff\3\31\11\uffff"+
-        "\1\42\1\uffff\2\42\2\uffff\4\42\2\uffff\1\54\4\uffff\1\42\1\72\5"+
-        "\42\1\100\1\uffff\1\42\1\102\2\42\1\105\1\uffff\1\42\1\uffff\1\102"+
-        "\1\42\1\uffff\3\42\1\102\1\113\1\uffff";
+        "\10\uffff\1\42\2\uffff\6\42\1\31\1\54\1\31\1\uffff\3\31\11\uffff"+
+        "\1\42\3\uffff\6\42\2\uffff\1\54\4\uffff\1\42\1\72\5\42\1\100\1\uffff"+
+        "\1\42\1\102\2\42\1\105\1\uffff\1\42\1\uffff\1\102\1\42\1\uffff\3"+
+        "\42\1\102\1\113\1\uffff";
     static final String DFA16_eofS =
         "\114\uffff";
     static final String DFA16_minS =
-        "\1\0\7\uffff\1\156\1\124\1\141\2\uffff\1\162\1\141\1\157\1\165\1"+
-        "\60\1\56\1\101\1\uffff\2\0\1\52\11\uffff\1\165\1\uffff\1\103\1\164"+
-        "\2\uffff\1\165\1\154\1\157\1\154\2\uffff\1\56\4\uffff\1\155\1\60"+
-        "\2\145\1\163\2\154\1\60\1\uffff\1\164\1\60\2\145\1\60\1\uffff\1"+
-        "\151\1\uffff\1\60\1\141\1\uffff\1\155\1\156\1\145\2\60\1\uffff";
+        "\1\0\7\uffff\1\156\2\uffff\1\124\1\141\1\162\1\141\1\157\1\165\1"+
+        "\60\1\56\1\101\1\uffff\2\0\1\52\11\uffff\1\165\3\uffff\1\103\1\164"+
+        "\1\165\1\154\1\157\1\154\2\uffff\1\56\4\uffff\1\155\1\60\2\145\1"+
+        "\163\2\154\1\60\1\uffff\1\164\1\60\2\145\1\60\1\uffff\1\151\1\uffff"+
+        "\1\60\1\141\1\uffff\1\155\1\156\1\145\2\60\1\uffff";
     static final String DFA16_maxS =
-        "\1\uffff\7\uffff\1\156\1\124\1\141\2\uffff\1\162\1\141\1\157\1\165"+
-        "\2\71\1\172\1\uffff\2\uffff\1\57\11\uffff\1\165\1\uffff\1\103\1"+
-        "\164\2\uffff\1\165\1\154\1\157\1\154\2\uffff\1\71\4\uffff\1\155"+
-        "\1\172\2\145\1\163\2\154\1\172\1\uffff\1\164\1\172\2\145\1\172\1"+
-        "\uffff\1\151\1\uffff\1\172\1\141\1\uffff\1\155\1\156\1\145\2\172"+
-        "\1\uffff";
+        "\1\uffff\7\uffff\1\156\2\uffff\1\124\1\141\1\162\1\141\1\157\1\165"+
+        "\2\71\1\172\1\uffff\2\uffff\1\57\11\uffff\1\165\3\uffff\1\103\1"+
+        "\164\1\165\1\154\1\157\1\154\2\uffff\1\71\4\uffff\1\155\1\172\2"+
+        "\145\1\163\2\154\1\172\1\uffff\1\164\1\172\2\145\1\172\1\uffff\1"+
+        "\151\1\uffff\1\172\1\141\1\uffff\1\155\1\156\1\145\2\172\1\uffff";
     static final String DFA16_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\3\uffff\1\13\1\14\7\uffff\1"+
-        "\20\3\uffff\1\25\1\26\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\20\2"+
-        "\uffff\1\13\1\14\4\uffff\1\17\1\21\1\uffff\1\22\1\23\1\24\1\25\10"+
-        "\uffff\1\11\5\uffff\1\10\1\uffff\1\15\2\uffff\1\16\5\uffff\1\12";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\11\1\12\11\uffff"+
+        "\1\20\3\uffff\1\25\1\26\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\20"+
+        "\1\11\1\12\6\uffff\1\17\1\21\1\uffff\1\22\1\23\1\24\1\25\10\uffff"+
+        "\1\13\5\uffff\1\10\1\uffff\1\15\2\uffff\1\16\5\uffff\1\14";
     static final String DFA16_specialS =
-        "\1\2\24\uffff\1\0\1\1\65\uffff}>";
+        "\1\1\24\uffff\1\0\1\2\65\uffff}>";
     static final String[] DFA16_transitionS = {
-            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\1\13\1"+
-            "\14\2\31\1\2\1\21\1\31\1\27\12\22\1\5\4\31\1\4\1\31\24\24\1"+
-            "\11\5\24\1\6\1\31\1\7\1\23\1\24\1\31\1\24\1\17\1\24\1\12\1\10"+
+            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\1\11\1"+
+            "\12\2\31\1\2\1\21\1\31\1\27\12\22\1\5\4\31\1\4\1\31\24\24\1"+
+            "\13\5\24\1\6\1\31\1\7\1\23\1\24\1\31\1\24\1\17\1\24\1\14\1\10"+
             "\1\16\7\24\1\20\5\24\1\15\6\24\1\1\1\31\1\3\uff82\31",
             "",
             "",
@@ -1190,10 +1189,10 @@ public class InternalJsonGenLexer extends Lexer {
             "",
             "",
             "\1\41",
-            "\1\43",
-            "\1\44",
             "",
             "",
+            "\1\45",
+            "\1\46",
             "\1\47",
             "\1\50",
             "\1\51",
@@ -1216,10 +1215,10 @@ public class InternalJsonGenLexer extends Lexer {
             "",
             "\1\62",
             "",
+            "",
+            "",
             "\1\63",
             "\1\64",
-            "",
-            "",
             "\1\65",
             "\1\66",
             "\1\67",
@@ -1306,16 +1305,6 @@ public class InternalJsonGenLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA16_22 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA16_22>='\u0000' && LA16_22<='\uFFFF')) ) {s = 46;}
-
-                        else s = 25;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA16_0 = input.LA(1);
 
                         s = -1;
@@ -1335,13 +1324,13 @@ public class InternalJsonGenLexer extends Lexer {
 
                         else if ( (LA16_0=='e') ) {s = 8;}
 
-                        else if ( (LA16_0=='U') ) {s = 9;}
+                        else if ( (LA16_0=='(') ) {s = 9;}
 
-                        else if ( (LA16_0=='d') ) {s = 10;}
+                        else if ( (LA16_0==')') ) {s = 10;}
 
-                        else if ( (LA16_0=='(') ) {s = 11;}
+                        else if ( (LA16_0=='U') ) {s = 11;}
 
-                        else if ( (LA16_0==')') ) {s = 12;}
+                        else if ( (LA16_0=='d') ) {s = 12;}
 
                         else if ( (LA16_0=='t') ) {s = 13;}
 
@@ -1368,6 +1357,16 @@ public class InternalJsonGenLexer extends Lexer {
                         else if ( ((LA16_0>='\t' && LA16_0<='\n')||LA16_0=='\r'||LA16_0==' ') ) {s = 24;}
 
                         else if ( ((LA16_0>='\u0000' && LA16_0<='\b')||(LA16_0>='\u000B' && LA16_0<='\f')||(LA16_0>='\u000E' && LA16_0<='\u001F')||LA16_0=='!'||(LA16_0>='#' && LA16_0<='&')||(LA16_0>='*' && LA16_0<='+')||LA16_0=='.'||(LA16_0>=';' && LA16_0<='>')||LA16_0=='@'||LA16_0=='\\'||LA16_0=='`'||LA16_0=='|'||(LA16_0>='~' && LA16_0<='\uFFFF')) ) {s = 25;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA16_22 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA16_22>='\u0000' && LA16_22<='\uFFFF')) ) {s = 46;}
+
+                        else s = 25;
 
                         if ( s>=0 ) return s;
                         break;
