@@ -125,13 +125,13 @@ class JsonGenGenerator implements IGenerator {
 		
 		if(value.strFromEnum != null)
 		{
-			return String.format(camelCaseKey + "List.add(%sEnum.fromString(inputArray.getString(i)))", generatedType).createJsonListParser(key, generatedType)
+			return String.format(camelCaseKey + "List.add(%sEnum.fromString(inputArray.getString(i)));", generatedType).createJsonListParser(key, generatedType)
 		}
 		
 		if(value.datetime != null)
 		{
 			val df = value.datetime
-			return String.format(camelCaseKey + "List.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", inputArray.getString(i)))", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format).createJsonListParser(key, 'Date')
+			return String.format(camelCaseKey + "List.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", inputArray.getString(i)));", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format).createJsonListParser(key, 'Date')
 		}
 		
 		return "UNDEFINED"
@@ -158,23 +158,23 @@ class JsonGenGenerator implements IGenerator {
 			
 		if (value.str != null)
 		{
-			return String.format("jsonRoot.getString(\"%s\")", key)
+			return String.format("jsonRoot.getString(\"%s\");", key)
 		}
 		
-		if (value.bool) return String.format("jsonRoot.getBoolean(\"%s\")", key)
+		if (value.bool) return String.format("jsonRoot.getBoolean(\"%s\");", key)
 		
-		if(value.float) return String.format("jsonRoot.getDouble(\"%s\")", key)
-		if(value.int)	return String.format("jsonRoot.getLong(\"%s\")", key)
+		if(value.float) return String.format("jsonRoot.getDouble(\"%s\");", key)
+		if(value.int)	return String.format("jsonRoot.getLong(\"%s\");", key)
 		
 		if(value.strFromEnum != null)
 		{
-			return String.format("%sEnum.fromString(jsonRoot.getString(\"%s\"))", key.generatedType, key)
+			return String.format("%sEnum.fromString(jsonRoot.getString(\"%s\"));", key.generatedType, key)
 		}
 		
 		if(value.datetime != null)
 		{
 			val df = value.datetime
-			return String.format("ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", jsonRoot.getString(\"%s\"))", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format, key)
+			return String.format("ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", jsonRoot.getString(\"%s\"));", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format, key)
 		}
 		
 		return "UNDEFINED"
@@ -362,6 +362,8 @@ class JsonGenGenerator implements IGenerator {
 	}
 	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence additionalMethodsEtc) '''
 	import java.util.Date;
+
+	import org.json.JSONObject;
 
 	import android.os.Parcel;
 	import android.os.Parcelable;
