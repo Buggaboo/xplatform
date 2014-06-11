@@ -85,6 +85,7 @@ class JsonGenGenerator implements IGenerator {
 	def createJsonParserCtor(CharSequence className, JsonObject jsonRootObject) '''
 	public «className»(final JSONObject jsonRoot)
 	{
+		try {
 		«FOR member : jsonRootObject.members»
 		«IF member.optional»
 		if (!jsonRoot.isNull("«member.key»"))
@@ -103,6 +104,10 @@ class JsonGenGenerator implements IGenerator {
 			«ENDIF»
 		«ENDIF»
 		«ENDFOR»
+		} catch (JSONException e) {
+			this.exception = e;
+			e.printStackTrace();
+		}
 	}
 	'''
 	
@@ -356,8 +361,8 @@ class JsonGenGenerator implements IGenerator {
 	 *
 	 */
 	// TODO fix (un)marshalling of optional fields, because that will break	 
-	val acceptedTypes = newLinkedList("String", "Integer", "Long", "Float", "Double")
-	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntegerArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
+	val acceptedTypes = newLinkedList("String", "Int", "Long", "Float", "Double")
+	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
 		'boolean[]' -> 'BooleanArray' // TODO write SparseBooleanArray code
 	}
 	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence additionalMethodsEtc) '''
