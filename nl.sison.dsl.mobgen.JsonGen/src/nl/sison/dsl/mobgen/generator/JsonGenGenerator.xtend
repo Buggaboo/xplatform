@@ -24,8 +24,6 @@ class JsonGenGenerator implements IGenerator {
 			}
 		}
 		
-		// TODO generate MOBBL Document definition
-		
 		// TODO generate iOS 
 	}
 	
@@ -360,6 +358,7 @@ class JsonGenGenerator implements IGenerator {
 	 * to the ui thread
 	 *
 	 */
+	// TODO include imports only when they are needed
 	// TODO fix (un)marshalling of optional fields, because that will break	 
 	val acceptedTypes = newLinkedList("String", "Int", "Long", "Float", "Double")
 	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
