@@ -90,16 +90,16 @@ class JsonGenGenerator implements IGenerator {
 		if (!jsonRoot.isNull("«member.key»"))
 		{
 			«IF member.value.array != null»
-			«member.createJsonListParser»
+				«member.createJsonListParser»
 			«ELSE»
-			this.«member.key.camelCase» = «member.mapToSerializedType»
+				this.«member.key.camelCase» = «member.mapToSerializedType»
 			«ENDIF»
 		}
 		«ELSE»
 			«IF member.value.array != null»
-			«member.createJsonListParser»
+				«member.createJsonListParser»
 			«ELSE»
-			this.«member.key.camelCase» = «member.mapToSerializedType»
+				this.«member.key.camelCase» = «member.mapToSerializedType»
 			«ENDIF»
 		«ENDIF»
 		«ENDFOR»
@@ -138,14 +138,14 @@ class JsonGenGenerator implements IGenerator {
 
 	}
 	
-	def createJsonListParser (String assignment, CharSequence arrayKey, CharSequence realType) '''
-	ArrayList<«realType»> «arrayKey.camelCase»List = new ArrayList<«realType»>();
+	def createJsonListParser (String assignment, String arrayKey, String realType) '''
+	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey.camelCase»List = new ArrayList<«realType.capitalizeFirstLetter»>();
 	JSONArray inputArray = jsonRoot.getJSONArray("«arrayKey»");
 	for (int i = 0; i < inputArray.length(); i++)
 	{
 		«assignment»
 	}
-	this.«arrayKey.camelCase» = «arrayKey.camelCase»List.toArray();
+	this.«arrayKey.camelCase» = «arrayKey.camelCase»List.toArray<«realType.capitalizeFirstLetter»>();
 	'''
 	
 	def mapToSerializedType(Member member)
@@ -282,11 +282,11 @@ class JsonGenGenerator implements IGenerator {
 	  	}
 
 		public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-			public Status createFromParcel(Parcel in) {
+			public «classNamePrefix» createFromParcel(Parcel in) {
 				return «classNamePrefix».values()[in.readInt()];
 			}
 
-			public Status[] newArray(int size) {
+			public «classNamePrefix»[] newArray(int size) {
 				return new «classNamePrefix»[size];
 			}
 		};
@@ -404,62 +404,62 @@ class JsonGenGenerator implements IGenerator {
 
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
-		«FOR s : members.entrySet»		
-		«IF acceptedTypes.contains(s.value)»
-			out.write«s.value»(«s.key»);
-		«ELSEIF acceptedArrayTypes.containsKey(s.value)»
-			out.write«acceptedArrayTypes.get(s.value)»(«s.key»);
-		«ELSEIF s.value.startsWith("Date")»
-			if («s.key» != null)
-			{
-				«IF s.value.endsWith('[]')»
-				long[] «s.key»LongList = new ArrayList<Long>();
-				for (Date d: «s.key»)
+			«FOR s : members.entrySet»
+			«IF acceptedTypes.contains(s.value)»
+				out.write«s.value»(«s.key»);
+			«ELSEIF acceptedArrayTypes.containsKey(s.value)»
+				out.write«acceptedArrayTypes.get(s.value)»(«s.key»);
+			«ELSEIF s.value.startsWith("Date")»
+				if («s.key» != null)
 				{
-					«s.key»LongList.append(d.getTime());
+					«IF s.value.endsWith('[]')»
+					long[] «s.key»LongList = new ArrayList<Long>();
+					for (Date d: «s.key»)
+					{
+						«s.key»LongList.append(d.getTime());
+					}
+					out.writeLongArray(«s.key»LongList.toArray());
+					«ELSE»
+					out.writeLong(«s.key».getTime());
+					«ENDIF»
 				}
-				out.writeLongArray(«s.key»LongList.toArray());
-				«ELSE»
-				out.writeLong(«s.key».getTime());
-				«ENDIF»
-			}
-		«ELSEIF s.value.equals("boolean")»
-			out.writeInteger(«s.key» ? 1 : 0);
-		«ELSEIF s.value.endsWith("Enum[]")»
-			out.writeParcelableArray(«s.key», flags);
-		«ELSE»
-			out.writeParcelable(«s.key», flags);
-		«ENDIF»
-		«ENDFOR»
-		out.writeSerializable(exception);
+			«ELSEIF s.value.equals("boolean")»
+				out.writeInteger(«s.key» ? 1 : 0);
+			«ELSEIF s.value.endsWith("Enum[]")»
+				out.writeParcelableArray(«s.key», flags);
+			«ELSE»
+				out.writeParcelable(«s.key», flags);
+			«ENDIF»
+			«ENDFOR»
+			out.writeSerializable(exception);
 	    }
 
 		@Override
 	    private void readFromParcel(Parcel in) {
-		«FOR s : members.entrySet»
-			«IF acceptedTypes.contains(s.value)»
-			«s.key» = in.read«s.value»();
-			«ELSEIF acceptedArrayTypes.containsKey(s.value)»
-			in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
-			«ELSEIF s.value.equals("boolean")»
-			«s.key» = in.readInteger() > 0;
-			«ELSEIF s.value.startsWith("Date")»
-				«IF s.value.endsWith('[]')»
-				in.readLongArray(«s.key»LongArray);
-				ArrayList<Date> «s.key»DateList = new ArrayList<Date>();
-				for (long l: «s.key»LongArray)
-				{
-					«s.key»DateList.append(new Date(l));
-				}
-				«s.key» = «s.key»DateList.toArray();
+			«FOR s : members.entrySet»
+				«IF acceptedTypes.contains(s.value)»
+				«s.key» = in.read«s.value»();
+				«ELSEIF acceptedArrayTypes.containsKey(s.value)»
+				in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
+				«ELSEIF s.value.equals("boolean")»
+				«s.key» = in.readInteger() > 0;
+				«ELSEIF s.value.startsWith("Date")»
+					«IF s.value.endsWith('[]')»
+					in.readLongArray(«s.key»LongArray);
+					ArrayList<Date> «s.key»DateList = new ArrayList<Date>();
+					for (long l: «s.key»LongArray)
+					{
+						«s.key»DateList.append(new Date(l));
+					}
+					«s.key» = «s.key»DateList.toArray();
+					«ELSE»
+					«s.key» = new Date(in.readLong());
+					«ENDIF»
 				«ELSE»
-				«s.key» = new Date(in.readLong());
+				«s.key.createParcelableReadMember(s.value)»
 				«ENDIF»
-			«ELSE»
-			«s.key.createParcelableReadMember(s.value)»
-			«ENDIF»
-		«ENDFOR»
-		exception = (Exception) in.readSerializable();
+			«ENDFOR»
+			exception = (Exception) in.readSerializable();
 	    }
 
 	    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
