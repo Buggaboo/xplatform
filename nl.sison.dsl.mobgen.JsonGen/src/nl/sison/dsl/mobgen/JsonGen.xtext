@@ -29,11 +29,6 @@ terminal JSON_FLOAT:
 ExJsonEnum:
 	'enum' ('{'|'(') values+=STRING (',' values+=STRING)* (')'|'}');
 
-/*
- * TODO generate zulu validator SimpleDateFormatter
- * 
- * There is a thread related security hole, fix this
- */
 ExJsonDateTime:
 	utc?='UTC' | 'datetime' '(' format=STRING ')';
 
