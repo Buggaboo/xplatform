@@ -85,22 +85,22 @@ class JsonGenGenerator implements IGenerator {
 	{
 		try {
 		«FOR member : jsonRootObject.members»
-		«IF member.optional»
-		if (!jsonRoot.isNull("«member.key»"))
-		{
-			«IF member.value.array != null»
-				«member.createJsonListParser»
+			«IF member.optional»
+				if (!jsonRoot.isNull("«member.key»"))
+				{
+					«IF member.value.array != null»
+						«member.createJsonArrayParser»
+					«ELSE»
+						this.«member.key.camelCase» = «member.mapToSerializedType»
+					«ENDIF»
+				}
 			«ELSE»
-				this.«member.key.camelCase» = «member.mapToSerializedType»
+				«IF member.value.array != null»
+					«member.createJsonArrayParser»
+				«ELSE»
+					this.«member.key.camelCase» = «member.mapToSerializedType»
+				«ENDIF»
 			«ENDIF»
-		}
-		«ELSE»
-			«IF member.value.array != null»
-				«member.createJsonListParser»
-			«ELSE»
-				this.«member.key.camelCase» = «member.mapToSerializedType»
-			«ENDIF»
-		«ENDIF»
 		«ENDFOR»
 		} catch (JSONException e) {
 			this.exception = e;
@@ -109,46 +109,61 @@ class JsonGenGenerator implements IGenerator {
 	}
 	'''
 	
-	def createJsonListParser (String assignment, String arrayKey, String realType) '''
-	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey»List = new ArrayList<«realType.capitalizeFirstLetter»>();
-	JSONArray «arrayKey»JsonArray = jsonRoot.getJSONArray("«arrayKey»");
-	for (int i = 0; i < «arrayKey»JsonArray.length(); i++)
+	def createJsonArrayParser(Member member)
 	{
-		«assignment»
-	}
-	«arrayKey»List.toArray(«arrayKey»);
-	'''
-	
-	def createJsonListParser(Member member) {
-		val value = member.value.array.values.head
 		val key = member.key
 		val camelCaseKey = key.camelCase
+		val value = member.value.array.values.head
 		val generatedType = key.generatedType
 		
 		if (value.obj != null)
-			return String.format("%sList.add(new %s(%sJsonArray.getJSONObject(i)));", camelCaseKey, generatedType, camelCaseKey).createJsonListParser(camelCaseKey, generatedType)
+			return key.createJsonArrayParser(camelCaseKey, generatedType, 'JSONObject', String.format("new %s(", generatedType))
 			
 		if (value.str != null)
-			return String.format("%sList.add(%sJsonArray.getString(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'String')
+			return key.createJsonArrayParser(camelCaseKey, 'String', 'String', '')
 		
-		if (value.bool) return String.format("%sList.add(%sJsonArray.getBoolean(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'boolean')
+		if (value.bool)
+			return key.createJsonArrayParser(camelCaseKey, 'boolean', 'Boolean', '')
 		
-		if(value.float) return String.format("%sList.add(%sJsonArray.getDouble(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'double')
-		if(value.int)	return String.format("%sList.add(%sJsonArray.getLong(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'long')
+		if(value.float)
+			return key.createJsonArrayParser(camelCaseKey, 'double', 'Double', '')
+		
+		if(value.int)
+			return key.createJsonArrayParser(camelCaseKey, 'long', 'Long', '')
 		
 		if(value.strFromEnum != null)
-		{
-			return String.format("%sList.add(%s.fromString(%sJsonArray.getString(i)));", camelCaseKey, generatedType, camelCaseKey).createJsonListParser(camelCaseKey, generatedType)
-		}
+			return key.createJsonArrayParser(camelCaseKey, generatedType, 'String', String.format("%s.fromString(", generatedType))
 		
 		if(value.datetime != null)
-		{
-			val df = value.datetime
-			return String.format("%sList.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", %sJsonArray.getString(i)));", camelCaseKey, if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format, camelCaseKey).createJsonListParser(camelCaseKey, 'Date')
-		}
+			return key.createJsonArrayDateParser(camelCaseKey, 'Date', 'String', String.format("ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", ", value.datetime.format))
 		
 		return "UNDEFINED"
+		
 	}
+	
+	def createJsonArrayParser(CharSequence jsonKey, CharSequence prefix, CharSequence type, CharSequence jsonType, CharSequence assignmentAction) '''
+	JSONArray «prefix»JsonArray = jsonRoot.getJSONArray("«jsonKey»");
+	«prefix» = new «type»[«prefix»JsonArray.length()];
+	for (int i=0; i<«prefix»JsonArray.length(); i++)
+	{
+		«prefix»[i] = «IF assignmentAction.length > 0»«assignmentAction»«ENDIF»«prefix»JsonArray.get«jsonType»(i)«IF assignmentAction.length > 0»)«ENDIF»;
+	}
+	'''
+
+	def createJsonArrayDateParser(CharSequence jsonKey, CharSequence prefix, CharSequence type, CharSequence jsonType, CharSequence assignmentAction) '''
+	JSONArray «prefix»JsonArray = jsonRoot.getJSONArray("«jsonKey»");
+	«prefix» = new «type»[«prefix»JsonArray.length()];
+	for (int i=0; i<«prefix»JsonArray.length(); i++)
+	{
+		try
+		{
+			«prefix»[i] = «IF assignmentAction.length > 0»«assignmentAction»«ENDIF»«prefix»JsonArray.get«jsonType»(i)«IF assignmentAction.length > 0»)«ENDIF»;
+		}catch (ParseException ex)
+		{
+			this.exception = ex;
+		}
+	}
+	'''
 	
 	def mapToSerializedType(Member member)
 	{
@@ -170,7 +185,7 @@ class JsonGenGenerator implements IGenerator {
 		
 		if(value.strFromEnum != null)
 		{
-			return String.format("%s.fromString(jsonRoot.getString(\"%s\"));", key.generatedType, key)
+			return String.format("%s.fromString(jsonRoot.getString(\"%s\"));", key.generatedType + 'Enum', key)
 		}
 		
 		if(value.datetime != null)
@@ -365,6 +380,7 @@ class JsonGenGenerator implements IGenerator {
 		'boolean[]' -> 'BooleanArray' // TODO write SparseBooleanArray code
 	}
 	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence jsonParserCtor) '''
+	import java.text.ParseException;
 	import java.util.ArrayList;
 	import java.util.Date;
 
@@ -523,4 +539,3 @@ class JsonGenGenerator implements IGenerator {
 	}
 	
 }
-
