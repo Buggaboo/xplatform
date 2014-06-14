@@ -20,7 +20,7 @@ class JsonGenGenerator implements IGenerator {
 		{
 			for (obj : JsonObjects)
 			{
-				parseJsonObject("Root", obj, fsa) 
+				parseJsonObject("Root", obj, fsa)
 			}
 		}
 		
@@ -110,42 +110,41 @@ class JsonGenGenerator implements IGenerator {
 	'''
 	
 	def createJsonListParser (String assignment, String arrayKey, String realType) '''
-	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey.camelCase»List = new ArrayList<«realType.capitalizeFirstLetter»>();
-	JSONArray inputArray = jsonRoot.getJSONArray("«arrayKey»");
-	for (int i = 0; i < inputArray.length(); i++)
+	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey»List = new ArrayList<«realType.capitalizeFirstLetter»>();
+	JSONArray «arrayKey»JsonArray = jsonRoot.getJSONArray("«arrayKey»");
+	for (int i = 0; i < «arrayKey»JsonArray.length(); i++)
 	{
 		«assignment»
 	}
-	«arrayKey.camelCase»List.toArray(«arrayKey.camelCase»);
+	«arrayKey»List.toArray(«arrayKey»);
 	'''
 	
 	def createJsonListParser(Member member) {
 		val value = member.value.array.values.head
 		val key = member.key
 		val camelCaseKey = key.camelCase
-		var generatedType = key.generatedType
+		val generatedType = key.generatedType
 		
 		if (value.obj != null)
-			return String.format(camelCaseKey + "List.add(new %s(inputArray.getJSONObject(i)));", generatedType).createJsonListParser(key, generatedType)
+			return String.format("%sList.add(new %s(%sJsonArray.getJSONObject(i)));", camelCaseKey, generatedType, camelCaseKey).createJsonListParser(camelCaseKey, generatedType)
 			
 		if (value.str != null)
-			return (camelCaseKey + "List.add(inputArray.getString(i));").createJsonListParser(key, 'String')
+			return String.format("%sList.add(%sJsonArray.getString(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'String')
 		
-		if (value.bool) return (camelCaseKey + "List.add(inputArray.getBoolean(i));").createJsonListParser(key, 'boolean')
+		if (value.bool) return String.format("%sList.add(%sJsonArray.getBoolean(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'boolean')
 		
-		if(value.float) return (camelCaseKey + "List.add(inputArray.getDouble(i));").createJsonListParser(key, 'double')
-		if(value.int)	return (camelCaseKey + "List.add(inputArray.getLong(i));").createJsonListParser(key, 'long')
+		if(value.float) return String.format("%sList.add(%sJsonArray.getDouble(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'double')
+		if(value.int)	return String.format("%sList.add(%sJsonArray.getLong(i));", camelCaseKey, camelCaseKey).createJsonListParser(camelCaseKey, 'long')
 		
 		if(value.strFromEnum != null)
 		{
-			generatedType = generatedType + 'Enum'
-			return String.format(camelCaseKey + "List.add(%s.fromString(inputArray.getString(i)));", generatedType).createJsonListParser(key, generatedType)
+			return String.format("%sList.add(%s.fromString(%sJsonArray.getString(i)));", camelCaseKey, generatedType, camelCaseKey).createJsonListParser(camelCaseKey, generatedType)
 		}
 		
 		if(value.datetime != null)
 		{
 			val df = value.datetime
-			return String.format(camelCaseKey + "List.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", inputArray.getString(i)));", if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format).createJsonListParser(key, 'Date')
+			return String.format("%sList.add(ConcurrentDateFormatHashMap.convertStringToDate(\"%s\", %sJsonArray.getString(i)));", camelCaseKey, if (df.utc) "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" else df.format, camelCaseKey).createJsonListParser(camelCaseKey, 'Date')
 		}
 		
 		return "UNDEFINED"
@@ -171,7 +170,7 @@ class JsonGenGenerator implements IGenerator {
 		
 		if(value.strFromEnum != null)
 		{
-			return String.format("%sEnum.fromString(jsonRoot.getString(\"%s\"));", key.generatedType, key)
+			return String.format("%s.fromString(jsonRoot.getString(\"%s\"));", key.generatedType, key)
 		}
 		
 		if(value.datetime != null)
@@ -336,7 +335,7 @@ class JsonGenGenerator implements IGenerator {
 		
 		if (value.strFromEnum != null)
 		{
-			map.put(key, generatedType + 'Enum[]') // TODO generate enum type, copy paste existing code
+			map.put(key, generatedType + '[]') // TODO generate enum type, copy paste existing code
 			createParcelableEnumType(generatedType, value.strFromEnum.values, fsa)
 		}
 		
