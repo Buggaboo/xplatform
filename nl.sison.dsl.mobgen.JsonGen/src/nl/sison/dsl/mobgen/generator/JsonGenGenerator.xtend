@@ -113,7 +113,7 @@ class JsonGenGenerator implements IGenerator {
 		val value = member.value.array.values.head
 		val key = member.key
 		val camelCaseKey = key.camelCase
-		val generatedType = key.generatedType
+		var generatedType = key.generatedType
 		
 		if (value.obj != null)
 			return String.format(camelCaseKey + "List.add(new %s(inputArray.getJSONObject(i)));", generatedType).createJsonListParser(key, generatedType)
@@ -128,7 +128,8 @@ class JsonGenGenerator implements IGenerator {
 		
 		if(value.strFromEnum != null)
 		{
-			return String.format(camelCaseKey + "List.add(%sEnum.fromString(inputArray.getString(i)));", generatedType).createJsonListParser(key, generatedType)
+			generatedType = generatedType + 'Enum'
+			return String.format(camelCaseKey + "List.add(%s.fromString(inputArray.getString(i)));", generatedType).createJsonListParser(key, generatedType)
 		}
 		
 		if(value.datetime != null)
@@ -264,7 +265,7 @@ class JsonGenGenerator implements IGenerator {
 		// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)
 		private String text;
 
-		public «classNamePrefix»Enum(String text) {
+		«classNamePrefix»Enum(String text) {
 	    	this.text = text;
 	  	}
 
@@ -274,7 +275,7 @@ class JsonGenGenerator implements IGenerator {
 
 		public static «classNamePrefix»Enum fromString(String text) {
 	    	if (text != null) {
-	      		for («classNamePrefix»Enum b : «classNamePrefix».values()) {
+	      		for («classNamePrefix»Enum b : «classNamePrefix»Enum.values()) {
 	        		if (text.equalsIgnoreCase(b.text)) {
 	          			return b;
 	        		}
@@ -424,7 +425,7 @@ class JsonGenGenerator implements IGenerator {
 					long «s.key»Array = new long[«s.key».length];
 					for (int i=0; i < «s.key».length; i++)
 					{
-						«s.key»Array[«s.key»[i].getTime()];
+						«s.key»Array[i] = «s.key»[i].getTime();
 					}
 					out.writeLongArray(«s.key»Array);
 				«ELSE»
@@ -445,25 +446,25 @@ class JsonGenGenerator implements IGenerator {
 	    private void readFromParcel(Parcel in) {
 			«FOR s : members.entrySet»
 				«IF acceptedTypes.contains(s.value)»
-				«s.key» = in.read«s.value»();
+					«s.key» = in.read«s.value»();
 				«ELSEIF acceptedArrayTypes.containsKey(s.value)»
-				in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
+					in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
 				«ELSEIF s.value.equals("boolean")»
-				«s.key» = in.readInt() > 0;
+					«s.key» = in.readInt() > 0;
 				«ELSEIF s.value.startsWith("Date")»
 					«IF s.value.endsWith('[]')»
 						long[] «s.key»longArray = null;
 						in.readLongArray(«s.key»LongArray);
-						this.«s.key» = new Date[«s.key»LongArray.length];
+						«s.key» = new Date[«s.key»LongArray.length];
 						for (int i=0; i<«s.key»LongArray.length; i++)
 						{
-							this.«s.key»[i] = new Date(«s.key»LongArray[i]);
+							«s.key»[i] = new Date(«s.key»LongArray[i]);
 						}
 					«ELSE»
 						«s.key» = new Date(in.readLong());
 					«ENDIF»
 				«ELSE»
-				«s.key.createParcelableReadMember(s.value)»
+					«s.key.createParcelableReadMember(s.value)»
 				«ENDIF»
 			«ENDFOR»
 			exception = (Exception) in.readSerializable();
