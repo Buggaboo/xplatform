@@ -148,7 +148,7 @@ class JsonGenGenerator implements IGenerator {
 	{
 		«assignment»
 	}
-	this.«arrayKey.camelCase» = «arrayKey.camelCase»List.toArray<«realType.capitalizeFirstLetter»>();
+	«arrayKey.camelCase»List.toArray(«arrayKey.camelCase»);
 	'''
 	
 	def mapToSerializedType(Member member)
@@ -250,7 +250,7 @@ class JsonGenGenerator implements IGenerator {
 	
 	def createParcelableEnumType(CharSequence classNamePrefix, List<String> enumValues, IFileSystemAccess fsa)
 	{
-		fsa.generateFile(classNamePrefix + '.java', classNamePrefix.createParcelableEnumTypeString(enumValues))
+		fsa.generateFile(classNamePrefix + 'Enum.java', classNamePrefix.createParcelableEnumTypeString(enumValues))
 	}
 	
 	def createParcelableEnumTypeString(CharSequence classNamePrefix, List<String> enumValues) '''
@@ -258,13 +258,13 @@ class JsonGenGenerator implements IGenerator {
 	import android.os.Parcelable;
 	import android.support.v4.os.ParcelableCompat;
 	
-	public enum «classNamePrefix» implements Parcelable {
+	public enum «classNamePrefix»Enum implements Parcelable {
 		«enumValues.map[v|v.camelCase + '("' + v + '")'].join(', ')», DEFAULT("default");
 		
 		// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)
 		private String text;
 
-		«classNamePrefix»(String text) {
+		public «classNamePrefix»Enum(String text) {
 	    	this.text = text;
 	  	}
 
@@ -272,9 +272,9 @@ class JsonGenGenerator implements IGenerator {
 	    	return this.text;
 		}
 
-		public static «classNamePrefix» fromString(String text) {
+		public static «classNamePrefix»Enum fromString(String text) {
 	    	if (text != null) {
-	      		for («classNamePrefix» b : «classNamePrefix».values()) {
+	      		for («classNamePrefix»Enum b : «classNamePrefix».values()) {
 	        		if (text.equalsIgnoreCase(b.text)) {
 	          			return b;
 	        		}
@@ -285,12 +285,12 @@ class JsonGenGenerator implements IGenerator {
 	  	}
 
 		public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-			public «classNamePrefix» createFromParcel(Parcel in) {
-				return «classNamePrefix».values()[in.readInt()];
+			public «classNamePrefix»Enum createFromParcel(Parcel in) {
+				return «classNamePrefix»Enum.values()[in.readInt()];
 			}
 
-			public «classNamePrefix»[] newArray(int size) {
-				return new «classNamePrefix»[size];
+			public «classNamePrefix»Enum[] newArray(int size) {
+				return new «classNamePrefix»Enum[size];
 			}
 		};
 
@@ -344,6 +344,7 @@ class JsonGenGenerator implements IGenerator {
 		
 	}
 	
+	
 	/**
 	 * 
 	 * We got, boolean (faked Integer), Integers, Serializables, Parcelables, String, Arrays...
@@ -364,10 +365,13 @@ class JsonGenGenerator implements IGenerator {
 	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
 		'boolean[]' -> 'BooleanArray' // TODO write SparseBooleanArray code
 	}
-	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence additionalMethodsEtc) '''
+	def createParcelable(CharSequence parcelableClassName, Map<String,String> members, CharSequence jsonParserCtor) '''
+	import java.util.ArrayList;
 	import java.util.Date;
 
 	import org.json.JSONObject;
+	import org.json.JSONArray;
+	import org.json.JSONException;
 
 	import android.os.Parcel;
 	import android.os.Parcelable;
@@ -416,19 +420,19 @@ class JsonGenGenerator implements IGenerator {
 			«ELSEIF s.value.startsWith("Date")»
 				if («s.key» != null)
 				{
-					«IF s.value.endsWith('[]')»
-					long[] «s.key»LongList = new ArrayList<Long>();
-					for (Date d: «s.key»)
+				«IF s.value.endsWith('[]')»
+					long «s.key»Array = new long[«s.key».length];
+					for (int i=0; i < «s.key».length; i++)
 					{
-						«s.key»LongList.append(d.getTime());
+						«s.key»Array[«s.key»[i].getTime()];
 					}
-					out.writeLongArray(«s.key»LongList.toArray());
-					«ELSE»
+					out.writeLongArray(«s.key»Array);
+				«ELSE»
 					out.writeLong(«s.key».getTime());
-					«ENDIF»
+				«ENDIF»
 				}
 			«ELSEIF s.value.equals("boolean")»
-				out.writeInteger(«s.key» ? 1 : 0);
+				out.writeInt(«s.key» ? 1 : 0);
 			«ELSEIF s.value.endsWith("Enum[]")»
 				out.writeParcelableArray(«s.key», flags);
 			«ELSE»
@@ -438,7 +442,6 @@ class JsonGenGenerator implements IGenerator {
 			out.writeSerializable(exception);
 	    }
 
-		@Override
 	    private void readFromParcel(Parcel in) {
 			«FOR s : members.entrySet»
 				«IF acceptedTypes.contains(s.value)»
@@ -446,18 +449,18 @@ class JsonGenGenerator implements IGenerator {
 				«ELSEIF acceptedArrayTypes.containsKey(s.value)»
 				in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
 				«ELSEIF s.value.equals("boolean")»
-				«s.key» = in.readInteger() > 0;
+				«s.key» = in.readInt() > 0;
 				«ELSEIF s.value.startsWith("Date")»
 					«IF s.value.endsWith('[]')»
-					in.readLongArray(«s.key»LongArray);
-					ArrayList<Date> «s.key»DateList = new ArrayList<Date>();
-					for (long l: «s.key»LongArray)
-					{
-						«s.key»DateList.append(new Date(l));
-					}
-					«s.key» = «s.key»DateList.toArray();
+						long[] «s.key»longArray = null;
+						in.readLongArray(«s.key»LongArray);
+						this.«s.key» = new Date[«s.key»LongArray.length];
+						for (int i=0; i<«s.key»LongArray.length; i++)
+						{
+							this.«s.key»[i] = new Date(«s.key»LongArray[i]);
+						}
 					«ELSE»
-					«s.key» = new Date(in.readLong());
+						«s.key» = new Date(in.readLong());
 					«ENDIF»
 				«ELSE»
 				«s.key.createParcelableReadMember(s.value)»
@@ -483,7 +486,7 @@ class JsonGenGenerator implements IGenerator {
 	        return 0;
 	    }
 	    
-	    «additionalMethodsEtc»
+	    «jsonParserCtor»
 	}
 	'''
 
