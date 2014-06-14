@@ -109,6 +109,16 @@ class JsonGenGenerator implements IGenerator {
 	}
 	'''
 	
+	def createJsonListParser (String assignment, String arrayKey, String realType) '''
+	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey.camelCase»List = new ArrayList<«realType.capitalizeFirstLetter»>();
+	JSONArray inputArray = jsonRoot.getJSONArray("«arrayKey»");
+	for (int i = 0; i < inputArray.length(); i++)
+	{
+		«assignment»
+	}
+	«arrayKey.camelCase»List.toArray(«arrayKey.camelCase»);
+	'''
+	
 	def createJsonListParser(Member member) {
 		val value = member.value.array.values.head
 		val key = member.key
@@ -139,18 +149,7 @@ class JsonGenGenerator implements IGenerator {
 		}
 		
 		return "UNDEFINED"
-
 	}
-	
-	def createJsonListParser (String assignment, String arrayKey, String realType) '''
-	ArrayList<«realType.capitalizeFirstLetter»> «arrayKey.camelCase»List = new ArrayList<«realType.capitalizeFirstLetter»>();
-	JSONArray inputArray = jsonRoot.getJSONArray("«arrayKey»");
-	for (int i = 0; i < inputArray.length(); i++)
-	{
-		«assignment»
-	}
-	«arrayKey.camelCase»List.toArray(«arrayKey.camelCase»);
-	'''
 	
 	def mapToSerializedType(Member member)
 	{
@@ -422,7 +421,7 @@ class JsonGenGenerator implements IGenerator {
 				if («s.key» != null)
 				{
 				«IF s.value.endsWith('[]')»
-					long «s.key»Array = new long[«s.key».length];
+					long[] «s.key»Array = new long[«s.key».length];
 					for (int i=0; i < «s.key».length; i++)
 					{
 						«s.key»Array[i] = «s.key»[i].getTime();
