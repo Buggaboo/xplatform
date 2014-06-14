@@ -413,8 +413,8 @@ class JsonGenGenerator implements IGenerator {
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
 			«FOR s : members.entrySet»
-			«IF acceptedTypes.contains(s.value)»
-				out.write«s.value»(«s.key»);
+			«IF acceptedTypes.contains(s.value.generatedType)»
+				out.write«s.value.generatedType»(«s.key»);
 			«ELSEIF acceptedArrayTypes.containsKey(s.value)»
 				out.write«acceptedArrayTypes.get(s.value)»(«s.key»);
 			«ELSEIF s.value.startsWith("Date")»
@@ -434,9 +434,9 @@ class JsonGenGenerator implements IGenerator {
 			«ELSEIF s.value.equals("boolean")»
 				out.writeInt(«s.key» ? 1 : 0);
 			«ELSEIF s.value.endsWith("Enum[]")»
-				out.writeParcelableArray(«s.key», flags);
+				out.writeParcelableArray((Parcelable[]) «s.key», flags);
 			«ELSE»
-				out.writeParcelable(«s.key», flags);
+				out.writeParcelable((Parcelable) «s.key», flags);
 			«ENDIF»
 			«ENDFOR»
 			out.writeSerializable(exception);
