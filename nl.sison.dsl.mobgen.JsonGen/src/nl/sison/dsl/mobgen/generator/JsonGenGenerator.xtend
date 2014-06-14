@@ -250,7 +250,7 @@ class JsonGenGenerator implements IGenerator {
 	
 	def createParcelableEnumType(CharSequence classNamePrefix, List<String> enumValues, IFileSystemAccess fsa)
 	{
-		fsa.generateFile(classNamePrefix + 'Enum.java', classNamePrefix.createParcelableEnumTypeString(enumValues))
+		fsa.generateFile(classNamePrefix + '.java', classNamePrefix.createParcelableEnumTypeString(enumValues))
 	}
 	
 	def createParcelableEnumTypeString(CharSequence classNamePrefix, List<String> enumValues) '''
@@ -258,13 +258,13 @@ class JsonGenGenerator implements IGenerator {
 	import android.os.Parcelable;
 	import android.support.v4.os.ParcelableCompat;
 	
-	public enum «classNamePrefix»Enum implements Parcelable {
+	public enum «classNamePrefix» implements Parcelable {
 		«enumValues.map[v|v.camelCase + '("' + v + '")'].join(', ')», DEFAULT("default");
 		
 		// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)
 		private String text;
 
-		«classNamePrefix»Enum(String text) {
+		«classNamePrefix»(String text) {
 	    	this.text = text;
 	  	}
 
@@ -272,9 +272,9 @@ class JsonGenGenerator implements IGenerator {
 	    	return this.text;
 		}
 
-		public static «classNamePrefix»Enum fromString(String text) {
+		public static «classNamePrefix» fromString(String text) {
 	    	if (text != null) {
-	      		for («classNamePrefix»Enum b : «classNamePrefix»Enum.values()) {
+	      		for («classNamePrefix» b : «classNamePrefix».values()) {
 	        		if (text.equalsIgnoreCase(b.text)) {
 	          			return b;
 	        		}
@@ -285,12 +285,12 @@ class JsonGenGenerator implements IGenerator {
 	  	}
 
 		public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-			public «classNamePrefix»Enum createFromParcel(Parcel in) {
-				return «classNamePrefix»Enum.values()[in.readInt()];
+			public «classNamePrefix» createFromParcel(Parcel in) {
+				return «classNamePrefix».values()[in.readInt()];
 			}
 
-			public «classNamePrefix»Enum[] newArray(int size) {
-				return new «classNamePrefix»Enum[size];
+			public «classNamePrefix»[] newArray(int size) {
+				return new «classNamePrefix»[size];
 			}
 		};
 
