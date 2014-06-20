@@ -103,24 +103,24 @@ class JsonGenGenerator implements IGenerator {
 	public «className»(final JSONObject jsonRoot)
 	{
 		try {
-		«FOR member : jsonRootObject.members»
-			«IF member.optional»
-				if (!jsonRoot.isNull("«member.key»"))
-				{
+			«FOR member : jsonRootObject.members»
+				«IF member.optional»
+					if (!jsonRoot.isNull("«member.key»"))
+					{
+						«IF member.value.array != null»
+							«member.createJsonArrayParser»
+						«ELSE»
+							this.«member.key.camelCase» = «member.mapToSerializedType»
+						«ENDIF»
+					}
+				«ELSE»
 					«IF member.value.array != null»
 						«member.createJsonArrayParser»
 					«ELSE»
 						this.«member.key.camelCase» = «member.mapToSerializedType»
 					«ENDIF»
-				}
-			«ELSE»
-				«IF member.value.array != null»
-					«member.createJsonArrayParser»
-				«ELSE»
-					this.«member.key.camelCase» = «member.mapToSerializedType»
 				«ENDIF»
-			«ENDIF»
-		«ENDFOR»
+			«ENDFOR»
 		} catch (JSONException e) {
 			this.exception = e;
 			e.printStackTrace();
@@ -456,13 +456,15 @@ class JsonGenGenerator implements IGenerator {
 				{
 				«IF s.value.endsWith('[]')»
 					long[] «s.key»Array = new long[«s.key».length];
-					for (int i=0; i < «s.key».length; i++)
-					{
-						«s.key»Array[i] = «s.key»[i].getTime();
-					}
+					if («s.key» != null)
+						for (int i=0;  i < «s.key».length; i++)
+						{
+							«s.key»Array[i] = «s.key»[i].getTime();
+						}
 					out.writeLongArray(«s.key»Array);
 				«ELSE»
-					out.writeLong(«s.key».getTime());
+					if («s.key» != null)
+						out.writeLong(«s.key».getTime());
 				«ENDIF»
 				}
 			«ELSEIF s.value.equals("boolean")»
@@ -488,10 +490,13 @@ class JsonGenGenerator implements IGenerator {
 					«IF s.value.endsWith('[]')»
 						long[] «s.key»LongArray = null;
 						in.readLongArray(«s.key»LongArray);
-						«s.key» = new Date[«s.key»LongArray.length];
-						for (int i=0; i<«s.key»LongArray.length; i++)
+						if («s.key»LongArray != null)
 						{
-							«s.key»[i] = new Date(«s.key»LongArray[i]);
+							«s.key» = new Date[«s.key»LongArray.length];
+							for (int i=0; i<«s.key»LongArray.length; i++)
+							{
+								«s.key»[i] = new Date(«s.key»LongArray[i]);
+							}
 						}
 					«ELSE»
 						«s.key» = new Date(in.readLong());
