@@ -10,6 +10,7 @@ import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -307,5 +308,15 @@ public class JsonToParcelableTests {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+  
+  @Test
+  public void testXtendSyntaxWrtLambda() {
+    final Function2<Integer, String, String> _function = new Function2<Integer, String, String>() {
+      public String apply(final Integer route, final String something) {
+        return (Integer.valueOf(route) + something);
+      }
+    };
+    final Function2<Integer, String, String> lambda = _function;
   }
 }

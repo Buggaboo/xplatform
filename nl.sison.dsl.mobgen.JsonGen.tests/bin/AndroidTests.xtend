@@ -187,5 +187,11 @@ class JsonToParcelableTests {
             '''.toString, fsa.allFiles.get(IFileSystemAccess::DEFAULT_OUTPUT+"Bob.java").toString)
          */
     }
+    
+    @Test
+    def void testXtendSyntaxWrtLambda()
+    {
+    	val lambda = [ int route, String something | route + something ]
+    }
      
 }

@@ -460,14 +460,14 @@ class AndroidHttpRequestGenerator implements IGenerator
      * TODO also generate the AsyncTask for this, because a Loader has a 1..1 relation with the Fragment/Activity
      * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
      *
-     */
+	 * inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
+	 */
 	def createLoader(CharSequence classNamePrefix, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
 	import android.content.AsyncTaskLoader;
 	import android.content.Context;
 	
 	import java.util.Map; // see http call
 	
-	/** inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html */
 	public class «classNamePrefix»Loader extends AsyncTaskLoader<«returnType»>
 	{
 		private «returnType» result;

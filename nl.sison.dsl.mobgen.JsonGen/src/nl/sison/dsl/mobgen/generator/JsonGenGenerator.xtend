@@ -9,6 +9,26 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 
+/**
+ * 
+ * Parcelable as basic data structure type, reasons are:
+ * 
+ * They are explicit, more explicit than the Bundle type.
+ * They are easily passed on through Bundle type args, using #putParcelable
+ * There is a direct mapping of a list of composite json objects to a list of Parcelables using #putParcelableArray(List)
+ * 
+ * 1.  Generate http request header Parcelable - DONE
+ * 2.  Generate http request URL Parcelable - DONE
+ * 3.  Generate http request Json entity Parcelable // TODO put parser here?
+ * 4.  Generate Parcelable for previous three Parcelables
+ * 5.  Generate http response header Parcelable
+ * 6.  Generate http response Json entity Parcelable
+ * 7.  Generate Parcelable for previous two Parcelables
+ * 8.  Generate AsyncTask loader // multiple async calls unattached to Activity/Fragment
+ * 9.  Generate http call method
+ * 10. Generate mock Activity to test the call // TODO
+ * 11. Generate Spark class to handle the call // TODO
+ */
 class JsonGenGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
@@ -73,8 +93,7 @@ class JsonGenGenerator implements IGenerator {
 			return concurrentHashMap.get(dateFormatString).get().parse(dateString);
 			
 		}
-		
-		// TODO define method convertDateToString/2{dateDate, stringFormat:String} using the same principle as above
+«««		// TODO define method convertDateToString/2{dateDate, stringFormat:String} using the same principle as above
 	}
 	'''
 
@@ -273,7 +292,7 @@ class JsonGenGenerator implements IGenerator {
 	import android.support.v4.os.ParcelableCompat;
 	
 	public enum «classNamePrefix» implements Parcelable {
-		«enumValues.map[v|v.camelCase + '("' + v + '")'].join(', ')», DEFAULT("default");
+		«enumValues.map[v|v.camelCase + '("' + v + '")'].join(",\n")», DEFAULT("default");
 		
 		// TODO extend with resource in the ctor (either android assets to spare switches or conditional statements)
 		private String text;
@@ -375,7 +394,7 @@ class JsonGenGenerator implements IGenerator {
 	 */
 	// TODO include imports only when they are needed
 	// TODO fix (un)marshalling of optional fields, because that will break	 
-	val acceptedTypes = newLinkedList("String", "Int", "Long", "Float", "Double")
+	val acceptedTypes = newLinkedList("String", "int", "long", "float", "double")
 	val acceptedArrayTypes = #{"String[]" -> 'StringArray', "int[]" -> 'IntArray', "long[]" -> 'LongArray', "float[]" -> 'FloatArray', "double[]" -> 'DoubleArray',
 		'boolean[]' -> 'BooleanArray' // TODO write SparseBooleanArray code
 	}
@@ -428,8 +447,8 @@ class JsonGenGenerator implements IGenerator {
 	    @Override
 	    public void writeToParcel(Parcel out, int flags) {
 			«FOR s : members.entrySet»
-			«IF acceptedTypes.contains(s.value.generatedType)»
-				out.write«s.value.generatedType»(«s.key»);
+			«IF acceptedTypes.contains(s.value)»
+				out.write«s.value.capitalizeFirstLetter»(«s.key»);
 			«ELSEIF acceptedArrayTypes.containsKey(s.value)»
 				out.write«acceptedArrayTypes.get(s.value)»(«s.key»);
 			«ELSEIF s.value.startsWith("Date")»
@@ -448,10 +467,10 @@ class JsonGenGenerator implements IGenerator {
 				}
 			«ELSEIF s.value.equals("boolean")»
 				out.writeInt(«s.key» ? 1 : 0);
-			«ELSEIF s.value.endsWith("Enum[]")»
-				out.writeParcelableArray((Parcelable[]) «s.key», flags);
+			«ELSEIF s.value.endsWith("[]")»
+				out.writeParcelableArray(«s.key», flags);
 			«ELSE»
-				out.writeParcelable((Parcelable) «s.key», flags);
+				out.writeParcelable(«s.key», flags);
 			«ENDIF»
 			«ENDFOR»
 			out.writeSerializable(exception);
@@ -460,14 +479,14 @@ class JsonGenGenerator implements IGenerator {
 	    private void readFromParcel(Parcel in) {
 			«FOR s : members.entrySet»
 				«IF acceptedTypes.contains(s.value)»
-					«s.key» = in.read«s.value»();
+					«s.key» = in.read«s.value.capitalizeFirstLetter»();
 				«ELSEIF acceptedArrayTypes.containsKey(s.value)»
 					in.read«acceptedArrayTypes.get(s.value)»(«s.key»);
 				«ELSEIF s.value.equals("boolean")»
 					«s.key» = in.readInt() > 0;
 				«ELSEIF s.value.startsWith("Date")»
 					«IF s.value.endsWith('[]')»
-						long[] «s.key»longArray = null;
+						long[] «s.key»LongArray = null;
 						in.readLongArray(«s.key»LongArray);
 						«s.key» = new Date[«s.key»LongArray.length];
 						for (int i=0; i<«s.key»LongArray.length; i++)
@@ -510,7 +529,7 @@ class JsonGenGenerator implements IGenerator {
 	''' 
 
 	def createParcelableReadMember(String parameterName, String type) '''
-	«parameterName» = in.readParcelable«IF type.endsWith("[]")»Array«ENDIF»(«type».class.getClassLoader());
+	«parameterName» = («type») in.readParcelable«IF type.endsWith("[]")»Array«ENDIF»(«type».class.getClassLoader());
 	'''
 
 	/* TODO make getters return defensive copy */
@@ -536,6 +555,244 @@ class JsonGenGenerator implements IGenerator {
 	def getGeneratedType (String s)
 	{
 		return s.camelCase.capitalizeFirstLetter
+	}
+	
+}
+
+class AndroidRestfulHttpRequestGenerator implements IGenerator
+{
+	/**
+	 * The check for 'P' is to differentiate between calls where the server expects a payload, which are POST and PUT
+     *
+     * TODO also generate the AsyncTask for this, because a Loader has a 1..1 relation with the Fragment/Activity
+     * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
+     *
+	 * inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
+	 */
+	def createLoader(CharSequence classNamePrefix, CharSequence returnType, CharSequence method, CharSequence requestBody, CharSequence jsonParserToParcelable, CharSequence serverBoundPayload) '''
+	import android.content.AsyncTaskLoader;
+	import android.content.Context;
+	
+	import java.util.Map; // see http call
+	
+	public class «classNamePrefix»Loader extends AsyncTaskLoader<«returnType»>
+	{
+		private «returnType» result;
+		private «classNamePrefix»RequestParameters parameters;
+
+		public «classNamePrefix»Loader(Context context) {
+			super(context);
+		}
+		
+		public «classNamePrefix»Loader(Context context, Parcelable parameters) {
+			this(context);
+			this.parameters = parameters;
+		}
+	
+		// Load the data asynchronously
+		@Override
+		public «returnType» loadInBackground() {
+			try
+			{
+				«classNamePrefix»HttpRequest httpRequest = new «classNamePrefix»HttpRequest(parameters);
+				httpRequest.do«method»Request();
+				return httpRequest.getResult();
+				/**
+				 * if this invoked http request throws an exception
+				 * TODO Let the exception object come through the 'result' object
+				 */
+			}catch (Exception e)
+			{
+				return «returnType»(e); // general exception catch: this must be passed on to the ui thread
+			}
+		}
+		
+		
+		@Override
+		public void deliverResult(«returnType» data) {
+			if (isReset()) {
+				// some data came in while the loader is stopped
+				return;
+			}
+			this.result = data;
+			super.deliverResult(data);
+		}
+	
+		@Override
+		protected void onStartLoading() {
+		    if (result != null) { // This determines the difference between initLoader and restartLoader 
+		      deliverResult(result);
+		    }
+		
+		    if (takeContentChanged() || result == null) {
+		      forceLoad();
+		    }
+		  }
+		}
+		
+		@Override
+		protected void onStopLoading() {
+			cancelLoad();
+		}
+		
+		@Override
+		protected void onReset() {
+			super.onReset();
+			cancelLoad();
+			result = null;
+		}
+		
+		private class «classNamePrefix»HttpRequest
+		{
+			private «classNamePrefix»RequestParameters parameters;
+			
+			private «classNamePrefix»HttpRequest(Parcelable parameters) {
+				this.parameters = parameters;
+				disableConnectionReuseIfNecessary();
+			}
+			
+			private «returnType» result = null; 
+			public «returnType» getResult() { return result; }
+			
+«««			// TODO feed parameters to urlParams, headerParams, readStream and writeStream, through outer class, it's unnecessary to declare private members twice
+			
+			public do«method»Request()
+			{
+				«requestBody»
+			}
+			
+			/**
+			 * readStream parses a JSON then assigns a Parcelable to this.result
+			 */
+			private void readStream(BufferedInputStream in)
+			{
+				«jsonParserToParcelable»
+			}
+			«IF method.toString.startsWith("P")»
+			/**
+			 *
+			 * Convert parameters to JSON conforming to the server's expection of the call
+			 *
+			 */
+			private void writeStream(BufferedOutputStream out)
+			{
+				«serverBoundPayload»
+			}
+			«ENDIF»
+«««			/**
+«««			 * TODO consider removing this remnant of the past, remove if it pre-dates AsyncTaskLoader(?).
+«««			 */
+			private void disableConnectionReuseIfNecessary() {
+			    // HTTP connection reuse which was buggy pre-froyo
+			    if (Integer.parseInt(Build.VERSION.SDK) < Build.VERSION_CODES.FROYO) {
+			        System.setProperty("http.keepAlive", "false");
+			    }
+			}
+		}
+	}
+	'''
+	
+		/**
+	 * TODO Check if Https is being used correctly
+	 */
+	def isTransportLayerSecured(String url) {
+		return if (url.startsWith("https://")) "HttpsURLConnection" else "HttpURLConnection"
+	}
+	
+	def setRequestProperty(CharSequence key, CharSequence parameterOrLiteral) '''
+	urlConnection.setRequestProperty("«key»", «parameterOrLiteral»);
+	'''
+	
+	def generateExceptionHandlerLoggingAndThrow(CharSequence exceptionType) '''
+	}catch(«exceptionType» e)
+«««	// TODO do error handling on the UI thread? Toast#show or pass it on via the result object thru the Loader?
+	{
+		if (BuildConfig.DEBUG)
+		{
+			Log.d("JSONGEN", "...");
+			e.printStackTrace();
+		}
+		throw e;
+	'''
+	
+	/**
+	 * TODO must escape nasty symbols in the header injection part using URLEncoder#encode/?
+	 */
+	def httpRequestBuilder(CharSequence url, CharSequence method, CharSequence requestPropertyKeyValuePairs) '''
+	URL url = new URL("«url»"); // URLEncoder.encode(...) 
+	«url.toString.transportLayerSecured» urlConnection = new «url.toString.transportLayerSecured»(url);
+	«requestPropertyKeyValuePairs»
+	urlConnection.setMethod("«method.toString.toUpperCase»")
+	urlConnection.setConnectionTimeout(10000); // 10 seconds, default over configuration principle
+	urlConnection.setReadTimeout(10000); // 10 seconds
+	urlConnection.setDoInput(true)
+	«IF method.toString.startsWith('P')» // if POST or PUT
+	urlConnection.setDoOutput(true);
+«««	// consider: urlConnection.setDoOutput(urlConnection.getMethod().toUpperCase().startsWith("P")); // POST and PUT
+	«ELSE»
+	urlConnection.setDoOutput(false);
+	«ENDIF»
+	InputStream in = null;
+«««	// if POST or PUT
+	«IF method.toString.startsWith('P')»
+	OutputStream out = null;
+	«ENDIF»
+	try
+	{
+		urlConnection.connect();
+		if (!url.getHost().equals(urlConnection.getURL().getHost())) {
+			throw new IllegalStateException("You were probably redirected to a sign-on.");
+«««			// TODO Let the Activity/Fragment handle this...
+«««			// TODO fire up a browser to sign-on. sharedIntent.
+		}
+		in = new BufferedInputStream(urlConnection.getInputStream());
+		readStream(in);
+«««		 // if POST or PUT
+		«IF method.toString.startsWith('P')»
+			out = new BufferedOutputStream(urlConnection.getOutputStream());
+			writeStream(out);
+		«ENDIF»
+		if (BuildConfig.DEBUG)
+		{
+			Map<String, List<String>> responseHeaders = urlConnection.getHeaderFields();
+«««			// do import statement
+			for (Map.Entry<String, List> entry : map.entrySet())
+			{
+				StringBuffer stringList = new StringBuffer();
+				for (String s : entry.getValue())
+				{
+					stringList.append(s);	
+				}
+			    Log.e("JSONGEN", String.format("key = %s / value = %s", entry.getKey(), stringList.toString()));
+			}
+		}
+	«"IOException".generateExceptionHandlerLoggingAndThrow»
+	«"UnknownServiceException".generateExceptionHandlerLoggingAndThrow»
+	«"IllegalAccessError".generateExceptionHandlerLoggingAndThrow»
+	}finally {
+		try
+		{
+			if (urlConnection != null)
+			{
+				urlConnection.disconnect(); // TODO handle this exception separately
+			}
+			if (in != null)
+			{
+				in.close(); // TODO handle this exception separately
+			}
+«««			 // if POST or PUT
+			«IF method.toString.startsWith('P')»
+			if (out != null)
+			{
+				out.close(); // TODO handle this exception separately
+			}
+			«ENDIF»
+		«"IOException".generateExceptionHandlerLoggingAndThrow»
+	}
+	'''
+
+	override doGenerate(Resource resource, IFileSystemAccess fsa) {
+		
 	}
 	
 }

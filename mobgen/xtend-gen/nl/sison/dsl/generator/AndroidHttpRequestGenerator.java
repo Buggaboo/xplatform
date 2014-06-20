@@ -498,6 +498,8 @@ public class AndroidHttpRequestGenerator implements IGenerator {
    * 
    * TODO also generate the AsyncTask for this, because a Loader has a 1..1 relation with the Fragment/Activity
    * and sometimes you prefer to have a 1..n (Fragment/Activity..Asynctask) relations ship
+   * 
+   * inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html
    */
   public CharSequence createLoader(final CharSequence classNamePrefix, final CharSequence returnType, final CharSequence method, final CharSequence requestBody, final CharSequence jsonParserToParcelable, final CharSequence serverBoundPayload) {
     StringConcatenation _builder = new StringConcatenation();
@@ -508,8 +510,6 @@ public class AndroidHttpRequestGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("import java.util.Map; // see http call");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("/** inspired by http://blog.gunawan.me/2011/10/android-asynctaskloader-exception.html */");
     _builder.newLine();
     _builder.append("public class ");
     _builder.append(classNamePrefix, "");

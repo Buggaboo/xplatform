@@ -1,5 +1,24 @@
 grammar nl.sison.dsl.mobgen.JsonGen with org.eclipse.xtext.common.Terminals
 
+/*
+ * 
+ * Handy links:
+ * * http://pettergraff.blogspot.nl/2009/12/deploying-code-generator-with.html
+ * * http://charandeepmatta.com/2012/09/01/how-to-generate-eclipse-plugin-for-your-dsl-written-in-xtext/ - sharing your plugin
+ * * http://www.techjava.de/topics/2010/06/extending-xtext-build-participants/ - using "Nature" to distinguish DSLs
+ * * http://stackoverflow.com/questions/10917386/linking-xtext-with-stringtemplate-code-generator - run the generator from Main.java
+ * * http://wiki.eclipse.org/Xtext/FAQ#How_do_I_load_my_model_in_a_standalone_Java_application.C2.A0.3F - run xtend generation as standalone, e.g. from main method
+ * * http://davehofmann.de/blog/?p=101 // - standalone way of setting up the generator
+ * * http://koehnlein.blogspot.de/2012/11/xtext-tip-how-do-i-get-guice-injector.html - Guice and standalone dependency injection
+ * * http://christiandietrich.wordpress.com/2011/10/15/xtext-calling-the-generator-from-a-context-menu/ - Running "Generate code" from the context menu
+ * 
+ * IDEA name for the project, plate smasher (boilerplate smasher)
+ * IDEA feed vector graphics, generate assets l, m, h, xh, xxh, xxxh, pixel dimensions
+ * 
+ * -JS (06-Mar-2014)
+ * 
+ */
+
 generate jsonGen "http://www.sison.nl/dsl/mobgen/JsonGen"
 
 JsonObject:
